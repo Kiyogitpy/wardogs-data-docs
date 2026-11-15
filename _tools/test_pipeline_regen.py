@@ -491,15 +491,19 @@ sys.exit(1)
         self.assertIn("Expected misses", md)
         self.assertIn("- `bp.py`: 2 (Blueprint dump)", md)
 
-    def test_the_shipped_allowlist_covers_every_miss_of_the_season_2_export(self):
+    def test_shipped_aliases_keep_unresolved_hotfix_water_fields_visible(self):
         reg = up.load_registry()
         names = reg["hashed_names_expected_missing"]["names"]
-        self.assertEqual(len(names), 14)
+        aliases = {(x["script"], x["name"]) for x in names}
+        self.assertEqual(len(aliases), len(names))
         for x in names:
             self.assertTrue(x["reason"])
-        hn = up.hashed_names_missing(ROOT, os.path.join(ROOT, "data"), self.tmp, {(x["script"], x["name"]) for x in names})
-        self.assertEqual(hn["missing"], [])
-        self.assertEqual(len(hn["expected"]), 14)
+        unresolved = {("map_height_grids.py", name) for name in
+                      ("_aaaajahedjfgkemenmnfj", "_aaaajbpajedfcbkcoihjn", "_aaabflcohlopnaadhglfk")}
+        self.assertFalse(aliases & unresolved)
+        hn = up.hashed_names_missing(ROOT, os.path.join(ROOT, "data"), self.tmp, aliases)
+        actual = {(where.split(":", 1)[0], name) for where, name in hn["missing"]}
+        self.assertLessEqual(actual, unresolved)
 
 
 class QuickDiff(Base):

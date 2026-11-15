@@ -18,6 +18,7 @@
   "NumInitialBots": 0
  },
  "economy": {
+  "priceModifierLimit": "A null multiplier is absent from this config; its effective native or dynamic value is unverified.",
   "priceModifiers": [
    {
     "faction": "Meta.Alignment.Faction.Alpha",
@@ -47,11 +48,8 @@
     "target": "Global"
    },
    {
-    "kind": "Level",
-    "level": 8,
-    "levelRequirement": "LowerOrEqual",
-    "levelType": "Wardog",
-    "multiplier": 50.0,
+    "kind": "VendorDiscount",
+    "multiplier": null,
     "target": "Global"
    },
    {

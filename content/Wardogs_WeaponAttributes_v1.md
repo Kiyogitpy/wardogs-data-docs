@@ -117,12 +117,12 @@ Default loadout, Stand stance, bipod folded. A cell shows `base → final` where
 | [KH-2002](#kh-2002-id_kh2002) | 1 → **0.84** | 1 → **0.85** | 1 | 1 | 0.525 → **0.44625** | 1.2 | 100 | 100 | 0.95 → **1.102** | 1 | 80 |
 | [M4](#m4-id_m4) | 1 | 1 | 1 | 1 | 0.49 | 1.2 | 100 | 500 | 0.95 → **0.931** | 1.1 | 80 |
 | [T-21](#t-21-id_tar21) | 1 → **0.84** | 1 → **0.85** | 1 | 1 | 0.525 → **0.44625** | 1.2 | 100 | 300 | 0.95 → **1.102** | 1 | 80 |
+| [TCX-SPR](#tcx-spr-id_wepn_037) | 1 | 1 | 1 | 1 | 0.48 | 1.2 | 100 | 200 | 1 | 0.95 | 80 |
 | [Compound Bow](#compound-bow-id_combatbow) | 1 | 1 | 1 | 1 | 0.285 | 1.2 | 100 | 100 |  |  | 80 |
 | [BMR-308](#bmr-308-id_rfb) | 1 → **0.84** | 1 → **0.85** | 1 | 1 | 0.52 → **0.442** | 1.2 | 100 | 300 | 0.92 → **1.1408** | 1 | 80 |
 | [M14](#m14-id_wepn_034) | 1 | 1 | 1 | 1 | 0.53 | 1.2 | 100 | 500 | 0.97 | 1 | 80 |
 | [SKS](#sks-id_sks) | 1 | 1 | 1 | 1 | 0.53 | 1.2 | 100 | 1000 | 1.15 | 1.1 | 80 |
 | [SVD](#svd-id_svdm) | 1 | 1 | 1 | 1 | 0.53 → **0.5618** | 1.2 | 100 | 1100 | 0.97 → **0.873** | 1 | 80 |
-| [TCX-SPR](#tcx-spr-id_wepn_037) | 1 | 1 | 1 | 1 | 0.48 | 1.2 | 100 | 200 | 1 | 0.95 | 80 |
 | [Evo-3 Ultra](#evo-3-ultra-id_wepn_036) | 1 | 1 | 1 | 1 | 0.64 | 1.2 | 100 | 500 | 1 | 1 | 80 |
 | [M249 SAW](#m249-saw-id_m249) | 1 → **1.17** | 1 → **1.17** | 1 | 1 | 0.68 → **0.816** | 1.2 | 200 | 1200 | 0.95 → **0.8835** | 0.95 | 80 |
 | [PKM](#pkm-id_lmg_02) | 1 | 1 | 1 | 1 | 0.73 → **0.803** | 1.2 | 100 | 1500 | 0.95 | 1 | 80 |
@@ -334,6 +334,28 @@ Item `Id.Item.TAR21`, [`ID_TAR21.json`](https://github.com/Kiyogitpy/wardogs-dat
 | EquipSpeedMultiplier | 0.95 | ×c 1.16 `GE_MAGZ_053` | 1.102 |
 | HolsterSpeedMultiplier | 1 | — | 1 |
 
+#### TCX-SPR (ID_WEPN_037)
+
+Item `Id.Item.WEPN_037`, [`ID_WEPN_037.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/ID_WEPN_037.json).
+
+- **Loadout:** Magazine: [`ID_MAGZ_069`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_069/Content/Data/ID_MAGZ_069.json); Handguard: [`ID_HNDG_054`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_054/Content/Data/ID_HNDG_054.json); Grip: [`ID_PGRP_043`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_043/Content/Data/ID_PGRP_043.json); Stock: [`ID_STOK_060`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_060/Content/Data/ID_STOK_060.json); Barrel: [`ID_BARL_048`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_048/Content/Data/ID_BARL_048.json).
+- **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
+- **Character effects:** `GE_MAGZ_069_CharacterEffects`.
+
+| Attribute | Base | Modifiers | Final |
+|---|---:|---|---:|
+| VerticalRecoilMultiplier | 1 | ×c 1 `GE_MAGZ_069`<br>×c 1 `GE_Weapon_StanceRecoil_AR_Standing` | 1 |
+| HorizontalRecoilMultiplier | 1 | ×c 1 `GE_MAGZ_069`<br>×c 1 `GE_Weapon_StanceRecoil_AR_Standing` | 1 |
+| AdsZoomMultiplier | 1.2 | — | 1.2 |
+| AimTime | 0.48 | ×c 1 `GE_MAGZ_069` | 0.48 |
+| SpreadMultiplier | 1 | — | 1 |
+| AccuracyMultiplier | 1 | — | 1 |
+| Length | 80 | — | 80 |
+| MinZeroingRange | 100 | — | 100 |
+| MaxZeroingRange | 200 | — | 200 |
+| EquipSpeedMultiplier | 1 | ×c 1 `GE_MAGZ_069` | 1 |
+| HolsterSpeedMultiplier | 0.95 | — | 0.95 |
+
 ### Bow
 
 #### Compound Bow (ID_CombatBow)
@@ -449,28 +471,6 @@ Item `Id.Item.SVDM`, [`ID_SVDM.json`](https://github.com/Kiyogitpy/wardogs-data-
 | MaxZeroingRange | 1100 | — | 1100 |
 | EquipSpeedMultiplier | 0.97 | ×c 0.9 `GE_MAG_SVDM` | 0.873 |
 | HolsterSpeedMultiplier | 1 | — | 1 |
-
-#### TCX-SPR (ID_WEPN_037)
-
-Item `Id.Item.WEPN_037`, [`ID_WEPN_037.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/ID_WEPN_037.json).
-
-- **Loadout:** Magazine: [`ID_MAGZ_069`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Magazines/MAGZ_069/Content/Data/ID_MAGZ_069.json); Handguard: [`ID_HNDG_054`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Handguards/HNDG_054/Content/Data/ID_HNDG_054.json); Grip: [`ID_PGRP_043`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Pistol%20Grips/PGRP_043/Content/Data/ID_PGRP_043.json); Stock: [`ID_STOK_060`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Stocks/STOK_060/Content/Data/ID_STOK_060.json); Barrel: [`ID_BARL_048`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Components/Barrels/BARL_048/Content/Data/ID_BARL_048.json).
-- **Stance (Stand):** `GE_Weapon_StanceRecoil_AR_Standing`.
-- **Character effects:** `GE_MAGZ_069_CharacterEffects`.
-
-| Attribute | Base | Modifiers | Final |
-|---|---:|---|---:|
-| VerticalRecoilMultiplier | 1 | ×c 1 `GE_MAGZ_069`<br>×c 1 `GE_Weapon_StanceRecoil_AR_Standing` | 1 |
-| HorizontalRecoilMultiplier | 1 | ×c 1 `GE_MAGZ_069`<br>×c 1 `GE_Weapon_StanceRecoil_AR_Standing` | 1 |
-| AdsZoomMultiplier | 1.2 | — | 1.2 |
-| AimTime | 0.48 | ×c 1 `GE_MAGZ_069` | 0.48 |
-| SpreadMultiplier | 1 | — | 1 |
-| AccuracyMultiplier | 1 | — | 1 |
-| Length | 80 | — | 80 |
-| MinZeroingRange | 100 | — | 100 |
-| MaxZeroingRange | 200 | — | 200 |
-| EquipSpeedMultiplier | 1 | ×c 1 `GE_MAGZ_069` | 1 |
-| HolsterSpeedMultiplier | 0.95 | — | 0.95 |
 
 ### LMG
 
@@ -1323,7 +1323,6 @@ Results above that rest on something not traced or on an odd piece of data.
 - **Repeated `DefaultAttributes` keys** on 9K333 Verba ([`ID_Launcher_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Launchers/Launcher_04/Content/Data/ID_Launcher_04.json)): 9 keys appear twice, with different values for `Length` 100 then 80. The map load keeps both pairs (`FMapProperty::SerializeItem` adds each entry without a lookup when the archetype's map is empty), and `OnRegister` (`0x6C692E0`) installs them in order with overwrite off (`0x522F8F0`), so the first value is used: `Length` 100.
 - **Empty effect references** (skipped): [`ID_MUZL_064`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Attachments/Muzzle/MUZL_064/Content/Data/ID_MUZL_064.json).
 - **Stance map** of A-91 ([`ID_A91`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/ID_A91.json)): Stand → `GE_Weapon_StanceRecoil_AR_Prone`, Crouch → `GE_Weapon_StanceRecoil_AR_Standing`, Prone → `GE_Weapon_StanceRecoil_AR_Standing` (taken as in data).
-- **Stance map** of TCX-SPR ([`ID_WEPN_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/ID_WEPN_037.json)): Prone → `GE_Weapon_StanceRecoil_AR_Standing` (taken as in data).
 - FAL ([`ID_WEPN_030`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/ID_WEPN_030.json)): Sight default `Id.Item.IRNS_002` (on [`ID_WEPN_030`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_030/Content/Data/ID_WEPN_030.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 - M4 ([`ID_M4`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/ID_M4.json)): Sight default `Id.Item.IRNS_006` (on [`ID_M4`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_002/Content/Data/ID_M4.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.
 - BMR-308 ([`ID_RFB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/ID_RFB.json)): Sight default `Id.Item.ARMIrons` (on [`ID_RFB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/DMR/RFB/Content/Data/ID_RFB.json)) has no item definition in data/ or in the game's paks (WdExtract `findname`), so the slot stays empty and adds no effects.

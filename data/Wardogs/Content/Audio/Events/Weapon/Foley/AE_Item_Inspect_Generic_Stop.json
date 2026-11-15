@@ -1,0 +1,35 @@
+--- export: UPrimaryDataAsset / AE_Item_Inspect_Generic_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Item_Inspect_Generic_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Weapon/Foley/AE_Item_Inspect_Generic_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Item.Inspect.Generic.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorStopSound'AE_Item_Inspect_Generic_Stop:CrosstalkAudioEventBehaviorStopSound_0'",
+        "ObjectPath": "/Game/Audio/Events/Weapon/Foley/AE_Item_Inspect_Generic_Stop.1"
+      }
+    ]
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorStopSound_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorStopSound",
+  "Name": "CrosstalkAudioEventBehaviorStopSound_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorStopSound'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Item_Inspect_Generic_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Weapon/Foley/AE_Item_Inspect_Generic_Stop.0"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Item.Inspect"
+    }
+  }
+}

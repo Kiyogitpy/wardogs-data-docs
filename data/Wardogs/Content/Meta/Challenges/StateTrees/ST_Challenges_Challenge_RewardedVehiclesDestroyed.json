@@ -6,7 +6,7 @@
   "Class": "UScriptClass'StateTree'",
   "Package": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedVehiclesDestroyed",
   "Properties": {
-    "LastCompiledEditorDataHash": 3368678354,
+    "LastCompiledEditorDataHash": 1010444376,
     "Schema": {
       "ObjectName": "WDChallengeStateTreeSchema'ST_Challenges_Challenge_RewardedVehiclesDestroyed:WDChallengeStateTreeSchema_0'",
       "ObjectPath": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedVehiclesDestroyed.1"
@@ -1014,7 +1014,7 @@
         },
         {
           "bInvert": false,
-          "Operator": "EGenericAICheck::GreaterOrEqual",
+          "OPERATOR": "EGenericAICheck::GreaterOrEqual",
           "Operand": "EStateTreeExpressionOperand::Copy",
           "DeltaIndent": 0,
           "EvaluationMode": "EStateTreeConditionEvaluationMode::Evaluated",
@@ -1186,7 +1186,10 @@
                   "TagName": "None"
                 }
               },
-              "_aaabaombnfaebibigppgn": []
+              "_aaabaombnfaebibigppgn": [],
+              "_aaabcniobmoekkdkbljob": {
+                "Values": []
+              }
             },
             {
               "Value": {
@@ -1373,7 +1376,10 @@
                   "TagName": "None"
                 }
               },
-              "_aaabaombnfaebibigppgn": []
+              "_aaabaombnfaebibigppgn": [],
+              "_aaabcniobmoekkdkbljob": {
+                "Values": []
+              }
             },
             {
               "Left": 0,
@@ -1944,6 +1950,45 @@
         },
         {
           "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateEvent",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 3
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "Payload",
+                "ArrayIndex": -1,
+                "InstanceStruct": {
+                  "ObjectName": "Class'WDRewardGrantedEvent'",
+                  "ObjectPath": "/Script/WDGame"
+                },
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::StructInstance"
+              },
+              {
+                "Name": "ContextValues",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "EventContextValues",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
             "Source": "EStateTreeDataSourceType::ContextData",
             "Index": 0,
             "StateHandle": {
@@ -2351,6 +2396,45 @@
         },
         {
           "SourceDataHandle": {
+            "Source": "EStateTreeDataSourceType::StateEvent",
+            "Index": 2,
+            "StateHandle": {
+              "Index": 3
+            }
+          },
+          "bIsOutputBinding": false,
+          "SourcePropertyPath": {
+            "Segments": [
+              {
+                "Name": "Payload",
+                "ArrayIndex": -1,
+                "InstanceStruct": {
+                  "ObjectName": "Class'WDRewardGrantedEvent'",
+                  "ObjectPath": "/Script/WDGame"
+                },
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::StructInstance"
+              },
+              {
+                "Name": "ContextValues",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          },
+          "TargetPropertyPath": {
+            "Segments": [
+              {
+                "Name": "EventContextValues",
+                "ArrayIndex": -1,
+                "InstanceStruct": null,
+                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
+              }
+            ]
+          }
+        },
+        {
+          "SourceDataHandle": {
             "Source": "EStateTreeDataSourceType::StateParameterData",
             "Index": 0,
             "StateHandle": {
@@ -2583,7 +2667,7 @@
             "Value": 3
           },
           "BindingsEnd": {
-            "Value": 6
+            "Value": 7
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -2609,10 +2693,10 @@
             "Name": "Wager Action Refused"
           },
           "BindingsBegin": {
-            "Value": 6
+            "Value": 7
           },
           "BindingsEnd": {
-            "Value": 8
+            "Value": 9
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -2638,10 +2722,10 @@
             "Name": "Update Objective Progress"
           },
           "BindingsBegin": {
-            "Value": 8
+            "Value": 9
           },
           "BindingsEnd": {
-            "Value": 11
+            "Value": 12
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -2667,10 +2751,10 @@
             "Name": "Tag Matches"
           },
           "BindingsBegin": {
-            "Value": 11
+            "Value": 12
           },
           "BindingsEnd": {
-            "Value": 14
+            "Value": 15
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -2696,10 +2780,10 @@
             "Name": "Object Equals"
           },
           "BindingsBegin": {
-            "Value": 14
+            "Value": 15
           },
           "BindingsEnd": {
-            "Value": 16
+            "Value": 17
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -2725,10 +2809,10 @@
             "Name": "Enemy Driver And Buyer"
           },
           "BindingsBegin": {
-            "Value": 16
+            "Value": 17
           },
           "BindingsEnd": {
-            "Value": 17
+            "Value": 18
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -2754,10 +2838,10 @@
             "Name": "Wager Action Qualifies"
           },
           "BindingsBegin": {
-            "Value": 17
+            "Value": 18
           },
           "BindingsEnd": {
-            "Value": 20
+            "Value": 22
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -2783,10 +2867,10 @@
             "Name": "Integer Compare"
           },
           "BindingsBegin": {
-            "Value": 20
+            "Value": 22
           },
           "BindingsEnd": {
-            "Value": 22
+            "Value": 24
           },
           "PropertyFunctionsBegin": {
             "Value": 65535

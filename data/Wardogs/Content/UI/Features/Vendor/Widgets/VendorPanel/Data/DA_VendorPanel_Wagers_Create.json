@@ -6,10 +6,6 @@
   "Class": "UScriptClass'WDUIVendorPanelData_Wagers'",
   "Package": "/Game/UI/Features/Vendor/Widgets/VendorPanel/Data/DA_VendorPanel_Wagers_Create",
   "Properties": {
-    "_aaabcloceiijkdjjkniic": {
-      "ObjectName": "WDUIWagerStatusData'DA_WagerStatus'",
-      "ObjectPath": "/Game/UI/Features/Wagers/Status/DA_WagerStatus.0"
-    },
     "_aaacaglgmnllofmadmegc": {
       "ViewModelClass": {
         "AssetPathName": "/Script/WDGame.WDUIWagerObjectiveSelectorViewModel",
@@ -17,6 +13,16 @@
       },
       "Data": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/WagerObjectiveSelector/Data/DA_Wagers_ObjectiveSelector.DA_Wagers_ObjectiveSelector",
+        "SubPathString": ""
+      }
+    },
+    "_aaabgfnjhdfelcbkbjofi": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIWagerReceiptViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Wagers/Receipt/DA_WagerReceipt.DA_WagerReceipt",
         "SubPathString": ""
       }
     },
@@ -37,6 +43,12 @@
       "Key": "Panel_RequiresLevelFormat",
       "SourceString": "Requires Wardog level {Level}",
       "LocalizedString": "Requires Wardog level {Level}"
+    },
+    "_aaabfbafhdjomaglhjmcp": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_WagersUnavailableText",
+      "SourceString": "Wagers aren't available right now",
+      "LocalizedString": "Wagers aren't available right now"
     },
     "_aaabchlkngapkcfhndjpp": {
       "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
@@ -104,6 +116,12 @@
       "SourceString": "A row on this slip is on cooldown",
       "LocalizedString": "A row on this slip is on cooldown"
     },
+    "_aaabmpohagidkiknieeol": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_SlipObjectiveUnavailableText",
+      "SourceString": "No longer available",
+      "LocalizedString": "No longer available"
+    },
     "_aaabdojmnphdopkplhhnm": {
       "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
       "Key": "Panel_NotEnoughCashFormat",
@@ -125,14 +143,14 @@
     "_aaabelcemcejpcjfejabm": {
       "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
       "Key": "Panel_BreakdownDeathsLabel",
-      "SourceString": "Deaths",
-      "LocalizedString": "Deaths"
+      "SourceString": "Downs",
+      "LocalizedString": "Downs"
     },
     "_aaabdchcohfpehgomeiao": {
       "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
-      "Key": "Panel_ReceiptNoDeathsText",
-      "SourceString": "None allowed",
-      "LocalizedString": "None allowed"
+      "Key": "Panel_NoDeathsAllowedText",
+      "SourceString": "No downs allowed",
+      "LocalizedString": "No downs allowed"
     },
     "_aaabdfhpldmjlcdmcjnaj": {
       "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
@@ -187,36 +205,6 @@
       "Key": "Panel_BreakdownCappedFormat",
       "SourceString": "{Line} (capped)",
       "LocalizedString": "{Line} (capped)"
-    },
-    "_aaabdgiapecknibdhmflb": {
-      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
-      "Key": "Panel_ReceiptNoDeathsText",
-      "SourceString": "None allowed",
-      "LocalizedString": "None allowed"
-    },
-    "_aaabhfnlgnpjibefiamgm": {
-      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
-      "Key": "Panel_ReceiptDeathsUsedFormat",
-      "SourceString": "{Used} of {Allowed} used",
-      "LocalizedString": "{Used} of {Allowed} used"
-    },
-    "_aaabkldeopidkdanbhaal": {
-      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
-      "Key": "Panel_ReceiptPotentialReturnText",
-      "SourceString": "Potential return",
-      "LocalizedString": "Potential return"
-    },
-    "_aaaapckmnldbnkafbhmbi": {
-      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
-      "Key": "Panel_ReceiptPaidText",
-      "SourceString": "Paid",
-      "LocalizedString": "Paid"
-    },
-    "_aaabeijblicoadfhofmhk": {
-      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
-      "Key": "Panel_ReceiptStakeLostText",
-      "SourceString": "Stake lost",
-      "LocalizedString": "Stake lost"
     },
     "_aaaapkjcbelagooojhgcg": {
       "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
@@ -278,6 +266,18 @@
       "SourceString": "Available again in {Time}",
       "LocalizedString": "Available again in {Time}"
     },
+    "_aaabffhpkijdbgflleoag": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_RequiresLevelFormat",
+      "SourceString": "Requires Wardog level {Level}",
+      "LocalizedString": "Requires Wardog level {Level}"
+    },
+    "_aaablbmbhompljknefjej": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_ObjectiveLockedFallbackText",
+      "SourceString": "Locked",
+      "LocalizedString": "Locked"
+    },
     "_aaaballdebhlfnaameeje": {
       "Title": {
         "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
@@ -334,10 +334,10 @@
       "TagName": "Audio.Event.UI.InGame.Vendor.Wager.Objective.Added"
     },
     "_aaabccjkbkahmnnoanhic": {
-      "TagName": "Audio.Event.UI.FrontEnd.Select"
+      "TagName": "Audio.Event.UI.InGame.Vendor.Wager.Action"
     },
     "_aaabebgjlcmajlppopnnb": {
-      "TagName": "Audio.Event.UI.FrontEnd.Select"
+      "TagName": "Audio.Event.UI.InGame.Vendor.Wager.Action"
     },
     "_aaabfdmnoefbcobnmnbbn": {
       "TagName": "Audio.Event.UI.InGame.Vendor.Wager.Objective.Added"
@@ -349,8 +349,8 @@
       "TagName": "Audio.Event.UI.InGame.Vendor.Wager.Create.New"
     },
     "PageTextFormat": {
-      "Namespace": "",
-      "Key": "3B9E7C1A5F2D48C6A0E4B87D19F63C52",
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Panel_PageTextFormat",
       "SourceString": "PG.{Page} //",
       "LocalizedString": "PG.{Page} //"
     }

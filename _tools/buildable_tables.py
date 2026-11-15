@@ -1,6 +1,6 @@
 """Tables for game-features/Wardogs_Buildables_v1.md, rebuilt from data/.
 
-Reads the Buildables item plugin (data/Wardogs/Plugins/GameFeatures/Items/Buildables), the
+Reads the Buildables item plugin and the relocated Buildables_HotZoneMagnet definition, the
 three cash reward tables under Content/GameMechanics/.../CashRewardsDataTable/Buildable and
 the destroyed-cash table next to them. Each table sits between
 
@@ -27,6 +27,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGE = "game-features/Wardogs_Buildables_v1.md"
 PLUGIN = "Wardogs/Plugins/GameFeatures/Items/Buildables/Content/"
 DATA = PLUGIN + "Data/"
+HOTZONE = "Wardogs/Plugins/GameFeatures/Items/Buildables_HotZoneMagnet/Content/"
 CASH = "Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/"
 EXPORT = re.compile(r"^--- export: .* ---\n", re.M)
 BLOCK = re.compile(r"<!-- buildable_tables (\w+) -->\r?\n.*?<!-- /buildable_tables -->", re.S)
@@ -59,12 +60,40 @@ def cls(obj):
 
 # --- load ---------------------------------------------------------------------------------------
 
+def hotzone_rows(registry, name):
+    feature = HOTZONE + "Buildables_HotZoneMagnet.json"
+    if not os.path.isfile(os.path.join(ROOT, "data", feature)):
+        if os.path.isfile(os.path.join(ROOT, "data", HOTZONE, "Data", name + ".json")):
+            raise ValueError("Missing HotZoneMagnet feature source")
+        return {}
+    objects = exports(feature)
+    features = [o for o in objects if o["Type"] == "GameFeatureData"]
+    if len(features) != 1:
+        raise ValueError("Expected one HotZoneMagnet GameFeatureData")
+    action_refs = {a["ObjectPath"] for a in features[0]["Properties"]["Actions"]}
+    sources = [s for i, o in enumerate(objects) if o["Type"] == "GameFeatureAction_DataRegistrySource"
+               and features[0]["Package"] + "." + str(i) in action_refs
+               for s in o["Properties"]["SourcesToAdd"] if s["RegistryToAddTo"] == registry]
+    expected = "/Buildables_HotZoneMagnet/Data/" + name + "." + name
+    if (len(sources) != 1 or sources[0]["DataTableToAdd"]["AssetPathName"] != expected
+            or type(sources[0]["AssetPriority"]) is not int or sources[0]["AssetPriority"] != 0
+            or sources[0]["bClientSource"] is not True or sources[0]["bServerSource"] is not True):
+        raise ValueError("Unresolved HotZoneMagnet registry source: " + registry)
+    return table(HOTZONE + "Data/" + name + ".json")
+
+
 def load():
     d = {"assets": [], "stages": {}}
-    for path in sorted(glob.glob(os.path.join(ROOT, "data", DATA, "Buildables", "**", "DA_*.json"), recursive=True)):
+    paths = glob.glob(os.path.join(ROOT, "data", DATA, "Buildables", "**", "DA_*.json"), recursive=True)
+    paths += glob.glob(os.path.join(ROOT, "data", "Wardogs/Plugins/GameFeatures/Items/Buildables_HotZoneMagnet/Content/Data", "**", "DA_*.json"), recursive=True)
+    names = set()
+    for path in sorted(paths):
         rel = os.path.relpath(path, os.path.join(ROOT, "data")).replace("\\", "/")
         for e in exports(rel):
             if e["Type"].startswith("WDBuildable") and e["Type"] != "WDBuildablePlacementDataAsset" and "EntityTag" in e["Properties"]:
+                if e["Name"] in names:
+                    raise ValueError("Duplicate buildable definition: " + e["Name"])
+                names.add(e["Name"])
                 d["assets"].append((rel, e["Name"], e["Type"], e["Properties"]))
             elif e["Type"] == "BuildingStagesDefinition":
                 d["stages"][e["Name"]] = (rel, e["Properties"])
@@ -72,8 +101,17 @@ def load():
     d["entity_rows"] = table(DATA + "DT_EntityData_UI_Buildables.json")
     d["vendor"] = table(DATA + "DT_VendorData_Ext_Buildables.json")
     d["damage"] = table(DATA + "DT_GlobalDamage_BuildableData.json")
+    extra = hotzone_rows("GlobalDamageData", "DT_GlobalDamage_BuildableData_HotZoneMagnet")
+    if d["damage"].keys() & extra.keys():
+        raise ValueError("Conflicting stored HotZoneMagnet damage rows")
+    d["damage"].update(extra)
+    d["hotzone_contribution"] = bool(extra)
     d["hammer"] = {h: [k.lower() for k in table(DATA + f"{h}Hammer/DT_Buildables_{h}Hammer.json")]
                    for h in ("Small", "Medium", "Large")}
+    extra_hammer = hotzone_rows("Buildables_LargeHammer", "DT_Buildables_LargeHammer_HotZoneMagnet")
+    if set(d["hammer"]["Large"]) & {k.lower() for k in extra_hammer}:
+        raise ValueError("Conflicting stored HotZoneMagnet hammer rows")
+    d["hammer"]["Large"] += [k.lower() for k in extra_hammer]
     d["fob_rules"] = next(e for e in exports(DATA + "Buildables/ForwardOperatingBase/DA_FOB_Ruleset.json")
                           if e["Type"] == "WDFOBRulesetData")["Properties"]
     return d
@@ -142,13 +180,14 @@ def counts(d):
     kinds = {}
     for _, _, typ, _ in d["assets"]:
         kinds[typ] = kinds.get(typ, 0) + 1
-    files = glob.glob(os.path.join(ROOT, "data", PLUGIN, "**", "*.json"), recursive=True)
+    files = [path for plugin in (PLUGIN, HOTZONE)
+             for path in glob.glob(os.path.join(ROOT, "data", plugin, "**", "*.json"), recursive=True)]
     return "\n".join([
-        f"- Files under the Buildables plugin: **{len(files)}**.",
+        f"- Files under the base Buildables and HotZoneMagnet plugins: **{len(files)}**.",
         f"- Buildable data assets: **{len(d['assets'])}** (" + ", ".join(f"{v} `{k}`" for k, v in sorted(kinds.items())) + ").",
         f"- Build-stage definitions: **{len(d['stages'])}**.",
         f"- Rows in the entity name table: **{len(d['entity_rows'])}**; in the vendor table: **{len(d['vendor'])}**; "
-        f"in the damage table: **{len(d['damage'])}**.",
+        f"in the stored damage tables: **{len(d['damage'])}**.",
         f"- Hammer lists: " + ", ".join(f"{h} {len(v)}" for h, v in d["hammer"].items()) + ".",
     ])
 
@@ -219,6 +258,10 @@ def damage(d):
     unused = sorted(set(d["damage"]) - seen)
     out.append("")
     out.append("Damage rows that no buildable asset points at: " + (", ".join(f"`{u}`" for u in unused) or "none") + ".")
+    if d["hotzone_contribution"]:
+        out.append("The HotzoneMagnet row comes from " + link(HOTZONE + "Data/DT_GlobalDamage_BuildableData_HotZoneMagnet.json")
+                   + ", declared by " + link(HOTZONE + "Buildables_HotZoneMagnet.json")
+                   + ". This table includes stored registry contributions; runtime feature activation and native hotfix behavior remain unverified.")
     return "\n".join(out)
 
 
@@ -365,18 +408,21 @@ ROLES = {
 
 
 def files(d):
-    base = os.path.join(ROOT, "data", PLUGIN)
     groups = {}
-    for path in sorted(glob.glob(os.path.join(base, "**", "*.json"), recursive=True)):
-        rel = os.path.relpath(path, base).replace("\\", "/")
-        parts = rel.split("/")
-        if parts[:2] == ["Data", "Buildables"] and len(parts) > 3:
-            key = "Data/Buildables/" + parts[2]
-        elif len(parts) > 2:
-            key = "/".join(parts[:2])
-        else:
-            key = "root"
-        groups.setdefault(key, []).append((rel, parts[-1][:-5]))
+    for plugin in (PLUGIN, HOTZONE):
+        base = os.path.join(ROOT, "data", plugin)
+        for path in sorted(glob.glob(os.path.join(base, "**", "*.json"), recursive=True)):
+            rel = os.path.relpath(path, base).replace("\\", "/")
+            parts = rel.split("/")
+            if parts[:2] == ["Data", "Buildables"] and len(parts) > 3:
+                key = "Data/Buildables/" + parts[2]
+            elif len(parts) > 2:
+                key = "/".join(parts[:2])
+            else:
+                key = "root"
+            if plugin == HOTZONE:
+                key = "Buildables_HotZoneMagnet/" + key
+            groups.setdefault(key, []).append((rel, parts[-1][:-5]))
     out = ["| Folder | Files | What is in it | File names |", "|---|---|---|---|"]
     for key in sorted(groups):
         items = groups[key]

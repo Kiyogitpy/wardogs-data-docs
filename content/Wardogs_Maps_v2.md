@@ -6,6 +6,8 @@ description: "Data assets that sit beside the maps, including a minimal grid tes
 ---
 
 # Wardogs — Maps & Gym Data Reference
+
+This branch refreshes stored assets to a CL533731 candidate. Citations pinned to a full Git revision retain historical CL516586 sources, including removed standalone configs and the earlier Water Gym decode. Their absence from current files does not prove game-feature removal. See [hotfix scope](../docs/evidence/hotfix-cl533731.md).
 *Extracted from the cooked JSON export under [`Content/Maps`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps) (12 files, 48 export blocks). Values are raw asset properties. Anything inferred from a name rather than from the export is marked as inferred. The `.umap` level files are not in this category, so this doc covers the data assets that sit beside the maps.*
 
 > **Scope note:** this is the supporting data for the test gyms ([`Gyms/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps/Gyms)) and the per-map shader warmup manifests ([`PSOWarming/`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Maps/PSOWarming)). The actual level layouts, actor placement, and gameplay rules are not in the export.
@@ -36,8 +38,8 @@ Full before/after list: [Season 2 Changes → Game Modes & Maps]({{ '/season-2-c
 |---|---|---|
 | [`Gyms/Minimal/DT_Gym_Minimal_GridTest`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Minimal/DT_Gym_Minimal_GridTest.json) | `WDAutomationWorldGridData` | Grid of capture cells over the minimal test gym |
 | [`Gyms/Range/Assets/B_MovingTarget`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) | `BlueprintGeneratedClass` ([`B_MovingTarget_C`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json)) | Moving shooting-range target actor |
-| [`Gyms/Water/PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json) | `PDA_FluxSimulationState_C` | Fluid simulation settings and texture references for the water gym |
-| [`Gyms/Water/WHG_PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/WHG_PDA_Flux_Gym_Water.json) | `WDWaterHeightGridAsset` | Water height grid (512 x 512 samples) for the water gym |
+| [`Gyms/Water/PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json) | `PDA_FluxSimulationState_C` | Fluid simulation settings and texture references for the water gym |
+| [`Gyms/Water/WHG_PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/data/Wardogs/Content/Maps/Gyms/Water/WHG_PDA_Flux_Gym_Water.json) | `WDWaterHeightGridAsset` | Water height grid (512 x 512 samples) for the water gym |
 | [`PSOWarming/Europe_Madrid_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Europe_Madrid_KOTH_01.json) | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Madrid KOTH map |
 | [`PSOWarming/NorthAmerica_Detroit_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/NorthAmerica_Detroit_KOTH_01.json) | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Detroit KOTH map |
 | [`PSOWarming/Kavkazi_Bakurani_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Kavkazi_Bakurani_KOTH_01.json) | `WDPSOWarmupDataAsset` | Shader/PSO warmup manifest for the Bakurani KOTH map (see section 6) |
@@ -115,7 +117,7 @@ Function names only. The export has no graph nodes, so the actual formula for ti
 
 ---
 
-## 4. Water Gym ([`PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json) and [`WHG_PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/WHG_PDA_Flux_Gym_Water.json))
+## 4. Water Gym ([`PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json) and [`WHG_PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/data/Wardogs/Content/Maps/Gyms/Water/WHG_PDA_Flux_Gym_Water.json))
 
 Two assets make up the water gym. The first is the fluid simulation state. The second is a precomputed height grid.
 
@@ -153,7 +155,7 @@ Two assets make up the water gym. The first is the fluid simulation state. The s
 | Origin (`worldmin`) | (-51200, -51200), the minimum corner. Half the world size, so the grid is centred on the origin |
 | Cell size | 200 x 200 cm (1,024 m square) |
 | Sample array | 262,144 values (512 x 512), stored as unsigned 16-bit |
-| Linked asset | [`PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json) (the sim state in 4a) |
+| Linked asset | [`PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json) (the sim state in 4a) |
 
 **Sample distribution (from the array)**
 
@@ -169,7 +171,7 @@ There are 5,413 distinct values in total, and the minimum is 0.
 **Notes**
 
 - **Decoded (round 89, [evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round89-map.md)).** 65535 means no water in the cell (95.3% here). Any other value `v` is a water surface height: `z = z0 + v / 65534 x (z1 - z0)` cm. `z0` = -2216.76 and `z1` = 2046.39 are the two unnamed doubles and are the lowest and highest water surface in the grid, -22.17 m to 20.46 m. The smallest wet value is 0 and the largest 65534, so the range is the full 16-bit span. The same layout applies to all 40 map grids, see [Environment, section 13b](Wardogs_Environment_v2.md#13b-height-grids). Rows are row-major with row 0 at world Y = -51,200 cm.
-- Both doubles lie inside the state's vertical extent: `AreaLocation.Z` 4178.24 minus `AreaSize.Z` 6400 is -2221.76, so `z0` is 5 cm above the bottom of the box, and `z1` is below the top at 4178.24. `CaptureOffset` -621.76 is `AreaLocation.Z` minus 0.75 x `AreaSize.Z`, the same relation as in every map state. A third unnamed field is the link to [`PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json).
+- Both doubles lie inside the state's vertical extent: `AreaLocation.Z` 4178.24 minus `AreaSize.Z` 6400 is -2221.76, so `z0` is 5 cm above the bottom of the box, and `z1` is below the top at 4178.24. `CaptureOffset` -621.76 is `AreaLocation.Z` minus 0.75 x `AreaSize.Z`, the same relation as in every map state. A third unnamed field is the link to [`PDA_Flux_Gym_Water`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/data/Wardogs/Content/Maps/Gyms/Water/PDA_Flux_Gym_Water.json).
 
 ![Water Gym water surface height]({{ '/assets/img/maps/gym-water-height.png' | relative_url }})
 
@@ -194,7 +196,7 @@ Each manifest has the same structure:
 | [`Kavkazi_Bakurani_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Kavkazi_Bakurani_KOTH_01.json) | Bakurani_KOTH_01 | `/Game/Maps/Worlds/Kavkazi/Kavkazi` | 867 | 117 | Complete, see section 6 |
 | [`Russia_Moscow_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/PSOWarming/Russia_Moscow_KOTH_01.json) | Moscow_KOTH_01 | `/Game/Maps/Worlds/Russia/Russia` | 1,132 | 74 | Complete |
 
-The experience name for the Kavkazi file is [`Bakurani_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/Kavkazi/Bakurani_KOTH_01.json), which differs from the file name. The Russia file's experience name is [`Moscow_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/Russia/Moscow_KOTH_01.json). The file name and the experience name are both kept as they appear in the export.
+The experience name for the Kavkazi file is [`Bakurani_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/data/Wardogs/Config/Experiences/Kavkazi/Bakurani_KOTH_01.json), which differs from the file name. The Russia file's experience name is [`Moscow_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/data/Wardogs/Config/Experiences/Russia/Moscow_KOTH_01.json). The file name and the experience name are both kept as they appear in the export.
 
 ### 5b. Vertex factory usage (per GraphicsPSO entry)
 
@@ -244,7 +246,7 @@ Lumen-named compute entries: Madrid 4, Detroit 3, Kavkazi 13, Russia 4. Kavkazi 
 
 The file is 216,911 bytes and parses as complete JSON.
 
-- **Header and WorldData:** experience name [`Bakurani_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/Kavkazi/Bakurani_KOTH_01.json), world `/Game/Maps/Worlds/Kavkazi/Kavkazi`.
+- **Header and WorldData:** experience name [`Bakurani_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/data/Wardogs/Config/Experiences/Kavkazi/Bakurani_KOTH_01.json), world `/Game/Maps/Worlds/Kavkazi/Kavkazi`.
 - **GraphicsPSOs:** **867 entries**. Each entry has a `MatObjectPath` and a `VertexFactories` list.
 - **ComputePSOs:** **117 entries**.
 

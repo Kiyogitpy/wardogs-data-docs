@@ -79,10 +79,15 @@ files, the matching keys and mappings, and the SDK dump used by some generators.
 
 The update pipeline restores source links after generation. For pages generated
 by hand, run `python _tools/link_sources.py --write`, then
-`python _tools/link_sources.py --check`. The linker only uses tracked JSON
-exports and leaves ambiguous names unchanged.
+`python _tools/link_sources.py --check`. New links use tracked JSON exports;
+historical citations can pin a full Git revision and are checked against its
+source objects. Ambiguous names remain unchanged.
 
 ## Documented build
+
+This branch is updating the stored exports to CL533731 / hotfix533689. The
+refresh is a local preview: extraction and generator checks have not all passed.
+See the [hotfix evidence and remaining work](docs/evidence/hotfix-cl533731.md).
 
 | Attribute | Value |
 | --- | --- |
@@ -90,11 +95,13 @@ exports and leaves ambiguous names unchanged.
 | Developer / publisher | Bulkhead / Team17 |
 | Platform | PC, Steam AppID `1867240` |
 | Engine | Unreal Engine 5.7 |
-| Build | `++Wardogs+Live-CL-516586` |
+| Asset export candidate | `++Wardogs+Live-CL-533731+hotfix533689` |
+| Earlier native analysis and baseline | `++Wardogs+Live-CL-516586` (unless a page identifies another build) |
 | Season | Season 02 |
 
-Values describe this build, not necessarily a later patch or a server-side
-override. A stored asset value alone does not establish how it behaves in a match.
+Native formulas retain their individual evidence and build limits; this asset
+refresh does not establish their compatibility with CL533731. A stored asset
+value alone does not establish how it behaves in a match or a server-side override.
 
 ## Corrections and contributions
 

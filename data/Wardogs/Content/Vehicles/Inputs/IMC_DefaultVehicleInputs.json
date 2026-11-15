@@ -151,7 +151,7 @@
           "Triggers": [
             {
               "ObjectName": "InputTriggerPressed'IMC_DefaultVehicleInputs:InputTriggerPressed_1'",
-              "ObjectPath": "/Game/Vehicles/Inputs/IMC_DefaultVehicleInputs.11"
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_DefaultVehicleInputs.12"
             }
           ],
           "Modifiers": [],
@@ -172,7 +172,7 @@
           "Triggers": [
             {
               "ObjectName": "InputTriggerPressed'IMC_DefaultVehicleInputs:InputTriggerPressed_0'",
-              "ObjectPath": "/Game/Vehicles/Inputs/IMC_DefaultVehicleInputs.10"
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_DefaultVehicleInputs.11"
             }
           ],
           "Modifiers": [],
@@ -193,7 +193,7 @@
           "Triggers": [
             {
               "ObjectName": "InputTriggerTap'IMC_DefaultVehicleInputs:InputTriggerTap_0'",
-              "ObjectPath": "/Game/Vehicles/Inputs/IMC_DefaultVehicleInputs.12"
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_DefaultVehicleInputs.13"
             }
           ],
           "Modifiers": [],
@@ -383,14 +383,19 @@
           }
         },
         {
-          "Triggers": [],
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerTap'IMC_DefaultVehicleInputs:InputTriggerTap_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_DefaultVehicleInputs.14"
+            }
+          ],
           "Modifiers": [],
           "Action": {
             "ObjectName": "BHInputAction'IA_Vehicle_ChangeSeat_Next'",
             "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_ChangeSeat_Next.0"
           },
           "Key": {
-            "KeyName": "Gamepad_FaceButton_Right"
+            "KeyName": "Gamepad_FaceButton_Bottom"
           },
           "SettingBehavior": "EPlayerMappableKeySettingBehaviors::OverrideSettings",
           "PlayerMappableKeySettings": {
@@ -463,6 +468,24 @@
           },
           "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
           "PlayerMappableKeySettings": null
+        },
+        {
+          "Triggers": [
+            {
+              "ObjectName": "InputTriggerHold'IMC_DefaultVehicleInputs:InputTriggerHold_1'",
+              "ObjectPath": "/Game/Vehicles/Inputs/IMC_DefaultVehicleInputs.10"
+            }
+          ],
+          "Modifiers": [],
+          "Action": {
+            "ObjectName": "BHInputAction'IA_Vehicle_ChangeSeat_0'",
+            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_ChangeSeat_0.0"
+          },
+          "Key": {
+            "KeyName": "Gamepad_FaceButton_Bottom"
+          },
+          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
+          "PlayerMappableKeySettings": null
         }
       ]
     }
@@ -481,6 +504,20 @@
   "Properties": {
     "HoldTimeThreshold": 0.3,
     "bIsOneShot": true
+  }
+}
+--- export: UObject / InputTriggerHold_1 ---
+{
+  "Type": "InputTriggerHold",
+  "Name": "InputTriggerHold_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerHold'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_DefaultVehicleInputs'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_DefaultVehicleInputs.8"
+  },
+  "Properties": {
+    "HoldTimeThreshold": 0.2
   }
 }
 --- export: UObject / InputTriggerPressed_0 ---
@@ -517,5 +554,16 @@
   },
   "Properties": {
     "TapReleaseTimeThreshold": 0.19
+  }
+}
+--- export: UObject / InputTriggerTap_1 ---
+{
+  "Type": "InputTriggerTap",
+  "Name": "InputTriggerTap_1",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'InputTriggerTap'",
+  "Outer": {
+    "ObjectName": "InputMappingContext'IMC_DefaultVehicleInputs'",
+    "ObjectPath": "/Game/Vehicles/Inputs/IMC_DefaultVehicleInputs.8"
   }
 }

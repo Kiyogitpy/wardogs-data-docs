@@ -15,8 +15,8 @@
     "Wager.Condition.Naked": {
       "_aaaakgfoodihlgbfboeka": false,
       "DisplayName": {
-        "Namespace": "",
-        "Key": "1D04C3524217DD80E9264E9C914C775D",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Naked.Name",
         "SourceString": "No Spend",
         "LocalizedString": "No Spend"
       },
@@ -24,23 +24,17 @@
         "TagName": "None"
       },
       "Description": {
-        "Namespace": "",
-        "Key": "49E3B4B2411426D872A88DA7B132D529",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Naked.Description",
         "SourceString": "Spend no cash while the wager is live.",
         "LocalizedString": "Spend no cash while the wager is live."
       },
-      "_aaaaiogbmobfimjejhddd": {
-        "Namespace": "",
-        "Key": "CDE42A524AC392BA82C2AE94EE384DAC",
-        "SourceString": "Not available once you have spent cash this life.",
-        "LocalizedString": "Not available once you have spent cash this life."
+      "FailedText": {
+        "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Rules"
       },
       "Odds": 1.1,
       "TraitTags": [
@@ -48,7 +42,7 @@
       ],
       "IncompatibleTraitTags": [],
       "RequiresAnyActionTags": [],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -68,7 +62,7 @@
                   "Comparison": "EWDMatchStatComparison::Equal",
                   "Value": 0,
                   "bInvert": false,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -84,7 +78,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "ResourceTag": {
@@ -109,8 +102,8 @@
     "Wager.Condition.Deathwish": {
       "_aaaakgfoodihlgbfboeka": false,
       "DisplayName": {
-        "Namespace": "",
-        "Key": "E0B82CF444E1689E35C5DD8B1C2C903A",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Deathwish.Name",
         "SourceString": "Deathwish",
         "LocalizedString": "Deathwish"
       },
@@ -123,15 +116,12 @@
         "SourceString": "Test row: multiplies the odds only. No in-game rule is enforced yet.",
         "LocalizedString": "Test row: multiplies the odds only. No in-game rule is enforced yet."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Rules"
       },
       "Odds": 10.0,
       "TraitTags": [
@@ -141,7 +131,7 @@
         "Wager.ConditionTrait.Spend"
       ],
       "RequiresAnyActionTags": [],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -158,7 +148,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "_aaaalndmlkdbdgenbhaek": {
@@ -173,8 +162,8 @@
     "Wager.Condition.TimeLimit": {
       "_aaaakgfoodihlgbfboeka": false,
       "DisplayName": {
-        "Namespace": "",
-        "Key": "94EA6A6E4DA390A4B1DABABCF803BA13",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.TimeLimit.Name",
         "SourceString": "Time Limit",
         "LocalizedString": "Time Limit"
       },
@@ -182,23 +171,17 @@
         "TagName": "None"
       },
       "Description": {
-        "Namespace": "",
-        "Key": "20CA6AF44A175BF22B32F39CE90A29C1",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.TimeLimit.Description",
         "SourceString": "Every action must be completed within 60 seconds of placing the wager.",
         "LocalizedString": "Every action must be completed within 60 seconds of placing the wager."
       },
-      "_aaaaiogbmobfimjejhddd": {
-        "Namespace": "",
-        "Key": "F1EE7BF84E36C9DA3DD5F4B2C9CE32F0",
-        "SourceString": "The clock starts when the wager is placed.",
-        "LocalizedString": "The clock starts when the wager is placed."
+      "FailedText": {
+        "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Rules"
       },
       "Odds": 4.0,
       "TraitTags": [
@@ -206,7 +189,7 @@
       ],
       "IncompatibleTraitTags": [],
       "RequiresAnyActionTags": [],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -223,7 +206,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "Seconds": 60.0,
@@ -245,8 +227,8 @@
     "Wager.Condition.NoVehicles": {
       "_aaaakgfoodihlgbfboeka": false,
       "DisplayName": {
-        "Namespace": "",
-        "Key": "FEDF1D13412849EC12865E815E6306E3",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoVehicles.Name",
         "SourceString": "No Vehicles",
         "LocalizedString": "No Vehicles"
       },
@@ -259,21 +241,18 @@
         "SourceString": "Test row: multiplies the odds only. No in-game rule is enforced yet.",
         "LocalizedString": "Test row: multiplies the odds only. No in-game rule is enforced yet."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
       },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Self.Loadout"
-      },
       "Odds": 3.0,
       "TraitTags": [],
       "IncompatibleTraitTags": [],
       "RequiresAnyActionTags": [],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -290,7 +269,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "_aaaalndmlkdbdgenbhaek": {
@@ -305,8 +283,8 @@
     "Wager.Condition.NoResupply": {
       "_aaaakgfoodihlgbfboeka": false,
       "DisplayName": {
-        "Namespace": "",
-        "Key": "16ADF0164D75B050E504B18E2C483BB5",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoResupply.Name",
         "SourceString": "No Resupply",
         "LocalizedString": "No Resupply"
       },
@@ -319,18 +297,12 @@
         "SourceString": "Test row: multiplies the odds only. No in-game rule is enforced yet.",
         "LocalizedString": "Test row: multiplies the odds only. No in-game rule is enforced yet."
       },
-      "_aaaaiogbmobfimjejhddd": {
-        "Namespace": "",
-        "Key": "AF74309A46FE05D9F818798252943A80",
-        "SourceString": "Only available on a kills wager.",
-        "LocalizedString": "Only available on a kills wager."
+      "FailedText": {
+        "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Self.Loadout"
       },
       "Odds": 2.0,
       "TraitTags": [],
@@ -338,7 +310,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Kills"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -355,7 +327,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "_aaaalndmlkdbdgenbhaek": {
@@ -381,15 +352,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Weapon"
       },
       "Odds": 1.01,
       "TraitTags": [
@@ -401,7 +369,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Kills"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Id.Item.AK74M"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -420,7 +388,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Kills.WithAK74"
@@ -440,15 +407,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Weapon"
       },
       "Odds": 1.3,
       "TraitTags": [
@@ -462,7 +426,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Kills"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Id.Item.Judge"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -481,7 +445,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Kills.WithJudge"
@@ -501,15 +464,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Weapon"
       },
       "Odds": 1.05,
       "TraitTags": [
@@ -523,7 +483,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Kills"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Id.Item.WEPN_035"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -542,14 +502,13 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Kills.WithScout"
       }
     },
     "Wager.Condition.Kills.WithGrenade": {
-      "_aaaakgfoodihlgbfboeka": false,
+      "_aaaakgfoodihlgbfboeka": true,
       "DisplayName": {
         "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
         "Key": "Condition.Format.WithEntity",
@@ -565,15 +524,12 @@
         "SourceString": "Counts a kill only when you make it with a frag grenade.",
         "LocalizedString": "Counts a kill only when you make it with a frag grenade."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Utility"
       },
       "Odds": 1.45,
       "TraitTags": [
@@ -591,8 +547,9 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Kills"
       ],
-      "_aaabbldhaebiklpgijlkp": [
-        "Id.Item.M67Grenade"
+      "RequiredEventTags": [
+        "Id.Item.M67Grenade",
+        "Id.Item.GoldM67Grenade"
       ],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
@@ -610,7 +567,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Kills.WithGrenade"
@@ -630,15 +586,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Weapon"
       },
       "Odds": 1.4,
       "TraitTags": [
@@ -653,9 +606,10 @@
         "Wager.ConditionTrait.Headshot"
       ],
       "RequiresAnyActionTags": [
-        "Wager.Action.Kills"
+        "Wager.Action.Kills",
+        "Wager.Action.SpawnRadarsDestroyed"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Id.Item.Fists"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -674,7 +628,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Kills.WithPunch"
@@ -694,15 +647,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Weapon"
       },
       "Odds": 1.3,
       "TraitTags": [
@@ -719,7 +669,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Kills"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "ID.Item.BuildTool.Hammer.Large"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -738,7 +688,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Kills.WithLargeHammer"
@@ -761,15 +710,12 @@
         "SourceString": "Counts a kill only when you make it with hollow-point ammo, tracer rounds included.",
         "LocalizedString": "Counts a kill only when you make it with hollow-point ammo, tracer rounds included."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_HPAmmo.T_UI_WagerVendor_Icon_HPAmmo",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Weapon.Ammo"
       },
       "Odds": 1.15,
       "TraitTags": [
@@ -781,7 +727,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Kills"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Meta.Damage.AmmoModifier.HollowPoint"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -800,7 +746,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Kills.UsingHPAmmo"
@@ -823,15 +768,12 @@
         "SourceString": "Counts a kill only when you make it with armor-piercing ammo, tracer rounds included.",
         "LocalizedString": "Counts a kill only when you make it with armor-piercing ammo, tracer rounds included."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_APAmmo.T_UI_WagerVendor_Icon_APAmmo",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Weapon.Ammo"
       },
       "Odds": 1.1,
       "TraitTags": [
@@ -843,7 +785,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Kills"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Meta.Damage.AmmoModifier.ArmorPiercing"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -862,7 +804,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Kills.UsingAPAmmo"
@@ -882,15 +823,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/HUD/Killfeed/Textures/T_UI_Killfeed_Headshot.T_UI_Killfeed_Headshot",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Manner"
       },
       "Odds": 1.2,
       "TraitTags": [
@@ -902,7 +840,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Kills"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Challenges.Context.Headshot"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -921,7 +859,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Kills.WithHeadshot"
@@ -944,15 +881,12 @@
         "SourceString": "Counts a destroyed vehicle only when it is an L2A6 or T-72B3 tank.",
         "LocalizedString": "Counts a destroyed vehicle only when it is an L2A6 or T-72B3 tank."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/Killfeed/T_UI_Icon_Killfeed_TNK_01_Heavy.T_UI_Icon_Killfeed_TNK_01_Heavy",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Target.Vehicle"
       },
       "Odds": 1.6,
       "TraitTags": [
@@ -964,7 +898,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.VehiclesDestroyed"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Vehicle.Variant.Land.Tracked.TNK_01.Heavy",
         "Vehicle.Variant.Land.Tracked.TNK_04"
       ],
@@ -984,7 +918,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.VehiclesDestroyed.Tank"
@@ -1004,15 +937,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Target.Vehicle"
       },
       "Odds": 1.7,
       "TraitTags": [
@@ -1024,7 +954,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.VehiclesDestroyed"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Vehicle.Variant.Air.Rotary.Havoc"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1043,7 +973,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.VehiclesDestroyed.Havoc"
@@ -1063,15 +992,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Target.Vehicle"
       },
       "Odds": 1.5,
       "TraitTags": [
@@ -1083,7 +1009,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.VehiclesDestroyed"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Vehicle.Variant.Air.Rotary.ROT_04"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1102,7 +1028,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.VehiclesDestroyed.Blackhawk"
@@ -1122,15 +1047,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Target.Vehicle"
       },
       "Odds": 1.4,
       "TraitTags": [
@@ -1142,7 +1064,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.VehiclesDestroyed"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Vehicle.Variant.Land.Tracked.TNK_01.Artillery"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1161,7 +1083,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.VehiclesDestroyed.Artillery"
@@ -1181,15 +1102,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Target.Vehicle"
       },
       "Odds": 1.45,
       "TraitTags": [
@@ -1201,7 +1119,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.VehiclesDestroyed"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Vehicle.Variant.Air.Rotary.Littlebird.RocketPods"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1220,35 +1138,34 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.VehiclesDestroyed.RocketLittleBird"
       }
     },
     "Wager.Condition.Revives.WithResus": {
-      "_aaaakgfoodihlgbfboeka": false,
+      "_aaaakgfoodihlgbfboeka": true,
       "DisplayName": {
         "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
         "Key": "Condition.Revives.WithResus.Name",
-        "SourceString": "With Resus",
-        "LocalizedString": "With Resus"
+        "SourceString": "With Resuscitator",
+        "LocalizedString": "With Resuscitator"
       },
       "_aaaakoinngipbcijjmfcn": {
         "TagName": "None"
       },
       "Description": {
-        "CultureInvariantString": null
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Revives.WithResus.Description",
+        "SourceString": "Counts a revive only when you make it with an Emergency or Field Resuscitator.",
+        "LocalizedString": "Counts a revive only when you make it with an Emergency or Field Resuscitator."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Utility"
       },
       "Odds": 1.1,
       "TraitTags": [
@@ -1260,7 +1177,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Revives"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Id.Item.Resuscitator"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1279,7 +1196,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Revives.WithResus"
@@ -1299,15 +1215,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Shared/Icons/Utility/T_UI_Icon_DefibKill.T_UI_Icon_DefibKill",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Utility"
       },
       "Odds": 1.025,
       "TraitTags": [
@@ -1319,7 +1232,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Revives"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Id.Item.Defibrillator"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1338,7 +1251,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Revives.WithDefib"
@@ -1358,15 +1270,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Shared/Icons/Roles/T_UI_Icon_Role_Medic.T_UI_Icon_Role_Medic",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Utility"
       },
       "Odds": 1.05,
       "TraitTags": [
@@ -1378,7 +1287,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Revives"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Id.Item.MedKit"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1397,7 +1306,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Revives.WithMedkit"
@@ -1417,18 +1325,15 @@
       "Description": {
         "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
         "Key": "Condition.PlayerDelivery.ToControlZone.Description",
-        "SourceString": "Counts a delivery only when the player you deliver is inside a control zone.",
-        "LocalizedString": "Counts a delivery only when the player you deliver is inside a control zone."
+        "SourceString": "Counts a delivery only when the player you deliver is inside a Control Zone.",
+        "LocalizedString": "Counts a delivery only when the player you deliver is inside a Control Zone."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_CZ.T_UI_WagerVendor_Icon_CZ",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Place"
       },
       "Odds": 1.15,
       "TraitTags": [
@@ -1440,7 +1345,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.PlayerDelivery"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Challenges.Context.Target.InControlZone"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1459,38 +1364,34 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.PlayerDelivery.ToControlZone"
       }
     },
-    "Wager.Condition.PlayerDelivery.ToHotzone": {
+    "Wager.Condition.PlayerDelivery.ToHotZone": {
       "_aaaakgfoodihlgbfboeka": true,
       "DisplayName": {
         "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
-        "Key": "Condition.PlayerDelivery.ToHotzone.Name",
-        "SourceString": "To Hotzone",
-        "LocalizedString": "To Hotzone"
+        "Key": "Condition.PlayerDelivery.ToHotZone.Name",
+        "SourceString": "To Hot Zone",
+        "LocalizedString": "To Hot Zone"
       },
       "_aaaakoinngipbcijjmfcn": {
         "TagName": "None"
       },
       "Description": {
         "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
-        "Key": "Condition.PlayerDelivery.ToHotzone.Description",
-        "SourceString": "Counts a delivery only when the player you deliver is inside the hotzone.",
-        "LocalizedString": "Counts a delivery only when the player you deliver is inside the hotzone."
+        "Key": "Condition.PlayerDelivery.ToHotZone.Description",
+        "SourceString": "Counts a delivery only when the player you deliver is inside the Hot Zone.",
+        "LocalizedString": "Counts a delivery only when the player you deliver is inside the Hot Zone."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_HZ.T_UI_WagerVendor_Icon_HZ",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Place"
       },
       "Odds": 1.25,
       "TraitTags": [
@@ -1502,7 +1403,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.PlayerDelivery"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Challenges.Context.Target.InHotZone"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1521,10 +1422,9 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
-        "TagName": "Wager.Condition.PlayerDelivery.ToHotzone"
+        "TagName": "Wager.Condition.PlayerDelivery.ToHotZone"
       }
     },
     "Wager.Condition.PlayerDelivery.InAirVehicle": {
@@ -1541,15 +1441,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Vehicle"
       },
       "Odds": 1.1,
       "TraitTags": [
@@ -1561,7 +1458,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.PlayerDelivery"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Vehicle.Variant.Air"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1580,7 +1477,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.PlayerDelivery.InAirVehicle"
@@ -1600,15 +1496,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Vehicle"
       },
       "Odds": 1.05,
       "TraitTags": [
@@ -1620,7 +1513,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.PlayerDelivery"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Vehicle.Variant.Land"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1639,7 +1532,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.PlayerDelivery.InGroundVehicle"
@@ -1659,15 +1551,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Vehicle"
       },
       "Odds": 1.2,
       "TraitTags": [
@@ -1679,7 +1568,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.PlayerDelivery"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Vehicle.Variant.Air.Rotary.Littlebird"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1698,7 +1587,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.PlayerDelivery.InLittleBird"
@@ -1718,15 +1606,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Vehicle"
       },
       "Odds": 1.15,
       "TraitTags": [
@@ -1738,7 +1623,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.PlayerDelivery"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Vehicle.Variant.Air.Rotary.ROT_04"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1757,7 +1642,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.PlayerDelivery.InBlackhawk"
@@ -1777,15 +1661,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Vehicle"
       },
       "Odds": 1.15,
       "TraitTags": [
@@ -1797,7 +1678,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.PlayerDelivery"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Vehicle.Variant.Land.Wheeled.Kodiak"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1816,7 +1697,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.PlayerDelivery.InKodiak"
@@ -1836,15 +1716,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Vehicle"
       },
       "Odds": 1.025,
       "TraitTags": [
@@ -1858,7 +1735,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.PlayerDelivery"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Vehicle.Variant.Land.Wheeled.DuneBuggy"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1877,7 +1754,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.PlayerDelivery.InDuneBuggy"
@@ -1897,15 +1773,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Vehicle"
       },
       "Odds": 1.2,
       "TraitTags": [
@@ -1919,7 +1792,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.PlayerDelivery"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Vehicle.Variant.Land.Wheeled.Bobcat"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1938,7 +1811,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.PlayerDelivery.InBobcat"
@@ -1958,15 +1830,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Vehicle"
       },
       "Odds": 1.01,
       "TraitTags": [
@@ -1978,7 +1847,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.PlayerDelivery"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "Vehicle.Variant.Land.Wheeled.Ural"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -1997,7 +1866,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.PlayerDelivery.InUral"
@@ -2020,15 +1888,12 @@
         "SourceString": "Counts a kill only when you make it by ramming someone with a vehicle.",
         "LocalizedString": "Counts a kill only when you make it by ramming someone with a vehicle."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_VehicleImpact.T_UI_WagerVendor_Icon_VehicleImpact",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Weapon"
       },
       "Odds": 1.075,
       "TraitTags": [
@@ -2046,7 +1911,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Kills"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -2063,7 +1928,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "_aaaakfdimkkalchjcbedi": [
@@ -2098,15 +1962,12 @@
         "SourceString": "Counts a kill only while you carry no magazine besides the ones loaded in your weapons.",
         "LocalizedString": "Counts a kill only while you carry no magazine besides the ones loaded in your weapons."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_OneMag.T_UI_WagerVendor_Icon_OneMag",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Self.Loadout"
       },
       "Odds": 1.2,
       "TraitTags": [
@@ -2118,7 +1979,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Kills"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -2135,7 +1996,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "_aaaakajebecbokbemgoha": {
@@ -2180,15 +2040,12 @@
         "SourceString": "Counts a destroyed vehicle only while you are seated in an L2A6 or T-72B3 tank.",
         "LocalizedString": "Counts a destroyed vehicle only while you are seated in an L2A6 or T-72B3 tank."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/Killfeed/T_UI_Icon_Killfeed_TNK_01_Heavy.T_UI_Icon_Killfeed_TNK_01_Heavy",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Weapon"
       },
       "Odds": 1.1,
       "TraitTags": [
@@ -2200,7 +2057,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.VehiclesDestroyed"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -2217,7 +2074,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "VehicleTags": [
@@ -2247,15 +2103,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Weapon"
       },
       "Odds": 1.15,
       "TraitTags": [
@@ -2267,7 +2120,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.VehiclesDestroyed"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -2284,7 +2137,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "VehicleTags": [
@@ -2313,15 +2165,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Weapon"
       },
       "Odds": 1.15,
       "TraitTags": [
@@ -2333,7 +2182,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.VehiclesDestroyed"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -2350,7 +2199,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "VehicleTags": [
@@ -2382,15 +2230,12 @@
         "SourceString": "Counts a destroyed vehicle only while you are moving faster than 50 kph.",
         "LocalizedString": "Counts a destroyed vehicle only while you are moving faster than 50 kph."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_50kph.T_UI_WagerVendor_Icon_50kph",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Manner"
       },
       "Odds": 1.1,
       "TraitTags": [],
@@ -2398,7 +2243,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.VehiclesDestroyed"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -2415,7 +2260,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "_aaaainbclocjcedlpfcmo": 50.0,
@@ -2445,15 +2289,12 @@
         "SourceString": "Counts a revive only while your nearest living teammate, other than the player you revive, is at least 50 m away.",
         "LocalizedString": "Counts a revive only while your nearest living teammate, other than the player you revive, is at least 50 m away."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_50m.T_UI_WagerVendor_Icon_50m",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Place.Proximity"
       },
       "Odds": 1.1,
       "TraitTags": [],
@@ -2461,7 +2302,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Revives"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -2478,7 +2319,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "_aaaanhbbfgbimifphhckm": 50.0,
@@ -2505,18 +2345,15 @@
       "Description": {
         "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
         "Key": "Condition.Revives.NoWeapons.Description",
-        "SourceString": "Counts a revive only while you carry no weapons.",
-        "LocalizedString": "Counts a revive only while you carry no weapons."
+        "SourceString": "Counts a revive only while you carry no guns, launchers or bows.",
+        "LocalizedString": "Counts a revive only while you carry no guns, launchers or bows."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_NoWeapons.T_UI_WagerVendor_Icon_NoWeapons",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Self.Loadout"
       },
       "Odds": 1.15,
       "TraitTags": [
@@ -2528,7 +2365,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Revives"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -2545,14 +2382,21 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "_aaaakajebecbokbemgoha": {
             "SupportFilter": "EBHSupportFilterMethod::AllowList",
             "AllowedSubSlotItems": [],
             "AllowedSubSlotContext": [
-              "Item.Weapon"
+              "Item.Archetype.AR",
+              "Item.Archetype.Bow",
+              "Item.Archetype.DMR",
+              "Item.Archetype.Launcher",
+              "Item.Archetype.LMG",
+              "Item.Archetype.Pistol",
+              "Item.Archetype.Shotgun",
+              "Item.Archetype.SMG",
+              "Item.Archetype.Sniper"
             ],
             "BlockedSubSlotItems": [],
             "BlockedSubSlotContext": []
@@ -2588,15 +2432,12 @@
         "SourceString": "Counts a delivery only while the vehicle you are in holds at least five tapes.",
         "LocalizedString": "Counts a delivery only while the vehicle you are in holds at least five tapes."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_Tapes.T_UI_WagerVendor_Icon_Tapes",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Vehicle"
       },
       "Odds": 1.005,
       "TraitTags": [
@@ -2608,7 +2449,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.PlayerDelivery"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -2625,7 +2466,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "_aaaakajebecbokbemgoha": {
@@ -2652,7 +2492,7 @@
       }
     },
     "Wager.Condition.InControlZone": {
-      "_aaaakgfoodihlgbfboeka": false,
+      "_aaaakgfoodihlgbfboeka": true,
       "DisplayName": {
         "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
         "Key": "Condition.InControlZone.Name",
@@ -2665,20 +2505,17 @@
       "Description": {
         "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
         "Key": "Condition.InControlZone.Description",
-        "SourceString": "Counts only while you are inside a control zone.",
-        "LocalizedString": "Counts only while you are inside a control zone."
+        "SourceString": "Counts only while you are inside a Control Zone or the Hot Zone.",
+        "LocalizedString": "Counts only while you are inside a Control Zone or the Hot Zone."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_CZ.T_UI_WagerVendor_Icon_CZ",
         "SubPathString": ""
       },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Place"
-      },
-      "Odds": 1.15,
+      "Odds": 1.0,
       "TraitTags": [
         "Wager.ConditionTrait.Location"
       ],
@@ -2687,74 +2524,10 @@
       ],
       "RequiresAnyActionTags": [
         "Wager.Action.Kills",
-        "Wager.Action.Revives",
-        "Wager.Action.VehiclesDestroyed"
+        "Wager.Action.Revives"
       ],
-      "_aaabbldhaebiklpgijlkp": [
-        "Challenges.Context.Instigator.InControlZone"
-      ],
-      "_aaaalachhfgpfehmdofie": {
-        "QueryDefinition": {
-          "StaticStruct": {
-            "SchemaClass": {
-              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
-              "ObjectPath": "/Script/WDGame"
-            },
-            "EditableConditions": []
-          },
-          "SharedDefinition": null
-        }
-      },
-      "MinValue": 0,
-      "MaxValue": 0,
-      "ValueStep": 1,
-      "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
-      "Behaviors": [],
-      "Tag": {
-        "TagName": "Wager.Condition.InControlZone"
-      }
-    },
-    "Wager.Condition.InHotzone": {
-      "_aaaakgfoodihlgbfboeka": true,
-      "DisplayName": {
-        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
-        "Key": "Condition.InHotzone.Name",
-        "SourceString": "In Hotzone",
-        "LocalizedString": "In Hotzone"
-      },
-      "_aaaakoinngipbcijjmfcn": {
-        "TagName": "None"
-      },
-      "Description": {
-        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
-        "Key": "Condition.InHotzone.Description",
-        "SourceString": "Counts only while you are inside the hotzone.",
-        "LocalizedString": "Counts only while you are inside the hotzone."
-      },
-      "_aaaaiogbmobfimjejhddd": {
-        "CultureInvariantString": null
-      },
-      "Icon": {
-        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_HZ.T_UI_WagerVendor_Icon_HZ",
-        "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Place"
-      },
-      "Odds": 1.1,
-      "TraitTags": [
-        "Wager.ConditionTrait.Location"
-      ],
-      "IncompatibleTraitTags": [
-        "Wager.ConditionTrait.Location"
-      ],
-      "RequiresAnyActionTags": [
-        "Wager.Action.Kills",
-        "Wager.Action.Revives",
-        "Wager.Action.VehiclesDestroyed"
-      ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
+        "Challenges.Context.Instigator.InControlZone",
         "Challenges.Context.Instigator.InHotZone"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -2773,10 +2546,69 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
-        "TagName": "Wager.Condition.InHotzone"
+        "TagName": "Wager.Condition.InControlZone"
+      }
+    },
+    "Wager.Condition.InHotZone": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.InHotZone.Name",
+        "SourceString": "In Hot Zone",
+        "LocalizedString": "In Hot Zone"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.InHotZone.Description",
+        "SourceString": "Counts only while you are inside the Hot Zone.",
+        "LocalizedString": "Counts only while you are inside the Hot Zone."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_HZ.T_UI_WagerVendor_Icon_HZ",
+        "SubPathString": ""
+      },
+      "Odds": 1.1,
+      "TraitTags": [
+        "Wager.ConditionTrait.Location"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Location"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills",
+        "Wager.Action.Revives",
+        "Wager.Action.VehiclesDestroyed"
+      ],
+      "RequiredEventTags": [
+        "Challenges.Context.Instigator.InHotZone"
+      ],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [],
+      "Tag": {
+        "TagName": "Wager.Condition.InHotZone"
       }
     },
     "Wager.Condition.NoArmor": {
@@ -2796,15 +2628,12 @@
         "SourceString": "Counts only while you wear no helmet or body armor.",
         "LocalizedString": "Counts only while you wear no helmet or body armor."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_NoArmor.T_UI_WagerVendor_Icon_NoArmor",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Self.Loadout"
       },
       "Odds": 1.15,
       "TraitTags": [],
@@ -2813,7 +2642,7 @@
         "Wager.Action.Kills",
         "Wager.Action.Revives"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -2830,7 +2659,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "_aaaakajebecbokbemgoha": {
@@ -2874,15 +2702,12 @@
         "SourceString": "Counts only while your loadout is worth at least $20,000.",
         "LocalizedString": "Counts only while your loadout is worth at least $20,000."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_20KLoadout.T_UI_WagerVendor_Icon_20KLoadout",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Self.Loadout"
       },
       "Odds": 1.05,
       "TraitTags": [
@@ -2896,7 +2721,7 @@
         "Wager.Action.Revives",
         "Wager.Action.VehiclesDestroyed"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -2913,10 +2738,9 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
-          "_aaaahnbbjmhmofgmjogdb": 20000.0,
+          "AtLeast": 20000.0,
           "_aaaalndmlkdbdgenbhaek": {
             "TagName": "Wager.Behavior.RequireLoadoutCost"
           }
@@ -2943,15 +2767,12 @@
         "SourceString": "Counts only while you carry no bandages.",
         "LocalizedString": "Counts only while you carry no bandages."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_NoBandages.T_UI_WagerVendor_Icon_NoBandages",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Self.Loadout"
       },
       "Odds": 1.15,
       "TraitTags": [],
@@ -2960,7 +2781,7 @@
         "Wager.Action.Kills",
         "Wager.Action.Revives"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -2977,7 +2798,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "_aaaakajebecbokbemgoha": {
@@ -3021,15 +2841,12 @@
         "SourceString": "Counts only while you have under 50 health.",
         "LocalizedString": "Counts only while you have under 50 health."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_50Health.T_UI_WagerVendor_Icon_50Health",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Self.Condition"
       },
       "Odds": 1.2,
       "TraitTags": [],
@@ -3038,7 +2855,7 @@
         "Wager.Action.Kills",
         "Wager.Action.Revives"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -3055,7 +2872,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "_aaaalehghdhdnmhfiaehk": 50.0,
@@ -3082,15 +2898,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Weapon"
       },
       "Odds": 1.3,
       "TraitTags": [
@@ -3107,7 +2920,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Kills"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "ID.Item.BuildTool.Hammer.Small"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -3126,7 +2939,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Kills.WithSmallHammer"
@@ -3149,15 +2961,12 @@
         "SourceString": "Counts a revive only when you make it by hand, without a revive item.",
         "LocalizedString": "Counts a revive only when you make it by hand, without a revive item."
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Utility"
       },
       "Odds": 1.1,
       "TraitTags": [
@@ -3169,7 +2978,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Revives"
       ],
-      "_aaabbldhaebiklpgijlkp": [],
+      "RequiredEventTags": [],
       "_aaaalachhfgpfehmdofie": {
         "QueryDefinition": {
           "StaticStruct": {
@@ -3186,7 +2995,6 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [
         {
           "_aaaakfdimkkalchjcbedi": [
@@ -3218,15 +3026,12 @@
       "Description": {
         "CultureInvariantString": null
       },
-      "_aaaaiogbmobfimjejhddd": {
+      "FailedText": {
         "CultureInvariantString": null
       },
       "Icon": {
         "AssetPathName": "",
         "SubPathString": ""
-      },
-      "Category": {
-        "TagName": "Wager.ConditionCategory.Means.Weapon"
       },
       "Odds": 1.3,
       "TraitTags": [
@@ -3243,7 +3048,7 @@
       "RequiresAnyActionTags": [
         "Wager.Action.Kills"
       ],
-      "_aaabbldhaebiklpgijlkp": [
+      "RequiredEventTags": [
         "ID.Item.RepairTool.Drill.Light"
       ],
       "_aaaalachhfgpfehmdofie": {
@@ -3262,10 +3067,2534 @@
       "MaxValue": 0,
       "ValueStep": 1,
       "CooldownSeconds": 86400.0,
-      "_aaabllmkiemahddkghfjo": [],
       "Behaviors": [],
       "Tag": {
         "TagName": "Wager.Condition.Kills.WithLightDrill"
+      }
+    },
+    "Wager.Condition.HeavyOrSuperHeavyArmor": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.HeavyOrSuperHeavyArmor.Name",
+        "SourceString": "While Wearing Level 3 or 4 Armor",
+        "LocalizedString": "While Wearing Level 3 or 4 Armor"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.HeavyOrSuperHeavyArmor.Description",
+        "SourceString": "Counts only while you wear Level 3 or Level 4 body armor.",
+        "LocalizedString": "Counts only while you wear Level 3 or Level 4 body armor."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.15,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills",
+        "Wager.Action.Revives"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaakajebecbokbemgoha": {
+            "SupportFilter": "EBHSupportFilterMethod::AllowList",
+            "AllowedSubSlotItems": [
+              "Id.Item.HeavyArmor",
+              "Id.Item.SuperHeavyArmor"
+            ],
+            "AllowedSubSlotContext": [],
+            "BlockedSubSlotItems": [],
+            "BlockedSubSlotContext": []
+          },
+          "_aaaakneminppdkeijidnf": "EBHSlotSearchOption::IgnoreStorageSlots",
+          "_aaabdmdfkjlhjdiemhgid": [],
+          "MinCount": 1,
+          "MaxCount": -1,
+          "Source": "EWDWagerInventorySource::Owner",
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireInventoryItems"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.HeavyOrSuperHeavyArmor"
+      }
+    },
+    "Wager.Condition.Kills.WithGun": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.WithGun.Name",
+        "SourceString": "With Any Gun",
+        "LocalizedString": "With Any Gun"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.WithGun.Description",
+        "SourceString": "Counts a kill only when you make it with a gun's bullet, not an explosion.",
+        "LocalizedString": "Counts a kill only when you make it with a gun's bullet, not an explosion."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.01,
+      "TraitTags": [
+        "Wager.ConditionTrait.Weapon"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Weapon"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaakfdimkkalchjcbedi": [
+            "Item.Caliber"
+          ],
+          "_aaaalomlnknmafbflkiin": [
+            "Meta.Damage.DamageType.Explosive"
+          ],
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireEventTags"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.Kills.WithGun"
+      }
+    },
+    "Wager.Condition.Kills.WithBackblast": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.WithBackblast.Name",
+        "SourceString": "With Backblast",
+        "LocalizedString": "With Backblast"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.WithBackblast.Description",
+        "SourceString": "Counts a kill only when you make it with the backblast of an RPG or MAAWS.",
+        "LocalizedString": "Counts a kill only when you make it with the backblast of an RPG or MAAWS."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_KillFeed_BackBlast.T_UI_Icon_KillFeed_BackBlast",
+        "SubPathString": ""
+      },
+      "Odds": 1.45,
+      "TraitTags": [
+        "Wager.ConditionTrait.Weapon",
+        "Wager.ConditionTrait.Ammo",
+        "Wager.ConditionTrait.Mag",
+        "Wager.ConditionTrait.Headshot"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Weapon",
+        "Wager.ConditionTrait.Ammo",
+        "Wager.ConditionTrait.Mag",
+        "Wager.ConditionTrait.Headshot"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills"
+      ],
+      "RequiredEventTags": [
+        "Meta.Damage.DamageType.BackBlast"
+      ],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [],
+      "Tag": {
+        "TagName": "Wager.Condition.Kills.WithBackblast"
+      }
+    },
+    "Wager.Condition.DrillTowersActivated.CodeDigitsGuessed": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.DrillTowersActivated.CodeDigitsGuessed.Name",
+        "SourceString": "{Value}+ Digits Guessed",
+        "LocalizedString": "{Value}+ Digits Guessed"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.DrillTowersActivated.CodeDigitsGuessed.Description",
+        "SourceString": "Counts an activation only when your team did not own that many towers or more, so you guessed those digits of the code.",
+        "LocalizedString": "Counts an activation only when your team did not own that many towers or more, so you guessed those digits of the code."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.5,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [
+        "Wager.Action.DrillTowersActivated"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 1,
+      "MaxValue": 10,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaaichkemiefnhjcpaoc": {
+            "TagName": "Challenges.ContextValue.HotZoneMagnet.CodeDigitsGuessed"
+          },
+          "Comparison": "EWDWagerEventValueComparison::AtLeast",
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireEventValue"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.DrillTowersActivated.CodeDigitsGuessed"
+      }
+    },
+    "Wager.Condition.DrillTowersActivated.DrillTowersOnMap": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.DrillTowersActivated.DrillTowersOnMap.Name",
+        "SourceString": "{Value}+ Drill Towers",
+        "LocalizedString": "{Value}+ Drill Towers"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.DrillTowersActivated.DrillTowersOnMap.Description",
+        "SourceString": "Counts an activation only on a map with that many drill towers or more.",
+        "LocalizedString": "Counts an activation only on a map with that many drill towers or more."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.0,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [
+        "Wager.Action.DrillTowersActivated"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 1,
+      "MaxValue": 10,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaaichkemiefnhjcpaoc": {
+            "TagName": "Challenges.ContextValue.HotZoneMagnet.CodeDigits"
+          },
+          "Comparison": "EWDWagerEventValueComparison::AtLeast",
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireEventValue"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.DrillTowersActivated.DrillTowersOnMap"
+      }
+    },
+    "Wager.Condition.Kills.WithSMGAssaultRifleOrShotgun": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.WithSMGAssaultRifleOrShotgun.Name",
+        "SourceString": "With SMG, Assault Rifle Or Shotgun",
+        "LocalizedString": "With SMG, Assault Rifle Or Shotgun"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.WithSMGAssaultRifleOrShotgun.Description",
+        "SourceString": "Counts a kill only when you make it with an SMG, assault rifle or shotgun.",
+        "LocalizedString": "Counts a kill only when you make it with an SMG, assault rifle or shotgun."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.01,
+      "TraitTags": [
+        "Wager.ConditionTrait.Weapon"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Weapon"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaakfdimkkalchjcbedi": [
+            "Meta.Damage.Weapon.SMG",
+            "Meta.Damage.Weapon.AR",
+            "Meta.Damage.Weapon.Shotgun"
+          ],
+          "_aaaalomlnknmafbflkiin": [
+            "Meta.Damage.DamageType.Explosive"
+          ],
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireEventTags"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.Kills.WithSMGAssaultRifleOrShotgun"
+      }
+    },
+    "Wager.Condition.WithinSeconds": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.WithinSeconds.Name",
+        "SourceString": "Within {Value} Seconds",
+        "LocalizedString": "Within {Value} Seconds"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.WithinSeconds.Description",
+        "SourceString": "Everything must happen within that many seconds. Older ones drop off your progress.",
+        "LocalizedString": "Everything must happen within that many seconds. Older ones drop off your progress."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.5,
+      "TraitTags": [
+        "Wager.ConditionTrait.Time"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Time"
+      ],
+      "RequiresAnyActionTags": [],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 10,
+      "MaxValue": 120,
+      "ValueStep": 10,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.CountWithinSeconds"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.WithinSeconds"
+      }
+    },
+    "Wager.Condition.VehiclesDestroyed.WithStingray": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Format.WithEntity",
+        "SourceString": "With {Entity}",
+        "LocalizedString": "With {Entity}"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "Vehicle.Variant.Stationary.STN_05"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.VehiclesDestroyed.WithStingray.Description",
+        "SourceString": "Counts a destroyed vehicle only while you are seated in a Stingray.",
+        "LocalizedString": "Counts a destroyed vehicle only while you are seated in a Stingray."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.15,
+      "TraitTags": [
+        "Wager.ConditionTrait.Weapon"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Weapon"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.VehiclesDestroyed"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "VehicleTags": [
+            "Vehicle.Variant.Stationary.STN_05"
+          ],
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireInVehicle"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.VehiclesDestroyed.WithStingray"
+      }
+    },
+    "Wager.Condition.Kills.OneBullet": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.OneBullet.Name",
+        "SourceString": "{Value} Kills With One Bullet",
+        "LocalizedString": "{Value} Kills With One Bullet"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.OneBullet.Description",
+        "SourceString": "Counts bullets: one that kills that many enemies counts once. Shotgun buckshot never counts.",
+        "LocalizedString": "Counts bullets: one that kills that many enemies counts once. Shotgun buckshot never counts."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/HUD/Killfeed/Textures/T_UI_Icon_Killfeed_Penetration.T_UI_Icon_Killfeed_Penetration",
+        "SubPathString": ""
+      },
+      "Odds": 1.5,
+      "TraitTags": [
+        "Wager.ConditionTrait.MultiKill"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.MultiKill"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 2,
+      "MaxValue": 10,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaajonobgofejgbjceoo": {
+            "TagName": "Challenges.ContextValue.FireId"
+          },
+          "_aaabfiiogmchlhbbiadbj": 1.0,
+          "_aaaanflcohdamceamlamj": true,
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.CountFromOneSource"
+          }
+        },
+        {
+          "_aaaakfdimkkalchjcbedi": [
+            "Item.Caliber"
+          ],
+          "_aaaalomlnknmafbflkiin": [
+            "Item.Caliber.7mmBuck"
+          ],
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireEventTags"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.Kills.OneBullet"
+      }
+    },
+    "Wager.Condition.Kills.OneExplosion": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.OneExplosion.Name",
+        "SourceString": "{Value} Kills In One Explosion",
+        "LocalizedString": "{Value} Kills In One Explosion"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.OneExplosion.Description",
+        "SourceString": "Counts explosions: one that kills that many enemies counts once.",
+        "LocalizedString": "Counts explosions: one that kills that many enemies counts once."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_Explosion.T_UI_Icon_Killfeed_Explosion",
+        "SubPathString": ""
+      },
+      "Odds": 2.0,
+      "TraitTags": [
+        "Wager.ConditionTrait.MultiKill"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.MultiKill"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 2,
+      "MaxValue": 30,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaajonobgofejgbjceoo": {
+            "TagName": "Challenges.ContextValue.ExplosionId"
+          },
+          "_aaabfiiogmchlhbbiadbj": 1.0,
+          "_aaaanflcohdamceamlamj": true,
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.CountFromOneSource"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.Kills.OneExplosion"
+      }
+    },
+    "Wager.Condition.VehiclesDestroyed.OneExplosion": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.VehiclesDestroyed.OneExplosion.Name",
+        "SourceString": "{Value} Vehicles In One Explosion",
+        "LocalizedString": "{Value} Vehicles In One Explosion"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.VehiclesDestroyed.OneExplosion.Description",
+        "SourceString": "Counts explosions: one that destroys that many vehicles counts once.",
+        "LocalizedString": "Counts explosions: one that destroys that many vehicles counts once."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_Explosion.T_UI_Icon_Killfeed_Explosion",
+        "SubPathString": ""
+      },
+      "Odds": 2.0,
+      "TraitTags": [
+        "Wager.ConditionTrait.MultiKill"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.MultiKill"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.VehiclesDestroyed"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 2,
+      "MaxValue": 5,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaajonobgofejgbjceoo": {
+            "TagName": "Challenges.ContextValue.ExplosionId"
+          },
+          "_aaabfiiogmchlhbbiadbj": 1.0,
+          "_aaaanflcohdamceamlamj": true,
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.CountFromOneSource"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.VehiclesDestroyed.OneExplosion"
+      }
+    },
+    "Wager.Condition.WithoutAMiss.Drone": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.WithoutAMiss.Drone.Name",
+        "SourceString": "Without A Miss",
+        "LocalizedString": "Without A Miss"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.WithoutAMiss.Drone.Description",
+        "SourceString": "Every Stingray drone must count; a drone that doesn't starts the count again.",
+        "LocalizedString": "Every Stingray drone must count; a drone that doesn't starts the count again."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/Killfeed/T_UI_Icon_Killfeed_Drone.T_UI_Icon_Killfeed_Drone",
+        "SubPathString": ""
+      },
+      "Odds": 1.5,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills",
+        "Wager.Action.VehiclesDestroyed"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "ProjectileId": {
+            "TagName": "Item.Caliber.DroneProjectile"
+          },
+          "GraceSeconds": 1.0,
+          "_aaaalipcjoohbojcinljk": false,
+          "_aaaalchghgdlgklhaicmd": false,
+          "_aaaapmomchegjcbiekndd": {
+            "TagName": "None"
+          },
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.CountWithoutMiss"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.WithoutAMiss.Drone"
+      }
+    },
+    "Wager.Condition.PerShot.Drone": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.PerShot.Drone.Name",
+        "SourceString": "{Value} Per Drone",
+        "LocalizedString": "{Value} Per Drone"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.PerShot.Drone.Description",
+        "SourceString": "Counts Stingray drones: a drone that gets that many counts once; one that gets fewer starts the count again.",
+        "LocalizedString": "Counts Stingray drones: a drone that gets that many counts once; one that gets fewer starts the count again."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/Killfeed/T_UI_Icon_Killfeed_Drone.T_UI_Icon_Killfeed_Drone",
+        "SubPathString": ""
+      },
+      "Odds": 3.0,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills",
+        "Wager.Action.VehiclesDestroyed"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 1,
+      "MaxValue": 5,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "ProjectileId": {
+            "TagName": "Item.Caliber.DroneProjectile"
+          },
+          "GraceSeconds": 1.0,
+          "_aaaalipcjoohbojcinljk": true,
+          "_aaaalchghgdlgklhaicmd": false,
+          "_aaaapmomchegjcbiekndd": {
+            "TagName": "None"
+          },
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.CountWithoutMiss"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.PerShot.Drone"
+      }
+    },
+    "Wager.Condition.InFOB": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.InFOB.Name",
+        "SourceString": "In FOB",
+        "LocalizedString": "In FOB"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.InFOB.Description",
+        "SourceString": "Counts only while you are inside an FOB's radius.",
+        "LocalizedString": "Counts only while you are inside an FOB's radius."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/Map/Map_Optimisation/Textures/T_UI_Map_Spotted_FOB.T_UI_Map_Spotted_FOB",
+        "SubPathString": ""
+      },
+      "Odds": 1.1,
+      "TraitTags": [
+        "Wager.ConditionTrait.FOB"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.FOB"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills",
+        "Wager.Action.Revives"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "Ownership": "EWDWagerFobOwnership::Any",
+          "_aaabadeppompbedlbioko": false,
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireOwnerInFob"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.InFOB"
+      }
+    },
+    "Wager.Condition.InEnemyFOB": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.InEnemyFOB.Name",
+        "SourceString": "In Enemy FOB",
+        "LocalizedString": "In Enemy FOB"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.InEnemyFOB.Description",
+        "SourceString": "Counts only while you are inside an enemy FOB's radius.",
+        "LocalizedString": "Counts only while you are inside an enemy FOB's radius."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_FobAssault.T_UI_SquadIntent_FobAssault",
+        "SubPathString": ""
+      },
+      "Odds": 1.25,
+      "TraitTags": [
+        "Wager.ConditionTrait.FOB"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.FOB"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills",
+        "Wager.Action.Revives"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "Ownership": "EWDWagerFobOwnership::Enemy",
+          "_aaabadeppompbedlbioko": false,
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireOwnerInFob"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.InEnemyFOB"
+      }
+    },
+    "Wager.Condition.InFOBWithSupplies": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.InFOBWithSupplies.Name",
+        "SourceString": "In FOB With {Value}+ Supplies",
+        "LocalizedString": "In FOB With {Value}+ Supplies"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.InFOBWithSupplies.Description",
+        "SourceString": "Counts only while you are inside an FOB holding that many supplies or more, every kind added together.",
+        "LocalizedString": "Counts only while you are inside an FOB holding that many supplies or more, every kind added together."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/Map/Map_Optimisation/Textures/T_UI_Icon_FOB_Active.T_UI_Icon_FOB_Active",
+        "SubPathString": ""
+      },
+      "Odds": 1.65,
+      "TraitTags": [
+        "Wager.ConditionTrait.FOB"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.FOB"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills",
+        "Wager.Action.Revives"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 1000,
+      "MaxValue": 80000,
+      "ValueStep": 1000,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "Ownership": "EWDWagerFobOwnership::Any",
+          "_aaabadeppompbedlbioko": true,
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireOwnerInFob"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.InFOBWithSupplies"
+      }
+    },
+    "Wager.Condition.InEnemyFOBWithSupplies": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.InEnemyFOBWithSupplies.Name",
+        "SourceString": "In Enemy FOB With {Value}+ Supplies",
+        "LocalizedString": "In Enemy FOB With {Value}+ Supplies"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.InEnemyFOBWithSupplies.Description",
+        "SourceString": "Counts only while you are inside an enemy FOB holding that many supplies or more, every kind added together.",
+        "LocalizedString": "Counts only while you are inside an enemy FOB holding that many supplies or more, every kind added together."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/ContextDrawer/Tabs/Party/Data/Textures/T_UI_SquadIntent_FobAssault.T_UI_SquadIntent_FobAssault",
+        "SubPathString": ""
+      },
+      "Odds": 1.875,
+      "TraitTags": [
+        "Wager.ConditionTrait.FOB"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.FOB"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills",
+        "Wager.Action.Revives"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 1000,
+      "MaxValue": 80000,
+      "ValueStep": 1000,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "Ownership": "EWDWagerFobOwnership::Enemy",
+          "_aaabadeppompbedlbioko": true,
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireOwnerInFob"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.InEnemyFOBWithSupplies"
+      }
+    },
+    "Wager.Condition.VehiclesDestroyed.Helicopter": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.VehiclesDestroyed.Helicopter.Name",
+        "SourceString": "Helicopter Destroyed",
+        "LocalizedString": "Helicopter Destroyed"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.VehiclesDestroyed.Helicopter.Description",
+        "SourceString": "Counts a destroyed vehicle only when it is a helicopter.",
+        "LocalizedString": "Counts a destroyed vehicle only when it is a helicopter."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/Killfeed/T_UI_Icon_Killfeed_Littlebird.T_UI_Icon_Killfeed_Littlebird",
+        "SubPathString": ""
+      },
+      "Odds": 1.5,
+      "TraitTags": [
+        "Wager.ConditionTrait.Target"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Target"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.VehiclesDestroyed"
+      ],
+      "RequiredEventTags": [
+        "Vehicle.Variant.Air.Rotary"
+      ],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [],
+      "Tag": {
+        "TagName": "Wager.Condition.VehiclesDestroyed.Helicopter"
+      }
+    },
+    "Wager.Condition.VehiclesDestroyed.WithArtilleryShell": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.VehiclesDestroyed.WithArtilleryShell.Name",
+        "SourceString": "With Artillery Shell",
+        "LocalizedString": "With Artillery Shell"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.VehiclesDestroyed.WithArtilleryShell.Description",
+        "SourceString": "Counts a destroyed vehicle only when an SPH-2 artillery shell destroys it.",
+        "LocalizedString": "Counts a destroyed vehicle only when an SPH-2 artillery shell destroys it."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/Killfeed/T_UI_Icon_Killfeed_TNK_01_Artillery.T_UI_Icon_Killfeed_TNK_01_Artillery",
+        "SubPathString": ""
+      },
+      "Odds": 1.3,
+      "TraitTags": [
+        "Wager.ConditionTrait.Weapon"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Weapon"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.VehiclesDestroyed"
+      ],
+      "RequiredEventTags": [
+        "Id.Vehicle.WeaponExtension.TNK_01.Artillery"
+      ],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [],
+      "Tag": {
+        "TagName": "Wager.Condition.VehiclesDestroyed.WithArtilleryShell"
+      }
+    },
+    "Wager.Condition.FOBsHacked.TeammatesInRange": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.FOBsHacked.TeammatesInRange.Name",
+        "SourceString": "{Value}+ Teammates In FOB",
+        "LocalizedString": "{Value}+ Teammates In FOB"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.FOBsHacked.TeammatesInRange.Description",
+        "SourceString": "Counts a hack only when that many living teammates or more are inside the FOB's radius as it completes. Downed teammates are ignored.",
+        "LocalizedString": "Counts a hack only when that many living teammates or more are inside the FOB's radius as it completes. Downed teammates are ignored."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.5,
+      "TraitTags": [
+        "Wager.ConditionTrait.Teammates"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Teammates"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.FOBsHacked"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 1,
+      "MaxValue": 30,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaaichkemiefnhjcpaoc": {
+            "TagName": "Challenges.ContextValue.Buildables.HackerTeammatesInRange"
+          },
+          "Comparison": "EWDWagerEventValueComparison::AtLeast",
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireEventValue"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.FOBsHacked.TeammatesInRange"
+      }
+    },
+    "Wager.Condition.FOBsHacked.Alone": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.FOBsHacked.Alone.Name",
+        "SourceString": "Alone",
+        "LocalizedString": "Alone"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.FOBsHacked.Alone.Description",
+        "SourceString": "Counts a hack only when no other living teammate is inside the FOB's radius as it completes. Downed teammates are ignored.",
+        "LocalizedString": "Counts a hack only when no other living teammate is inside the FOB's radius as it completes. Downed teammates are ignored."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.25,
+      "TraitTags": [
+        "Wager.ConditionTrait.Teammates"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Teammates"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.FOBsHacked"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaaichkemiefnhjcpaoc": {
+            "TagName": "Challenges.ContextValue.Buildables.HackerTeammatesInRange"
+          },
+          "Comparison": "EWDWagerEventValueComparison::AtMost",
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireEventValue"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.FOBsHacked.Alone"
+      }
+    },
+    "Wager.Condition.NoEnemyBuildablesDestroyed": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoEnemyBuildablesDestroyed.Name",
+        "SourceString": "No Enemy Buildables Destroyed",
+        "LocalizedString": "No Enemy Buildables Destroyed"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoEnemyBuildablesDestroyed.Description",
+        "SourceString": "Destroying or dismantling an enemy buildable at any point fails the wager.",
+        "LocalizedString": "Destroying or dismantling an enemy buildable at any point fails the wager."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.2,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.FailOnEnemyBuildableDestroyed"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.NoEnemyBuildablesDestroyed"
+      }
+    },
+    "Wager.Condition.Freefall.WithRPGOrCGM4": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Freefall.WithRPGOrCGM4.Name",
+        "SourceString": "With RPG or MAAWS",
+        "LocalizedString": "With RPG or MAAWS"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Freefall.WithRPGOrCGM4.Description",
+        "SourceString": "Counts a destroyed helicopter only when an RPG-7 or MAAWS round destroys it.",
+        "LocalizedString": "Counts a destroyed helicopter only when an RPG-7 or MAAWS round destroys it."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Weapons/Killfeed/T_UI_Icon_Killfeed_RPG7.T_UI_Icon_Killfeed_RPG7",
+        "SubPathString": ""
+      },
+      "Odds": 1.01,
+      "TraitTags": [
+        "Wager.ConditionTrait.Weapon"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Weapon"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.FreefallHelicopterKill",
+        "Wager.Action.FreefallHelicopterKillRecovered"
+      ],
+      "RequiredEventTags": [
+        "Id.Item.RPG7",
+        "Id.Item.CGM4"
+      ],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [],
+      "Tag": {
+        "TagName": "Wager.Condition.Freefall.WithRPGOrCGM4"
+      }
+    },
+    "Wager.Condition.NoVehicleDamage": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoVehicleDamage.Name",
+        "SourceString": "Without Taking Damage",
+        "LocalizedString": "Without Taking Damage"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoVehicleDamage.Description",
+        "SourceString": "Your vehicle taking any damage, crashes included, fails the wager.",
+        "LocalizedString": "Your vehicle taking any damage, crashes included, fails the wager."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.2,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "OwnerVehicle": "EWDWagerOwnerVehicle::CreditsDelivery",
+          "_aaabgppdcocndbkpobppp": false,
+          "FailReason": {
+            "TagName": "Wager.FailReason.VehicleDamaged"
+          },
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.FailOnVehicleDamaged"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.NoVehicleDamage"
+      }
+    },
+    "Wager.Condition.NoVehicleSpotted": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoVehicleSpotted.Name",
+        "SourceString": "Without Being Spotted",
+        "LocalizedString": "Without Being Spotted"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoVehicleSpotted.Description",
+        "SourceString": "An enemy spotting your vehicle fails the wager.",
+        "LocalizedString": "An enemy spotting your vehicle fails the wager."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.2,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "OwnerVehicle": "EWDWagerOwnerVehicle::CreditsDelivery",
+          "_aaabgppdcocndbkpobppp": false,
+          "FailReason": {
+            "TagName": "Wager.FailReason.VehicleSpotted"
+          },
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.FailOnVehicleSpotted"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.NoVehicleSpotted"
+      }
+    },
+    "Wager.Condition.NoVehicleLockOn": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoVehicleLockOn.Name",
+        "SourceString": "Without Being Locked On",
+        "LocalizedString": "Without Being Locked On"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoVehicleLockOn.Description",
+        "SourceString": "An enemy locking on to your vehicle fails the wager.",
+        "LocalizedString": "An enemy locking on to your vehicle fails the wager."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.2,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "OwnerVehicle": "EWDWagerOwnerVehicle::CreditsDelivery",
+          "_aaabgppdcocndbkpobppp": true,
+          "FailReason": {
+            "TagName": "Wager.FailReason.VehicleLockedOn"
+          },
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.FailOnVehicleLockedOn"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.NoVehicleLockOn"
+      }
+    },
+    "Wager.Condition.NoVehicleRepairs": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoVehicleRepairs.Name",
+        "SourceString": "Never Repairing",
+        "LocalizedString": "Never Repairing"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoVehicleRepairs.Description",
+        "SourceString": "Anyone or anything repairing your vehicle fails the wager.",
+        "LocalizedString": "Anyone or anything repairing your vehicle fails the wager."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.2,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "OwnerVehicle": "EWDWagerOwnerVehicle::SeatedCreditedOrLastDriven",
+          "_aaabgppdcocndbkpobppp": false,
+          "FailReason": {
+            "TagName": "Wager.FailReason.VehicleRepaired"
+          },
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.FailOnVehicleRepaired"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.NoVehicleRepairs"
+      }
+    },
+    "Wager.Condition.NoSelfHeal": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoSelfHeal.Name",
+        "SourceString": "Without Healing Yourself",
+        "LocalizedString": "Without Healing Yourself"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoSelfHeal.Description",
+        "SourceString": "Healing yourself fails the wager.",
+        "LocalizedString": "Healing yourself fails the wager."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.2,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.FailOnSelfHeal"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.NoSelfHeal"
+      }
+    },
+    "Wager.Condition.PlayerDelivery.InBattleUral": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Format.InEntity",
+        "SourceString": "In {Entity}",
+        "LocalizedString": "In {Entity}"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "Vehicle.Variant.Land.Wheeled.Ural.Battle"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.PlayerDelivery.InBattleUral.Description",
+        "SourceString": "Counts a delivery only when a Ural Defender made it.",
+        "LocalizedString": "Counts a delivery only when a Ural Defender made it."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.01,
+      "TraitTags": [
+        "Wager.ConditionTrait.Vehicle"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Vehicle"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.PlayerDelivery"
+      ],
+      "RequiredEventTags": [
+        "Vehicle.Variant.Land.Wheeled.Ural.Battle"
+      ],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [],
+      "Tag": {
+        "TagName": "Wager.Condition.PlayerDelivery.InBattleUral"
+      }
+    },
+    "Wager.Condition.PlayerDelivery.OneTrip": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.PlayerDelivery.OneTrip.Name",
+        "SourceString": "{Value} In One Trip",
+        "LocalizedString": "{Value} In One Trip"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.PlayerDelivery.OneTrip.Description",
+        "SourceString": "Counts trips: one vehicle that drops off that many players, who all survive, counts once.",
+        "LocalizedString": "Counts trips: one vehicle that drops off that many players, who all survive, counts once."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/HUD/Killfeed/Textures/t_ui_centrefeed_dropoff.t_ui_centrefeed_dropoff",
+        "SubPathString": ""
+      },
+      "Odds": 2.0,
+      "TraitTags": [
+        "Wager.ConditionTrait.MultiKill"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.MultiKill"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.PlayerDelivery"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 2,
+      "MaxValue": 30,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaajonobgofejgbjceoo": {
+            "TagName": "Challenges.ContextValue.VehicleId"
+          },
+          "_aaabfiiogmchlhbbiadbj": 15.0,
+          "_aaaanflcohdamceamlamj": true,
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.CountFromOneSource"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.PlayerDelivery.OneTrip"
+      }
+    },
+    "Wager.Condition.NoReloading": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoReloading.Name",
+        "SourceString": "Without Reloading",
+        "LocalizedString": "Without Reloading"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoReloading.Description",
+        "SourceString": "Counts only with the weapon you get your first counted kill with. Reloading it fails the wager; losing it starts the count again.",
+        "LocalizedString": "Counts only with the weapon you get your first counted kill with. Reloading it fails the wager; losing it starts the count again."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.5,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.NoReload"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.NoReloading"
+      }
+    },
+    "Wager.Condition.Kills.WithArtilleryShell": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.WithArtilleryShell.Name",
+        "SourceString": "With Artillery Shell",
+        "LocalizedString": "With Artillery Shell"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.WithArtilleryShell.Description",
+        "SourceString": "Counts a kill only when an SPH-2 artillery shell makes it.",
+        "LocalizedString": "Counts a kill only when an SPH-2 artillery shell makes it."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/Killfeed/T_UI_Icon_Killfeed_TNK_01_Artillery.T_UI_Icon_Killfeed_TNK_01_Artillery",
+        "SubPathString": ""
+      },
+      "Odds": 1.3,
+      "TraitTags": [
+        "Wager.ConditionTrait.Weapon",
+        "Wager.ConditionTrait.Ammo",
+        "Wager.ConditionTrait.Mag",
+        "Wager.ConditionTrait.Headshot"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Weapon",
+        "Wager.ConditionTrait.Ammo",
+        "Wager.ConditionTrait.Mag",
+        "Wager.ConditionTrait.Headshot"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills"
+      ],
+      "RequiredEventTags": [
+        "Id.Vehicle.WeaponExtension.TNK_01.Artillery"
+      ],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [],
+      "Tag": {
+        "TagName": "Wager.Condition.Kills.WithArtilleryShell"
+      }
+    },
+    "Wager.Condition.WithoutAMiss.Artillery": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.WithoutAMiss.Artillery.Name",
+        "SourceString": "Without A Miss",
+        "LocalizedString": "Without A Miss"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.WithoutAMiss.Artillery.Description",
+        "SourceString": "Every SPH-2 shell must kill an enemy; a shell that doesn't fails the wager.",
+        "LocalizedString": "Every SPH-2 shell must kill an enemy; a shell that doesn't fails the wager."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Vehicles/Killfeed/T_UI_Icon_Killfeed_TNK_01_Artillery.T_UI_Icon_Killfeed_TNK_01_Artillery",
+        "SubPathString": ""
+      },
+      "Odds": 1.5,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "ProjectileId": {
+            "TagName": "Item.Caliber.155mm"
+          },
+          "GraceSeconds": 1.0,
+          "_aaaalipcjoohbojcinljk": false,
+          "_aaaalchghgdlgklhaicmd": true,
+          "_aaaapmomchegjcbiekndd": {
+            "TagName": "Id.Vehicle.WeaponExtension.TNK_01.Artillery"
+          },
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.CountWithoutMiss"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.WithoutAMiss.Artillery"
+      }
+    },
+    "Wager.Condition.PerfectQuickReloads": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.PerfectQuickReloads.Name",
+        "SourceString": "Perfect Quick Reloads",
+        "LocalizedString": "Perfect Quick Reloads"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.PerfectQuickReloads.Description",
+        "SourceString": "A wrong SPH-2 quick reload input, or letting a reload segment run out, fails the wager.",
+        "LocalizedString": "A wrong SPH-2 quick reload input, or letting a reload segment run out, fails the wager."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.2,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaabdnnbcffjimeoomemd": [
+            "Id.Vehicle.WeaponExtension.TNK_01.Artillery"
+          ],
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.FailOnActiveReloadMistake"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.PerfectQuickReloads"
+      }
+    },
+    "Wager.Condition.WithoutReturningToSpawn": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.WithoutReturningToSpawn.Name",
+        "SourceString": "Without Returning To Spawn",
+        "LocalizedString": "Without Returning To Spawn"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.WithoutReturningToSpawn.Description",
+        "SourceString": "Entering your spawn fails the wager.",
+        "LocalizedString": "Entering your spawn fails the wager."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.2,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.FailOnReturnToSpawn"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.WithoutReturningToSpawn"
+      }
+    },
+    "Wager.Condition.Kills.TargetInControlZone": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.TargetInControlZone.Name",
+        "SourceString": "Target In Control Zone",
+        "LocalizedString": "Target In Control Zone"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.TargetInControlZone.Description",
+        "SourceString": "Counts a kill only when your target is inside a Control Zone or the Hot Zone, wherever you are.",
+        "LocalizedString": "Counts a kill only when your target is inside a Control Zone or the Hot Zone, wherever you are."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_CZ.T_UI_WagerVendor_Icon_CZ",
+        "SubPathString": ""
+      },
+      "Odds": 1.15,
+      "TraitTags": [
+        "Wager.ConditionTrait.Location"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Location"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills"
+      ],
+      "RequiredEventTags": [
+        "Challenges.Context.Target.InControlZone",
+        "Challenges.Context.Target.InHotZone"
+      ],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [],
+      "Tag": {
+        "TagName": "Wager.Condition.Kills.TargetInControlZone"
+      }
+    },
+    "Wager.Condition.Kills.TargetInHotZoneFromOutside": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.TargetInHotZoneFromOutside.Name",
+        "SourceString": "Target In Hot Zone, You Outside",
+        "LocalizedString": "Target In Hot Zone, You Outside"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.TargetInHotZoneFromOutside.Description",
+        "SourceString": "Counts a kill only when your target is inside the Hot Zone and you are outside it.",
+        "LocalizedString": "Counts a kill only when your target is inside the Hot Zone and you are outside it."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_HZ.T_UI_WagerVendor_Icon_HZ",
+        "SubPathString": ""
+      },
+      "Odds": 1.25,
+      "TraitTags": [
+        "Wager.ConditionTrait.Location"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Location"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills"
+      ],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaakfdimkkalchjcbedi": [
+            "Challenges.Context.Target.InHotZone"
+          ],
+          "_aaaalomlnknmafbflkiin": [
+            "Challenges.Context.Instigator.InHotZone"
+          ],
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.RequireEventTags"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.Kills.TargetInHotZoneFromOutside"
+      }
+    },
+    "Wager.Condition.Kills.TargetInHotZone": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.TargetInHotZone.Name",
+        "SourceString": "Target In Hot Zone",
+        "LocalizedString": "Target In Hot Zone"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.Kills.TargetInHotZone.Description",
+        "SourceString": "Counts a kill only when your target is inside the Hot Zone, wherever you are.",
+        "LocalizedString": "Counts a kill only when your target is inside the Hot Zone, wherever you are."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/Vendor/Widgets/Wagers/Textures/T_UI_WagerVendor_Icon_HZ.T_UI_WagerVendor_Icon_HZ",
+        "SubPathString": ""
+      },
+      "Odds": 1.2,
+      "TraitTags": [
+        "Wager.ConditionTrait.Location"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Location"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.Kills"
+      ],
+      "RequiredEventTags": [
+        "Challenges.Context.Target.InHotZone"
+      ],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [],
+      "Tag": {
+        "TagName": "Wager.Condition.Kills.TargetInHotZone"
+      }
+    },
+    "Wager.Condition.NoFriendlyDamage": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoFriendlyDamage.Name",
+        "SourceString": "Without Damaging Your Team",
+        "LocalizedString": "Without Damaging Your Team"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.NoFriendlyDamage.Description",
+        "SourceString": "Damaging a teammate or anything of your team's, such as vehicles, buildables or supplies, fails the wager.",
+        "LocalizedString": "Damaging a teammate or anything of your team's, such as vehicles, buildables or supplies, fails the wager."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "",
+        "SubPathString": ""
+      },
+      "Odds": 1.2,
+      "TraitTags": [],
+      "IncompatibleTraitTags": [],
+      "RequiresAnyActionTags": [],
+      "RequiredEventTags": [],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [
+        {
+          "_aaaalndmlkdbdgenbhaek": {
+            "TagName": "Wager.Behavior.FailOnFriendlyDamage"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Wager.Condition.NoFriendlyDamage"
+      }
+    },
+    "Wager.Condition.SupplyPalletsDelivered.Stolen": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.SupplyPalletsDelivered.Stolen.Name",
+        "SourceString": "Stolen From The Enemy",
+        "LocalizedString": "Stolen From The Enemy"
+      },
+      "_aaaakoinngipbcijjmfcn": {
+        "TagName": "None"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Condition.SupplyPalletsDelivered.Stolen.Description",
+        "SourceString": "Counts a pallet only when an enemy bought it.",
+        "LocalizedString": "Counts a pallet only when an enemy bought it."
+      },
+      "FailedText": {
+        "CultureInvariantString": null
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Utility/3D/T_UI_Vendor_Crowbar.T_UI_Vendor_Crowbar",
+        "SubPathString": ""
+      },
+      "Odds": 2.0,
+      "TraitTags": [
+        "Wager.ConditionTrait.Target"
+      ],
+      "IncompatibleTraitTags": [
+        "Wager.ConditionTrait.Target"
+      ],
+      "RequiresAnyActionTags": [
+        "Wager.Action.SupplyPalletsDelivered"
+      ],
+      "RequiredEventTags": [
+        "Challenges.Context.SupplyPallet.Stolen"
+      ],
+      "_aaaalachhfgpfehmdofie": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "MinValue": 0,
+      "MaxValue": 0,
+      "ValueStep": 1,
+      "CooldownSeconds": 86400.0,
+      "Behaviors": [],
+      "Tag": {
+        "TagName": "Wager.Condition.SupplyPalletsDelivered.Stolen"
       }
     }
   }

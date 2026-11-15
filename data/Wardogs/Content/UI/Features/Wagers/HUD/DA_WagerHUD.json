@@ -1,8 +1,48 @@
+--- export: UObject / WDUIViewModelExtension_HUDElement_0 ---
+{
+  "Type": "WDUIViewModelExtension_HUDElement",
+  "Name": "WDUIViewModelExtension_HUDElement_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUIViewModelExtension_HUDElement'",
+  "Outer": {
+    "ObjectName": "WDUIWagerHUDData'DA_WagerHUD'",
+    "ObjectPath": "/Game/UI/Features/Wagers/HUD/DA_WagerHUD.1"
+  },
+  "Properties": {
+    "OpacityUpdateRate": 1.25
+  }
+}
 --- export: UDataAsset / DA_WagerHUD ---
 {
   "Type": "WDUIWagerHUDData",
   "Name": "DA_WagerHUD",
   "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
   "Class": "UScriptClass'WDUIWagerHUDData'",
-  "Package": "/Game/UI/Features/Wagers/HUD/DA_WagerHUD"
+  "Package": "/Game/UI/Features/Wagers/HUD/DA_WagerHUD",
+  "Properties": {
+    "_aaabadhgjikflmdgkeigk": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "HUD_ActiveHeaderText",
+      "SourceString": "Wager",
+      "LocalizedString": "Wager"
+    },
+    "_aaaanbgjpojdancefdnio": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Toast_WonHeadline",
+      "SourceString": "WAGER COMPLETE",
+      "LocalizedString": "WAGER COMPLETE"
+    },
+    "_aaabafjfphnedjeemkdjm": {
+      "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+      "Key": "Toast_LostHeadline",
+      "SourceString": "WAGER FAILED",
+      "LocalizedString": "WAGER FAILED"
+    },
+    "ExtensionTemplates": [
+      {
+        "ObjectName": "WDUIViewModelExtension_HUDElement'DA_WagerHUD:WDUIViewModelExtension_HUDElement_0'",
+        "ObjectPath": "/Game/UI/Features/Wagers/HUD/DA_WagerHUD.0"
+      }
+    ]
+  }
 }

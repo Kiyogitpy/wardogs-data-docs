@@ -250,3 +250,44 @@ The `f` there is the speed-loss fraction directly, to avoid asserting a thicknes
 - [`assets/data/weapon-penetration.json`](../../assets/data/weapon-penetration.json).
 - This page. Not touched: damage page, damage JSON, config, `assets/js`, `worker/`,
   round 24 files.
+
+
+## 8. Current CL533731 data-only amendment (2026-11-14)
+
+Sections 1–7 retain the historical round-25 source and native address scope.
+Their 146-entry infantry, 125 named / 9,076 null physical-material counts and
+one generic-vehicle history-tag entry are baseline observations, superseded
+for current export correspondence by the census below. No current native
+consumer behavior, material semantics or live activation is established here.
+
+CL533731 generic vehicle table: `Rows = {}` (zero rows).
+The current infantry array has 168 entries; zero entries mention the ricochet
+or penetration history tags. PhysicalMaterialOverride appears in 156 files:
+9,141 null values and 121 named references (Metal 90, Concrete 20, Plaster 9,
+Brick 1, Glass 1). These are serialized references, not resolved mesh materials.
+The independent verifier checks exact counts and source identities, including
+the ordered (data/Wardogs-relative path, SHA-256) physical-material file cohort
+hashed as compact JSON. Changed sources or an absent/invalid census fail.
+
+<!-- current-round25-census -->
+```json
+{
+  "build": "CL533731",
+  "physical_material_files": 156,
+  "physical_material_nulls": 9141,
+  "physical_material_named": {
+    "PM_Concrete": 20,
+    "PM_Plaster": 9,
+    "PM_Brick": 1,
+    "PM_Metal": 90,
+    "PM_Glass": 1
+  },
+  "physical_material_cohort_sha256": "aefc66e5cae9f3ecade4f9c5ac74f222c9b02207aa35ba336d9cb1ed0228746c",
+  "infantry_entries": 168,
+  "infantry_history_tag_entries": 0,
+  "infantry_sha256": "52ffb5942e87f002eb73607eded54895cbbae56f3a712f98ddc0a03368fd52d8",
+  "generic_vehicle_sha256": "fd8f9ecb47c96b167472c83065b222933a95cffe538a14e2c8a6637d754afe53",
+  "generic_vehicle_rows": 0
+}
+```
+<!-- /current-round25-census -->

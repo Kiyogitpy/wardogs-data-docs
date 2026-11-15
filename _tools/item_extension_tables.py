@@ -24,6 +24,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import weapon_vendor_tables as wv  # noqa: E402
 import item_shop_tables as ist  # noqa: E402
+from damage_export_fields import armor_damage_context
 
 ROOT = wv.ROOT
 DATA = os.path.join(ROOT, "data", "Wardogs")
@@ -116,7 +117,7 @@ def blk_armor(it):
     rows_by_tag = damage_rows_by_tag()
     rows = []
     for f, iid, pr in it.rows("WDInventoryFragment_Armor"):
-        tg = (pr.get("DamageContextTag") or {}).get("TagName", "")
+        tg = (armor_damage_context(pr) or {}).get("TagName", "")
         cov = ", ".join(short(x).replace("HitLocation.Infantry.", "") for x in pr.get("CoveredHitLocations", [])) or "-"
         dur = (pr.get("ReplicatedData") or {}).get("Durability")
         refs = rows_by_tag.get(tg, [])

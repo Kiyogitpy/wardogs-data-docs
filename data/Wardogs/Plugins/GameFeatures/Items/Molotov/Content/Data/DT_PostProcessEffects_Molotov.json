@@ -14,10 +14,10 @@
   "Rows": {
     "PostProcessEffect.Molotov.Burning": {
       "MaterialClass": {
-        "ObjectName": "MaterialInstanceConstant'MI_PP_Burning'",
-        "ObjectPath": "/Molotov/Data/MI_PP_Burning.0"
+        "ObjectName": "MaterialInstanceConstant'PPi_Player_Burning'",
+        "ObjectPath": "/Molotov/Data/PPi_Player_Burning.0"
       },
-      "Duration": 0.0,
+      "Duration": 2.5,
       "ProgressParams": [
         {
           "ProgressParameterName": "DamageVignetteProgress",
@@ -223,7 +223,7 @@
           "LoopPlayRate": 0.1
         },
         {
-          "ProgressParameterName": "DarkenProgress",
+          "ProgressParameterName": "FireProgress",
           "ProgressEvaluationCurve": {
             "EditorCurveData": {
               "Keys": [
@@ -233,16 +233,16 @@
                   "TangentWeightMode": "RCTWM_WeightedNone",
                   "Time": 0.0,
                   "Value": 0.0,
-                  "ArriveTangent": 8.689456,
+                  "ArriveTangent": 3.105462,
                   "ArriveTangentWeight": 0.0,
-                  "LeaveTangent": 8.689456,
+                  "LeaveTangent": 3.1054623,
                   "LeaveTangentWeight": 0.0
                 },
                 {
                   "InterpMode": "RCIM_Cubic",
                   "TangentMode": "RCTM_Break",
                   "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.25,
+                  "Time": 0.45,
                   "Value": 0.75,
                   "ArriveTangent": 0.006992,
                   "ArriveTangentWeight": 0.0,
@@ -253,7 +253,7 @@
                   "InterpMode": "RCIM_Cubic",
                   "TangentMode": "RCTM_Break",
                   "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.75,
+                  "Time": 0.55,
                   "Value": 0.75,
                   "ArriveTangent": -0.027532,
                   "ArriveTangentWeight": 0.0,
@@ -266,9 +266,9 @@
                   "TangentWeightMode": "RCTWM_WeightedNone",
                   "Time": 1.0,
                   "Value": 0.0,
-                  "ArriveTangent": -7.344527,
+                  "ArriveTangent": -2.2840042,
                   "ArriveTangentWeight": 0.0,
-                  "LeaveTangent": -7.344556,
+                  "LeaveTangent": -2.284017,
                   "LeaveTangentWeight": 0.0
                 }
               ],
@@ -280,8 +280,8 @@
           },
           "bLoopProgressCurveOnCompletion": true,
           "LoopStartEnd": {
-            "X": 0.25,
-            "Y": 0.75
+            "X": 0.45,
+            "Y": 0.55
           },
           "LoopPlayRate": 0.1
         },

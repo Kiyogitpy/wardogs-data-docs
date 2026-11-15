@@ -352,7 +352,7 @@
         "ObjectPath": "/MedKit/Animation/Weapon/Montages/AM_Weap_Medkit_Equip.0"
       }
     },
-    "HolsterAnimation": {
+    "_aaabadmmcdmepjioholhi": {
       "FirstPersonPlayerAnimation": {
         "ObjectName": "AnimMontage'AM_FP_Medkit_Holster'",
         "ObjectPath": "/MedKit/Animation/Character/Montages/AM_FP_Medkit_Holster.0"
@@ -539,6 +539,7 @@
           },
           "AmountConsumedOnUse": 0,
           "bWorldInteractableUse": true,
+          "_aaabjplenjfbjdnbjfoik": false,
           "bInteractionSystemAppliable": false,
           "WorldInteractionContextClass": {
             "ObjectName": "Class'WDMedKitInteractionContext'",
@@ -584,9 +585,13 @@
             "Effects": []
           },
           "AmountConsumedOnUse": 1,
-          "bWorldInteractableUse": false,
+          "bWorldInteractableUse": true,
+          "_aaabjplenjfbjdnbjfoik": true,
           "bInteractionSystemAppliable": false,
-          "WorldInteractionContextClass": null,
+          "WorldInteractionContextClass": {
+            "ObjectName": "Class'WDMedKitInteractionContext'",
+            "ObjectPath": "/Script/MedKitRuntime"
+          },
           "RequiredTargetStates": [],
           "bShowOnScreenHoldProgressWheel": false
         }

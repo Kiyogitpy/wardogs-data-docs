@@ -39,6 +39,7 @@
    {"script": "bp_defaults.py", "name": "_aaabdgioabebpkhhmcglm", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
    {"script": "bp_defaults.py", "name": "_aaabknhhcfikfkdfeephh", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
    {"script": "bp_defaults.py", "name": "_aaabakopnbgagdbajfflp", "reason": "Blueprint dump name (B_Molotov / B_Molotov_FireField fields read from the WdExtract Blueprint dump); not a key of the CueDump export"},
+   {"script": "damage_export_fields.py", "name": "_aaabapbnbhiopifeenjml", "reason": "Exact historical CL516586 caliber-map alias; direct CL533731 exports use CaliberModifiers. Both schemas have explicit regression controls."},
    {"script": "spray_patterns.py", "name": "_aaabgocclgplfdmmfjefm", "reason": "Season 1 legacy bipod key, kept for the Season 1 export; the v2 usmap names it"},
    {"script": "spray_patterns.py", "name": "_aaabpgfgnkcdbhhlgdhmb", "reason": "Season 1 legacy bipod key, kept for the Season 1 export; the v2 usmap names it"},
    {"script": "spread_recoil_tables.py", "name": "_aaacclfeejhodkalcagid", "reason": "SDK dump name (WDGame_structs.hpp), aliased to the key the cooked asset uses; not a key of the export"},
@@ -1799,6 +1800,96 @@
    "check": [],
    "inputs": ["synthetic fixtures"],
    "notes": "hashed_names_check.py regression tests"
+  },
+  {
+   "script": "damage_export_fields.py",
+   "class": "library",
+   "tier": "core",
+   "write": null,
+   "check": null,
+   "inputs": ["data"],
+   "notes": "Owner-scoped exact field associations for historical and direct hotfix exports; ambiguous or absent aliases reject."
+  },
+  {
+   "script": "test_current_census.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["synthetic fixtures"],
+   "notes": "Complete typed current census evidence; booleans, float counts, missing/duplicate keys and duplicate blocks reject."
+  },
+  {
+   "script": "source_provenance.py",
+   "class": "library",
+   "tier": "core",
+   "write": null,
+   "check": null,
+   "inputs": ["Git source tree and read-only status"],
+   "notes": "Committed baseline tree with explicit +dirty preview marker; unknown provenance remains null without a previous-output fallback."
+  },
+  {
+   "script": "test_source_provenance.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["synthetic Git responses"],
+   "notes": "Clean, staged, unstaged, untracked, missing-ref and failed-status provenance controls; no mutable Git commands."
+  },
+  {
+   "script": "test_buildable_discovery.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["data", "synthetic fixtures"],
+   "notes": "The relocated hotfix drill definition remains discoverable; duplicate definitions reject."
+  },
+  {
+   "script": "test_historical_source_links.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["synthetic fixtures"],
+   "notes": "Pinned source links require the claimed historical Git object; missing and wrong-kind objects reject."
+  },
+  {
+   "script": "test_economy_hotfix.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["data", "synthetic fixtures"],
+   "notes": "Source-bound achievement trees and parameter descriptors, current/historical wager tag representations, malformed/changed source controls and unresolved-output exit contract."
+  },
+  {
+   "script": "test_price_modifiers.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["data", "synthetic fixtures"],
+   "notes": "Omitted and nested price multipliers cannot become invented top-level/native values."
+  },
+  {
+   "script": "test_experience_config_tables.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["synthetic fixtures"],
+   "notes": "Missing current mode definitions remain explicitly unavailable; present definitions use current exported features."
+  },
+  {
+   "script": "test_damage_export_fields.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["data", "synthetic fixtures"],
+   "notes": "Historical/current field selection, collision/missing rejection and source relocation controls."
   },
   {
    "script": "test_isolated_imports.py",

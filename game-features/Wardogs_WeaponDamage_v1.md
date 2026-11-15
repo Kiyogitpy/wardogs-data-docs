@@ -41,7 +41,7 @@ Each table ranks the weapons by damage per hit for one ammo type, against one ar
 | 2 | MK22: 153.6 | MK22: 115.2 |
 | 3 | SV98, Mosin Nagant (WEPN_017): 150.2 | SV98, Mosin Nagant (WEPN_017): 112.6 |
 | 4 | Deagle (WEPN_027): 105.8 | Deagle (WEPN_027): 79.4 |
-| 5 | Scout Rifle TD (WEPN_035): 95.6 | Scout Rifle TD (WEPN_035): 66.9 |
+| 5 | BMR-308 (RFB), M14 (WEPN_034): 98.3 | BMR-308 (RFB), M14 (WEPN_034): 73.7 |
 <!-- /weapon_damage_tables -->
 
 ### Hollow point (HP)
@@ -71,7 +71,7 @@ Each table ranks the weapons by damage per hit for one ammo type, against one ar
 | 2 | MK22: 384.0 | MK22: 17.3 |
 | 3 | SV98, Mosin Nagant (WEPN_017): 375.5 | SV98, Mosin Nagant (WEPN_017): 16.9 |
 | 4 | Deagle (WEPN_027): 264.6 | Deagle (WEPN_027): 11.9 |
-| 5 | Scout Rifle TD (WEPN_035): 238.9 | Scout Rifle TD (WEPN_035): 10.8 |
+| 5 | BMR-308 (RFB), M14 (WEPN_034): 245.7 | BMR-308 (RFB), M14 (WEPN_034): 11.1 |
 <!-- /weapon_damage_tables -->
 
 ### FMJ
@@ -101,7 +101,7 @@ Each table ranks the weapons by damage per hit for one ammo type, against one ar
 | 2 | MK22: 192.0 | MK22: 96.0 |
 | 3 | SV98, Mosin Nagant (WEPN_017): 187.7 | SV98, Mosin Nagant (WEPN_017): 93.9 |
 | 4 | Deagle (WEPN_027): 132.3 | Deagle (WEPN_027): 66.2 |
-| 5 | Scout Rifle TD (WEPN_035): 119.5 | Scout Rifle TD (WEPN_035): 59.7 |
+| 5 | BMR-308 (RFB), M14 (WEPN_034): 122.8 | BMR-308 (RFB), M14 (WEPN_034): 61.4 |
 <!-- /weapon_damage_tables -->
 
 ## 2. How AP, HP and FMJ differ
@@ -127,54 +127,54 @@ One row per weapon and ammo type. Weapons whose numbers are identical for every 
 <!-- weapon_damage_tables all -->
 | Weapon | Caliber | Ammo | Base damage | Torso: no armor | Torso: Light | Torso: Medium | Torso: Heavy | Torso: SuperHeavy | Head: no helmet | Head: Heavy |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | FMJ | 28.0 | 27.3 | 19.1 | 16.4 | 13.6 | 10.9 | 65.8 | 32.9 |
-| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | Tracer | 28.0 | 27.3 | 19.1 | 16.4 | 13.6 | 10.9 | 65.8 | 32.9 |
-| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | HP | 28.0 | 54.5 | 8.1 | 5.9 | 3.7 | 1.5 | 131.6 | 5.9 |
-| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | HP tracer | 28.0 | 54.5 | 8.1 | 5.9 | 3.7 | 1.5 | 131.6 | 5.9 |
-| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | AP | 28.0 | 21.8 | 17.9 | 16.6 | 15.3 | 14.0 | 52.6 | 36.8 |
-| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | AP tracer | 28.0 | 21.8 | 17.9 | 16.6 | 15.3 | 14.0 | 52.6 | 36.8 |
-| AK74 (AK74M) | 545mm | FMJ | 26.0 | 25.3 | 17.7 | 15.2 | 12.7 | 10.1 | 61.1 | 30.6 |
-| AK74 (AK74M) | 545mm | Tracer | 26.0 | 25.3 | 17.7 | 15.2 | 12.7 | 10.1 | 61.1 | 30.6 |
-| AK74 (AK74M) | 545mm | HP | 26.0 | 50.6 | 7.5 | 5.5 | 3.4 | 1.4 | 122.2 | 5.5 |
-| AK74 (AK74M) | 545mm | HP tracer | 26.0 | 50.6 | 7.5 | 5.5 | 3.4 | 1.4 | 122.2 | 5.5 |
-| AK74 (AK74M) | 545mm | AP | 26.0 | 20.2 | 16.6 | 15.4 | 14.2 | 13.0 | 48.9 | 34.2 |
-| AK74 (AK74M) | 545mm | AP tracer | 26.0 | 20.2 | 16.6 | 15.4 | 14.2 | 13.0 | 48.9 | 34.2 |
-| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | FMJ | 45.0 | 32.9 | 23.0 | 19.7 | 16.4 | 13.1 | 79.3 | 39.7 |
-| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | Tracer | 45.0 | 32.9 | 23.0 | 19.7 | 16.4 | 13.1 | 79.3 | 39.7 |
-| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | HP | 45.0 | 65.7 | 9.8 | 7.1 | 4.4 | 1.8 | 158.6 | 7.1 |
-| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | HP tracer | 45.0 | 65.7 | 9.8 | 7.1 | 4.4 | 1.8 | 158.6 | 7.1 |
-| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | AP | 45.0 | 26.3 | 22.3 | 21.0 | 19.7 | 18.4 | 63.5 | 47.6 |
-| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | AP tracer | 45.0 | 26.3 | 22.3 | 21.0 | 19.7 | 18.4 | 63.5 | 47.6 |
-| TCX-SPR (WEPN_037) | 762mm | FMJ | 34.0 | 29.1 | 20.4 | 17.5 | 14.6 | 11.7 | 70.3 | 35.2 |
-| TCX-SPR (WEPN_037) | 762mm | Tracer | 34.0 | 29.1 | 20.4 | 17.5 | 14.6 | 11.7 | 70.3 | 35.2 |
-| TCX-SPR (WEPN_037) | 762mm | HP | 34.0 | 58.3 | 8.7 | 6.3 | 3.9 | 1.6 | 140.6 | 6.3 |
-| TCX-SPR (WEPN_037) | 762mm | HP tracer | 34.0 | 58.3 | 8.7 | 6.3 | 3.9 | 1.6 | 140.6 | 6.3 |
-| TCX-SPR (WEPN_037) | 762mm | AP | 34.0 | 23.3 | 19.8 | 18.6 | 17.5 | 16.3 | 56.2 | 42.2 |
-| TCX-SPR (WEPN_037) | 762mm | AP tracer | 34.0 | 23.3 | 19.8 | 18.6 | 17.5 | 16.3 | 56.2 | 42.2 |
-| BMR-308 (RFB), M14 (WEPN_034) | 308Win | FMJ | 45.0 | 45.0 | 31.5 | 27.0 | 22.5 | 18.0 | 93.7 | 46.9 |
-| BMR-308 (RFB), M14 (WEPN_034) | 308Win | Tracer | 45.0 | 45.0 | 31.5 | 27.0 | 22.5 | 18.0 | 93.7 | 46.9 |
-| BMR-308 (RFB), M14 (WEPN_034) | 308Win | HP | 45.0 | 90.0 | 13.4 | 9.7 | 6.1 | 2.4 | 187.4 | 8.4 |
-| BMR-308 (RFB), M14 (WEPN_034) | 308Win | HP tracer | 45.0 | 90.0 | 13.4 | 9.7 | 6.1 | 2.4 | 187.4 | 8.4 |
-| BMR-308 (RFB), M14 (WEPN_034) | 308Win | AP | 45.0 | 36.0 | 30.6 | 28.8 | 27.0 | 25.2 | 75.0 | 56.2 |
-| BMR-308 (RFB), M14 (WEPN_034) | 308Win | AP tracer | 45.0 | 36.0 | 30.6 | 28.8 | 27.0 | 25.2 | 75.0 | 56.2 |
-| SKS | 762mm | FMJ | 34.0 | 40.0 | 28.0 | 24.0 | 20.0 | 16.0 | 83.3 | 41.7 |
-| SKS | 762mm | Tracer | 34.0 | 40.0 | 28.0 | 24.0 | 20.0 | 16.0 | 83.3 | 41.7 |
-| SKS | 762mm | HP | 34.0 | 80.0 | 11.9 | 8.6 | 5.4 | 2.2 | 166.6 | 7.5 |
-| SKS | 762mm | HP tracer | 34.0 | 80.0 | 11.9 | 8.6 | 5.4 | 2.2 | 166.6 | 7.5 |
-| SKS | 762mm | AP | 34.0 | 32.0 | 27.2 | 25.6 | 24.0 | 22.4 | 66.6 | 50.0 |
-| SKS | 762mm | AP tracer | 34.0 | 32.0 | 27.2 | 25.6 | 24.0 | 22.4 | 66.6 | 50.0 |
-| SVD (SVDM) | 762x54mm | FMJ | 44.0 | 41.4 | 29.0 | 24.9 | 20.7 | 16.6 | 86.2 | 43.1 |
-| SVD (SVDM) | 762x54mm | Tracer | 44.0 | 41.4 | 29.0 | 24.9 | 20.7 | 16.6 | 86.2 | 43.1 |
-| SVD (SVDM) | 762x54mm | HP | 44.0 | 82.9 | 12.3 | 8.9 | 5.6 | 2.2 | 172.5 | 7.8 |
-| SVD (SVDM) | 762x54mm | HP tracer | 44.0 | 82.9 | 12.3 | 8.9 | 5.6 | 2.2 | 172.5 | 7.8 |
-| SVD (SVDM) | 762x54mm | AP | 44.0 | 33.1 | 28.2 | 26.5 | 24.9 | 23.2 | 69.0 | 51.7 |
-| SVD (SVDM) | 762x54mm | AP tracer | 44.0 | 33.1 | 28.2 | 26.5 | 24.9 | 23.2 | 69.0 | 51.7 |
-| PKM (LMG_02) | 762x54mm | FMJ | 44.0 | 32.1 | 22.5 | 19.3 | 16.1 | 12.9 | 77.6 | 38.8 |
-| PKM (LMG_02) | 762x54mm | Tracer | 44.0 | 32.1 | 22.5 | 19.3 | 16.1 | 12.9 | 77.6 | 38.8 |
-| PKM (LMG_02) | 762x54mm | HP | 44.0 | 64.3 | 9.5 | 6.9 | 4.3 | 1.7 | 155.1 | 7.0 |
-| PKM (LMG_02) | 762x54mm | HP tracer | 44.0 | 64.3 | 9.5 | 6.9 | 4.3 | 1.7 | 155.1 | 7.0 |
-| PKM (LMG_02) | 762x54mm | AP | 44.0 | 25.7 | 21.8 | 20.6 | 19.3 | 18.0 | 62.0 | 46.5 |
-| PKM (LMG_02) | 762x54mm | AP tracer | 44.0 | 25.7 | 21.8 | 20.6 | 19.3 | 18.0 | 62.0 | 46.5 |
+| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | FMJ | 28.0 | 30.8 | 21.6 | 18.5 | 15.4 | 12.3 | 65.8 | 32.9 |
+| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | Tracer | 28.0 | 30.8 | 21.6 | 18.5 | 15.4 | 12.3 | 65.8 | 32.9 |
+| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | HP | 28.0 | 61.6 | 9.1 | 6.7 | 4.2 | 1.7 | 131.6 | 5.9 |
+| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | HP tracer | 28.0 | 61.6 | 9.1 | 6.7 | 4.2 | 1.7 | 131.6 | 5.9 |
+| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | AP | 28.0 | 24.6 | 20.2 | 18.7 | 17.2 | 15.8 | 52.6 | 36.8 |
+| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | AP tracer | 28.0 | 24.6 | 20.2 | 18.7 | 17.2 | 15.8 | 52.6 | 36.8 |
+| AK74 (AK74M) | 545mm | FMJ | 26.0 | 28.6 | 20.0 | 17.2 | 14.3 | 11.4 | 61.1 | 30.6 |
+| AK74 (AK74M) | 545mm | Tracer | 26.0 | 28.6 | 20.0 | 17.2 | 14.3 | 11.4 | 61.1 | 30.6 |
+| AK74 (AK74M) | 545mm | HP | 26.0 | 57.2 | 8.5 | 6.2 | 3.9 | 1.5 | 122.2 | 5.5 |
+| AK74 (AK74M) | 545mm | HP tracer | 26.0 | 57.2 | 8.5 | 6.2 | 3.9 | 1.5 | 122.2 | 5.5 |
+| AK74 (AK74M) | 545mm | AP | 26.0 | 22.9 | 18.8 | 17.4 | 16.0 | 14.6 | 48.9 | 34.2 |
+| AK74 (AK74M) | 545mm | AP tracer | 26.0 | 22.9 | 18.8 | 17.4 | 16.0 | 14.6 | 48.9 | 34.2 |
+| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | FMJ | 45.0 | 37.1 | 26.0 | 22.3 | 18.6 | 14.9 | 79.3 | 39.7 |
+| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | Tracer | 45.0 | 37.1 | 26.0 | 22.3 | 18.6 | 14.9 | 79.3 | 39.7 |
+| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | HP | 45.0 | 74.2 | 11.0 | 8.0 | 5.0 | 2.0 | 158.6 | 7.1 |
+| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | HP tracer | 45.0 | 74.2 | 11.0 | 8.0 | 5.0 | 2.0 | 158.6 | 7.1 |
+| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | AP | 45.0 | 29.7 | 25.2 | 23.8 | 22.3 | 20.8 | 63.5 | 47.6 |
+| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | AP tracer | 45.0 | 29.7 | 25.2 | 23.8 | 22.3 | 20.8 | 63.5 | 47.6 |
+| TCX-SPR (WEPN_037) | 762mm | FMJ | 34.0 | 32.9 | 23.0 | 19.7 | 16.5 | 13.2 | 70.3 | 35.2 |
+| TCX-SPR (WEPN_037) | 762mm | Tracer | 34.0 | 32.9 | 23.0 | 19.7 | 16.5 | 13.2 | 70.3 | 35.2 |
+| TCX-SPR (WEPN_037) | 762mm | HP | 34.0 | 65.8 | 9.8 | 7.1 | 4.4 | 1.8 | 140.6 | 6.3 |
+| TCX-SPR (WEPN_037) | 762mm | HP tracer | 34.0 | 65.8 | 9.8 | 7.1 | 4.4 | 1.8 | 140.6 | 6.3 |
+| TCX-SPR (WEPN_037) | 762mm | AP | 34.0 | 26.3 | 22.4 | 21.1 | 19.7 | 18.4 | 56.2 | 42.2 |
+| TCX-SPR (WEPN_037) | 762mm | AP tracer | 34.0 | 26.3 | 22.4 | 21.1 | 19.7 | 18.4 | 56.2 | 42.2 |
+| BMR-308 (RFB), M14 (WEPN_034) | 308Win | FMJ | 45.0 | 61.7 | 43.2 | 37.0 | 30.9 | 24.7 | 122.8 | 61.4 |
+| BMR-308 (RFB), M14 (WEPN_034) | 308Win | Tracer | 45.0 | 61.7 | 43.2 | 37.0 | 30.9 | 24.7 | 122.8 | 61.4 |
+| BMR-308 (RFB), M14 (WEPN_034) | 308Win | HP | 45.0 | 123.4 | 18.3 | 13.3 | 8.3 | 3.3 | 245.7 | 11.1 |
+| BMR-308 (RFB), M14 (WEPN_034) | 308Win | HP tracer | 45.0 | 123.4 | 18.3 | 13.3 | 8.3 | 3.3 | 245.7 | 11.1 |
+| BMR-308 (RFB), M14 (WEPN_034) | 308Win | AP | 45.0 | 49.4 | 42.0 | 39.5 | 37.0 | 34.6 | 98.3 | 73.7 |
+| BMR-308 (RFB), M14 (WEPN_034) | 308Win | AP tracer | 45.0 | 49.4 | 42.0 | 39.5 | 37.0 | 34.6 | 98.3 | 73.7 |
+| SKS | 762mm | FMJ | 34.0 | 51.2 | 30.5 | 26.1 | 21.8 | 17.4 | 102.0 | 40.8 |
+| SKS | 762mm | Tracer | 34.0 | 51.2 | 30.5 | 26.1 | 21.8 | 17.4 | 102.0 | 40.8 |
+| SKS | 762mm | HP | 34.0 | 102.5 | 12.9 | 9.4 | 5.9 | 2.4 | 204.0 | 7.3 |
+| SKS | 762mm | HP tracer | 34.0 | 102.5 | 12.9 | 9.4 | 5.9 | 2.4 | 204.0 | 7.3 |
+| SKS | 762mm | AP | 34.0 | 41.0 | 29.6 | 27.9 | 26.1 | 24.4 | 81.6 | 49.0 |
+| SKS | 762mm | AP tracer | 34.0 | 41.0 | 29.6 | 27.9 | 26.1 | 24.4 | 81.6 | 49.0 |
+| SVD (SVDM) | 762x54mm | FMJ | 44.0 | 59.7 | 41.8 | 35.8 | 29.8 | 23.9 | 118.8 | 59.4 |
+| SVD (SVDM) | 762x54mm | Tracer | 44.0 | 59.7 | 41.8 | 35.8 | 29.8 | 23.9 | 118.8 | 59.4 |
+| SVD (SVDM) | 762x54mm | HP | 44.0 | 119.4 | 17.7 | 12.9 | 8.1 | 3.2 | 237.6 | 10.7 |
+| SVD (SVDM) | 762x54mm | HP tracer | 44.0 | 119.4 | 17.7 | 12.9 | 8.1 | 3.2 | 237.6 | 10.7 |
+| SVD (SVDM) | 762x54mm | AP | 44.0 | 47.7 | 40.6 | 38.2 | 35.8 | 33.4 | 95.0 | 71.3 |
+| SVD (SVDM) | 762x54mm | AP tracer | 44.0 | 47.7 | 40.6 | 38.2 | 35.8 | 33.4 | 95.0 | 71.3 |
+| PKM (LMG_02) | 762x54mm | FMJ | 44.0 | 36.3 | 25.4 | 21.8 | 18.2 | 14.5 | 77.6 | 38.8 |
+| PKM (LMG_02) | 762x54mm | Tracer | 44.0 | 36.3 | 25.4 | 21.8 | 18.2 | 14.5 | 77.6 | 38.8 |
+| PKM (LMG_02) | 762x54mm | HP | 44.0 | 72.6 | 10.8 | 7.8 | 4.9 | 2.0 | 155.1 | 7.0 |
+| PKM (LMG_02) | 762x54mm | HP tracer | 44.0 | 72.6 | 10.8 | 7.8 | 4.9 | 2.0 | 155.1 | 7.0 |
+| PKM (LMG_02) | 762x54mm | AP | 44.0 | 29.0 | 24.7 | 23.2 | 21.8 | 20.3 | 62.0 | 46.5 |
+| PKM (LMG_02) | 762x54mm | AP tracer | 44.0 | 29.0 | 24.7 | 23.2 | 21.8 | 20.3 | 62.0 | 46.5 |
 | Deagle (WEPN_027) | 50AE | FMJ | 63.0 | 72.8 | 50.9 | 43.7 | 36.4 | 29.1 | 132.3 | 66.2 |
 | Deagle (WEPN_027) | 50AE | Tracer | 63.0 | 72.8 | 50.9 | 43.7 | 36.4 | 29.1 | 132.3 | 66.2 |
 | Deagle (WEPN_027) | 50AE | HP | 63.0 | 145.5 | 21.6 | 15.7 | 9.8 | 3.9 | 264.6 | 11.9 |
@@ -240,14 +240,14 @@ FMJ damage per hit at each of the six unarmored hit locations. Weapons with the 
 <!-- weapon_damage_tables location -->
 | Weapon | Caliber | Ammo | Head | Neck | Torso.Upper | Torso.Middle | Arm.Upper | Leg.Thigh |
 |---|---|---|---:|---:|---:|---:|---:|---:|
-| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | FMJ | 65.8 | 49.4 | 27.3 | 27.2 | 15.1 | 15.1 |
-| AK74 (AK74M) | 545mm | FMJ | 61.1 | 45.8 | 25.3 | 25.2 | 14.0 | 14.0 |
-| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | FMJ | 79.3 | 59.5 | 32.9 | 32.7 | 18.2 | 18.2 |
-| TCX-SPR (WEPN_037) | 762mm | FMJ | 70.3 | 52.7 | 29.1 | 29.0 | 16.2 | 16.2 |
-| BMR-308 (RFB), M14 (WEPN_034) | 308Win | FMJ | 93.7 | 70.3 | 45.0 | 45.1 | 28.7 | 28.7 |
-| SKS | 762mm | FMJ | 83.3 | 62.5 | 40.0 | 40.1 | 25.5 | 25.5 |
-| SVD (SVDM) | 762x54mm | FMJ | 86.2 | 64.7 | 41.4 | 41.5 | 26.4 | 26.4 |
-| PKM (LMG_02) | 762x54mm | FMJ | 77.6 | 58.2 | 32.1 | 32.0 | 17.8 | 17.8 |
+| A-91 (A91), KH-2002 (KH2002), M249 SAW (M249), M4, T-21 (TAR21), Galil (WEPN_029), Bushmaster M17S (WEPN_033) | 556mm | FMJ | 65.8 | 49.4 | 30.8 | 28.0 | 15.1 | 15.1 |
+| AK74 (AK74M) | 545mm | FMJ | 61.1 | 45.8 | 28.6 | 26.0 | 14.0 | 14.0 |
+| FAL (WEPN_030), Evo-3 Ultra (WEPN_036) | 308Win | FMJ | 79.3 | 59.5 | 37.1 | 33.8 | 18.2 | 18.2 |
+| TCX-SPR (WEPN_037) | 762mm | FMJ | 70.3 | 52.7 | 32.9 | 29.9 | 16.2 | 16.2 |
+| BMR-308 (RFB), M14 (WEPN_034) | 308Win | FMJ | 122.8 | 89.1 | 61.7 | 61.4 | 30.7 | 30.7 |
+| SKS | 762mm | FMJ | 102.0 | 73.9 | 51.2 | 51.0 | 25.5 | 25.5 |
+| SVD (SVDM) | 762x54mm | FMJ | 118.8 | 86.1 | 59.7 | 59.4 | 29.7 | 29.7 |
+| PKM (LMG_02) | 762x54mm | FMJ | 77.6 | 58.2 | 36.3 | 33.0 | 17.8 | 17.8 |
 | Deagle (WEPN_027) | 50AE | FMJ | 132.3 | 99.2 | 72.8 | 66.2 | 49.1 | 49.1 |
 | GGX 17 (Glock17), AMP-9 (MP9), PP-19 Vityaz (SMG_03), MP5 (WEPN_028), PP-19 Bizon (WEPN_031), GGX 18 (WEPN_032) | 9mm | FMJ | 46.2 | 34.7 | 25.4 | 23.1 | 17.2 | 17.2 |
 | Judge | 45Colt | FMJ | 94.5 | 70.9 | 52.0 | 47.2 | 35.1 | 35.1 |
@@ -279,7 +279,7 @@ Torso is Torso.Upper, the head is the Head location with no helmet. Each table r
 | 2 | MK22: 118.8 | MK22: 71.3 | MK22: 192.0 |
 | 3 | SV98, Mosin Nagant (WEPN_017): 116.2 | SV98, Mosin Nagant (WEPN_017): 69.7 | SV98, Mosin Nagant (WEPN_017): 187.7 |
 | 4 | Scout Rifle TD (WEPN_035): 73.9 | Scout Rifle TD (WEPN_035): 44.4 | Deagle (WEPN_027): 128.6 |
-| 5 | Deagle (WEPN_027): 70.7 | Deagle (WEPN_027): 42.4 | Scout Rifle TD (WEPN_035): 119.5 |
+| 5 | Deagle (WEPN_027): 70.7 | Deagle (WEPN_027): 42.4 | BMR-308 (RFB), M14 (WEPN_034): 122.8 |
 
 **400 m.** FMJ leader. Torso, no armor: AMR 50 (SR_04) at 207.9; Torso, Medium: AMR 50 (SR_04) at 124.7; Head, no helmet: AMR 50 (SR_04) at 324.1.
 
@@ -288,8 +288,8 @@ Torso is Torso.Upper, the head is the Head location with no helmet. Each table r
 | 1 | AMR 50 (SR_04): 207.9 | AMR 50 (SR_04): 124.7 | AMR 50 (SR_04): 324.1 |
 | 2 | MK22: 118.8 | MK22: 71.3 | MK22: 192.0 |
 | 3 | SV98, Mosin Nagant (WEPN_017): 116.2 | SV98, Mosin Nagant (WEPN_017): 69.7 | SV98, Mosin Nagant (WEPN_017): 187.7 |
-| 4 | Scout Rifle TD (WEPN_035): 62.6 | Scout Rifle TD (WEPN_035): 37.6 | Scout Rifle TD (WEPN_035): 101.2 |
-| 5 | BMR-308 (RFB), M14 (WEPN_034): 45.0 | BMR-308 (RFB), M14 (WEPN_034): 27.0 | BMR-308 (RFB), M14 (WEPN_034): 93.7 |
+| 4 | Scout Rifle TD (WEPN_035): 62.6 | Scout Rifle TD (WEPN_035): 37.6 | BMR-308 (RFB), M14 (WEPN_034): 122.8 |
+| 5 | BMR-308 (RFB), M14 (WEPN_034): 61.7 | BMR-308 (RFB), M14 (WEPN_034): 37.0 | SVD (SVDM): 118.8 |
 
 **800 m.** FMJ leader. Torso, no armor: AMR 50 (SR_04) at 207.9; Torso, Medium: AMR 50 (SR_04) at 124.7; Head, no helmet: AMR 50 (SR_04) at 324.1.
 
@@ -299,7 +299,7 @@ Torso is Torso.Upper, the head is the Head location with no helmet. Each table r
 | 2 | MK22: 118.8 | MK22: 71.3 | MK22: 192.0 |
 | 3 | SV98: 116.2 | SV98: 69.7 | SV98: 187.7 |
 | 4 | Mosin Nagant (WEPN_017): 86.3 | Mosin Nagant (WEPN_017): 51.8 | Mosin Nagant (WEPN_017): 139.5 |
-| 5 | SVD (SVDM): 41.4 | SVD (SVDM): 24.9 | SVD (SVDM): 86.2 |
+| 5 | SVD (SVDM): 59.7 | SVD (SVDM): 35.8 | SVD (SVDM): 118.8 |
 
 **1200 m.** FMJ leader. Torso, no armor: AMR 50 (SR_04) at 207.9; Torso, Medium: AMR 50 (SR_04) at 124.7; Head, no helmet: AMR 50 (SR_04) at 324.1.
 
@@ -309,7 +309,7 @@ Torso is Torso.Upper, the head is the Head location with no helmet. Each table r
 | 2 | MK22: 82.3 | MK22: 49.4 | MK22: 133.0 |
 | 3 | SV98: 69.0 | SV98: 41.4 | SV98: 111.5 |
 | 4 | Mosin Nagant (WEPN_017): 42.2 | Mosin Nagant (WEPN_017): 25.3 | Mosin Nagant (WEPN_017): 68.1 |
-| 5 | PKM (LMG_02): 21.0 | PKM (LMG_02): 12.6 | PKM (LMG_02): 50.7 |
+| 5 | PKM (LMG_02): 23.7 | PKM (LMG_02): 14.2 | PKM (LMG_02): 50.7 |
 <!-- /weapon_damage_tables -->
 
 **Armor-piercing (AP)**
@@ -323,7 +323,7 @@ Torso is Torso.Upper, the head is the Head location with no helmet. Each table r
 | 2 | MK22: 95.0 | MK22: 76.0 | MK22: 153.6 |
 | 3 | SV98, Mosin Nagant (WEPN_017): 92.9 | SV98, Mosin Nagant (WEPN_017): 74.3 | SV98, Mosin Nagant (WEPN_017): 150.2 |
 | 4 | Scout Rifle TD (WEPN_035): 59.1 | Deagle (WEPN_027): 45.3 | Deagle (WEPN_027): 102.9 |
-| 5 | Deagle (WEPN_027): 56.6 | Scout Rifle TD (WEPN_035): 44.9 | Scout Rifle TD (WEPN_035): 95.6 |
+| 5 | Deagle (WEPN_027): 56.6 | Scout Rifle TD (WEPN_035): 44.9 | BMR-308 (RFB), M14 (WEPN_034): 98.3 |
 
 **400 m.** AP leader. Torso, no armor: AMR 50 (SR_04) at 166.3; Torso, Medium: AMR 50 (SR_04) at 99.8; Head, no helmet: AMR 50 (SR_04) at 259.3.
 
@@ -332,8 +332,8 @@ Torso is Torso.Upper, the head is the Head location with no helmet. Each table r
 | 1 | AMR 50 (SR_04): 166.3 | AMR 50 (SR_04): 99.8 | AMR 50 (SR_04): 259.3 |
 | 2 | MK22: 95.0 | MK22: 76.0 | MK22: 153.6 |
 | 3 | SV98, Mosin Nagant (WEPN_017): 92.9 | SV98, Mosin Nagant (WEPN_017): 74.3 | SV98, Mosin Nagant (WEPN_017): 150.2 |
-| 4 | Scout Rifle TD (WEPN_035): 50.1 | Scout Rifle TD (WEPN_035): 38.1 | Scout Rifle TD (WEPN_035): 80.9 |
-| 5 | BMR-308 (RFB), M14 (WEPN_034): 36.0 | BMR-308 (RFB), M14 (WEPN_034): 28.8 | BMR-308 (RFB), M14 (WEPN_034): 75.0 |
+| 4 | Scout Rifle TD (WEPN_035): 50.1 | BMR-308 (RFB), M14 (WEPN_034): 39.5 | BMR-308 (RFB), M14 (WEPN_034): 98.3 |
+| 5 | BMR-308 (RFB), M14 (WEPN_034): 49.4 | SVD (SVDM): 38.2 | SVD (SVDM): 95.0 |
 
 **800 m.** AP leader. Torso, no armor: AMR 50 (SR_04) at 166.3; Torso, Medium: AMR 50 (SR_04) at 99.8; Head, no helmet: AMR 50 (SR_04) at 259.3.
 
@@ -343,7 +343,7 @@ Torso is Torso.Upper, the head is the Head location with no helmet. Each table r
 | 2 | MK22: 95.0 | MK22: 76.0 | MK22: 153.6 |
 | 3 | SV98: 92.9 | SV98: 74.3 | SV98: 150.2 |
 | 4 | Mosin Nagant (WEPN_017): 69.0 | Mosin Nagant (WEPN_017): 55.2 | Mosin Nagant (WEPN_017): 111.6 |
-| 5 | SVD (SVDM): 33.1 | SVD (SVDM): 26.5 | SVD (SVDM): 69.0 |
+| 5 | SVD (SVDM): 47.7 | SVD (SVDM): 38.2 | SVD (SVDM): 95.0 |
 
 **1200 m.** AP leader. Torso, no armor: AMR 50 (SR_04) at 166.3; Torso, Medium: AMR 50 (SR_04) at 99.8; Head, no helmet: AMR 50 (SR_04) at 259.3.
 
@@ -353,7 +353,7 @@ Torso is Torso.Upper, the head is the Head location with no helmet. Each table r
 | 2 | MK22: 65.8 | MK22: 52.7 | MK22: 106.4 |
 | 3 | SV98: 55.2 | SV98: 44.2 | SV98: 89.2 |
 | 4 | Mosin Nagant (WEPN_017): 33.7 | Mosin Nagant (WEPN_017): 27.0 | Mosin Nagant (WEPN_017): 54.5 |
-| 5 | PKM (LMG_02): 16.8 | PKM (LMG_02): 13.4 | PKM (LMG_02): 40.5 |
+| 5 | PKM (LMG_02): 19.0 | PKM (LMG_02): 15.2 | PKM (LMG_02): 40.5 |
 <!-- /weapon_damage_tables -->
 
 The Judge has no distance curve in the export, so its damage changes only through the speed scale. M500 and MP43 store a three-key linear curve, but the curve's enable flag (`bUseDistanceDamageFalloffCurve`) is absent, so the curve is not applied and their buckshot and slug damage also changes only through the speed scale. The flag's default is false (see Limitations), so the game does not apply that stored curve either. Shotgun values are per pellet.
@@ -454,9 +454,9 @@ Each cell is M4 FMJ damage per hit with that class. "no cover" means no item of 
 |---|---:|---:|---:|---:|---:|---:|---:|
 | Head | 65.8 | 46.1 | 39.5 | 46.1 | 32.9 | 26.3 | 29.6 |
 | Neck | 49.4 | no cover | no cover | no cover | 24.7 | 19.7 | 22.2 |
-| Torso.Upper | 27.3 | 19.1 | 16.4 | no cover | 13.6 | 10.9 | no cover |
-| Torso.Middle | 27.2 | 19.0 | 16.3 | no cover | 13.6 | 10.9 | no cover |
-| Torso.Lower | 25.8 | 18.1 | 15.5 | no cover | 12.9 | 10.3 | no cover |
+| Torso.Upper | 30.8 | 21.6 | 18.5 | no cover | 15.4 | 12.3 | no cover |
+| Torso.Middle | 28.0 | 19.6 | 16.8 | no cover | 14.0 | 11.2 | no cover |
+| Torso.Lower | 26.6 | 18.6 | 16.0 | no cover | 13.3 | 10.6 | no cover |
 | Pelvis | 25.2 | no cover | no cover | no cover | no cover | 10.1 | no cover |
 | Arm.Upper | 15.1 | no cover | no cover | no cover | no cover | 6.0 | no cover |
 | Arm.Lower | 12.6 | no cover | no cover | no cover | no cover | no cover | no cover |
@@ -479,7 +479,7 @@ Against the Neck into a Heavy helmet, AP does more damage than FMJ for every wea
 | 2 | MK22: 86.4 | MK22: 72.0 |
 | 3 | SV98, Mosin Nagant (WEPN_017): 84.5 | SV98, Mosin Nagant (WEPN_017): 70.4 |
 | 4 | Deagle (WEPN_027): 59.5 | Deagle (WEPN_027): 49.6 |
-| 5 | Scout Rifle TD (WEPN_035): 50.2 | Scout Rifle TD (WEPN_035): 44.8 |
+| 5 | BMR-308 (RFB), M14 (WEPN_034): 53.4 | Scout Rifle TD (WEPN_035): 44.8 |
 <!-- /weapon_damage_tables -->
 
 AP beats FMJ at this location for the MK22 (86.4 against 72.0), the SV98 and Mosin Nagant (84.5 against 70.4), the Deagle (59.5 against 49.6) and the Scout Rifle TD (50.2 against 44.8). The AMR 50 stays ahead with FMJ (109.4 against 87.5), because its AP damage is always 0.8 times its FMJ damage (section 2). The M4 is not in the top five; its FMJ is 24.7 and its AP is 27.6. Arm.Lower, Arm.Hand, Leg.Thigh, Leg.Calf and Leg.Foot have no covering item, so a hit there is unarmored whatever the armor class. Explosive and radial hits are not covered by these tables (see Limitations).

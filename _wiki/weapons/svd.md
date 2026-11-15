@@ -37,44 +37,44 @@ Figures are for Standard (FMJ) at point blank range, per hit, against a characte
 
 | Body part | Damage |
 |---|---|
-| Head | 86.2 |
-| Neck | 64.7 |
-| Upper torso | 41.4 |
-| Middle torso | 41.5 |
-| Upper arm | 26.4 |
-| Thigh | 26.4 |
+| Head | 118.8 |
+| Neck | 86.1 |
+| Upper torso | 59.7 |
+| Middle torso | 59.4 |
+| Upper arm | 29.7 |
+| Thigh | 29.7 |
 
 **Armor (torso and head hits)**
 
 | Armor class | Torso | Head |
 |---|---|---|
-| No armor | 41.4 | 86.2 |
-| Light | 29.0 | 60.4 |
-| Medium | 24.9 | 51.7 |
-| Heavy | 20.7 | 43.1 |
-| Super heavy | 16.6 | 34.5 |
+| No armor | 59.7 | 118.8 |
+| Light | 41.8 | 83.2 |
+| Medium | 35.8 | 71.3 |
+| Heavy | 29.8 | 59.4 |
+| Super heavy | 23.9 | 47.5 |
 
 **Range falloff (upper torso, no armor)**
 
 | Distance | Damage |
 |---|---|
-| 0 m | 41.4 |
-| 50 m | 41.4 |
-| 100 m | 41.4 |
-| 200 m | 41.4 |
-| 300 m | 41.4 |
-| 400 m | 41.4 |
-| 600 m | 41.4 |
-| 800 m | 41.4 |
-| 1000 m | 24.9 |
+| 0 m | 59.7 |
+| 50 m | 59.7 |
+| 100 m | 59.7 |
+| 200 m | 59.7 |
+| 300 m | 59.7 |
+| 400 m | 59.7 |
+| 600 m | 59.7 |
+| 800 m | 59.7 |
+| 1000 m | 35.8 |
 
 **Upper torso, no armor, by ammo type**
 
 | Ammo | Damage per hit |
 |---|---|
-| Standard (FMJ) | 41.4 |
-| Flesh Damage (HP) | 82.9 |
-| Armor Piercing (AP) | 33.1 |
+| Standard (FMJ) | 59.7 |
+| Flesh Damage (HP) | 119.4 |
+| Armor Piercing (AP) | 47.7 |
 
 See [Ammunition](../ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.
 
@@ -86,31 +86,31 @@ Shots and time to kill (TTK) against a character with 100 HP. TTK runs from the 
 
 | Vest | 10 m | 100 m | 300 m |
 |---|---|---|---|
-| No armor | 3 shots, 0.25 s | 3 shots, 0.25 s | 3 shots, 0.25 s |
-| [Level 1 vest](../equipment/level-1-armor.md) | 4 shots, 0.38 s | 4 shots, 0.38 s | 4 shots, 0.38 s |
-| [Level 2 vest](../equipment/level-2-armor.md) | 5 shots, 0.50 s | 5 shots, 0.50 s | 5 shots, 0.50 s |
-| [Level 3 vest](../equipment/level-3-armor.md) | 5 shots, 0.50 s | 5 shots, 0.50 s | 5 shots, 0.50 s |
-| [Level 4 vest](../equipment/level-4-armor.md) | 7 shots, 0.75 s | 7 shots, 0.75 s | 7 shots, 0.75 s |
+| No armor | 2 shots, 0.12 s | 2 shots, 0.12 s | 2 shots, 0.12 s |
+| [Level 1 vest](../equipment/level-1-armor.md) | 3 shots, 0.25 s | 3 shots, 0.25 s | 3 shots, 0.25 s |
+| [Level 2 vest](../equipment/level-2-armor.md) | 3 shots, 0.25 s | 3 shots, 0.25 s | 3 shots, 0.25 s |
+| [Level 3 vest](../equipment/level-3-armor.md) | 4 shots, 0.38 s | 4 shots, 0.38 s | 4 shots, 0.38 s |
+| [Level 4 vest](../equipment/level-4-armor.md) | 5 shots, 0.50 s | 5 shots, 0.50 s | 5 shots, 0.50 s |
 
 **Head hits, Standard (FMJ)**
 
-- At 10 m, no helmet: 2 shots, 0.12 s; Level 1 helmet: 2 shots, 0.12 s; Level 2 helmet: 2 shots, 0.12 s; Level 3 helmet: 3 shots, 0.25 s; Level 4 helmet: 3 shots, 0.25 s.
-- At 100 m, no helmet: 2 shots, 0.12 s; Level 1 helmet: 2 shots, 0.12 s; Level 2 helmet: 2 shots, 0.12 s; Level 3 helmet: 3 shots, 0.25 s; Level 4 helmet: 3 shots, 0.25 s.
+- At 10 m, no helmet: 1 shot, 0.00 s; Level 1 helmet: 2 shots, 0.12 s; Level 2 helmet: 2 shots, 0.12 s; Level 3 helmet: 2 shots, 0.12 s; Level 4 helmet: 3 shots, 0.25 s.
+- At 100 m, no helmet: 1 shot, 0.00 s; Level 1 helmet: 2 shots, 0.12 s; Level 2 helmet: 2 shots, 0.12 s; Level 3 helmet: 2 shots, 0.12 s; Level 4 helmet: 3 shots, 0.25 s.
 
 **Upper torso hits, Armor Piercing (AP)**
 
 | Vest | 10 m | 100 m | 300 m |
 |---|---|---|---|
-| No armor | 4 shots, 0.38 s | 4 shots, 0.38 s | 4 shots, 0.38 s |
-| [Level 1 vest](../equipment/level-1-armor.md) | 4 shots, 0.38 s | 4 shots, 0.38 s | 4 shots, 0.38 s |
-| [Level 2 vest](../equipment/level-2-armor.md) | 4 shots, 0.38 s | 4 shots, 0.38 s | 4 shots, 0.38 s |
-| [Level 3 vest](../equipment/level-3-armor.md) | 5 shots, 0.50 s | 5 shots, 0.50 s | 5 shots, 0.50 s |
-| [Level 4 vest](../equipment/level-4-armor.md) | 5 shots, 0.50 s | 5 shots, 0.50 s | 5 shots, 0.50 s |
+| No armor | 3 shots, 0.25 s | 3 shots, 0.25 s | 3 shots, 0.25 s |
+| [Level 1 vest](../equipment/level-1-armor.md) | 3 shots, 0.25 s | 3 shots, 0.25 s | 3 shots, 0.25 s |
+| [Level 2 vest](../equipment/level-2-armor.md) | 3 shots, 0.25 s | 3 shots, 0.25 s | 3 shots, 0.25 s |
+| [Level 3 vest](../equipment/level-3-armor.md) | 3 shots, 0.25 s | 3 shots, 0.25 s | 3 shots, 0.25 s |
+| [Level 4 vest](../equipment/level-4-armor.md) | 3 shots, 0.25 s | 3 shots, 0.25 s | 3 shots, 0.25 s |
 
 **Head hits, Armor Piercing (AP)**
 
-- At 10 m, no helmet: 2 shots, 0.12 s; Level 1 helmet: 2 shots, 0.12 s; Level 2 helmet: 2 shots, 0.12 s; Level 3 helmet: 2 shots, 0.12 s; Level 4 helmet: 3 shots, 0.25 s.
-- At 100 m, no helmet: 2 shots, 0.12 s; Level 1 helmet: 2 shots, 0.12 s; Level 2 helmet: 2 shots, 0.12 s; Level 3 helmet: 2 shots, 0.12 s; Level 4 helmet: 3 shots, 0.25 s.
+- At 10 m, no helmet: 2 shots, 0.12 s; Level 1 helmet: 2 shots, 0.12 s; Level 2 helmet: 2 shots, 0.12 s; Level 3 helmet: 2 shots, 0.12 s; Level 4 helmet: 2 shots, 0.12 s.
+- At 100 m, no helmet: 2 shots, 0.12 s; Level 1 helmet: 2 shots, 0.12 s; Level 2 helmet: 2 shots, 0.12 s; Level 3 helmet: 2 shots, 0.12 s; Level 4 helmet: 2 shots, 0.12 s.
 
 Derived from the game data, not from play testing. It assumes every shot hits the stated part and that armor stays intact, and it ignores reload time, spread and recoil, so real fights take longer. Damage after the first 10 m comes from the range falloff curve. A * marks a distance beyond the weapon's effective range of 800 m, where damage falls with distance.
 

@@ -26,9 +26,9 @@ A-91 chambered in 5.56mm, upper torso hits:
 
 | Ammo | No armor | Light | Medium | Heavy | Super heavy |
 |---|---|---|---|---|---|
-| Standard (FMJ) | 27.3 | 19.1 | 16.4 | 13.6 | 10.9 |
-| Flesh Damage (HP) | 54.5 | 8.1 | 5.9 | 3.7 | 1.5 |
-| Armor Piercing (AP) | 21.8 | 17.9 | 16.6 | 15.3 | 14.0 |
+| Standard (FMJ) | 30.8 | 21.6 | 18.5 | 15.4 | 12.3 |
+| Flesh Damage (HP) | 61.6 | 9.1 | 6.7 | 4.2 | 1.7 |
+| Armor Piercing (AP) | 24.6 | 20.2 | 18.7 | 17.2 | 15.8 |
 
 Head hits follow the same pattern with higher numbers. Armor covers different body parts by type; see [Weapon Damage](../game-features/Wardogs_WeaponDamage_v1.md).
 
@@ -49,7 +49,7 @@ Head hits follow the same pattern with higher numbers. Armor covers different bo
 | ![12 gauge]({{ '/assets/img/icons/equipment-ammoboxes/T_UI_Icon_ammobox_12g_slug_green.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [12 gauge](ammunition/12-gauge.md) | [M500](weapons/m500.md), [MP43](weapons/mp43.md) |
 | ![5.45x39mm]({{ '/assets/img/icons/equipment-ammoboxes/T_UI_Icon_ammobox_5_45x39_FMJ.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [5.45x39mm](ammunition/5-45x39mm.md) | [AK74](weapons/ak74.md) |
 | ![5.56x45mm]({{ '/assets/img/icons/equipment-ammoboxes/T_UI_Icon_ammobox_5_56x45mm_FMJ.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [5.56x45mm](ammunition/5-56x45mm.md) | [A-91](weapons/a-91.md), [Bushmaster M17S](weapons/bushmaster-m17s.md), [Galil](weapons/galil.md), [KH-2002](weapons/kh-2002.md), [M4](weapons/m4.md), [T-21](weapons/t-21.md), [M249 SAW](weapons/m249-saw.md), [Scout Rifle TD](weapons/scout-rifle-td.md) |
-| ![7.62x39mm]({{ '/assets/img/icons/equipment-ammoboxes/T_UI_Icon_ammobox_7_62x39mm_FMJ.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [7.62x39mm](ammunition/7-62x39mm.md) | [SKS](weapons/sks.md), [TCX-SPR](weapons/tcx-spr.md) |
+| ![7.62x39mm]({{ '/assets/img/icons/equipment-ammoboxes/T_UI_Icon_ammobox_7_62x39mm_FMJ.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [7.62x39mm](ammunition/7-62x39mm.md) | [TCX-SPR](weapons/tcx-spr.md), [SKS](weapons/sks.md) |
 | ![7.62x54mm]({{ '/assets/img/icons/equipment-ammoboxes/T_UI_Icon_ammobox_7_62x54R_FMJ.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [7.62x54mm](ammunition/7-62x54mm.md) | [SVD](weapons/svd.md), [PKM](weapons/pkm.md), [Mosin Nagant](weapons/mosin-nagant.md), [SV98](weapons/sv98.md) |
 | ![9x19mm]({{ '/assets/img/icons/equipment-ammoboxes/T_UI_Icon_ammobox_9x19mm_FMJ.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [9x19mm](ammunition/9x19mm.md) | [GGX 17](weapons/ggx-17.md), [GGX 18](weapons/ggx-18.md), [AMP-9](weapons/amp-9.md), [MP5](weapons/mp5.md), [PP-19 Bizon](weapons/pp-19-bizon.md), [PP-19 Vityaz](weapons/pp-19-vityaz.md) |
 

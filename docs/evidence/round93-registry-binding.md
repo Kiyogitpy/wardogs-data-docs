@@ -6,7 +6,7 @@
 
 ## Newly recovered source
 
-The existing offline WdExtract tool decoded the cooked package `/BuildableRewards/Rewards/LookupRegistries/DR_SessionEvent_BuildableDestroyed` using the retained corrected mapping. The export was copied byte-for-byte, without reformatting, to [DR_SessionEvent_BuildableDestroyed.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/LookupRegistries/DR_SessionEvent_BuildableDestroyed.json).
+The existing offline WdExtract tool decoded the cooked package `/BuildableRewards/Rewards/LookupRegistries/DR_SessionEvent_BuildableDestroyed` using the retained corrected mapping. The export was copied byte-for-byte, without reformatting, to [DR_SessionEvent_BuildableDestroyed.json](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/LookupRegistries/DR_SessionEvent_BuildableDestroyed.json).
 
 Export SHA-256: `d66ab5b98ffea6caeec9bbe5105cddd1b4e995cf2b5e49b2bc2749266f93f6b0`; 1,799 bytes. This file is the extractor's JSON array format, not a header-separated export stream. Neither format is evidence of corruption.
 

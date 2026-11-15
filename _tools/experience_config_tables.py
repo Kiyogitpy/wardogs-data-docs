@@ -1,7 +1,7 @@
 """Tables for game-features/Wardogs_ExperienceConfigs_v1.md: the experience definitions, legacy match-state ini and
 example server config under data/Wardogs/Config, rebuilt from data/.
 
-Reads Config/Experiences/**/*.json (34 definitions), Config/DefaultMatchState.ini and
+Reads the available Config/Experiences/**/*.json definitions, Config/DefaultMatchState.ini and
 Config/ServerConfigs/ExampleStandaloneServerConfig.ini. The server file's password, banner URL and player-id lines
 are never printed (whitelisted keys only). Blocks sit between
 
@@ -100,7 +100,9 @@ def experiences_tab():
 
 
 def infantry():
-    d = dict(experiences())["KOTH_InfantryOnly"]
+    d = dict(experiences()).get("KOTH_InfantryOnly")
+    if d is None:
+        return "`KOTH_InfantryOnly` is absent from this config export. No current disabled-feature list can be derived from it; this does not establish removal of the mode."
     rows = ["| Disabled feature pack | Vehicle or emplacement it holds |", "|---|---|"]
     for g in d["DisabledGameFeatures"]:
         rows.append(f"| `{g}` | {VEHICLE_NAMES.get(g, '')} |")

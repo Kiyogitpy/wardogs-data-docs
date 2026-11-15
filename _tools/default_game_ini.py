@@ -115,7 +115,8 @@ def build():
         if not m:
             continue
         body = m.group(2)
-        ent = {"kind": m.group(1), "multiplier": float(re.search(r"\bMultiplier=([\d.]+)$", body).group(1)),
+        multiplier = re.search(r"(?:^|,)Multiplier=([-\d.]+)$", body)
+        ent = {"kind": m.group(1), "multiplier": float(multiplier[1]) if multiplier else None,
                "target": re.search(r"EntityTarget=(\w+)", body).group(1)}
         for key, pat in (("faction", r'Faction=\(TagName="([^"]+)"'), ("item", r'Entities=\(GameplayTags=\(\(TagName="([^"]+)"'),
                          ("requiredTag", r'RequiredTag=\(TagName="([^"]+)"'), ("scoreDifference", r"ScoreDifference=(\d+)"),
@@ -126,7 +127,8 @@ def build():
                 ent[key] = int(mm.group(1)) if key in ("scoreDifference", "level") else mm.group(1)
         mods.append(ent)
     ek = kv(eco)
-    r["economy"] = {"priceModifiers": mods, "refundModifier": float(ek["RefundModifier"]),
+    r["economy"] = {"priceModifiers": mods, "priceModifierLimit": "A null multiplier is absent from this config; its effective native or dynamic value is unverified.",
+                    "refundModifier": float(ek["RefundModifier"]),
                     "validRefundActions": re.findall(r'TagName="([^"]+)"', ek["ValidRefundActionTags"]),
                     "refundBlockedContext": re.findall(r'TagName="([^"]+)"', ek["RefundFilter"])}
     g = kv(sec["/Script/WDGame.WDGameSettings"])

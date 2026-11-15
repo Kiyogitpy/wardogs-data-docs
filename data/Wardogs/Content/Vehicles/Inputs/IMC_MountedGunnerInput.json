@@ -389,19 +389,6 @@
           }
         },
         {
-          "Triggers": [],
-          "Modifiers": [],
-          "Action": {
-            "ObjectName": "BHInputAction'IA_Vehicle_Weapon_Use'",
-            "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Use.0"
-          },
-          "Key": {
-            "KeyName": "Gamepad_FaceButton_Bottom"
-          },
-          "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
-          "PlayerMappableKeySettings": null
-        },
-        {
           "Triggers": [
             {
               "ObjectName": "InputTriggerPressed'IMC_MountedGunnerInput:InputTriggerPressed_0'",
@@ -977,7 +964,7 @@
             "ObjectPath": "/Game/Vehicles/Inputs/IA_Vehicle_Weapon_Focus.0"
           },
           "Key": {
-            "KeyName": "Gamepad_LeftTrigger"
+            "KeyName": "Gamepad_LeftThumbstick"
           },
           "SettingBehavior": "EPlayerMappableKeySettingBehaviors::InheritSettingsFromAction",
           "PlayerMappableKeySettings": null
@@ -1170,7 +1157,8 @@
     "ObjectPath": "/Game/Vehicles/Inputs/IMC_MountedGunnerInput.19"
   },
   "Properties": {
-    "HoldTimeThreshold": 0.5
+    "HoldTimeThreshold": 0.5,
+    "bIsOneShot": true
   }
 }
 --- export: UObject / InputTriggerPressed_0 ---

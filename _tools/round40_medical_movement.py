@@ -19,6 +19,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from damage_export_fields import armor_damage_context
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = os.path.join(ROOT, "data", "Wardogs")
 OUT = os.path.join(ROOT, "assets", "data", "medical-status-r40.json")
@@ -43,7 +46,7 @@ def armor():
             if e.get("Type") == "BHInventoryFragment_Weight":
                 row["weight"] = pr.get("Weight", "default")
             if e.get("Type") == "WDInventoryFragment_Armor":
-                row["context_tag"] = (pr.get("DamageContextTag") or {}).get("TagName")
+                row["context_tag"] = (armor_damage_context(pr) or {}).get("TagName")
                 row["durability"] = (pr.get("ReplicatedData") or {}).get("Durability")
                 row["covered"] = [c.split(".")[-1] for c in pr.get("CoveredHitLocations", [])]
                 row["stages"] = [[s.get("DamagePercentageReduction"), s.get("Thickness"), s.get("Density")]

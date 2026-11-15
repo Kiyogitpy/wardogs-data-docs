@@ -11,22 +11,22 @@ One table for every weapon that fires bullets or shells. Click a column heading 
 
 | Weapon | Class | Caliber | Fire rate (rounds/min) | Magazine (rounds) | Price | Upper-torso damage at 10 m (HP) | Shots, no armor, 100 m | TTK, no armor, 100 m (s) | Shots, Level 3 vest, 100 m | TTK, Level 3 vest, 100 m (s) | Recoil climb after 10 shots (degrees) |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| [A-91](a-91.md) | Assault rifle | 5.56x45mm | 700 | 20 | 0 | 27.3 | 4 | 0.26 | 8 | 0.60 | 11.9 |
-| [AK74](ak74.md) | Assault rifle | 5.45x39mm | 650 | 30 | 800 | 25.3 | 4 | 0.28 | 8 | 0.65 | 11.1 |
-| [Bushmaster M17S](bushmaster-m17s.md) | Assault rifle | 5.56x45mm | 700 | 20 | 0 | 27.3 | 4 | 0.26 | 8 | 0.60 | 11.9 |
-| [FAL](fal.md) | Assault rifle | .308 Win | 650 | 20 | 6000 | 32.9 | 4 | 0.28 | 7 | 0.55 | 15.8 |
-| [Galil](galil.md) | Assault rifle | 5.56x45mm | 650 | 35 | 2000 | 27.3 | 4 | 0.28 | 8 | 0.65 | 10.1 |
-| [KH-2002](kh-2002.md) | Assault rifle | 5.56x45mm | 700 | 20 | 0 | 27.3 | 4 | 0.26 | 8 | 0.60 | 11.9 |
-| [M4](m4.md) | Assault rifle | 5.56x45mm | 800 | 30 | 2800 | 27.3 | 4 | 0.23 | 8 | 0.53 | 10.4 |
-| [T-21](t-21.md) | Assault rifle | 5.56x45mm | 750 | 20 | 1200 | 27.3 | 4 | 0.24 | 8 | 0.56 | 11.2 |
-| [BMR-308](bmr-308.md) | Marksman rifle | .308 Win | 450 | 10 | 6250 | 45.0 | 3 | 0.27 | 5 | 0.53 | 27.9 |
-| [M14](m14.md) | Marksman rifle | .308 Win | 700 | 10 | 7400 | 45.0 | 3 | 0.17 | 5 | 0.34 | 31.3 |
-| [SKS](sks.md) | Marksman rifle | 7.62x39mm | 420 | 10 | 2400 | 40.0 | 3 | 0.29 | 5 | 0.57 | 33.6 |
-| [SVD](svd.md) | Marksman rifle | 7.62x54mm | 480 | 10 | 4800 | 41.4 | 3 | 0.25 | 5 | 0.50 | 25.5 |
-| [TCX-SPR](tcx-spr.md) | Marksman rifle | 7.62x39mm | 800 | 28 | 3200 | 29.1 | 4 | 0.23 | 7 | 0.45 | 15.9 |
-| [Evo-3 Ultra](evo-3-ultra.md) | Light machine gun | .308 Win | 700 | 50 | 7250 | 32.9 | 4 | 0.26 | 7 | 0.51 | 31.0 |
-| [M249 SAW](m249-saw.md) | Light machine gun | 5.56x45mm | 850 | 200 | 3200 | 27.3 | 4 | 0.21 | 8 | 0.49 | 16.1 |
-| [PKM](pkm.md) | Light machine gun | 7.62x54mm | 600 | 100 | 4100 | 32.1 | 4 | 0.30 | 7 | 0.60 | 24.0 |
+| [A-91](a-91.md) | Assault rifle | 5.56x45mm | 700 | 20 | 0 | 30.8 | 4 | 0.26 | 7 | 0.51 | 11.9 |
+| [AK74](ak74.md) | Assault rifle | 5.45x39mm | 650 | 30 | 800 | 28.6 | 4 | 0.28 | 7 | 0.55 | 11.1 |
+| [Bushmaster M17S](bushmaster-m17s.md) | Assault rifle | 5.56x45mm | 700 | 20 | 0 | 30.8 | 4 | 0.26 | 7 | 0.51 | 11.9 |
+| [FAL](fal.md) | Assault rifle | .308 Win | 650 | 20 | 6000 | 37.1 | 3 | 0.18 | 6 | 0.46 | 15.8 |
+| [Galil](galil.md) | Assault rifle | 5.56x45mm | 650 | 35 | 2000 | 30.8 | 4 | 0.28 | 7 | 0.55 | 10.1 |
+| [KH-2002](kh-2002.md) | Assault rifle | 5.56x45mm | 700 | 20 | 0 | 30.8 | 4 | 0.26 | 7 | 0.51 | 11.9 |
+| [M4](m4.md) | Assault rifle | 5.56x45mm | 800 | 30 | 2800 | 30.8 | 4 | 0.23 | 7 | 0.45 | 10.4 |
+| [T-21](t-21.md) | Assault rifle | 5.56x45mm | 750 | 20 | 1200 | 30.8 | 4 | 0.24 | 7 | 0.48 | 11.2 |
+| [TCX-SPR](tcx-spr.md) | Assault rifle | 7.62x39mm | 800 | 28 | 3200 | 32.9 | 4 | 0.23 | 7 | 0.45 | 15.9 |
+| [BMR-308](bmr-308.md) | Marksman rifle | .308 Win | 450 | 10 | 6250 | 61.7 | 2 | 0.13 | 4 | 0.40 | 27.9 |
+| [M14](m14.md) | Marksman rifle | .308 Win | 700 | 10 | 7400 | 61.7 | 2 | 0.09 | 4 | 0.26 | 31.3 |
+| [SKS](sks.md) | Marksman rifle | 7.62x39mm | 420 | 10 | 2400 | 51.2 | 2 | 0.14 | 5 | 0.57 | 33.6 |
+| [SVD](svd.md) | Marksman rifle | 7.62x54mm | 480 | 10 | 4800 | 59.7 | 2 | 0.12 | 4 | 0.38 | 25.5 |
+| [Evo-3 Ultra](evo-3-ultra.md) | Light machine gun | .308 Win | 700 | 50 | 7250 | 37.1 | 3 | 0.17 | 6 | 0.43 | 31.0 |
+| [M249 SAW](m249-saw.md) | Light machine gun | 5.56x45mm | 850 | 200 | 3200 | 30.8 | 4 | 0.21 | 7 | 0.42 | 16.1 |
+| [PKM](pkm.md) | Light machine gun | 7.62x54mm | 600 | 100 | 4100 | 36.3 | 3 | 0.20 | 6 | 0.50 | 24.0 |
 | [AMP-9](amp-9.md) | Submachine gun | 9x19mm | 900 | 30 | 1375 | 25.4 | 4 | 0.20 | 8 | 0.47 | 8.3 |
 | [MP5](mp5.md) | Submachine gun | 9x19mm | 800 | 30 | 1800 | 25.4 | 4 | 0.23 | 8 | 0.53 | 8.8 |
 | [PP-19 Bizon](pp-19-bizon.md) | Submachine gun | 9x19mm | 700 | 53 | 1000 | 25.4 | 4 | 0.26 | 8 | 0.60 | 12.9 |

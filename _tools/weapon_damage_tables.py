@@ -43,8 +43,9 @@ import os
 import re
 import subprocess
 import sys
-
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from source_provenance import source_data_tree
+
 import damage_tables as dt  # noqa: E402
 
 ROOT, DATA = dt.ROOT, dt.DATA
@@ -226,11 +227,11 @@ def build():
     for group in by_sig.values():
         for w in group:
             w["same_damage_as"] = sorted(x["id"] for x in group if x is not w)
-    tree = subprocess.run(["git", "rev-parse", "HEAD:data"], cwd=ROOT, capture_output=True, text=True).stdout.strip() or None
+    tree = source_data_tree(ROOT)
     return {"meta": {
         "generator": "python _tools/weapon_damage_tables.py --json",
         "source_data_tree": tree,
-        "source_data_tree_note": "git tree id of data/ when generated; equals `git rev-parse <commit>:data` for any commit with the same data",
+        "source_data_tree_note": "SHA is the HEAD:data baseline; +dirty means data/ has staged, unstaged, or untracked changes and is not an identity of the current preview inputs.",
         "unit": "health points per hit (per pellet for shotgun rounds; multiply by `pellets`)",
         "assumptions": [
             "hostile alignment; a direct hit at point blank: no distance falloff, no ricochet, no penetration",
@@ -383,7 +384,7 @@ def check():
             mine = {(i.lower(), a["modifier_tag"]) for a in w["ammo"] for i in a["items"]}
             if theirs and theirs != mine:
                 diffs.append(f"{name}: only theirs {sorted(theirs - mine)}, only mine {sorted(mine - theirs)}")
-        report(not diffs, "ammo availability agrees with E:/r24/shared/ammo-availability.json (items and modifier tags)"
+        report(not diffs, f"ammo availability agrees with {SHARED} (items and modifier tags)"
                + ("; " + " | ".join(diffs) if diffs else ""))
     else:
         print("SKIP shared ammo-availability.json not found; availability derived from ammo items")

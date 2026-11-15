@@ -43,6 +43,38 @@
       "Tag": {
         "TagName": "Interaction.Context.ForceOpenDoor"
       }
+    },
+    "Interaction.Context.ForceOpenSupplyCrate": {
+      "OutcomeText": {
+        "TableId": "/Game/UI/StringTables/STRINGS_InteractionContexts.STRINGS_InteractionContexts",
+        "Key": "Interaction.Context.Vehicle.SupplyCrate.OutcomeText",
+        "SourceString": "Supply Crate",
+        "LocalizedString": "Supply Crate"
+      },
+      "InteractionContextActionConditionData": [
+        {
+          "ConditionState": {
+            "TagName": "Interaction.Context.State.Condition.Pass"
+          },
+          "IdentifierTag": {
+            "TagName": "None"
+          },
+          "ActionText": {
+            "TableId": "/Game/UI/StringTables/STRINGS_InteractionPrompts.STRINGS_InteractionPrompts",
+            "Key": "Interaction.Prompt.WorldFeatures.Crowbar.SupplyCrate.Unlock",
+            "SourceString": "PRY AN ITEM",
+            "LocalizedString": "PRY AN ITEM"
+          },
+          "ActionTextOverrides": [],
+          "ActionIcon": null,
+          "NotifyText": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Interaction.Context.ForceOpenSupplyCrate"
+      }
     }
   }
 }

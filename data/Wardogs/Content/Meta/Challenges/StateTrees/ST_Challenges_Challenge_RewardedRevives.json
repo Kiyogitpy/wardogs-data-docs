@@ -6,7 +6,7 @@
   "Class": "UScriptClass'StateTree'",
   "Package": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedRevives",
   "Properties": {
-    "LastCompiledEditorDataHash": 2979601314,
+    "LastCompiledEditorDataHash": 1046638559,
     "Schema": {
       "ObjectName": "WDChallengeStateTreeSchema'ST_Challenges_Challenge_RewardedRevives:WDChallengeStateTreeSchema_0'",
       "ObjectPath": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedRevives.1"
@@ -41,7 +41,7 @@
         "ChildrenBegin": 1,
         "ChildrenEnd": 8,
         "EnterConditionsBegin": 6,
-        "UtilityConsiderationsBegin": 12,
+        "UtilityConsiderationsBegin": 11,
         "TransitionsBegin": 0,
         "TasksBegin": 1,
         "ParameterTemplateIndex": {
@@ -109,7 +109,7 @@
         "ChildrenBegin": 2,
         "ChildrenEnd": 2,
         "EnterConditionsBegin": 6,
-        "UtilityConsiderationsBegin": 12,
+        "UtilityConsiderationsBegin": 11,
         "TransitionsBegin": 0,
         "TasksBegin": 1,
         "ParameterTemplateIndex": {
@@ -177,7 +177,7 @@
         "ChildrenBegin": 3,
         "ChildrenEnd": 3,
         "EnterConditionsBegin": 6,
-        "UtilityConsiderationsBegin": 12,
+        "UtilityConsiderationsBegin": 11,
         "TransitionsBegin": 1,
         "TasksBegin": 2,
         "ParameterTemplateIndex": {
@@ -248,7 +248,7 @@
         "ChildrenBegin": 4,
         "ChildrenEnd": 6,
         "EnterConditionsBegin": 6,
-        "UtilityConsiderationsBegin": 12,
+        "UtilityConsiderationsBegin": 11,
         "TransitionsBegin": 2,
         "TasksBegin": 2,
         "ParameterTemplateIndex": {
@@ -316,7 +316,7 @@
         "ChildrenBegin": 5,
         "ChildrenEnd": 5,
         "EnterConditionsBegin": 8,
-        "UtilityConsiderationsBegin": 12,
+        "UtilityConsiderationsBegin": 11,
         "TransitionsBegin": 3,
         "TasksBegin": 2,
         "ParameterTemplateIndex": {
@@ -341,7 +341,7 @@
         "CompletionTasksMaskBufferIndex": 0,
         "CompletionTasksMaskBitsOffset": 3,
         "CompletionTasksControl": "EStateTreeTaskCompletionType::Any",
-        "EnterConditionsNum": 3,
+        "EnterConditionsNum": 2,
         "UtilityConsiderationsNum": 0,
         "TransitionsNum": 0,
         "TasksNum": 2,
@@ -383,8 +383,8 @@
         },
         "ChildrenBegin": 6,
         "ChildrenEnd": 6,
-        "EnterConditionsBegin": 11,
-        "UtilityConsiderationsBegin": 12,
+        "EnterConditionsBegin": 10,
+        "UtilityConsiderationsBegin": 11,
         "TransitionsBegin": 3,
         "TasksBegin": 4,
         "ParameterTemplateIndex": {
@@ -451,8 +451,8 @@
         },
         "ChildrenBegin": 7,
         "ChildrenEnd": 7,
-        "EnterConditionsBegin": 11,
-        "UtilityConsiderationsBegin": 12,
+        "EnterConditionsBegin": 10,
+        "UtilityConsiderationsBegin": 11,
         "TransitionsBegin": 4,
         "TasksBegin": 5,
         "ParameterTemplateIndex": {
@@ -519,8 +519,8 @@
         },
         "ChildrenBegin": 8,
         "ChildrenEnd": 8,
-        "EnterConditionsBegin": 11,
-        "UtilityConsiderationsBegin": 12,
+        "EnterConditionsBegin": 10,
+        "UtilityConsiderationsBegin": 11,
         "TransitionsBegin": 6,
         "TasksBegin": 6,
         "ParameterTemplateIndex": {
@@ -660,7 +660,7 @@
         "RequiredDelegateDispatcher": {
           "ID": "00000000-00000000-00000000-00000000"
         },
-        "ConditionsBegin": 11,
+        "ConditionsBegin": 10,
         "State": {
           "Index": 2
         },
@@ -686,7 +686,7 @@
         "RequiredDelegateDispatcher": {
           "ID": "00000000-00000000-00000000-00000000"
         },
-        "ConditionsBegin": 11,
+        "ConditionsBegin": 10,
         "State": {
           "Index": 7
         },
@@ -712,7 +712,7 @@
         "RequiredDelegateDispatcher": {
           "ID": "00000000-00000000-00000000-00000000"
         },
-        "ConditionsBegin": 11,
+        "ConditionsBegin": 10,
         "State": {
           "Index": 2
         },
@@ -738,7 +738,7 @@
         "RequiredDelegateDispatcher": {
           "ID": "00000000-00000000-00000000-00000000"
         },
-        "ConditionsBegin": 12,
+        "ConditionsBegin": 11,
         "State": {
           "Index": 65534
         },
@@ -988,13 +988,10 @@
           }
         },
         {
-          "MatchType": "EGameplayContainerMatchType::Any",
-          "bExactMatch": false,
-          "bInvert": false,
           "Operand": "EStateTreeExpressionOperand::And",
           "DeltaIndent": 0,
           "EvaluationMode": "EStateTreeConditionEvaluationMode::Evaluated",
-          "Name": "In Control Zone",
+          "Name": "Wager Action Qualifies",
           "BindingsBatch": {
             "Value": 8
           },
@@ -1016,10 +1013,12 @@
           }
         },
         {
-          "Operand": "EStateTreeExpressionOperand::And",
+          "bInvert": false,
+          "OPERATOR": "EGenericAICheck::GreaterOrEqual",
+          "Operand": "EStateTreeExpressionOperand::Copy",
           "DeltaIndent": 0,
           "EvaluationMode": "EStateTreeConditionEvaluationMode::Evaluated",
-          "Name": "Wager Action Qualifies",
+          "Name": "Integer Compare",
           "BindingsBatch": {
             "Value": 9
           },
@@ -1035,33 +1034,6 @@
           "InstanceDataHandle": {
             "Source": "EStateTreeDataSourceType::SharedInstanceData",
             "Index": 4,
-            "StateHandle": {
-              "Index": 65535
-            }
-          }
-        },
-        {
-          "bInvert": false,
-          "Operator": "EGenericAICheck::GreaterOrEqual",
-          "Operand": "EStateTreeExpressionOperand::Copy",
-          "DeltaIndent": 0,
-          "EvaluationMode": "EStateTreeConditionEvaluationMode::Evaluated",
-          "Name": "Integer Compare",
-          "BindingsBatch": {
-            "Value": 10
-          },
-          "OutputBindingsBatch": {
-            "Value": 65535
-          },
-          "InstanceTemplateIndex": {
-            "Value": 5
-          },
-          "ExecutionRuntimeTemplateIndex": {
-            "Value": 65535
-          },
-          "InstanceDataHandle": {
-            "Source": "EStateTreeDataSourceType::SharedInstanceData",
-            "Index": 5,
             "StateHandle": {
               "Index": 65535
             }
@@ -1214,7 +1186,10 @@
                   "TagName": "None"
                 }
               },
-              "_aaabaombnfaebibigppgn": []
+              "_aaabaombnfaebibigppgn": [],
+              "_aaabcniobmoekkdkbljob": {
+                "Values": []
+              }
             },
             {
               "Value": {
@@ -1361,13 +1336,6 @@
               ]
             },
             {
-              "TagContainer": [],
-              "OtherContainer": [
-                "Challenges.Context.Instigator.InControlZone",
-                "Challenges.Context.Instigator.InHotZone"
-              ]
-            },
-            {
               "PlayerState": null,
               "Challenge": {
                 "DisplayName": {
@@ -1408,7 +1376,10 @@
                   "TagName": "None"
                 }
               },
-              "_aaabaombnfaebibigppgn": []
+              "_aaabaombnfaebibigppgn": [],
+              "_aaabcniobmoekkdkbljob": {
+                "Values": []
+              }
             },
             {
               "Left": 0,
@@ -1801,21 +1772,6 @@
           },
           "DataSource": "EStateTreeBindableStructSource::Condition",
           "Struct": {
-            "ObjectName": "Class'GameplayTagContainerMatchConditionInstanceData'",
-            "ObjectPath": "/Script/StateTreeModule"
-          },
-          "Name": "In Control Zone"
-        },
-        {
-          "DataHandle": {
-            "Source": "EStateTreeDataSourceType::SharedInstanceData",
-            "Index": 4,
-            "StateHandle": {
-              "Index": 65535
-            }
-          },
-          "DataSource": "EStateTreeBindableStructSource::Condition",
-          "Struct": {
             "ObjectName": "Class'WDStateTreeWagerActionQualifiesConditionInstanceData'",
             "ObjectPath": "/Script/WDGame"
           },
@@ -1824,7 +1780,7 @@
         {
           "DataHandle": {
             "Source": "EStateTreeDataSourceType::SharedInstanceData",
-            "Index": 5,
+            "Index": 4,
             "StateHandle": {
               "Index": 65535
             }
@@ -2268,45 +2224,6 @@
             "Segments": [
               {
                 "Name": "Right",
-                "ArrayIndex": -1,
-                "InstanceStruct": null,
-                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
-              }
-            ]
-          }
-        },
-        {
-          "SourceDataHandle": {
-            "Source": "EStateTreeDataSourceType::StateEvent",
-            "Index": 2,
-            "StateHandle": {
-              "Index": 3
-            }
-          },
-          "bIsOutputBinding": false,
-          "SourcePropertyPath": {
-            "Segments": [
-              {
-                "Name": "Payload",
-                "ArrayIndex": -1,
-                "InstanceStruct": {
-                  "ObjectName": "Class'WDRewardGrantedEvent'",
-                  "ObjectPath": "/Script/WDGame"
-                },
-                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::StructInstance"
-              },
-              {
-                "Name": "ContextTags",
-                "ArrayIndex": -1,
-                "InstanceStruct": null,
-                "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
-              }
-            ]
-          },
-          "TargetPropertyPath": {
-            "Segments": [
-              {
-                "Name": "TagContainer",
                 "ArrayIndex": -1,
                 "InstanceStruct": null,
                 "InstancedStructAccessType": "EPropertyBindingPropertyAccessType::Unset"
@@ -2837,16 +2754,16 @@
             },
             "DataSource": "EStateTreeBindableStructSource::Condition",
             "Struct": {
-              "ObjectName": "Class'GameplayTagContainerMatchConditionInstanceData'",
-              "ObjectPath": "/Script/StateTreeModule"
+              "ObjectName": "Class'WDStateTreeWagerActionQualifiesConditionInstanceData'",
+              "ObjectPath": "/Script/WDGame"
             },
-            "Name": "In Control Zone"
+            "Name": "Wager Action Qualifies"
           },
           "BindingsBegin": {
             "Value": 17
           },
           "BindingsEnd": {
-            "Value": 18
+            "Value": 20
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -2866,45 +2783,16 @@
             },
             "DataSource": "EStateTreeBindableStructSource::Condition",
             "Struct": {
-              "ObjectName": "Class'WDStateTreeWagerActionQualifiesConditionInstanceData'",
-              "ObjectPath": "/Script/WDGame"
-            },
-            "Name": "Wager Action Qualifies"
-          },
-          "BindingsBegin": {
-            "Value": 18
-          },
-          "BindingsEnd": {
-            "Value": 21
-          },
-          "PropertyFunctionsBegin": {
-            "Value": 65535
-          },
-          "PropertyFunctionsEnd": {
-            "Value": 65535
-          }
-        },
-        {
-          "TargetStruct": {
-            "DataHandle": {
-              "Source": "EStateTreeDataSourceType::SharedInstanceData",
-              "Index": 5,
-              "StateHandle": {
-                "Index": 65535
-              }
-            },
-            "DataSource": "EStateTreeBindableStructSource::Condition",
-            "Struct": {
               "ObjectName": "Class'StateTreeCompareIntConditionInstanceData'",
               "ObjectPath": "/Script/StateTreeModule"
             },
             "Name": "Integer Compare"
           },
           "BindingsBegin": {
-            "Value": 21
+            "Value": 20
           },
           "BindingsEnd": {
-            "Value": 23
+            "Value": 22
           },
           "PropertyFunctionsBegin": {
             "Value": 65535
@@ -3021,21 +2909,15 @@
         }
       },
       {
-        "ID": "33A7601D-45DDDE47-25E945BD-2CFD78CC",
+        "ID": "FF652D53-45ABCE09-EA9C9CAD-5D5545C3",
         "Index": {
           "Value": 9
         }
       },
       {
-        "ID": "FF652D53-45ABCE09-EA9C9CAD-5D5545C3",
-        "Index": {
-          "Value": 10
-        }
-      },
-      {
         "ID": "A3170F50-47D4E6D6-77DF1888-C557C887",
         "Index": {
-          "Value": 11
+          "Value": 10
         }
       }
     ],

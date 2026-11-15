@@ -33,7 +33,7 @@ TOKEN = re.compile(
     re.IGNORECASE,
 )
 FENCE = re.compile(r'^(?: {0,3}>[ \t]?)* {0,3}(`{3,}|~{3,})')
-HREF = re.compile(r'\]\((https://github\.com/Kiyogitpy/wardogs-data-docs/(?:blob|tree)/main/data/[^\s)]+)\)')
+HREF = re.compile(r'\]\((https://github\.com/Kiyogitpy/wardogs-data-docs/(?:blob|tree)/(?:main|[0-9a-f]{40})/data/[^\s)]+)\)')
 
 
 def tracked_paths(root):
@@ -54,6 +54,7 @@ class SourceIndex:
         self.folders = defaultdict(set)
         self.directory_paths = set()
         self.cache = {}
+        self.history = {}
         for path in sorted(self.paths):
             relative = path[5:]
             pure = PurePosixPath(relative)
@@ -119,6 +120,14 @@ class SourceIndex:
     def url(kind, path):
         return REPO_URL + '/' + kind + '/main/' + quote(path, safe='/')
 
+    def historical_target(self, kind, revision, path):
+        key = kind, revision, path
+        if key not in self.history:
+            result = subprocess.run(['git', '-C', str(self.root), 'cat-file', '-t', revision + ':' + path],
+                                    capture_output=True)
+            self.history[key] = result.returncode == 0 and result.stdout.strip() == kind.encode()
+        return self.history[key]
+
 
 def link_markdown(text, index):
     """Link inline source names while preserving block and multiline syntax."""
@@ -170,7 +179,7 @@ def link_markdown(text, index):
 _DEFAULT_INDEX = None
 SOURCE_CODE_LINK = re.compile(
     r'\[(`[^`\n]+`)\]\(https://github\.com/Kiyogitpy/wardogs-data-docs/'
-    r'(?:blob|tree)/main/data/[^\s)]+\)'
+    r'(?:blob|tree)/(?:main|[0-9a-f]{40})/data/[^\s)]+\)'
 )
 
 
@@ -197,7 +206,8 @@ def verify_links(text, index):
         prefix = '/Kiyogitpy/wardogs-data-docs/'
         tail = unquote(parsed.path[len(prefix):])
         kind, branch, path = tail.split('/', 2)
-        valid = path in (index.paths if kind == 'blob' else index.directory_paths)
+        valid = (path in (index.paths if kind == 'blob' else index.directory_paths)
+                 if branch == 'main' else index.historical_target(kind, branch, path))
         if not valid:
             invalid.append(url)
     return invalid

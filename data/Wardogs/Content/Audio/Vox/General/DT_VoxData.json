@@ -75,7 +75,33 @@
       "CooldownTime": 0.01,
       "PreDelayTime": 0.15,
       "PostDelayTime": 0.01,
-      "Lifetime": 5.0
+      "Lifetime": 1.0
+    },
+    "Audio.Vox.Exertion.TakingDamage.BarbedWire": {
+      "LineID": {
+        "TagName": "Audio.Vox.Exertion.TakingDamage.BarbedWire"
+      },
+      "VoxGroup": "EWDVoxGroup::Exertion",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::Exertion",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 0.3
+    },
+    "Audio.Vox.Exertion.TakingDamage.Burn": {
+      "LineID": {
+        "TagName": "Audio.Vox.Exertion.TakingDamage.Burn"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": true,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::Exertion",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedOnlyByHigherPriority",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.15,
+      "PostDelayTime": 0.01,
+      "Lifetime": 1.0
     },
     "Audio.Vox.Exertion.TakingDamage.Heavy": {
       "LineID": {
@@ -88,7 +114,7 @@
       "CooldownTime": 0.01,
       "PreDelayTime": 0.15,
       "PostDelayTime": 0.01,
-      "Lifetime": 5.0
+      "Lifetime": 1.0
     },
     "Audio.Vox.Exertion.Vaulting.Fast": {
       "LineID": {
@@ -185,7 +211,7 @@
       "LineID": {
         "TagName": "Audio.Vox.Exertion.TakingDamage.GoingCritical"
       },
-      "VoxGroup": "EWDVoxGroup::Bark",
+      "VoxGroup": "EWDVoxGroup::Critical",
       "_aaaboohabieiclmklfndp": true,
       "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::Exertion",
       "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::NotInterruptible",
@@ -202,7 +228,7 @@
       "_aaaboohabieiclmklfndp": false,
       "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
       "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedOnlyByHigherPriority",
-      "CooldownTime": 1.0,
+      "CooldownTime": 0.01,
       "PreDelayTime": 0.01,
       "PostDelayTime": 0.01,
       "Lifetime": 5.0
@@ -215,7 +241,7 @@
       "_aaaboohabieiclmklfndp": false,
       "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
       "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedOnlyByHigherPriority",
-      "CooldownTime": 1.0,
+      "CooldownTime": 0.01,
       "PreDelayTime": 0.01,
       "PostDelayTime": 0.01,
       "Lifetime": 5.0
@@ -1039,9 +1065,9 @@
       "PostDelayTime": 0.01,
       "Lifetime": 5.0
     },
-    "Audio.Vox.Bark.Spotting.BlackHawk": {
+    "Audio.Vox.Bark.Spotting.ROT_04": {
       "LineID": {
-        "TagName": "Audio.Vox.Bark.Spotting.BlackHawk"
+        "TagName": "Audio.Vox.Bark.Spotting.ROT_04"
       },
       "VoxGroup": "EWDVoxGroup::Bark",
       "_aaaboohabieiclmklfndp": false,
@@ -1052,9 +1078,217 @@
       "PostDelayTime": 0.01,
       "Lifetime": 5.0
     },
-    "Audio.Vox.Bark.Spotting.AttackBlackHawk": {
+    "Audio.Vox.Bark.Spotting.AttackROT_04": {
       "LineID": {
-        "TagName": "Audio.Vox.Bark.Spotting.AttackBlackHawk"
+        "TagName": "Audio.Vox.Bark.Spotting.AttackROT_04"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.OnFire": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.OnFire"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedOnlyByHigherPriority",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.BarbedWire": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.BarbedWire"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedOnlyByHigherPriority",
+      "CooldownTime": 5.0,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.T72Tank": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.T72Tank"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.Wolf110": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.Wolf110"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.AssaultWolf110": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.AssaultWolf110"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.GepardTank": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.GepardTank"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.LeopardTank": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.LeopardTank"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.CWIS": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.CWIS"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.Mistral": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.Mistral"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.MachineGunNest": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.MachineGunNest"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.SupplyCrate": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.SupplyCrate"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.SupplyPallet": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.SupplyPallet"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.Car": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.Car"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.DrillRig": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.DrillRig"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.Lakota": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.Lakota"
+      },
+      "VoxGroup": "EWDVoxGroup::Bark",
+      "_aaaboohabieiclmklfndp": false,
+      "_aaabdahbdpknhigmfnpnd": "EWDVoxGroup::NONE",
+      "InterruptibleBehavior": "EWDVoxInterruptibleBehavior::InterruptedByBothSameAndHigherPriorities",
+      "CooldownTime": 0.01,
+      "PreDelayTime": 0.01,
+      "PostDelayTime": 0.01,
+      "Lifetime": 5.0
+    },
+    "Audio.Vox.Bark.Spotting.Helicopter": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.Spotting.Helicopter"
       },
       "VoxGroup": "EWDVoxGroup::Bark",
       "_aaaboohabieiclmklfndp": false,

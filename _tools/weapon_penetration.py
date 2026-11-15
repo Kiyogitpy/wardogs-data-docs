@@ -2,7 +2,7 @@
 
 Builds assets/data/weapon-penetration.json from (a) the caliber projectile assets and the
 DA_AmmoModifier_* assets in data/, (b) the weapon stats assets (launch speed, speed-scale reference),
-(c) the packed ProjectileSystemSettings property (DefaultGame.ini line 303) and the physical-surface
+(c) the packed ProjectileSystemSettings property (DefaultGame.ini) and the physical-surface
 names (DefaultEngine.ini), which are not part of data/ and are read from the offline config extraction.
 
 What it computes is only what docs/evidence/round25-ricochet-penetration.md marks Data or Derived:
@@ -66,7 +66,8 @@ def read_config():
     eng = os.path.join(CONFIG_DIR, "DefaultEngine.ini")
     if not (os.path.exists(game) and os.path.exists(eng)):
         return None
-    line = next(l for l in open(game, encoding="utf-8") if l.startswith("ProjectileSystemSettings="))
+    line_number, line = next((n, l) for n, l in enumerate(open(game, encoding="utf-8"), 1)
+                             if l.startswith("ProjectileSystemSettings="))
 
     def surf(k):
         return int(0 if k == "Default" else k)
@@ -105,7 +106,7 @@ def read_config():
             "restitution": rest.get(i),
         })
     return {
-        "source": "Wardogs/Config/DefaultGame.ini line 303 (ProjectileSystemSettings), PlanarSurfaceThicknessScale; "
+        "source": f"Wardogs/Config/DefaultGame.ini line {line_number} (ProjectileSystemSettings), PlanarSurfaceThicknessScale; "
                   "Wardogs/Config/DefaultEngine.ini [PhysicalSurfaces]; offline extraction, not in data/",
         "surfaces": surfaces,
         "impact_angle_ricochet_probabilities": angles,
@@ -343,7 +344,11 @@ def check():
     veh_hits = [e["OutModification"]["Amount"] for row in veh.values() for e in row.get("DamageModificationEntries", [])
                 if re.search(r"Impact\.(Ricochet|Penetration)", json.dumps([e["SourceRequirements"], e["TargetRequirements"]]))]
     rep("no infantry rule keys on Kinetic.Impact.Ricochet/Penetration", n_inf == 0)
-    rep("vehicle table: one such entry, Amount 0", veh_hits == [0.0], str(veh_hits))
+    rep("current generic vehicle table has zero rows and zero history-tag entries",
+        veh == {} and veh_hits == [], str(veh_hits))
+    evidence = open(os.path.join(ROOT, "docs/evidence/round25-ricochet-penetration.md"), encoding="utf-8").read()
+    rep("current empty generic vehicle table is documented",
+        "CL533731 generic vehicle table: `Rows = {}` (zero rows)." in evidence)
     # reference grid sanity: monotone in load, never above 1
     mono = all(all(list(s["next_impact_damage_fraction"].values())[i] >= list(s["next_impact_damage_fraction"].values())[i + 1]
                    and list(s["next_impact_damage_fraction"].values())[0] <= 1.0 for i in range(3))

@@ -100,19 +100,19 @@ Drivetrain
 
 | Variant | Torque curve peak value @ RPM (RPM range) | Torque scale | Idle RPM | Gear ratios | Final ratio | Boost | Torque share F/R | Steer F (deg) |
 |---|---|---:|---:|---|---:|---:|---|---:|
-| WHL_01_Default | 33 @ 5,000 (1,200 to 7,000) | — | 1,200 | 4.2, 2.8, 1.9, 1.5, 1.3, 6 | 9.5 | 1.2 | 0.6 / 0.4 | 35 |
-| WHL_02_Default | 475 @ 5,500 (0 to 9,000) | 0.6 | — | 6, 3.1, 2.45, 1.7, 1.3, 6 | 5.5 | 1.03 | — / — | 30 |
-| WHL_02_Pickup | 475 @ 5,500 (0 to 9,000) | 0.6 | — | 6, 3.1, 2.45, 1.7, 1.3, 6 | 5.5 | 1.03 | — / — | 30 |
-| WHL_02_SUV_RingTurret | 475 @ 5,500 (0 to 9,000) | 0.6 | — | 6, 3.1, 2.45, 1.7, 1.3, 6 | 5.5 | 1.03 | — / — | 30 |
-| WHL_05_Humvee_Default | 475 @ 5,500 (0 to 9,000) | — | 700 | 3.6, 2.4, 1.7, 1.35, 1.12, 3.6 | 6.54 | 1.03 | 0.4 / 0.6 | 35 |
-| WHL_05_Humvee_RingMinigun | 475 @ 5,500 (0 to 9,000) | — | 700 | 3.6, 2.4, 1.7, 1.35, 1.12, 3.6 | 6.54 | 1.03 | 0.4 / 0.6 | 35 |
-| WHL_05_Humvee_RingTurret | 475 @ 5,500 (0 to 9,000) | — | 700 | 3.6, 2.4, 1.7, 1.35, 1.12, 3.6 | 6.54 | 1.03 | 0.4 / 0.6 | 35 |
-| WHL_06_DuneBuggy_Default | 475 @ 5,500 (0 to 9,000) | 0.35 | 800 | 4.8, 3.6, 2.7, 2.15, 1.98, 6 | 4.3 | 1.03 | 0.15 / 0.85 | 40 |
+| WHL_01_Default | 33 @ 5,000 (1,200 to 7,000) | — | 1,200 | 4.2, 2.8, 1.9, 1.5, 1.3, 3.89 | 9.5 | 1.2 | 0.6 / 0.4 | 35 |
+| WHL_02_Default | 475 @ 5,500 (0 to 9,000) | 0.6 | — | 6, 3.1, 2.45, 1.7, 1.3, 3.5 | 5.5 | 1.03 | — / — | 30 |
+| WHL_02_Pickup | 475 @ 5,500 (0 to 9,000) | 0.6 | — | 6, 3.1, 2.45, 1.7, 1.3, 3.5 | 5.5 | 1.03 | — / — | 30 |
+| WHL_02_SUV_RingTurret | 475 @ 5,500 (0 to 9,000) | 0.6 | — | 6, 3.1, 2.45, 1.7, 1.3, 3.5 | 5.5 | 1.03 | — / — | 30 |
+| WHL_05_Humvee_Default | 475 @ 5,500 (0 to 9,000) | — | 700 | 3.6, 2.4, 1.7, 1.35, 1.12, 2.22 | 6.54 | 1.03 | — / — | 35 |
+| WHL_05_Humvee_RingMinigun | 475 @ 5,500 (0 to 9,000) | — | 700 | 3.6, 2.4, 1.7, 1.35, 1.12, 2.22 | 6.54 | 1.03 | — / — | 35 |
+| WHL_05_Humvee_RingTurret | 475 @ 5,500 (0 to 9,000) | — | 700 | 3.6, 2.4, 1.7, 1.35, 1.12, 2.22 | 6.54 | 1.03 | — / — | 35 |
+| WHL_06_DuneBuggy_Default | 475 @ 5,500 (0 to 9,000) | 0.35 | 800 | 4.8, 3.6, 2.7, 2.15, 1.98, 5.13 | 4.3 | 1.03 | 0.15 / 0.85 | 40 |
 | WHL_07_Battle | 900 @ 1,200 (600 to 2,300) | 2 | 650 | 5.62, 2.89, 1.64, 1.25, 1.1, 3.25 | 7.32 | 1.03 | — / — / — | 30 |
 | WHL_07_Default | 900 @ 1,200 (600 to 2,300) | 2 | 650 | 5.62, 2.89, 1.64, 1.25, 1.1, 3.25 | 7.32 | 1.03 | — / — / — | 30 |
 | WHL_07_ArmouredBattle | 900 @ 1,200 (600 to 2,300) | 2 | 650 | 5.62, 2.89, 1.64, 1.25, 1.1, 3.25 | 7.32 | 1.03 | — / — / — | 30 |
-| WHL_08_Default | 1,500 @ 1,650 (800 to 4,000) | 0.5 | 700 | 3.7, 2.15, 1.4, 1, 0.75, 3.55 | 6.54 | 1.03 | 0.3 / 0.7 | 35 |
-| WHL_08_RingTurret | 1,500 @ 1,650 (800 to 4,000) | 0.5 | 700 | 3.7, 2.15, 1.4, 1, 0.75, 3.55 | 6.54 | 1.03 | 0.3 / 0.7 | 35 |
+| WHL_08_Default | 1,500 @ 1,650 (800 to 4,000) | 0.5 | 700 | 3.7, 2.15, 1.4, 1, 0.75, 2.15 | 6.54 | 1.03 | 0.3 / 0.7 | 35 |
+| WHL_08_RingTurret | 1,500 @ 1,650 (800 to 4,000) | 0.5 | 700 | 3.7, 2.15, 1.4, 1, 0.75, 2.15 | 6.54 | 1.03 | 0.3 / 0.7 | 35 |
 
 Chassis and suspension
 
@@ -146,13 +146,13 @@ Engine and transmission
 
 | Variant | EngineData torque curve peak value @ RPM (RPM range) | Dynamics torque curve peak value @ RPM (RPM range) | Max RPM | EngineData gears | Dynamics gears | Differential ratio (EngineData / Dynamics) | Extra power ratio | Boost | Brake force |
 |---|---|---|---:|---:|---:|---|---:|---:|---:|
-| SPW_01 | 2,500 @ 1,200 (1,200 to 3,058) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 10 | 5 | 3.5 / 3.1 | 10 | 1.5 | 14 |
-| SPW_02 | 2,500 @ 1,200 (1,200 to 3,058) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 10 | 5 | 3.5 / 3.1 | 10 | 1.5 | 14 |
-| SPW_03 | 2,500 @ 1,200 (1,200 to 3,058) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 10 | 5 | 3.5 / 3.1 | 10 | 1.5 | 14 |
-| TNK_01_AntiAir | 1,800 @ 1,400 (1,400 to 3,100) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 7 | 5 | 5 / 3.1 | 16 | — | 30 |
-| TNK_01_Artillery | 1,800 @ 1,400 (1,400 to 3,100) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 10 | 5 | 6 / 3.1 | 7.5 | 2 | — |
-| TNK_01_Heavy | 1,800 @ 1,400 (1,400 to 3,100) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 10 | 5 | 6 / 3.1 | 7.5 | 2 | — |
-| TNK_04 | 1,800 @ 1,400 (1,400 to 3,100) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 10 | 5 | 6 / 3.1 | 7.5 | 2 | — |
+| SPW_01 | 2,500 @ 1,200 (1,200 to 3,058) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 10 | 0 | 3.5 / 3.1 | 10 | 1.5 | 14 |
+| SPW_02 | 2,500 @ 1,200 (1,200 to 3,058) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 10 | 0 | 3.5 / 3.1 | 10 | 1.5 | 14 |
+| SPW_03 | 2,500 @ 1,200 (1,200 to 3,058) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 10 | 0 | 3.5 / 3.1 | 10 | 1.5 | 14 |
+| TNK_01_AntiAir | 1,800 @ 1,400 (1,400 to 3,100) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 7 | 0 | 5 / 3.1 | 16 | — | 30 |
+| TNK_01_Artillery | 1,800 @ 1,400 (1,400 to 3,100) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 10 | 0 | 6 / 3.1 | 7.5 | 2 | — |
+| TNK_01_Heavy | 1,800 @ 1,400 (1,400 to 3,100) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 10 | 0 | 6 / 3.1 | 7.5 | 2 | — |
+| TNK_04 | 1,800 @ 1,400 (1,400 to 3,100) | 1,400 @ 1,911 (-300 to 4,500) | 5,000 | 10 | 0 | 6 / 3.1 | 7.5 | 2 | — |
 
 Steering, suspension and tracks
 
@@ -275,7 +275,7 @@ Steering, suspension and tracks
 | [`VP_STN_05_Seats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Parts/VP_STN_05_Seats.json) | STN_05 | `Seats` | seats ×1 ([`DA_SeatSettings_STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Data/DA_SeatSettings_STN_05.json)) | STN_05 |
 | [`VP_STN_06_Body`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Parts/VP_STN_06_Body.json) | STN_06 | `body` | mesh `Browning_Sandbag_Base` | STN_06 |
 | [`VP_STN_06_Seats`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Parts/VP_STN_06_Seats.json) | STN_06 | `Seats` | seats ×1 ([`DA_SeatSettings_STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Data/DA_SeatSettings_STN_06.json)) | STN_06 |
-| [`VP_STN_06_Turret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Parts/VP_STN_06_Turret.json) | STN_06 | `turret` | mesh `SK_Browning_Mounted`; weapon [`W_STN_06_MountedMachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Weapons/W_STN_06_MountedMachineGun.json); WD_MVF_InventoryFragment; mesh `Browning_Gun_Proxy`; mesh `Browning_Mount_Proxy`; mesh `SM_Mounted_Straight` | STN_06 |
+| [`VP_STN_06_Turret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Parts/VP_STN_06_Turret.json) | STN_06 | `turret` | mesh `SK_Browning_Mounted`; weapon [`W_STN_06_MountedMachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/Weapons/W_STN_06_MountedMachineGun.json); WD_MVF_InventoryFragment; mesh `Browning_Gun_Proxy` (disabled); mesh `Browning_Mount_Proxy`; mesh `SM_Mounted_Straight` | STN_06 |
 | [`VP_TNK_01_Turret_AntiAir`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Parts/AntiAir/VP_TNK_01_Turret_AntiAir.json) | TNK_01 | `MainTurret` | mesh `SK_TNK_03_Turret`; mesh `SM_TNK_03_Turret_Spin`; mesh `SM_TNK_03_Turret_Pitch`; mesh `SM_TNK_03_Turret_Barrel_L`; mesh `SM_TNK_03_Turret_Barrel_R`; weapon [`W_TNK_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/AntiAir/W_TNK_03.json); WD_MVF_InventoryFragment | TNK_01_AntiAir |
 | [`VP_TNK_01_MountedArtillery_MachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Parts/Artillery/VP_TNK_01_MountedArtillery_MachineGun.json) | TNK_01 | `MainTurret.MountedMachineGun` | mesh `SK_M249_Mounted`; weapon [`W_TNK_01_Heavy_MountedMachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/Heavy/W_TNK_01_Heavy_MountedMachineGun.json); WD_MVF_InventoryFragment; seats ×1 ([`DA_TNK_01_Artillery_MountedMachineGun_SeatSettings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Data/Artillery/DA_TNK_01_Artillery_MountedMachineGun_SeatSettings.json)); mesh `SM_TNK_Gunner_Hatch`; mesh `SM_WHL_02_Pickup_Mount_02` | TNK_01_Artillery |
 | [`VP_TNK_01_Turret_Artillery`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Parts/Artillery/VP_TNK_01_Turret_Artillery.json) | TNK_01 | `MainTurret` | mesh `SK_TNK_02_Turret`; mesh `SM_TNK_02_Turret_Spin`; mesh `SM_TNK_02_Turret_Pitch`; mesh `SM_TNK_02_Turret_Barrel`; weapon [`W_TNK_01_Artillery`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Weapons/Artillery/W_TNK_01_Artillery.json); WD_MVF_InventoryFragment; slot `MountedMachineGun` (default [`VP_TNK_01_MountedArtillery_MachineGun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/Parts/Artillery/VP_TNK_01_MountedArtillery_MachineGun.json)) | TNK_01_Artillery |

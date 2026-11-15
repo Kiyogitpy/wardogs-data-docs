@@ -1,0 +1,461 @@
+--- export: UDataTable / DT_TimelineMarkers ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TimelineMarkers",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/SteamTimeline/Data/DT_TimelineMarkers",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDTimelineMarkerDefinition'",
+      "ObjectPath": "/Script/WDSteamRecording"
+    }
+  },
+  "Rows": {
+    "Timeline.Marker.Kill": {
+      "MessageType": {
+        "ObjectName": "Class'WDPlayerVitalityChangedMessage'",
+        "ObjectPath": "/Script/WDGame"
+      },
+      "LocalPlayer": {
+        "PropertyName": "InstigatorPlayerState"
+      },
+      "Conditions": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDTimelineConditionSchema'",
+              "ObjectPath": "/Script/WDSteamRecording"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "FieldPath": "ActionTag",
+                  "Tag": {
+                    "TagName": "Meta.Progression.Resources.MatchScore.KillScore"
+                  },
+                  "bExactMatch": true,
+                  "bInvert": false,
+                  "OPERATOR": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "FieldPath": "ContextTags",
+                  "Tags": [
+                    "Meta.Progression.Context.Player.Faction.Friendly"
+                  ],
+                  "bInvert": true,
+                  "OPERATOR": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDTimelineConditionSchema'",
+              "ObjectPath": "/Script/WDSteamRecording"
+            }
+          }
+        }
+      },
+      "Presentation": {
+        "Icon": "wd-kill",
+        "Title": {
+          "Namespace": "",
+          "Key": "0355C0B749359B06EC07ACA4CFCFDBB7",
+          "SourceString": "Killed {Victim}",
+          "LocalizedString": "Killed {Victim}"
+        },
+        "Description": {
+          "Namespace": "WDSteamTimeline",
+          "Key": "KillDescription",
+          "SourceString": "{Weapon}{Distance}",
+          "LocalizedString": "{Weapon}{Distance}"
+        },
+        "_aaaamnfbajjiandbjfgdi": 200,
+        "_aaaamapnoffhlodbjidnn": "EWDTimelineClipPriority::Featured"
+      },
+      "_aaaanhmmbcbfainmebhdf": [
+        {
+          "ArgumentName": "Victim",
+          "Field": {
+            "PropertyName": "TargetPlayerState"
+          },
+          "ValueFormat": {
+            "CultureInvariantString": null
+          },
+          "_aaaamfpehkmgkboglljnn": {
+            "Namespace": "WDSteamTimeline",
+            "Key": "KillVictimFallback",
+            "SourceString": "an enemy",
+            "LocalizedString": "an enemy"
+          }
+        },
+        {
+          "_aaaamemdpefkjehcileea": {
+            "TagName": "None"
+          },
+          "ArgumentName": "Weapon",
+          "Field": {
+            "PropertyName": "CauseTags"
+          },
+          "ValueFormat": {
+            "Namespace": "WDSteamTimeline",
+            "Key": "KillWeaponFormat",
+            "SourceString": "{Value}, ",
+            "LocalizedString": "{Value}, "
+          },
+          "_aaaamfpehkmgkboglljnn": {
+            "CultureInvariantString": null
+          }
+        },
+        {
+          "Scale": 0.01,
+          "MaximumFractionalDigits": 0,
+          "ArgumentName": "Distance",
+          "Field": {
+            "PropertyName": "Distance"
+          },
+          "ValueFormat": {
+            "Namespace": "WDSteamTimeline",
+            "Key": "KillDistanceFormat",
+            "SourceString": "{Value} m",
+            "LocalizedString": "{Value} m"
+          },
+          "_aaaamfpehkmgkboglljnn": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "_aaaaplklnmihkplkiocoj": "EWDTimelineGroupWindowMode::SlidingFromLast",
+      "_aaabcagdnmdjmedfdgdck": 10.0,
+      "_aaabhibmlnehecholcodd": 30.0,
+      "_aaaakcnhafnngfgmeikgi": [
+        {
+          "MinCount": 2,
+          "Presentation": {
+            "Icon": "wd-kill",
+            "Title": {
+              "Namespace": "",
+              "Key": "58A873E8434167562F38D899A1F0E3F0",
+              "SourceString": "Double Kill",
+              "LocalizedString": "Double Kill"
+            },
+            "Description": {
+              "Namespace": "WDSteamTimeline",
+              "Key": "KillTier2Description",
+              "SourceString": "Last: {Victim}",
+              "LocalizedString": "Last: {Victim}"
+            },
+            "_aaaamnfbajjiandbjfgdi": 250,
+            "_aaaamapnoffhlodbjidnn": "EWDTimelineClipPriority::Featured"
+          }
+        },
+        {
+          "MinCount": 3,
+          "Presentation": {
+            "Icon": "wd-kill",
+            "Title": {
+              "Namespace": "",
+              "Key": "7C77207C4250F730DF86449A06EED67D",
+              "SourceString": "Triple Kill",
+              "LocalizedString": "Triple Kill"
+            },
+            "Description": {
+              "Namespace": "WDSteamTimeline",
+              "Key": "KillTier3Description",
+              "SourceString": "Last: {Victim}",
+              "LocalizedString": "Last: {Victim}"
+            },
+            "_aaaamnfbajjiandbjfgdi": 300,
+            "_aaaamapnoffhlodbjidnn": "EWDTimelineClipPriority::Featured"
+          }
+        },
+        {
+          "MinCount": 4,
+          "Presentation": {
+            "Icon": "wd-kill",
+            "Title": {
+              "Namespace": "",
+              "Key": "43C48E1249A28FD6C43175B5BE144A1E",
+              "SourceString": "Quad Kill",
+              "LocalizedString": "Quad Kill"
+            },
+            "Description": {
+              "Namespace": "WDSteamTimeline",
+              "Key": "KillTier4Description",
+              "SourceString": "Last: {Victim}",
+              "LocalizedString": "Last: {Victim}"
+            },
+            "_aaaamnfbajjiandbjfgdi": 300,
+            "_aaaamapnoffhlodbjidnn": "EWDTimelineClipPriority::Featured"
+          }
+        },
+        {
+          "MinCount": 5,
+          "Presentation": {
+            "Icon": "wd-kill",
+            "Title": {
+              "Namespace": "",
+              "Key": "3BB91F884EC3A9411E9586A09AC2ED84",
+              "SourceString": "Multi-Kill",
+              "LocalizedString": "Multi-Kill"
+            },
+            "Description": {
+              "Namespace": "WDSteamTimeline",
+              "Key": "KillTier5Description",
+              "SourceString": "Last: {Victim}",
+              "LocalizedString": "Last: {Victim}"
+            },
+            "_aaaamnfbajjiandbjfgdi": 300,
+            "_aaaamapnoffhlodbjidnn": "EWDTimelineClipPriority::Featured"
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Timeline.Marker.Kill"
+      }
+    },
+    "Timeline.Marker.Death": {
+      "MessageType": {
+        "ObjectName": "Class'WDPlayerVitalityChangedMessage'",
+        "ObjectPath": "/Script/WDGame"
+      },
+      "LocalPlayer": {
+        "PropertyName": "TargetPlayerState"
+      },
+      "Conditions": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDTimelineConditionSchema'",
+              "ObjectPath": "/Script/WDSteamRecording"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "FieldPath": "ActionTag",
+                  "Tag": {
+                    "TagName": "Meta.Progression.Resources.MatchScore.KillScore"
+                  },
+                  "bExactMatch": true,
+                  "bInvert": false,
+                  "OPERATOR": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDTimelineConditionSchema'",
+              "ObjectPath": "/Script/WDSteamRecording"
+            }
+          }
+        }
+      },
+      "Presentation": {
+        "Icon": "wd-killed",
+        "Title": {
+          "Namespace": "",
+          "Key": "31C66AF045A2614371C0AEAAFD692874",
+          "SourceString": "Killed by {Killer}",
+          "LocalizedString": "Killed by {Killer}"
+        },
+        "Description": {
+          "Namespace": "",
+          "Key": "2B1D798947AC538A641551B0C40EAF94",
+          "SourceString": "{Weapon}",
+          "LocalizedString": "{Weapon}"
+        },
+        "_aaaamnfbajjiandbjfgdi": 150,
+        "_aaaamapnoffhlodbjidnn": "EWDTimelineClipPriority::Standard"
+      },
+      "_aaaanhmmbcbfainmebhdf": [
+        {
+          "ArgumentName": "Killer",
+          "Field": {
+            "PropertyName": "InstigatorPlayerState"
+          },
+          "ValueFormat": {
+            "CultureInvariantString": null
+          },
+          "_aaaamfpehkmgkboglljnn": {
+            "Namespace": "WDSteamTimeline",
+            "Key": "DeathKillerFallback",
+            "SourceString": "an enemy",
+            "LocalizedString": "an enemy"
+          }
+        },
+        {
+          "_aaaamemdpefkjehcileea": {
+            "TagName": "None"
+          },
+          "ArgumentName": "Weapon",
+          "Field": {
+            "PropertyName": "CauseTags"
+          },
+          "ValueFormat": {
+            "CultureInvariantString": null
+          },
+          "_aaaamfpehkmgkboglljnn": {
+            "CultureInvariantString": null
+          }
+        }
+      ],
+      "_aaaaplklnmihkplkiocoj": "EWDTimelineGroupWindowMode::None",
+      "_aaabcagdnmdjmedfdgdck": 10.0,
+      "_aaabhibmlnehecholcodd": 30.0,
+      "_aaaakcnhafnngfgmeikgi": [],
+      "Tag": {
+        "TagName": "Timeline.Marker.Death"
+      }
+    },
+    "Timeline.Marker.Revived": {
+      "MessageType": {
+        "ObjectName": "Class'WDPlayerVitalityStateChangedMessage'",
+        "ObjectPath": "/Script/WDGame"
+      },
+      "LocalPlayer": {
+        "PropertyName": "None"
+      },
+      "Conditions": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDTimelineConditionSchema'",
+              "ObjectPath": "/Script/WDSteamRecording"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "FieldPath": "PreviousVitalityStateTag",
+                  "Tag": {
+                    "TagName": "State.Player.Vitality.Critical"
+                  },
+                  "bExactMatch": true,
+                  "bInvert": false,
+                  "OPERATOR": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "FieldPath": "VitalityStateTag",
+                  "Tag": {
+                    "TagName": "State.Player.Vitality.Alive"
+                  },
+                  "bExactMatch": true,
+                  "bInvert": false,
+                  "OPERATOR": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDTimelineConditionSchema'",
+              "ObjectPath": "/Script/WDSteamRecording"
+            }
+          }
+        }
+      },
+      "Presentation": {
+        "Icon": "wd-respawn",
+        "Title": {
+          "Namespace": "",
+          "Key": "A128F7B7431EA024AC1A8EAB1043D6FE",
+          "SourceString": "Revived",
+          "LocalizedString": "Revived"
+        },
+        "Description": {
+          "CultureInvariantString": null
+        },
+        "_aaaamnfbajjiandbjfgdi": 50,
+        "_aaaamapnoffhlodbjidnn": "EWDTimelineClipPriority::None"
+      },
+      "_aaaanhmmbcbfainmebhdf": [],
+      "_aaaaplklnmihkplkiocoj": "EWDTimelineGroupWindowMode::None",
+      "_aaabcagdnmdjmedfdgdck": 10.0,
+      "_aaabhibmlnehecholcodd": 30.0,
+      "_aaaakcnhafnngfgmeikgi": [],
+      "Tag": {
+        "TagName": "Timeline.Marker.Revived"
+      }
+    },
+    "Timeline.Marker.KillAssist": {
+      "MessageType": {
+        "ObjectName": "Class'WDPlayerResourceChangedMessage'",
+        "ObjectPath": "/Script/WDGame"
+      },
+      "LocalPlayer": {
+        "PropertyName": "None"
+      },
+      "Conditions": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDTimelineConditionSchema'",
+              "ObjectPath": "/Script/WDSteamRecording"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "FieldPath": "ActionTag",
+                  "Tag": {
+                    "TagName": "Challenges.Rewards.PlayerKill.Assist"
+                  },
+                  "bExactMatch": true,
+                  "bInvert": false,
+                  "OPERATOR": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "FieldPath": "ContextTags",
+                  "Tags": [
+                    "Resource.Change.Context.InitialValues"
+                  ],
+                  "bInvert": true,
+                  "OPERATOR": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDTimelineConditionSchema'",
+              "ObjectPath": "/Script/WDSteamRecording"
+            }
+          }
+        }
+      },
+      "Presentation": {
+        "Icon": "wd-assist",
+        "Title": {
+          "Namespace": "",
+          "Key": "D1D93A8440156AD985AA92A4F8122704",
+          "SourceString": "Kill Assist",
+          "LocalizedString": "Kill Assist"
+        },
+        "Description": {
+          "CultureInvariantString": null
+        },
+        "_aaaamnfbajjiandbjfgdi": 100,
+        "_aaaamapnoffhlodbjidnn": "EWDTimelineClipPriority::Standard"
+      },
+      "_aaaanhmmbcbfainmebhdf": [],
+      "_aaaaplklnmihkplkiocoj": "EWDTimelineGroupWindowMode::None",
+      "_aaabcagdnmdjmedfdgdck": 10.0,
+      "_aaabhibmlnehecholcodd": 30.0,
+      "_aaaakcnhafnngfgmeikgi": [],
+      "Tag": {
+        "TagName": "Timeline.Marker.KillAssist"
+      }
+    }
+  }
+}

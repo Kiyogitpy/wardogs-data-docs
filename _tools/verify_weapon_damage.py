@@ -14,6 +14,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from damage_export_fields import armor_damage_context
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "Wardogs")
 DMG = os.path.join(DATA, "Content/GameMechanics/DamageSystem/DamageDataTables")
@@ -71,7 +74,7 @@ for p in glob.glob(os.path.join(DATA, "Plugins/GameFeatures/Items/Armor/Content/
         if o.get("Type") == "WDInventoryFragment_Armor":
             st = o["Properties"].get("DurabilityStagesSetupData") or []
             if st:
-                DPR[tg(o["Properties"]["DamageContextTag"])] = st[0]["DamagePercentageReduction"]
+                DPR[tg(armor_damage_context(o["Properties"]))] = st[0]["DamagePercentageReduction"]
 
 # ---------------------------------------------------------------- ammo items and projectiles
 PROJ = {}  # DA name -> (source tag, [context], base damage, pellets)

@@ -224,7 +224,7 @@ Tables: [`DT_CashRewardModifiers`](https://github.com/Kiyogitpy/wardogs-data-doc
 Tables: [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json), [`DT_ChallengesFeedActions_Building`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengesFeedActions_Building.json), [`DT_ChallengesFeedActions_Crowbar`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Rewards/DT_ChallengesFeedActions_Crowbar.json), [`DT_ChallengesFeedActions_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/RewardFeed/DT_ChallengesFeedActions_Spotting.json), [`DT_ControlZoneRewardFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/RewardFeed/Data/DT_ControlZoneRewardFeedActions.json), [`DT_RewardFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_RewardFeedActions.json), [`DT_RewardFeedActions_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/UI/RewardFeed/DT_RewardFeedActions_HotZoneMagnet.json), [`DT_RewardFeedActions_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/RewardFeed/DT_RewardFeedActions_Spotting.json), [`DT_RewardFeedActions_TeamOffence`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/Data/UI/RewardFeed/DT_RewardFeedActions_TeamOffence.json), [`DT_TippingReward`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Tipping/Data/DT_TippingReward.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDRewardFeedActionDataTableRow -->
-*10 table(s), 159 rows, 5 non-empty columns. Source: the `Rows` of each table export (**Data**).*
+*10 table(s), 164 rows, 5 non-empty columns. Source: the `Rows` of each table export (**Data**).*
 
 | Table | Row | `ConditionalExpressions` | `DisplayText` | `bIsTip` | `AudioEventTag` | `Tag` |
 |---|---|---|---|---|---|---|
@@ -293,9 +293,13 @@ Tables: [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-d
 | [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json) | `Challenges.Rewards.SupplyPalletDropped` |  | Supplies Delivered | false | Audio.Event.UX.Cash.DeliveredSpawnVehicle | Challenges.Rewards.SupplyPalletDropped |
 | [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json) | `Challenges.Rewards.VehicleAirborne` |  | Air Time Bonus | false | Audio.Event.UX.Cash.RepairingScore | Challenges.Rewards.VehicleAirborne |
 | [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json) | `Challenges.Rewards.VehicleFlyThrough` |  | Fly Through Bonus | false | Audio.Event.UX.Cash.RepairingScore | Challenges.Rewards.VehicleFlyThrough |
+| [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json) | `Challenges.Rewards.HotZoneMagnet.FOBSuppliedAssist` |  | FOB Supplied Assist | false |  | Challenges.Rewards.HotZoneMagnet.FOBSuppliedAssist |
 | [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json) | `Challenges.Rewards.Test` |  | TEST EVENT | false |  | Challenges.Rewards.Test |
 | [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json) | `Challenges.Rewards.VehicleRepair` |  | Vehicle Repairing | false |  | Challenges.Rewards.VehicleRepair |
 | [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json) | `Challenges.Rewards.VehicleRefuel` |  | Vehicle Refuelling | false |  | Challenges.Rewards.VehicleRefuel |
+| [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json) | `Challenges.Rewards.Freefall.Kill` |  | Freefall Kill | false |  | Challenges.Rewards.Freefall.Kill |
+| [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json) | `Challenges.Rewards.Freefall.HelicopterKill` |  | Freefall Helicopter Kill | false | Audio.Event.UX.Cash.DestroyedVehicle | Challenges.Rewards.Freefall.HelicopterKill |
+| [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json) | `Challenges.Rewards.Freefall.HelicopterKill.Recovered` |  | Rendezook | false | Audio.Event.UX.Cash.DestroyedVehicle | Challenges.Rewards.Freefall.HelicopterKill.Recovered |
 | [`DT_ChallengesFeedActions_Building`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengesFeedActions_Building.json) | `Challenges.Rewards.Buildables.BuildableDamaged` | {Condition.TokenStreamVersion=0; Condition.TagDictionary=Challenges.Context.Buildables.Friendly; Condition.Qu… | Buildable Damaged | false |  | Challenges.Rewards.Buildables.BuildableDamaged |
 | [`DT_ChallengesFeedActions_Building`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengesFeedActions_Building.json) | `Challenges.Rewards.Buildables.BuildableDestroyed` | {Condition.TokenStreamVersion=0; Condition.TagDictionary=Challenges.Context.Buildables.Friendly; Condition.Qu… | Buildable Destroyed | false | Audio.Event.UX.Cash.RevivedScore | Challenges.Rewards.Buildables.BuildableDestroyed |
 | [`DT_ChallengesFeedActions_Building`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengesFeedActions_Building.json) | `Challenges.Rewards.Buildables.BuildableDestroyed.Assist` |  | Buildable Destroyed Assist | false | Audio.Event.UX.Cash.BuiltScore | Challenges.Rewards.Buildables.BuildableDestroyed.Assist |
@@ -308,6 +312,7 @@ Tables: [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-d
 | [`DT_ChallengesFeedActions_Building`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengesFeedActions_Building.json) | `Challenges.Rewards.Buildables.FOBOwnerPayed` |  | FOB Resources Used | false |  | Challenges.Rewards.Buildables.FOBOwnerPayed |
 | [`DT_ChallengesFeedActions_Building`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengesFeedActions_Building.json) | `Challenges.Rewards.Buildables.FOBHacked` |  | FOB Hacked | false | Audio.Event.UX.Cash.RevivedScore | Challenges.Rewards.Buildables.FOBHacked |
 | [`DT_ChallengesFeedActions_Building`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengesFeedActions_Building.json) | `Challenges.Rewards.Buildables.FOBDoorClosed` |  | FOB Door Closed | false | Audio.Event.UX.Cash.HealedScore | Challenges.Rewards.Buildables.FOBDoorClosed |
+| [`DT_ChallengesFeedActions_Building`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengesFeedActions_Building.json) | `Challenges.Rewards.Buildables.ParachuteIntoEnemyFOB` |  | FOB Infiltrated | false | Audio.Event.UX.Cash.RevivedScore | Challenges.Rewards.Buildables.ParachuteIntoEnemyFOB |
 | [`DT_ChallengesFeedActions_Crowbar`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Rewards/DT_ChallengesFeedActions_Crowbar.json) | `Challenges.Rewards.Crowbar.DoorForcedOpen` |  | Door Breached | false | Audio.Event.UX.Cash.HealedScore | Challenges.Rewards.Crowbar.DoorForcedOpen |
 | [`DT_ChallengesFeedActions_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/RewardFeed/DT_ChallengesFeedActions_Spotting.json) | `Challenges.Rewards.Spotting.Added` | {Condition.TokenStreamVersion=0; Condition.TagDictionary=Challenges.Rewards.Spotting.Refreshed; Condition.Que… | Target Spotted | false |  | Challenges.Rewards.Spotting.Added |
 | [`DT_ChallengesFeedActions_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/RewardFeed/DT_ChallengesFeedActions_Spotting.json) | `Challenges.Rewards.Spotting.Refreshed` |  | Target Spotted Refreshed | false |  | Challenges.Rewards.Spotting.Refreshed |
@@ -454,39 +459,44 @@ Tables: [`DT_DemoRewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/m
 Tables: [`DT_GoldMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Collection/DT_GoldMarket.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDGoldMarketItemTableRow -->
-*1 table(s), 27 rows, 8 non-empty columns. Source: the `Rows` of each table export (**Data**).*
+*1 table(s), 32 rows, 8 non-empty columns. Source: the `Rows` of each table export (**Data**).*
 
 Columns 1-7 of 8:
 
 | Row | `GoldBarCost` | `Category` | `EntityId` | `GridIndex` | `TileSize` | `ExpirationType` | `ExpirationTime.Ticks` |
 |---|---|---|---|---|---|---|---|
-| `Meta.Cosmetic.DigitalWood.GGX17` | 5 | Meta.Cosmetic.DigitalWood | Id.Item.Glock17 | 0 | LARGE_SQUARE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.DigitalWood.SportsParachute` | 15 | Meta.Cosmetic.DigitalWood | Id.Item.Parachute.Sport | 1 | SMALL_SQUARE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.DigitalWood.SV98` | 10 | Meta.Cosmetic.DigitalWood | Id.Item.SV98 | 2 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.DigitalWood.M4` | 10 | Meta.Cosmetic.DigitalWood | Id.Item.M4 | 3 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.TwoToneDesert.Bobcat` | 5 | Meta.Cosmetic.TwoToneDesert | Vehicle.Variant.Land.Wheeled.Bobcat.Default | 0 | SMALL_SQUARE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.TwoToneDesert.DuneBuggy` | 10 | Meta.Cosmetic.TwoToneDesert | Vehicle.Variant.Land.Wheeled.DuneBuggy.Default | 1 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.TwoToneDesert.Humvee` | 10 | Meta.Cosmetic.TwoToneDesert | Vehicle.Variant.Land.Wheeled.Humvee.Default | 2 | LARGE_SQUARE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.DigitalWood.GGX17` | 5 | Meta.Cosmetic.DigitalWood | Id.Item.Glock17 | 3 | SMALL_SQUARE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.DigitalWood.SportsParachute` | 15 | Meta.Cosmetic.DigitalWood | Id.Item.Parachute.Sport | 2 | SMALL_SQUARE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.DigitalWood.SV98` | 10 | Meta.Cosmetic.DigitalWood | Id.Item.SV98 | 1 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.DigitalWood.M4` | 10 | Meta.Cosmetic.DigitalWood | Id.Item.M4 | 4 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.TwoToneDesert.Bobcat` | 5 | Meta.Cosmetic.TwoToneDesert | Vehicle.Variant.Land.Wheeled.Bobcat.Default | 2 | SMALL_SQUARE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.TwoToneDesert.DuneBuggy` | 10 | Meta.Cosmetic.TwoToneDesert | Vehicle.Variant.Land.Wheeled.DuneBuggy.Default | 5 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.TwoToneDesert.Humvee` | 10 | Meta.Cosmetic.TwoToneDesert | Vehicle.Variant.Land.Wheeled.Humvee.Default | 1 | LARGE_SQUARE | NO_EXPIRATION | 0 |
 | `Meta.Cosmetic.TwoToneDesert.Littlebird` | 15 | Meta.Cosmetic.TwoToneDesert | Vehicle.Variant.Air.Rotary.Littlebird.Default | 3 | LARGE_SQUARE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.TwoToneDesert.A91` | 5 | Meta.Cosmetic.TwoToneDesert | Id.Item.A91 | 5 | SMALL_SQUARE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.TwoToneDesert.KH2002` | 5 | Meta.Cosmetic.TwoToneDesert | Id.Item.KH2002 | 6 | SMALL_SQUARE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.TwoToneDesert.Bushmaster` | 5 | Meta.Cosmetic.TwoToneDesert | Id.Item.WEPN_033 | 11 | SMALL_SQUARE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.TwoToneDesert.A91` | 5 | Meta.Cosmetic.TwoToneDesert | Id.Item.A91 | 4 | SMALL_SQUARE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.TwoToneDesert.KH2002` | 5 | Meta.Cosmetic.TwoToneDesert | Id.Item.KH2002 | 9 | SMALL_SQUARE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.TwoToneDesert.Bushmaster` | 5 | Meta.Cosmetic.TwoToneDesert | Id.Item.WEPN_033 | 6 | SMALL_SQUARE | NO_EXPIRATION | 0 |
 | `Meta.Cosmetic.TwoToneDesert.M4` | 10 | Meta.Cosmetic.TwoToneDesert | Id.Item.M4 | 8 | LARGE_SQUARE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.TwoToneDesert.M249` | 15 | Meta.Cosmetic.TwoToneDesert | Id.Item.M249 | 9 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.TwoToneDesert.AX50` | 15 | Meta.Cosmetic.TwoToneDesert | Id.Item.SR_04 | 10 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.TwoToneDesert.MP9` | 10 | Meta.Cosmetic.TwoToneDesert | Id.Item.MP9 | 7 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.TwoToneDesert.M500` | 10 | Meta.Cosmetic.TwoToneDesert | Id.Item.M500 | 12 | SMALL_SQUARE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.TwoToneDesert.M249` | 15 | Meta.Cosmetic.TwoToneDesert | Id.Item.M249 | 10 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.TwoToneDesert.AX50` | 15 | Meta.Cosmetic.TwoToneDesert | Id.Item.SR_04 | 13 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.TwoToneDesert.MP9` | 10 | Meta.Cosmetic.TwoToneDesert | Id.Item.MP9 | 15 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.TwoToneDesert.M500` | 10 | Meta.Cosmetic.TwoToneDesert | Id.Item.M500 | 11 | SMALL_SQUARE | NO_EXPIRATION | 0 |
 | `Meta.Cosmetic.Emote.Middle_Finger` | 5 | Meta.Cosmetic.Emote | Id.Emote.Middle_Finger | 0 | LARGE_SQUARE | NO_EXPIRATION | 0 |
 | `Meta.Cosmetic.Emote.RockPaperScissors` | 5 | Meta.Cosmetic.Emote | Id.Emote.RockPaperScissors | 1 | SMALL_SQUARE | NO_EXPIRATION | 0 |
 | `Meta.Cosmetic.Emote.Shh` | 5 | Meta.Cosmetic.Emote | Id.Emote.Shh | 2 | SMALL_SQUARE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.BlackAndGold.Littlebird` | 30 | Meta.Cosmetic.BlackAndGold | Vehicle.Variant.Air.Rotary.Littlebird.Default | 1 | HERO_TILE | EXPIRATION_NO_END_TIME | 639342720000000000 |
-| `Meta.Cosmetic.TwoToneDesert.Mosin` | 10 | Meta.Cosmetic.TwoToneDesert | Id.Item.Mosin | 13 | SMALL_SQUARE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.TwoToneDesert.Galil` | 10 | Meta.Cosmetic.TwoToneDesert | Id.Item.WEPN_029 | 14 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.TwoToneDesert.Havoc` | 15 | Meta.Cosmetic.TwoToneDesert | Vehicle.Variant.Air.Rotary.Havoc.Default | 15 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.DigitalWood.M500` | 10 | Meta.Cosmetic.DigitalWood | Id.Item.M500 | 4 | SMALL_SQUARE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.ChocolateChip.M14` | 10 | Meta.Cosmetic.ChocolateChip | Id.Item.WEPN_034 | 2 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.ChocolateChip.Evolys` | 10 | Meta.Cosmetic.ChocolateChip | Id.Item.WEPN_036 | 1 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
-| `Meta.Cosmetic.ChocolateChip.TCXSPR` | 10 | Meta.Cosmetic.ChocolateChip | Id.Item.WEPN_037 | 0 | LARGE_RECTANGLE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.BlackAndGold.Littlebird` | 30 | Meta.Cosmetic.BlackAndGold | Vehicle.Variant.Air.Rotary.Littlebird.Default | 0 | LARGE_RECTANGLE | EXPIRATION_NO_END_TIME | 639342720000000000 |
+| `Meta.Cosmetic.TwoToneDesert.Mosin` | 10 | Meta.Cosmetic.TwoToneDesert | Id.Item.Mosin | 14 | SMALL_SQUARE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.TwoToneDesert.Galil` | 10 | Meta.Cosmetic.TwoToneDesert | Id.Item.WEPN_029 | 7 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.TwoToneDesert.Havoc` | 15 | Meta.Cosmetic.TwoToneDesert | Vehicle.Variant.Air.Rotary.Havoc.Default | 0 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.DigitalWood.M500` | 10 | Meta.Cosmetic.DigitalWood | Id.Item.M500 | 5 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.ChocolateChip.M14` | 10 | Meta.Cosmetic.ChocolateChip | Id.Item.WEPN_034 | 4 | SMALL_SQUARE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.ChocolateChip.Evolys` | 10 | Meta.Cosmetic.ChocolateChip | Id.Item.WEPN_036 | 2 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.ChocolateChip.TCXSPR` | 10 | Meta.Cosmetic.ChocolateChip | Id.Item.WEPN_037 | 3 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.DigitalWood.CompoundBow` | 10 | Meta.Cosmetic.DigitalWood | Id.Item.CombatBow | 0 | SMALL_RECTANGLE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.ChocolateChip.FAL` | 10 | Meta.Cosmetic.ChocolateChip | Id.Item.WEPN_030 | 0 | LARGE_SQUARE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.TwoToneDesert.CGM4` | 15 | Meta.Cosmetic.TwoToneDesert | Id.Item.CGM4 | 12 | LARGE_SQUARE | NO_EXPIRATION | 0 |
+| `Meta.Cosmetic.BlackAndGold.Defibrillator` | 30 | Meta.Cosmetic.BlackAndGold | Id.Item.Defibrillator.Standard | 1 | LARGE_SQUARE | EXPIRATION_NO_END_TIME | 0 |
+| `Meta.Cosmetic.ChocolateChip.M1911` | 5 | Meta.Cosmetic.ChocolateChip | Id.Item.WEPN_026 | 1 | SMALL_SQUARE | NO_EXPIRATION | 0 |
 
 Columns 8-8 of 8:
 
@@ -519,6 +529,11 @@ Columns 8-8 of 8:
 | `Meta.Cosmetic.ChocolateChip.M14` | Meta.Cosmetic.ChocolateChip.M14 |
 | `Meta.Cosmetic.ChocolateChip.Evolys` | Meta.Cosmetic.ChocolateChip.Evolys |
 | `Meta.Cosmetic.ChocolateChip.TCXSPR` | Meta.Cosmetic.ChocolateChip.TCXSPR |
+| `Meta.Cosmetic.DigitalWood.CompoundBow` | Meta.Cosmetic.DigitalWood.CompoundBow |
+| `Meta.Cosmetic.ChocolateChip.FAL` | Meta.Cosmetic.ChocolateChip.FAL |
+| `Meta.Cosmetic.TwoToneDesert.CGM4` | Meta.Cosmetic.TwoToneDesert.CGM4 |
+| `Meta.Cosmetic.BlackAndGold.Defibrillator` | Meta.Cosmetic.BlackAndGold.Defibrillator |
+| `Meta.Cosmetic.ChocolateChip.M1911` | Meta.Cosmetic.ChocolateChip.M1911 |
 <!-- /datatable_catalog -->
 
 ## WDExchangeDefinitionTableRow
@@ -542,7 +557,7 @@ Tables: [`DT_MockInvestments`](https://github.com/Kiyogitpy/wardogs-data-docs/bl
 
 | Row | `ActiveInvestmentIds` | `Investments` | `Tag` |
 |---|---|---|---|
-| `Meta.MockInvestment.Definitions` | Meta.MockInvestment.Bandage | {Key=Meta.MockInvestment.AK74M; Value.ItemEntryId=Id.Item.AK74M; Value.ItemQuantity=1; Value.CashCostAmount=1… | Meta.MockInvestment.Definitions |
+| `Meta.MockInvestment.Definitions` | Meta.MockInvestment.Bandage | {Key=Meta.MockInvestment.AK74M; Value.itemEntryId=Id.Item.AK74M; Value.ItemQuantity=1; Value.CashCostAmount=1… | Meta.MockInvestment.Definitions |
 <!-- /datatable_catalog -->
 
 ## WDFactoryRecipe
@@ -567,172 +582,292 @@ Tables: [`DT_Factory01_Recipes`](https://github.com/Kiyogitpy/wardogs-data-docs/
 Tables: [`DT_WagerConditions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerConditions.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDWagerConditionDefinition -->
-*1 table(s), 50 rows, 21 non-empty columns. Source: the `Rows` of each table export (**Data**).*
+*1 table(s), 90 rows, 19 non-empty columns. Source: the `Rows` of each table export (**Data**).*
 
-Columns 1-7 of 21:
+Columns 1-7 of 19:
 
-| Row | `_aaaakgfoodihlgbfboeka` | `DisplayName` | `_aaaakoinngipbcijjmfcn` | `Description` | `_aaaaiogbmobfimjejhddd` | `Icon` | `Category` |
+| Row | `_aaaakgfoodihlgbfboeka` | `DisplayName` | `_aaaakoinngipbcijjmfcn` | `Description` | `Icon` | `Odds` | `TraitTags` |
 |---|---|---|---|---|---|---|---|
-| `Wager.Condition.Naked` | false | No Spend |  | Spend no cash while the wager is live. | Not available once you have spent cash this life. |  | Wager.ConditionCategory.Rules |
-| `Wager.Condition.Deathwish` | false | Deathwish |  | Test row: multiplies the odds only. No in-game rule is enforced yet. |  |  | Wager.ConditionCategory.Rules |
-| `Wager.Condition.TimeLimit` | false | Time Limit |  | Every action must be completed within 60 seconds of placing the wager. | The clock starts when the wager is placed. |  | Wager.ConditionCategory.Rules |
-| `Wager.Condition.NoVehicles` | false | No Vehicles |  | Test row: multiplies the odds only. No in-game rule is enforced yet. |  |  | Wager.ConditionCategory.Self.Loadout |
-| `Wager.Condition.NoResupply` | false | No Resupply |  | Test row: multiplies the odds only. No in-game rule is enforced yet. | Only available on a kills wager. |  | Wager.ConditionCategory.Self.Loadout |
-| `Wager.Condition.Kills.WithAK74` | true | With {Entity} | Id.Item.AK74M |  |  |  | Wager.ConditionCategory.Means.Weapon |
-| `Wager.Condition.Kills.WithJudge` | true | With {Entity} | Id.Item.Judge |  |  |  | Wager.ConditionCategory.Means.Weapon |
-| `Wager.Condition.Kills.WithScout` | true | With {Entity} | Id.Item.WEPN_035 |  |  |  | Wager.ConditionCategory.Means.Weapon |
-| `Wager.Condition.Kills.WithGrenade` | false | With {Entity} | Id.Item.M67Grenade | Counts a kill only when you make it with a frag grenade. |  |  | Wager.ConditionCategory.Means.Utility |
-| `Wager.Condition.Kills.WithPunch` | true | With {Entity} | Id.Item.Fists |  |  |  | Wager.ConditionCategory.Means.Weapon |
-| `Wager.Condition.Kills.WithLargeHammer` | true | With {Entity} | ID.Item.BuildTool.Hammer.Large |  |  |  | Wager.ConditionCategory.Means.Weapon |
-| `Wager.Condition.Kills.UsingHPAmmo` | true | Using HP Ammo |  | Counts a kill only when you make it with hollow-point ammo, tracer rounds included. |  | T_UI_WagerVendor_Icon_HPAmmo | Wager.ConditionCategory.Means.Weapon.Ammo |
-| `Wager.Condition.Kills.UsingAPAmmo` | false | Using AP Ammo |  | Counts a kill only when you make it with armor-piercing ammo, tracer rounds included. |  | T_UI_WagerVendor_Icon_APAmmo | Wager.ConditionCategory.Means.Weapon.Ammo |
-| `Wager.Condition.Kills.WithHeadshot` | true | With Headshot |  |  |  | T_UI_Killfeed_Headshot | Wager.ConditionCategory.Manner |
-| `Wager.Condition.VehiclesDestroyed.Tank` | false | Tank Destroyed |  | Counts a destroyed vehicle only when it is an L2A6 or T-72B3 tank. |  | T_UI_Icon_Killfeed_TNK_01_Heavy | Wager.ConditionCategory.Target.Vehicle |
-| `Wager.Condition.VehiclesDestroyed.Havoc` | false | {Entity} Destroyed | Vehicle.Variant.Air.Rotary.Havoc.Default |  |  |  | Wager.ConditionCategory.Target.Vehicle |
-| `Wager.Condition.VehiclesDestroyed.Blackhawk` | false | {Entity} Destroyed | Vehicle.Variant.Air.Rotary.ROT_04.Default |  |  |  | Wager.ConditionCategory.Target.Vehicle |
-| `Wager.Condition.VehiclesDestroyed.Artillery` | false | {Entity} Destroyed | Vehicle.Variant.Land.Tracked.TNK_01.Artillery |  |  |  | Wager.ConditionCategory.Target.Vehicle |
-| `Wager.Condition.VehiclesDestroyed.RocketLittleBird` | false | {Entity} Destroyed | Vehicle.Variant.Air.Rotary.Littlebird.RocketPods |  |  |  | Wager.ConditionCategory.Target.Vehicle |
-| `Wager.Condition.Revives.WithResus` | false | With Resus |  |  |  |  | Wager.ConditionCategory.Means.Utility |
-| `Wager.Condition.Revives.WithDefib` | true | With {Entity} | Id.Item.Defibrillator.Standard |  |  | T_UI_Icon_DefibKill | Wager.ConditionCategory.Means.Utility |
-| `Wager.Condition.Revives.WithMedkit` | true | With {Entity} | ID.Item.MedKit.Standard |  |  | T_UI_Icon_Role_Medic | Wager.ConditionCategory.Means.Utility |
-| `Wager.Condition.PlayerDelivery.ToControlZone` | false | To Control Zone |  | Counts a delivery only when the player you deliver is inside a control zone. |  | T_UI_WagerVendor_Icon_CZ | Wager.ConditionCategory.Place |
-| `Wager.Condition.PlayerDelivery.ToHotzone` | true | To Hotzone |  | Counts a delivery only when the player you deliver is inside the hotzone. |  | T_UI_WagerVendor_Icon_HZ | Wager.ConditionCategory.Place |
-| `Wager.Condition.PlayerDelivery.InAirVehicle` | false | In Air Vehicle |  |  |  |  | Wager.ConditionCategory.Means.Vehicle |
-| `Wager.Condition.PlayerDelivery.InGroundVehicle` | false | In Ground Vehicle |  |  |  |  | Wager.ConditionCategory.Means.Vehicle |
-| `Wager.Condition.PlayerDelivery.InLittleBird` | false | In {Entity} | Vehicle.Variant.Air.Rotary.Littlebird.Default |  |  |  | Wager.ConditionCategory.Means.Vehicle |
-| `Wager.Condition.PlayerDelivery.InBlackhawk` | false | In {Entity} | Vehicle.Variant.Air.Rotary.ROT_04.Default |  |  |  | Wager.ConditionCategory.Means.Vehicle |
-| `Wager.Condition.PlayerDelivery.InKodiak` | false | In {Entity} | Vehicle.Variant.Land.Wheeled.Kodiak.Default |  |  |  | Wager.ConditionCategory.Means.Vehicle |
-| `Wager.Condition.PlayerDelivery.InDuneBuggy` | true | In {Entity} | Vehicle.Variant.Land.Wheeled.DuneBuggy.Default |  |  |  | Wager.ConditionCategory.Means.Vehicle |
-| `Wager.Condition.PlayerDelivery.InBobcat` | true | In {Entity} | Vehicle.Variant.Land.Wheeled.Bobcat.Default |  |  |  | Wager.ConditionCategory.Means.Vehicle |
-| `Wager.Condition.PlayerDelivery.InUral` | true | In {Entity} | Vehicle.Variant.Land.Wheeled.Ural.Default |  |  |  | Wager.ConditionCategory.Means.Vehicle |
-| `Wager.Condition.Kills.WithVehicleImpact` | true | With Vehicle Impact |  | Counts a kill only when you make it by ramming someone with a vehicle. |  | T_UI_WagerVendor_Icon_VehicleImpact | Wager.ConditionCategory.Means.Weapon |
-| `Wager.Condition.Kills.OnlyOneMag` | true | With Only 1 Mag |  | Counts a kill only while you carry no magazine besides the ones loaded in your weapons. |  | T_UI_WagerVendor_Icon_OneMag | Wager.ConditionCategory.Self.Loadout |
-| `Wager.Condition.VehiclesDestroyed.WithTank` | false | With Tank |  | Counts a destroyed vehicle only while you are seated in an L2A6 or T-72B3 tank. |  | T_UI_Icon_Killfeed_TNK_01_Heavy | Wager.ConditionCategory.Means.Weapon |
-| `Wager.Condition.VehiclesDestroyed.WithHavoc` | false | With {Entity} | Vehicle.Variant.Air.Rotary.Havoc.Default |  |  |  | Wager.ConditionCategory.Means.Weapon |
-| `Wager.Condition.VehiclesDestroyed.WithRocketLittleBird` | false | With {Entity} | Vehicle.Variant.Air.Rotary.Littlebird.RocketPods |  |  |  | Wager.ConditionCategory.Means.Weapon |
-| `Wager.Condition.VehiclesDestroyed.Above50Kph` | true | While Moving Above 50 kph |  | Counts a destroyed vehicle only while you are moving faster than 50 kph. |  | T_UI_WagerVendor_Icon_50kph | Wager.ConditionCategory.Manner |
-| `Wager.Condition.Revives.FarFromTeammates` | true | 50 m From Teammates |  | Counts a revive only while your nearest living teammate, other than the player you revive, is at least 50 m a… |  | T_UI_WagerVendor_Icon_50m | Wager.ConditionCategory.Place.Proximity |
-| `Wager.Condition.Revives.NoWeapons` | true | With No Weapons |  | Counts a revive only while you carry no weapons. |  | T_UI_WagerVendor_Icon_NoWeapons | Wager.ConditionCategory.Self.Loadout |
-| `Wager.Condition.PlayerDelivery.FiveTapes` | true | With 5 Tapes in the Vehicle |  | Counts a delivery only while the vehicle you are in holds at least five tapes. |  | T_UI_WagerVendor_Icon_Tapes | Wager.ConditionCategory.Means.Vehicle |
-| `Wager.Condition.InControlZone` | false | In Control Zone |  | Counts only while you are inside a control zone. |  | T_UI_WagerVendor_Icon_CZ | Wager.ConditionCategory.Place |
-| `Wager.Condition.InHotzone` | true | In Hotzone |  | Counts only while you are inside the hotzone. |  | T_UI_WagerVendor_Icon_HZ | Wager.ConditionCategory.Place |
-| `Wager.Condition.NoArmor` | true | While Wearing No Armor |  | Counts only while you wear no helmet or body armor. |  | T_UI_WagerVendor_Icon_NoArmor | Wager.ConditionCategory.Self.Loadout |
-| `Wager.Condition.Loadout20k` | true | With a $20k Loadout |  | Counts only while your loadout is worth at least $20,000. |  | T_UI_WagerVendor_Icon_20KLoadout | Wager.ConditionCategory.Self.Loadout |
-| `Wager.Condition.NoBandages` | true | With No Bandages |  | Counts only while you carry no bandages. |  | T_UI_WagerVendor_Icon_NoBandages | Wager.ConditionCategory.Self.Loadout |
-| `Wager.Condition.Under50HP` | true | While Under 50 HP |  | Counts only while you have under 50 health. |  | T_UI_WagerVendor_Icon_50Health | Wager.ConditionCategory.Self.Condition |
-| `Wager.Condition.Kills.WithSmallHammer` | true | With {Entity} | ID.Item.BuildTool.Hammer.Small |  |  |  | Wager.ConditionCategory.Means.Weapon |
-| `Wager.Condition.Revives.MagicHands` | true | With Magic Hands |  | Counts a revive only when you make it by hand, without a revive item. |  |  | Wager.ConditionCategory.Means.Utility |
-| `Wager.Condition.Kills.WithLightDrill` | true | With {Entity} | ID.Item.RepairTool.Drill.Light |  |  |  | Wager.ConditionCategory.Means.Weapon |
+| `Wager.Condition.Naked` | false | No Spend |  | Spend no cash while the wager is live. |  | 1.1 | Wager.ConditionTrait.Spend |
+| `Wager.Condition.Deathwish` | false | Deathwish |  | Test row: multiplies the odds only. No in-game rule is enforced yet. |  | 10 | Wager.ConditionTrait.Public |
+| `Wager.Condition.TimeLimit` | false | Time Limit |  | Every action must be completed within 60 seconds of placing the wager. |  | 4 | Wager.ConditionTrait.Time |
+| `Wager.Condition.NoVehicles` | false | No Vehicles |  | Test row: multiplies the odds only. No in-game rule is enforced yet. |  | 3 |  |
+| `Wager.Condition.NoResupply` | false | No Resupply |  | Test row: multiplies the odds only. No in-game rule is enforced yet. |  | 2 |  |
+| `Wager.Condition.Kills.WithAK74` | true | With {Entity} | Id.Item.AK74M |  |  | 1.01 | Wager.ConditionTrait.Weapon |
+| `Wager.Condition.Kills.WithJudge` | true | With {Entity} | Id.Item.Judge |  |  | 1.3 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Mag |
+| `Wager.Condition.Kills.WithScout` | true | With {Entity} | Id.Item.WEPN_035 |  |  | 1.05 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Mag |
+| `Wager.Condition.Kills.WithGrenade` | true | With {Entity} | Id.Item.M67Grenade | Counts a kill only when you make it with a frag grenade. |  | 1.45 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… |
+| `Wager.Condition.Kills.WithPunch` | true | With {Entity} | Id.Item.Fists |  |  | 1.4 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag |
+| `Wager.Condition.Kills.WithLargeHammer` | true | With {Entity} | ID.Item.BuildTool.Hammer.Large |  |  | 1.3 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag |
+| `Wager.Condition.Kills.UsingHPAmmo` | true | Using HP Ammo |  | Counts a kill only when you make it with hollow-point ammo, tracer rounds included. | T_UI_WagerVendor_Icon_HPAmmo | 1.15 | Wager.ConditionTrait.Ammo |
+| `Wager.Condition.Kills.UsingAPAmmo` | false | Using AP Ammo |  | Counts a kill only when you make it with armor-piercing ammo, tracer rounds included. | T_UI_WagerVendor_Icon_APAmmo | 1.1 | Wager.ConditionTrait.Ammo |
+| `Wager.Condition.Kills.WithHeadshot` | true | With Headshot |  |  | T_UI_Killfeed_Headshot | 1.2 | Wager.ConditionTrait.Headshot |
+| `Wager.Condition.VehiclesDestroyed.Tank` | false | Tank Destroyed |  | Counts a destroyed vehicle only when it is an L2A6 or T-72B3 tank. | T_UI_Icon_Killfeed_TNK_01_Heavy | 1.6 | Wager.ConditionTrait.Target |
+| `Wager.Condition.VehiclesDestroyed.Havoc` | false | {Entity} Destroyed | Vehicle.Variant.Air.Rotary.Havoc.Default |  |  | 1.7 | Wager.ConditionTrait.Target |
+| `Wager.Condition.VehiclesDestroyed.Blackhawk` | false | {Entity} Destroyed | Vehicle.Variant.Air.Rotary.ROT_04.Default |  |  | 1.5 | Wager.ConditionTrait.Target |
+| `Wager.Condition.VehiclesDestroyed.Artillery` | false | {Entity} Destroyed | Vehicle.Variant.Land.Tracked.TNK_01.Artillery |  |  | 1.4 | Wager.ConditionTrait.Target |
+| `Wager.Condition.VehiclesDestroyed.RocketLittleBird` | false | {Entity} Destroyed | Vehicle.Variant.Air.Rotary.Littlebird.RocketPods |  |  | 1.45 | Wager.ConditionTrait.Target |
+| `Wager.Condition.Revives.WithResus` | true | With Resuscitator |  | Counts a revive only when you make it with an Emergency or Field Resuscitator. |  | 1.1 | Wager.ConditionTrait.Item |
+| `Wager.Condition.Revives.WithDefib` | true | With {Entity} | Id.Item.Defibrillator.Standard |  | T_UI_Icon_DefibKill | 1.025 | Wager.ConditionTrait.Item |
+| `Wager.Condition.Revives.WithMedkit` | true | With {Entity} | ID.Item.MedKit.Standard |  | T_UI_Icon_Role_Medic | 1.05 | Wager.ConditionTrait.Item |
+| `Wager.Condition.PlayerDelivery.ToControlZone` | false | To Control Zone |  | Counts a delivery only when the player you deliver is inside a Control Zone. | T_UI_WagerVendor_Icon_CZ | 1.15 | Wager.ConditionTrait.Location |
+| `Wager.Condition.PlayerDelivery.ToHotZone` | true | To Hot Zone |  | Counts a delivery only when the player you deliver is inside the Hot Zone. | T_UI_WagerVendor_Icon_HZ | 1.25 | Wager.ConditionTrait.Location |
+| `Wager.Condition.PlayerDelivery.InAirVehicle` | false | In Air Vehicle |  |  |  | 1.1 | Wager.ConditionTrait.Vehicle |
+| `Wager.Condition.PlayerDelivery.InGroundVehicle` | false | In Ground Vehicle |  |  |  | 1.05 | Wager.ConditionTrait.Vehicle |
+| `Wager.Condition.PlayerDelivery.InLittleBird` | false | In {Entity} | Vehicle.Variant.Air.Rotary.Littlebird.Default |  |  | 1.2 | Wager.ConditionTrait.Vehicle |
+| `Wager.Condition.PlayerDelivery.InBlackhawk` | false | In {Entity} | Vehicle.Variant.Air.Rotary.ROT_04.Default |  |  | 1.15 | Wager.ConditionTrait.Vehicle |
+| `Wager.Condition.PlayerDelivery.InKodiak` | false | In {Entity} | Vehicle.Variant.Land.Wheeled.Kodiak.Default |  |  | 1.15 | Wager.ConditionTrait.Vehicle |
+| `Wager.Condition.PlayerDelivery.InDuneBuggy` | true | In {Entity} | Vehicle.Variant.Land.Wheeled.DuneBuggy.Default |  |  | 1.025 | Wager.ConditionTrait.Vehicle, Wager.ConditionTrait.Tapes |
+| `Wager.Condition.PlayerDelivery.InBobcat` | true | In {Entity} | Vehicle.Variant.Land.Wheeled.Bobcat.Default |  |  | 1.2 | Wager.ConditionTrait.Vehicle, Wager.ConditionTrait.Tapes |
+| `Wager.Condition.PlayerDelivery.InUral` | true | In {Entity} | Vehicle.Variant.Land.Wheeled.Ural.Default |  |  | 1.01 | Wager.ConditionTrait.Vehicle |
+| `Wager.Condition.Kills.WithVehicleImpact` | true | With Vehicle Impact |  | Counts a kill only when you make it by ramming someone with a vehicle. | T_UI_WagerVendor_Icon_VehicleImpact | 1.075 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… |
+| `Wager.Condition.Kills.OnlyOneMag` | true | With Only 1 Mag |  | Counts a kill only while you carry no magazine besides the ones loaded in your weapons. | T_UI_WagerVendor_Icon_OneMag | 1.2 | Wager.ConditionTrait.Mag |
+| `Wager.Condition.VehiclesDestroyed.WithTank` | false | With Tank |  | Counts a destroyed vehicle only while you are seated in an L2A6 or T-72B3 tank. | T_UI_Icon_Killfeed_TNK_01_Heavy | 1.1 | Wager.ConditionTrait.Weapon |
+| `Wager.Condition.VehiclesDestroyed.WithHavoc` | false | With {Entity} | Vehicle.Variant.Air.Rotary.Havoc.Default |  |  | 1.15 | Wager.ConditionTrait.Weapon |
+| `Wager.Condition.VehiclesDestroyed.WithRocketLittleBird` | false | With {Entity} | Vehicle.Variant.Air.Rotary.Littlebird.RocketPods |  |  | 1.15 | Wager.ConditionTrait.Weapon |
+| `Wager.Condition.VehiclesDestroyed.Above50Kph` | true | While Moving Above 50 kph |  | Counts a destroyed vehicle only while you are moving faster than 50 kph. | T_UI_WagerVendor_Icon_50kph | 1.1 |  |
+| `Wager.Condition.Revives.FarFromTeammates` | true | 50 m From Teammates |  | Counts a revive only while your nearest living teammate, other than the player you revive, is at least 50 m a… | T_UI_WagerVendor_Icon_50m | 1.1 |  |
+| `Wager.Condition.Revives.NoWeapons` | true | With No Weapons |  | Counts a revive only while you carry no guns, launchers or bows. | T_UI_WagerVendor_Icon_NoWeapons | 1.15 | Wager.ConditionTrait.Loadout |
+| `Wager.Condition.PlayerDelivery.FiveTapes` | true | With 5 Tapes in the Vehicle |  | Counts a delivery only while the vehicle you are in holds at least five tapes. | T_UI_WagerVendor_Icon_Tapes | 1.005 | Wager.ConditionTrait.Tapes |
+| `Wager.Condition.InControlZone` | true | In Control Zone |  | Counts only while you are inside a Control Zone or the Hot Zone. | T_UI_WagerVendor_Icon_CZ | 1 | Wager.ConditionTrait.Location |
+| `Wager.Condition.InHotZone` | true | In Hot Zone |  | Counts only while you are inside the Hot Zone. | T_UI_WagerVendor_Icon_HZ | 1.1 | Wager.ConditionTrait.Location |
+| `Wager.Condition.NoArmor` | true | While Wearing No Armor |  | Counts only while you wear no helmet or body armor. | T_UI_WagerVendor_Icon_NoArmor | 1.15 |  |
+| `Wager.Condition.Loadout20k` | true | With a $20k Loadout |  | Counts only while your loadout is worth at least $20,000. | T_UI_WagerVendor_Icon_20KLoadout | 1.05 | Wager.ConditionTrait.Loadout |
+| `Wager.Condition.NoBandages` | true | With No Bandages |  | Counts only while you carry no bandages. | T_UI_WagerVendor_Icon_NoBandages | 1.15 |  |
+| `Wager.Condition.Under50HP` | true | While Under 50 HP |  | Counts only while you have under 50 health. | T_UI_WagerVendor_Icon_50Health | 1.2 |  |
+| `Wager.Condition.Kills.WithSmallHammer` | true | With {Entity} | ID.Item.BuildTool.Hammer.Small |  |  | 1.3 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag |
+| `Wager.Condition.Revives.MagicHands` | true | With Magic Hands |  | Counts a revive only when you make it by hand, without a revive item. |  | 1.1 | Wager.ConditionTrait.Item |
+| `Wager.Condition.Kills.WithLightDrill` | true | With {Entity} | ID.Item.RepairTool.Drill.Light |  |  | 1.3 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag |
+| `Wager.Condition.HeavyOrSuperHeavyArmor` | true | While Wearing Level 3 or 4 Armor |  | Counts only while you wear Level 3 or Level 4 body armor. |  | 1.15 |  |
+| `Wager.Condition.Kills.WithGun` | true | With Any Gun |  | Counts a kill only when you make it with a gun's bullet, not an explosion. |  | 1.01 | Wager.ConditionTrait.Weapon |
+| `Wager.Condition.Kills.WithBackblast` | true | With Backblast |  | Counts a kill only when you make it with the backblast of an RPG or MAAWS. | T_UI_Icon_KillFeed_BackBlast | 1.45 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… |
+| `Wager.Condition.DrillTowersActivated.CodeDigitsGuessed` | true | {Value}+ Digits Guessed |  | Counts an activation only when your team did not own that many towers or more, so you guessed those digits of… |  | 1.5 |  |
+| `Wager.Condition.DrillTowersActivated.DrillTowersOnMap` | true | {Value}+ Drill Towers |  | Counts an activation only on a map with that many drill towers or more. |  | 1 |  |
+| `Wager.Condition.Kills.WithSMGAssaultRifleOrShotgun` | true | With SMG, Assault Rifle Or Shotgun |  | Counts a kill only when you make it with an SMG, assault rifle or shotgun. |  | 1.01 | Wager.ConditionTrait.Weapon |
+| `Wager.Condition.WithinSeconds` | true | Within {Value} Seconds |  | Everything must happen within that many seconds. Older ones drop off your progress. |  | 1.5 | Wager.ConditionTrait.Time |
+| `Wager.Condition.VehiclesDestroyed.WithStingray` | true | With {Entity} | Vehicle.Variant.Stationary.STN_05 | Counts a destroyed vehicle only while you are seated in a Stingray. |  | 1.15 | Wager.ConditionTrait.Weapon |
+| `Wager.Condition.Kills.OneBullet` | true | {Value} Kills With One Bullet |  | Counts bullets: one that kills that many enemies counts once. Shotgun buckshot never counts. | T_UI_Icon_Killfeed_Penetration | 1.5 | Wager.ConditionTrait.MultiKill |
+| `Wager.Condition.Kills.OneExplosion` | true | {Value} Kills In One Explosion |  | Counts explosions: one that kills that many enemies counts once. | T_UI_Icon_Killfeed_Explosion | 2 | Wager.ConditionTrait.MultiKill |
+| `Wager.Condition.VehiclesDestroyed.OneExplosion` | true | {Value} Vehicles In One Explosion |  | Counts explosions: one that destroys that many vehicles counts once. | T_UI_Icon_Killfeed_Explosion | 2 | Wager.ConditionTrait.MultiKill |
+| `Wager.Condition.WithoutAMiss.Drone` | true | Without A Miss |  | Every Stingray drone must count; a drone that doesn't starts the count again. | T_UI_Icon_Killfeed_Drone | 1.5 |  |
+| `Wager.Condition.PerShot.Drone` | true | {Value} Per Drone |  | Counts Stingray drones: a drone that gets that many counts once; one that gets fewer starts the count again. | T_UI_Icon_Killfeed_Drone | 3 |  |
+| `Wager.Condition.InFOB` | true | In FOB |  | Counts only while you are inside an FOB's radius. | T_UI_Map_Spotted_FOB | 1.1 | Wager.ConditionTrait.FOB |
+| `Wager.Condition.InEnemyFOB` | true | In Enemy FOB |  | Counts only while you are inside an enemy FOB's radius. | T_UI_SquadIntent_FobAssault | 1.25 | Wager.ConditionTrait.FOB |
+| `Wager.Condition.InFOBWithSupplies` | true | In FOB With {Value}+ Supplies |  | Counts only while you are inside an FOB holding that many supplies or more, every kind added together. | T_UI_Icon_FOB_Active | 1.65 | Wager.ConditionTrait.FOB |
+| `Wager.Condition.InEnemyFOBWithSupplies` | true | In Enemy FOB With {Value}+ Supplies |  | Counts only while you are inside an enemy FOB holding that many supplies or more, every kind added together. | T_UI_SquadIntent_FobAssault | 1.875 | Wager.ConditionTrait.FOB |
+| `Wager.Condition.VehiclesDestroyed.Helicopter` | true | Helicopter Destroyed |  | Counts a destroyed vehicle only when it is a helicopter. | T_UI_Icon_Killfeed_Littlebird | 1.5 | Wager.ConditionTrait.Target |
+| `Wager.Condition.VehiclesDestroyed.WithArtilleryShell` | true | With Artillery Shell |  | Counts a destroyed vehicle only when an SPH-2 artillery shell destroys it. | T_UI_Icon_Killfeed_TNK_01_Artillery | 1.3 | Wager.ConditionTrait.Weapon |
+| `Wager.Condition.FOBsHacked.TeammatesInRange` | true | {Value}+ Teammates In FOB |  | Counts a hack only when that many living teammates or more are inside the FOB's radius as it completes. Downe… |  | 1.5 | Wager.ConditionTrait.Teammates |
+| `Wager.Condition.FOBsHacked.Alone` | true | Alone |  | Counts a hack only when no other living teammate is inside the FOB's radius as it completes. Downed teammates… |  | 1.25 | Wager.ConditionTrait.Teammates |
+| `Wager.Condition.NoEnemyBuildablesDestroyed` | true | No Enemy Buildables Destroyed |  | Destroying or dismantling an enemy buildable at any point fails the wager. |  | 1.2 |  |
+| `Wager.Condition.Freefall.WithRPGOrCGM4` | true | With RPG or MAAWS |  | Counts a destroyed helicopter only when an RPG-7 or MAAWS round destroys it. | T_UI_Icon_Killfeed_RPG7 | 1.01 | Wager.ConditionTrait.Weapon |
+| `Wager.Condition.NoVehicleDamage` | true | Without Taking Damage |  | Your vehicle taking any damage, crashes included, fails the wager. |  | 1.2 |  |
+| `Wager.Condition.NoVehicleSpotted` | true | Without Being Spotted |  | An enemy spotting your vehicle fails the wager. |  | 1.2 |  |
+| `Wager.Condition.NoVehicleLockOn` | true | Without Being Locked On |  | An enemy locking on to your vehicle fails the wager. |  | 1.2 |  |
+| `Wager.Condition.NoVehicleRepairs` | true | Never Repairing |  | Anyone or anything repairing your vehicle fails the wager. |  | 1.2 |  |
+| `Wager.Condition.NoSelfHeal` | true | Without Healing Yourself |  | Healing yourself fails the wager. |  | 1.2 |  |
+| `Wager.Condition.PlayerDelivery.InBattleUral` | true | In {Entity} | Vehicle.Variant.Land.Wheeled.Ural.Battle | Counts a delivery only when a Ural Defender made it. |  | 1.01 | Wager.ConditionTrait.Vehicle |
+| `Wager.Condition.PlayerDelivery.OneTrip` | true | {Value} In One Trip |  | Counts trips: one vehicle that drops off that many players, who all survive, counts once. | t_ui_centrefeed_dropoff | 2 | Wager.ConditionTrait.MultiKill |
+| `Wager.Condition.NoReloading` | true | Without Reloading |  | Counts only with the weapon you get your first counted kill with. Reloading it fails the wager; losing it sta… |  | 1.5 |  |
+| `Wager.Condition.Kills.WithArtilleryShell` | true | With Artillery Shell |  | Counts a kill only when an SPH-2 artillery shell makes it. | T_UI_Icon_Killfeed_TNK_01_Artillery | 1.3 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… |
+| `Wager.Condition.WithoutAMiss.Artillery` | true | Without A Miss |  | Every SPH-2 shell must kill an enemy; a shell that doesn't fails the wager. | T_UI_Icon_Killfeed_TNK_01_Artillery | 1.5 |  |
+| `Wager.Condition.PerfectQuickReloads` | true | Perfect Quick Reloads |  | A wrong SPH-2 quick reload input, or letting a reload segment run out, fails the wager. |  | 1.2 |  |
+| `Wager.Condition.WithoutReturningToSpawn` | true | Without Returning To Spawn |  | Entering your spawn fails the wager. |  | 1.2 |  |
+| `Wager.Condition.Kills.TargetInControlZone` | true | Target In Control Zone |  | Counts a kill only when your target is inside a Control Zone or the Hot Zone, wherever you are. | T_UI_WagerVendor_Icon_CZ | 1.15 | Wager.ConditionTrait.Location |
+| `Wager.Condition.Kills.TargetInHotZoneFromOutside` | true | Target In Hot Zone, You Outside |  | Counts a kill only when your target is inside the Hot Zone and you are outside it. | T_UI_WagerVendor_Icon_HZ | 1.25 | Wager.ConditionTrait.Location |
+| `Wager.Condition.Kills.TargetInHotZone` | true | Target In Hot Zone |  | Counts a kill only when your target is inside the Hot Zone, wherever you are. | T_UI_WagerVendor_Icon_HZ | 1.2 | Wager.ConditionTrait.Location |
+| `Wager.Condition.NoFriendlyDamage` | true | Without Damaging Your Team |  | Damaging a teammate or anything of your team's, such as vehicles, buildables or supplies, fails the wager. |  | 1.2 |  |
+| `Wager.Condition.SupplyPalletsDelivered.Stolen` | true | Stolen From The Enemy |  | Counts a pallet only when an enemy bought it. | T_UI_Vendor_Crowbar | 2 | Wager.ConditionTrait.Target |
 
-Columns 8-14 of 21:
+Columns 8-14 of 19:
 
-| Row | `Odds` | `TraitTags` | `IncompatibleTraitTags` | `RequiresAnyActionTags` | `_aaabbldhaebiklpgijlkp` | `_aaaalachhfgpfehmdofie.QueryDefinition.StaticStruct.SchemaClass` | `_aaaalachhfgpfehmdofie.QueryDefinition.SharedDefinition.Conditions.Structs` |
+| Row | `IncompatibleTraitTags` | `RequiresAnyActionTags` | `RequiredEventTags` | `_aaaalachhfgpfehmdofie.QueryDefinition.StaticStruct.SchemaClass` | `_aaaalachhfgpfehmdofie.QueryDefinition.SharedDefinition.Conditions.Structs` | `_aaaalachhfgpfehmdofie.QueryDefinition.SharedDefinition.SchemaClass` | `MinValue` |
 |---|---|---|---|---|---|---|---|
-| `Wager.Condition.Naked` | 1.1 | Wager.ConditionTrait.Spend |  |  |  | WDMetaPrerequisiteSchema | {StatTag=Analytics.Player.Cash.Spent.CurrentLife; Comparison=Equal; Value=0; bInvert=false; Operator=Copy; Ne… |
-| `Wager.Condition.Deathwish` | 10 | Wager.ConditionTrait.Public | Wager.ConditionTrait.Spend |  |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.TimeLimit` | 4 | Wager.ConditionTrait.Time |  |  |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.NoVehicles` | 3 |  |  |  |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.NoResupply` | 2 |  |  | Wager.Action.Kills |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Kills.WithAK74` | 1.01 | Wager.ConditionTrait.Weapon | Wager.ConditionTrait.Weapon | Wager.Action.Kills | Id.Item.AK74M | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Kills.WithJudge` | 1.3 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Mag | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Mag | Wager.Action.Kills | Id.Item.Judge | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Kills.WithScout` | 1.05 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Mag | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Mag | Wager.Action.Kills | Id.Item.WEPN_035 | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Kills.WithGrenade` | 1.45 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills | Id.Item.M67Grenade | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Kills.WithPunch` | 1.4 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills | Id.Item.Fists | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Kills.WithLargeHammer` | 1.3 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills | ID.Item.BuildTool.Hammer.Large | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Kills.UsingHPAmmo` | 1.15 | Wager.ConditionTrait.Ammo | Wager.ConditionTrait.Ammo | Wager.Action.Kills | Meta.Damage.AmmoModifier.HollowPoint | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Kills.UsingAPAmmo` | 1.1 | Wager.ConditionTrait.Ammo | Wager.ConditionTrait.Ammo | Wager.Action.Kills | Meta.Damage.AmmoModifier.ArmorPiercing | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Kills.WithHeadshot` | 1.2 | Wager.ConditionTrait.Headshot | Wager.ConditionTrait.Headshot | Wager.Action.Kills | Challenges.Context.Headshot | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.VehiclesDestroyed.Tank` | 1.6 | Wager.ConditionTrait.Target | Wager.ConditionTrait.Target | Wager.Action.VehiclesDestroyed | Vehicle.Variant.Land.Tracked.TNK_01.Heavy, Vehicle.Variant.Land.Tracked.TNK_04 | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.VehiclesDestroyed.Havoc` | 1.7 | Wager.ConditionTrait.Target | Wager.ConditionTrait.Target | Wager.Action.VehiclesDestroyed | Vehicle.Variant.Air.Rotary.Havoc | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.VehiclesDestroyed.Blackhawk` | 1.5 | Wager.ConditionTrait.Target | Wager.ConditionTrait.Target | Wager.Action.VehiclesDestroyed | Vehicle.Variant.Air.Rotary.ROT_04 | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.VehiclesDestroyed.Artillery` | 1.4 | Wager.ConditionTrait.Target | Wager.ConditionTrait.Target | Wager.Action.VehiclesDestroyed | Vehicle.Variant.Land.Tracked.TNK_01.Artillery | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.VehiclesDestroyed.RocketLittleBird` | 1.45 | Wager.ConditionTrait.Target | Wager.ConditionTrait.Target | Wager.Action.VehiclesDestroyed | Vehicle.Variant.Air.Rotary.Littlebird.RocketPods | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Revives.WithResus` | 1.1 | Wager.ConditionTrait.Item | Wager.ConditionTrait.Item | Wager.Action.Revives | Id.Item.Resuscitator | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Revives.WithDefib` | 1.025 | Wager.ConditionTrait.Item | Wager.ConditionTrait.Item | Wager.Action.Revives | Id.Item.Defibrillator | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Revives.WithMedkit` | 1.05 | Wager.ConditionTrait.Item | Wager.ConditionTrait.Item | Wager.Action.Revives | Id.Item.MedKit | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.PlayerDelivery.ToControlZone` | 1.15 | Wager.ConditionTrait.Location | Wager.ConditionTrait.Location | Wager.Action.PlayerDelivery | Challenges.Context.Target.InControlZone | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.PlayerDelivery.ToHotzone` | 1.25 | Wager.ConditionTrait.Location | Wager.ConditionTrait.Location | Wager.Action.PlayerDelivery | Challenges.Context.Target.InHotZone | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.PlayerDelivery.InAirVehicle` | 1.1 | Wager.ConditionTrait.Vehicle | Wager.ConditionTrait.Vehicle | Wager.Action.PlayerDelivery | Vehicle.Variant.Air | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.PlayerDelivery.InGroundVehicle` | 1.05 | Wager.ConditionTrait.Vehicle | Wager.ConditionTrait.Vehicle | Wager.Action.PlayerDelivery | Vehicle.Variant.Land | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.PlayerDelivery.InLittleBird` | 1.2 | Wager.ConditionTrait.Vehicle | Wager.ConditionTrait.Vehicle | Wager.Action.PlayerDelivery | Vehicle.Variant.Air.Rotary.Littlebird | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.PlayerDelivery.InBlackhawk` | 1.15 | Wager.ConditionTrait.Vehicle | Wager.ConditionTrait.Vehicle | Wager.Action.PlayerDelivery | Vehicle.Variant.Air.Rotary.ROT_04 | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.PlayerDelivery.InKodiak` | 1.15 | Wager.ConditionTrait.Vehicle | Wager.ConditionTrait.Vehicle | Wager.Action.PlayerDelivery | Vehicle.Variant.Land.Wheeled.Kodiak | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.PlayerDelivery.InDuneBuggy` | 1.025 | Wager.ConditionTrait.Vehicle, Wager.ConditionTrait.Tapes | Wager.ConditionTrait.Vehicle, Wager.ConditionTrait.Tapes | Wager.Action.PlayerDelivery | Vehicle.Variant.Land.Wheeled.DuneBuggy | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.PlayerDelivery.InBobcat` | 1.2 | Wager.ConditionTrait.Vehicle, Wager.ConditionTrait.Tapes | Wager.ConditionTrait.Vehicle, Wager.ConditionTrait.Tapes | Wager.Action.PlayerDelivery | Vehicle.Variant.Land.Wheeled.Bobcat | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.PlayerDelivery.InUral` | 1.01 | Wager.ConditionTrait.Vehicle | Wager.ConditionTrait.Vehicle | Wager.Action.PlayerDelivery | Vehicle.Variant.Land.Wheeled.Ural | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Kills.WithVehicleImpact` | 1.075 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Kills.OnlyOneMag` | 1.2 | Wager.ConditionTrait.Mag | Wager.ConditionTrait.Mag | Wager.Action.Kills |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.VehiclesDestroyed.WithTank` | 1.1 | Wager.ConditionTrait.Weapon | Wager.ConditionTrait.Weapon | Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.VehiclesDestroyed.WithHavoc` | 1.15 | Wager.ConditionTrait.Weapon | Wager.ConditionTrait.Weapon | Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.VehiclesDestroyed.WithRocketLittleBird` | 1.15 | Wager.ConditionTrait.Weapon | Wager.ConditionTrait.Weapon | Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.VehiclesDestroyed.Above50Kph` | 1.1 |  |  | Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Revives.FarFromTeammates` | 1.1 |  |  | Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Revives.NoWeapons` | 1.15 | Wager.ConditionTrait.Loadout | Wager.ConditionTrait.Loadout | Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.PlayerDelivery.FiveTapes` | 1.005 | Wager.ConditionTrait.Tapes | Wager.ConditionTrait.Tapes | Wager.Action.PlayerDelivery |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.InControlZone` | 1.15 | Wager.ConditionTrait.Location | Wager.ConditionTrait.Location | Wager.Action.Kills, Wager.Action.Revives, Wager.Action.VehiclesDestroyed | Challenges.Context.Instigator.InControlZone | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.InHotzone` | 1.1 | Wager.ConditionTrait.Location | Wager.ConditionTrait.Location | Wager.Action.Kills, Wager.Action.Revives, Wager.Action.VehiclesDestroyed | Challenges.Context.Instigator.InHotZone | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.NoArmor` | 1.15 |  |  | Wager.Action.Kills, Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Loadout20k` | 1.05 | Wager.ConditionTrait.Loadout | Wager.ConditionTrait.Loadout | Wager.Action.Kills, Wager.Action.Revives, Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.NoBandages` | 1.15 |  |  | Wager.Action.Kills, Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Under50HP` | 1.2 |  |  | Wager.Action.Kills, Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Kills.WithSmallHammer` | 1.3 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills | ID.Item.BuildTool.Hammer.Small | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Revives.MagicHands` | 1.1 | Wager.ConditionTrait.Item | Wager.ConditionTrait.Item | Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |
-| `Wager.Condition.Kills.WithLightDrill` | 1.3 | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills | ID.Item.RepairTool.Drill.Light | WDMetaPrerequisiteSchema |  |
+| `Wager.Condition.Naked` |  |  |  | WDMetaPrerequisiteSchema | {StatTag=Analytics.Player.Cash.Spent.CurrentLife; Comparison=Equal; Value=0; bInvert=false; OPERATOR=Copy; Ne… | WDMetaPrerequisiteSchema | 0 |
+| `Wager.Condition.Deathwish` | Wager.ConditionTrait.Spend |  |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.TimeLimit` |  |  |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.NoVehicles` |  |  |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.NoResupply` |  | Wager.Action.Kills |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.WithAK74` | Wager.ConditionTrait.Weapon | Wager.Action.Kills | Id.Item.AK74M | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.WithJudge` | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Mag | Wager.Action.Kills | Id.Item.Judge | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.WithScout` | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Mag | Wager.Action.Kills | Id.Item.WEPN_035 | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.WithGrenade` | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills | Id.Item.M67Grenade, Id.Item.GoldM67Grenade | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.WithPunch` | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills, Wager.Action.SpawnRadarsDestroyed | Id.Item.Fists | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.WithLargeHammer` | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills | ID.Item.BuildTool.Hammer.Large | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.UsingHPAmmo` | Wager.ConditionTrait.Ammo | Wager.Action.Kills | Meta.Damage.AmmoModifier.HollowPoint | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.UsingAPAmmo` | Wager.ConditionTrait.Ammo | Wager.Action.Kills | Meta.Damage.AmmoModifier.ArmorPiercing | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.WithHeadshot` | Wager.ConditionTrait.Headshot | Wager.Action.Kills | Challenges.Context.Headshot | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.VehiclesDestroyed.Tank` | Wager.ConditionTrait.Target | Wager.Action.VehiclesDestroyed | Vehicle.Variant.Land.Tracked.TNK_01.Heavy, Vehicle.Variant.Land.Tracked.TNK_04 | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.VehiclesDestroyed.Havoc` | Wager.ConditionTrait.Target | Wager.Action.VehiclesDestroyed | Vehicle.Variant.Air.Rotary.Havoc | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.VehiclesDestroyed.Blackhawk` | Wager.ConditionTrait.Target | Wager.Action.VehiclesDestroyed | Vehicle.Variant.Air.Rotary.ROT_04 | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.VehiclesDestroyed.Artillery` | Wager.ConditionTrait.Target | Wager.Action.VehiclesDestroyed | Vehicle.Variant.Land.Tracked.TNK_01.Artillery | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.VehiclesDestroyed.RocketLittleBird` | Wager.ConditionTrait.Target | Wager.Action.VehiclesDestroyed | Vehicle.Variant.Air.Rotary.Littlebird.RocketPods | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Revives.WithResus` | Wager.ConditionTrait.Item | Wager.Action.Revives | Id.Item.Resuscitator | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Revives.WithDefib` | Wager.ConditionTrait.Item | Wager.Action.Revives | Id.Item.Defibrillator | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Revives.WithMedkit` | Wager.ConditionTrait.Item | Wager.Action.Revives | Id.Item.MedKit | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PlayerDelivery.ToControlZone` | Wager.ConditionTrait.Location | Wager.Action.PlayerDelivery | Challenges.Context.Target.InControlZone | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PlayerDelivery.ToHotZone` | Wager.ConditionTrait.Location | Wager.Action.PlayerDelivery | Challenges.Context.Target.InHotZone | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PlayerDelivery.InAirVehicle` | Wager.ConditionTrait.Vehicle | Wager.Action.PlayerDelivery | Vehicle.Variant.Air | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PlayerDelivery.InGroundVehicle` | Wager.ConditionTrait.Vehicle | Wager.Action.PlayerDelivery | Vehicle.Variant.Land | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PlayerDelivery.InLittleBird` | Wager.ConditionTrait.Vehicle | Wager.Action.PlayerDelivery | Vehicle.Variant.Air.Rotary.Littlebird | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PlayerDelivery.InBlackhawk` | Wager.ConditionTrait.Vehicle | Wager.Action.PlayerDelivery | Vehicle.Variant.Air.Rotary.ROT_04 | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PlayerDelivery.InKodiak` | Wager.ConditionTrait.Vehicle | Wager.Action.PlayerDelivery | Vehicle.Variant.Land.Wheeled.Kodiak | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PlayerDelivery.InDuneBuggy` | Wager.ConditionTrait.Vehicle, Wager.ConditionTrait.Tapes | Wager.Action.PlayerDelivery | Vehicle.Variant.Land.Wheeled.DuneBuggy | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PlayerDelivery.InBobcat` | Wager.ConditionTrait.Vehicle, Wager.ConditionTrait.Tapes | Wager.Action.PlayerDelivery | Vehicle.Variant.Land.Wheeled.Bobcat | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PlayerDelivery.InUral` | Wager.ConditionTrait.Vehicle | Wager.Action.PlayerDelivery | Vehicle.Variant.Land.Wheeled.Ural | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.WithVehicleImpact` | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.OnlyOneMag` | Wager.ConditionTrait.Mag | Wager.Action.Kills |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.VehiclesDestroyed.WithTank` | Wager.ConditionTrait.Weapon | Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.VehiclesDestroyed.WithHavoc` | Wager.ConditionTrait.Weapon | Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.VehiclesDestroyed.WithRocketLittleBird` | Wager.ConditionTrait.Weapon | Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.VehiclesDestroyed.Above50Kph` |  | Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Revives.FarFromTeammates` |  | Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Revives.NoWeapons` | Wager.ConditionTrait.Loadout | Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PlayerDelivery.FiveTapes` | Wager.ConditionTrait.Tapes | Wager.Action.PlayerDelivery |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.InControlZone` | Wager.ConditionTrait.Location | Wager.Action.Kills, Wager.Action.Revives | Challenges.Context.Instigator.InControlZone, Challenges.Context.Instigator.InHotZone | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.InHotZone` | Wager.ConditionTrait.Location | Wager.Action.Kills, Wager.Action.Revives, Wager.Action.VehiclesDestroyed | Challenges.Context.Instigator.InHotZone | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.NoArmor` |  | Wager.Action.Kills, Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Loadout20k` | Wager.ConditionTrait.Loadout | Wager.Action.Kills, Wager.Action.Revives, Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.NoBandages` |  | Wager.Action.Kills, Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Under50HP` |  | Wager.Action.Kills, Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.WithSmallHammer` | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills | ID.Item.BuildTool.Hammer.Small | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Revives.MagicHands` | Wager.ConditionTrait.Item | Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.WithLightDrill` | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills | ID.Item.RepairTool.Drill.Light | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.HeavyOrSuperHeavyArmor` |  | Wager.Action.Kills, Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.WithGun` | Wager.ConditionTrait.Weapon | Wager.Action.Kills |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.WithBackblast` | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills | Meta.Damage.DamageType.BackBlast | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.DrillTowersActivated.CodeDigitsGuessed` |  | Wager.Action.DrillTowersActivated |  | WDMetaPrerequisiteSchema |  |  | 1 |
+| `Wager.Condition.DrillTowersActivated.DrillTowersOnMap` |  | Wager.Action.DrillTowersActivated |  | WDMetaPrerequisiteSchema |  |  | 1 |
+| `Wager.Condition.Kills.WithSMGAssaultRifleOrShotgun` | Wager.ConditionTrait.Weapon | Wager.Action.Kills |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.WithinSeconds` | Wager.ConditionTrait.Time |  |  | WDMetaPrerequisiteSchema |  |  | 10 |
+| `Wager.Condition.VehiclesDestroyed.WithStingray` | Wager.ConditionTrait.Weapon | Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.OneBullet` | Wager.ConditionTrait.MultiKill | Wager.Action.Kills |  | WDMetaPrerequisiteSchema |  |  | 2 |
+| `Wager.Condition.Kills.OneExplosion` | Wager.ConditionTrait.MultiKill | Wager.Action.Kills |  | WDMetaPrerequisiteSchema |  |  | 2 |
+| `Wager.Condition.VehiclesDestroyed.OneExplosion` | Wager.ConditionTrait.MultiKill | Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |  | 2 |
+| `Wager.Condition.WithoutAMiss.Drone` |  | Wager.Action.Kills, Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PerShot.Drone` |  | Wager.Action.Kills, Wager.Action.VehiclesDestroyed |  | WDMetaPrerequisiteSchema |  |  | 1 |
+| `Wager.Condition.InFOB` | Wager.ConditionTrait.FOB | Wager.Action.Kills, Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.InEnemyFOB` | Wager.ConditionTrait.FOB | Wager.Action.Kills, Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.InFOBWithSupplies` | Wager.ConditionTrait.FOB | Wager.Action.Kills, Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |  | 1000 |
+| `Wager.Condition.InEnemyFOBWithSupplies` | Wager.ConditionTrait.FOB | Wager.Action.Kills, Wager.Action.Revives |  | WDMetaPrerequisiteSchema |  |  | 1000 |
+| `Wager.Condition.VehiclesDestroyed.Helicopter` | Wager.ConditionTrait.Target | Wager.Action.VehiclesDestroyed | Vehicle.Variant.Air.Rotary | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.VehiclesDestroyed.WithArtilleryShell` | Wager.ConditionTrait.Weapon | Wager.Action.VehiclesDestroyed | Id.Vehicle.WeaponExtension.TNK_01.Artillery | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.FOBsHacked.TeammatesInRange` | Wager.ConditionTrait.Teammates | Wager.Action.FOBsHacked |  | WDMetaPrerequisiteSchema |  |  | 1 |
+| `Wager.Condition.FOBsHacked.Alone` | Wager.ConditionTrait.Teammates | Wager.Action.FOBsHacked |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.NoEnemyBuildablesDestroyed` |  |  |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Freefall.WithRPGOrCGM4` | Wager.ConditionTrait.Weapon | Wager.Action.FreefallHelicopterKill, Wager.Action.FreefallHelicopterKillRecovered | Id.Item.RPG7, Id.Item.CGM4 | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.NoVehicleDamage` |  |  |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.NoVehicleSpotted` |  |  |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.NoVehicleLockOn` |  |  |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.NoVehicleRepairs` |  |  |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.NoSelfHeal` |  |  |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PlayerDelivery.InBattleUral` | Wager.ConditionTrait.Vehicle | Wager.Action.PlayerDelivery | Vehicle.Variant.Land.Wheeled.Ural.Battle | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PlayerDelivery.OneTrip` | Wager.ConditionTrait.MultiKill | Wager.Action.PlayerDelivery |  | WDMetaPrerequisiteSchema |  |  | 2 |
+| `Wager.Condition.NoReloading` |  | Wager.Action.Kills |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.WithArtilleryShell` | Wager.ConditionTrait.Weapon, Wager.ConditionTrait.Ammo, Wager.ConditionTrait.Mag, Wager.ConditionTrait.Headsh… | Wager.Action.Kills | Id.Vehicle.WeaponExtension.TNK_01.Artillery | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.WithoutAMiss.Artillery` |  | Wager.Action.Kills |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.PerfectQuickReloads` |  |  |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.WithoutReturningToSpawn` |  |  |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.TargetInControlZone` | Wager.ConditionTrait.Location | Wager.Action.Kills | Challenges.Context.Target.InControlZone, Challenges.Context.Target.InHotZone | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.TargetInHotZoneFromOutside` | Wager.ConditionTrait.Location | Wager.Action.Kills |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.Kills.TargetInHotZone` | Wager.ConditionTrait.Location | Wager.Action.Kills | Challenges.Context.Target.InHotZone | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.NoFriendlyDamage` |  |  |  | WDMetaPrerequisiteSchema |  |  | 0 |
+| `Wager.Condition.SupplyPalletsDelivered.Stolen` | Wager.ConditionTrait.Target | Wager.Action.SupplyPalletsDelivered | Challenges.Context.SupplyPallet.Stolen | WDMetaPrerequisiteSchema |  |  | 0 |
 
-Columns 15-21 of 21:
+Columns 15-19 of 19:
 
-| Row | `_aaaalachhfgpfehmdofie.QueryDefinition.SharedDefinition.SchemaClass` | `MinValue` | `MaxValue` | `ValueStep` | `CooldownSeconds` | `Behaviors` | `Tag` |
-|---|---|---|---|---|---|---|---|
-| `Wager.Condition.Naked` | WDMetaPrerequisiteSchema | 0 | 0 | 1 | 86400 | {ResourceTag=Attribute.Meta.Currency.Cash; _aaaapofmpjejiiekikojo=Meta.Progression.Resources.MatchScore.Purch… | Wager.Condition.Naked |
-| `Wager.Condition.Deathwish` |  | 0 | 0 | 1 | 86400 | {} | Wager.Condition.Deathwish |
-| `Wager.Condition.TimeLimit` |  | 0 | 0 | 1 | 86400 | {Seconds=60; _aaaaikkaafbipeiknogeo=Wager.Timer.FailAfterSeconds; FailReason=Wager.FailReason.TimedOut; _aaaa… | Wager.Condition.TimeLimit |
-| `Wager.Condition.NoVehicles` |  | 0 | 0 | 1 | 86400 | {} | Wager.Condition.NoVehicles |
-| `Wager.Condition.NoResupply` |  | 0 | 0 | 1 | 86400 | {} | Wager.Condition.NoResupply |
-| `Wager.Condition.Kills.WithAK74` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithAK74 |
-| `Wager.Condition.Kills.WithJudge` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithJudge |
-| `Wager.Condition.Kills.WithScout` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithScout |
-| `Wager.Condition.Kills.WithGrenade` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithGrenade |
-| `Wager.Condition.Kills.WithPunch` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithPunch |
-| `Wager.Condition.Kills.WithLargeHammer` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithLargeHammer |
-| `Wager.Condition.Kills.UsingHPAmmo` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Kills.UsingHPAmmo |
-| `Wager.Condition.Kills.UsingAPAmmo` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Kills.UsingAPAmmo |
-| `Wager.Condition.Kills.WithHeadshot` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithHeadshot |
-| `Wager.Condition.VehiclesDestroyed.Tank` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.VehiclesDestroyed.Tank |
-| `Wager.Condition.VehiclesDestroyed.Havoc` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.VehiclesDestroyed.Havoc |
-| `Wager.Condition.VehiclesDestroyed.Blackhawk` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.VehiclesDestroyed.Blackhawk |
-| `Wager.Condition.VehiclesDestroyed.Artillery` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.VehiclesDestroyed.Artillery |
-| `Wager.Condition.VehiclesDestroyed.RocketLittleBird` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.VehiclesDestroyed.RocketLittleBird |
-| `Wager.Condition.Revives.WithResus` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Revives.WithResus |
-| `Wager.Condition.Revives.WithDefib` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Revives.WithDefib |
-| `Wager.Condition.Revives.WithMedkit` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Revives.WithMedkit |
-| `Wager.Condition.PlayerDelivery.ToControlZone` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.ToControlZone |
-| `Wager.Condition.PlayerDelivery.ToHotzone` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.ToHotzone |
-| `Wager.Condition.PlayerDelivery.InAirVehicle` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InAirVehicle |
-| `Wager.Condition.PlayerDelivery.InGroundVehicle` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InGroundVehicle |
-| `Wager.Condition.PlayerDelivery.InLittleBird` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InLittleBird |
-| `Wager.Condition.PlayerDelivery.InBlackhawk` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InBlackhawk |
-| `Wager.Condition.PlayerDelivery.InKodiak` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InKodiak |
-| `Wager.Condition.PlayerDelivery.InDuneBuggy` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InDuneBuggy |
-| `Wager.Condition.PlayerDelivery.InBobcat` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InBobcat |
-| `Wager.Condition.PlayerDelivery.InUral` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InUral |
-| `Wager.Condition.Kills.WithVehicleImpact` |  | 0 | 0 | 1 | 86400 | {_aaaakfdimkkalchjcbedi=Meta.Damage.DamageType.Impact; _aaaalomlnknmafbflkiin=Meta.Damage.Kinetic.Impact.Thro… | Wager.Condition.Kills.WithVehicleImpact |
-| `Wager.Condition.Kills.OnlyOneMag` |  | 0 | 0 | 1 | 86400 | {_aaaakajebecbokbemgoha.SupportFilter=AllowList; _aaaakajebecbokbemgoha.AllowedSubSlotContext=Item.Attachment… | Wager.Condition.Kills.OnlyOneMag |
-| `Wager.Condition.VehiclesDestroyed.WithTank` |  | 0 | 0 | 1 | 86400 | {VehicleTags=Vehicle.Variant.Land.Tracked.TNK_01.Heavy, Vehicle.Variant.Land.Tracked.TNK_04; _aaaalndmlkdbdge… | Wager.Condition.VehiclesDestroyed.WithTank |
-| `Wager.Condition.VehiclesDestroyed.WithHavoc` |  | 0 | 0 | 1 | 86400 | {VehicleTags=Vehicle.Variant.Air.Rotary.Havoc; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireInVehicle} | Wager.Condition.VehiclesDestroyed.WithHavoc |
-| `Wager.Condition.VehiclesDestroyed.WithRocketLittleBird` |  | 0 | 0 | 1 | 86400 | {VehicleTags=Vehicle.Variant.Air.Rotary.Littlebird.RocketPods; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireI… | Wager.Condition.VehiclesDestroyed.WithRocketLittleBird |
-| `Wager.Condition.VehiclesDestroyed.Above50Kph` |  | 0 | 0 | 1 | 86400 | {_aaaainbclocjcedlpfcmo=50; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireOwnerSpeed} | Wager.Condition.VehiclesDestroyed.Above50Kph |
-| `Wager.Condition.Revives.FarFromTeammates` |  | 0 | 0 | 1 | 86400 | {_aaaanhbbfgbimifphhckm=50; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireTeammateDistance} | Wager.Condition.Revives.FarFromTeammates |
-| `Wager.Condition.Revives.NoWeapons` |  | 0 | 0 | 1 | 86400 | {_aaaakajebecbokbemgoha.SupportFilter=AllowList; _aaaakajebecbokbemgoha.AllowedSubSlotContext=Item.Weapon; _a… | Wager.Condition.Revives.NoWeapons |
-| `Wager.Condition.PlayerDelivery.FiveTapes` |  | 0 | 0 | 1 | 86400 | {_aaaakajebecbokbemgoha.SupportFilter=AllowList; _aaaakajebecbokbemgoha.AllowedSubSlotContext=Item.Context.Ve… | Wager.Condition.PlayerDelivery.FiveTapes |
-| `Wager.Condition.InControlZone` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.InControlZone |
-| `Wager.Condition.InHotzone` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.InHotzone |
-| `Wager.Condition.NoArmor` |  | 0 | 0 | 1 | 86400 | {_aaaakajebecbokbemgoha.SupportFilter=AllowList; _aaaakajebecbokbemgoha.AllowedSubSlotContext=Inventory.Slot.… | Wager.Condition.NoArmor |
-| `Wager.Condition.Loadout20k` |  | 0 | 0 | 1 | 86400 | {_aaaahnbbjmhmofgmjogdb=20000; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireLoadoutCost} | Wager.Condition.Loadout20k |
-| `Wager.Condition.NoBandages` |  | 0 | 0 | 1 | 86400 | {_aaaakajebecbokbemgoha.SupportFilter=AllowList; _aaaakajebecbokbemgoha.AllowedSubSlotItems=Id.Item.Bandage, … | Wager.Condition.NoBandages |
-| `Wager.Condition.Under50HP` |  | 0 | 0 | 1 | 86400 | {_aaaalehghdhdnmhfiaehk=50; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireOwnerHealth} | Wager.Condition.Under50HP |
-| `Wager.Condition.Kills.WithSmallHammer` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithSmallHammer |
-| `Wager.Condition.Revives.MagicHands` |  | 0 | 0 | 1 | 86400 | {_aaaakfdimkkalchjcbedi=Challenges.Context.Instigator; _aaaalomlnknmafbflkiin=Id.Item; _aaaalndmlkdbdgenbhaek… | Wager.Condition.Revives.MagicHands |
-| `Wager.Condition.Kills.WithLightDrill` |  | 0 | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithLightDrill |
+| Row | `MaxValue` | `ValueStep` | `CooldownSeconds` | `Behaviors` | `Tag` |
+|---|---|---|---|---|---|
+| `Wager.Condition.Naked` | 0 | 1 | 86400 | {ResourceTag=Attribute.Meta.Currency.Cash; _aaaapofmpjejiiekikojo=Meta.Progression.Resources.MatchScore.Purch… | Wager.Condition.Naked |
+| `Wager.Condition.Deathwish` | 0 | 1 | 86400 | {} | Wager.Condition.Deathwish |
+| `Wager.Condition.TimeLimit` | 0 | 1 | 86400 | {Seconds=60; _aaaaikkaafbipeiknogeo=Wager.Timer.FailAfterSeconds; FailReason=Wager.FailReason.TimedOut; _aaaa… | Wager.Condition.TimeLimit |
+| `Wager.Condition.NoVehicles` | 0 | 1 | 86400 | {} | Wager.Condition.NoVehicles |
+| `Wager.Condition.NoResupply` | 0 | 1 | 86400 | {} | Wager.Condition.NoResupply |
+| `Wager.Condition.Kills.WithAK74` | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithAK74 |
+| `Wager.Condition.Kills.WithJudge` | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithJudge |
+| `Wager.Condition.Kills.WithScout` | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithScout |
+| `Wager.Condition.Kills.WithGrenade` | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithGrenade |
+| `Wager.Condition.Kills.WithPunch` | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithPunch |
+| `Wager.Condition.Kills.WithLargeHammer` | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithLargeHammer |
+| `Wager.Condition.Kills.UsingHPAmmo` | 0 | 1 | 86400 |  | Wager.Condition.Kills.UsingHPAmmo |
+| `Wager.Condition.Kills.UsingAPAmmo` | 0 | 1 | 86400 |  | Wager.Condition.Kills.UsingAPAmmo |
+| `Wager.Condition.Kills.WithHeadshot` | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithHeadshot |
+| `Wager.Condition.VehiclesDestroyed.Tank` | 0 | 1 | 86400 |  | Wager.Condition.VehiclesDestroyed.Tank |
+| `Wager.Condition.VehiclesDestroyed.Havoc` | 0 | 1 | 86400 |  | Wager.Condition.VehiclesDestroyed.Havoc |
+| `Wager.Condition.VehiclesDestroyed.Blackhawk` | 0 | 1 | 86400 |  | Wager.Condition.VehiclesDestroyed.Blackhawk |
+| `Wager.Condition.VehiclesDestroyed.Artillery` | 0 | 1 | 86400 |  | Wager.Condition.VehiclesDestroyed.Artillery |
+| `Wager.Condition.VehiclesDestroyed.RocketLittleBird` | 0 | 1 | 86400 |  | Wager.Condition.VehiclesDestroyed.RocketLittleBird |
+| `Wager.Condition.Revives.WithResus` | 0 | 1 | 86400 |  | Wager.Condition.Revives.WithResus |
+| `Wager.Condition.Revives.WithDefib` | 0 | 1 | 86400 |  | Wager.Condition.Revives.WithDefib |
+| `Wager.Condition.Revives.WithMedkit` | 0 | 1 | 86400 |  | Wager.Condition.Revives.WithMedkit |
+| `Wager.Condition.PlayerDelivery.ToControlZone` | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.ToControlZone |
+| `Wager.Condition.PlayerDelivery.ToHotZone` | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.ToHotZone |
+| `Wager.Condition.PlayerDelivery.InAirVehicle` | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InAirVehicle |
+| `Wager.Condition.PlayerDelivery.InGroundVehicle` | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InGroundVehicle |
+| `Wager.Condition.PlayerDelivery.InLittleBird` | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InLittleBird |
+| `Wager.Condition.PlayerDelivery.InBlackhawk` | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InBlackhawk |
+| `Wager.Condition.PlayerDelivery.InKodiak` | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InKodiak |
+| `Wager.Condition.PlayerDelivery.InDuneBuggy` | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InDuneBuggy |
+| `Wager.Condition.PlayerDelivery.InBobcat` | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InBobcat |
+| `Wager.Condition.PlayerDelivery.InUral` | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InUral |
+| `Wager.Condition.Kills.WithVehicleImpact` | 0 | 1 | 86400 | {_aaaakfdimkkalchjcbedi=Meta.Damage.DamageType.Impact; _aaaalomlnknmafbflkiin=Meta.Damage.Kinetic.Impact.Thro… | Wager.Condition.Kills.WithVehicleImpact |
+| `Wager.Condition.Kills.OnlyOneMag` | 0 | 1 | 86400 | {_aaaakajebecbokbemgoha.SupportFilter=AllowList; _aaaakajebecbokbemgoha.AllowedSubSlotContext=Item.Attachment… | Wager.Condition.Kills.OnlyOneMag |
+| `Wager.Condition.VehiclesDestroyed.WithTank` | 0 | 1 | 86400 | {VehicleTags=Vehicle.Variant.Land.Tracked.TNK_01.Heavy, Vehicle.Variant.Land.Tracked.TNK_04; _aaaalndmlkdbdge… | Wager.Condition.VehiclesDestroyed.WithTank |
+| `Wager.Condition.VehiclesDestroyed.WithHavoc` | 0 | 1 | 86400 | {VehicleTags=Vehicle.Variant.Air.Rotary.Havoc; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireInVehicle} | Wager.Condition.VehiclesDestroyed.WithHavoc |
+| `Wager.Condition.VehiclesDestroyed.WithRocketLittleBird` | 0 | 1 | 86400 | {VehicleTags=Vehicle.Variant.Air.Rotary.Littlebird.RocketPods; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireI… | Wager.Condition.VehiclesDestroyed.WithRocketLittleBird |
+| `Wager.Condition.VehiclesDestroyed.Above50Kph` | 0 | 1 | 86400 | {_aaaainbclocjcedlpfcmo=50; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireOwnerSpeed} | Wager.Condition.VehiclesDestroyed.Above50Kph |
+| `Wager.Condition.Revives.FarFromTeammates` | 0 | 1 | 86400 | {_aaaanhbbfgbimifphhckm=50; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireTeammateDistance} | Wager.Condition.Revives.FarFromTeammates |
+| `Wager.Condition.Revives.NoWeapons` | 0 | 1 | 86400 | {_aaaakajebecbokbemgoha.SupportFilter=AllowList; _aaaakajebecbokbemgoha.AllowedSubSlotContext=Item.Archetype.… | Wager.Condition.Revives.NoWeapons |
+| `Wager.Condition.PlayerDelivery.FiveTapes` | 0 | 1 | 86400 | {_aaaakajebecbokbemgoha.SupportFilter=AllowList; _aaaakajebecbokbemgoha.AllowedSubSlotContext=Item.Context.Ve… | Wager.Condition.PlayerDelivery.FiveTapes |
+| `Wager.Condition.InControlZone` | 0 | 1 | 86400 |  | Wager.Condition.InControlZone |
+| `Wager.Condition.InHotZone` | 0 | 1 | 86400 |  | Wager.Condition.InHotZone |
+| `Wager.Condition.NoArmor` | 0 | 1 | 86400 | {_aaaakajebecbokbemgoha.SupportFilter=AllowList; _aaaakajebecbokbemgoha.AllowedSubSlotContext=Inventory.Slot.… | Wager.Condition.NoArmor |
+| `Wager.Condition.Loadout20k` | 0 | 1 | 86400 | {AtLeast=20000; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireLoadoutCost} | Wager.Condition.Loadout20k |
+| `Wager.Condition.NoBandages` | 0 | 1 | 86400 | {_aaaakajebecbokbemgoha.SupportFilter=AllowList; _aaaakajebecbokbemgoha.AllowedSubSlotItems=Id.Item.Bandage, … | Wager.Condition.NoBandages |
+| `Wager.Condition.Under50HP` | 0 | 1 | 86400 | {_aaaalehghdhdnmhfiaehk=50; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireOwnerHealth} | Wager.Condition.Under50HP |
+| `Wager.Condition.Kills.WithSmallHammer` | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithSmallHammer |
+| `Wager.Condition.Revives.MagicHands` | 0 | 1 | 86400 | {_aaaakfdimkkalchjcbedi=Challenges.Context.Instigator; _aaaalomlnknmafbflkiin=Id.Item; _aaaalndmlkdbdgenbhaek… | Wager.Condition.Revives.MagicHands |
+| `Wager.Condition.Kills.WithLightDrill` | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithLightDrill |
+| `Wager.Condition.HeavyOrSuperHeavyArmor` | 0 | 1 | 86400 | {_aaaakajebecbokbemgoha.SupportFilter=AllowList; _aaaakajebecbokbemgoha.AllowedSubSlotItems=Id.Item.HeavyArmo… | Wager.Condition.HeavyOrSuperHeavyArmor |
+| `Wager.Condition.Kills.WithGun` | 0 | 1 | 86400 | {_aaaakfdimkkalchjcbedi=Item.Caliber; _aaaalomlnknmafbflkiin=Meta.Damage.DamageType.Explosive; _aaaalndmlkdbd… | Wager.Condition.Kills.WithGun |
+| `Wager.Condition.Kills.WithBackblast` | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithBackblast |
+| `Wager.Condition.DrillTowersActivated.CodeDigitsGuessed` | 10 | 1 | 86400 | {_aaaaichkemiefnhjcpaoc=Challenges.ContextValue.HotZoneMagnet.CodeDigitsGuessed; Comparison=AtLeast; _aaaalnd… | Wager.Condition.DrillTowersActivated.CodeDigitsGuessed |
+| `Wager.Condition.DrillTowersActivated.DrillTowersOnMap` | 10 | 1 | 86400 | {_aaaaichkemiefnhjcpaoc=Challenges.ContextValue.HotZoneMagnet.CodeDigits; Comparison=AtLeast; _aaaalndmlkdbdg… | Wager.Condition.DrillTowersActivated.DrillTowersOnMap |
+| `Wager.Condition.Kills.WithSMGAssaultRifleOrShotgun` | 0 | 1 | 86400 | {_aaaakfdimkkalchjcbedi=Meta.Damage.Weapon.SMG, Meta.Damage.Weapon.AR, Meta.Damage.Weapon.Shotgun; _aaaalomln… | Wager.Condition.Kills.WithSMGAssaultRifleOrShotgun |
+| `Wager.Condition.WithinSeconds` | 120 | 10 | 86400 | {_aaaalndmlkdbdgenbhaek=Wager.Behavior.CountWithinSeconds} | Wager.Condition.WithinSeconds |
+| `Wager.Condition.VehiclesDestroyed.WithStingray` | 0 | 1 | 86400 | {VehicleTags=Vehicle.Variant.Stationary.STN_05; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireInVehicle} | Wager.Condition.VehiclesDestroyed.WithStingray |
+| `Wager.Condition.Kills.OneBullet` | 10 | 1 | 86400 | {_aaaajonobgofejgbjceoo=Challenges.ContextValue.FireId; _aaabfiiogmchlhbbiadbj=1; _aaaanflcohdamceamlamj=true… | Wager.Condition.Kills.OneBullet |
+| `Wager.Condition.Kills.OneExplosion` | 30 | 1 | 86400 | {_aaaajonobgofejgbjceoo=Challenges.ContextValue.ExplosionId; _aaabfiiogmchlhbbiadbj=1; _aaaanflcohdamceamlamj… | Wager.Condition.Kills.OneExplosion |
+| `Wager.Condition.VehiclesDestroyed.OneExplosion` | 5 | 1 | 86400 | {_aaaajonobgofejgbjceoo=Challenges.ContextValue.ExplosionId; _aaabfiiogmchlhbbiadbj=1; _aaaanflcohdamceamlamj… | Wager.Condition.VehiclesDestroyed.OneExplosion |
+| `Wager.Condition.WithoutAMiss.Drone` | 0 | 1 | 86400 | {ProjectileId=Item.Caliber.DroneProjectile; GraceSeconds=1; _aaaalipcjoohbojcinljk=false; _aaaalchghgdlgklhai… | Wager.Condition.WithoutAMiss.Drone |
+| `Wager.Condition.PerShot.Drone` | 5 | 1 | 86400 | {ProjectileId=Item.Caliber.DroneProjectile; GraceSeconds=1; _aaaalipcjoohbojcinljk=true; _aaaalchghgdlgklhaic… | Wager.Condition.PerShot.Drone |
+| `Wager.Condition.InFOB` | 0 | 1 | 86400 | {Ownership=Any; _aaabadeppompbedlbioko=false; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireOwnerInFob} | Wager.Condition.InFOB |
+| `Wager.Condition.InEnemyFOB` | 0 | 1 | 86400 | {Ownership=Enemy; _aaabadeppompbedlbioko=false; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireOwnerInFob} | Wager.Condition.InEnemyFOB |
+| `Wager.Condition.InFOBWithSupplies` | 80000 | 1000 | 86400 | {Ownership=Any; _aaabadeppompbedlbioko=true; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireOwnerInFob} | Wager.Condition.InFOBWithSupplies |
+| `Wager.Condition.InEnemyFOBWithSupplies` | 80000 | 1000 | 86400 | {Ownership=Enemy; _aaabadeppompbedlbioko=true; _aaaalndmlkdbdgenbhaek=Wager.Behavior.RequireOwnerInFob} | Wager.Condition.InEnemyFOBWithSupplies |
+| `Wager.Condition.VehiclesDestroyed.Helicopter` | 0 | 1 | 86400 |  | Wager.Condition.VehiclesDestroyed.Helicopter |
+| `Wager.Condition.VehiclesDestroyed.WithArtilleryShell` | 0 | 1 | 86400 |  | Wager.Condition.VehiclesDestroyed.WithArtilleryShell |
+| `Wager.Condition.FOBsHacked.TeammatesInRange` | 30 | 1 | 86400 | {_aaaaichkemiefnhjcpaoc=Challenges.ContextValue.Buildables.HackerTeammatesInRange; Comparison=AtLeast; _aaaal… | Wager.Condition.FOBsHacked.TeammatesInRange |
+| `Wager.Condition.FOBsHacked.Alone` | 0 | 1 | 86400 | {_aaaaichkemiefnhjcpaoc=Challenges.ContextValue.Buildables.HackerTeammatesInRange; Comparison=AtMost; _aaaaln… | Wager.Condition.FOBsHacked.Alone |
+| `Wager.Condition.NoEnemyBuildablesDestroyed` | 0 | 1 | 86400 | {_aaaalndmlkdbdgenbhaek=Wager.Behavior.FailOnEnemyBuildableDestroyed} | Wager.Condition.NoEnemyBuildablesDestroyed |
+| `Wager.Condition.Freefall.WithRPGOrCGM4` | 0 | 1 | 86400 |  | Wager.Condition.Freefall.WithRPGOrCGM4 |
+| `Wager.Condition.NoVehicleDamage` | 0 | 1 | 86400 | {OwnerVehicle=CreditsDelivery; _aaabgppdcocndbkpobppp=false; FailReason=Wager.FailReason.VehicleDamaged; _aaa… | Wager.Condition.NoVehicleDamage |
+| `Wager.Condition.NoVehicleSpotted` | 0 | 1 | 86400 | {OwnerVehicle=CreditsDelivery; _aaabgppdcocndbkpobppp=false; FailReason=Wager.FailReason.VehicleSpotted; _aaa… | Wager.Condition.NoVehicleSpotted |
+| `Wager.Condition.NoVehicleLockOn` | 0 | 1 | 86400 | {OwnerVehicle=CreditsDelivery; _aaabgppdcocndbkpobppp=true; FailReason=Wager.FailReason.VehicleLockedOn; _aaa… | Wager.Condition.NoVehicleLockOn |
+| `Wager.Condition.NoVehicleRepairs` | 0 | 1 | 86400 | {OwnerVehicle=SeatedCreditedOrLastDriven; _aaabgppdcocndbkpobppp=false; FailReason=Wager.FailReason.VehicleRe… | Wager.Condition.NoVehicleRepairs |
+| `Wager.Condition.NoSelfHeal` | 0 | 1 | 86400 | {_aaaalndmlkdbdgenbhaek=Wager.Behavior.FailOnSelfHeal} | Wager.Condition.NoSelfHeal |
+| `Wager.Condition.PlayerDelivery.InBattleUral` | 0 | 1 | 86400 |  | Wager.Condition.PlayerDelivery.InBattleUral |
+| `Wager.Condition.PlayerDelivery.OneTrip` | 30 | 1 | 86400 | {_aaaajonobgofejgbjceoo=Challenges.ContextValue.VehicleId; _aaabfiiogmchlhbbiadbj=15; _aaaanflcohdamceamlamj=… | Wager.Condition.PlayerDelivery.OneTrip |
+| `Wager.Condition.NoReloading` | 0 | 1 | 86400 | {_aaaalndmlkdbdgenbhaek=Wager.Behavior.NoReload} | Wager.Condition.NoReloading |
+| `Wager.Condition.Kills.WithArtilleryShell` | 0 | 1 | 86400 |  | Wager.Condition.Kills.WithArtilleryShell |
+| `Wager.Condition.WithoutAMiss.Artillery` | 0 | 1 | 86400 | {ProjectileId=Item.Caliber.155mm; GraceSeconds=1; _aaaalipcjoohbojcinljk=false; _aaaalchghgdlgklhaicmd=true; … | Wager.Condition.WithoutAMiss.Artillery |
+| `Wager.Condition.PerfectQuickReloads` | 0 | 1 | 86400 | {_aaabdnnbcffjimeoomemd=Id.Vehicle.WeaponExtension.TNK_01.Artillery; _aaaalndmlkdbdgenbhaek=Wager.Behavior.Fa… | Wager.Condition.PerfectQuickReloads |
+| `Wager.Condition.WithoutReturningToSpawn` | 0 | 1 | 86400 | {_aaaalndmlkdbdgenbhaek=Wager.Behavior.FailOnReturnToSpawn} | Wager.Condition.WithoutReturningToSpawn |
+| `Wager.Condition.Kills.TargetInControlZone` | 0 | 1 | 86400 |  | Wager.Condition.Kills.TargetInControlZone |
+| `Wager.Condition.Kills.TargetInHotZoneFromOutside` | 0 | 1 | 86400 | {_aaaakfdimkkalchjcbedi=Challenges.Context.Target.InHotZone; _aaaalomlnknmafbflkiin=Challenges.Context.Instig… | Wager.Condition.Kills.TargetInHotZoneFromOutside |
+| `Wager.Condition.Kills.TargetInHotZone` | 0 | 1 | 86400 |  | Wager.Condition.Kills.TargetInHotZone |
+| `Wager.Condition.NoFriendlyDamage` | 0 | 1 | 86400 | {_aaaalndmlkdbdgenbhaek=Wager.Behavior.FailOnFriendlyDamage} | Wager.Condition.NoFriendlyDamage |
+| `Wager.Condition.SupplyPalletsDelivered.Stolen` | 0 | 1 | 86400 |  | Wager.Condition.SupplyPalletsDelivered.Stolen |
 <!-- /datatable_catalog -->
 
 ## WDWagerActionDefinition
@@ -740,34 +875,55 @@ Columns 15-21 of 21:
 Tables: [`DT_WagerActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerActions.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDWagerActionDefinition -->
-*1 table(s), 4 rows, 16 non-empty columns. Source: the `Rows` of each table export (**Data**).*
+*1 table(s), 11 rows, 17 non-empty columns. Source: the `Rows` of each table export (**Data**).*
 
-Columns 1-7 of 16:
+Columns 1-7 of 17:
 
 | Row | `_aaaakgfoodihlgbfboeka` | `DisplayName` | `ShortName` | `Description` | `Icon` | `Archetype` | `ChallengeId` |
 |---|---|---|---|---|---|---|---|
 | `Wager.Action.Kills` | true | Get {Count} Kills | Kills | Get this amount of kills. | T_UI_Killfeed_KillConfirmed | Wager.Archetype.Kills | Challenges.Challenge.Wager.Kills |
 | `Wager.Action.PlayerDelivery` | true | Deliver {Count} people to the Control Zone | Players Delivered | Get this amount of players delivered to the Control Zone | t_ui_centrefeed_dropoff | Wager.Archetype.PlayersDelivered | Challenges.Challenge.Wager.PlayerDelivery |
 | `Wager.Action.Revives` | true | Revive {Count} Teammates | Revives | Revive this many teammates. | T_UI_Killfeed_Revive | Wager.Archetype.Revives | Challenges.Challenge.Wager.Revives |
-| `Wager.Action.VehiclesDestroyed` | true | Destroy {Count} Occupied Vehicles | Vehicles Destroyed | Destroy this many vehicles that have an enemy occupant. | T_UI_Icon_Killfeed_Explosion | Wager.Archetype.VehiclesDestroyed | Challenges.Challenge.Wager.VehiclesDestroyed |
+| `Wager.Action.VehiclesDestroyed` | true | Destroy {Count} Occupied Vehicles | Vehicles Destroyed | Destroy this many vehicles that have an enemy occupant. | T_UI_Icon_Killfeed_Explosion | Wager.Archetype.Objectives | Challenges.Challenge.Wager.VehiclesDestroyed |
+| `Wager.Action.DrillTowersActivated` | true | Activate {Count} Drill Towers | Drill Towers Activated | Call the Hot Zone to a drill tower this many times by entering its code. | T_UI_Icon_ActivatedTower | Wager.Archetype.Objectives | Challenges.Challenge.Wager.DrillTowersActivated |
+| `Wager.Action.FOBsHacked` | true | Hack {Count} Enemy FOBs | FOBs Hacked | Hack this many enemy FOBs. | T_UI_HackedFOB | Wager.Archetype.Objectives | Challenges.Challenge.Wager.FOBsHacked |
+| `Wager.Action.FreefallKill` | true | Get a Freefall Kill | Freefall Kill | Bail out of a helicopter you're piloting and kill an enemy while in freefall. | T_UI_Killfeed_KillConfirmed | Wager.Archetype.Kills | Challenges.Challenge.Wager.FreefallKill |
+| `Wager.Action.FreefallHelicopterKill` | true | Destroy an Enemy Helicopter in Freefall | Freefall Helicopter Kill | Bail out of a helicopter you're piloting and destroy an enemy helicopter with an RPG or MAAWS while in freefa… | T_UI_Icon_Killfeed_Explosion | Wager.Archetype.Objectives | Challenges.Challenge.Wager.FreefallHelicopterKill |
+| `Wager.Action.FreefallHelicopterKillRecovered` | true | Destroy an Enemy Helicopter in Freefall, Then Recover | Freefall Recovery | Bail out of a helicopter you're piloting, destroy an enemy helicopter with an RPG or MAAWS while in freefall,… | T_UI_Icon_Killfeed_Explosion | Wager.Archetype.Objectives | Challenges.Challenge.Wager.FreefallHelicopterKillRecovered |
+| `Wager.Action.SpawnRadarsDestroyed` | true | Destroy {Count} Enemy Spawn Radars | Spawn Radars Destroyed | Destroy the radar on this many enemy spawn vehicles. | T_UI_Icon_Killfeed_Explosion | Wager.Archetype.Objectives | Challenges.Challenge.Wager.SpawnRadarsDestroyed |
+| `Wager.Action.SupplyPalletsDelivered` | true | Deliver {Count} Supply Pallets | Supply Pallets Delivered | Drop this many supply pallets at a friendly FOB and get them fully unloaded. | T_UI_SupplyPallet_Icon | Wager.Archetype.Objectives | Challenges.Challenge.Wager.SupplyPalletsDelivered |
 
-Columns 8-14 of 16:
+Columns 8-14 of 17:
 
 | Row | `_aaabcjojpnjmnbelecidg` | `MinCount` | `MaxCount` | `DefaultCount` | `Odds` | `Rules` | `PayoutResourceTag` |
 |---|---|---|---|---|---|---|---|
-| `Wager.Action.Kills` | NumPlayersToKill | 1 | 25 | 1 | 1.001, 1.001, 1.001, 1.0055, 1.01, 1.0179 (+19 more) | You must be inside the control zone, Enemy players only, Not a player an enemy revived, Repeats on the same p… | Attribute.Meta.Currency.Cash |
-| `Wager.Action.PlayerDelivery` | NumPassengersToDeliver | 1 | 20 | 1 | 1.001, 1.001, 1.001, 1.001, 1.001, 1.0058 (+14 more) | Spawn vehicles don't count, Counts once your passenger survives the drop-off | Attribute.Meta.Currency.Cash |
-| `Wager.Action.Revives` | NumPlayersToRevive | 1 | 50 | 5 | 1.001, 1.001, 1.001, 1.001, 1.001, 1.0058 (+44 more) | You must be inside the control zone, Teammates only, Not a player downed by a teammate or by themselves, Repe… | Attribute.Meta.Currency.Cash |
+| `Wager.Action.Kills` | NumPlayersToKill | 1 | 50 | 1 | 1.001, 1.001, 1.001, 1.0055, 1.01, 1.0179 (+44 more) | Enemy players only, Not a player an enemy revived, Repeats on the same player don't count | Attribute.Meta.Currency.Cash |
+| `Wager.Action.PlayerDelivery` | NumPassengersToDeliver | 1 | 20 | 1 | 1.001, 1.001, 1.001, 1.001, 1.001, 1.0058 (+14 more) | Drop off in or within 100m of the Control Zone, Spawn vehicles don't count, Counts once your passenger surviv… | Attribute.Meta.Currency.Cash |
+| `Wager.Action.Revives` | NumPlayersToRevive | 1 | 75 | 5 | 1.001, 1.001, 1.001, 1.001, 1.001, 1.0058 (+69 more) | Teammates only, Not a player downed by a teammate or by themselves, Repeats on the same player don't count | Attribute.Meta.Currency.Cash |
 | `Wager.Action.VehiclesDestroyed` | NumVehiclesToDestroy | 1 | 20 | 1 | 1.001, 1.001, 1.001, 1.0055, 1.01, 1.0179 (+14 more) | An enemy must be driving it, An enemy must have bought it | Attribute.Meta.Currency.Cash |
+| `Wager.Action.DrillTowersActivated` | NumDrillTowersToActivate | 1 | 3 | 1 | 1.5, 2, 2.5 | You must enter the code yourself | Attribute.Meta.Currency.Cash |
+| `Wager.Action.FOBsHacked` | NumFOBsToHack | 1 | 3 | 1 | 1.5, 2, 2.5 | You must complete the hack yourself | Attribute.Meta.Currency.Cash |
+| `Wager.Action.FreefallKill` | NumToComplete | 1 | 1 | 1 | 1.5 | Bail out of a helicopter you're piloting, Kill an enemy player while in freefall, Kills caused by destroying … | Attribute.Meta.Currency.Cash |
+| `Wager.Action.FreefallHelicopterKill` | NumToComplete | 1 | 1 | 1 | 1.5 | Bail out of a helicopter you're piloting, Destroy an enemy helicopter with an RPG or MAAWS while in freefall,… | Attribute.Meta.Currency.Cash |
+| `Wager.Action.FreefallHelicopterKillRecovered` | NumToComplete | 1 | 1 | 1 | 1.5 | Bail out of a helicopter you're piloting, Destroy an enemy helicopter with an RPG or MAAWS while in freefall,… | Attribute.Meta.Currency.Cash |
+| `Wager.Action.SpawnRadarsDestroyed` | NumSpawnRadarsToDestroy | 1 | 2 | 1 | 1.5, 2 | You must destroy the radar yourself | Attribute.Meta.Currency.Cash |
+| `Wager.Action.SupplyPalletsDelivered` | NumSupplyPalletsToDeliver | 1 | 4 | 1 | 1.2, 1.4, 1.6, 1.8 | You must drop the pallet off your vehicle yourself, Counts when the pallet is fully unloaded, by you or a tea… | Attribute.Meta.Currency.Cash |
 
-Columns 15-16 of 16:
+Columns 15-17 of 17:
 
-| Row | `CooldownSeconds` | `Tag` |
-|---|---|---|
-| `Wager.Action.Kills` | 86400 | Wager.Action.Kills |
-| `Wager.Action.PlayerDelivery` | 86400 | Wager.Action.PlayerDelivery |
-| `Wager.Action.Revives` | 86400 | Wager.Action.Revives |
-| `Wager.Action.VehiclesDestroyed` | 86400 | Wager.Action.VehiclesDestroyed |
+| Row | `CooldownSeconds` | `_aaaaoglepjgldpmempicc` | `Tag` |
+|---|---|---|---|
+| `Wager.Action.Kills` | 86400 |  | Wager.Action.Kills |
+| `Wager.Action.PlayerDelivery` | 86400 |  | Wager.Action.PlayerDelivery |
+| `Wager.Action.Revives` | 86400 |  | Wager.Action.Revives |
+| `Wager.Action.VehiclesDestroyed` | 86400 |  | Wager.Action.VehiclesDestroyed |
+| `Wager.Action.DrillTowersActivated` | 86400 |  | Wager.Action.DrillTowersActivated |
+| `Wager.Action.FOBsHacked` | 86400 |  | Wager.Action.FOBsHacked |
+| `Wager.Action.FreefallKill` | 86400 | Wager.ExclusiveGroup.Freefall | Wager.Action.FreefallKill |
+| `Wager.Action.FreefallHelicopterKill` | 86400 | Wager.ExclusiveGroup.Freefall | Wager.Action.FreefallHelicopterKill |
+| `Wager.Action.FreefallHelicopterKillRecovered` | 86400 | Wager.ExclusiveGroup.Freefall | Wager.Action.FreefallHelicopterKillRecovered |
+| `Wager.Action.SpawnRadarsDestroyed` | 86400 |  | Wager.Action.SpawnRadarsDestroyed |
+| `Wager.Action.SupplyPalletsDelivered` | 86400 |  | Wager.Action.SupplyPalletsDelivered |
 <!-- /datatable_catalog -->
 
 ## WDWagerObjectiveCatalogDefinition
@@ -779,7 +935,7 @@ Tables: [`DT_WagerObjectiveCatalog`](https://github.com/Kiyogitpy/wardogs-data-d
 
 | Row | `Objectives` | `Tag` |
 |---|---|---|
-| `Wager.ObjectiveCatalog` | {ID=Kills3; _aaaakgfoodihlgbfboeka=false; ActionId=Wager.Action.Kills; Count=3; Odds=1.001; CooldownSeconds=0… | Wager.ObjectiveCatalog |
+| `Wager.ObjectiveCatalog` | {ID=Hammertime; _aaaakgfoodihlgbfboeka=true; ActionId=Wager.Action.Kills; Count=10; Conditions={ConditionId=W… | Wager.ObjectiveCatalog |
 <!-- /datatable_catalog -->
 
 ## WDWagerPricingDefinition
@@ -961,7 +1117,7 @@ Tables: [`DT_PassiveMissions`](https://github.com/Kiyogitpy/wardogs-data-docs/bl
 Tables: [`DT_Achievements`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/DT_Achievements.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDAchievementDefinition -->
-*1 table(s), 10 rows, 2 non-empty columns. Source: the `Rows` of each table export (**Data**).*
+*1 table(s), 14 rows, 2 non-empty columns. Source: the `Rows` of each table export (**Data**).*
 
 | Row | `SteamAchievementID` | `DisplayName` |
 |---|---|---|
@@ -975,4 +1131,8 @@ Tables: [`DT_Achievements`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/
 | `Achievement.Match.CleanSweep` | ACH_MATCH_CLEAN_SWEEP | Clean Sweep |
 | `Achievement.Combat.RicochetKill` | ACH_COMBAT_RICOCHET_KILL | Ricochet Kill |
 | `Achievement.Combat.DefibrillatorKill` | ACH_COMBAT_DEFIBRILLATOR_KILL | Defibrillator Kill |
+| `Achievement.Combat.HesBehindYou` | ACH_COMBAT_HES_BEHIND_YOU | He's behind you |
+| `Achievement.Logistics.CarJacker` | ACH_LOGISTICS_CAR_JACKER | Car Jacker |
+| `Achievement.HotZone.SlotMachine` | ACH_HOTZONE_SLOT_MACHINE | Slot Machine |
+| `Achievement.ShootingRange.SoundTheHorn` | ACH_SHOOTINGRANGE_SOUND_THE_HORN | Sound The Horn |
 <!-- /datatable_catalog -->

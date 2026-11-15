@@ -33,10 +33,10 @@ JSON schema (assets/data/weapon-damage-locations.json)
 """
 import json
 import os
-import subprocess
 import sys
-
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from source_provenance import source_data_tree
+
 import damage_tables as dt  # noqa: E402
 import weapon_damage_tables as wdt  # noqa: E402
 
@@ -59,7 +59,7 @@ def armor_items():
             if o.get("Type") != "WDInventoryFragment_Armor":
                 continue
             p = o["Properties"]
-            ctx = dt.tag(p["DamageContextTag"])
+            ctx = dt.tag(dt.armor_damage_context(p))
             stages = p.get("DurabilityStagesSetupData", [])
             red = sorted({s.get("DamagePercentageReduction", 0.0) for s in stages})
             cov = [dt.tag(t)[len(HIT_PREFIX):] for t in p.get("CoveredHitLocations", [])]
@@ -118,8 +118,9 @@ def build():
                                         "fmj_multiplier": round(ref[loc][c] / ref[loc]["None"], 4)}
                                     for c, it in cov.items()},
                        "not_covering": [c for c in classes if c not in cov]}
-    tree = subprocess.run(["git", "rev-parse", "HEAD:data"], cwd=ROOT, capture_output=True, text=True).stdout.strip() or None
+    tree = source_data_tree(ROOT)
     meta = {"generator": "python _tools/weapon_damage_locations.py --json", "source_data_tree": tree,
+            "source_data_tree_note": "SHA is the HEAD:data baseline; +dirty is not an identity of the current preview inputs.",
             "unit": j["meta"]["unit"], "locations": LOCS,
             "assumptions": [a for a in j["meta"]["assumptions"] if not a.startswith(("armor classes are evaluated", "rpm is"))] + [
                 "armor is applied at a location only when the armor item's CoveredHitLocations lists it (read from the item data); a vest and a helmet never cover the same location, so one covering piece is in play at a time",
@@ -209,7 +210,7 @@ def check():
     report(not bad_l, f"unarmored location cells (Head, Neck, Torso.Upper, Torso.Middle, Arm.Upper, Leg.Thigh) reproduced exactly for {n} rows"
            + (f"; differs {bad_l[:5]}" if bad_l else ""))
     m4 = mine[("M4", "FMJ")]["damage_raw"]
-    for loc, cls, want in [("Torso.Middle", "Heavy", 13.6), ("Neck", "Heavy", 24.7), ("Arm.Upper", "SuperHeavy", 6.05)]:
+    for loc, cls, want in [("Torso.Middle", "Heavy", 14.0), ("Neck", "Heavy", 24.7), ("Arm.Upper", "SuperHeavy", 6.05)]:
         got = m4[loc][cls]
         report(abs(got - want) < 0.06, f"M4 FMJ {loc} into {cls}: {got:.3f} (verifier {want}); unarmored {m4[loc]['None']:.2f}")
     hb = json.load(open(os.path.join(ROOT, "assets", "data", "infantry-hitboxes.json"), encoding="utf-8"))

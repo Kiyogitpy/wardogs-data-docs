@@ -7,6 +7,8 @@ description: "Rule selection, ordering and arithmetic from hit to modified damag
 
 # Wardogs — Damage Pipeline
 
+**Hotfix scope:** the CL533731 branch refreshes stored rule tables, while the native reconstruction below retains its earlier build and fixture limits. Applying that model to the hotfix is conditional. In particular, the two newly mapped damage-entry fields have no proven native meaning yet. Stored rule changes are not verified final damage or activation changes. See [hotfix evidence](../docs/evidence/hotfix-cl533731.md).
+
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
 How a damage amount is modified between a hit and the number handed back
@@ -46,7 +48,7 @@ Every claim carries one of these labels:
 |---|---|---|
 | Entry: reflected `ModifyDamage` → subsystem → first active damage system | **Native** | §1 |
 | Callers, and where the result goes: Unreal damage event → [`TakeDamage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Maps/Gyms/Range/Assets/B_MovingTarget.json) | **Native** | §1.1 |
-| Rule data: 146 infantry entries, 5 custom operation classes | **Data** | §3 |
+| Rule data: 168 current infantry entries, 5 serialized custom operation classes | **Data** | §3 |
 | Entry selection: skip rule and requirement matching | **Native** | §4 |
 | Order within a target-tag group: category index, ascending, no tie-breaker | **Native** | §5 |
 | Order between groups: target tag first, then each parent tag | **Native** | §5 |
@@ -379,16 +381,16 @@ entries in §3 have no effect on the result.
 
 **Data.** [`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json),
 row `Meta.Damage.Infantry`, row struct `FWDDamageableEntityTableRow`.
-Its `DamageModificationEntries` array has **146 entries**:
+Its current CL533731 `DamageModificationEntries` array has **168 entries** (data only):
 
 | Entry kind | Count |
 |---|---:|
-| Non-custom `Percentage_Ongoing` | 74 (29 of them with amount 0) |
-| Non-custom `None`, empty requirements, amount 0 | 60 |
+| Non-custom `Percentage_Ongoing` | 88 (40 of them with amount 0) |
+| Non-custom `None`, empty requirements, amount 0 | 68 |
 | Custom operation (serialized as `Percentage_Ongoing`) | 12 |
 
-No infantry entry uses `Percentage_Starting` or `Add`. All 146 have
-serialized `PriorityIndex = -1`, which the collector overwrites (§5).
+No current infantry entry serializes `Percentage_Starting` or `Add`. All 168 have
+serialized `PriorityIndex = -1`; the historical collector overwrites that field (§5).
 Non-zero non-custom amounts range from -70 to +500.
 
 Each entry is a `FWDDamageModificationEntry` (184 bytes, `0xB8`, in the
@@ -403,14 +405,20 @@ OutModification:
     PriorityCategory, PriorityIndex, DebugTargetTag
 ```
 
-Category use among the 86 non-`None` entries: Weapon 22, AmmoModifier 18,
-Calibre 17, PenetrationEffectiveness 17, Tracer 5, Bone 3, Friendly 2,
+Serialized category use among the 100 non-`None` current entries: Weapon 31, AmmoModifier 20,
+Calibre 20, PenetrationEffectiveness 17, Tracer 5, Bone 3, Friendly 2,
 Penetration 2. CaliberEffectiveness, Armor, Melee and Ricochet are
 defined (§5) but unused by this row.
 
 ### 3.1 The custom entries
 
-Zero-based indexes. Blueprint classes live under
+Current CL533731 zero-based serialized array indexes below, verified from each
+`OutModification.CustomOperationClass` in export order. Historical baseline positions
+138–145 correspond to current 160–167; positions 5, 6, 7 and 10 are unchanged.
+All later native sections retain their historical baseline indexes and addresses.
+The baseline census was 146 entries (74 ongoing non-custom, 60 `None`, 12 custom).
+Current `EntryId` and `bEnabled` are serialized fields, not proof of current
+native dispatch, activation or evaluation order. Blueprint classes live under
 `/Game/GameMechanics/DamageSystem/ConditionalDamageFunctions/`.
 
 | Entries | Class | Category | Target requires | Source requires | Hit location |
@@ -419,11 +427,11 @@ Zero-based indexes. Blueprint classes live under
 | 7 | `B_BoneDamageModifiers_C` | Bone | — | `…Kinetic.Impact.ExplosiveBlunt` | `…HitLocation.Infantry` |
 | 10 | `B_BoneDamageModifiers_C` | Bone | — | `Meta.Damage.Cannon` | `…HitLocation.Infantry` |
 | 6 | `B_ArchetypeCaliberModifiers_C` | Calibre | — | `Meta.Damage.Bullet` | `…HitLocation.Infantry` |
-| 138, 139 | `B_AmmoTypeEffectiveness_C` | PenetrationEffectiveness | `Meta.Damage.Armor` | Bullet; Cannon | `…HitLocation.Infantry` |
-| 140, 141 | `B_AmmoTypeEffectiveness_C` | PenetrationEffectiveness | `Meta.Damage.Helmet` | Bullet; Cannon | `…HitLocation.Infantry` |
-| 142, 143 | `WDDamageModificationOperation_PlayerArmorDurability` | PenetrationEffectiveness | Helmet; Armor | `…ExplosiveBlunt` | `…HitLocation.Infantry` |
-| 144 | `WDDamageModificationOperation_PlayerArmorDurability` | Penetration | `Meta.Damage.Armor` | `…DamageType.Melee` | — |
-| 145 | `B_VehicleSeatDamageReduction_C` | Penetration | — | `Meta.Damage.Bullet` | — |
+| 160, 161 | `B_AmmoTypeEffectiveness_C` | PenetrationEffectiveness | `Meta.Damage.Armor` | Bullet; Cannon | `…HitLocation.Infantry` |
+| 162, 163 | `B_AmmoTypeEffectiveness_C` | PenetrationEffectiveness | `Meta.Damage.Helmet` | Bullet; Cannon | `…HitLocation.Infantry` |
+| 164, 165 | `WDDamageModificationOperation_PlayerArmorDurability` | PenetrationEffectiveness | Helmet; Armor | `…ExplosiveBlunt` | `…HitLocation.Infantry` |
+| 166 | `WDDamageModificationOperation_PlayerArmorDurability` | Penetration | `Meta.Damage.Armor` | `…DamageType.Melee` | — |
+| 167 | `B_VehicleSeatDamageReduction_C` | Penetration | — | `Meta.Damage.Bullet` | — |
 
 ### 3.2 Companion tables
 
@@ -478,11 +486,12 @@ every entry that passes, not just the first.
 | Rule table (`DT_GlobalDamage_*`) | Entries | Dropped by the empty-entry test | Kept entries with no source requirement | Entries with a Friendly, Hostile or Neutral requirement | Entries whose source requirements the fire's source tag meets | Of those, with an alignment requirement |
 |---|---:|---:|---:|---:|---:|---:|
 | `ArmorData` | 29 | 0 | 4 | 0 | 4 | 0 |
-| `InfantryData` | 146 | 60 | 0 | 2 | 0 | 0 |
-| `VehicleData` | 10 | 6 | 0 | 0 | 0 | 0 |
-| `BuildableData` | 422 | 68 | 0 | 0 | 0 | 0 |
-| `SupplyCrate` | 7 | 0 | 0 | 0 | 0 | 0 |
-| 21 per-vehicle tables (`VehicleData_*`) | 665 | 84 | 0 | 0 | 0 | 0 |
+| `InfantryData` | 168 | 68 | 0 | 2 | 0 | 0 |
+| `VehicleData` | 0 | 0 | 0 | 0 | 0 | 0 |
+| `BuildableData` | 401 | 64 | 0 | 0 | 0 | 0 |
+| `BuildableData_HotZoneMagnet` | 22 | 4 | 0 | 0 | 0 | 0 |
+| `SupplyCrate` | 9 | 0 | 0 | 0 | 0 | 0 |
+| 21 per-vehicle tables (`VehicleData_*`) | 719 | 84 | 0 | 0 | 0 | 0 |
 <!-- /item_ext molotov -->
 
 The Armor table's four entries without a source requirement act on armour-durability events, which the simple path does not raise (round 8, **Native**: the simple event is built without the general armor hook). Result: no rule modifies the 15 player damage or the fire event at all, whether the target is hostile, friendly or the thrower. The two Friendly entries (#8 `Bullet` -50, #9 `LargeHammer` -70) do not apply. Entry 106 (`Explosive.Utility.Molotov` against `Armor.SuperHeavy`, -30) names the burst's source tag and not the fire's. The assumption behind the whole table is that the event's source container holds only the passed damage tag; the native builder `0x6F09210` was not re-read for extra source context tags.
@@ -869,27 +878,27 @@ with a factor other than 1.
 <!-- damage_tables default -->
 | Weapon | Weapon tag | Caliber | Base | Head | Neck | Torso.Upper | Torso.Middle | Arm.Upper | Leg.Thigh | Entries applied |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
-| A91 | `AR.A91` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
-| TAR21 | `AR.A91` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
-| WEPN_033 | `AR.A91` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
-| AK74M | `AR.AK47M` | `545mm` | 26 | 61.1 (×2.35) | 45.8 (×1.76) | 25.3 (×0.974) | 25.2 (×0.97) | 14.0 (×0.54) | 14.0 (×0.54) | 5 |
-| WEPN_030 | `AR.Fal` | `308Win` | 45 | 79.3 (×1.76) | 59.5 (×1.32) | 32.9 (×0.73) | 32.7 (×0.728) | 18.2 (×0.405) | 18.2 (×0.405) | 5, 6 |
-| WEPN_029 | `AR.Galil` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
-| KH2002 | `AR.KH2002` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
-| M4 | `AR.M4` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
-| WEPN_037 | `AR.WEPN_037` | `762mm` | 34 | 70.3 (×2.07) | 52.7 (×1.55) | 29.1 (×0.857) | 29.0 (×0.854) | 16.2 (×0.475) | 16.2 (×0.475) | 5, 6 |
-| RFB | `DMR.RFB` | `308Win` | 45 | 93.7 (×2.08) | 70.3 (×1.56) | 45.0 (×1) | 45.1 (×1) | 28.7 (×0.637) | 28.7 (×0.637) | 5, 6 |
-| SKS | `DMR.SKS` | `762mm` | 34 | 83.3 (×2.45) | 62.5 (×1.84) | 40.0 (×1.18) | 40.1 (×1.18) | 25.5 (×0.75) | 25.5 (×0.75) | 5 |
-| SVDM | `DMR.SVDM` | `762x54mm` | 44 | 86.2 (×1.96) | 64.7 (×1.47) | 41.4 (×0.942) | 41.5 (×0.944) | 26.4 (×0.6) | 26.4 (×0.6) | 5, 6 |
-| WEPN_034 | `DMR.WEPN_034` | `308Win` | 45 | 93.7 (×2.08) | 70.3 (×1.56) | 45.0 (×1) | 45.1 (×1) | 28.7 (×0.637) | 28.7 (×0.637) | 5, 6 |
-| LMG_02 | `LMG.LMG_02` | `762x54mm` | 44 | 77.6 (×1.76) | 58.2 (×1.32) | 32.1 (×0.73) | 32.0 (×0.728) | 17.8 (×0.405) | 17.8 (×0.405) | 5, 6 |
-| M249 | `LMG.M249` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 27.3 (×0.974) | 27.2 (×0.97) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
-| WEPN_036 | `LMG.WEPN_036` | `308Win` | 45 | 79.3 (×1.76) | 59.5 (×1.32) | 32.9 (×0.73) | 32.7 (×0.728) | 18.2 (×0.405) | 18.2 (×0.405) | 5, 6 |
+| A91 | `AR.A91` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 30.8 (×1.1) | 28.0 (×1) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| TAR21 | `AR.A91` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 30.8 (×1.1) | 28.0 (×1) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| WEPN_033 | `AR.A91` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 30.8 (×1.1) | 28.0 (×1) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| AK74M | `AR.AK47M` | `545mm` | 26 | 61.1 (×2.35) | 45.8 (×1.76) | 28.6 (×1.1) | 26.0 (×1) | 14.0 (×0.54) | 14.0 (×0.54) | 5 |
+| WEPN_030 | `AR.Fal` | `308Win` | 45 | 79.3 (×1.76) | 59.5 (×1.32) | 37.1 (×0.825) | 33.8 (×0.75) | 18.2 (×0.405) | 18.2 (×0.405) | 5, 6 |
+| WEPN_029 | `AR.Galil` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 30.8 (×1.1) | 28.0 (×1) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| KH2002 | `AR.KH2002` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 30.8 (×1.1) | 28.0 (×1) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| M4 | `AR.M4` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 30.8 (×1.1) | 28.0 (×1) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| WEPN_037 | `AR.WEPN_037` | `762mm` | 34 | 70.3 (×2.07) | 52.7 (×1.55) | 32.9 (×0.968) | 29.9 (×0.88) | 16.2 (×0.475) | 16.2 (×0.475) | 5, 6 |
+| RFB | `DMR.RFB` | `308Win` | 45 | 122.8 (×2.73) | 89.1 (×1.98) | 61.7 (×1.37) | 61.4 (×1.36) | 30.7 (×0.682) | 30.7 (×0.682) | 5, 6 |
+| SKS | `DMR.SKS` | `762mm` | 34 | 102.0 (×3) | 73.9 (×2.17) | 51.2 (×1.51) | 51.0 (×1.5) | 25.5 (×0.75) | 25.5 (×0.75) | 5 |
+| SVDM | `DMR.SVDM` | `762x54mm` | 44 | 118.8 (×2.7) | 86.1 (×1.96) | 59.7 (×1.36) | 59.4 (×1.35) | 29.7 (×0.675) | 29.7 (×0.675) | 5, 6 |
+| WEPN_034 | `DMR.WEPN_034` | `308Win` | 45 | 122.8 (×2.73) | 89.1 (×1.98) | 61.7 (×1.37) | 61.4 (×1.36) | 30.7 (×0.682) | 30.7 (×0.682) | 5, 6 |
+| LMG_02 | `LMG.LMG_02` | `762x54mm` | 44 | 77.6 (×1.76) | 58.2 (×1.32) | 36.3 (×0.825) | 33.0 (×0.75) | 17.8 (×0.405) | 17.8 (×0.405) | 5, 6 |
+| M249 | `LMG.M249` | `556mm` | 28 | 65.8 (×2.35) | 49.4 (×1.76) | 30.8 (×1.1) | 28.0 (×1) | 15.1 (×0.54) | 15.1 (×0.54) | 5 |
+| WEPN_036 | `LMG.WEPN_036` | `308Win` | 45 | 79.3 (×1.76) | 59.5 (×1.32) | 37.1 (×0.825) | 33.8 (×0.75) | 18.2 (×0.405) | 18.2 (×0.405) | 5, 6 |
 | WEPN_027 | `Pistol.Deagle` | `50AE` | 63 | 132.3 (×2.1) | 99.2 (×1.58) | 72.8 (×1.16) | 66.2 (×1.05) | 49.1 (×0.78) | 49.1 (×0.78) | 5 |
 | Glock17 | `Pistol.G60` | `9mm` | 22 | 46.2 (×2.1) | 34.7 (×1.58) | 25.4 (×1.16) | 23.1 (×1.05) | 17.2 (×0.78) | 17.2 (×0.78) | 5 |
 | WEPN_032 | `Pistol.G60` | `9mm` | 22 | 46.2 (×2.1) | 34.7 (×1.58) | 25.4 (×1.16) | 23.1 (×1.05) | 17.2 (×0.78) | 17.2 (×0.78) | 5 |
 | Judge | `Pistol.Judge` | `45Colt` | 45 | 94.5 (×2.1) | 70.9 (×1.58) | 52.0 (×1.16) | 47.2 (×1.05) | 35.1 (×0.78) | 35.1 (×0.78) | 5 |
-| WEPN_026 | `Pistol.M1911` | `45ACP` | 30 | 81.9 (×2.73) | 61.4 (×2.05) | 45.0 (×1.5) | 41.0 (×1.37) | 30.4 (×1.01) | 30.4 (×1.01) | 5, 97 |
+| WEPN_026 | `Pistol.M1911` | `45ACP` | 30 | 81.9 (×2.73) | 61.4 (×2.05) | 45.0 (×1.5) | 41.0 (×1.37) | 30.4 (×1.01) | 30.4 (×1.01) | 5, 111 |
 | WEPN_028 | `SMG.MP5` | `9mm` | 22 | 46.2 (×2.1) | 34.7 (×1.58) | 25.4 (×1.16) | 23.1 (×1.05) | 17.2 (×0.78) | 17.2 (×0.78) | 5 |
 | MP9 | `SMG.MP7` | `9mm` | 22 | 46.2 (×2.1) | 34.7 (×1.58) | 25.4 (×1.16) | 23.1 (×1.05) | 17.2 (×0.78) | 17.2 (×0.78) | 5 |
 | SMG_03 | `SMG.SMG3` | `9mm` | 22 | 46.2 (×2.1) | 34.7 (×1.58) | 25.4 (×1.16) | 23.1 (×1.05) | 17.2 (×0.78) | 17.2 (×0.78) | 5 |
@@ -898,7 +907,7 @@ with a factor other than 1.
 | M500 | `Shotgun.M12G` | `7mmBuck` | 25 | 37.5 (×1.5) | 28.1 (×1.12) | 24.8 (×0.99) | 22.5 (×0.9) | 15.8 (×0.63) | 15.8 (×0.63) | 5 |
 | MP43 | `Shotgun.M12G` | `7mmBuck` | 25 | 37.5 (×1.5) | 28.1 (×1.12) | 24.8 (×0.99) | 22.5 (×0.9) | 15.8 (×0.63) | 15.8 (×0.63) | 5 |
 | MK22 | `Sniper.MRAD` | `308Win` | 45 | 192.0 (×4.27) | 144.0 (×3.2) | 118.8 (×2.64) | 87.0 (×1.93) | 40.5 (×0.9) | 40.5 (×0.9) | 5 |
-| SR_04 | `Sniper.MRAD` | `50Cal` | 90 | 324.1 (×3.6) | 243.1 (×2.7) | 207.9 (×2.31) | 151.0 (×1.68) | 81.0 (×0.9) | 81.0 (×0.9) | 5, 124, 125, 126, 127 |
+| SR_04 | `Sniper.MRAD` | `50Cal` | 90 | 324.1 (×3.6) | 243.1 (×2.7) | 207.9 (×2.31) | 151.0 (×1.68) | 81.0 (×0.9) | 81.0 (×0.9) | 5, 146, 147, 148, 149 |
 | WEPN_017 | `Sniper.Mosin` | `762x54mm` | 44 | 187.7 (×4.27) | 140.8 (×3.2) | 116.2 (×2.64) | 85.1 (×1.93) | 39.6 (×0.9) | 39.6 (×0.9) | 5 |
 | SV98 | `Sniper.SV98` | `762x54mm` | 44 | 187.7 (×4.27) | 140.8 (×3.2) | 116.2 (×2.64) | 85.1 (×1.93) | 39.6 (×0.9) | 39.6 (×0.9) | 5 |
 | WEPN_035 | `Sniper.WEPN_035` | `556mm` | 28 | 119.5 (×4.27) | 89.6 (×3.2) | 73.9 (×2.64) | 54.1 (×1.93) | 25.2 (×0.9) | 25.2 (×0.9) | 5 |
@@ -957,22 +966,22 @@ Pistols and SMGs lose a fifth of their damage by 200 m (Glock 17 0.80, Vector 0.
 <!-- damage_tables --falloff -->
 | Weapon | Curve keys (m → ×) | 50 m | 100 m | 200 m | 400 m | 800 m | 1200 m |
 |---|---|---:|---:|---:|---:|---:|---:|
-| A91 | 0: 1, 300: 1, 1200: 0.2 | 27.3 | 27.3 | 27.3 | 24.8 | 15.1 | 5.5 |
-| TAR21 | 0: 1, 300: 1, 1200: 0.2 | 27.3 | 27.3 | 27.3 | 24.8 | 15.1 | 5.5 |
-| WEPN_033 | 0: 1, 300: 1, 1200: 0.2 | 27.3 | 27.3 | 27.3 | 24.8 | 15.1 | 5.5 |
-| AK74M | 0: 1, 500: 1, 1200: 0.2 | 25.3 | 25.3 | 25.3 | 25.3 | 16.6 | 5.1 |
-| WEPN_030 | 0: 1, 800: 1, 1200: 0.2 | 32.9 | 32.9 | 32.9 | 32.9 | 32.9 | 6.6 |
-| WEPN_029 | 0: 1, 400: 1, 1200: 0.2 | 27.3 | 27.3 | 27.3 | 27.3 | 16.4 | 5.5 |
-| KH2002 | 0: 1, 300: 1, 1200: 0.2 | 27.3 | 27.3 | 27.3 | 24.8 | 15.1 | 5.5 |
-| M4 | 0: 1, 500: 1, 1200: 0.2 | 27.3 | 27.3 | 27.3 | 27.3 | 17.9 | 5.5 |
-| WEPN_037 | 0: 1, 400: 1, 1200: 0.2 | 29.1 | 29.1 | 29.1 | 29.1 | 17.5 | 5.8 |
-| RFB | 0: 1, 500: 1, 1200: 0.2 | 45.0 | 45.0 | 45.0 | 45.0 | 29.6 | 9.0 |
-| SKS | 0: 1, 400: 1, 1200: 0.2 | 40.0 | 40.0 | 40.0 | 40.0 | 24.0 | 8.0 |
-| SVDM | 0: 1, 800: 1, 1200: 0.2 | 41.4 | 41.4 | 41.4 | 41.4 | 41.4 | 8.3 |
-| WEPN_034 | 0: 1, 500: 1, 1200: 0.2 | 45.0 | 45.0 | 45.0 | 45.0 | 29.6 | 9.0 |
-| LMG_02 | 0: 1, 1000: 1, 1500: 0.2 | 32.1 | 32.1 | 32.1 | 32.1 | 32.1 | 21.8 |
-| M249 | 0: 1, 700: 1, 1200: 0.2 | 27.3 | 27.3 | 27.3 | 27.3 | 22.9 | 5.5 |
-| WEPN_036 | 0: 1, 1000: 1, 1500: 0.2 | 32.9 | 32.9 | 32.9 | 32.9 | 32.9 | 22.3 |
+| A91 | 0: 1, 300: 1, 1200: 0.2 | 30.8 | 30.8 | 30.8 | 28.1 | 17.1 | 6.2 |
+| TAR21 | 0: 1, 300: 1, 1200: 0.2 | 30.8 | 30.8 | 30.8 | 28.1 | 17.1 | 6.2 |
+| WEPN_033 | 0: 1, 300: 1, 1200: 0.2 | 30.8 | 30.8 | 30.8 | 28.1 | 17.1 | 6.2 |
+| AK74M | 0: 1, 500: 1, 1200: 0.2 | 28.6 | 28.6 | 28.6 | 28.6 | 18.8 | 5.7 |
+| WEPN_030 | 0: 1, 800: 1, 1200: 0.2 | 37.1 | 37.1 | 37.1 | 37.1 | 37.1 | 7.4 |
+| WEPN_029 | 0: 1, 400: 1, 1200: 0.2 | 30.8 | 30.8 | 30.8 | 30.8 | 18.5 | 6.2 |
+| KH2002 | 0: 1, 300: 1, 1200: 0.2 | 30.8 | 30.8 | 30.8 | 28.1 | 17.1 | 6.2 |
+| M4 | 0: 1, 500: 1, 1200: 0.2 | 30.8 | 30.8 | 30.8 | 30.8 | 20.2 | 6.2 |
+| WEPN_037 | 0: 1, 400: 1, 1200: 0.2 | 32.9 | 32.9 | 32.9 | 32.9 | 19.7 | 6.6 |
+| RFB | 0: 1, 500: 1, 1200: 0.2 | 61.7 | 61.7 | 61.7 | 61.7 | 40.6 | 12.3 |
+| SKS | 0: 1, 400: 1, 1200: 0.2 | 51.2 | 51.2 | 51.2 | 51.2 | 30.7 | 10.2 |
+| SVDM | 0: 1, 800: 1, 1200: 0.2 | 59.7 | 59.7 | 59.7 | 59.7 | 59.7 | 11.9 |
+| WEPN_034 | 0: 1, 500: 1, 1200: 0.2 | 61.7 | 61.7 | 61.7 | 61.7 | 40.6 | 12.3 |
+| LMG_02 | 0: 1, 1000: 1, 1500: 0.2 | 36.3 | 36.3 | 36.3 | 36.3 | 36.3 | 24.7 |
+| M249 | 0: 1, 700: 1, 1200: 0.2 | 30.8 | 30.8 | 30.8 | 30.8 | 25.9 | 6.2 |
+| WEPN_036 | 0: 1, 1000: 1, 1500: 0.2 | 37.1 | 37.1 | 37.1 | 37.1 | 37.1 | 25.2 |
 | WEPN_027 | 0: 1, 100: 1, 1200: 0.2 | 72.8 | 72.8 | 67.5 | 56.9 | 35.7 | 14.6 |
 | Glock17 | 0: 1, 50: 1, 1200: 0.3 | 25.4 | 24.6 | 23.1 | 20.0 | 13.8 | 7.6 |
 | WEPN_032 | 0: 1, 50: 1, 1200: 0.3 | 25.4 | 24.6 | 23.1 | 20.0 | 13.8 | 7.6 |
@@ -1027,10 +1036,10 @@ behave as FMJ.
 <!-- damage_tables --ammo M4 -->
 | Ammo | Torso, no armor | Torso, Light | Torso, Medium | Torso, Heavy | Torso, SuperHeavy | Head, no helmet | Head, Light helmet | Head, Medium helmet | Head, Heavy helmet | Head, SuperHeavy helmet | Entries applied |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| FMJ | 27.3 | 19.1 | 16.4 | 13.6 | 10.9 | 65.8 | 46.1 | 39.5 | 32.9 | 26.3 | 5, 138, 140 |
-| Tracer | 27.3 | 19.1 | 16.4 | 13.6 | 10.9 | 65.8 | 46.1 | 39.5 | 32.9 | 26.3 | 5, 138, 140 |
-| HollowPoint | 54.5 | 8.1 | 5.9 | 3.7 | 1.5 | 131.6 | 13.0 | 9.5 | 5.9 | 2.4 | 5, 18, 20, 21, 133, 134, 138, 140 |
-| ArmorPiercing | 21.8 | 17.9 | 16.6 | 15.3 | 14.0 | 52.6 | 43.2 | 40.0 | 36.8 | 33.7 | 5, 15, 138, 140 |
+| FMJ | 30.8 | 21.6 | 18.5 | 15.4 | 12.3 | 65.8 | 46.1 | 39.5 | 32.9 | 26.3 | 5, 160, 162 |
+| Tracer | 30.8 | 21.6 | 18.5 | 15.4 | 12.3 | 65.8 | 46.1 | 39.5 | 32.9 | 26.3 | 5, 160, 162 |
+| HollowPoint | 61.6 | 9.1 | 6.7 | 4.2 | 1.7 | 131.6 | 13.0 | 9.5 | 5.9 | 2.4 | 5, 18, 20, 21, 155, 156, 160, 162 |
+| ArmorPiercing | 24.6 | 20.2 | 18.7 | 17.2 | 15.8 | 52.6 | 43.2 | 40.0 | 36.8 | 33.7 | 5, 15, 160, 162 |
 <!-- /damage_tables -->
 
 Hollow point doubles damage against bare flesh (entry 18, +100 %) but is
@@ -1074,11 +1083,12 @@ Head values in archetype rows:
 | `Meta.Damage.Weapon.SMG` | 2.1 |
 | `Meta.Damage.Weapon.LMG` | 2.35 |
 | `Meta.Damage.Weapon.Shotgun` | 1.5 |
-| `Meta.Damage.Weapon.DMR` | 2.45 |
+| `Meta.Damage.Weapon.DMR` | 3.0 |
 | `Meta.Damage.Weapon.Sniper` | 4.2667 |
 
 Consumed by §7.1, which multiplies the `Universal` value by the weapon
-row's value. An AR upper-torso hit therefore gets 1.10 × 0.885 = 0.9735,
+row's value. Under that historical operation applied to current data, an
+AR upper-torso hit therefore gets 1.10 × 1.0 = 1.10,
 and an AR headshot 1.0 × 2.35 = 2.35.
 
 Interactive: the [Infantry Hitbox Viewer](infantry-viewer.md) shows these hit locations and multipliers on the player's physics bodies.

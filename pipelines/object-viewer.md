@@ -7,6 +7,8 @@ description: "Collision shapes of buildables, fortifications, the FOB, doors, sm
 
 # Object Collision Viewer
 
+The retained collision geometry is labelled CL516586 in its data file. Current hotfix stage-table checks do not establish unchanged mesh bytes, current feature activation or native damage behavior. See [hotfix evidence](../docs/evidence/hotfix-cl533731.md).
+
 *Data: [`assets/data/object-collision.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/object-collision.json), built by `python _tools/object_models.py`*
 
 The collision shapes of the things players build, place, open, break and drop, drawn as they are cooked in the game's files: boxes, spheres, capsules and convex hulls. Pick an object, then a build stage, and click a piece to see its shapes, collision profile and trace setting. The panel's summary shows the object's max health, its damage row, how bullets, melee, grenades, rockets, C4 and IEDs change the damage it takes, and, for placed explosives, the blast values.

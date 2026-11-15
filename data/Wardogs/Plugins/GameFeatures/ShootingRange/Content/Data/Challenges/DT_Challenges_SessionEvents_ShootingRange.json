@@ -1,0 +1,89 @@
+--- export: UDataTable / DT_Challenges_SessionEvents_ShootingRange ---
+{
+  "Type": "DataTable",
+  "Name": "DT_Challenges_SessionEvents_ShootingRange",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/ShootingRange/Data/Challenges/DT_Challenges_SessionEvents_ShootingRange",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDChallengeDefinition'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Achievement.ShootingRange.SoundTheHorn": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "C0202DEE45D78FFED7812DA187D4EFCF",
+        "SourceString": "Sound The Horn",
+        "LocalizedString": "Sound The Horn"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "EDB503BE409948821CF7F89B3CAAE52D",
+        "SourceString": "Pull the horn lever in the shooting range.",
+        "LocalizedString": "Pull the horn lever in the shooting range."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": true,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "AchievementTag": {
+                    "TagName": "Achievement.ShootingRange.SoundTheHorn"
+                  },
+                  "bInvert": false,
+                  "OPERATOR": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                },
+                {
+                  "ChallengeId": {
+                    "TagName": "Achievement.ShootingRange.SoundTheHorn"
+                  },
+                  "bInvert": true,
+                  "OPERATOR": "EWorldConditionOperator::And",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Achievement_SoundTheHorn'",
+          "ObjectPath": "/ShootingRange/Data/Challenges/ST_Achievement_SoundTheHorn.1"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Achievement.ShootingRange.SoundTheHorn"
+      }
+    }
+  }
+}

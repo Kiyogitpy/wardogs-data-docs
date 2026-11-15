@@ -28,6 +28,10 @@ import os
 import re
 import struct
 import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from source_provenance import source_data_tree
+
+from damage_export_fields import armor_damage_context, caliber_modifiers
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
@@ -92,7 +96,7 @@ def first_row(table, context):
 
 ENTRIES = rows("DT_GlobalDamage_InfantryData.json")["Meta.Damage.Infantry"]["DamageModificationEntries"]
 BONE = {k: tag_map(v["HitLocations"]) for k, v in rows("DT_Helpers/DT_InfantryData_BoneDamageModifiers.json").items()}
-CALIBER = {k: tag_map(next(x for f, x in v.items() if f.startswith("_aaabapbnbhiopifeenjml")))
+CALIBER = {k: tag_map(caliber_modifiers(v))
            for k, v in rows("DT_Helpers/DT_InfantryData_ArchetypeCaliberModifiers.json").items()}
 PEN = {k: (v.get("Modifier", 1.0), tag_map(next((x for f, x in v.items() if f.startswith("_aaabcfjheicbfejiaihii")), [])))
        for k, v in rows("DT_Helpers/DT_InfantryData_AmmoTypeEffectivenessPen.json").items()}
@@ -106,7 +110,7 @@ def armor_reduction():
             if o.get("Type") == "WDInventoryFragment_Armor":
                 p = o["Properties"]
                 stages = p.get("DurabilityStagesSetupData", [])
-                out[tag(p.get("DamageContextTag"))] = stages[0].get("DamagePercentageReduction", 0.0) if stages else 0.0
+                out[tag(armor_damage_context(p))] = stages[0].get("DamagePercentageReduction", 0.0) if stages else 0.0
     return out
 
 
@@ -302,7 +306,7 @@ def vehicle_table(proj):
     vehicle_rows = []
     for path in sorted(glob.glob(os.path.join(DATA, "Wardogs/Plugins/**/DT_GlobalDamage_VehicleData_*.json"), recursive=True)):
         vehicle_rows += list(exports(path)[0]["Rows"].items())
-    generic = rows("DT_GlobalDamage_VehicleData.json")["Meta.Damage.Vehicle"]["DamageModificationEntries"]
+    generic, _ = vehicle_tables()
     cals = [c for c in VEHICLE_CALIBERS if c in proj]
     print("| Vehicle row (`Meta.Damage.Vehicle.` omitted) | " + " | ".join(f"`{c.replace('Item.Caliber.', '')}`" for c in cals) + " |")
     print("|---|" + "---:|" * len(cals))
@@ -618,7 +622,8 @@ def row_entries(dtag, vrows):
 
 
 def vehicle_tables():
-    generic = rows("DT_GlobalDamage_VehicleData.json")["Meta.Damage.Vehicle"]["DamageModificationEntries"]
+    table = rows("DT_GlobalDamage_VehicleData.json")
+    generic = table["Meta.Damage.Vehicle"]["DamageModificationEntries"] if table else []
     vrows = {}
     for path in glob.glob(os.path.join(DATA, "Wardogs/Plugins/**/DT_GlobalDamage_VehicleData_*.json"), recursive=True):
         vrows.update(exports(path)[0]["Rows"])
@@ -844,12 +849,10 @@ def hitbox_json(proj):
     for index, value in enumerate(category_asset["Properties"]["DamageCategories"]):
         categories.setdefault(tag(value), index)
     cals = [c["id"] for c in catalog]
-    # The data/ tree id names the exact input in any clone, shallow ones included (a commit lookup there can
-    # stop at the shallow boundary).
-    tree = subprocess.run(["git", "rev-parse", "HEAD:data"], cwd=ROOT, capture_output=True, text=True).stdout.strip() or None
+    tree = source_data_tree(ROOT)
     out = {"meta": {
         "source_data_tree": tree,
-        "source_data_tree_note": "git tree id of data/ when generated; equals `git rev-parse <commit>:data` for any commit with the same data",
+        "source_data_tree_note": "SHA is the HEAD:data baseline; +dirty means data/ has staged, unstaged, or untracked changes and is not an identity of the current preview inputs.",
         "generator": "python _tools/damage_tables.py --json",
         "blast_rule_recipe_format": 1,
         "blast_rule_recipe_scope": "Ordered non-custom float32 operations; hostile alignment, Meta.Damage instigator "

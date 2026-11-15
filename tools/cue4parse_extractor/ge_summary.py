@@ -111,10 +111,10 @@ for fpath in sorted(glob.glob(os.path.join(raw_dir, 'GE_*.json')), key=lambda p:
 meta = {
     'source': 'Static CUE4Parse export of cooked GE_* BlueprintGeneratedClass CDOs (Default__GE_X_C), Wardogs UE 5.7 IoStore paks.',
     'count': len(records),
-    'null_means': 'Property not serialized in the CDO = equals the native UBHGameplayEffect default (cooked unversioned delta vs. archetype). '
-                  'Native default values are not in the paks; tracked fields are null rather than guessed.',
+    'null_means': 'Property absent from this serialized CDO. Resolving its effective value requires its archetype and build-matched native defaults; '
+                  'null does not establish a zero value or a particular native default.',
     'modifier_kind_note': 'kind inferred from FInstancedStruct property set: Scalar=FBHAttributeMod_Scalar, Attribute=FBHAttributeMod_Attribute, SetByCaller=FBHAttributeMod_SetByCaller.',
-    'name_mapping_note': 'Obfuscated usmap names mapped by property index to sdk/raw BHGameplayEffects/BHGameplayTag/BHFramework SDK layouts; see ge_raw/_usmap_patches.txt.',
+    'name_mapping_note': 'Property labels come from the mapping supplied to the extractor. Labels alone do not establish native field identity or build compatibility.',
 }
 os.makedirs(out_dir, exist_ok=True)
 json.dump({'meta': meta, 'effects': records}, open(os.path.join(out_dir, 'ge_summary.json'), 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
@@ -160,7 +160,7 @@ L = ['# Wardogs Gameplay Effects (GE_*) - CDO summary', '',
      f'{len(records)} GE_* Blueprint assets, statically exported from the cooked paks (class default objects). '
      'Attribute names drop the `Attribute.Gameplay.` prefix. Ops: `+` Add, `x` Multiply, `/` Divide, `xc` MultiplyCompound, '
      '`+f` AddFinal, `=` Override. `@X` = curve indexing (Fixed omitted); `attr(A.Mode)->CT[row]` = FBHAttributeMod_Attribute; '
-     '`SBC(tag) fb v` = SetByCaller with fallback. Duration blank = not serialized (native default, typically infinite/0 - unverified). '
+     '`SBC(tag) fb v` = SetByCaller with fallback. Duration blank = absent from this CDO; its effective value requires the archetype and build-matched native defaults. '
      'Stacks shown only when serialized. Requirements are in ge_summary.json.', '',
      '| Group | Count |', '|---|---|'] + [f'| {g} | {len(groups[g])} |' for g in order] + ['']
 for g in order:

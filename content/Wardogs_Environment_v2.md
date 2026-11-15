@@ -609,6 +609,8 @@ Notes: 54 states exist, but only 40 have a height grid. The 14 `DA_Flux_NorthAme
 
 ### 13b. Height grids
 
+**Historical CL516586 decode.** The table and images below retain the round 89 source and field associations. The CL533731 candidate exports use different grid paths and property labels; matching export bounds does not establish those labels' native meaning. The current height-grid generator remains failed rather than substituting guessed fields. These historical water heights are not verified CL533731 values. See [hotfix evidence and remaining work](../docs/evidence/hotfix-cl533731.md).
+
 **Decode (round 89, [evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round89-map.md)).** Each `WDWaterHeightGridAsset` stores a water surface height map, not ground height.
 
 - **Layout.** `Heights` holds `GridWidth` x `GridHeight` unsigned 16-bit values, row-major: row 0 is at world Y = `worldmin.Y`, and the row index runs toward +Y. The column index runs toward +X from `worldmin.X`. `worldmin` is the minimum corner (cm); `WorldSize` is the extent (cm). Cell size is `WorldSize.X / GridWidth` by `WorldSize.Y / GridHeight`: 200 cm in 34 of the 40 grids, 400 cm in 2, 800 cm in 3 and 1200 cm in 1. `worldmin` plus half of `WorldSize` equals the linked simulation state's `AreaLocation` X and Y in all 40.

@@ -24,6 +24,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import weapon_vendor_tables as wv  # noqa: E402
+from damage_export_fields import armor_damage_context
 
 ROOT = wv.ROOT
 DATA = os.path.join(ROOT, "data", "Wardogs")
@@ -195,7 +196,7 @@ class Ctx:
             cov = [short_tag(c, "Meta.Damage.HitLocation.Infantry.") for c in a.get("CoveredHitLocations", [])]
             if cov:
                 out.append("covers " + ", ".join(cov))
-            ctx = (a.get("DamageContextTag") or {}).get("TagName")
+            ctx = (armor_damage_context(a) or {}).get("TagName")
             if ctx:
                 out.append(f"context {short_tag(ctx, 'Meta.Damage.')}")
             eff = [self.objname(e) for e in a.get("AppliedEffects", [])]

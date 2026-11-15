@@ -6,321 +6,192 @@
   "Class": "UScriptClass'WDFreeVehicleSpawnerDataAsset'",
   "Package": "/Game/Vehicles/FreeVehicle/Data/DA_FreeVehicleSpawner_Rules",
   "Properties": {
-    "FactionRuleSets": [
+    "MatchStates": [
       {
-        "Key": {
-          "TagName": "Meta.Alignment.Faction.Alpha"
+        "MatchState": {
+          "TagName": "MatchState.Playing"
         },
-        "Value": {
+        "_aaaalgcfogmffpgnllike": {
           "Rules": [
             {
-              "bConstantTick": false,
-              "bIsPassiveRule": true,
-              "RuleSubject": "EFreeVehicleRuleSubject::Spawn",
-              "SpawnOption": "EFreeVehicleRuleSpawnOption::SpawnX",
-              "TimerOption": "EFreeVehicleRuleTimerOption::TimerXSeconds",
-              "ScoreOption": "EFreeVehicleRuleScoreOption::AnyFaction",
-              "RuleOption": "EFreeVehicleRuleRuleOption::RuleSuccess",
-              "VehicleOption": "EFreeVehicleRuleVehicleOption::VehicleDestroyed",
-              "MaxAvailableVehicles": 1,
-              "ScoreArguments": "EFreeVehicleScoreOptionArguments::IsEqual",
-              "ScoreValue": 0,
-              "RuleArguments": "EFreeVehicleRuleOptionArguments::TriggerInstant",
-              "SubjectRuleIndex": 0,
-              "TimerDuration": 0.0,
-              "SecondsDelay": 0.0,
-              "VehicleArgument": "EFreeVehicleVehicleOptionArguments::FirstVehicle",
-              "NumberOfVehicles": 0,
-              "VehicleToSpawnTag": {
-                "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup"
-              },
-              "OnSuccessEvent": "EFreeVehicleRuleOnSuccessEvent::DoNothing",
-              "SuccessTargetRuleIndex": 0,
-              "RemovalPolicy": "EFreeVehicleRuleRemovalPolicy::RemoveOnSuccess",
-              "RemovePolicyValue": 4,
-              "SpawnedVehicleHistory": [],
-              "OptionalTimerHandle": null,
-              "NumberOfSuccess": 0,
-              "RuleGUID": "C95660C2-4238E478-B398FC87-EBD46AAF",
-              "bIsVehicleBeingSpawned": false,
-              "bIsForceTrigger": false
+              "_aaaaglndohjgclfdncpod": "502B323F-993E4AEA-9805527C-D811CBCE",
+              "RuleName": "PickupTimer",
+              "Conditions": [
+                {
+                  "InitialDelaySeconds": 0.0,
+                  "_aaabfkjbmmogkmfiaidei": 900.0,
+                  "_aaabgncciffdnheiohlck": false,
+                  "_aaaamfgeamklgpojhghfn": 0.0
+                }
+              ],
+              "Effects": [
+                {
+                  "Target": {
+                    "_aaaaglndohjgclfdncpod": "7255DB02-D7A74159-9460C824-A7B94BC5",
+                    "RuleName": "Pickup"
+                  }
+                }
+              ],
+              "_aaaanaigijmjgkcjcmlpk": 0
             },
             {
-              "bConstantTick": true,
-              "bIsPassiveRule": false,
-              "RuleSubject": "EFreeVehicleRuleSubject::Timer",
-              "SpawnOption": "EFreeVehicleRuleSpawnOption::SpawnX",
-              "TimerOption": "EFreeVehicleRuleTimerOption::TimerXSeconds",
-              "ScoreOption": "EFreeVehicleRuleScoreOption::HighestScoreFaction",
-              "RuleOption": "EFreeVehicleRuleRuleOption::RuleSuccess",
-              "VehicleOption": "EFreeVehicleRuleVehicleOption::VehicleDestroyed",
-              "MaxAvailableVehicles": 0,
-              "ScoreArguments": "EFreeVehicleScoreOptionArguments::IsEqual",
-              "ScoreValue": 0,
-              "RuleArguments": "EFreeVehicleRuleOptionArguments::TriggerInstant",
-              "SubjectRuleIndex": 0,
-              "TimerDuration": 0.0,
-              "SecondsDelay": 900.0,
-              "VehicleArgument": "EFreeVehicleVehicleOptionArguments::LastVehicle",
-              "NumberOfVehicles": 1,
-              "VehicleToSpawnTag": {
-                "TagName": "None"
+              "Spawn": {
+                "VehicleToSpawnTag": {
+                  "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup"
+                },
+                "MaxAvailableVehicles": 1,
+                "_aaabacegbglmkilflcaml": 0
               },
-              "OnSuccessEvent": "EFreeVehicleRuleOnSuccessEvent::TriggerRule",
-              "SuccessTargetRuleIndex": 0,
-              "RemovalPolicy": "EFreeVehicleRuleRemovalPolicy::DoNotRemove",
-              "RemovePolicyValue": 0,
-              "SpawnedVehicleHistory": [],
-              "OptionalTimerHandle": null,
-              "NumberOfSuccess": 0,
-              "RuleGUID": "6CF9B1B2-43B997C8-5FD076AE-3D5CB844",
-              "bIsVehicleBeingSpawned": false,
-              "bIsForceTrigger": false
+              "_aaaaglndohjgclfdncpod": "7255DB02-D7A74159-9460C824-A7B94BC5",
+              "RuleName": "Pickup",
+              "Conditions": [
+                {
+                  "_aaabgncciffdnheiohlck": false,
+                  "_aaaamfgeamklgpojhghfn": 0.0
+                }
+              ],
+              "Effects": [],
+              "_aaaanaigijmjgkcjcmlpk": 0
             },
             {
-              "bConstantTick": true,
-              "bIsPassiveRule": false,
-              "RuleSubject": "EFreeVehicleRuleSubject::Spawn",
-              "SpawnOption": "EFreeVehicleRuleSpawnOption::SpawnX",
-              "TimerOption": "EFreeVehicleRuleTimerOption::TimerXSeconds",
-              "ScoreOption": "EFreeVehicleRuleScoreOption::AnyFaction",
-              "RuleOption": "EFreeVehicleRuleRuleOption::RuleSuccess",
-              "VehicleOption": "EFreeVehicleRuleVehicleOption::VehicleDestroyed",
-              "MaxAvailableVehicles": 1,
-              "ScoreArguments": "EFreeVehicleScoreOptionArguments::IsEqual",
-              "ScoreValue": 0,
-              "RuleArguments": "EFreeVehicleRuleOptionArguments::TriggerInstant",
-              "SubjectRuleIndex": 0,
-              "TimerDuration": 0.0,
-              "SecondsDelay": 1200.0,
-              "VehicleArgument": "EFreeVehicleVehicleOptionArguments::FirstVehicle",
-              "NumberOfVehicles": 0,
-              "VehicleToSpawnTag": {
-                "TagName": "Vehicle.Variant.Air.Rotary.ROT_04.Default"
+              "Spawn": {
+                "VehicleToSpawnTag": {
+                  "TagName": "Vehicle.Variant.Air.Rotary.ROT_04.Default"
+                },
+                "MaxAvailableVehicles": 1,
+                "_aaabacegbglmkilflcaml": 0
               },
-              "OnSuccessEvent": "EFreeVehicleRuleOnSuccessEvent::DoNothing",
-              "SuccessTargetRuleIndex": 0,
-              "RemovalPolicy": "EFreeVehicleRuleRemovalPolicy::DoNotRemove",
-              "RemovePolicyValue": 0,
-              "SpawnedVehicleHistory": [],
-              "OptionalTimerHandle": null,
-              "NumberOfSuccess": 0,
-              "RuleGUID": "B42F2863-43469164-C49349A5-0FD5B7E5",
-              "bIsVehicleBeingSpawned": false,
-              "bIsForceTrigger": false
+              "_aaaaglndohjgclfdncpod": "E3BD40ED-6BAC4301-A4B164C5-8C258624",
+              "RuleName": "Helicopter",
+              "Conditions": [
+                {
+                  "InitialDelaySeconds": 1200.0,
+                  "_aaabfkjbmmogkmfiaidei": 1200.0,
+                  "_aaabgncciffdnheiohlck": false,
+                  "_aaaamfgeamklgpojhghfn": 0.0
+                }
+              ],
+              "Effects": [],
+              "_aaaanaigijmjgkcjcmlpk": 0
             }
           ]
-        }
+        },
+        "_aaabeonmjidibdmmhhokk": false,
+        "_aaabapieghbmgjlcppihn": []
       },
       {
-        "Key": {
-          "TagName": "Meta.Alignment.Faction.Bravo"
+        "MatchState": {
+          "TagName": "MatchState.PreMatch.WaitingForPlayers.PlayerCount"
         },
-        "Value": {
+        "_aaaalgcfogmffpgnllike": {
           "Rules": [
             {
-              "bConstantTick": false,
-              "bIsPassiveRule": true,
-              "RuleSubject": "EFreeVehicleRuleSubject::Spawn",
-              "SpawnOption": "EFreeVehicleRuleSpawnOption::SpawnX",
-              "TimerOption": "EFreeVehicleRuleTimerOption::TimerXSeconds",
-              "ScoreOption": "EFreeVehicleRuleScoreOption::AnyFaction",
-              "RuleOption": "EFreeVehicleRuleRuleOption::RuleSuccess",
-              "VehicleOption": "EFreeVehicleRuleVehicleOption::VehicleDestroyed",
-              "MaxAvailableVehicles": 1,
-              "ScoreArguments": "EFreeVehicleScoreOptionArguments::IsEqual",
-              "ScoreValue": 0,
-              "RuleArguments": "EFreeVehicleRuleOptionArguments::TriggerInstant",
-              "SubjectRuleIndex": 0,
-              "TimerDuration": 0.0,
-              "SecondsDelay": 0.0,
-              "VehicleArgument": "EFreeVehicleVehicleOptionArguments::FirstVehicle",
-              "NumberOfVehicles": 0,
-              "VehicleToSpawnTag": {
-                "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup"
-              },
-              "OnSuccessEvent": "EFreeVehicleRuleOnSuccessEvent::DoNothing",
-              "SuccessTargetRuleIndex": 0,
-              "RemovalPolicy": "EFreeVehicleRuleRemovalPolicy::RemoveOnSuccess",
-              "RemovePolicyValue": 4,
-              "SpawnedVehicleHistory": [],
-              "OptionalTimerHandle": null,
-              "NumberOfSuccess": 0,
-              "RuleGUID": "C95660C2-4238E478-B398FC87-EBD46AAF",
-              "bIsVehicleBeingSpawned": false,
-              "bIsForceTrigger": false
+              "Candidates": [
+                {
+                  "VehicleToSpawnTag": {
+                    "TagName": "Vehicle.Variant.Land.Wheeled.Bobcat.Default"
+                  },
+                  "_aaabacegbglmkilflcaml": 2
+                },
+                {
+                  "VehicleToSpawnTag": {
+                    "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.Default"
+                  },
+                  "_aaabacegbglmkilflcaml": 2
+                },
+                {
+                  "VehicleToSpawnTag": {
+                    "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup"
+                  },
+                  "_aaabacegbglmkilflcaml": 2
+                },
+                {
+                  "VehicleToSpawnTag": {
+                    "TagName": "Vehicle.Variant.Land.Wheeled.Humvee.Default"
+                  },
+                  "_aaabacegbglmkilflcaml": 2
+                },
+                {
+                  "VehicleToSpawnTag": {
+                    "TagName": "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"
+                  },
+                  "_aaabacegbglmkilflcaml": 2
+                },
+                {
+                  "VehicleToSpawnTag": {
+                    "TagName": "Vehicle.Variant.Land.Wheeled.WHL_08.Default"
+                  },
+                  "_aaabacegbglmkilflcaml": 2
+                },
+                {
+                  "VehicleToSpawnTag": {
+                    "TagName": "Vehicle.Variant.Air.Rotary.Littlebird.Default"
+                  },
+                  "_aaabacegbglmkilflcaml": 2
+                }
+              ],
+              "_aaabacegbglmkilflcaml": 5,
+              "_aaaaglndohjgclfdncpod": "6143B335-B837AC71-325F8EEB-DE7F59A9",
+              "RuleName": "WarmupRandom",
+              "Conditions": [
+                {
+                  "_aaabgncciffdnheiohlck": false,
+                  "_aaaamfgeamklgpojhghfn": 0.0
+                }
+              ],
+              "Effects": [],
+              "_aaaanaigijmjgkcjcmlpk": 0
             },
             {
-              "bConstantTick": true,
-              "bIsPassiveRule": false,
-              "RuleSubject": "EFreeVehicleRuleSubject::Timer",
-              "SpawnOption": "EFreeVehicleRuleSpawnOption::SpawnX",
-              "TimerOption": "EFreeVehicleRuleTimerOption::TimerXSeconds",
-              "ScoreOption": "EFreeVehicleRuleScoreOption::HighestScoreFaction",
-              "RuleOption": "EFreeVehicleRuleRuleOption::RuleSuccess",
-              "VehicleOption": "EFreeVehicleRuleVehicleOption::VehicleDestroyed",
-              "MaxAvailableVehicles": 0,
-              "ScoreArguments": "EFreeVehicleScoreOptionArguments::IsEqual",
-              "ScoreValue": 0,
-              "RuleArguments": "EFreeVehicleRuleOptionArguments::TriggerInstant",
-              "SubjectRuleIndex": 0,
-              "TimerDuration": 0.0,
-              "SecondsDelay": 900.0,
-              "VehicleArgument": "EFreeVehicleVehicleOptionArguments::LastVehicle",
-              "NumberOfVehicles": 1,
-              "VehicleToSpawnTag": {
-                "TagName": "None"
-              },
-              "OnSuccessEvent": "EFreeVehicleRuleOnSuccessEvent::TriggerRule",
-              "SuccessTargetRuleIndex": 0,
-              "RemovalPolicy": "EFreeVehicleRuleRemovalPolicy::DoNotRemove",
-              "RemovePolicyValue": 0,
-              "SpawnedVehicleHistory": [],
-              "OptionalTimerHandle": null,
-              "NumberOfSuccess": 0,
-              "RuleGUID": "6CF9B1B2-43B997C8-5FD076AE-3D5CB844",
-              "bIsVehicleBeingSpawned": false,
-              "bIsForceTrigger": false
+              "_aaaaglndohjgclfdncpod": "CA06B0D6-507BC056-A851F713-10A3417C",
+              "RuleName": "WarmupStart",
+              "Conditions": [
+                {
+                  "InitialDelaySeconds": 0.0,
+                  "_aaabfkjbmmogkmfiaidei": 0.0,
+                  "_aaabgncciffdnheiohlck": false,
+                  "_aaaamfgeamklgpojhghfn": 0.0
+                }
+              ],
+              "Effects": [
+                {
+                  "Target": {
+                    "_aaaaglndohjgclfdncpod": "6143B335-B837AC71-325F8EEB-DE7F59A9",
+                    "RuleName": "WarmupRandom"
+                  }
+                }
+              ],
+              "_aaaanaigijmjgkcjcmlpk": 0
             },
             {
-              "bConstantTick": true,
-              "bIsPassiveRule": false,
-              "RuleSubject": "EFreeVehicleRuleSubject::Spawn",
-              "SpawnOption": "EFreeVehicleRuleSpawnOption::SpawnX",
-              "TimerOption": "EFreeVehicleRuleTimerOption::TimerXSeconds",
-              "ScoreOption": "EFreeVehicleRuleScoreOption::AnyFaction",
-              "RuleOption": "EFreeVehicleRuleRuleOption::RuleSuccess",
-              "VehicleOption": "EFreeVehicleRuleVehicleOption::VehicleDestroyed",
-              "MaxAvailableVehicles": 1,
-              "ScoreArguments": "EFreeVehicleScoreOptionArguments::IsEqual",
-              "ScoreValue": 0,
-              "RuleArguments": "EFreeVehicleRuleOptionArguments::TriggerInstant",
-              "SubjectRuleIndex": 0,
-              "TimerDuration": 0.0,
-              "SecondsDelay": 1200.0,
-              "VehicleArgument": "EFreeVehicleVehicleOptionArguments::FirstVehicle",
-              "NumberOfVehicles": 0,
-              "VehicleToSpawnTag": {
-                "TagName": "Vehicle.Variant.Air.Rotary.ROT_04.Default"
-              },
-              "OnSuccessEvent": "EFreeVehicleRuleOnSuccessEvent::DoNothing",
-              "SuccessTargetRuleIndex": 0,
-              "RemovalPolicy": "EFreeVehicleRuleRemovalPolicy::DoNotRemove",
-              "RemovePolicyValue": 0,
-              "SpawnedVehicleHistory": [],
-              "OptionalTimerHandle": null,
-              "NumberOfSuccess": 0,
-              "RuleGUID": "B42F2863-43469164-C49349A5-0FD5B7E5",
-              "bIsVehicleBeingSpawned": false,
-              "bIsForceTrigger": false
+              "_aaaaglndohjgclfdncpod": "2C217CDC-92C3E764-46F4DC0D-FDB07D5D",
+              "RuleName": "WarmupRefill",
+              "Conditions": [
+                {
+                  "_aaaakpohakednndklnmpm": {
+                    "_aaaaglndohjgclfdncpod": "6143B335-B837AC71-325F8EEB-DE7F59A9",
+                    "RuleName": "WarmupRandom"
+                  },
+                  "Selector": {},
+                  "State": "EWDFreeVehicleVehicleState::Destroyed",
+                  "_aaabgncciffdnheiohlck": false,
+                  "_aaaamfgeamklgpojhghfn": 30.0
+                }
+              ],
+              "Effects": [
+                {
+                  "Target": {
+                    "_aaaaglndohjgclfdncpod": "6143B335-B837AC71-325F8EEB-DE7F59A9",
+                    "RuleName": "WarmupRandom"
+                  }
+                }
+              ],
+              "_aaaanaigijmjgkcjcmlpk": 0
             }
           ]
-        }
-      },
-      {
-        "Key": {
-          "TagName": "Meta.Alignment.Faction.Charlie"
         },
-        "Value": {
-          "Rules": [
-            {
-              "bConstantTick": false,
-              "bIsPassiveRule": true,
-              "RuleSubject": "EFreeVehicleRuleSubject::Spawn",
-              "SpawnOption": "EFreeVehicleRuleSpawnOption::SpawnX",
-              "TimerOption": "EFreeVehicleRuleTimerOption::TimerXSeconds",
-              "ScoreOption": "EFreeVehicleRuleScoreOption::AnyFaction",
-              "RuleOption": "EFreeVehicleRuleRuleOption::RuleSuccess",
-              "VehicleOption": "EFreeVehicleRuleVehicleOption::VehicleDestroyed",
-              "MaxAvailableVehicles": 1,
-              "ScoreArguments": "EFreeVehicleScoreOptionArguments::IsEqual",
-              "ScoreValue": 0,
-              "RuleArguments": "EFreeVehicleRuleOptionArguments::TriggerInstant",
-              "SubjectRuleIndex": 0,
-              "TimerDuration": 0.0,
-              "SecondsDelay": 0.0,
-              "VehicleArgument": "EFreeVehicleVehicleOptionArguments::FirstVehicle",
-              "NumberOfVehicles": 0,
-              "VehicleToSpawnTag": {
-                "TagName": "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup"
-              },
-              "OnSuccessEvent": "EFreeVehicleRuleOnSuccessEvent::DoNothing",
-              "SuccessTargetRuleIndex": 0,
-              "RemovalPolicy": "EFreeVehicleRuleRemovalPolicy::RemoveOnSuccess",
-              "RemovePolicyValue": 4,
-              "SpawnedVehicleHistory": [],
-              "OptionalTimerHandle": null,
-              "NumberOfSuccess": 0,
-              "RuleGUID": "C95660C2-4238E478-B398FC87-EBD46AAF",
-              "bIsVehicleBeingSpawned": false,
-              "bIsForceTrigger": false
-            },
-            {
-              "bConstantTick": true,
-              "bIsPassiveRule": false,
-              "RuleSubject": "EFreeVehicleRuleSubject::Timer",
-              "SpawnOption": "EFreeVehicleRuleSpawnOption::SpawnX",
-              "TimerOption": "EFreeVehicleRuleTimerOption::TimerXSeconds",
-              "ScoreOption": "EFreeVehicleRuleScoreOption::HighestScoreFaction",
-              "RuleOption": "EFreeVehicleRuleRuleOption::RuleSuccess",
-              "VehicleOption": "EFreeVehicleRuleVehicleOption::VehicleDestroyed",
-              "MaxAvailableVehicles": 0,
-              "ScoreArguments": "EFreeVehicleScoreOptionArguments::IsEqual",
-              "ScoreValue": 0,
-              "RuleArguments": "EFreeVehicleRuleOptionArguments::TriggerInstant",
-              "SubjectRuleIndex": 0,
-              "TimerDuration": 0.0,
-              "SecondsDelay": 900.0,
-              "VehicleArgument": "EFreeVehicleVehicleOptionArguments::LastVehicle",
-              "NumberOfVehicles": 1,
-              "VehicleToSpawnTag": {
-                "TagName": "None"
-              },
-              "OnSuccessEvent": "EFreeVehicleRuleOnSuccessEvent::TriggerRule",
-              "SuccessTargetRuleIndex": 0,
-              "RemovalPolicy": "EFreeVehicleRuleRemovalPolicy::DoNotRemove",
-              "RemovePolicyValue": 0,
-              "SpawnedVehicleHistory": [],
-              "OptionalTimerHandle": null,
-              "NumberOfSuccess": 0,
-              "RuleGUID": "6CF9B1B2-43B997C8-5FD076AE-3D5CB844",
-              "bIsVehicleBeingSpawned": false,
-              "bIsForceTrigger": false
-            },
-            {
-              "bConstantTick": true,
-              "bIsPassiveRule": false,
-              "RuleSubject": "EFreeVehicleRuleSubject::Spawn",
-              "SpawnOption": "EFreeVehicleRuleSpawnOption::SpawnX",
-              "TimerOption": "EFreeVehicleRuleTimerOption::TimerXSeconds",
-              "ScoreOption": "EFreeVehicleRuleScoreOption::AnyFaction",
-              "RuleOption": "EFreeVehicleRuleRuleOption::RuleSuccess",
-              "VehicleOption": "EFreeVehicleRuleVehicleOption::VehicleDestroyed",
-              "MaxAvailableVehicles": 1,
-              "ScoreArguments": "EFreeVehicleScoreOptionArguments::IsEqual",
-              "ScoreValue": 0,
-              "RuleArguments": "EFreeVehicleRuleOptionArguments::TriggerInstant",
-              "SubjectRuleIndex": 0,
-              "TimerDuration": 0.0,
-              "SecondsDelay": 1200.0,
-              "VehicleArgument": "EFreeVehicleVehicleOptionArguments::FirstVehicle",
-              "NumberOfVehicles": 0,
-              "VehicleToSpawnTag": {
-                "TagName": "Vehicle.Variant.Air.Rotary.ROT_04.Default"
-              },
-              "OnSuccessEvent": "EFreeVehicleRuleOnSuccessEvent::DoNothing",
-              "SuccessTargetRuleIndex": 0,
-              "RemovalPolicy": "EFreeVehicleRuleRemovalPolicy::DoNotRemove",
-              "RemovePolicyValue": 0,
-              "SpawnedVehicleHistory": [],
-              "OptionalTimerHandle": null,
-              "NumberOfSuccess": 0,
-              "RuleGUID": "B42F2863-43469164-C49349A5-0FD5B7E5",
-              "bIsVehicleBeingSpawned": false,
-              "bIsForceTrigger": false
-            }
-          ]
-        }
+        "_aaabeonmjidibdmmhhokk": false,
+        "_aaabapieghbmgjlcppihn": []
       }
     ]
   }

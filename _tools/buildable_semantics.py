@@ -141,7 +141,12 @@ def hammers():
 
 
 def drill():
-    f = os.path.join(GF, "Items", "Buildables", "Content", "Data", "Buildables", "Hotzone_Magnet", "DA_Buildable_HotzoneMagnet.json")
+    paths = [os.path.join(GF, "Items", "Buildables", "Content", "Data", "Buildables", "Hotzone_Magnet", "DA_Buildable_HotzoneMagnet.json"),
+             os.path.join(GF, "Items", "Buildables_HotZoneMagnet", "Content", "Data", "DA_Buildable_HotzoneMagnet.json")]
+    found = [p for p in paths if os.path.isfile(p)]
+    if len(found) != 1:
+        raise ValueError(f"Expected one HotZoneMagnet asset at the known export paths; found {found}")
+    f = found[0]
     p = first(f, "WDBuildableHotZoneMagnetDataAsset")
     return {k: p[k] for k in ("InitialDelayDuration", "HotZoneMagnetRechargeDuration", "HotZoneMagnetMinimumFuel",
                               "HotZoneMagnetDurationPerFuel", "MaxFuel", "Cost", "MaxHealth")}

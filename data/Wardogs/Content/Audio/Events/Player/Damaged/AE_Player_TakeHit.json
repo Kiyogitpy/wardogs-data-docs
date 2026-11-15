@@ -36,22 +36,6 @@
       "ObjectName": "MetaSoundSource'MSS_Player_Damage_Hurtmarker_Flesh'",
       "ObjectPath": "/Game/Audio/Player/Damage/FromBullet/MSS_Player_Damage_Hurtmarker_Flesh.0"
     },
-    "ArmorBlunt": {
-      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Hurtmarker_Flesh'",
-      "ObjectPath": "/Game/Audio/Player/Damage/FromBullet/MSS_Player_Damage_Hurtmarker_Flesh.0"
-    },
-    "HelmetBlunt": {
-      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Hurtmarker_Flesh'",
-      "ObjectPath": "/Game/Audio/Player/Damage/FromBullet/MSS_Player_Damage_Hurtmarker_Flesh.0"
-    },
-    "ArmorPenetrate": {
-      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Hurtmarker_Flesh'",
-      "ObjectPath": "/Game/Audio/Player/Damage/FromBullet/MSS_Player_Damage_Hurtmarker_Flesh.0"
-    },
-    "HelmetPenetrate": {
-      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Hurtmarker_Flesh'",
-      "ObjectPath": "/Game/Audio/Player/Damage/FromBullet/MSS_Player_Damage_Hurtmarker_Flesh.0"
-    },
     "BodyArmorBreak": {
       "ObjectName": "MetaSoundSource'MSS_Player_Damage_Armor_Break_1p'",
       "ObjectPath": "/Game/Audio/Player/Damage/Break/MSS_Player_Damage_Armor_Break_1p.0"
@@ -59,6 +43,18 @@
     "HelmetBreak": {
       "ObjectName": "MetaSoundSource'MSS_Player_Damage_Helmet_Break_1p'",
       "ObjectPath": "/Game/Audio/Player/Damage/Break/MSS_Player_Damage_Helmet_Break_1p.0"
+    },
+    "FleshHollowPoint": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Hurtmarker_Flesh'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromBullet/MSS_Player_Damage_Hurtmarker_Flesh.0"
+    },
+    "Armor": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Hurtmarker_Flesh'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromBullet/MSS_Player_Damage_Hurtmarker_Flesh.0"
+    },
+    "Helmet": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Damage_Hurtmarker_Flesh'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromBullet/MSS_Player_Damage_Hurtmarker_Flesh.0"
     },
     "ContextTag": {
       "TagName": "Audio.Context.Player.Damage.Projectile"
@@ -86,10 +82,6 @@
         "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit.1"
       },
       {
-        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Player_TakeHit:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
-        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit.4"
-      },
-      {
         "ObjectName": "AEB_ModifyCosmeticExertion_C'AE_Player_TakeHit:AEB_ModifyCosmeticExertion_C_0'",
         "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit.0"
       }
@@ -107,23 +99,6 @@
     "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit.2"
   },
   "Properties": {
-    "ContextTag": {
-      "TagName": "Audio.Context.Player.Damage.Projectile"
-    }
-  }
-}
---- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
-{
-  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
-  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
-  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
-  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
-  "Outer": {
-    "ObjectName": "CrosstalkAudioEvent'AE_Player_TakeHit'",
-    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_TakeHit.2"
-  },
-  "Properties": {
-    "ParameterName": "Trigger",
     "ContextTag": {
       "TagName": "Audio.Context.Player.Damage.Projectile"
     }

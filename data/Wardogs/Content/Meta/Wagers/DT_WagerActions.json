@@ -15,20 +15,20 @@
     "Wager.Action.Kills": {
       "_aaaakgfoodihlgbfboeka": true,
       "DisplayName": {
-        "Namespace": "",
-        "Key": "D4D860BA49486AA777E3F29283F21A9B",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.Kills.DisplayName",
         "SourceString": "Get {Count} Kills",
         "LocalizedString": "Get {Count} Kills"
       },
       "ShortName": {
-        "Namespace": "",
-        "Key": "D016CEA34B2924434A6FA3AE78C33861",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.Kills.ShortName",
         "SourceString": "Kills",
         "LocalizedString": "Kills"
       },
       "Description": {
-        "Namespace": "",
-        "Key": "5002405F4DE2CF257B5D828F55B06CBC",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.Kills.Description",
         "SourceString": "Get this amount of kills.",
         "LocalizedString": "Get this amount of kills."
       },
@@ -44,7 +44,7 @@
       },
       "_aaabcjojpnjmnbelecidg": "NumPlayersToKill",
       "MinCount": 1,
-      "MaxCount": 25,
+      "MaxCount": 50,
       "DefaultCount": 1,
       "Odds": [
         1.001,
@@ -71,15 +71,34 @@
         1.1686,
         1.1791,
         1.1897,
-        1.2004
+        1.2004,
+        1.2112,
+        1.2221,
+        1.2331,
+        1.2442,
+        1.2554,
+        1.2667,
+        1.2781,
+        1.2896,
+        1.3012,
+        1.3129,
+        1.3247,
+        1.3367,
+        1.3487,
+        1.3608,
+        1.3731,
+        1.3854,
+        1.3979,
+        1.4105,
+        1.4232,
+        1.436,
+        1.4489,
+        1.4619,
+        1.4751,
+        1.4884,
+        1.5018
       ],
       "Rules": [
-        {
-          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
-          "Key": "Action.Rule.ControlZone",
-          "SourceString": "You must be inside the control zone",
-          "LocalizedString": "You must be inside the control zone"
-        },
         {
           "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
           "Key": "Action.Kills.Rule.EnemyPlayers",
@@ -103,6 +122,9 @@
         "TagName": "Attribute.Meta.Currency.Cash"
       },
       "CooldownSeconds": 86400.0,
+      "_aaaaoglepjgldpmempicc": {
+        "TagName": "None"
+      },
       "Tag": {
         "TagName": "Wager.Action.Kills"
       }
@@ -110,20 +132,20 @@
     "Wager.Action.PlayerDelivery": {
       "_aaaakgfoodihlgbfboeka": true,
       "DisplayName": {
-        "Namespace": "",
-        "Key": "C6D25454459A92E6C3CE09B3FA3951B9",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.PlayerDelivery.DisplayName",
         "SourceString": "Deliver {Count} people to the Control Zone",
         "LocalizedString": "Deliver {Count} people to the Control Zone"
       },
       "ShortName": {
-        "Namespace": "",
-        "Key": "EC028FD24344333EAB2E55B346E9EEA4",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.PlayerDelivery.ShortName",
         "SourceString": "Players Delivered",
         "LocalizedString": "Players Delivered"
       },
       "Description": {
-        "Namespace": "",
-        "Key": "2D7D613E45281142E4E3B481ADF35F0C",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.PlayerDelivery.Description",
         "SourceString": "Get this amount of players delivered to the Control Zone",
         "LocalizedString": "Get this amount of players delivered to the Control Zone"
       },
@@ -166,6 +188,12 @@
       "Rules": [
         {
           "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.PlayerDelivery.Rule.NearControlZone",
+          "SourceString": "Drop off in or within 100m of the Control Zone",
+          "LocalizedString": "Drop off in or within 100m of the Control Zone"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
           "Key": "Action.PlayerDelivery.Rule.NoSpawnVehicle",
           "SourceString": "Spawn vehicles don't count",
           "LocalizedString": "Spawn vehicles don't count"
@@ -181,6 +209,9 @@
         "TagName": "Attribute.Meta.Currency.Cash"
       },
       "CooldownSeconds": 86400.0,
+      "_aaaaoglepjgldpmempicc": {
+        "TagName": "None"
+      },
       "Tag": {
         "TagName": "Wager.Action.PlayerDelivery"
       }
@@ -188,20 +219,20 @@
     "Wager.Action.Revives": {
       "_aaaakgfoodihlgbfboeka": true,
       "DisplayName": {
-        "Namespace": "",
-        "Key": "62C3F8B24F3B80F25693A5AC3E537557",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.Revives.DisplayName",
         "SourceString": "Revive {Count} Teammates",
         "LocalizedString": "Revive {Count} Teammates"
       },
       "ShortName": {
-        "Namespace": "",
-        "Key": "4CA4780E450DC7FAEFBE2A8ACD229B37",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.Revives.ShortName",
         "SourceString": "Revives",
         "LocalizedString": "Revives"
       },
       "Description": {
-        "Namespace": "",
-        "Key": "3D4F1CD04B3705D3ED1E5385EC9C73D8",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.Revives.Description",
         "SourceString": "Revive this many teammates.",
         "LocalizedString": "Revive this many teammates."
       },
@@ -217,7 +248,7 @@
       },
       "_aaabcjojpnjmnbelecidg": "NumPlayersToRevive",
       "MinCount": 1,
-      "MaxCount": 50,
+      "MaxCount": 75,
       "DefaultCount": 5,
       "Odds": [
         1.001,
@@ -269,15 +300,34 @@
         1.2314,
         1.2375,
         1.2437,
-        1.2498
+        1.2498,
+        1.256,
+        1.2623,
+        1.2685,
+        1.2748,
+        1.2812,
+        1.2875,
+        1.2939,
+        1.3004,
+        1.3068,
+        1.3133,
+        1.3199,
+        1.3264,
+        1.333,
+        1.3396,
+        1.3463,
+        1.353,
+        1.3597,
+        1.3665,
+        1.3732,
+        1.3801,
+        1.3869,
+        1.3938,
+        1.4008,
+        1.4077,
+        1.4147
       ],
       "Rules": [
-        {
-          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
-          "Key": "Action.Rule.ControlZone",
-          "SourceString": "You must be inside the control zone",
-          "LocalizedString": "You must be inside the control zone"
-        },
         {
           "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
           "Key": "Action.Revives.Rule.Teammates",
@@ -301,6 +351,9 @@
         "TagName": "Attribute.Meta.Currency.Cash"
       },
       "CooldownSeconds": 86400.0,
+      "_aaaaoglepjgldpmempicc": {
+        "TagName": "None"
+      },
       "Tag": {
         "TagName": "Wager.Action.Revives"
       }
@@ -308,20 +361,20 @@
     "Wager.Action.VehiclesDestroyed": {
       "_aaaakgfoodihlgbfboeka": true,
       "DisplayName": {
-        "Namespace": "",
-        "Key": "916CC7CB48E23D94CC7CB3959A470701",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.VehiclesDestroyed.DisplayName",
         "SourceString": "Destroy {Count} Occupied Vehicles",
         "LocalizedString": "Destroy {Count} Occupied Vehicles"
       },
       "ShortName": {
-        "Namespace": "",
-        "Key": "513E1DD04386F1A85264D388F097FCF6",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.VehiclesDestroyed.ShortName",
         "SourceString": "Vehicles Destroyed",
         "LocalizedString": "Vehicles Destroyed"
       },
       "Description": {
-        "Namespace": "",
-        "Key": "BF39BAE946F2EA9CE460D8A179C4EE43",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.VehiclesDestroyed.Description",
         "SourceString": "Destroy this many vehicles that have an enemy occupant.",
         "LocalizedString": "Destroy this many vehicles that have an enemy occupant."
       },
@@ -330,7 +383,7 @@
         "SubPathString": ""
       },
       "Archetype": {
-        "TagName": "Wager.Archetype.VehiclesDestroyed"
+        "TagName": "Wager.Archetype.Objectives"
       },
       "ChallengeId": {
         "TagName": "Challenges.Challenge.Wager.VehiclesDestroyed"
@@ -379,8 +432,459 @@
         "TagName": "Attribute.Meta.Currency.Cash"
       },
       "CooldownSeconds": 86400.0,
+      "_aaaaoglepjgldpmempicc": {
+        "TagName": "None"
+      },
       "Tag": {
         "TagName": "Wager.Action.VehiclesDestroyed"
+      }
+    },
+    "Wager.Action.DrillTowersActivated": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.DrillTowersActivated.DisplayName",
+        "SourceString": "Activate {Count} Drill Towers",
+        "LocalizedString": "Activate {Count} Drill Towers"
+      },
+      "ShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.DrillTowersActivated.ShortName",
+        "SourceString": "Drill Towers Activated",
+        "LocalizedString": "Drill Towers Activated"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.DrillTowersActivated.Description",
+        "SourceString": "Call the Hot Zone to a drill tower this many times by entering its code.",
+        "LocalizedString": "Call the Hot Zone to a drill tower this many times by entering its code."
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/Map/Widgets/TacticalMap/Textures/T_UI_Icon_ActivatedTower.T_UI_Icon_ActivatedTower",
+        "SubPathString": ""
+      },
+      "Archetype": {
+        "TagName": "Wager.Archetype.Objectives"
+      },
+      "ChallengeId": {
+        "TagName": "Challenges.Challenge.Wager.DrillTowersActivated"
+      },
+      "_aaabcjojpnjmnbelecidg": "NumDrillTowersToActivate",
+      "MinCount": 1,
+      "MaxCount": 3,
+      "DefaultCount": 1,
+      "Odds": [
+        1.5,
+        2.0,
+        2.5
+      ],
+      "Rules": [
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.DrillTowersActivated.Rule.EnterCode",
+          "SourceString": "You must enter the code yourself",
+          "LocalizedString": "You must enter the code yourself"
+        }
+      ],
+      "PayoutResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "CooldownSeconds": 86400.0,
+      "_aaaaoglepjgldpmempicc": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Wager.Action.DrillTowersActivated"
+      }
+    },
+    "Wager.Action.FOBsHacked": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.FOBsHacked.DisplayName",
+        "SourceString": "Hack {Count} Enemy FOBs",
+        "LocalizedString": "Hack {Count} Enemy FOBs"
+      },
+      "ShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.FOBsHacked.ShortName",
+        "SourceString": "FOBs Hacked",
+        "LocalizedString": "FOBs Hacked"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.FOBsHacked.Description",
+        "SourceString": "Hack this many enemy FOBs.",
+        "LocalizedString": "Hack this many enemy FOBs."
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Generic/T_UI_HackedFOB.T_UI_HackedFOB",
+        "SubPathString": ""
+      },
+      "Archetype": {
+        "TagName": "Wager.Archetype.Objectives"
+      },
+      "ChallengeId": {
+        "TagName": "Challenges.Challenge.Wager.FOBsHacked"
+      },
+      "_aaabcjojpnjmnbelecidg": "NumFOBsToHack",
+      "MinCount": 1,
+      "MaxCount": 3,
+      "DefaultCount": 1,
+      "Odds": [
+        1.5,
+        2.0,
+        2.5
+      ],
+      "Rules": [
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.FOBsHacked.Rule.CompleteHack",
+          "SourceString": "You must complete the hack yourself",
+          "LocalizedString": "You must complete the hack yourself"
+        }
+      ],
+      "PayoutResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "CooldownSeconds": 86400.0,
+      "_aaaaoglepjgldpmempicc": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Wager.Action.FOBsHacked"
+      }
+    },
+    "Wager.Action.FreefallKill": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.FreefallKill.DisplayName",
+        "SourceString": "Get a Freefall Kill",
+        "LocalizedString": "Get a Freefall Kill"
+      },
+      "ShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.FreefallKill.ShortName",
+        "SourceString": "Freefall Kill",
+        "LocalizedString": "Freefall Kill"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.FreefallKill.Description",
+        "SourceString": "Bail out of a helicopter you're piloting and kill an enemy while in freefall.",
+        "LocalizedString": "Bail out of a helicopter you're piloting and kill an enemy while in freefall."
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/HUD/Killfeed/Textures/T_UI_Killfeed_KillConfirmed.T_UI_Killfeed_KillConfirmed",
+        "SubPathString": ""
+      },
+      "Archetype": {
+        "TagName": "Wager.Archetype.Kills"
+      },
+      "ChallengeId": {
+        "TagName": "Challenges.Challenge.Wager.FreefallKill"
+      },
+      "_aaabcjojpnjmnbelecidg": "NumToComplete",
+      "MinCount": 1,
+      "MaxCount": 1,
+      "DefaultCount": 1,
+      "Odds": [
+        1.5
+      ],
+      "Rules": [
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.Freefall.Rule.BailOut",
+          "SourceString": "Bail out of a helicopter you're piloting",
+          "LocalizedString": "Bail out of a helicopter you're piloting"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.FreefallKill.Rule.KillInFreefall",
+          "SourceString": "Kill an enemy player while in freefall",
+          "LocalizedString": "Kill an enemy player while in freefall"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.FreefallKill.Rule.NoHelicopterDestroyKills",
+          "SourceString": "Kills caused by destroying a helicopter don't count",
+          "LocalizedString": "Kills caused by destroying a helicopter don't count"
+        }
+      ],
+      "PayoutResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "CooldownSeconds": 86400.0,
+      "_aaaaoglepjgldpmempicc": {
+        "TagName": "Wager.ExclusiveGroup.Freefall"
+      },
+      "Tag": {
+        "TagName": "Wager.Action.FreefallKill"
+      }
+    },
+    "Wager.Action.FreefallHelicopterKill": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.FreefallHelicopterKill.DisplayName",
+        "SourceString": "Destroy an Enemy Helicopter in Freefall",
+        "LocalizedString": "Destroy an Enemy Helicopter in Freefall"
+      },
+      "ShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.FreefallHelicopterKill.ShortName",
+        "SourceString": "Freefall Helicopter Kill",
+        "LocalizedString": "Freefall Helicopter Kill"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.FreefallHelicopterKill.Description",
+        "SourceString": "Bail out of a helicopter you're piloting and destroy an enemy helicopter with an RPG or MAAWS while in freefall.",
+        "LocalizedString": "Bail out of a helicopter you're piloting and destroy an enemy helicopter with an RPG or MAAWS while in freefall."
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_Explosion.T_UI_Icon_Killfeed_Explosion",
+        "SubPathString": ""
+      },
+      "Archetype": {
+        "TagName": "Wager.Archetype.Objectives"
+      },
+      "ChallengeId": {
+        "TagName": "Challenges.Challenge.Wager.FreefallHelicopterKill"
+      },
+      "_aaabcjojpnjmnbelecidg": "NumToComplete",
+      "MinCount": 1,
+      "MaxCount": 1,
+      "DefaultCount": 1,
+      "Odds": [
+        1.5
+      ],
+      "Rules": [
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.Freefall.Rule.BailOut",
+          "SourceString": "Bail out of a helicopter you're piloting",
+          "LocalizedString": "Bail out of a helicopter you're piloting"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.Freefall.Rule.DestroyHelicopter",
+          "SourceString": "Destroy an enemy helicopter with an RPG or MAAWS while in freefall",
+          "LocalizedString": "Destroy an enemy helicopter with an RPG or MAAWS while in freefall"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.FreefallHelicopterKill.Rule.PilotedInAir",
+          "SourceString": "The enemy helicopter must be piloted and in the air",
+          "LocalizedString": "The enemy helicopter must be piloted and in the air"
+        }
+      ],
+      "PayoutResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "CooldownSeconds": 86400.0,
+      "_aaaaoglepjgldpmempicc": {
+        "TagName": "Wager.ExclusiveGroup.Freefall"
+      },
+      "Tag": {
+        "TagName": "Wager.Action.FreefallHelicopterKill"
+      }
+    },
+    "Wager.Action.FreefallHelicopterKillRecovered": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.FreefallHelicopterKillRecovered.DisplayName",
+        "SourceString": "Destroy an Enemy Helicopter in Freefall, Then Recover",
+        "LocalizedString": "Destroy an Enemy Helicopter in Freefall, Then Recover"
+      },
+      "ShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.FreefallHelicopterKillRecovered.ShortName",
+        "SourceString": "Freefall Recovery",
+        "LocalizedString": "Freefall Recovery"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.FreefallHelicopterKillRecovered.Description",
+        "SourceString": "Bail out of a helicopter you're piloting, destroy an enemy helicopter with an RPG or MAAWS while in freefall, then get back into the pilot seat of your helicopter while it's still in the air, without landing or opening a parachute.",
+        "LocalizedString": "Bail out of a helicopter you're piloting, destroy an enemy helicopter with an RPG or MAAWS while in freefall, then get back into the pilot seat of your helicopter while it's still in the air, without landing or opening a parachute."
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_Explosion.T_UI_Icon_Killfeed_Explosion",
+        "SubPathString": ""
+      },
+      "Archetype": {
+        "TagName": "Wager.Archetype.Objectives"
+      },
+      "ChallengeId": {
+        "TagName": "Challenges.Challenge.Wager.FreefallHelicopterKillRecovered"
+      },
+      "_aaabcjojpnjmnbelecidg": "NumToComplete",
+      "MinCount": 1,
+      "MaxCount": 1,
+      "DefaultCount": 1,
+      "Odds": [
+        1.5
+      ],
+      "Rules": [
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.Freefall.Rule.BailOut",
+          "SourceString": "Bail out of a helicopter you're piloting",
+          "LocalizedString": "Bail out of a helicopter you're piloting"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.Freefall.Rule.DestroyHelicopter",
+          "SourceString": "Destroy an enemy helicopter with an RPG or MAAWS while in freefall",
+          "LocalizedString": "Destroy an enemy helicopter with an RPG or MAAWS while in freefall"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.FreefallHelicopterKillRecovered.Rule.ReturnToPilotSeat",
+          "SourceString": "Then get back into the pilot seat of your helicopter while it's still in the air",
+          "LocalizedString": "Then get back into the pilot seat of your helicopter while it's still in the air"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.FreefallHelicopterKillRecovered.Rule.NoLandOrParachute",
+          "SourceString": "Don't land or open your parachute first",
+          "LocalizedString": "Don't land or open your parachute first"
+        }
+      ],
+      "PayoutResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "CooldownSeconds": 86400.0,
+      "_aaaaoglepjgldpmempicc": {
+        "TagName": "Wager.ExclusiveGroup.Freefall"
+      },
+      "Tag": {
+        "TagName": "Wager.Action.FreefallHelicopterKillRecovered"
+      }
+    },
+    "Wager.Action.SpawnRadarsDestroyed": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.SpawnRadarsDestroyed.DisplayName",
+        "SourceString": "Destroy {Count} Enemy Spawn Radars",
+        "LocalizedString": "Destroy {Count} Enemy Spawn Radars"
+      },
+      "ShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.SpawnRadarsDestroyed.ShortName",
+        "SourceString": "Spawn Radars Destroyed",
+        "LocalizedString": "Spawn Radars Destroyed"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.SpawnRadarsDestroyed.Description",
+        "SourceString": "Destroy the radar on this many enemy spawn vehicles.",
+        "LocalizedString": "Destroy the radar on this many enemy spawn vehicles."
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Shared/Icons/Equipment/Killfeed/T_UI_Icon_Killfeed_Explosion.T_UI_Icon_Killfeed_Explosion",
+        "SubPathString": ""
+      },
+      "Archetype": {
+        "TagName": "Wager.Archetype.Objectives"
+      },
+      "ChallengeId": {
+        "TagName": "Challenges.Challenge.Wager.SpawnRadarsDestroyed"
+      },
+      "_aaabcjojpnjmnbelecidg": "NumSpawnRadarsToDestroy",
+      "MinCount": 1,
+      "MaxCount": 2,
+      "DefaultCount": 1,
+      "Odds": [
+        1.5,
+        2.0
+      ],
+      "Rules": [
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.SpawnRadarsDestroyed.Rule.DestroyRadar",
+          "SourceString": "You must destroy the radar yourself",
+          "LocalizedString": "You must destroy the radar yourself"
+        }
+      ],
+      "PayoutResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "CooldownSeconds": 86400.0,
+      "_aaaaoglepjgldpmempicc": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Wager.Action.SpawnRadarsDestroyed"
+      }
+    },
+    "Wager.Action.SupplyPalletsDelivered": {
+      "_aaaakgfoodihlgbfboeka": true,
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.SupplyPalletsDelivered.DisplayName",
+        "SourceString": "Deliver {Count} Supply Pallets",
+        "LocalizedString": "Deliver {Count} Supply Pallets"
+      },
+      "ShortName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.SupplyPalletsDelivered.ShortName",
+        "SourceString": "Supply Pallets Delivered",
+        "LocalizedString": "Supply Pallets Delivered"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Action.SupplyPalletsDelivered.Description",
+        "SourceString": "Drop this many supply pallets at a friendly FOB and get them fully unloaded.",
+        "LocalizedString": "Drop this many supply pallets at a friendly FOB and get them fully unloaded."
+      },
+      "Icon": {
+        "AssetPathName": "/Game/UI/Features/Map/Widgets/Trackers/Textures/T_UI_SupplyPallet_Icon.T_UI_SupplyPallet_Icon",
+        "SubPathString": ""
+      },
+      "Archetype": {
+        "TagName": "Wager.Archetype.Objectives"
+      },
+      "ChallengeId": {
+        "TagName": "Challenges.Challenge.Wager.SupplyPalletsDelivered"
+      },
+      "_aaabcjojpnjmnbelecidg": "NumSupplyPalletsToDeliver",
+      "MinCount": 1,
+      "MaxCount": 4,
+      "DefaultCount": 1,
+      "Odds": [
+        1.2,
+        1.4,
+        1.6,
+        1.8
+      ],
+      "Rules": [
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.SupplyPalletsDelivered.Rule.DropPallet",
+          "SourceString": "You must drop the pallet off your vehicle yourself",
+          "LocalizedString": "You must drop the pallet off your vehicle yourself"
+        },
+        {
+          "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+          "Key": "Action.SupplyPalletsDelivered.Rule.Unloaded",
+          "SourceString": "Counts when the pallet is fully unloaded, by you or a teammate",
+          "LocalizedString": "Counts when the pallet is fully unloaded, by you or a teammate"
+        }
+      ],
+      "PayoutResourceTag": {
+        "TagName": "Attribute.Meta.Currency.Cash"
+      },
+      "CooldownSeconds": 86400.0,
+      "_aaaaoglepjgldpmempicc": {
+        "TagName": "None"
+      },
+      "Tag": {
+        "TagName": "Wager.Action.SupplyPalletsDelivered"
       }
     }
   }

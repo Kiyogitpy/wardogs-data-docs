@@ -3,6 +3,7 @@
   "generator": "python -I _tools/structure_hits.py --json",
   "unit": "hits to destroy a finished structure; damage per hit in health points",
   "assumptions": [
+   "Stored registry contributions are included under the earlier native model; current feature activation and native hotfix compatibility are unverified.",
    "point blank, full base damage at the centre of an explosion, no falloff, no ricochet or penetration",
    "the buildable damage rows have only source requirements and no custom operation (asserted)",
    "no pellet multiplication: 12 gauge values are per pellet",
@@ -102,10 +103,6 @@
    "max_health": 4600.0,
    "row": "Meta.Damage.Buildable.QuadLargeHescoWall"
   },
-  "HotzoneMagnet": {
-   "max_health": 2500.0,
-   "row": "Meta.Damage.Buildable.BuildableHotzoneMagnet"
-  },
   "Radio": {
    "max_health": 1000.0,
    "row": "Meta.Damage.Buildable.Radio"
@@ -137,6 +134,10 @@
   "WoodBase": {
    "max_health": 735.0,
    "row": "Meta.Damage.Buildable.WoodBase"
+  },
+  "HotzoneMagnet": {
+   "max_health": 2500.0,
+   "row": "Meta.Damage.Buildable.BuildableHotzoneMagnet"
   }
  },
  "sources": [
@@ -346,6 +347,11 @@
    "base": 100.0
   },
   {
+   "id": "70x1060mm",
+   "kind": "rocket",
+   "base": 100.0
+  },
+  {
    "id": "72mm",
    "kind": "rocket",
    "base": 200.0
@@ -496,7 +502,6 @@
    "Gate_Ramp": 1140.0,
    "Gate_Right": 1140.0,
    "HBlock_QuadWall": 225.0,
-   "HotzoneMagnet": 1140.0,
    "Radio": 1650.0,
    "RefuelStation": 1920.0,
    "RepairStation": 1920.0,
@@ -504,7 +509,8 @@
    "SandbagWall": 562.5,
    "TallHBlock": 324.0,
    "TankTrap": 577.5,
-   "WoodBase": 562.5
+   "WoodBase": 562.5,
+   "HotzoneMagnet": 1140.0
   },
   "120x800mm.Standard": {
    "AirRaidShelter": 174.0,
@@ -530,7 +536,6 @@
    "Gate_Ramp": 1140.0,
    "Gate_Right": 1140.0,
    "HBlock_QuadWall": 360.0,
-   "HotzoneMagnet": 1140.0,
    "Radio": 1320.0,
    "RefuelStation": 326.4,
    "RepairStation": 326.4,
@@ -538,7 +543,8 @@
    "SandbagWall": 900.0,
    "TallHBlock": 211.032,
    "TankTrap": 660.0,
-   "WoodBase": 900.0
+   "WoodBase": 900.0,
+   "HotzoneMagnet": 1140.0
   },
   "122mm": {
    "AirRaidShelter": 145.0,
@@ -564,7 +570,6 @@
    "Gate_Ramp": 950.0,
    "Gate_Right": 950.0,
    "HBlock_QuadWall": 300.0,
-   "HotzoneMagnet": 950.0,
    "Radio": 1100.0,
    "RefuelStation": 1600.0,
    "RepairStation": 1600.0,
@@ -572,7 +577,8 @@
    "SandbagWall": 750.0,
    "TallHBlock": 180.0,
    "TankTrap": 550.0,
-   "WoodBase": 750.0
+   "WoodBase": 750.0,
+   "HotzoneMagnet": 950.0
   },
   "122mm.Havoc": {
    "AirRaidShelter": 435.0,
@@ -598,7 +604,6 @@
    "Gate_Ramp": 2850.0,
    "Gate_Right": 2850.0,
    "HBlock_QuadWall": 900.0,
-   "HotzoneMagnet": 2850.0,
    "Radio": 3300.0,
    "RefuelStation": 4800.0,
    "RepairStation": 4800.0,
@@ -606,7 +611,8 @@
    "SandbagWall": 2250.0,
    "TallHBlock": 540.0,
    "TankTrap": 1650.0,
-   "WoodBase": 2250.0
+   "WoodBase": 2250.0,
+   "HotzoneMagnet": 2850.0
   },
   "125x570mm": {
    "AirRaidShelter": 152.25,
@@ -632,7 +638,6 @@
    "Gate_Ramp": 1140.0,
    "Gate_Right": 1140.0,
    "HBlock_QuadWall": 225.0,
-   "HotzoneMagnet": 1140.0,
    "Radio": 1650.0,
    "RefuelStation": 1920.0,
    "RepairStation": 1920.0,
@@ -640,7 +645,8 @@
    "SandbagWall": 562.5,
    "TallHBlock": 324.0,
    "TankTrap": 577.5,
-   "WoodBase": 562.5
+   "WoodBase": 562.5,
+   "HotzoneMagnet": 1140.0
   },
   "12g.RifledSlug FMJ": {
    "AirRaidShelter": 21.0,
@@ -666,7 +672,6 @@
    "Gate_Ramp": 15.75,
    "Gate_Right": 15.75,
    "HBlock_QuadWall": 21.0,
-   "HotzoneMagnet": 15.75,
    "Radio": 15.75,
    "RefuelStation": 21.0,
    "RepairStation": 21.0,
@@ -674,7 +679,8 @@
    "SandbagWall": 15.75,
    "TallHBlock": 21.0,
    "TankTrap": 15.75,
-   "WoodBase": 15.75
+   "WoodBase": 15.75,
+   "HotzoneMagnet": 15.75
   },
   "12g.RifledSlug ArmorPiercing": {
    "AirRaidShelter": 37.8,
@@ -700,7 +706,6 @@
    "Gate_Ramp": 31.5,
    "Gate_Right": 31.5,
    "HBlock_QuadWall": 28.35,
-   "HotzoneMagnet": 31.5,
    "Radio": 31.5,
    "RefuelStation": 28.35,
    "RepairStation": 28.35,
@@ -708,7 +713,8 @@
    "SandbagWall": 31.5,
    "TallHBlock": 28.35,
    "TankTrap": 31.5,
-   "WoodBase": 31.5
+   "WoodBase": 31.5,
+   "HotzoneMagnet": 31.5
   },
   "12g.RifledSlug HollowPoint": {
    "AirRaidShelter": 8.4,
@@ -734,7 +740,6 @@
    "Gate_Ramp": 7.875,
    "Gate_Right": 7.875,
    "HBlock_QuadWall": 8.4,
-   "HotzoneMagnet": 7.875,
    "Radio": 7.875,
    "RefuelStation": 8.4,
    "RepairStation": 8.4,
@@ -742,7 +747,8 @@
    "SandbagWall": 7.875,
    "TallHBlock": 8.4,
    "TankTrap": 7.875,
-   "WoodBase": 7.875
+   "WoodBase": 7.875,
+   "HotzoneMagnet": 7.875
   },
   "155mm.Expensive": {
    "AirRaidShelter": 91.35,
@@ -768,7 +774,6 @@
    "Gate_Ramp": 1282.5,
    "Gate_Right": 1282.5,
    "HBlock_QuadWall": 1228.5,
-   "HotzoneMagnet": 1282.5,
    "Radio": 4504.5,
    "RefuelStation": 360.0,
    "RepairStation": 360.0,
@@ -776,7 +781,8 @@
    "SandbagWall": 3071.25,
    "TallHBlock": 217.08,
    "TankTrap": 1113.75,
-   "WoodBase": 3071.25
+   "WoodBase": 3071.25,
+   "HotzoneMagnet": 1282.5
   },
   "155mm.Expensive.Sandbox": {
    "AirRaidShelter": 91.35,
@@ -802,7 +808,6 @@
    "Gate_Ramp": 1282.5,
    "Gate_Right": 1282.5,
    "HBlock_QuadWall": 1228.5,
-   "HotzoneMagnet": 1282.5,
    "Radio": 4504.5,
    "RefuelStation": 360.0,
    "RepairStation": 360.0,
@@ -810,7 +815,8 @@
    "SandbagWall": 3071.25,
    "TallHBlock": 217.08,
    "TankTrap": 1113.75,
-   "WoodBase": 3071.25
+   "WoodBase": 3071.25,
+   "HotzoneMagnet": 1282.5
   },
   "155mm.Standard": {
    "AirRaidShelter": 91.35,
@@ -836,7 +842,6 @@
    "Gate_Ramp": 1282.5,
    "Gate_Right": 1282.5,
    "HBlock_QuadWall": 1228.5,
-   "HotzoneMagnet": 1282.5,
    "Radio": 4504.5,
    "RefuelStation": 360.0,
    "RepairStation": 360.0,
@@ -844,7 +849,8 @@
    "SandbagWall": 3071.25,
    "TallHBlock": 217.08,
    "TankTrap": 1113.75,
-   "WoodBase": 3071.25
+   "WoodBase": 3071.25,
+   "HotzoneMagnet": 1282.5
   },
   "155mm.Standard.Sandbox": {
    "AirRaidShelter": 91.35,
@@ -870,7 +876,6 @@
    "Gate_Ramp": 1282.5,
    "Gate_Right": 1282.5,
    "HBlock_QuadWall": 1228.5,
-   "HotzoneMagnet": 1282.5,
    "Radio": 4504.5,
    "RefuelStation": 360.0,
    "RepairStation": 360.0,
@@ -878,7 +883,8 @@
    "SandbagWall": 3071.25,
    "TallHBlock": 217.08,
    "TankTrap": 1113.75,
-   "WoodBase": 3071.25
+   "WoodBase": 3071.25,
+   "HotzoneMagnet": 1282.5
   },
   "20x102mm": {
    "AirRaidShelter": 60.0,
@@ -904,7 +910,6 @@
    "Gate_Ramp": 30.0,
    "Gate_Right": 30.0,
    "HBlock_QuadWall": 60.0,
-   "HotzoneMagnet": 8.1,
    "Radio": 120.0,
    "RefuelStation": 15.0,
    "RepairStation": 15.0,
@@ -912,7 +917,8 @@
    "SandbagWall": 12.0,
    "TallHBlock": 4.8,
    "TankTrap": 30.0,
-   "WoodBase": 12.0
+   "WoodBase": 12.0,
+   "HotzoneMagnet": 8.1
   },
   "308Win FMJ": {
    "AirRaidShelter": 9.0,
@@ -938,7 +944,6 @@
    "Gate_Ramp": 6.75,
    "Gate_Right": 6.75,
    "HBlock_QuadWall": 9.0,
-   "HotzoneMagnet": 6.75,
    "Radio": 6.75,
    "RefuelStation": 9.0,
    "RepairStation": 9.0,
@@ -946,7 +951,8 @@
    "SandbagWall": 6.75,
    "TallHBlock": 9.0,
    "TankTrap": 6.75,
-   "WoodBase": 6.75
+   "WoodBase": 6.75,
+   "HotzoneMagnet": 6.75
   },
   "308Win ArmorPiercing": {
    "AirRaidShelter": 16.2,
@@ -972,7 +978,6 @@
    "Gate_Ramp": 13.5,
    "Gate_Right": 13.5,
    "HBlock_QuadWall": 12.15,
-   "HotzoneMagnet": 13.5,
    "Radio": 13.5,
    "RefuelStation": 12.15,
    "RepairStation": 12.15,
@@ -980,7 +985,8 @@
    "SandbagWall": 13.5,
    "TallHBlock": 12.15,
    "TankTrap": 13.5,
-   "WoodBase": 13.5
+   "WoodBase": 13.5,
+   "HotzoneMagnet": 13.5
   },
   "308Win HollowPoint": {
    "AirRaidShelter": 3.6,
@@ -1006,7 +1012,6 @@
    "Gate_Ramp": 3.375,
    "Gate_Right": 3.375,
    "HBlock_QuadWall": 3.6,
-   "HotzoneMagnet": 3.375,
    "Radio": 3.375,
    "RefuelStation": 3.6,
    "RepairStation": 3.6,
@@ -1014,7 +1019,8 @@
    "SandbagWall": 3.375,
    "TallHBlock": 3.6,
    "TankTrap": 3.375,
-   "WoodBase": 3.375
+   "WoodBase": 3.375,
+   "HotzoneMagnet": 3.375
   },
   "30mm": {
    "AirRaidShelter": 100.0,
@@ -1040,7 +1046,6 @@
    "Gate_Ramp": 50.0,
    "Gate_Right": 50.0,
    "HBlock_QuadWall": 100.0,
-   "HotzoneMagnet": 50.0,
    "Radio": 200.0,
    "RefuelStation": 50.0,
    "RepairStation": 50.0,
@@ -1048,7 +1053,8 @@
    "SandbagWall": 50.0,
    "TallHBlock": 50.0,
    "TankTrap": 50.0,
-   "WoodBase": 50.0
+   "WoodBase": 50.0,
+   "HotzoneMagnet": 50.0
   },
   "338Nor FMJ": {
    "AirRaidShelter": 21.0,
@@ -1074,7 +1080,6 @@
    "Gate_Ramp": 15.75,
    "Gate_Right": 15.75,
    "HBlock_QuadWall": 21.0,
-   "HotzoneMagnet": 15.75,
    "Radio": 15.75,
    "RefuelStation": 21.0,
    "RepairStation": 21.0,
@@ -1082,7 +1087,8 @@
    "SandbagWall": 15.75,
    "TallHBlock": 21.0,
    "TankTrap": 15.75,
-   "WoodBase": 15.75
+   "WoodBase": 15.75,
+   "HotzoneMagnet": 15.75
   },
   "338Nor ArmorPiercing": {
    "AirRaidShelter": 37.8,
@@ -1108,7 +1114,6 @@
    "Gate_Ramp": 31.5,
    "Gate_Right": 31.5,
    "HBlock_QuadWall": 28.35,
-   "HotzoneMagnet": 31.5,
    "Radio": 31.5,
    "RefuelStation": 28.35,
    "RepairStation": 28.35,
@@ -1116,7 +1121,8 @@
    "SandbagWall": 31.5,
    "TallHBlock": 28.35,
    "TankTrap": 31.5,
-   "WoodBase": 31.5
+   "WoodBase": 31.5,
+   "HotzoneMagnet": 31.5
   },
   "338Nor HollowPoint": {
    "AirRaidShelter": 8.4,
@@ -1142,7 +1148,6 @@
    "Gate_Ramp": 7.875,
    "Gate_Right": 7.875,
    "HBlock_QuadWall": 8.4,
-   "HotzoneMagnet": 7.875,
    "Radio": 7.875,
    "RefuelStation": 8.4,
    "RepairStation": 8.4,
@@ -1150,7 +1155,8 @@
    "SandbagWall": 7.875,
    "TallHBlock": 8.4,
    "TankTrap": 7.875,
-   "WoodBase": 7.875
+   "WoodBase": 7.875,
+   "HotzoneMagnet": 7.875
   },
   "35x228mm": {
    "AirRaidShelter": 60.0,
@@ -1176,7 +1182,6 @@
    "Gate_Ramp": 30.0,
    "Gate_Right": 30.0,
    "HBlock_QuadWall": 60.0,
-   "HotzoneMagnet": 8.1,
    "Radio": 12.0,
    "RefuelStation": 15.0,
    "RepairStation": 15.0,
@@ -1184,7 +1189,8 @@
    "SandbagWall": 12.0,
    "TallHBlock": 4.8,
    "TankTrap": 15.0,
-   "WoodBase": 12.0
+   "WoodBase": 12.0,
+   "HotzoneMagnet": 8.1
   },
   "40mm": {
    "AirRaidShelter": 50.0,
@@ -1210,7 +1216,6 @@
    "Gate_Ramp": 100.0,
    "Gate_Right": 100.0,
    "HBlock_QuadWall": 100.0,
-   "HotzoneMagnet": 100.0,
    "Radio": 600.0,
    "RefuelStation": 150.0,
    "RepairStation": 150.0,
@@ -1218,7 +1223,8 @@
    "SandbagWall": 100.0,
    "TallHBlock": 150.0,
    "TankTrap": 50.0,
-   "WoodBase": 100.0
+   "WoodBase": 100.0,
+   "HotzoneMagnet": 100.0
   },
   "45ACP FMJ": {
    "AirRaidShelter": 6.0,
@@ -1244,7 +1250,6 @@
    "Gate_Ramp": 4.5,
    "Gate_Right": 4.5,
    "HBlock_QuadWall": 6.0,
-   "HotzoneMagnet": 4.5,
    "Radio": 4.5,
    "RefuelStation": 6.0,
    "RepairStation": 6.0,
@@ -1252,7 +1257,8 @@
    "SandbagWall": 4.5,
    "TallHBlock": 6.0,
    "TankTrap": 4.5,
-   "WoodBase": 4.5
+   "WoodBase": 4.5,
+   "HotzoneMagnet": 4.5
   },
   "45ACP ArmorPiercing": {
    "AirRaidShelter": 10.8,
@@ -1278,7 +1284,6 @@
    "Gate_Ramp": 9.0,
    "Gate_Right": 9.0,
    "HBlock_QuadWall": 8.1,
-   "HotzoneMagnet": 9.0,
    "Radio": 9.0,
    "RefuelStation": 8.1,
    "RepairStation": 8.1,
@@ -1286,7 +1291,8 @@
    "SandbagWall": 9.0,
    "TallHBlock": 8.1,
    "TankTrap": 9.0,
-   "WoodBase": 9.0
+   "WoodBase": 9.0,
+   "HotzoneMagnet": 9.0
   },
   "45ACP HollowPoint": {
    "AirRaidShelter": 2.4,
@@ -1312,7 +1318,6 @@
    "Gate_Ramp": 2.25,
    "Gate_Right": 2.25,
    "HBlock_QuadWall": 2.4,
-   "HotzoneMagnet": 2.25,
    "Radio": 2.25,
    "RefuelStation": 2.4,
    "RepairStation": 2.4,
@@ -1320,7 +1325,8 @@
    "SandbagWall": 2.25,
    "TallHBlock": 2.4,
    "TankTrap": 2.25,
-   "WoodBase": 2.25
+   "WoodBase": 2.25,
+   "HotzoneMagnet": 2.25
   },
   "45Colt FMJ": {
    "AirRaidShelter": 9.0,
@@ -1346,7 +1352,6 @@
    "Gate_Ramp": 6.75,
    "Gate_Right": 6.75,
    "HBlock_QuadWall": 9.0,
-   "HotzoneMagnet": 6.75,
    "Radio": 6.75,
    "RefuelStation": 9.0,
    "RepairStation": 9.0,
@@ -1354,7 +1359,8 @@
    "SandbagWall": 6.75,
    "TallHBlock": 9.0,
    "TankTrap": 6.75,
-   "WoodBase": 6.75
+   "WoodBase": 6.75,
+   "HotzoneMagnet": 6.75
   },
   "45Colt ArmorPiercing": {
    "AirRaidShelter": 16.2,
@@ -1380,7 +1386,6 @@
    "Gate_Ramp": 13.5,
    "Gate_Right": 13.5,
    "HBlock_QuadWall": 12.15,
-   "HotzoneMagnet": 13.5,
    "Radio": 13.5,
    "RefuelStation": 12.15,
    "RepairStation": 12.15,
@@ -1388,7 +1393,8 @@
    "SandbagWall": 13.5,
    "TallHBlock": 12.15,
    "TankTrap": 13.5,
-   "WoodBase": 13.5
+   "WoodBase": 13.5,
+   "HotzoneMagnet": 13.5
   },
   "45Colt HollowPoint": {
    "AirRaidShelter": 3.6,
@@ -1414,7 +1420,6 @@
    "Gate_Ramp": 3.375,
    "Gate_Right": 3.375,
    "HBlock_QuadWall": 3.6,
-   "HotzoneMagnet": 3.375,
    "Radio": 3.375,
    "RefuelStation": 3.6,
    "RepairStation": 3.6,
@@ -1422,7 +1427,8 @@
    "SandbagWall": 3.375,
    "TallHBlock": 3.6,
    "TankTrap": 3.375,
-   "WoodBase": 3.375
+   "WoodBase": 3.375,
+   "HotzoneMagnet": 3.375
   },
   "50AE FMJ": {
    "AirRaidShelter": 12.6,
@@ -1448,7 +1454,6 @@
    "Gate_Ramp": 9.45,
    "Gate_Right": 9.45,
    "HBlock_QuadWall": 12.6,
-   "HotzoneMagnet": 9.45,
    "Radio": 9.45,
    "RefuelStation": 12.6,
    "RepairStation": 12.6,
@@ -1456,7 +1461,8 @@
    "SandbagWall": 9.45,
    "TallHBlock": 12.6,
    "TankTrap": 9.45,
-   "WoodBase": 9.45
+   "WoodBase": 9.45,
+   "HotzoneMagnet": 9.45
   },
   "50AE ArmorPiercing": {
    "AirRaidShelter": 22.68,
@@ -1482,7 +1488,6 @@
    "Gate_Ramp": 18.9,
    "Gate_Right": 18.9,
    "HBlock_QuadWall": 17.01,
-   "HotzoneMagnet": 18.9,
    "Radio": 18.9,
    "RefuelStation": 17.01,
    "RepairStation": 17.01,
@@ -1490,7 +1495,8 @@
    "SandbagWall": 18.9,
    "TallHBlock": 17.01,
    "TankTrap": 18.9,
-   "WoodBase": 18.9
+   "WoodBase": 18.9,
+   "HotzoneMagnet": 18.9
   },
   "50AE HollowPoint": {
    "AirRaidShelter": 5.04,
@@ -1516,7 +1522,6 @@
    "Gate_Ramp": 4.725,
    "Gate_Right": 4.725,
    "HBlock_QuadWall": 5.04,
-   "HotzoneMagnet": 4.725,
    "Radio": 4.725,
    "RefuelStation": 5.04,
    "RepairStation": 5.04,
@@ -1524,7 +1529,8 @@
    "SandbagWall": 4.725,
    "TallHBlock": 5.04,
    "TankTrap": 4.725,
-   "WoodBase": 4.725
+   "WoodBase": 4.725,
+   "HotzoneMagnet": 4.725
   },
   "50Cal FMJ": {
    "AirRaidShelter": 18.0,
@@ -1550,7 +1556,6 @@
    "Gate_Ramp": 13.5,
    "Gate_Right": 13.5,
    "HBlock_QuadWall": 18.0,
-   "HotzoneMagnet": 13.5,
    "Radio": 13.5,
    "RefuelStation": 18.0,
    "RepairStation": 18.0,
@@ -1558,7 +1563,8 @@
    "SandbagWall": 13.5,
    "TallHBlock": 18.0,
    "TankTrap": 13.5,
-   "WoodBase": 13.5
+   "WoodBase": 13.5,
+   "HotzoneMagnet": 13.5
   },
   "50Cal ArmorPiercing": {
    "AirRaidShelter": 32.4,
@@ -1584,7 +1590,6 @@
    "Gate_Ramp": 27.0,
    "Gate_Right": 27.0,
    "HBlock_QuadWall": 24.3,
-   "HotzoneMagnet": 27.0,
    "Radio": 27.0,
    "RefuelStation": 24.3,
    "RepairStation": 24.3,
@@ -1592,7 +1597,8 @@
    "SandbagWall": 27.0,
    "TallHBlock": 24.3,
    "TankTrap": 27.0,
-   "WoodBase": 27.0
+   "WoodBase": 27.0,
+   "HotzoneMagnet": 27.0
   },
   "50Cal HollowPoint": {
    "AirRaidShelter": 7.2,
@@ -1618,7 +1624,6 @@
    "Gate_Ramp": 6.75,
    "Gate_Right": 6.75,
    "HBlock_QuadWall": 7.2,
-   "HotzoneMagnet": 6.75,
    "Radio": 6.75,
    "RefuelStation": 7.2,
    "RepairStation": 7.2,
@@ -1626,7 +1631,8 @@
    "SandbagWall": 6.75,
    "TallHBlock": 7.2,
    "TankTrap": 6.75,
-   "WoodBase": 6.75
+   "WoodBase": 6.75,
+   "HotzoneMagnet": 6.75
   },
   "545mm FMJ": {
    "AirRaidShelter": 5.2,
@@ -1652,7 +1658,6 @@
    "Gate_Ramp": 3.9,
    "Gate_Right": 3.9,
    "HBlock_QuadWall": 5.2,
-   "HotzoneMagnet": 3.9,
    "Radio": 3.9,
    "RefuelStation": 5.2,
    "RepairStation": 5.2,
@@ -1660,7 +1665,8 @@
    "SandbagWall": 3.9,
    "TallHBlock": 5.2,
    "TankTrap": 3.9,
-   "WoodBase": 3.9
+   "WoodBase": 3.9,
+   "HotzoneMagnet": 3.9
   },
   "545mm ArmorPiercing": {
    "AirRaidShelter": 9.36,
@@ -1686,7 +1692,6 @@
    "Gate_Ramp": 7.8,
    "Gate_Right": 7.8,
    "HBlock_QuadWall": 7.02,
-   "HotzoneMagnet": 7.8,
    "Radio": 7.8,
    "RefuelStation": 7.02,
    "RepairStation": 7.02,
@@ -1694,7 +1699,8 @@
    "SandbagWall": 7.8,
    "TallHBlock": 7.02,
    "TankTrap": 7.8,
-   "WoodBase": 7.8
+   "WoodBase": 7.8,
+   "HotzoneMagnet": 7.8
   },
   "545mm HollowPoint": {
    "AirRaidShelter": 2.08,
@@ -1720,7 +1726,6 @@
    "Gate_Ramp": 1.95,
    "Gate_Right": 1.95,
    "HBlock_QuadWall": 2.08,
-   "HotzoneMagnet": 1.95,
    "Radio": 1.95,
    "RefuelStation": 2.08,
    "RepairStation": 2.08,
@@ -1728,7 +1733,8 @@
    "SandbagWall": 1.95,
    "TallHBlock": 2.08,
    "TankTrap": 1.95,
-   "WoodBase": 1.95
+   "WoodBase": 1.95,
+   "HotzoneMagnet": 1.95
   },
   "556mm FMJ": {
    "AirRaidShelter": 5.6,
@@ -1754,7 +1760,6 @@
    "Gate_Ramp": 4.2,
    "Gate_Right": 4.2,
    "HBlock_QuadWall": 5.6,
-   "HotzoneMagnet": 4.2,
    "Radio": 4.2,
    "RefuelStation": 5.6,
    "RepairStation": 5.6,
@@ -1762,7 +1767,8 @@
    "SandbagWall": 4.2,
    "TallHBlock": 5.6,
    "TankTrap": 4.2,
-   "WoodBase": 4.2
+   "WoodBase": 4.2,
+   "HotzoneMagnet": 4.2
   },
   "556mm ArmorPiercing": {
    "AirRaidShelter": 10.08,
@@ -1788,7 +1794,6 @@
    "Gate_Ramp": 8.4,
    "Gate_Right": 8.4,
    "HBlock_QuadWall": 7.56,
-   "HotzoneMagnet": 8.4,
    "Radio": 8.4,
    "RefuelStation": 7.56,
    "RepairStation": 7.56,
@@ -1796,7 +1801,8 @@
    "SandbagWall": 8.4,
    "TallHBlock": 7.56,
    "TankTrap": 8.4,
-   "WoodBase": 8.4
+   "WoodBase": 8.4,
+   "HotzoneMagnet": 8.4
   },
   "556mm HollowPoint": {
    "AirRaidShelter": 2.24,
@@ -1822,7 +1828,6 @@
    "Gate_Ramp": 2.1,
    "Gate_Right": 2.1,
    "HBlock_QuadWall": 2.24,
-   "HotzoneMagnet": 2.1,
    "Radio": 2.1,
    "RefuelStation": 2.24,
    "RepairStation": 2.24,
@@ -1830,7 +1835,8 @@
    "SandbagWall": 2.1,
    "TallHBlock": 2.24,
    "TankTrap": 2.1,
-   "WoodBase": 2.1
+   "WoodBase": 2.1,
+   "HotzoneMagnet": 2.1
   },
   "70mm": {
    "AirRaidShelter": 145.0,
@@ -1856,7 +1862,6 @@
    "Gate_Ramp": 950.0,
    "Gate_Right": 950.0,
    "HBlock_QuadWall": 300.0,
-   "HotzoneMagnet": 950.0,
    "Radio": 1100.0,
    "RefuelStation": 1600.0,
    "RepairStation": 1600.0,
@@ -1864,7 +1869,42 @@
    "SandbagWall": 750.0,
    "TallHBlock": 180.0,
    "TankTrap": 550.0,
-   "WoodBase": 750.0
+   "WoodBase": 750.0,
+   "HotzoneMagnet": 950.0
+  },
+  "70x1060mm": {
+   "AirRaidShelter": 145.0,
+   "AirRaidShelter_Ceiling": 145.0,
+   "AirRaidShelter_Floor": 145.0,
+   "BarbedWire": 300.0,
+   "Door": 750.0,
+   "Door_DoorOnly": 750.0,
+   "Door_TopSegment": 750.0,
+   "BremmerWall": 350.0,
+   "Bunker": 145.0,
+   "Bunker_Floor": 145.0,
+   "Bunker_Roof": 145.0,
+   "CamoNetTent": 300.0,
+   "CrowsNest": 145.0,
+   "CrowsNest_BaseFloor": 145.0,
+   "CrowsNest_FirstFloor": 145.0,
+   "CrowsNest_Roof": 145.0,
+   "FOB": 1500.0,
+   "HBlock": 220.0,
+   "Gate": 950.0,
+   "Gate_Left": 950.0,
+   "Gate_Ramp": 950.0,
+   "Gate_Right": 950.0,
+   "HBlock_QuadWall": 300.0,
+   "Radio": 1100.0,
+   "RefuelStation": 1600.0,
+   "RepairStation": 1600.0,
+   "Shelter": 180.0,
+   "SandbagWall": 750.0,
+   "TallHBlock": 180.0,
+   "TankTrap": 550.0,
+   "WoodBase": 750.0,
+   "HotzoneMagnet": 950.0
   },
   "72mm": {
    "AirRaidShelter": 290.0,
@@ -1890,7 +1930,6 @@
    "Gate_Ramp": 1900.0,
    "Gate_Right": 1900.0,
    "HBlock_QuadWall": 600.0,
-   "HotzoneMagnet": 1900.0,
    "Radio": 2200.0,
    "RefuelStation": 3200.0,
    "RepairStation": 3200.0,
@@ -1898,7 +1937,8 @@
    "SandbagWall": 1500.0,
    "TallHBlock": 360.0,
    "TankTrap": 1100.0,
-   "WoodBase": 1500.0
+   "WoodBase": 1500.0,
+   "HotzoneMagnet": 1900.0
   },
   "762mm FMJ": {
    "AirRaidShelter": 6.8,
@@ -1924,7 +1964,6 @@
    "Gate_Ramp": 5.1,
    "Gate_Right": 5.1,
    "HBlock_QuadWall": 6.8,
-   "HotzoneMagnet": 5.1,
    "Radio": 5.1,
    "RefuelStation": 6.8,
    "RepairStation": 6.8,
@@ -1932,7 +1971,8 @@
    "SandbagWall": 5.1,
    "TallHBlock": 6.8,
    "TankTrap": 5.1,
-   "WoodBase": 5.1
+   "WoodBase": 5.1,
+   "HotzoneMagnet": 5.1
   },
   "762mm ArmorPiercing": {
    "AirRaidShelter": 12.24,
@@ -1958,7 +1998,6 @@
    "Gate_Ramp": 10.2,
    "Gate_Right": 10.2,
    "HBlock_QuadWall": 9.18,
-   "HotzoneMagnet": 10.2,
    "Radio": 10.2,
    "RefuelStation": 9.18,
    "RepairStation": 9.18,
@@ -1966,7 +2005,8 @@
    "SandbagWall": 10.2,
    "TallHBlock": 9.18,
    "TankTrap": 10.2,
-   "WoodBase": 10.2
+   "WoodBase": 10.2,
+   "HotzoneMagnet": 10.2
   },
   "762mm HollowPoint": {
    "AirRaidShelter": 2.72,
@@ -1992,7 +2032,6 @@
    "Gate_Ramp": 2.55,
    "Gate_Right": 2.55,
    "HBlock_QuadWall": 2.72,
-   "HotzoneMagnet": 2.55,
    "Radio": 2.55,
    "RefuelStation": 2.72,
    "RepairStation": 2.72,
@@ -2000,7 +2039,8 @@
    "SandbagWall": 2.55,
    "TallHBlock": 2.72,
    "TankTrap": 2.55,
-   "WoodBase": 2.55
+   "WoodBase": 2.55,
+   "HotzoneMagnet": 2.55
   },
   "762x51mm FMJ": {
    "AirRaidShelter": 12.0,
@@ -2026,7 +2066,6 @@
    "Gate_Ramp": 9.0,
    "Gate_Right": 9.0,
    "HBlock_QuadWall": 12.0,
-   "HotzoneMagnet": 9.0,
    "Radio": 9.0,
    "RefuelStation": 12.0,
    "RepairStation": 12.0,
@@ -2034,7 +2073,8 @@
    "SandbagWall": 9.0,
    "TallHBlock": 12.0,
    "TankTrap": 9.0,
-   "WoodBase": 9.0
+   "WoodBase": 9.0,
+   "HotzoneMagnet": 9.0
   },
   "762x51mm ArmorPiercing": {
    "AirRaidShelter": 21.6,
@@ -2060,7 +2100,6 @@
    "Gate_Ramp": 18.0,
    "Gate_Right": 18.0,
    "HBlock_QuadWall": 16.2,
-   "HotzoneMagnet": 18.0,
    "Radio": 18.0,
    "RefuelStation": 16.2,
    "RepairStation": 16.2,
@@ -2068,7 +2107,8 @@
    "SandbagWall": 18.0,
    "TallHBlock": 16.2,
    "TankTrap": 18.0,
-   "WoodBase": 18.0
+   "WoodBase": 18.0,
+   "HotzoneMagnet": 18.0
   },
   "762x51mm HollowPoint": {
    "AirRaidShelter": 4.8,
@@ -2094,7 +2134,6 @@
    "Gate_Ramp": 4.5,
    "Gate_Right": 4.5,
    "HBlock_QuadWall": 4.8,
-   "HotzoneMagnet": 4.5,
    "Radio": 4.5,
    "RefuelStation": 4.8,
    "RepairStation": 4.8,
@@ -2102,7 +2141,8 @@
    "SandbagWall": 4.5,
    "TallHBlock": 4.8,
    "TankTrap": 4.5,
-   "WoodBase": 4.5
+   "WoodBase": 4.5,
+   "HotzoneMagnet": 4.5
   },
   "762x54mm FMJ": {
    "AirRaidShelter": 8.8,
@@ -2128,7 +2168,6 @@
    "Gate_Ramp": 6.6,
    "Gate_Right": 6.6,
    "HBlock_QuadWall": 8.8,
-   "HotzoneMagnet": 6.6,
    "Radio": 6.6,
    "RefuelStation": 8.8,
    "RepairStation": 8.8,
@@ -2136,7 +2175,8 @@
    "SandbagWall": 6.6,
    "TallHBlock": 8.8,
    "TankTrap": 6.6,
-   "WoodBase": 6.6
+   "WoodBase": 6.6,
+   "HotzoneMagnet": 6.6
   },
   "762x54mm ArmorPiercing": {
    "AirRaidShelter": 15.84,
@@ -2162,7 +2202,6 @@
    "Gate_Ramp": 13.2,
    "Gate_Right": 13.2,
    "HBlock_QuadWall": 11.88,
-   "HotzoneMagnet": 13.2,
    "Radio": 13.2,
    "RefuelStation": 11.88,
    "RepairStation": 11.88,
@@ -2170,7 +2209,8 @@
    "SandbagWall": 13.2,
    "TallHBlock": 11.88,
    "TankTrap": 13.2,
-   "WoodBase": 13.2
+   "WoodBase": 13.2,
+   "HotzoneMagnet": 13.2
   },
   "762x54mm HollowPoint": {
    "AirRaidShelter": 3.52,
@@ -2196,7 +2236,6 @@
    "Gate_Ramp": 3.3,
    "Gate_Right": 3.3,
    "HBlock_QuadWall": 3.52,
-   "HotzoneMagnet": 3.3,
    "Radio": 3.3,
    "RefuelStation": 3.52,
    "RepairStation": 3.52,
@@ -2204,7 +2243,8 @@
    "SandbagWall": 3.3,
    "TallHBlock": 3.52,
    "TankTrap": 3.3,
-   "WoodBase": 3.3
+   "WoodBase": 3.3,
+   "HotzoneMagnet": 3.3
   },
   "7mmBuck FMJ": {
    "AirRaidShelter": 5.0,
@@ -2230,7 +2270,6 @@
    "Gate_Ramp": 3.75,
    "Gate_Right": 3.75,
    "HBlock_QuadWall": 5.0,
-   "HotzoneMagnet": 3.75,
    "Radio": 3.75,
    "RefuelStation": 5.0,
    "RepairStation": 5.0,
@@ -2238,7 +2277,8 @@
    "SandbagWall": 3.75,
    "TallHBlock": 5.0,
    "TankTrap": 3.75,
-   "WoodBase": 3.75
+   "WoodBase": 3.75,
+   "HotzoneMagnet": 3.75
   },
   "7mmBuck ArmorPiercing": {
    "AirRaidShelter": 9.0,
@@ -2264,7 +2304,6 @@
    "Gate_Ramp": 7.5,
    "Gate_Right": 7.5,
    "HBlock_QuadWall": 6.75,
-   "HotzoneMagnet": 7.5,
    "Radio": 7.5,
    "RefuelStation": 6.75,
    "RepairStation": 6.75,
@@ -2272,7 +2311,8 @@
    "SandbagWall": 7.5,
    "TallHBlock": 6.75,
    "TankTrap": 7.5,
-   "WoodBase": 7.5
+   "WoodBase": 7.5,
+   "HotzoneMagnet": 7.5
   },
   "7mmBuck HollowPoint": {
    "AirRaidShelter": 2.0,
@@ -2298,7 +2338,6 @@
    "Gate_Ramp": 1.875,
    "Gate_Right": 1.875,
    "HBlock_QuadWall": 2.0,
-   "HotzoneMagnet": 1.875,
    "Radio": 1.875,
    "RefuelStation": 2.0,
    "RepairStation": 2.0,
@@ -2306,7 +2345,8 @@
    "SandbagWall": 1.875,
    "TallHBlock": 2.0,
    "TankTrap": 1.875,
-   "WoodBase": 1.875
+   "WoodBase": 1.875,
+   "HotzoneMagnet": 1.875
   },
   "84mm": {
    "AirRaidShelter": 145.0,
@@ -2332,7 +2372,6 @@
    "Gate_Ramp": 950.0,
    "Gate_Right": 950.0,
    "HBlock_QuadWall": 300.0,
-   "HotzoneMagnet": 950.0,
    "Radio": 1100.0,
    "RefuelStation": 1600.0,
    "RepairStation": 1600.0,
@@ -2340,7 +2379,8 @@
    "SandbagWall": 750.0,
    "TallHBlock": 324.0,
    "TankTrap": 550.0,
-   "WoodBase": 750.0
+   "WoodBase": 750.0,
+   "HotzoneMagnet": 950.0
   },
   "84mm.TVGuided": {
    "AirRaidShelter": 145.0,
@@ -2366,7 +2406,6 @@
    "Gate_Ramp": 950.0,
    "Gate_Right": 950.0,
    "HBlock_QuadWall": 300.0,
-   "HotzoneMagnet": 950.0,
    "Radio": 1100.0,
    "RefuelStation": 1600.0,
    "RepairStation": 1600.0,
@@ -2374,7 +2413,8 @@
    "SandbagWall": 750.0,
    "TallHBlock": 180.0,
    "TankTrap": 550.0,
-   "WoodBase": 750.0
+   "WoodBase": 750.0,
+   "HotzoneMagnet": 950.0
   },
   "93mm": {
    "AirRaidShelter": 159.5,
@@ -2400,7 +2440,6 @@
    "Gate_Ramp": 1045.0,
    "Gate_Right": 1045.0,
    "HBlock_QuadWall": 330.0,
-   "HotzoneMagnet": 1045.0,
    "Radio": 1210.0,
    "RefuelStation": 1760.0,
    "RepairStation": 1760.0,
@@ -2408,7 +2447,8 @@
    "SandbagWall": 825.0,
    "TallHBlock": 336.6,
    "TankTrap": 605.0,
-   "WoodBase": 825.0
+   "WoodBase": 825.0,
+   "HotzoneMagnet": 1045.0
   },
   "9mm FMJ": {
    "AirRaidShelter": 4.4,
@@ -2434,7 +2474,6 @@
    "Gate_Ramp": 3.3,
    "Gate_Right": 3.3,
    "HBlock_QuadWall": 4.4,
-   "HotzoneMagnet": 3.3,
    "Radio": 3.3,
    "RefuelStation": 4.4,
    "RepairStation": 4.4,
@@ -2442,7 +2481,8 @@
    "SandbagWall": 3.3,
    "TallHBlock": 4.4,
    "TankTrap": 3.3,
-   "WoodBase": 3.3
+   "WoodBase": 3.3,
+   "HotzoneMagnet": 3.3
   },
   "9mm ArmorPiercing": {
    "AirRaidShelter": 7.92,
@@ -2468,7 +2508,6 @@
    "Gate_Ramp": 6.6,
    "Gate_Right": 6.6,
    "HBlock_QuadWall": 5.94,
-   "HotzoneMagnet": 6.6,
    "Radio": 6.6,
    "RefuelStation": 5.94,
    "RepairStation": 5.94,
@@ -2476,7 +2515,8 @@
    "SandbagWall": 6.6,
    "TallHBlock": 5.94,
    "TankTrap": 6.6,
-   "WoodBase": 6.6
+   "WoodBase": 6.6,
+   "HotzoneMagnet": 6.6
   },
   "9mm HollowPoint": {
    "AirRaidShelter": 1.76,
@@ -2502,7 +2542,6 @@
    "Gate_Ramp": 1.65,
    "Gate_Right": 1.65,
    "HBlock_QuadWall": 1.76,
-   "HotzoneMagnet": 1.65,
    "Radio": 1.65,
    "RefuelStation": 1.76,
    "RepairStation": 1.76,
@@ -2510,7 +2549,8 @@
    "SandbagWall": 1.65,
    "TallHBlock": 1.76,
    "TankTrap": 1.65,
-   "WoodBase": 1.65
+   "WoodBase": 1.65,
+   "HotzoneMagnet": 1.65
   },
   "AT mine": {
    "AirRaidShelter": 150.0,
@@ -2536,7 +2576,6 @@
    "Gate_Ramp": 300.0,
    "Gate_Right": 300.0,
    "HBlock_QuadWall": 300.0,
-   "HotzoneMagnet": 300.0,
    "Radio": 1200.0,
    "RefuelStation": 300.0,
    "RepairStation": 300.0,
@@ -2544,7 +2583,8 @@
    "SandbagWall": 300.0,
    "TallHBlock": 300.0,
    "TankTrap": 150.0,
-   "WoodBase": 300.0
+   "WoodBase": 300.0,
+   "HotzoneMagnet": 300.0
   },
   "C4": {
    "AirRaidShelter": 187.5,
@@ -2570,7 +2610,6 @@
    "Gate_Ramp": 2750.0,
    "Gate_Right": 2750.0,
    "HBlock_QuadWall": 625.0,
-   "HotzoneMagnet": 1500.0,
    "Radio": 5000.0,
    "RefuelStation": 1750.0,
    "RepairStation": 1750.0,
@@ -2578,7 +2617,8 @@
    "SandbagWall": 750.0,
    "TallHBlock": 625.0,
    "TankTrap": 750.0,
-   "WoodBase": 750.0
+   "WoodBase": 750.0,
+   "HotzoneMagnet": 1500.0
   },
   "Claymore": {
    "AirRaidShelter": 75.0,
@@ -2604,7 +2644,6 @@
    "Gate_Ramp": 150.0,
    "Gate_Right": 150.0,
    "HBlock_QuadWall": 150.0,
-   "HotzoneMagnet": 150.0,
    "Radio": 600.0,
    "RefuelStation": 150.0,
    "RepairStation": 150.0,
@@ -2612,7 +2651,8 @@
    "SandbagWall": 150.0,
    "TallHBlock": 150.0,
    "TankTrap": 75.0,
-   "WoodBase": 150.0
+   "WoodBase": 150.0,
+   "HotzoneMagnet": 150.0
   },
   "IED": {
    "AirRaidShelter": 450.0,
@@ -2638,15 +2678,15 @@
    "Gate_Ramp": 6300.0,
    "Gate_Right": 6300.0,
    "HBlock_QuadWall": 1500.0,
-   "HotzoneMagnet": 4800.0,
    "Radio": 10800.0,
-   "RefuelStation": 300.0,
+   "RefuelStation": 3300.0,
    "RepairStation": 3300.0,
    "Shelter": 1200.0,
    "SandbagWall": 1800.0,
    "TallHBlock": 1200.0,
    "TankTrap": 1650.0,
-   "WoodBase": 1800.0
+   "WoodBase": 1800.0,
+   "HotzoneMagnet": 4800.0
   },
   "M67 frag grenade": {
    "AirRaidShelter": 145.0,
@@ -2672,7 +2712,6 @@
    "Gate_Ramp": 950.0,
    "Gate_Right": 950.0,
    "HBlock_QuadWall": 300.0,
-   "HotzoneMagnet": 950.0,
    "Radio": 1100.0,
    "RefuelStation": 1600.0,
    "RepairStation": 1600.0,
@@ -2680,7 +2719,8 @@
    "SandbagWall": 750.0,
    "TallHBlock": 180.0,
    "TankTrap": 550.0,
-   "WoodBase": 750.0
+   "WoodBase": 750.0,
+   "HotzoneMagnet": 950.0
   },
   "Molotov": {
    "AirRaidShelter": 40.0,
@@ -2706,7 +2746,6 @@
    "Gate_Ramp": 40.0,
    "Gate_Right": 40.0,
    "HBlock_QuadWall": 40.0,
-   "HotzoneMagnet": 40.0,
    "Radio": 40.0,
    "RefuelStation": 40.0,
    "RepairStation": 40.0,
@@ -2714,7 +2753,8 @@
    "SandbagWall": 40.0,
    "TallHBlock": 40.0,
    "TankTrap": 40.0,
-   "WoodBase": 40.0
+   "WoodBase": 840.0,
+   "HotzoneMagnet": 40.0
   }
  },
  "hits": {
@@ -2742,7 +2782,6 @@
    "Gate_Ramp": 6,
    "Gate_Right": 5,
    "HBlock_QuadWall": 21,
-   "HotzoneMagnet": 3,
    "Radio": 1,
    "RefuelStation": 1,
    "RepairStation": 1,
@@ -2750,7 +2789,8 @@
    "SandbagWall": 2,
    "TallHBlock": 7,
    "TankTrap": 8,
-   "WoodBase": 2
+   "WoodBase": 2,
+   "HotzoneMagnet": 3
   },
   "120x800mm.Standard": {
    "AirRaidShelter": 29,
@@ -2776,7 +2816,6 @@
    "Gate_Ramp": 6,
    "Gate_Right": 5,
    "HBlock_QuadWall": 13,
-   "HotzoneMagnet": 3,
    "Radio": 1,
    "RefuelStation": 5,
    "RepairStation": 5,
@@ -2784,7 +2823,8 @@
    "SandbagWall": 1,
    "TallHBlock": 11,
    "TankTrap": 7,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 3
   },
   "122mm": {
    "AirRaidShelter": 35,
@@ -2810,7 +2850,6 @@
    "Gate_Ramp": 7,
    "Gate_Right": 6,
    "HBlock_QuadWall": 16,
-   "HotzoneMagnet": 3,
    "Radio": 1,
    "RefuelStation": 1,
    "RepairStation": 1,
@@ -2818,7 +2857,8 @@
    "SandbagWall": 1,
    "TallHBlock": 13,
    "TankTrap": 9,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 3
   },
   "122mm.Havoc": {
    "AirRaidShelter": 12,
@@ -2844,7 +2884,6 @@
    "Gate_Ramp": 3,
    "Gate_Right": 2,
    "HBlock_QuadWall": 6,
-   "HotzoneMagnet": 1,
    "Radio": 1,
    "RefuelStation": 1,
    "RepairStation": 1,
@@ -2852,7 +2891,8 @@
    "SandbagWall": 1,
    "TallHBlock": 5,
    "TankTrap": 3,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 1
   },
   "125x570mm": {
    "AirRaidShelter": 33,
@@ -2878,7 +2918,6 @@
    "Gate_Ramp": 6,
    "Gate_Right": 5,
    "HBlock_QuadWall": 21,
-   "HotzoneMagnet": 3,
    "Radio": 1,
    "RefuelStation": 1,
    "RepairStation": 1,
@@ -2886,7 +2925,8 @@
    "SandbagWall": 2,
    "TallHBlock": 7,
    "TankTrap": 8,
-   "WoodBase": 2
+   "WoodBase": 2,
+   "HotzoneMagnet": 3
   },
   "12g.RifledSlug FMJ": {
    "AirRaidShelter": 239,
@@ -2912,7 +2952,6 @@
    "Gate_Ramp": 413,
    "Gate_Right": 338,
    "HBlock_QuadWall": 220,
-   "HotzoneMagnet": 159,
    "Radio": 64,
    "RefuelStation": 77,
    "RepairStation": 77,
@@ -2920,7 +2959,8 @@
    "SandbagWall": 47,
    "TallHBlock": 108,
    "TankTrap": 286,
-   "WoodBase": 47
+   "WoodBase": 47,
+   "HotzoneMagnet": 159
   },
   "12g.RifledSlug ArmorPiercing": {
    "AirRaidShelter": 133,
@@ -2946,7 +2986,6 @@
    "Gate_Ramp": 207,
    "Gate_Right": 169,
    "HBlock_QuadWall": 163,
-   "HotzoneMagnet": 80,
    "Radio": 32,
    "RefuelStation": 57,
    "RepairStation": 57,
@@ -2954,7 +2993,8 @@
    "SandbagWall": 24,
    "TallHBlock": 80,
    "TankTrap": 143,
-   "WoodBase": 24
+   "WoodBase": 24,
+   "HotzoneMagnet": 80
   },
   "12g.RifledSlug HollowPoint": {
    "AirRaidShelter": 596,
@@ -2980,7 +3020,6 @@
    "Gate_Ramp": 826,
    "Gate_Right": 676,
    "HBlock_QuadWall": 548,
-   "HotzoneMagnet": 318,
    "Radio": 127,
    "RefuelStation": 191,
    "RepairStation": 191,
@@ -2988,7 +3027,8 @@
    "SandbagWall": 94,
    "TallHBlock": 268,
    "TankTrap": 572,
-   "WoodBase": 94
+   "WoodBase": 94,
+   "HotzoneMagnet": 318
   },
   "155mm.Expensive": {
    "AirRaidShelter": 55,
@@ -3014,7 +3054,6 @@
    "Gate_Ramp": 6,
    "Gate_Right": 5,
    "HBlock_QuadWall": 4,
-   "HotzoneMagnet": 2,
    "Radio": 1,
    "RefuelStation": 5,
    "RepairStation": 5,
@@ -3022,7 +3061,8 @@
    "SandbagWall": 1,
    "TallHBlock": 11,
    "TankTrap": 5,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 2
   },
   "155mm.Expensive.Sandbox": {
    "AirRaidShelter": 55,
@@ -3048,7 +3088,6 @@
    "Gate_Ramp": 6,
    "Gate_Right": 5,
    "HBlock_QuadWall": 4,
-   "HotzoneMagnet": 2,
    "Radio": 1,
    "RefuelStation": 5,
    "RepairStation": 5,
@@ -3056,7 +3095,8 @@
    "SandbagWall": 1,
    "TallHBlock": 11,
    "TankTrap": 5,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 2
   },
   "155mm.Standard": {
    "AirRaidShelter": 55,
@@ -3082,7 +3122,6 @@
    "Gate_Ramp": 6,
    "Gate_Right": 5,
    "HBlock_QuadWall": 4,
-   "HotzoneMagnet": 2,
    "Radio": 1,
    "RefuelStation": 5,
    "RepairStation": 5,
@@ -3090,7 +3129,8 @@
    "SandbagWall": 1,
    "TallHBlock": 11,
    "TankTrap": 5,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 2
   },
   "155mm.Standard.Sandbox": {
    "AirRaidShelter": 55,
@@ -3116,7 +3156,6 @@
    "Gate_Ramp": 6,
    "Gate_Right": 5,
    "HBlock_QuadWall": 4,
-   "HotzoneMagnet": 2,
    "Radio": 1,
    "RefuelStation": 5,
    "RepairStation": 5,
@@ -3124,7 +3163,8 @@
    "SandbagWall": 1,
    "TallHBlock": 11,
    "TankTrap": 5,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 2
   },
   "20x102mm": {
    "AirRaidShelter": 84,
@@ -3150,7 +3190,6 @@
    "Gate_Ramp": 217,
    "Gate_Right": 178,
    "HBlock_QuadWall": 77,
-   "HotzoneMagnet": 309,
    "Radio": 9,
    "RefuelStation": 107,
    "RepairStation": 107,
@@ -3158,7 +3197,8 @@
    "SandbagWall": 62,
    "TallHBlock": 469,
    "TankTrap": 150,
-   "WoodBase": 62
+   "WoodBase": 62,
+   "HotzoneMagnet": 309
   },
   "308Win FMJ": {
    "AirRaidShelter": 556,
@@ -3184,7 +3224,6 @@
    "Gate_Ramp": 963,
    "Gate_Right": 789,
    "HBlock_QuadWall": 512,
-   "HotzoneMagnet": 371,
    "Radio": 149,
    "RefuelStation": 178,
    "RepairStation": 178,
@@ -3192,7 +3231,8 @@
    "SandbagWall": 109,
    "TallHBlock": 250,
    "TankTrap": 667,
-   "WoodBase": 109
+   "WoodBase": 109,
+   "HotzoneMagnet": 371
   },
   "308Win ArmorPiercing": {
    "AirRaidShelter": 309,
@@ -3218,7 +3258,6 @@
    "Gate_Ramp": 482,
    "Gate_Right": 395,
    "HBlock_QuadWall": 379,
-   "HotzoneMagnet": 186,
    "Radio": 75,
    "RefuelStation": 132,
    "RepairStation": 132,
@@ -3226,7 +3265,8 @@
    "SandbagWall": 55,
    "TallHBlock": 186,
    "TankTrap": 334,
-   "WoodBase": 55
+   "WoodBase": 55,
+   "HotzoneMagnet": 186
   },
   "308Win HollowPoint": {
    "AirRaidShelter": 1389,
@@ -3252,7 +3292,6 @@
    "Gate_Ramp": 1926,
    "Gate_Right": 1577,
    "HBlock_QuadWall": 1278,
-   "HotzoneMagnet": 741,
    "Radio": 297,
    "RefuelStation": 445,
    "RepairStation": 445,
@@ -3260,7 +3299,8 @@
    "SandbagWall": 218,
    "TallHBlock": 625,
    "TankTrap": 1334,
-   "WoodBase": 218
+   "WoodBase": 218,
+   "HotzoneMagnet": 741
   },
   "30mm": {
    "AirRaidShelter": 50,
@@ -3286,7 +3326,6 @@
    "Gate_Ramp": 130,
    "Gate_Right": 107,
    "HBlock_QuadWall": 46,
-   "HotzoneMagnet": 50,
    "Radio": 5,
    "RefuelStation": 32,
    "RepairStation": 32,
@@ -3294,7 +3333,8 @@
    "SandbagWall": 15,
    "TallHBlock": 45,
    "TankTrap": 90,
-   "WoodBase": 15
+   "WoodBase": 15,
+   "HotzoneMagnet": 50
   },
   "338Nor FMJ": {
    "AirRaidShelter": 239,
@@ -3320,7 +3360,6 @@
    "Gate_Ramp": 413,
    "Gate_Right": 338,
    "HBlock_QuadWall": 220,
-   "HotzoneMagnet": 159,
    "Radio": 64,
    "RefuelStation": 77,
    "RepairStation": 77,
@@ -3328,7 +3367,8 @@
    "SandbagWall": 47,
    "TallHBlock": 108,
    "TankTrap": 286,
-   "WoodBase": 47
+   "WoodBase": 47,
+   "HotzoneMagnet": 159
   },
   "338Nor ArmorPiercing": {
    "AirRaidShelter": 133,
@@ -3354,7 +3394,6 @@
    "Gate_Ramp": 207,
    "Gate_Right": 169,
    "HBlock_QuadWall": 163,
-   "HotzoneMagnet": 80,
    "Radio": 32,
    "RefuelStation": 57,
    "RepairStation": 57,
@@ -3362,7 +3401,8 @@
    "SandbagWall": 24,
    "TallHBlock": 80,
    "TankTrap": 143,
-   "WoodBase": 24
+   "WoodBase": 24,
+   "HotzoneMagnet": 80
   },
   "338Nor HollowPoint": {
    "AirRaidShelter": 596,
@@ -3388,7 +3428,6 @@
    "Gate_Ramp": 826,
    "Gate_Right": 676,
    "HBlock_QuadWall": 548,
-   "HotzoneMagnet": 318,
    "Radio": 127,
    "RefuelStation": 191,
    "RepairStation": 191,
@@ -3396,7 +3435,8 @@
    "SandbagWall": 94,
    "TallHBlock": 268,
    "TankTrap": 572,
-   "WoodBase": 94
+   "WoodBase": 94,
+   "HotzoneMagnet": 318
   },
   "35x228mm": {
    "AirRaidShelter": 84,
@@ -3422,7 +3462,6 @@
    "Gate_Ramp": 217,
    "Gate_Right": 178,
    "HBlock_QuadWall": 77,
-   "HotzoneMagnet": 309,
    "Radio": 84,
    "RefuelStation": 107,
    "RepairStation": 107,
@@ -3430,7 +3469,8 @@
    "SandbagWall": 62,
    "TallHBlock": 469,
    "TankTrap": 300,
-   "WoodBase": 62
+   "WoodBase": 62,
+   "HotzoneMagnet": 309
   },
   "40mm": {
    "AirRaidShelter": 100,
@@ -3456,7 +3496,6 @@
    "Gate_Ramp": 65,
    "Gate_Right": 54,
    "HBlock_QuadWall": 46,
-   "HotzoneMagnet": 25,
    "Radio": 2,
    "RefuelStation": 11,
    "RepairStation": 11,
@@ -3464,7 +3503,8 @@
    "SandbagWall": 8,
    "TallHBlock": 15,
    "TankTrap": 90,
-   "WoodBase": 8
+   "WoodBase": 8,
+   "HotzoneMagnet": 25
   },
   "45ACP FMJ": {
    "AirRaidShelter": 834,
@@ -3490,7 +3530,6 @@
    "Gate_Ramp": 1445,
    "Gate_Right": 1183,
    "HBlock_QuadWall": 767,
-   "HotzoneMagnet": 556,
    "Radio": 223,
    "RefuelStation": 267,
    "RepairStation": 267,
@@ -3498,7 +3537,8 @@
    "SandbagWall": 164,
    "TallHBlock": 375,
    "TankTrap": 1000,
-   "WoodBase": 164
+   "WoodBase": 164,
+   "HotzoneMagnet": 556
   },
   "45ACP ArmorPiercing": {
    "AirRaidShelter": 463,
@@ -3524,7 +3564,6 @@
    "Gate_Ramp": 723,
    "Gate_Right": 592,
    "HBlock_QuadWall": 568,
-   "HotzoneMagnet": 278,
    "Radio": 112,
    "RefuelStation": 198,
    "RepairStation": 198,
@@ -3532,7 +3571,8 @@
    "SandbagWall": 82,
    "TallHBlock": 278,
    "TankTrap": 500,
-   "WoodBase": 82
+   "WoodBase": 82,
+   "HotzoneMagnet": 278
   },
   "45ACP HollowPoint": {
    "AirRaidShelter": 2084,
@@ -3558,7 +3598,6 @@
    "Gate_Ramp": 2889,
    "Gate_Right": 2365,
    "HBlock_QuadWall": 1917,
-   "HotzoneMagnet": 1112,
    "Radio": 445,
    "RefuelStation": 667,
    "RepairStation": 667,
@@ -3566,7 +3605,8 @@
    "SandbagWall": 327,
    "TallHBlock": 938,
    "TankTrap": 2000,
-   "WoodBase": 327
+   "WoodBase": 327,
+   "HotzoneMagnet": 1112
   },
   "45Colt FMJ": {
    "AirRaidShelter": 556,
@@ -3592,7 +3632,6 @@
    "Gate_Ramp": 963,
    "Gate_Right": 789,
    "HBlock_QuadWall": 512,
-   "HotzoneMagnet": 371,
    "Radio": 149,
    "RefuelStation": 178,
    "RepairStation": 178,
@@ -3600,7 +3639,8 @@
    "SandbagWall": 109,
    "TallHBlock": 250,
    "TankTrap": 667,
-   "WoodBase": 109
+   "WoodBase": 109,
+   "HotzoneMagnet": 371
   },
   "45Colt ArmorPiercing": {
    "AirRaidShelter": 309,
@@ -3626,7 +3666,6 @@
    "Gate_Ramp": 482,
    "Gate_Right": 395,
    "HBlock_QuadWall": 379,
-   "HotzoneMagnet": 186,
    "Radio": 75,
    "RefuelStation": 132,
    "RepairStation": 132,
@@ -3634,7 +3673,8 @@
    "SandbagWall": 55,
    "TallHBlock": 186,
    "TankTrap": 334,
-   "WoodBase": 55
+   "WoodBase": 55,
+   "HotzoneMagnet": 186
   },
   "45Colt HollowPoint": {
    "AirRaidShelter": 1389,
@@ -3660,7 +3700,6 @@
    "Gate_Ramp": 1926,
    "Gate_Right": 1577,
    "HBlock_QuadWall": 1278,
-   "HotzoneMagnet": 741,
    "Radio": 297,
    "RefuelStation": 445,
    "RepairStation": 445,
@@ -3668,7 +3707,8 @@
    "SandbagWall": 218,
    "TallHBlock": 625,
    "TankTrap": 1334,
-   "WoodBase": 218
+   "WoodBase": 218,
+   "HotzoneMagnet": 741
   },
   "50AE FMJ": {
    "AirRaidShelter": 397,
@@ -3694,7 +3734,6 @@
    "Gate_Ramp": 688,
    "Gate_Right": 563,
    "HBlock_QuadWall": 366,
-   "HotzoneMagnet": 265,
    "Radio": 106,
    "RefuelStation": 127,
    "RepairStation": 127,
@@ -3702,7 +3741,8 @@
    "SandbagWall": 78,
    "TallHBlock": 179,
    "TankTrap": 477,
-   "WoodBase": 78
+   "WoodBase": 78,
+   "HotzoneMagnet": 265
   },
   "50AE ArmorPiercing": {
    "AirRaidShelter": 221,
@@ -3728,7 +3768,6 @@
    "Gate_Ramp": 344,
    "Gate_Right": 282,
    "HBlock_QuadWall": 271,
-   "HotzoneMagnet": 133,
    "Radio": 53,
    "RefuelStation": 95,
    "RepairStation": 95,
@@ -3736,7 +3775,8 @@
    "SandbagWall": 39,
    "TallHBlock": 133,
    "TankTrap": 239,
-   "WoodBase": 39
+   "WoodBase": 39,
+   "HotzoneMagnet": 133
   },
   "50AE HollowPoint": {
    "AirRaidShelter": 993,
@@ -3762,7 +3802,6 @@
    "Gate_Ramp": 1376,
    "Gate_Right": 1126,
    "HBlock_QuadWall": 913,
-   "HotzoneMagnet": 530,
    "Radio": 212,
    "RefuelStation": 318,
    "RepairStation": 318,
@@ -3770,7 +3809,8 @@
    "SandbagWall": 156,
    "TallHBlock": 447,
    "TankTrap": 953,
-   "WoodBase": 156
+   "WoodBase": 156,
+   "HotzoneMagnet": 530
   },
   "50Cal FMJ": {
    "AirRaidShelter": 278,
@@ -3796,7 +3836,6 @@
    "Gate_Ramp": 482,
    "Gate_Right": 395,
    "HBlock_QuadWall": 256,
-   "HotzoneMagnet": 186,
    "Radio": 75,
    "RefuelStation": 89,
    "RepairStation": 89,
@@ -3804,7 +3843,8 @@
    "SandbagWall": 55,
    "TallHBlock": 125,
    "TankTrap": 334,
-   "WoodBase": 55
+   "WoodBase": 55,
+   "HotzoneMagnet": 186
   },
   "50Cal ArmorPiercing": {
    "AirRaidShelter": 155,
@@ -3830,7 +3870,6 @@
    "Gate_Ramp": 241,
    "Gate_Right": 198,
    "HBlock_QuadWall": 190,
-   "HotzoneMagnet": 93,
    "Radio": 38,
    "RefuelStation": 66,
    "RepairStation": 66,
@@ -3838,7 +3877,8 @@
    "SandbagWall": 28,
    "TallHBlock": 93,
    "TankTrap": 167,
-   "WoodBase": 28
+   "WoodBase": 28,
+   "HotzoneMagnet": 93
   },
   "50Cal HollowPoint": {
    "AirRaidShelter": 695,
@@ -3864,7 +3904,6 @@
    "Gate_Ramp": 963,
    "Gate_Right": 789,
    "HBlock_QuadWall": 639,
-   "HotzoneMagnet": 371,
    "Radio": 149,
    "RefuelStation": 223,
    "RepairStation": 223,
@@ -3872,7 +3911,8 @@
    "SandbagWall": 109,
    "TallHBlock": 313,
    "TankTrap": 667,
-   "WoodBase": 109
+   "WoodBase": 109,
+   "HotzoneMagnet": 371
   },
   "545mm FMJ": {
    "AirRaidShelter": 962,
@@ -3898,7 +3938,6 @@
    "Gate_Ramp": 1667,
    "Gate_Right": 1365,
    "HBlock_QuadWall": 885,
-   "HotzoneMagnet": 642,
    "Radio": 257,
    "RefuelStation": 308,
    "RepairStation": 308,
@@ -3906,7 +3945,8 @@
    "SandbagWall": 189,
    "TallHBlock": 433,
    "TankTrap": 1154,
-   "WoodBase": 189
+   "WoodBase": 189,
+   "HotzoneMagnet": 642
   },
   "545mm ArmorPiercing": {
    "AirRaidShelter": 535,
@@ -3932,7 +3972,6 @@
    "Gate_Ramp": 834,
    "Gate_Right": 683,
    "HBlock_QuadWall": 656,
-   "HotzoneMagnet": 321,
    "Radio": 129,
    "RefuelStation": 228,
    "RepairStation": 228,
@@ -3940,7 +3979,8 @@
    "SandbagWall": 95,
    "TallHBlock": 321,
    "TankTrap": 577,
-   "WoodBase": 95
+   "WoodBase": 95,
+   "HotzoneMagnet": 321
   },
   "545mm HollowPoint": {
    "AirRaidShelter": 2404,
@@ -3966,7 +4006,6 @@
    "Gate_Ramp": 3334,
    "Gate_Right": 2729,
    "HBlock_QuadWall": 2212,
-   "HotzoneMagnet": 1283,
    "Radio": 513,
    "RefuelStation": 770,
    "RepairStation": 770,
@@ -3974,7 +4013,8 @@
    "SandbagWall": 377,
    "TallHBlock": 1082,
    "TankTrap": 2308,
-   "WoodBase": 377
+   "WoodBase": 377,
+   "HotzoneMagnet": 1283
   },
   "556mm FMJ": {
    "AirRaidShelter": 893,
@@ -4000,7 +4040,6 @@
    "Gate_Ramp": 1548,
    "Gate_Right": 1267,
    "HBlock_QuadWall": 822,
-   "HotzoneMagnet": 596,
    "Radio": 239,
    "RefuelStation": 286,
    "RepairStation": 286,
@@ -4008,7 +4047,8 @@
    "SandbagWall": 175,
    "TallHBlock": 402,
    "TankTrap": 1072,
-   "WoodBase": 175
+   "WoodBase": 175,
+   "HotzoneMagnet": 596
   },
   "556mm ArmorPiercing": {
    "AirRaidShelter": 497,
@@ -4034,7 +4074,6 @@
    "Gate_Ramp": 774,
    "Gate_Right": 634,
    "HBlock_QuadWall": 609,
-   "HotzoneMagnet": 298,
    "Radio": 120,
    "RefuelStation": 212,
    "RepairStation": 212,
@@ -4042,7 +4081,8 @@
    "SandbagWall": 88,
    "TallHBlock": 298,
    "TankTrap": 536,
-   "WoodBase": 88
+   "WoodBase": 88,
+   "HotzoneMagnet": 298
   },
   "556mm HollowPoint": {
    "AirRaidShelter": 2233,
@@ -4068,7 +4108,6 @@
    "Gate_Ramp": 3096,
    "Gate_Right": 2534,
    "HBlock_QuadWall": 2054,
-   "HotzoneMagnet": 1191,
    "Radio": 477,
    "RefuelStation": 715,
    "RepairStation": 715,
@@ -4076,7 +4115,8 @@
    "SandbagWall": 350,
    "TallHBlock": 1005,
    "TankTrap": 2143,
-   "WoodBase": 350
+   "WoodBase": 350,
+   "HotzoneMagnet": 1191
   },
   "70mm": {
    "AirRaidShelter": 35,
@@ -4102,7 +4142,6 @@
    "Gate_Ramp": 7,
    "Gate_Right": 6,
    "HBlock_QuadWall": 16,
-   "HotzoneMagnet": 3,
    "Radio": 1,
    "RefuelStation": 1,
    "RepairStation": 1,
@@ -4110,7 +4149,42 @@
    "SandbagWall": 1,
    "TallHBlock": 13,
    "TankTrap": 9,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 3
+  },
+  "70x1060mm": {
+   "AirRaidShelter": 35,
+   "AirRaidShelter_Ceiling": 16,
+   "AirRaidShelter_Floor": 16,
+   "BarbedWire": 1,
+   "Door": 3,
+   "Door_DoorOnly": 1,
+   "Door_TopSegment": 1,
+   "BremmerWall": 19,
+   "Bunker": 35,
+   "Bunker_Floor": 16,
+   "Bunker_Roof": 16,
+   "CamoNetTent": 1,
+   "CrowsNest": 35,
+   "CrowsNest_BaseFloor": 16,
+   "CrowsNest_FirstFloor": 16,
+   "CrowsNest_Roof": 16,
+   "FOB": 10,
+   "HBlock": 8,
+   "Gate": 6,
+   "Gate_Left": 6,
+   "Gate_Ramp": 7,
+   "Gate_Right": 6,
+   "HBlock_QuadWall": 16,
+   "Radio": 1,
+   "RefuelStation": 1,
+   "RepairStation": 1,
+   "Shelter": 13,
+   "SandbagWall": 1,
+   "TallHBlock": 13,
+   "TankTrap": 9,
+   "WoodBase": 1,
+   "HotzoneMagnet": 3
   },
   "72mm": {
    "AirRaidShelter": 18,
@@ -4136,7 +4210,6 @@
    "Gate_Ramp": 4,
    "Gate_Right": 3,
    "HBlock_QuadWall": 8,
-   "HotzoneMagnet": 2,
    "Radio": 1,
    "RefuelStation": 1,
    "RepairStation": 1,
@@ -4144,7 +4217,8 @@
    "SandbagWall": 1,
    "TallHBlock": 7,
    "TankTrap": 5,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 2
   },
   "762mm FMJ": {
    "AirRaidShelter": 736,
@@ -4170,7 +4244,6 @@
    "Gate_Ramp": 1275,
    "Gate_Right": 1044,
    "HBlock_QuadWall": 677,
-   "HotzoneMagnet": 491,
    "Radio": 197,
    "RefuelStation": 236,
    "RepairStation": 236,
@@ -4178,7 +4251,8 @@
    "SandbagWall": 145,
    "TallHBlock": 331,
    "TankTrap": 883,
-   "WoodBase": 145
+   "WoodBase": 145,
+   "HotzoneMagnet": 491
   },
   "762mm ArmorPiercing": {
    "AirRaidShelter": 409,
@@ -4204,7 +4278,6 @@
    "Gate_Ramp": 638,
    "Gate_Right": 522,
    "HBlock_QuadWall": 502,
-   "HotzoneMagnet": 246,
    "Radio": 99,
    "RefuelStation": 175,
    "RepairStation": 175,
@@ -4212,7 +4285,8 @@
    "SandbagWall": 73,
    "TallHBlock": 246,
    "TankTrap": 442,
-   "WoodBase": 73
+   "WoodBase": 73,
+   "HotzoneMagnet": 246
   },
   "762mm HollowPoint": {
    "AirRaidShelter": 1839,
@@ -4238,7 +4312,6 @@
    "Gate_Ramp": 2550,
    "Gate_Right": 2087,
    "HBlock_QuadWall": 1692,
-   "HotzoneMagnet": 981,
    "Radio": 393,
    "RefuelStation": 589,
    "RepairStation": 589,
@@ -4246,7 +4319,8 @@
    "SandbagWall": 289,
    "TallHBlock": 828,
    "TankTrap": 1765,
-   "WoodBase": 289
+   "WoodBase": 289,
+   "HotzoneMagnet": 981
   },
   "762x51mm FMJ": {
    "AirRaidShelter": 417,
@@ -4272,7 +4346,6 @@
    "Gate_Ramp": 723,
    "Gate_Right": 592,
    "HBlock_QuadWall": 384,
-   "HotzoneMagnet": 278,
    "Radio": 112,
    "RefuelStation": 134,
    "RepairStation": 134,
@@ -4280,7 +4353,8 @@
    "SandbagWall": 82,
    "TallHBlock": 188,
    "TankTrap": 500,
-   "WoodBase": 82
+   "WoodBase": 82,
+   "HotzoneMagnet": 278
   },
   "762x51mm ArmorPiercing": {
    "AirRaidShelter": 232,
@@ -4306,7 +4380,6 @@
    "Gate_Ramp": 362,
    "Gate_Right": 296,
    "HBlock_QuadWall": 284,
-   "HotzoneMagnet": 139,
    "Radio": 56,
    "RefuelStation": 99,
    "RepairStation": 99,
@@ -4314,7 +4387,8 @@
    "SandbagWall": 41,
    "TallHBlock": 139,
    "TankTrap": 250,
-   "WoodBase": 41
+   "WoodBase": 41,
+   "HotzoneMagnet": 139
   },
   "762x51mm HollowPoint": {
    "AirRaidShelter": 1042,
@@ -4340,7 +4414,6 @@
    "Gate_Ramp": 1445,
    "Gate_Right": 1183,
    "HBlock_QuadWall": 959,
-   "HotzoneMagnet": 556,
    "Radio": 223,
    "RefuelStation": 334,
    "RepairStation": 334,
@@ -4348,7 +4421,8 @@
    "SandbagWall": 164,
    "TallHBlock": 469,
    "TankTrap": 1000,
-   "WoodBase": 164
+   "WoodBase": 164,
+   "HotzoneMagnet": 556
   },
   "762x54mm FMJ": {
    "AirRaidShelter": 569,
@@ -4374,7 +4448,6 @@
    "Gate_Ramp": 985,
    "Gate_Right": 807,
    "HBlock_QuadWall": 523,
-   "HotzoneMagnet": 379,
    "Radio": 152,
    "RefuelStation": 182,
    "RepairStation": 182,
@@ -4382,7 +4455,8 @@
    "SandbagWall": 112,
    "TallHBlock": 256,
    "TankTrap": 682,
-   "WoodBase": 112
+   "WoodBase": 112,
+   "HotzoneMagnet": 379
   },
   "762x54mm ArmorPiercing": {
    "AirRaidShelter": 316,
@@ -4408,7 +4482,6 @@
    "Gate_Ramp": 493,
    "Gate_Right": 404,
    "HBlock_QuadWall": 388,
-   "HotzoneMagnet": 190,
    "Radio": 76,
    "RefuelStation": 135,
    "RepairStation": 135,
@@ -4416,7 +4489,8 @@
    "SandbagWall": 56,
    "TallHBlock": 190,
    "TankTrap": 341,
-   "WoodBase": 56
+   "WoodBase": 56,
+   "HotzoneMagnet": 190
   },
   "762x54mm HollowPoint": {
    "AirRaidShelter": 1421,
@@ -4442,7 +4516,6 @@
    "Gate_Ramp": 1970,
    "Gate_Right": 1613,
    "HBlock_QuadWall": 1307,
-   "HotzoneMagnet": 758,
    "Radio": 304,
    "RefuelStation": 455,
    "RepairStation": 455,
@@ -4450,7 +4523,8 @@
    "SandbagWall": 223,
    "TallHBlock": 640,
    "TankTrap": 1364,
-   "WoodBase": 223
+   "WoodBase": 223,
+   "HotzoneMagnet": 758
   },
   "7mmBuck FMJ": {
    "AirRaidShelter": 1000,
@@ -4476,7 +4550,6 @@
    "Gate_Ramp": 1734,
    "Gate_Right": 1419,
    "HBlock_QuadWall": 920,
-   "HotzoneMagnet": 667,
    "Radio": 267,
    "RefuelStation": 320,
    "RepairStation": 320,
@@ -4484,7 +4557,8 @@
    "SandbagWall": 196,
    "TallHBlock": 450,
    "TankTrap": 1200,
-   "WoodBase": 196
+   "WoodBase": 196,
+   "HotzoneMagnet": 667
   },
   "7mmBuck ArmorPiercing": {
    "AirRaidShelter": 556,
@@ -4510,7 +4584,6 @@
    "Gate_Ramp": 867,
    "Gate_Right": 710,
    "HBlock_QuadWall": 682,
-   "HotzoneMagnet": 334,
    "Radio": 134,
    "RefuelStation": 238,
    "RepairStation": 238,
@@ -4518,7 +4591,8 @@
    "SandbagWall": 98,
    "TallHBlock": 334,
    "TankTrap": 600,
-   "WoodBase": 98
+   "WoodBase": 98,
+   "HotzoneMagnet": 334
   },
   "7mmBuck HollowPoint": {
    "AirRaidShelter": 2500,
@@ -4544,7 +4618,6 @@
    "Gate_Ramp": 3467,
    "Gate_Right": 2838,
    "HBlock_QuadWall": 2300,
-   "HotzoneMagnet": 1334,
    "Radio": 534,
    "RefuelStation": 800,
    "RepairStation": 800,
@@ -4552,7 +4625,8 @@
    "SandbagWall": 392,
    "TallHBlock": 1125,
    "TankTrap": 2400,
-   "WoodBase": 392
+   "WoodBase": 392,
+   "HotzoneMagnet": 1334
   },
   "84mm": {
    "AirRaidShelter": 35,
@@ -4578,7 +4652,6 @@
    "Gate_Ramp": 7,
    "Gate_Right": 6,
    "HBlock_QuadWall": 16,
-   "HotzoneMagnet": 3,
    "Radio": 1,
    "RefuelStation": 1,
    "RepairStation": 1,
@@ -4586,7 +4659,8 @@
    "SandbagWall": 1,
    "TallHBlock": 7,
    "TankTrap": 9,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 3
   },
   "84mm.TVGuided": {
    "AirRaidShelter": 35,
@@ -4612,7 +4686,6 @@
    "Gate_Ramp": 7,
    "Gate_Right": 6,
    "HBlock_QuadWall": 16,
-   "HotzoneMagnet": 3,
    "Radio": 1,
    "RefuelStation": 1,
    "RepairStation": 1,
@@ -4620,7 +4693,8 @@
    "SandbagWall": 1,
    "TallHBlock": 13,
    "TankTrap": 9,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 3
   },
   "93mm": {
    "AirRaidShelter": 32,
@@ -4646,7 +4720,6 @@
    "Gate_Ramp": 7,
    "Gate_Right": 6,
    "HBlock_QuadWall": 14,
-   "HotzoneMagnet": 3,
    "Radio": 1,
    "RefuelStation": 1,
    "RepairStation": 1,
@@ -4654,7 +4727,8 @@
    "SandbagWall": 1,
    "TallHBlock": 7,
    "TankTrap": 8,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 3
   },
   "9mm FMJ": {
    "AirRaidShelter": 1137,
@@ -4680,7 +4754,6 @@
    "Gate_Ramp": 1970,
    "Gate_Right": 1613,
    "HBlock_QuadWall": 1046,
-   "HotzoneMagnet": 758,
    "Radio": 304,
    "RefuelStation": 364,
    "RepairStation": 364,
@@ -4688,7 +4761,8 @@
    "SandbagWall": 223,
    "TallHBlock": 512,
    "TankTrap": 1364,
-   "WoodBase": 223
+   "WoodBase": 223,
+   "HotzoneMagnet": 758
   },
   "9mm ArmorPiercing": {
    "AirRaidShelter": 632,
@@ -4714,7 +4788,6 @@
    "Gate_Ramp": 985,
    "Gate_Right": 807,
    "HBlock_QuadWall": 775,
-   "HotzoneMagnet": 379,
    "Radio": 152,
    "RefuelStation": 270,
    "RepairStation": 270,
@@ -4722,7 +4795,8 @@
    "SandbagWall": 112,
    "TallHBlock": 379,
    "TankTrap": 682,
-   "WoodBase": 112
+   "WoodBase": 112,
+   "HotzoneMagnet": 379
   },
   "9mm HollowPoint": {
    "AirRaidShelter": 2841,
@@ -4748,7 +4822,6 @@
    "Gate_Ramp": 3940,
    "Gate_Right": 3225,
    "HBlock_QuadWall": 2614,
-   "HotzoneMagnet": 1516,
    "Radio": 607,
    "RefuelStation": 910,
    "RepairStation": 910,
@@ -4756,7 +4829,8 @@
    "SandbagWall": 446,
    "TallHBlock": 1279,
    "TankTrap": 2728,
-   "WoodBase": 446
+   "WoodBase": 446,
+   "HotzoneMagnet": 1516
   },
   "AT mine": {
    "AirRaidShelter": 34,
@@ -4782,7 +4856,6 @@
    "Gate_Ramp": 22,
    "Gate_Right": 18,
    "HBlock_QuadWall": 16,
-   "HotzoneMagnet": 9,
    "Radio": 1,
    "RefuelStation": 6,
    "RepairStation": 6,
@@ -4790,7 +4863,8 @@
    "SandbagWall": 3,
    "TallHBlock": 8,
    "TankTrap": 30,
-   "WoodBase": 3
+   "WoodBase": 3,
+   "HotzoneMagnet": 9
   },
   "C4": {
    "AirRaidShelter": 27,
@@ -4816,7 +4890,6 @@
    "Gate_Ramp": 3,
    "Gate_Right": 2,
    "HBlock_QuadWall": 8,
-   "HotzoneMagnet": 2,
    "Radio": 1,
    "RefuelStation": 1,
    "RepairStation": 1,
@@ -4824,7 +4897,8 @@
    "SandbagWall": 1,
    "TallHBlock": 4,
    "TankTrap": 6,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 2
   },
   "Claymore": {
    "AirRaidShelter": 67,
@@ -4850,7 +4924,6 @@
    "Gate_Ramp": 44,
    "Gate_Right": 36,
    "HBlock_QuadWall": 31,
-   "HotzoneMagnet": 17,
    "Radio": 2,
    "RefuelStation": 11,
    "RepairStation": 11,
@@ -4858,7 +4931,8 @@
    "SandbagWall": 5,
    "TallHBlock": 15,
    "TankTrap": 60,
-   "WoodBase": 5
+   "WoodBase": 5,
+   "HotzoneMagnet": 17
   },
   "IED": {
    "AirRaidShelter": 12,
@@ -4884,15 +4958,15 @@
    "Gate_Ramp": 2,
    "Gate_Right": 1,
    "HBlock_QuadWall": 4,
-   "HotzoneMagnet": 1,
    "Radio": 1,
-   "RefuelStation": 6,
+   "RefuelStation": 1,
    "RepairStation": 1,
    "Shelter": 2,
    "SandbagWall": 1,
    "TallHBlock": 2,
    "TankTrap": 3,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 1
   },
   "M67 frag grenade": {
    "AirRaidShelter": 35,
@@ -4918,7 +4992,6 @@
    "Gate_Ramp": 7,
    "Gate_Right": 6,
    "HBlock_QuadWall": 16,
-   "HotzoneMagnet": 3,
    "Radio": 1,
    "RefuelStation": 1,
    "RepairStation": 1,
@@ -4926,7 +4999,8 @@
    "SandbagWall": 1,
    "TallHBlock": 13,
    "TankTrap": 9,
-   "WoodBase": 1
+   "WoodBase": 1,
+   "HotzoneMagnet": 3
   },
   "Molotov": {
    "AirRaidShelter": 125,
@@ -4952,7 +5026,6 @@
    "Gate_Ramp": 163,
    "Gate_Right": 133,
    "HBlock_QuadWall": 115,
-   "HotzoneMagnet": 63,
    "Radio": 25,
    "RefuelStation": 40,
    "RepairStation": 40,
@@ -4960,7 +5033,8 @@
    "SandbagWall": 19,
    "TallHBlock": 57,
    "TankTrap": 113,
-   "WoodBase": 19
+   "WoodBase": 1,
+   "HotzoneMagnet": 63
   }
  }
 }

@@ -1,0 +1,98 @@
+--- export: UObject / AEB_PlayPerspectiveSound_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_C",
+  "Name": "AEB_PlayPerspectiveSound_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.AEB_PlayPerspectiveSound_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Emotes_Burning_Starting'",
+    "ObjectPath": "/Game/Audio/Events/Player/Emotes/AE_Player_Emotes_Burning_Starting.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_C'Default__AEB_PlayPerspectiveSound_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound.0"
+  },
+  "Properties": {
+    "1pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Emotes_Burning_1p'",
+      "ObjectPath": "/Game/Audio/Player/Emotes/MSS/1p/MSS_Player_Emotes_Burning_1p.0"
+    },
+    "3pSound": {
+      "ObjectName": "MetaSoundSource'MSS_Player_Emote_Burning_3p'",
+      "ObjectPath": "/Game/Audio/Player/Emotes/MSS/3p/MSS_Player_Emote_Burning_3p.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Emote.Burning"
+    }
+  }
+}
+--- export: UObject / AEB_RequestVox_C_0 ---
+{
+  "Type": "AEB_RequestVox_C",
+  "Name": "AEB_RequestVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestVox.AEB_RequestVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Emotes_Burning_Starting'",
+    "ObjectPath": "/Game/Audio/Events/Player/Emotes/AE_Player_Emotes_Burning_Starting.2"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestVox_C'Default__AEB_RequestVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestVox.0"
+  },
+  "Properties": {
+    "VoxRequest": {
+      "LineID": {
+        "TagName": "Audio.Vox.Bark.OnFire"
+      }
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Default"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Emotes_Burning_Starting ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Emotes_Burning_Starting",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Emotes/AE_Player_Emotes_Burning_Starting",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Emote.Burn.Start"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Emotes_Burning_Starting:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Emotes/AE_Player_Emotes_Burning_Starting.3"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_C'AE_Player_Emotes_Burning_Starting:AEB_PlayPerspectiveSound_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Emotes/AE_Player_Emotes_Burning_Starting.0"
+      },
+      {
+        "ObjectName": "AEB_RequestVox_C'AE_Player_Emotes_Burning_Starting:AEB_RequestVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Emotes/AE_Player_Emotes_Burning_Starting.1"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 40.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Emotes_Burning_Starting'",
+    "ObjectPath": "/Game/Audio/Events/Player/Emotes/AE_Player_Emotes_Burning_Starting.2"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Emote.Burning"
+    }
+  }
+}

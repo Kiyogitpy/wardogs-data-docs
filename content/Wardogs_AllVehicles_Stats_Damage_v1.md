@@ -92,19 +92,10 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 
 ### 3a. [`DT_GlobalDamage_VehicleData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json)
 - **Package:** [`Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json)
-- **Row:** `Meta.Damage.Vehicle`, 10 entries. The 6 empty ones, with no source and no change, are not listed.
-
-| # | Category | Source | Hit location | Change |
-|---|---|---|---|---|
-| 4 | AmmoModifier | Bullet | — | none |
-| 5 | AmmoModifier | AmmoModifier.HollowPoint | — | −40% |
-| 6 | AmmoModifier | AmmoModifier.HollowPoint | — | +40% |
-| 7 | Ricochet | Kinetic.Impact.Ricochet | — | 0% |
-
 
 ### 3b. [`DT_GlobalDamage_VehicleData_ROT_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_02.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_02.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_02.json)
-- **Row:** `Meta.Damage.Vehicle.Air.Rotary.Havoc`, 35 entries. The 4 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Air.Rotary.Havoc`, 39 entries. The 4 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -118,48 +109,52 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 8 | Armor | Explosive.Utility.C4 | — | −15% |
 | 9 | Armor | Explosive.Utility.IED | — | +45% |
 | 10 | Armor | Explosive.Utility.Claymore | — | −75% |
-| 11 | Calibre | Cannon.30mm | — | −35% |
-| 12 | Calibre | Cannon.35x228mm | — | −46% |
-| 13 | Calibre | Explosive.Rocket.72mm | — | −60% |
-| 14 | Calibre | Explosive.Rocket.93mm | — | −30% |
-| 15 | Calibre | Explosive.Rocket.93mm | Vehicle.MainRotor / Vehicle.TailRotor / Vehicle.Tail | −45% |
-| 16 | Calibre | Explosive.Rocket.120x800mm | — | −10% |
-| 17 | Calibre | Explosive.Rocket.84mm | — | +30% |
-| 18 | Calibre | Explosive.Rocket.84mm | Vehicle.MainRotor / Vehicle.TailRotor / Vehicle.Tail | −5% |
-| 19 | Calibre | Explosive.Rocket.120mm | — | +150% |
-| 20 | Calibre | Cannon.20x102mm | — | −75.5% |
-| 21 | Calibre | Explosive.Rocket.122mm | — | −85% |
-| 22 | Calibre | Explosive.Grenade.40mm | — | −30% |
-| 23 | Calibre | Explosive.Rocket.155mm | — | 0% |
-| 26 | Calibre | Explosive.Rocket | Vehicle.TailRotor | +50% |
-| 27 | Calibre | Explosive.Rocket | Vehicle.MainRotor | 0% |
-| 28 | Calibre | Explosive.Rocket | Vehicle.Tail | 0% |
-| 29 | Calibre | Explosive.Rocket | Vehicle.Engine | 0% |
-| 31 | Bone | Bullet | Vehicle.FuelTank | +300% |
-| 32 | Bone | Bullet | Attribute.Gameplay.Health / Attribute.Gameplay.Health.Skids / Attribute.Gameplay.Health.Tail / Vehicle.MainBody / Vehicle.MainRotor / Vehicle.Skids / Vehicle.Tail / Vehicle.TailRotor | −50% |
-| 33 | Calibre | Explosive.Drone | — | +450% |
-| 34 | Calibre | Explosive.Rocket.125mm | — | +150% |
+| 11 | Armor | Molotov | — | −35% |
+| 12 | Calibre | Cannon.30mm | — | −35% |
+| 13 | Calibre | Cannon.35x228mm | — | −46% |
+| 14 | Calibre | Explosive.Rocket.72mm | — | −60% |
+| 15 | Calibre | Explosive.Rocket.93mm | — | −30% |
+| 16 | Calibre | Explosive.Rocket.93mm | Vehicle.MainRotor / Vehicle.TailRotor / Vehicle.Tail | −45% |
+| 17 | Calibre | Explosive.Rocket.120x800mm | — | −10% |
+| 18 | Calibre | Explosive.Rocket.84mm | — | +30% |
+| 19 | Calibre | Explosive.Rocket.84mm | Vehicle.MainRotor / Vehicle.TailRotor / Vehicle.Tail | −5% |
+| 20 | Calibre | Explosive.Rocket.120mm | — | +150% |
+| 21 | Calibre | Cannon.20x102mm | — | −51% |
+| 22 | Calibre | Explosive.Rocket.122mm | — | −85% |
+| 23 | Calibre | Explosive.Rocket.70x1060mm | — | −85% |
+| 24 | Calibre | Explosive.Grenade.40mm | — | −30% |
+| 25 | Calibre | Explosive.Rocket.155mm | — | 0% |
+| 28 | Calibre | Explosive.Rocket | Vehicle.TailRotor | +50% |
+| 29 | Calibre | Explosive.Rocket | Vehicle.MainRotor | 0% |
+| 30 | Calibre | Explosive.Rocket | Vehicle.Tail | 0% |
+| 31 | Calibre | Explosive.Rocket | Vehicle.Engine | 0% |
+| 33 | Bone | Bullet | Vehicle.FuelTank | +300% |
+| 34 | Bone | Bullet | Attribute.Gameplay.Health / Attribute.Gameplay.Health.Skids / Attribute.Gameplay.Health.Tail / Vehicle.MainBody / Vehicle.MainRotor / Vehicle.Skids / Vehicle.Tail / Vehicle.TailRotor | −50% |
+| 35 | Calibre | Explosive.Drone | — | +450% |
+| 36 | Calibre | Explosive.Rocket.125mm | — | +150% |
+| 37 | Armor | Bullet + AmmoModifier.ArmorPiercing | — | +20% |
+| 38 | Armor | Bullet + AmmoModifier.HollowPoint | — | −20% |
 
 
 ### 3c. [`DT_GlobalDamage_VehicleData_ROT_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_03.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_03.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_03.json)
-- **Row:** `Meta.Damage.Vehicle.Air.Rotary.LittleBird`, 33 entries. The 3 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Air.Rotary.LittleBird`, 36 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
 | 1 | Armor | Bullet | — | −92.5% |
 | 2 | Armor | Cannon | — | −30% |
-| 3 | Armor | Cannon.20x102mm | — | −85% |
-| 4 | Armor | Bullet | Attribute.Gameplay.Health / Attribute.Gameplay.Health.Tail / Attribute.Gameplay.Health.Skids | −80% |
-| 5 | Bone | Bullet | Attribute.Gameplay.Health.FuelTank | +200% |
-| 6 | Ricochet | Kinetic.Impact.Ricochet | — | −95% |
-| 7 | Armor | Bullet.308Win | — | −55% |
-| 8 | Calibre | Explosive.Rocket + Explosive.Radius.Inner | — | +400% |
-| 9 | Calibre | Explosive.Grenade + Explosive.Radius.Inner | — | +50% |
-| 10 | Calibre | Explosive.Utility.ATMine | — | +200% |
-| 11 | Armor | Explosive.Utility.C4 | — | 0% |
-| 12 | Armor | Explosive.Utility.IED | — | +25% |
-| 13 | Armor | Explosive.Utility.Claymore | — | −50% |
+| 3 | Armor | Bullet | Attribute.Gameplay.Health / Attribute.Gameplay.Health.Tail / Attribute.Gameplay.Health.Skids | −80% |
+| 4 | Bone | Bullet | Attribute.Gameplay.Health.FuelTank | +200% |
+| 5 | Ricochet | Kinetic.Impact.Ricochet | — | −95% |
+| 6 | Armor | Bullet.308Win | — | −55% |
+| 7 | Calibre | Explosive.Rocket + Explosive.Radius.Inner | — | +400% |
+| 8 | Calibre | Explosive.Grenade + Explosive.Radius.Inner | — | +50% |
+| 9 | Calibre | Explosive.Utility.ATMine | — | +200% |
+| 10 | Armor | Explosive.Utility.C4 | — | 0% |
+| 11 | Armor | Explosive.Utility.IED | — | +25% |
+| 12 | Armor | Explosive.Utility.Claymore | — | −50% |
+| 13 | Armor | Molotov | — | −50% |
 | 14 | Calibre | Cannon.30mm | — | −15% |
 | 15 | Calibre | Cannon.35x228mm | — | −69.5% |
 | 16 | Calibre | Explosive.Grenade.40mm | — | −40% |
@@ -169,19 +164,22 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 20 | Calibre | Explosive.Rocket.93mm | — | −7.5% |
 | 21 | Calibre | Explosive.Rocket.120mm | — | +100% |
 | 22 | Calibre | Explosive.Rocket.122mm | — | −80% |
-| 23 | Calibre | Cannon.20x102mm | — | −10% |
-| 24 | Calibre | Explosive.Rocket.155mm | — | 0% |
-| 27 | Calibre | Explosive.Rocket | Vehicle.Tail / Vehicle.TailRotor | +200% |
-| 28 | Calibre | Explosive.Rocket | Attribute.Gameplay.Health.Rotor.Main / Vehicle.MainRotor | 0% |
-| 29 | Calibre | Explosive.Rocket | Vehicle.Tail / Vehicle.TailRotor | 0% |
-| 30 | Calibre | Explosive.Rocket | Vehicle.Engine | 0% |
-| 31 | Calibre | Explosive.Drone | — | +500% |
-| 32 | Calibre | Explosive.Rocket.125mm | — | +100% |
+| 23 | Calibre | Explosive.Rocket.70x1060mm | — | −80% |
+| 24 | Calibre | Cannon.20x102mm | — | −82.5% |
+| 25 | Calibre | Explosive.Rocket.155mm | — | 0% |
+| 28 | Calibre | Explosive.Rocket | Vehicle.Tail / Vehicle.TailRotor | +200% |
+| 29 | Calibre | Explosive.Rocket | Attribute.Gameplay.Health.Rotor.Main / Vehicle.MainRotor | 0% |
+| 30 | Calibre | Explosive.Rocket | Vehicle.Tail / Vehicle.TailRotor | 0% |
+| 31 | Calibre | Explosive.Rocket | Vehicle.Engine | 0% |
+| 32 | Calibre | Explosive.Drone | — | +500% |
+| 33 | Calibre | Explosive.Rocket.125mm | — | +100% |
+| 34 | Armor | Bullet + AmmoModifier.ArmorPiercing | — | +20% |
+| 35 | Armor | Bullet + AmmoModifier.HollowPoint | — | −20% |
 
 
 ### 3d. [`DT_GlobalDamage_VehicleData_ROT_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_04.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_04.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_04.json)
-- **Row:** `Meta.Damage.Vehicle.Air.Rotary.ROT_04`, 33 entries. The 4 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Air.Rotary.ROT_04`, 37 entries. The 4 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -195,65 +193,72 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 8 | Armor | Explosive.Utility.C4 | — | −35% |
 | 9 | Armor | Explosive.Utility.IED | — | +30% |
 | 10 | Armor | Explosive.Utility.Claymore | — | −75% |
-| 11 | Calibre | Cannon.30mm | — | −15% |
-| 12 | Calibre | Cannon.35x228mm | — | −57.25% |
-| 13 | Calibre | Explosive.Rocket.72mm | — | −32.5% |
-| 14 | Calibre | Explosive.Rocket.120x800mm | — | −55% |
-| 15 | Calibre | Explosive.Rocket.84mm | — | +30% |
-| 16 | Calibre | Explosive.Rocket.93mm | — | −10% |
-| 17 | Calibre | Explosive.Rocket.120mm | — | +150% |
-| 18 | Calibre | Explosive.Grenade.40mm | — | −20% |
-| 19 | Calibre | Explosive.Rocket.122mm | — | −80% |
-| 20 | Calibre | Explosive.Rocket.155mm | — | 0% |
-| 21 | Calibre | Cannon.20x102mm | — | −80% |
-| 24 | Calibre | Explosive.Rocket | Vehicle.TailRotor | +50% |
-| 25 | Calibre | Explosive.Rocket | Vehicle.MainRotor | 0% |
-| 26 | Calibre | Explosive.Rocket | Vehicle.Tail | 0% |
-| 27 | Calibre | Explosive.Rocket | Vehicle.Engine | 0% |
-| 29 | Bone | Bullet | Vehicle.FuelTank | +350% |
-| 30 | Bone | Bullet | Vehicle.MainBody / Vehicle.Skids | −50% |
-| 31 | Calibre | Explosive.Drone | — | +450% |
-| 32 | Calibre | Explosive.Rocket.125mm | — | +150% |
+| 11 | Armor | Molotov | — | −35% |
+| 12 | Calibre | Cannon.30mm | — | −15% |
+| 13 | Calibre | Cannon.35x228mm | — | −57.25% |
+| 14 | Calibre | Explosive.Rocket.72mm | — | −32.5% |
+| 15 | Calibre | Explosive.Rocket.120x800mm | — | −55% |
+| 16 | Calibre | Explosive.Rocket.84mm | — | +30% |
+| 17 | Calibre | Explosive.Rocket.93mm | — | −10% |
+| 18 | Calibre | Explosive.Rocket.120mm | — | +150% |
+| 19 | Calibre | Explosive.Grenade.40mm | — | −20% |
+| 20 | Calibre | Explosive.Rocket.122mm | — | −80% |
+| 21 | Calibre | Explosive.Rocket.70x1060mm | — | −80% |
+| 22 | Calibre | Explosive.Rocket.155mm | — | 0% |
+| 23 | Calibre | Cannon.20x102mm | — | −60% |
+| 26 | Calibre | Explosive.Rocket | Vehicle.TailRotor | +50% |
+| 27 | Calibre | Explosive.Rocket | Vehicle.MainRotor | 0% |
+| 28 | Calibre | Explosive.Rocket | Vehicle.Tail | 0% |
+| 29 | Calibre | Explosive.Rocket | Vehicle.Engine | 0% |
+| 31 | Bone | Bullet | Vehicle.FuelTank | +350% |
+| 32 | Bone | Bullet | Vehicle.MainBody / Vehicle.Skids | −50% |
+| 33 | Calibre | Explosive.Drone | — | +450% |
+| 34 | Calibre | Explosive.Rocket.125mm | — | +150% |
+| 35 | Armor | Bullet + AmmoModifier.ArmorPiercing | — | +20% |
+| 36 | Armor | Bullet + AmmoModifier.HollowPoint | — | −20% |
 
 
 ### 3e. [`DT_GlobalDamage_VehicleData_SPW_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/DataTables/DT_GlobalDamage_VehicleData_SPW_01.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/DataTables/DT_GlobalDamage_VehicleData_SPW_01.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/DataTables/DT_GlobalDamage_VehicleData_SPW_01.json)
-- **Row:** `Meta.Damage.Vehicle.Land.Tracked.Leopard.Spawn`, 32 entries. The 5 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Land.Tracked.Leopard.Spawn`, 35 entries. The 5 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
 | 1 | Armor | Bullet | Vehicle.MainBody / Vehicle.Tracks.Left / Vehicle.Tracks.Right / Vehicle.FuelTank | −100% |
 | 2 | Armor | Bullet | Vehicle.Radar | −95% |
-| 3 | Armor | Cannon | — | −70% |
-| 4 | Ricochet | Kinetic.Impact.Ricochet | — | −95% |
-| 5 | Calibre | Explosive.Rocket + Explosive.Radius.Inner | — | +100% |
-| 6 | Calibre | Explosive.Rocket.155mm | — | 0% |
-| 7 | Calibre | Explosive.Radius.Inner + Explosive.Grenade | — | −80% |
-| 8 | Calibre | Explosive.Utility.ATMine | — | +100% |
-| 9 | Armor | Explosive.Utility.C4 | — | +15% |
-| 10 | Armor | Explosive.Utility.IED | — | +150% |
-| 11 | Armor | Explosive.Utility.Claymore | — | −95% |
-| 14 | Calibre | Explosive.Rocket | Vehicle | 0% |
-| 16 | Bone | Bullet | Attribute.Gameplay.Health.FuelTank | +200% |
-| 17 | Bone | Bullet | Vehicle.FuelTank.Destroyed | −90% |
-| 19 | Calibre | Explosive.Rocket.72mm | — | −30% |
-| 20 | Calibre | Cannon.35x228mm | — | −84% |
-| 21 | Calibre | Explosive.Grenade.40mm | — | +20% |
-| 22 | Calibre | Explosive.Rocket.120x800mm | — | +20% |
-| 23 | Calibre | Explosive.Rocket.84mm | — | +90% |
-| 24 | Calibre | Cannon.30mm | — | −30% |
-| 25 | Calibre | Cannon.20x102mm | — | −84% |
-| 26 | Calibre | Explosive.Rocket.93mm | — | 0% |
-| 27 | Calibre | Explosive.Rocket.120mm | — | −10% |
-| 28 | Calibre | Explosive.Rocket.122mm | — | −55% |
-| 29 | Calibre | Explosive.Rocket.155mm | — | +10% |
-| 30 | Calibre | Explosive.Drone | — | +500% |
-| 31 | Calibre | Explosive.Rocket.125mm | — | −10% |
+| 3 | Armor | Utility.Fists | — | −92.7% |
+| 4 | Armor | Weapon + DamageType.Melee | — | −92.7% |
+| 5 | Armor | Cannon | — | −70% |
+| 6 | Ricochet | Kinetic.Impact.Ricochet | — | −95% |
+| 7 | Calibre | Explosive.Rocket + Explosive.Radius.Inner | — | +100% |
+| 8 | Calibre | Explosive.Radius.Inner + Explosive.Grenade | — | −80% |
+| 9 | Calibre | Explosive.Utility.ATMine | — | +100% |
+| 10 | Armor | Explosive.Utility.C4 | — | +15% |
+| 11 | Armor | Explosive.Utility.IED | — | +150% |
+| 12 | Armor | Explosive.Utility.Claymore | — | −95% |
+| 13 | Armor | Molotov | — | −100% |
+| 16 | Calibre | Explosive.Rocket | Vehicle | 0% |
+| 18 | Bone | Bullet | Attribute.Gameplay.Health.FuelTank | +200% |
+| 19 | Bone | Bullet | Vehicle.FuelTank.Destroyed | −90% |
+| 21 | Calibre | Explosive.Rocket.72mm | — | −30% |
+| 22 | Calibre | Cannon.35x228mm | — | −84% |
+| 23 | Calibre | Explosive.Grenade.40mm | — | +20% |
+| 24 | Calibre | Explosive.Rocket.120x800mm | — | +20% |
+| 25 | Calibre | Explosive.Rocket.84mm | — | +90% |
+| 26 | Calibre | Cannon.30mm | — | −30% |
+| 27 | Calibre | Cannon.20x102mm | — | −84% |
+| 28 | Calibre | Explosive.Rocket.93mm | — | 0% |
+| 29 | Calibre | Explosive.Rocket.120mm | — | −10% |
+| 30 | Calibre | Explosive.Rocket.122mm | — | −55% |
+| 31 | Calibre | Explosive.Rocket.70x1060mm | — | −55% |
+| 32 | Calibre | Explosive.Rocket.155mm | — | +10% |
+| 33 | Calibre | Explosive.Drone | — | +500% |
+| 34 | Calibre | Explosive.Rocket.125mm | — | −10% |
 
 
 ### 3f. [`DT_GlobalDamage_VehicleData_STN_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/DataTables/DT_GlobalDamage_VehicleData_STN_01.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/DataTables/DT_GlobalDamage_VehicleData_STN_01.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/DataTables/DT_GlobalDamage_VehicleData_STN_01.json)
-- **Row:** `Meta.Damage.Vehicle.Stationary.Mistral`, 26 entries. The 4 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Stationary.Mistral`, 28 entries. The 4 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -269,21 +274,23 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 10 | CaliberEffectiveness | Explosive.Rocket.84mm | — | 0% |
 | 11 | CaliberEffectiveness | Explosive.Rocket.93mm | — | 0% |
 | 12 | Calibre | Explosive.Rocket.122mm | — | −70% |
-| 13 | Calibre | Explosive.Rocket.120x800mm | — | +80% |
-| 15 | CaliberEffectiveness | Explosive.Utility | — | 0% |
-| 16 | CaliberEffectiveness | Explosive.Utility.C4 | — | +1500% |
-| 17 | CaliberEffectiveness | Explosive.Utility.IED | — | +150% |
-| 18 | CaliberEffectiveness | Explosive.Grenade | — | 0% |
-| 20 | Calibre | Bullet | — | −85% |
-| 21 | AmmoModifier | AmmoModifier.ArmorPiercing + Bullet | — | +100% |
-| 22 | AmmoModifier | Bullet + AmmoModifier.HollowPoint | — | −50% |
-| 24 | Bone | Vehicle.Land.Tracked | — | +1000 flat |
-| 25 | CaliberEffectiveness | Explosive.Rocket.125mm | — | +50% |
+| 13 | Calibre | Explosive.Rocket.70x1060mm | — | −70% |
+| 14 | Calibre | Explosive.Rocket.120x800mm | — | +80% |
+| 16 | CaliberEffectiveness | Explosive.Utility | — | 0% |
+| 17 | CaliberEffectiveness | Explosive.Utility.C4 | — | +1500% |
+| 18 | CaliberEffectiveness | Explosive.Utility.IED | — | +150% |
+| 19 | CaliberEffectiveness | Explosive.Grenade | — | 0% |
+| 20 | Armor | Molotov | — | −35% |
+| 22 | Calibre | Bullet | — | −85% |
+| 23 | AmmoModifier | AmmoModifier.ArmorPiercing + Bullet | — | +100% |
+| 24 | AmmoModifier | Bullet + AmmoModifier.HollowPoint | — | −50% |
+| 26 | Bone | Vehicle.Land.Tracked | — | +1000 flat |
+| 27 | CaliberEffectiveness | Explosive.Rocket.125mm | — | +50% |
 
 
 ### 3g. [`DT_GlobalDamage_VehicleData_STN_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/DataTables/DT_GlobalDamage_VehicleData_STN_02.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/DataTables/DT_GlobalDamage_VehicleData_STN_02.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_02/Content/DataTables/DT_GlobalDamage_VehicleData_STN_02.json)
-- **Row:** `Meta.Damage.Vehicle.Stationary.Phalanx`, 26 entries. The 4 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Stationary.Phalanx`, 28 entries. The 4 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -299,21 +306,23 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 10 | CaliberEffectiveness | Explosive.Rocket.84mm | — | 0% |
 | 11 | CaliberEffectiveness | Explosive.Rocket.93mm | — | 0% |
 | 12 | Calibre | Explosive.Rocket.122mm | — | −65% |
-| 13 | Calibre | Explosive.Rocket.120x800mm | — | +80% |
-| 15 | CaliberEffectiveness | Explosive.Utility | — | 0% |
-| 16 | CaliberEffectiveness | Explosive.Utility.C4 | — | +700% |
-| 17 | CaliberEffectiveness | Explosive.Utility.IED | — | +2000% |
-| 18 | CaliberEffectiveness | Explosive.Grenade | — | 0% |
-| 20 | Calibre | Bullet | — | −85% |
-| 21 | AmmoModifier | AmmoModifier.ArmorPiercing + Bullet | — | +100% |
-| 22 | AmmoModifier | Bullet + AmmoModifier.HollowPoint | — | −50% |
-| 24 | Bone | Vehicle.Land.Tracked | — | +1000 flat |
-| 25 | CaliberEffectiveness | Explosive.Rocket.125mm | — | −20% |
+| 13 | Calibre | Explosive.Rocket.70x1060mm | — | −65% |
+| 14 | Calibre | Explosive.Rocket.120x800mm | — | +80% |
+| 16 | CaliberEffectiveness | Explosive.Utility | — | 0% |
+| 17 | CaliberEffectiveness | Explosive.Utility.C4 | — | +700% |
+| 18 | CaliberEffectiveness | Explosive.Utility.IED | — | +2000% |
+| 19 | CaliberEffectiveness | Explosive.Grenade | — | 0% |
+| 20 | Armor | Molotov | — | −35% |
+| 22 | Calibre | Bullet | — | −85% |
+| 23 | AmmoModifier | AmmoModifier.ArmorPiercing + Bullet | — | +100% |
+| 24 | AmmoModifier | Bullet + AmmoModifier.HollowPoint | — | −50% |
+| 26 | Bone | Vehicle.Land.Tracked | — | +1000 flat |
+| 27 | CaliberEffectiveness | Explosive.Rocket.125mm | — | −20% |
 
 
 ### 3h. [`DT_GlobalDamage_VehicleData_STN_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/DataTable/DT_GlobalDamage_VehicleData_STN_03.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/DataTable/DT_GlobalDamage_VehicleData_STN_03.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/DataTable/DT_GlobalDamage_VehicleData_STN_03.json)
-- **Row:** `Meta.Damage.Vehicle.Stationary.Mortar`, 24 entries. The 4 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Stationary.Mortar`, 26 entries. The 4 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -328,20 +337,22 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 9 | AmmoModifier | Explosive.Rocket.155mm | — | −80% |
 | 10 | Calibre | Explosive.Rocket.120x800mm | — | +80% |
 | 11 | Calibre | Explosive.Rocket.122mm | — | −65% |
-| 13 | CaliberEffectiveness | Explosive.Utility | — | 0% |
-| 14 | CaliberEffectiveness | Explosive.Utility.C4 | — | +300% |
-| 15 | CaliberEffectiveness | Explosive.Utility.IED | — | +400% |
-| 16 | CaliberEffectiveness | Explosive.Grenade | — | 0% |
-| 18 | Calibre | Bullet | — | −85% |
-| 19 | AmmoModifier | AmmoModifier.ArmorPiercing + Bullet | — | +100% |
-| 20 | AmmoModifier | Bullet + AmmoModifier.HollowPoint | — | −50% |
-| 22 | Bone | Vehicle.Land.Tracked | — | +1000 flat |
-| 23 | CaliberEffectiveness | Explosive.Rocket.125mm | — | −50% |
+| 12 | Calibre | Explosive.Rocket.70x1060mm | — | −65% |
+| 14 | CaliberEffectiveness | Explosive.Utility | — | 0% |
+| 15 | CaliberEffectiveness | Explosive.Utility.C4 | — | +300% |
+| 16 | CaliberEffectiveness | Explosive.Utility.IED | — | +400% |
+| 17 | CaliberEffectiveness | Explosive.Grenade | — | 0% |
+| 18 | Armor | Molotov | — | −35% |
+| 20 | Calibre | Bullet | — | −85% |
+| 21 | AmmoModifier | AmmoModifier.ArmorPiercing + Bullet | — | +100% |
+| 22 | AmmoModifier | Bullet + AmmoModifier.HollowPoint | — | −50% |
+| 24 | Bone | Vehicle.Land.Tracked | — | +1000 flat |
+| 25 | CaliberEffectiveness | Explosive.Rocket.125mm | — | −50% |
 
 
 ### 3i. [`DT_GlobalDamage_VehicleData_STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/DataTables/DT_GlobalDamage_VehicleData_STN_04.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/DataTables/DT_GlobalDamage_VehicleData_STN_04.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/DataTables/DT_GlobalDamage_VehicleData_STN_04.json)
-- **Row:** `Meta.Damage.Vehicle.Stationary.RadioTower`, 27 entries. The 3 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Stationary.RadioTower`, 29 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -355,25 +366,27 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 7 | Armor | Explosive.Utility.C4 | — | 0% |
 | 8 | Armor | Explosive.Utility.IED | — | +150% |
 | 9 | Armor | Explosive.Utility.Claymore | — | −50% |
-| 10 | Calibre | Explosive.Rocket.120mm | — | +250% |
-| 13 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Right.Front | +27.5% |
-| 14 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Rear | +45% |
-| 16 | Bone | Bullet | Attribute.Gameplay.Health.FuelTank | +200% |
-| 17 | Bone | Bullet | Vehicle.Wheel | −50% |
-| 18 | Bone | Bullet | Attribute.Gameplay.Health | −50% |
-| 19 | Calibre | Cannon.35x228mm | — | −70% |
-| 20 | Calibre | Explosive.Rocket.84mm | — | +30% |
-| 21 | Calibre | Explosive.Rocket.93mm | — | −30% |
-| 22 | Calibre | Explosive.Rocket.120x800mm | — | −30% |
-| 23 | Calibre | Cannon.30mm | — | −15% |
-| 24 | Calibre | Cannon.20x102mm | — | −70% |
-| 25 | Calibre | Explosive.Rocket.122mm | — | −40% |
-| 26 | Calibre | Explosive.Rocket.125mm | — | +250% |
+| 10 | Armor | Molotov | — | −35% |
+| 11 | Calibre | Explosive.Rocket.120mm | — | +250% |
+| 14 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Right.Front | +27.5% |
+| 15 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Rear | +45% |
+| 17 | Bone | Bullet | Attribute.Gameplay.Health.FuelTank | +200% |
+| 18 | Bone | Bullet | Vehicle.Wheel | −50% |
+| 19 | Bone | Bullet | Attribute.Gameplay.Health | −50% |
+| 20 | Calibre | Cannon.35x228mm | — | −70% |
+| 21 | Calibre | Explosive.Rocket.84mm | — | +30% |
+| 22 | Calibre | Explosive.Rocket.93mm | — | −30% |
+| 23 | Calibre | Explosive.Rocket.120x800mm | — | −30% |
+| 24 | Calibre | Cannon.30mm | — | −15% |
+| 25 | Calibre | Cannon.20x102mm | — | −70% |
+| 26 | Calibre | Explosive.Rocket.122mm | — | −40% |
+| 27 | Calibre | Explosive.Rocket.70x1060mm | — | −40% |
+| 28 | Calibre | Explosive.Rocket.125mm | — | +250% |
 
 
 ### 3j. [`DT_GlobalDamage_VehicleData_STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/DataTable/DT_GlobalDamage_VehicleData_STN_05.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/DataTable/DT_GlobalDamage_VehicleData_STN_05.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/DataTable/DT_GlobalDamage_VehicleData_STN_05.json)
-- **Row:** `Meta.Damage.Vehicle.Stationary.STN_05`, 24 entries. The 4 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Stationary.STN_05`, 26 entries. The 4 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -388,20 +401,22 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 9 | AmmoModifier | Explosive.Rocket.155mm | — | −80% |
 | 10 | Calibre | Explosive.Rocket.120x800mm | — | +80% |
 | 11 | Calibre | Explosive.Rocket.122mm | — | −65% |
-| 13 | CaliberEffectiveness | Explosive.Utility | — | 0% |
-| 14 | CaliberEffectiveness | Explosive.Utility.C4 | — | +300% |
-| 15 | CaliberEffectiveness | Explosive.Utility.IED | — | +400% |
-| 16 | CaliberEffectiveness | Explosive.Grenade | — | 0% |
-| 18 | Calibre | Bullet | — | −85% |
-| 19 | AmmoModifier | AmmoModifier.ArmorPiercing + Bullet | — | +100% |
-| 20 | AmmoModifier | Bullet + AmmoModifier.HollowPoint | — | −50% |
-| 22 | Bone | Vehicle.Land.Tracked | — | +1000 flat |
-| 23 | CaliberEffectiveness | Explosive.Rocket.125mm | — | −50% |
+| 12 | Calibre | Explosive.Rocket.70x1060mm | — | −65% |
+| 14 | CaliberEffectiveness | Explosive.Utility | — | 0% |
+| 15 | CaliberEffectiveness | Explosive.Utility.C4 | — | +300% |
+| 16 | CaliberEffectiveness | Explosive.Utility.IED | — | +400% |
+| 17 | CaliberEffectiveness | Explosive.Grenade | — | 0% |
+| 18 | Armor | Molotov | — | −35% |
+| 20 | Calibre | Bullet | — | −85% |
+| 21 | AmmoModifier | AmmoModifier.ArmorPiercing + Bullet | — | +100% |
+| 22 | AmmoModifier | Bullet + AmmoModifier.HollowPoint | — | −50% |
+| 24 | Bone | Vehicle.Land.Tracked | — | +1000 flat |
+| 25 | CaliberEffectiveness | Explosive.Rocket.125mm | — | −50% |
 
 
 ### 3k. [`DT_GlobalDamage_VehicleData_WHL_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_01.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_01.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_01.json)
-- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Bobcat`, 20 entries. The 1 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Bobcat`, 23 entries. The 1 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -410,25 +425,28 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 2 | AmmoModifier | Bullet + AmmoModifier.HollowPoint | — | −20% |
 | 3 | Armor | Bullet.308Win | — | −65% |
 | 4 | Ricochet | Kinetic.Impact.Ricochet | — | −95% |
-| 5 | AmmoModifier | Explosive.Grenade.40mm + Explosive.Rocket | — | +250% |
+| 5 | AmmoModifier | Explosive.Grenade.40mm | — | +250% |
 | 6 | Calibre | Explosive.Grenade + Explosive.Radius.Inner | — | 0% |
 | 7 | Armor | Explosive.Utility.IED | — | +150% |
 | 8 | AmmoModifier | Explosive | — | +100% |
 | 9 | Armor | Explosive.Utility.Claymore | — | −50% |
-| 10 | Calibre | Explosive.Utility.ATMine | — | +200% |
-| 11 | Calibre | Cannon.30mm | — | 0% |
-| 12 | Calibre | Cannon.35x228mm | — | −40% |
-| 13 | Calibre | Cannon.20x102mm | — | −75% |
-| 14 | Calibre | Explosive.Rocket.120mm | — | +250% |
-| 16 | Bone | Bullet | Vehicle.FuelTank | 0% |
-| 17 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | +500% |
-| 18 | Calibre | Explosive.Drone | — | +500% |
-| 19 | Calibre | Explosive.Rocket.125mm | — | +250% |
+| 10 | Armor | Molotov | — | −75% |
+| 11 | Calibre | Explosive.Utility.ATMine | — | +200% |
+| 12 | Calibre | Cannon.30mm | — | 0% |
+| 13 | Calibre | Cannon.35x228mm | — | −40% |
+| 14 | Calibre | Cannon.20x102mm | — | −75% |
+| 15 | Calibre | Explosive.Rocket.120mm | — | +250% |
+| 17 | Bone | Bullet | Vehicle.FuelTank | 0% |
+| 18 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | +500% |
+| 19 | Calibre | Explosive.Drone | — | +500% |
+| 20 | Calibre | Explosive.Rocket.125mm | — | +250% |
+| 21 | Calibre | Explosive.Rocket.122mm | — | 0% |
+| 22 | Calibre | Explosive.Rocket.70x1060mm | — | 0% |
 
 
 ### 3l. [`DT_GlobalDamage_VehicleData_WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_02.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_02.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_02.json)
-- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Patriot.Kodiak`, 29 entries. The 3 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Patriot.Kodiak`, 32 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -443,26 +461,29 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 9 | Armor | Explosive.Utility.C4 | — | 0% |
 | 10 | Armor | Explosive.Utility.IED | — | +150% |
 | 11 | Armor | Explosive.Utility.Claymore | — | −50% |
-| 12 | Calibre | Cannon.30mm | — | −50% |
-| 13 | Calibre | Cannon.35x228mm | — | −70% |
-| 14 | Calibre | Explosive.Rocket.120mm | — | +250% |
-| 15 | Calibre | Explosive.Rocket.155mm | — | +250% |
-| 17 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | 0% |
-| 19 | Bone | Bullet | Vehicle.FuelTank | +200% |
-| 20 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | +700% |
-| 21 | Bone | Bullet | Vehicle.MainBody | −50% |
-| 22 | Calibre | Explosive.Grenade.40mm | Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear / Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear | +300% |
-| 23 | Calibre | Explosive.Rocket.93mm | — | 0% |
-| 24 | Calibre | Explosive.Rocket.84mm | — | +30% |
-| 25 | Calibre | Explosive.Rocket.120x800mm | — | +30% |
-| 26 | Calibre | Cannon.20x102mm | — | −82.5% |
-| 27 | Calibre | Explosive.Drone | — | +500% |
-| 28 | Calibre | Explosive.Rocket.125mm | — | +250% |
+| 12 | Armor | Molotov | — | −50% |
+| 13 | Calibre | Cannon.30mm | — | −50% |
+| 14 | Calibre | Cannon.35x228mm | — | −70% |
+| 15 | Calibre | Explosive.Rocket.120mm | — | +250% |
+| 16 | Calibre | Explosive.Rocket.155mm | — | +250% |
+| 18 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | 0% |
+| 20 | Bone | Bullet | Vehicle.FuelTank | +200% |
+| 21 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | +700% |
+| 22 | Bone | Bullet | Vehicle.MainBody | −50% |
+| 23 | Calibre | Explosive.Grenade.40mm | Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear / Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear | +300% |
+| 24 | Calibre | Explosive.Rocket.93mm | — | 0% |
+| 25 | Calibre | Explosive.Rocket.84mm | — | +30% |
+| 26 | Calibre | Explosive.Rocket.120x800mm | — | +30% |
+| 27 | Calibre | Cannon.20x102mm | — | −82.5% |
+| 28 | Calibre | Explosive.Drone | — | +500% |
+| 29 | Calibre | Explosive.Rocket.125mm | — | +250% |
+| 30 | Calibre | Explosive.Rocket.122mm | — | 0% |
+| 31 | Calibre | Explosive.Rocket.70x1060mm | — | 0% |
 
 
 ### 3m. [`DT_GlobalDamage_VehicleData_WHL_05_Humvee`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Humvee.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Humvee.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Humvee.json)
-- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Humvee.Default`, 31 entries. The 3 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Humvee.Default`, 33 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -477,28 +498,30 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 9 | Armor | Explosive.Utility.C4 | — | −20% |
 | 10 | Armor | Explosive.Utility.IED | — | +150% |
 | 11 | Armor | Explosive.Utility.Claymore | — | −75% |
-| 12 | Calibre | Cannon.30mm | — | −70% |
-| 13 | Calibre | Cannon.35x228mm | — | −85% |
-| 14 | Calibre | Explosive.Rocket.120mm | — | +250% |
-| 15 | Calibre | Explosive.Rocket.155mm | — | +250% |
-| 17 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Right.Front | +27.5% |
-| 18 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Rear | +45% |
-| 20 | Bone | Bullet | Vehicle.FuelTank | +400% |
-| 21 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | +500% |
-| 22 | Bone | Bullet | Vehicle.MainBody | −50% |
-| 23 | Calibre | Explosive.Rocket.84mm | — | +30% |
-| 24 | Calibre | Explosive.Rocket.93mm | — | −70% |
-| 25 | Calibre | Explosive.Grenade.40mm | Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear / Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear | +75% |
-| 26 | Calibre | Explosive.Rocket.120x800mm | — | −35% |
-| 27 | Calibre | Cannon.20x102mm | — | −85% |
-| 28 | Calibre | Explosive.Rocket.122mm | — | −55% |
-| 29 | Calibre | Explosive.Drone | — | +350% |
-| 30 | Calibre | Explosive.Rocket.125mm | — | +250% |
+| 12 | Armor | Molotov | — | −70% |
+| 13 | Calibre | Cannon.30mm | — | −70% |
+| 14 | Calibre | Cannon.35x228mm | — | −85% |
+| 15 | Calibre | Explosive.Rocket.120mm | — | +250% |
+| 16 | Calibre | Explosive.Rocket.155mm | — | +250% |
+| 18 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Right.Front | +27.5% |
+| 19 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Rear | +45% |
+| 21 | Bone | Bullet | Vehicle.FuelTank | +400% |
+| 22 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | +500% |
+| 23 | Bone | Bullet | Vehicle.MainBody | −50% |
+| 24 | Calibre | Explosive.Rocket.84mm | — | +30% |
+| 25 | Calibre | Explosive.Rocket.93mm | — | −70% |
+| 26 | Calibre | Explosive.Grenade.40mm | Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear / Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear | +75% |
+| 27 | Calibre | Explosive.Rocket.120x800mm | — | −35% |
+| 28 | Calibre | Cannon.20x102mm | — | −85% |
+| 29 | Calibre | Explosive.Rocket.122mm | — | −55% |
+| 30 | Calibre | Explosive.Rocket.70x1060mm | — | −55% |
+| 31 | Calibre | Explosive.Drone | — | +350% |
+| 32 | Calibre | Explosive.Rocket.125mm | — | +250% |
 
 
 ### 3n. [`DT_GlobalDamage_VehicleData_WHL_05_Minigun`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Minigun.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Minigun.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_Minigun/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_Minigun.json)
-- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Humvee.Minigun`, 31 entries. The 3 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Humvee.Minigun`, 33 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -513,28 +536,30 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 9 | Armor | Explosive.Utility.C4 | — | −52.5% |
 | 10 | Armor | Explosive.Utility.IED | — | +150% |
 | 11 | Armor | Explosive.Utility.Claymore | — | −75% |
-| 12 | Calibre | Cannon.30mm | — | −75% |
-| 13 | Calibre | Cannon.35x228mm | — | −88% |
-| 14 | Calibre | Explosive.Rocket.120mm | — | +250% |
-| 15 | Calibre | Explosive.Rocket.155mm | — | +250% |
-| 17 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Right.Front | +27.5% |
-| 18 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Rear | +45% |
-| 20 | Bone | Bullet | Vehicle.FuelTank | +400% |
-| 21 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | +800% |
-| 22 | Bone | Bullet | Vehicle.MainBody | −50% |
-| 23 | Calibre | Explosive.Rocket.84mm | — | +15% |
-| 24 | Calibre | Explosive.Rocket.93mm | — | −77.5% |
-| 25 | Calibre | Explosive.Grenade.40mm | Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear / Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear | +75% |
-| 26 | Calibre | Explosive.Rocket.120x800mm | — | −35% |
-| 27 | Calibre | Cannon.20x102mm | — | −88% |
-| 28 | Calibre | Explosive.Rocket.122mm | — | −65% |
-| 29 | Calibre | Explosive.Drone | — | +350% |
-| 30 | Calibre | Explosive.Rocket.125mm | — | +250% |
+| 12 | Armor | Molotov | — | −75% |
+| 13 | Calibre | Cannon.30mm | — | −75% |
+| 14 | Calibre | Cannon.35x228mm | — | −88% |
+| 15 | Calibre | Explosive.Rocket.120mm | — | +250% |
+| 16 | Calibre | Explosive.Rocket.155mm | — | +250% |
+| 18 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Right.Front | +27.5% |
+| 19 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Rear | +45% |
+| 21 | Bone | Bullet | Vehicle.FuelTank | +400% |
+| 22 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | +800% |
+| 23 | Bone | Bullet | Vehicle.MainBody | −50% |
+| 24 | Calibre | Explosive.Rocket.84mm | — | +15% |
+| 25 | Calibre | Explosive.Rocket.93mm | — | −77.5% |
+| 26 | Calibre | Explosive.Grenade.40mm | Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear / Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear | +75% |
+| 27 | Calibre | Explosive.Rocket.120x800mm | — | −35% |
+| 28 | Calibre | Cannon.20x102mm | — | −88% |
+| 29 | Calibre | Explosive.Rocket.122mm | — | −65% |
+| 30 | Calibre | Explosive.Rocket.70x1060mm | — | −65% |
+| 31 | Calibre | Explosive.Drone | — | +350% |
+| 32 | Calibre | Explosive.Rocket.125mm | — | +250% |
 
 
 ### 3o. [`DT_GlobalDamage_VehicleData_WHL_05_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_RingTurret/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_RingTurret.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_RingTurret/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_RingTurret.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_05_RingTurret/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_05_RingTurret.json)
-- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Humvee.MachineGun`, 31 entries. The 3 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Humvee.MachineGun`, 33 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -549,28 +574,30 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 9 | Armor | Explosive.Utility.C4 | — | −35% |
 | 10 | Armor | Explosive.Utility.IED | — | +150% |
 | 11 | Armor | Explosive.Utility.Claymore | — | −75% |
-| 12 | Calibre | Cannon.30mm | — | −77.5% |
-| 13 | Calibre | Cannon.35x228mm | — | −86.5% |
-| 14 | Calibre | Explosive.Rocket.120mm | — | +250% |
-| 15 | Calibre | Explosive.Rocket.155mm | — | +250% |
-| 17 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Right.Front | +27.5% |
-| 18 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Rear | +45% |
-| 20 | Bone | Bullet | Vehicle.FuelTank | +400% |
-| 21 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | +650% |
-| 22 | Bone | Bullet | Vehicle.MainBody | −50% |
-| 23 | Calibre | Explosive.Rocket.84mm | — | +20% |
-| 24 | Calibre | Explosive.Rocket.93mm | — | −75% |
-| 25 | Calibre | Explosive.Grenade.40mm | Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear / Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear | +75% |
-| 26 | Calibre | Explosive.Rocket.120x800mm | — | −35% |
-| 27 | Calibre | Cannon.20x102mm | — | −86.5% |
-| 28 | Calibre | Explosive.Rocket.122mm | — | −60% |
-| 29 | Calibre | Explosive.Drone | — | +350% |
-| 30 | Calibre | Explosive.Rocket.125mm | — | +250% |
+| 12 | Armor | Molotov | — | −72.5% |
+| 13 | Calibre | Cannon.30mm | — | −77.5% |
+| 14 | Calibre | Cannon.35x228mm | — | −86.5% |
+| 15 | Calibre | Explosive.Rocket.120mm | — | +250% |
+| 16 | Calibre | Explosive.Rocket.155mm | — | +250% |
+| 18 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Right.Front | +27.5% |
+| 19 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Rear | +45% |
+| 21 | Bone | Bullet | Vehicle.FuelTank | +400% |
+| 22 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | +650% |
+| 23 | Bone | Bullet | Vehicle.MainBody | −50% |
+| 24 | Calibre | Explosive.Rocket.84mm | — | +20% |
+| 25 | Calibre | Explosive.Rocket.93mm | — | −75% |
+| 26 | Calibre | Explosive.Grenade.40mm | Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear / Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear | +75% |
+| 27 | Calibre | Explosive.Rocket.120x800mm | — | −35% |
+| 28 | Calibre | Cannon.20x102mm | — | −86.5% |
+| 29 | Calibre | Explosive.Rocket.122mm | — | −60% |
+| 30 | Calibre | Explosive.Rocket.70x1060mm | — | −60% |
+| 31 | Calibre | Explosive.Drone | — | +350% |
+| 32 | Calibre | Explosive.Rocket.125mm | — | +250% |
 
 
 ### 3p. [`DT_GlobalDamage_VehicleData_WHL_06_DuneBuggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_06_DuneBuggy.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_06_DuneBuggy.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_06_DuneBuggy.json)
-- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.DuneBuggy`, 30 entries. The 3 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.DuneBuggy`, 33 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -585,27 +612,30 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 9 | Armor | Explosive.Utility.C4 | — | 0% |
 | 10 | Armor | Explosive.Utility.IED | — | +150% |
 | 11 | Armor | Explosive.Utility.Claymore | — | −50% |
-| 12 | Calibre | Cannon.30mm | — | −60% |
-| 13 | Calibre | Cannon.35x228mm | — | −65% |
-| 14 | Calibre | Explosive.Rocket.120mm | — | +250% |
-| 15 | Calibre | Explosive.Rocket.155mm | — | +250% |
-| 17 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Right.Front | +27.5% |
-| 18 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Rear | +45% |
-| 20 | Bone | Bullet | Vehicle.FuelTank | +200% |
-| 21 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | +275% |
-| 22 | Bone | Bullet | Vehicle.MainBody | −50% |
-| 23 | Calibre | Explosive.Rocket.84mm | — | +30% |
-| 24 | Calibre | Explosive.Rocket.93mm | — | −45% |
-| 25 | Calibre | Explosive.Grenade.40mm | Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear / Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear | +300% |
-| 26 | Calibre | Explosive.Rocket.120x800mm | — | +30% |
-| 27 | Calibre | Cannon.20x102mm | — | −75% |
-| 28 | Calibre | Explosive.Drone | — | +500% |
-| 29 | Calibre | Explosive.Rocket.125mm | — | +250% |
+| 12 | Armor | Molotov | — | −25% |
+| 13 | Calibre | Cannon.30mm | — | −60% |
+| 14 | Calibre | Cannon.35x228mm | — | −65% |
+| 15 | Calibre | Explosive.Rocket.120mm | — | +250% |
+| 16 | Calibre | Explosive.Rocket.155mm | — | +250% |
+| 18 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Right.Front | +27.5% |
+| 19 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Rear | +45% |
+| 21 | Bone | Bullet | Vehicle.FuelTank | +200% |
+| 22 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear | +275% |
+| 23 | Bone | Bullet | Vehicle.MainBody | −50% |
+| 24 | Calibre | Explosive.Rocket.84mm | — | +30% |
+| 25 | Calibre | Explosive.Rocket.93mm | — | −45% |
+| 26 | Calibre | Explosive.Grenade.40mm | Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Rear / Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Rear | +300% |
+| 27 | Calibre | Explosive.Rocket.120x800mm | — | +30% |
+| 28 | Calibre | Cannon.20x102mm | — | −75% |
+| 29 | Calibre | Explosive.Drone | — | +500% |
+| 30 | Calibre | Explosive.Rocket.125mm | — | +250% |
+| 31 | Calibre | Explosive.Rocket.122mm | — | 0% |
+| 32 | Calibre | Explosive.Rocket.70x1060mm | — | 0% |
 
 
 ### 3q. [`DT_GlobalDamage_VehicleData_WHL_07_Ural`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_07_Ural.json)
 - **Package:** [`Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_07_Ural.uasset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_07_Ural.json)
-- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Ural`, 30 entries. The 3 empty ones, with no source and no change, are not listed.
+- **Row:** `Meta.Damage.Vehicle.Land.Wheeled.Ural`, 32 entries. The 3 empty ones, with no source and no change, are not listed.
 
 | # | Category | Source | Hit location | Change |
 |---|---|---|---|---|
@@ -620,22 +650,24 @@ Each table holds one row, named by its gameplay tag, with a list of damage entri
 | 9 | Armor | Explosive.Utility.C4 | — | −55% |
 | 10 | Armor | Explosive.Utility.IED | — | +50% |
 | 11 | Armor | Explosive.Utility.Claymore | — | −65% |
-| 12 | Calibre | Cannon.30mm | — | −40% |
-| 13 | Calibre | Cannon.35x228mm | — | −87.5% |
-| 14 | Calibre | Explosive.Rocket.120mm | — | +75% |
-| 16 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Right.Front | +27.5% |
-| 17 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Rear | +45% |
-| 19 | Bone | Bullet | Vehicle.FuelTank | +350% |
-| 20 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Middle / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Middle / Vehicle.Wheel.Right.Rear | +350% |
-| 21 | Bone | Bullet | Vehicle.MainBody | −50% |
-| 22 | Calibre | Explosive.Rocket.84mm | — | +30% |
-| 23 | Calibre | Explosive.Rocket.93mm | — | −30% |
-| 24 | Calibre | Explosive.Rocket.120x800mm | — | −30% |
-| 25 | Calibre | Explosive.Grenade.40mm + Explosive.Radius.Inner | — | −30% |
-| 26 | Calibre | Cannon.20x102mm | — | −87.5% |
-| 27 | Calibre | Explosive.Rocket.122mm | — | −55% |
-| 28 | Calibre | Explosive.Drone | — | +500% |
-| 29 | Calibre | Explosive.Rocket.125mm | — | +75% |
+| 12 | Armor | Molotov | — | −65% |
+| 13 | Calibre | Cannon.30mm | — | −40% |
+| 14 | Calibre | Cannon.35x228mm | — | −87.5% |
+| 15 | Calibre | Explosive.Rocket.120mm | — | +75% |
+| 17 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Right.Front | +27.5% |
+| 18 | Calibre | Explosive.Rocket | Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Rear | +45% |
+| 20 | Bone | Bullet | Vehicle.FuelTank | +350% |
+| 21 | Bone | Bullet | Vehicle.Wheel.Left.Front / Vehicle.Wheel.Left.Middle / Vehicle.Wheel.Left.Rear / Vehicle.Wheel.Right.Front / Vehicle.Wheel.Right.Middle / Vehicle.Wheel.Right.Rear | +350% |
+| 22 | Bone | Bullet | Vehicle.MainBody | −50% |
+| 23 | Calibre | Explosive.Rocket.84mm | — | +30% |
+| 24 | Calibre | Explosive.Rocket.93mm | — | −30% |
+| 25 | Calibre | Explosive.Rocket.120x800mm | — | −30% |
+| 26 | Calibre | Explosive.Grenade.40mm + Explosive.Radius.Inner | — | −30% |
+| 27 | Calibre | Cannon.20x102mm | — | −87.5% |
+| 28 | Calibre | Explosive.Rocket.122mm | — | −55% |
+| 29 | Calibre | Explosive.Rocket.70x1060mm | — | −55% |
+| 30 | Calibre | Explosive.Drone | — | +500% |
+| 31 | Calibre | Explosive.Rocket.125mm | — | +75% |
 
 ---
 

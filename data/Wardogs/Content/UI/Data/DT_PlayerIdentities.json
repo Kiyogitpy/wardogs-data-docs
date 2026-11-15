@@ -33,7 +33,8 @@
           {
             "Key": "/Game/UI/Features/Scoreboard/Textures/T_UI_BHlogo_128.T_UI_BHlogo_128",
             "Value": [
-              "UI.Icon.Scoreboard"
+              "UI.Icon.Scoreboard",
+              "UI.Icon.Collection"
             ]
           }
         ]
@@ -86,7 +87,7 @@
       "_aaaapjfdfpekdnohlpcal": [],
       "TaggedIcons": {
         "FallbackIcon": {
-          "AssetPathName": "/Game/UI/Features/Scoreboard/Textures/T_UI_EPTIcon.T_UI_EPTIcon",
+          "AssetPathName": "/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_ETP_Frontend.T_UI_Icon_ETP_Frontend",
           "SubPathString": ""
         },
         "TaggedIcons": [
@@ -94,6 +95,12 @@
             "Key": "/Game/UI/Features/Scoreboard/Textures/T_UI_EPTIcon.T_UI_EPTIcon",
             "Value": [
               "UI.Icon.Scoreboard"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_ETP_Frontend.T_UI_Icon_ETP_Frontend",
+            "Value": [
+              "UI.Icon.Collection"
             ]
           }
         ]
@@ -109,7 +116,7 @@
         "SourceString": "Early Access Supporter",
         "LocalizedString": "Early Access Supporter"
       },
-      "Priority": 3,
+      "Priority": 4,
       "_aaaancbloodmkealjoiop": false,
       "_aaaamkihpmjajnpfjbpfh": "",
       "_aaaaoddiblkfcomabbebl": "EWDPlayerIdentityGrantCondition::Entitlement",
@@ -118,14 +125,20 @@
       ],
       "TaggedIcons": {
         "FallbackIcon": {
-          "AssetPathName": "/Game/UI/Shared/Icons/Frontend/T_UI_Icon_SupporterBadge.T_UI_Icon_SupporterBadge",
+          "AssetPathName": "/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_SupportersBadge_Scoreboard.T_UI_Icon_SupportersBadge_Scoreboard",
           "SubPathString": ""
         },
         "TaggedIcons": [
           {
-            "Key": "/Game/UI/Shared/Icons/Frontend/T_UI_Icon_SupporterBadge.T_UI_Icon_SupporterBadge",
+            "Key": "/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_SupportersBadge_Scoreboard.T_UI_Icon_SupportersBadge_Scoreboard",
             "Value": [
               "UI.Icon.Scoreboard"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_SupportersBadge_Frontend.T_UI_Icon_SupportersBadge_Frontend",
+            "Value": [
+              "UI.Icon.Collection"
             ]
           }
         ]
@@ -134,28 +147,34 @@
         "TagName": "Player.Identity.EASupporter"
       }
     },
-    "Player.Identity.EarlyAdopter": {
+    "Player.Identity.BTP": {
       "DisplayName": {
         "TableId": "/Game/UI/StringTables/STRINGS_PlayerIdentities.STRINGS_PlayerIdentities",
-        "Key": "Player.Identity.EarlyAdopter.DisplayName",
-        "SourceString": "Early Adopter",
-        "LocalizedString": "Early Adopter"
+        "Key": "Player.Identity.BTP.DisplayName",
+        "SourceString": "Bulkhead Testing Partner",
+        "LocalizedString": "Bulkhead Testing Partner"
       },
-      "Priority": 4,
+      "Priority": 3,
       "_aaaancbloodmkealjoiop": false,
       "_aaaamkihpmjajnpfjbpfh": "",
-      "_aaaaoddiblkfcomabbebl": "EWDPlayerIdentityGrantCondition::Entitlement",
+      "_aaaaoddiblkfcomabbebl": "EWDPlayerIdentityGrantCondition::None",
       "_aaaapjfdfpekdnohlpcal": [
-        "Player.Identity.EarlyAdopter"
+        "Player.Identity.BTP"
       ],
       "TaggedIcons": {
         "FallbackIcon": {
-          "AssetPathName": "/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_TwitchBadgeViewer.T_UI_Icon_TwitchBadgeViewer",
+          "AssetPathName": "/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_BTP.T_UI_Icon_BTP",
           "SubPathString": ""
         },
         "TaggedIcons": [
           {
-            "Key": "/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_TwitchBadgeViewer.T_UI_Icon_TwitchBadgeViewer",
+            "Key": "/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_BTP.T_UI_Icon_BTP",
+            "Value": [
+              "UI.Icon.Collection"
+            ]
+          },
+          {
+            "Key": "/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_SupportersBadge_BTP.T_UI_Icon_SupportersBadge_BTP",
             "Value": [
               "UI.Icon.Scoreboard"
             ]
@@ -163,7 +182,7 @@
         ]
       },
       "Tag": {
-        "TagName": "Player.Identity.EarlyAdopter"
+        "TagName": "Player.Identity.BTP"
       }
     }
   }

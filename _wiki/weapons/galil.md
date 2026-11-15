@@ -39,8 +39,8 @@ Figures are for Standard (FMJ) at point blank range, per hit, against a characte
 |---|---|
 | Head | 65.8 |
 | Neck | 49.4 |
-| Upper torso | 27.3 |
-| Middle torso | 27.2 |
+| Upper torso | 30.8 |
+| Middle torso | 28.0 |
 | Upper arm | 15.1 |
 | Thigh | 15.1 |
 
@@ -48,33 +48,33 @@ Figures are for Standard (FMJ) at point blank range, per hit, against a characte
 
 | Armor class | Torso | Head |
 |---|---|---|
-| No armor | 27.3 | 65.8 |
-| Light | 19.1 | 46.1 |
-| Medium | 16.4 | 39.5 |
-| Heavy | 13.6 | 32.9 |
-| Super heavy | 10.9 | 26.3 |
+| No armor | 30.8 | 65.8 |
+| Light | 21.6 | 46.1 |
+| Medium | 18.5 | 39.5 |
+| Heavy | 15.4 | 32.9 |
+| Super heavy | 12.3 | 26.3 |
 
 **Range falloff (upper torso, no armor)**
 
 | Distance | Damage |
 |---|---|
-| 0 m | 27.3 |
-| 50 m | 27.3 |
-| 100 m | 27.3 |
-| 200 m | 27.3 |
-| 300 m | 27.3 |
-| 400 m | 27.3 |
-| 600 m | 19.5 |
-| 800 m | 11.7 |
-| 1000 m | 7.0 |
+| 0 m | 30.8 |
+| 50 m | 30.8 |
+| 100 m | 30.8 |
+| 200 m | 30.8 |
+| 300 m | 30.8 |
+| 400 m | 30.8 |
+| 600 m | 22.1 |
+| 800 m | 13.3 |
+| 1000 m | 7.9 |
 
 **Upper torso, no armor, by ammo type**
 
 | Ammo | Damage per hit |
 |---|---|
-| Standard (FMJ) | 27.3 |
-| Flesh Damage (HP) | 54.5 |
-| Armor Piercing (AP) | 21.8 |
+| Standard (FMJ) | 30.8 |
+| Flesh Damage (HP) | 61.6 |
+| Armor Piercing (AP) | 24.6 |
 
 See [Ammunition](../ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.
 
@@ -87,10 +87,10 @@ Shots and time to kill (TTK) against a character with 100 HP. TTK runs from the 
 | Vest | 10 m | 100 m | 300 m |
 |---|---|---|---|
 | No armor | 4 shots, 0.28 s | 4 shots, 0.28 s | 4 shots, 0.28 s |
-| [Level 1 vest](../equipment/level-1-armor.md) | 6 shots, 0.46 s | 6 shots, 0.46 s | 6 shots, 0.46 s |
-| [Level 2 vest](../equipment/level-2-armor.md) | 7 shots, 0.55 s | 7 shots, 0.55 s | 7 shots, 0.55 s |
-| [Level 3 vest](../equipment/level-3-armor.md) | 8 shots, 0.65 s | 8 shots, 0.65 s | 8 shots, 0.65 s |
-| [Level 4 vest](../equipment/level-4-armor.md) | 10 shots, 0.83 s | 10 shots, 0.83 s | 10 shots, 0.83 s |
+| [Level 1 vest](../equipment/level-1-armor.md) | 5 shots, 0.37 s | 5 shots, 0.37 s | 5 shots, 0.37 s |
+| [Level 2 vest](../equipment/level-2-armor.md) | 6 shots, 0.46 s | 6 shots, 0.46 s | 6 shots, 0.46 s |
+| [Level 3 vest](../equipment/level-3-armor.md) | 7 shots, 0.55 s | 7 shots, 0.55 s | 7 shots, 0.55 s |
+| [Level 4 vest](../equipment/level-4-armor.md) | 9 shots, 0.74 s | 9 shots, 0.74 s | 9 shots, 0.74 s |
 
 **Head hits, Standard (FMJ)**
 
@@ -102,10 +102,10 @@ Shots and time to kill (TTK) against a character with 100 HP. TTK runs from the 
 | Vest | 10 m | 100 m | 300 m |
 |---|---|---|---|
 | No armor | 5 shots, 0.37 s | 5 shots, 0.37 s | 5 shots, 0.37 s |
-| [Level 1 vest](../equipment/level-1-armor.md) | 6 shots, 0.46 s | 6 shots, 0.46 s | 6 shots, 0.46 s |
-| [Level 2 vest](../equipment/level-2-armor.md) | 7 shots, 0.55 s | 7 shots, 0.55 s | 7 shots, 0.55 s |
-| [Level 3 vest](../equipment/level-3-armor.md) | 7 shots, 0.55 s | 7 shots, 0.55 s | 7 shots, 0.55 s |
-| [Level 4 vest](../equipment/level-4-armor.md) | 8 shots, 0.65 s | 8 shots, 0.65 s | 8 shots, 0.65 s |
+| [Level 1 vest](../equipment/level-1-armor.md) | 5 shots, 0.37 s | 5 shots, 0.37 s | 5 shots, 0.37 s |
+| [Level 2 vest](../equipment/level-2-armor.md) | 6 shots, 0.46 s | 6 shots, 0.46 s | 6 shots, 0.46 s |
+| [Level 3 vest](../equipment/level-3-armor.md) | 6 shots, 0.46 s | 6 shots, 0.46 s | 6 shots, 0.46 s |
+| [Level 4 vest](../equipment/level-4-armor.md) | 7 shots, 0.55 s | 7 shots, 0.55 s | 7 shots, 0.55 s |
 
 **Head hits, Armor Piercing (AP)**
 

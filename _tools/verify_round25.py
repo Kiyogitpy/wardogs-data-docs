@@ -6,11 +6,15 @@ weapon_penetration.py. Each check prints PASS or FAIL; exit status is 1 on any F
 Run:  python _tools/verify_round25.py [falloff|locations|penetration]
 """
 import glob
+import hashlib
 import json
 import math
 import os
 import re
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from damage_export_fields import armor_damage_context
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data", "Wardogs")
@@ -45,6 +49,25 @@ def check(name, ok, detail=""):
     if not ok and not refuted:
         FAILS.append(name)
     return ok
+
+
+def current_census_matches(doc, observed):
+    blocks = re.findall(r"<!-- current-round25-census -->\s*```json\s*(.*?)\s*```\s*<!-- /current-round25-census -->", doc, re.S)
+    if len(blocks) != 1:
+        return False
+    def unique_object(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError("Duplicate census key")
+            result[key] = value
+        return result
+    try:
+        documented = json.loads(blocks[0], object_pairs_hook=unique_object)
+    except ValueError:
+        return False
+    return (json.dumps(documented, sort_keys=True) == json.dumps(observed, sort_keys=True)
+            and documented.get("build") == "CL533731")
 
 
 def load_json(rel):
@@ -460,7 +483,7 @@ def armor_items():
                 st = pr.get("DurabilityStagesSetupData") or []
                 out[os.path.basename(p)[:-5]] = {
                     "path": os.path.relpath(p, ROOT),
-                    "tag": tg(pr.get("DamageContextTag")),
+                    "tag": tg(armor_damage_context(pr)),
                     "covered": [tg(x).replace(HIT, "") for x in pr.get("CoveredHitLocations", [])],
                     "stages": [s.get("DamagePercentageReduction") for s in st],
                     "keys": sorted(pr.keys()),
@@ -723,18 +746,22 @@ def run_locations():
                 if abs(a["damage_raw"][loc]["None"] - b["damage_raw"]["location"][loc]) > 1e-9:
                     mism += 1
     check("G round 24 Torso.Upper, Head and four unarmored location cells reproduced for all rows", mism == 0, "%d mismatches" % mism)
-    # numbers quoted in docs/evidence/round25-armor-coverage.md
+    # Current amendment examples; the report retains its historical baseline separately.
     def v1(w, a, l, c):
         return round(store[(w, a, l, c)][0], 1)
     quoted = [("M4", "FMJ", "Neck", "None", 49.4), ("M4", "FMJ", "Neck", "Heavy", 24.7), ("M4", "FMJ", "Neck", "Tank", 22.2),
-              ("M4", "FMJ", "Neck", "SuperHeavy", 19.7), ("M4", "FMJ", "Torso.Middle", "None", 27.2), ("M4", "FMJ", "Torso.Middle", "Light", 19.0),
-              ("M4", "FMJ", "Torso.Middle", "Medium", 16.3), ("M4", "FMJ", "Torso.Middle", "Heavy", 13.6), ("M4", "FMJ", "Torso.Middle", "SuperHeavy", 10.9),
+              ("M4", "FMJ", "Neck", "SuperHeavy", 19.7), ("M4", "FMJ", "Torso.Middle", "None", 28.0), ("M4", "FMJ", "Torso.Middle", "Light", 19.6),
+              ("M4", "FMJ", "Torso.Middle", "Medium", 16.8), ("M4", "FMJ", "Torso.Middle", "Heavy", 14.0), ("M4", "FMJ", "Torso.Middle", "SuperHeavy", 11.2),
               ("M4", "FMJ", "Pelvis", "None", 25.2), ("M4", "FMJ", "Pelvis", "SuperHeavy", 10.1), ("M4", "FMJ", "Arm.Upper", "None", 15.1),
               ("M4", "FMJ", "Arm.Upper", "SuperHeavy", 6.0), ("SR_04", "HollowPoint", "Neck", "None", 486.1), ("SR_04", "HollowPoint", "Neck", "SuperHeavy", 7.0),
               ("SR_04", "HollowPoint", "Neck", "Tank", 15.3), ("SR_04", "HollowPoint", "Neck", "Heavy", 19.7), ("M4", "ArmorPiercing", "Neck", "None", 39.5),
               ("M4", "ArmorPiercing", "Neck", "Heavy", 27.6), ("M4", "ArmorPiercing", "Neck", "SuperHeavy", 25.3)]
     qbad = [(q, v1(*q[:4])) for q in quoted if abs(v1(*q[:4]) - q[4]) > 1e-9]
-    check("G doc quoted values (%d) reproduce" % len(quoted), not qbad, str(qbad))
+    check("G current doc examples (%d) reproduce" % len(quoted), not qbad, str(qbad))
+    doc = open(os.path.join(ROOT, "docs/evidence/round25-armor-coverage.md"), encoding="utf-8").read()
+    observed = {"build": "CL533731", "examples": quoted,
+                "bone_source_sha256": hashlib.sha256(open(os.path.join(DATA, "Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_BoneDamageModifiers.json"), "rb").read()).hexdigest()}
+    check("G current documented example set and source identity agree", current_census_matches(doc, observed))
     top = sorted(((store[(w, a, "Neck", "None")][0] - min(v[0] for k, v in store.items() if k[:3] == (w, a, "Neck")), w, a)
                   for (w, a, l, c) in store if l == "Neck" and c == "None"), reverse=True)[:3]
     print("   largest absolute Neck drops (unarmored minus best armor):", [("%.2f" % t[0], t[1], t[2]) for t in top])
@@ -957,6 +984,7 @@ def run_penetration():
     # other data claims in the evidence doc
     n_over = nulls = 0
     names_c = {}
+    cohort = []
     for root, _, fs in os.walk(DATA):
         for fn in fs:
             if not fn.endswith(".json"):
@@ -965,17 +993,34 @@ def run_penetration():
             if "PhysicalMaterialOverride" not in txt:
                 continue
             n_over += 1
+            path = os.path.join(root, fn)
+            cohort.append((os.path.relpath(path, DATA).replace("\\", "/"),
+                           hashlib.sha256(open(path, "rb").read()).hexdigest()))
             for m in re.finditer(r'"PhysicalMaterialOverride":\s*(null|\{[^}]*\})', txt):
                 if m.group(1) == "null":
                     nulls += 1
                 else:
                     nm = re.search(r"(PM_\w+)", m.group(1)).group(1)
                     names_c[nm] = names_c.get(nm, 0) + 1
-    check("H doc claim: 156 files with PhysicalMaterialOverride, 9076 null, 125 named (Metal 90, Concrete 24, Plaster 9, Brick 1, Glass 1)",
-          (n_over, nulls) == (156, 9076) and names_c == {"PM_Metal": 90, "PM_Concrete": 24, "PM_Plaster": 9, "PM_Brick": 1, "PM_Glass": 1}, str((n_over, nulls, names_c)))
     ents = dmg_table("DT_GlobalDamage_InfantryData.json")["Meta.Damage.Infantry"]["DamageModificationEntries"]
     hits = [i for i, e in enumerate(ents) if "Kinetic.Impact.Ricochet" in json.dumps(e) or "Kinetic.Impact.Penetration" in json.dumps(e)]
-    check("H doc claim: 0 of 146 infantry entries key on Kinetic.Impact.Ricochet/.Penetration", len(ents) == 146 and not hits, "%d entries, %d matching" % (len(ents), len(hits)))
+    table_dir = os.path.join(DATA, "Content/GameMechanics/DamageSystem/DamageDataTables")
+    def source_sha(name):
+        with open(os.path.join(table_dir, name), "rb") as f:
+            return hashlib.sha256(f.read()).hexdigest()
+    observed = {
+        "build": "CL533731", "physical_material_files": n_over,
+        "physical_material_nulls": nulls, "physical_material_named": names_c,
+        "physical_material_cohort_sha256": hashlib.sha256(json.dumps(sorted(cohort), separators=(",", ":")).encode()).hexdigest(),
+        "infantry_entries": len(ents), "infantry_history_tag_entries": len(hits),
+        "infantry_sha256": source_sha("DT_GlobalDamage_InfantryData.json"),
+        "generic_vehicle_sha256": source_sha("DT_GlobalDamage_VehicleData.json"),
+        "generic_vehicle_rows": len(dmg_table("DT_GlobalDamage_VehicleData.json")),
+    }
+    with open(os.path.join(ROOT, "docs/evidence/round25-ricochet-penetration.md"), encoding="utf-8") as f:
+        doc = f.read()
+    check("H current documented census and source pins equal raw export", current_census_matches(doc, observed), str(observed))
+    check("H current infantry has no history-tag entries; generic vehicle has zero rows", not hits and observed["generic_vehicle_rows"] == 0)
     pm = glob.glob(os.path.join(DATA, "**/PM_*.json"), recursive=True)
     print("   PM_*.json files in data/:", [os.path.basename(x) for x in pm])
     jp = pj["projectiles"]
