@@ -8,6 +8,8 @@ every `_tools` script is [`_tools/pipeline_registry.json`](../_tools/pipeline_re
 
 ## Before a new season
 
+For the current CL533731 snapshot and the separate S2→S3 comparison, see [the S3 update record](SEASON3_UPDATE.md). The original `season_diff.py` commands below continue to reproduce the historical S1→S2 dataset; they do not generate the new comparison.
+
 1. Run `python -I _tools/update_pipeline.py preflight`. It must exit 0. Exit 5 names each missing input. It also checks
    that the Season 1 and Season 2 exports `season_diff.py` compares (`season1_export`, `season2_export`) each hold
    [`Wardogs/Content`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content).

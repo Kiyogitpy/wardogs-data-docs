@@ -137,6 +137,10 @@
         "ObjectPath": "/Crowbar/Crowbar.2"
       },
       {
+        "ObjectName": "WDGameFeatureActions_AddWorldInteractableContextToActor'Crowbar:WDGameFeatureActions_AddWorldInteractableContextToActor_4'",
+        "ObjectPath": "/Crowbar/Crowbar.6"
+      },
+      {
         "ObjectName": "WDGameFeatureActions_AddWorldInteractableContextToActor'Crowbar:WDGameFeatureActions_AddWorldInteractableContextToActor_1'",
         "ObjectPath": "/Crowbar/Crowbar.3"
       }
@@ -265,12 +269,12 @@
   "Properties": {
     "ContextsToAdd": [
       {
-        "AssetPathName": "/Crowbar/Blueprints/Interaction/WIC_InteractionContext_ForceUnlockVehicle.WIC_InteractionContext_ForceUnlockVehicle_C",
+        "AssetPathName": "/Crowbar/Blueprints/Interaction/WIC_InteractionContext_ForceOpenSupplyCrate.WIC_InteractionContext_ForceOpenSupplyCrate_C",
         "SubPathString": ""
       }
     ],
     "ClassToAddContextsTo": {
-      "AssetPathName": "/Script/Mechanized.BHBaseVehiclePawn",
+      "AssetPathName": "/Script/WDGame.WDVehicleSupplyCrate",
       "SubPathString": ""
     }
   }
@@ -317,6 +321,29 @@
     ],
     "ClassToAddContextsTo": {
       "AssetPathName": "/Buildables/Data/Buildables/HBlock_Gate_6x2/B_Door_Gate_Left.B_Door_Gate_Left_C",
+      "SubPathString": ""
+    }
+  }
+}
+--- export: UObject / WDGameFeatureActions_AddWorldInteractableContextToActor_4 ---
+{
+  "Type": "WDGameFeatureActions_AddWorldInteractableContextToActor",
+  "Name": "WDGameFeatureActions_AddWorldInteractableContextToActor_4",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureActions_AddWorldInteractableContextToActor'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Crowbar'",
+    "ObjectPath": "/Crowbar/Crowbar.1"
+  },
+  "Properties": {
+    "ContextsToAdd": [
+      {
+        "AssetPathName": "/Crowbar/Blueprints/Interaction/WIC_InteractionContext_ForceUnlockVehicle.WIC_InteractionContext_ForceUnlockVehicle_C",
+        "SubPathString": ""
+      }
+    ],
+    "ClassToAddContextsTo": {
+      "AssetPathName": "/Script/Mechanized.BHBaseVehiclePawn",
       "SubPathString": ""
     }
   }

@@ -1,0 +1,59 @@
+--- export: UObject / GameFeatureAction_AddComponents_0 ---
+{
+  "Type": "GameFeatureAction_AddComponents",
+  "Name": "GameFeatureAction_AddComponents_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_AddComponents'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'WDSteamSDR'",
+    "ObjectPath": "/WDSteamSDR/WDSteamSDR.1"
+  },
+  "Properties": {
+    "ComponentList": [
+      {
+        "ActorClass": {
+          "AssetPathName": "/Script/WDGame.WDPlayerController",
+          "SubPathString": ""
+        },
+        "ComponentClass": {
+          "AssetPathName": "/Script/WDSteamSDRRuntime.WDSteamRelayTicketComponent",
+          "SubPathString": ""
+        },
+        "bClientComponent": true,
+        "bServerComponent": true,
+        "AdditionFlags": 0
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / WDSteamSDR ---
+{
+  "Type": "GameFeatureData",
+  "Name": "WDSteamSDR",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/WDSteamSDR/WDSteamSDR",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "WDGameFeatureAction_SteamSDR'WDSteamSDR:WDGameFeatureAction_SteamSDR_0'",
+        "ObjectPath": "/WDSteamSDR/WDSteamSDR.2"
+      },
+      {
+        "ObjectName": "GameFeatureAction_AddComponents'WDSteamSDR:GameFeatureAction_AddComponents_0'",
+        "ObjectPath": "/WDSteamSDR/WDSteamSDR.0"
+      }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_SteamSDR_0 ---
+{
+  "Type": "WDGameFeatureAction_SteamSDR",
+  "Name": "WDGameFeatureAction_SteamSDR_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_SteamSDR'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'WDSteamSDR'",
+    "ObjectPath": "/WDSteamSDR/WDSteamSDR.1"
+  }
+}

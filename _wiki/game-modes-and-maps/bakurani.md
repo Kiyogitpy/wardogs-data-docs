@@ -117,6 +117,8 @@ The heights are read from the game's ground pieces, which are 1020 m wide, so th
 
 ## Water height
 
+The image and heights in this section are the historical CL516586 decode. Current hotfix grid-field associations are unresolved; these are not verified CL533731 water heights. See [the evidence boundary](../../content/Wardogs_Environment_v2.md#13b-height-grids).
+
 ![Bakurani water surface height]({{ '/assets/img/maps/bakurani-water-height.png' | relative_url }})
 
 *Height of the water surface in the 23 river and lake sections of the map. Dry ground is dark. The white box is the play box. The map is drawn the same way as the minimap, with +Y running down.*

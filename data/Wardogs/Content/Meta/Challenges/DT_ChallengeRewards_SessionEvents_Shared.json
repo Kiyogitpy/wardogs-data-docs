@@ -1343,9 +1343,6 @@
                             "TagName": "Challenges.Context.PrecisionArtilleryStrikeKill"
                           },
                           {
-                            "TagName": "Challenges.Context.AirVehicleKill"
-                          },
-                          {
                             "TagName": "Challenges.Context.ExplosiveKill"
                           },
                           {
@@ -1358,15 +1355,14 @@
                           4,
                           1,
                           1,
-                          5,
+                          4,
                           0,
                           1,
                           2,
-                          3,
-                          4
+                          3
                         ],
                         "UserDescription": "",
-                        "AutoDescription": " ANY(  ANY( Challenges.Context.FriendlyKill, Challenges.Context.PrecisionArtilleryStrikeKill, Challenges.Context.AirVehicleKill, Challenges.Context.ExplosiveKill, Challenges.Context.SniperKill ) )"
+                        "AutoDescription": " ANY(  ANY( Challenges.Context.FriendlyKill, Challenges.Context.PrecisionArtilleryStrikeKill, Challenges.Context.ExplosiveKill, Challenges.Context.SniperKill ) )"
                       },
                       "Variable": "EmptyFactor"
                     }
@@ -1384,7 +1380,30 @@
                 "Key": "KillStreakValue",
                 "Value": {
                   "DefaultOption": "KillStreakValue",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.AirVehicleKill"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          4,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY(  ANY( Challenges.Context.AirVehicleKill ) )"
+                      },
+                      "Variable": "AirKillStreakFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -1964,6 +1983,22 @@
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
                   "LiteralValue": 450.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "AirKillStreakFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 10.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -9314,7 +9349,7 @@
                 "Key": "BaseReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 1700.0,
+                  "LiteralValue": 1600.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -14622,7 +14657,7 @@
                 "Key": "BaseReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 1950.0,
+                  "LiteralValue": 1700.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -18603,7 +18638,7 @@
                 "Key": "BaseReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 3000.0,
+                  "LiteralValue": 2620.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -30872,7 +30907,7 @@
                 "Key": "BaseReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 7000.0,
+                  "LiteralValue": 6500.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -60598,7 +60633,7 @@
                 "Key": "BaseReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 650.0,
+                  "LiteralValue": 1300.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -61804,7 +61839,7 @@
                 "Key": "BaseReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 650.0,
+                  "LiteralValue": 1300.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -63010,7 +63045,7 @@
                 "Key": "BaseReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 1200.0,
+                  "LiteralValue": 2400.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -64216,7 +64251,7 @@
                 "Key": "BaseReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 650.0,
+                  "LiteralValue": 1300.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -115162,7 +115197,7 @@
                 "Key": "BaseReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 650.0,
+                  "LiteralValue": 1300.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -116190,7 +116225,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -116824,6 +116880,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -117659,7 +117731,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -118293,6 +118386,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -119128,7 +119237,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -119661,7 +119791,7 @@
                 "Key": "EngineReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 425.0,
+                  "LiteralValue": 400.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -119725,7 +119855,7 @@
                 "Key": "TiresReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 175.0,
+                  "LiteralValue": 150.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -119762,6 +119892,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -120597,7 +120743,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -121231,6 +121398,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -122066,7 +122249,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -122700,6 +122904,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -123535,7 +123755,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -124169,6 +124410,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -125004,7 +125261,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -125537,7 +125815,7 @@
                 "Key": "EngineReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 500.0,
+                  "LiteralValue": 425.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -125601,7 +125879,7 @@
                 "Key": "TiresReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 200.0,
+                  "LiteralValue": 175.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -125638,6 +125916,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -126473,7 +126767,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -127091,6 +127406,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -127910,7 +128241,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -128528,6 +128880,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -129347,7 +129715,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -129864,7 +130253,7 @@
                 "Key": "EngineReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 750.0,
+                  "LiteralValue": 650.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -129928,7 +130317,7 @@
                 "Key": "RotorReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 750.0,
+                  "LiteralValue": 650.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -129965,6 +130354,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -130784,7 +131189,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -131402,6 +131828,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -132221,7 +132663,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -132839,6 +133302,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -133658,7 +134137,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -134276,6 +134776,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -135095,7 +135611,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -135713,6 +136250,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -136532,7 +137085,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -137150,6 +137724,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -137969,7 +138559,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -138587,6 +139198,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -139406,7 +140033,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -140024,6 +140672,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -140843,7 +141507,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -141461,6 +142146,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -142280,7 +142981,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -142797,7 +143519,7 @@
                 "Key": "EngineReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 1750.0,
+                  "LiteralValue": 1625.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -142861,7 +143583,7 @@
                 "Key": "RotorReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 1750.0,
+                  "LiteralValue": 1625.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -142898,6 +143620,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -143717,7 +144455,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -144371,6 +145130,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -145145,7 +145920,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -145799,6 +146595,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -146573,7 +147385,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -147227,6 +148060,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -148001,7 +148850,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -148655,6 +149525,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -149429,7 +150315,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -150047,6 +150954,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -150866,7 +151789,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -151484,6 +152428,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -152303,7 +153263,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -152921,6 +153902,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -153740,7 +154737,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -154354,6 +155372,22 @@
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
                   "LiteralValue": 400.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -155177,7 +156211,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -155811,6 +156866,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -156646,7 +157717,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -157280,6 +158372,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -158115,7 +159223,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -158749,6 +159878,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -159584,7 +160729,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -160218,6 +161384,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -161053,7 +162235,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -161687,6 +162890,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -162522,7 +163741,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -163156,6 +164396,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -163991,7 +165247,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -164625,6 +165902,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -165460,7 +166753,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -166094,6 +167408,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -166929,7 +168259,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -167563,6 +168914,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -168398,7 +169765,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -169032,6 +170420,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -169867,7 +171271,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -170501,6 +171926,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -171336,7 +172777,28 @@
                 "Key": "LastVictimCount",
                 "Value": {
                   "DefaultOption": "LastVictimCount",
-                  "Options": []
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.Target.Friendly"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          1,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ANY( Challenges.Context.Target.Friendly )"
+                      },
+                      "Variable": "EmptyFactor"
+                    }
+                  ]
                 }
               },
               {
@@ -171970,6 +173432,22 @@
                   "ScalingValueInput": "DamageFraction",
                   "ScalingValueCurveTag": {
                     "TagName": "LiveCurves.Challenges.SessionEvents.DestroyVehicleAssist.DamageFraction"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "EmptyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
                   },
                   "TableRowValue": {
                     "DataTable": null,
@@ -178737,7 +180215,7 @@
                 "Key": "LastVictimCountMax",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 4.0,
+                  "LiteralValue": 2.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -178753,7 +180231,7 @@
                 "Key": "LastVictimReductionMultiplier",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 0.24,
+                  "LiteralValue": 0.5,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -179001,7 +180479,7 @@
                 "Key": "LastVictimCountMax",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 4.0,
+                  "LiteralValue": 2.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -179017,7 +180495,7 @@
                 "Key": "LastVictimReductionModifier",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 0.24,
+                  "LiteralValue": 0.5,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -196557,7 +198035,7 @@
           },
           "Value": {
             "DefaultExpression": {
-              "ExpressionString": "(BaseReward + (clamp(CrateStreak - 1, 0, CrateStreakMax) * CrateStreakValue))  * TargetZoneModifier",
+              "ExpressionString": "(BaseReward + (clamp(CrateStreak - 1, 0, CrateStreakMax) * CrateStreakValue))  * TargetZoneModifier * InFriendlyFOB",
               "ExpressionTableRow": {
                 "DataTable": null,
                 "RowName": "None"
@@ -196613,6 +198091,14 @@
                   {
                     "Op": "EWDRewardCalculatorOp::Mul",
                     "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 5
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
                   }
                 ],
                 "InstructionMetadata": [
@@ -196663,6 +198149,14 @@
                   {
                     "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
                     "ResultDescription": "((BaseReward + (clamp((CrateStreak - 1.0), 0.0, CrateStreakMax) * CrateStreakValue)) * TargetZoneModifier)"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(((BaseReward + (clamp((CrateStreak - 1.0), 0.0, CrateStreakMax) * CrateStreakValue)) * TargetZoneModifier) * InFriendlyFOB)"
                   }
                 ],
                 "Literals": [
@@ -196674,7 +198168,8 @@
                   "CrateStreak",
                   "CrateStreakMax",
                   "CrateStreakValue",
-                  "TargetZoneModifier"
+                  "TargetZoneModifier",
+                  "InFriendlyFOB"
                 ],
                 "VariableIndexMap": [
                   {
@@ -196696,6 +198191,10 @@
                   {
                     "Key": "TargetZoneModifier",
                     "Value": 4
+                  },
+                  {
+                    "Key": "InFriendlyFOB",
+                    "Value": 5
                   }
                 ]
               }
@@ -196959,6 +198458,42 @@
                     }
                   ]
                 }
+              },
+              {
+                "Key": "InFriendlyFOB",
+                "Value": {
+                  "DefaultOption": "DefaultFactor",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "ID.Item.VehicleSupplyCrate.Pallet"
+                          },
+                          {
+                            "TagName": "Challenges.Context.InFriendlyFOB"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          5,
+                          2,
+                          1,
+                          1,
+                          0,
+                          3,
+                          1,
+                          1
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL(  ANY( ID.Item.VehicleSupplyCrate.Pallet ),  NONE( Challenges.Context.InFriendlyFOB ) )"
+                      },
+                      "Variable": "FOBPenaltyFactor"
+                    }
+                  ]
+                }
               }
             ],
             "Variables": [
@@ -197158,7 +198693,7 @@
                 "Key": "CrateStreakValue",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 50.0,
+                  "LiteralValue": 25.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -197185,6 +198720,38 @@
                     "RowName": "None"
                   }
                 }
+              },
+              {
+                "Key": "DefaultFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 1.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "FOBPenaltyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.25,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
               }
             ]
           }
@@ -197195,7 +198762,7 @@
           },
           "Value": {
             "DefaultExpression": {
-              "ExpressionString": "((BaseReward + (clamp(CrateStreak - 1, 0, CrateStreakMax) * CrateStreakValue)) * TargetZoneModifier) * SupplyCrateValue",
+              "ExpressionString": "((BaseReward + (clamp(CrateStreak - 1, 0, CrateStreakMax) * CrateStreakValue)) * TargetZoneModifier * InFriendlyFOB) * SupplyCrateValue",
               "ExpressionTableRow": {
                 "DataTable": null,
                 "RowName": "None"
@@ -197259,6 +198826,14 @@
                   {
                     "Op": "EWDRewardCalculatorOp::Mul",
                     "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 6
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Mul",
+                    "ValueIndex": -1
                   }
                 ],
                 "InstructionMetadata": [
@@ -197316,7 +198891,15 @@
                   },
                   {
                     "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
-                    "ResultDescription": "(((BaseReward + (clamp((CrateStreak - 1.0), 0.0, CrateStreakMax) * CrateStreakValue)) * TargetZoneModifier) * SupplyCrateValue)"
+                    "ResultDescription": "(((BaseReward + (clamp((CrateStreak - 1.0), 0.0, CrateStreakMax) * CrateStreakValue)) * TargetZoneModifier) * InFriendlyFOB)"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "((((BaseReward + (clamp((CrateStreak - 1.0), 0.0, CrateStreakMax) * CrateStreakValue)) * TargetZoneModifier) * InFriendlyFOB) * SupplyCrateValue)"
                   }
                 ],
                 "Literals": [
@@ -197329,6 +198912,7 @@
                   "CrateStreakMax",
                   "CrateStreakValue",
                   "TargetZoneModifier",
+                  "InFriendlyFOB",
                   "SupplyCrateValue"
                 ],
                 "VariableIndexMap": [
@@ -197353,8 +198937,12 @@
                     "Value": 4
                   },
                   {
-                    "Key": "SupplyCrateValue",
+                    "Key": "InFriendlyFOB",
                     "Value": 5
+                  },
+                  {
+                    "Key": "SupplyCrateValue",
+                    "Value": 6
                   }
                 ]
               }
@@ -197812,6 +199400,42 @@
                     }
                   ]
                 }
+              },
+              {
+                "Key": "InFriendlyFOB",
+                "Value": {
+                  "DefaultOption": "DefaultFactor",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "ID.Item.VehicleSupplyCrate.Pallet"
+                          },
+                          {
+                            "TagName": "Challenges.Context.InFriendlyFOB"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          5,
+                          2,
+                          1,
+                          1,
+                          0,
+                          3,
+                          1,
+                          1
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL(  ANY( ID.Item.VehicleSupplyCrate.Pallet ),  NONE( Challenges.Context.InFriendlyFOB ) )"
+                      },
+                      "Variable": "FOBPenaltyFactor"
+                    }
+                  ]
+                }
               }
             ],
             "Variables": [
@@ -197899,7 +199523,7 @@
                 "Key": "LargeCrateReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 300.0,
+                  "LiteralValue": 200.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -197931,7 +199555,7 @@
                 "Key": "PalletReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 400.0,
+                  "LiteralValue": 300.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -197947,7 +199571,7 @@
                 "Key": "ArmouredLargeCrateReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 300.0,
+                  "LiteralValue": 200.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -197979,7 +199603,7 @@
                 "Key": "GroundArmouredLargeCrateReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 400.0,
+                  "LiteralValue": 250.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -197995,7 +199619,7 @@
                 "Key": "GroundLargeCrateReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 400.0,
+                  "LiteralValue": 250.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -198043,7 +199667,7 @@
                 "Key": "GroundPalletReward",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 500.0,
+                  "LiteralValue": 400.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -198123,7 +199747,7 @@
                 "Key": "CrateStreakValue",
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
-                  "LiteralValue": 25.0,
+                  "LiteralValue": 10.0,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -198140,6 +199764,22 @@
                 "Value": {
                   "VariableType": "EWDRewardCalculatorVariableType::Literal",
                   "LiteralValue": 50.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "FOBPenaltyFactor",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.25,
                   "GameValue": "None",
                   "ScalingValueInput": "None",
                   "ScalingValueCurveTag": {
@@ -201441,7 +203081,7 @@
           },
           "Value": {
             "DefaultExpression": {
-              "ExpressionString": "PurchaseValue * (MarkupMultiplier - (MarkupMultiplier - 1) * clamp(LastVictimCount, 0, LastVictimCountMax) / LastVictimCountMax)",
+              "ExpressionString": "PurchaseValue * clamp(MarkupMultiplier - (MarkupMultiplier - 1) * clamp(LastVictimCount, 0, LastVictimCountMax) / LastVictimCountMax, 0, MarkupMultiplier)",
               "ExpressionTableRow": {
                 "DataTable": null,
                 "RowName": "None"
@@ -201500,6 +203140,18 @@
                   },
                   {
                     "Op": "EWDRewardCalculatorOp::Sub",
+                    "ValueIndex": -1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushLiteral",
+                    "ValueIndex": 2
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::FuncClamp",
                     "ValueIndex": -1
                   },
                   {
@@ -201562,11 +203214,24 @@
                   },
                   {
                     "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
-                    "ResultDescription": "(PurchaseValue * (MarkupMultiplier - (((MarkupMultiplier - 1.0) * clamp(LastVictimCount, 0.0, LastVictimCountMax)) / LastVictimCountMax)))"
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "clamp((MarkupMultiplier - (((MarkupMultiplier - 1.0) * clamp(LastVictimCount, 0.0, LastVictimCountMax)) / LastVictimCountMax)), 0.0, MarkupMultiplier)"
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": "(PurchaseValue * clamp((MarkupMultiplier - (((MarkupMultiplier - 1.0) * clamp(LastVictimCount, 0.0, LastVictimCountMax)) / LastVictimCountMax)), 0.0, MarkupMultiplier))"
                   }
                 ],
                 "Literals": [
                   1.0,
+                  0.0,
                   0.0
                 ],
                 "Variables": [
@@ -210880,6 +212545,274 @@
         "TagName": "Challenges.Rewards.VehicleFlyThrough"
       }
     },
+    "Challenges.Rewards.HotZoneMagnet.FOBSuppliedAssist": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(BaseReward) / NumberOfAssisters",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Div",
+                    "ValueIndex": 1
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Variable",
+                    "ResultDescription": "(BaseReward / NumberOfAssisters)"
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "BaseReward",
+                  "NumberOfAssisters"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "BaseReward",
+                    "Value": 0
+                  },
+                  {
+                    "Key": "NumberOfAssisters",
+                    "Value": 1
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "DefaultOption": "BaseReward",
+                  "Options": []
+                }
+              },
+              {
+                "Key": "NumberOfAssisters",
+                "Value": {
+                  "DefaultOption": "NumberOfAssisters",
+                  "Options": []
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 2500.0,
+                  "GameValue": "BaseRewardValue",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "NumberOfAssisters",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::GameValue",
+                  "LiteralValue": 0.0,
+                  "GameValue": "NumberOfAssisters",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.XP.Role"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "(BaseReward) / NumberOfAssisters",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 1
+                  },
+                  {
+                    "Op": "EWDRewardCalculatorOp::Div",
+                    "ValueIndex": 1
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  },
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Variable",
+                    "ResultDescription": "(BaseReward / NumberOfAssisters)"
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "BaseReward",
+                  "NumberOfAssisters"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "BaseReward",
+                    "Value": 0
+                  },
+                  {
+                    "Key": "NumberOfAssisters",
+                    "Value": 1
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": [
+                    {
+                      "Condition": {
+                        "TokenStreamVersion": 0,
+                        "TagDictionary": [
+                          {
+                            "TagName": "Challenges.Context.FriendlyKill"
+                          }
+                        ],
+                        "QueryTokenStream": [
+                          0,
+                          1,
+                          2,
+                          1,
+                          0
+                        ],
+                        "UserDescription": "",
+                        "AutoDescription": " ALL( Challenges.Context.FriendlyKill )"
+                      },
+                      "Variable": "FriendlyReward"
+                    }
+                  ]
+                }
+              },
+              {
+                "Key": "NumberOfAssisters",
+                "Value": {
+                  "DefaultOption": "NumberOfAssisters",
+                  "Options": []
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 250.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "FriendlyReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 0.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              },
+              {
+                "Key": "NumberOfAssisters",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::GameValue",
+                  "LiteralValue": 0.0,
+                  "GameValue": "NumberOfAssisters",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.HotZoneMagnet.FOBSuppliedAssist"
+      }
+    },
     "Challenges.Rewards.Test": {
       "Resources": [
         {
@@ -210953,6 +212886,435 @@
       ],
       "Tag": {
         "TagName": "Challenges.Rewards.Test"
+      }
+    },
+    "Challenges.Rewards.Freefall.Kill": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "BaseReward",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "BaseReward"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "BaseReward",
+                    "Value": 0
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": []
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 500.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.XP.Role"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "BaseReward",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "BaseReward"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "BaseReward",
+                    "Value": 0
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": []
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 100.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.Freefall.Kill"
+      }
+    },
+    "Challenges.Rewards.Freefall.HelicopterKill": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "BaseReward",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "BaseReward"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "BaseReward",
+                    "Value": 0
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": []
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 500.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.XP.Role"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "BaseReward",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "BaseReward"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "BaseReward",
+                    "Value": 0
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": []
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 100.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.Freefall.HelicopterKill"
+      }
+    },
+    "Challenges.Rewards.Freefall.HelicopterKill.Recovered": {
+      "Resources": [
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.Currency.Cash"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "BaseReward",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "BaseReward"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "BaseReward",
+                    "Value": 0
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": []
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 500.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "Key": {
+            "TagName": "Attribute.Meta.XP.Role"
+          },
+          "Value": {
+            "DefaultExpression": {
+              "ExpressionString": "BaseReward",
+              "ExpressionTableRow": {
+                "DataTable": null,
+                "RowName": "None"
+              },
+              "ExpressionTableColumn": "None",
+              "bSourceExpressionExternally": false,
+              "CompiledExpression": {
+                "Instructions": [
+                  {
+                    "Op": "EWDRewardCalculatorOp::PushVariable",
+                    "ValueIndex": 0
+                  }
+                ],
+                "InstructionMetadata": [
+                  {
+                    "DivisorSourceType": "EWDRewardCalculatorOperandSourceType::Result",
+                    "ResultDescription": null
+                  }
+                ],
+                "Literals": [],
+                "Variables": [
+                  "BaseReward"
+                ],
+                "VariableIndexMap": [
+                  {
+                    "Key": "BaseReward",
+                    "Value": 0
+                  }
+                ]
+              }
+            },
+            "ConditionalExpressions": [],
+            "Selectors": [
+              {
+                "Key": "BaseReward",
+                "Value": {
+                  "DefaultOption": "DefaultReward",
+                  "Options": []
+                }
+              }
+            ],
+            "Variables": [
+              {
+                "Key": "DefaultReward",
+                "Value": {
+                  "VariableType": "EWDRewardCalculatorVariableType::Literal",
+                  "LiteralValue": 100.0,
+                  "GameValue": "None",
+                  "ScalingValueInput": "None",
+                  "ScalingValueCurveTag": {
+                    "TagName": "None"
+                  },
+                  "TableRowValue": {
+                    "DataTable": null,
+                    "RowName": "None"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "Tag": {
+        "TagName": "Challenges.Rewards.Freefall.HelicopterKill.Recovered"
       }
     }
   }

@@ -5,6 +5,23 @@
 Compiled-binary mappings that let community tooling resolve names
 and offsets inside the shipped Wardogs client.
 
+## CL533731 hotfix candidate
+
+The current update branch uses the supplied
+`++Wardogs+Live-CL-533731+hotfix533689.usmap`, SHA-256
+`21234bab48518fff98bad8178ac1f45eb28a69aaa323139804f5e6c83cf56831`.
+It contains 19,717 owners and 3,218 enums, with no explicit `Unknown`
+descriptors or missing positions within declared local property counts.
+These structural checks do not authenticate its producer or native build.
+Selected package controls consume their complete export bounds, while the
+broad extraction still has animation errors and UI/mount warnings. See
+[the measured coverage and limits](../docs/evidence/hotfix-cl533731.md).
+The binary remains local and is not included in the repository.
+
+The mappings and native addresses below describe the earlier CL516586
+investigation. Their labels and donor relationships are historical evidence,
+not proof of CL533731 compatibility.
+
 ## Authoritative IDA map
 
 The only IDA map for this project is the user-supplied file:

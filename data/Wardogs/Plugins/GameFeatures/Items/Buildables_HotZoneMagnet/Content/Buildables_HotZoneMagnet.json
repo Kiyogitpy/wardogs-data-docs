@@ -1,0 +1,138 @@
+--- export: UObject / GameFeatureAction_DataRegistrySource_0 ---
+{
+  "Type": "GameFeatureAction_DataRegistrySource",
+  "Name": "GameFeatureAction_DataRegistrySource_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureAction_DataRegistrySource'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Buildables_HotZoneMagnet'",
+    "ObjectPath": "/Buildables_HotZoneMagnet/Buildables_HotZoneMagnet.1"
+  },
+  "Properties": {
+    "SourcesToAdd": [
+      {
+        "RegistryToAddTo": "Buildables_LargeHammer",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables_HotZoneMagnet/Data/DT_Buildables_LargeHammer_HotZoneMagnet.DT_Buildables_LargeHammer_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "RadialWheelSlotTypeRegistry",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables_HotZoneMagnet/Data/DT_RadialWheelSlotType_BuildToolData_HotZoneMagnet.DT_RadialWheelSlotType_BuildToolData_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "GlobalDamageData",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables_HotZoneMagnet/Data/DT_GlobalDamage_BuildableData_HotZoneMagnet.DT_GlobalDamage_BuildableData_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_TacticalMap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables_HotZoneMagnet/Data/DT_TrackerData_Map_HotZoneMagnet.DT_TrackerData_Map_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "TrackerData_MiniMap",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables_HotZoneMagnet/Data/DT_TrackerData_Map_HotZoneMagnet.DT_TrackerData_Map_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      },
+      {
+        "RegistryToAddTo": "MaterialTrackersData_UI",
+        "AssetPriority": 0,
+        "bClientSource": true,
+        "bServerSource": true,
+        "DataTableToAdd": {
+          "AssetPathName": "/Buildables_HotZoneMagnet/Data/DT_MaterialTrackerSettingsData_HotZoneMagnet.DT_MaterialTrackerSettingsData_HotZoneMagnet",
+          "SubPathString": ""
+        },
+        "CurveTableToAdd": {
+          "AssetPathName": "",
+          "SubPathString": ""
+        }
+      }
+    ]
+  }
+}
+--- export: UPrimaryDataAsset / Buildables_HotZoneMagnet ---
+{
+  "Type": "GameFeatureData",
+  "Name": "Buildables_HotZoneMagnet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'GameFeatureData'",
+  "Package": "/Buildables_HotZoneMagnet/Buildables_HotZoneMagnet",
+  "Properties": {
+    "Actions": [
+      {
+        "ObjectName": "GameFeatureAction_DataRegistrySource'Buildables_HotZoneMagnet:GameFeatureAction_DataRegistrySource_0'",
+        "ObjectPath": "/Buildables_HotZoneMagnet/Buildables_HotZoneMagnet.0"
+      }
+    ],
+    "PrimaryAssetTypesToScan": [
+      {
+        "PrimaryAssetType": "CrosstalkAudioEvent",
+        "AssetBaseClass": {
+          "AssetPathName": "/Script/Crosstalk.CrosstalkAudioEvent",
+          "SubPathString": ""
+        },
+        "bHasBlueprintClasses": false,
+        "bIsEditorOnly": false,
+        "Directories": [
+          {
+            "Path": "/Buildables_HotZoneMagnet"
+          }
+        ],
+        "SpecificAssets": [],
+        "Rules": {
+          "Priority": -1,
+          "ChunkId": -1,
+          "bApplyRecursively": true,
+          "CookRule": "EPrimaryAssetCookRule::Unknown"
+        }
+      }
+    ]
+  }
+}

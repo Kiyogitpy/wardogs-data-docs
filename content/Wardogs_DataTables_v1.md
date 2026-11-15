@@ -33,7 +33,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 <!-- datatable_catalog index -->
 #### BHEntityData_UI
 
-211 table(s), 751 rows, 211 named in docs. Index only (expanded on another page).
+211 table(s), 752 rows, 211 named in docs. Index only (expanded on another page).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
@@ -198,7 +198,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_EntityData_UI_Garage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Entities/DT_EntityData_UI_Garage.json) | 2 | `UI/Data/Entities` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_EntityData_UI_GarageMarket_SupplyCrates`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SupplyCrates/Content/DataTables/DT_EntityData_UI_GarageMarket_SupplyCrates.json) | 8 | `GF/Vehicles/SupplyCrates/DataTables` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_EntityData_UI_GoldExchange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/GoldExchange/Data/DT_EntityData_UI_GoldExchange.json) | 1 | [`UI/Features/Frontend/GoldExchange/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Frontend/GoldExchange/Data) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
-| [`DT_EntityData_UI_Items`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Entities/DT_EntityData_UI_Items.json) | 296 | `UI/Data/Entities` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [round40-vehicles-explosives](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md), [Wardogs_AttachmentsPlatforms_v1](../game-features/Wardogs_AttachmentsPlatforms_v1.md) (+2) |
+| [`DT_EntityData_UI_Items`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Entities/DT_EntityData_UI_Items.json) | 297 | `UI/Data/Entities` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [round40-vehicles-explosives](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-vehicles-explosives.md), [Wardogs_AttachmentsPlatforms_v1](../game-features/Wardogs_AttachmentsPlatforms_v1.md) (+2) |
 | [`DT_EntityData_UI_Keycards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Keycard/Content/Data/DT_EntityData_UI_Keycards.json) | 6 | `GF/Items/Keycard/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_EntityData_UI_Misc`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Entities/DT_EntityData_UI_Misc.json) | 1 | `UI/Data/Entities` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_EntityData_UI_TNK01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/DataTables/DT_EntityData_UI_TNK01.json) | 12 | `GF/Vehicles/TNK_01/DataTables` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [vehicles](../season-2-changes/vehicles.md) |
@@ -243,23 +243,23 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_Gunsmith_EntityData_UI_PaintMasteryTextures`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_Gunsmith_EntityData_UI_PaintMasteryTextures.json) | 6 | `GF/Gunsmith/UI/Data/Entities` | [Wardogs_GameFeatures_Gunsmith_v2](../game-features/Wardogs_GameFeatures_Gunsmith_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_Gunsmith_EntityData_UI_ReticleTextures`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_Gunsmith_EntityData_UI_ReticleTextures.json) | 17 | `GF/Gunsmith/UI/Data/Entities` | [Wardogs_GameFeatures_Gunsmith_v2](../game-features/Wardogs_GameFeatures_Gunsmith_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_InteractionContext_ForwardOperatingBase`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/ForwardOperatingBase/DT_InteractionContext_ForwardOperatingBase.json) | 4 | `GF/Items/Buildables/Data/ForwardOperatingBase` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
-| [`DT_InteractionContexts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_InteractionContexts.json) | 70 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
-| [`DT_InteractionContexts_ForceOpenDoor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Data/Interaction/DT_InteractionContexts_ForceOpenDoor.json) | 1 | `GF/Items/Crowbar/Data/Interaction` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
+| [`DT_InteractionContexts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_InteractionContexts.json) | 69 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
+| [`DT_InteractionContexts_ForceOpenDoor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Data/Interaction/DT_InteractionContexts_ForceOpenDoor.json) | 2 | `GF/Items/Crowbar/Data/Interaction` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_InteractionContexts_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/DT_InteractionContexts_HotZoneMagnet.json) | 3 | `GF/WorldFeatures/HotZoneMagnet/Data` | [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_InteractionContexts_Lockpicking`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/Lockpicking/Content/Data/Interaction/DT_InteractionContexts_Lockpicking.json) | 1 | `GF/Vehicles/Lockpicking/Data/Interaction` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 | [`DT_InteractionContexts_Lootable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_InteractionContexts_Lootable.json) | 2 | `GF/WorldFeatures/Lootable/Data` | [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md) |
 
 #### WDChallengeRewardDefinition
 
-7 table(s), 486 rows, 7 named in docs. Expanded on [Challenges](../game-features/Wardogs_Challenges_v1.md).
+7 table(s), 493 rows, 7 named in docs. Expanded on [Challenges](../game-features/Wardogs_Challenges_v1.md).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | [`DT_ChallengeRewards_EndOfMatch`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_EndOfMatch.json) | 5 | [`Meta/Challenges`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Challenges) | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
-| [`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json) | 47 | `GF/Rewards/BuildableRewards/Rewards` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round38-building-data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md), [round42-econ-buildables](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md) (+3) |
+| [`DT_ChallengeRewards_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengeRewards_SessionEvents_Buildables.json) | 50 | `GF/Rewards/BuildableRewards/Rewards` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round38-building-data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md), [round42-econ-buildables](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md) (+4) |
 | [`DT_ChallengeRewards_SessionEvents_Crowbar`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Rewards/DT_ChallengeRewards_SessionEvents_Crowbar.json) | 1 | `GF/Items/Crowbar/Rewards` | [items-equipment](../season-2-changes/items-equipment.md) |
 | [`DT_ChallengeRewards_SessionEvents_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_HotZoneMagnet.json) | 3 | `GF/WorldFeatures/HotZoneMagnet/Data/Challenges` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round38-building-data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md), [round42-econ-buildables](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md) (+1) |
-| [`DT_ChallengeRewards_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json) | 298 | [`Meta/Challenges`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Challenges) | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md) (+11) |
+| [`DT_ChallengeRewards_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_ChallengeRewards_SessionEvents_Shared.json) | 302 | [`Meta/Challenges`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Challenges) | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md) (+10) |
 | [`DT_ChallengeRewards_SessionEvents_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_ChallengeRewards_SessionEvents_Spotting.json) | 130 | `GF/Spotting/Data/Challenges` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round42-econ-buildables](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md), [round61-open-questions](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round61-open-questions.md) (+3) |
 | [`DT_ChallengeRewards_TeamOffence`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/Challenges/DT_ChallengeRewards_TeamOffence.json) | 2 | `GF/TeamOffence/Challenges` | [round42-econ-buildables](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md), [round43-econ-buildables](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round43-econ-buildables.md), [round88-nb](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round88-nb.md) (+4) |
 
@@ -272,7 +272,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_Itemsmith_Flair_Settings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Flair/Data/DT_Itemsmith_Flair_Settings.json) | 2 | `GF/Itemsmith/UI/Flair/Data` | [Wardogs_GameFeatures_Itemsmith_v2](../game-features/Wardogs_GameFeatures_Itemsmith_v2.md) |
 | [`DT_Settings_Accessibility`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Settings/Accessibility/DT_Settings_Accessibility.json) | 30 | [`GameMechanics/Settings/Accessibility`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Settings/Accessibility) | [round84-census-v4](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round84-census-v4.md) |
 | [`DT_Settings_Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Settings/Audio/DT_Settings_Audio.json) | 22 | [`GameMechanics/Settings/Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Settings/Audio) | not named |
-| [`DT_Settings_Controls`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Settings/Controls/DT_Settings_Controls.json) | 121 | [`GameMechanics/Settings/Controls`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Settings/Controls) | [round84-census-v4](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round84-census-v4.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
+| [`DT_Settings_Controls`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Settings/Controls/DT_Settings_Controls.json) | 121 | [`GameMechanics/Settings/Controls`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Settings/Controls) | [round84-census-v4](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round84-census-v4.md), [round93-sensitivity-ammo](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round93-sensitivity-ammo.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
 | [`DT_Settings_Extra`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Settings/Extras/DT_Settings_Extra.json) | 1 | [`GameMechanics/Settings/Extras`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Settings/Extras) | not named |
 | [`DT_Settings_General`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Settings/General/DT_Settings_General.json) | 25 | [`GameMechanics/Settings/General`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Settings/General) | [round40-modes-ai-other](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round40-modes-ai-other.md), [round58-open-questions](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round58-open-questions.md), [round84-census-v4](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round84-census-v4.md) (+2) |
 | [`DT_Settings_Keybindings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Settings/Keybindings/DT_Settings_Keybindings.json) | 146 | [`GameMechanics/Settings/Keybindings`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Settings/Keybindings) | [round90-census-v5](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round90-census-v5.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
@@ -280,14 +280,14 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 #### WDUIGameplayTagToTextTableRow
 
-18 table(s), 375 rows, 18 named in docs. Index only (expanded on another page).
+18 table(s), 379 rows, 18 named in docs. Index only (expanded on another page).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | [`DT_Ext_GameplayTagToText_Calibers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataTable/DT_Ext_GameplayTagToText_Calibers.json) | 1 | `GF/Items/CombatBow/Data/DataTable` | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
 | [`DT_GameplayTagToText_Ammunition`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Ammunition.json) | 14 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
-| [`DT_GameplayTagToText_Archetypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Archetypes.json) | 16 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
-| [`DT_GameplayTagToText_Calibers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Calibers.json) | 31 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
+| [`DT_GameplayTagToText_Archetypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Archetypes.json) | 18 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
+| [`DT_GameplayTagToText_Calibers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Calibers.json) | 32 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
 | [`DT_GameplayTagToText_Categories`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Categories.json) | 112 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
 | [`DT_GameplayTagToText_Components`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Components.json) | 7 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
 | [`DT_GameplayTagToText_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Damage.json) | 9 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
@@ -298,18 +298,18 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_GameplayTagToText_Prompts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Prompts.json) | 4 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
 | [`DT_GameplayTagToText_Roles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Roles.json) | 13 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
 | [`DT_GameplayTagToText_SceneNames`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_SceneNames.json) | 38 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
-| [`DT_GameplayTagToText_ServerTags`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_ServerTags.json) | 24 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
+| [`DT_GameplayTagToText_ServerTags`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_ServerTags.json) | 25 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
 | [`DT_GameplayTagToText_TeamOffence`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/UI/Data/DT_GameplayTagToText_TeamOffence.json) | 7 | `GF/TeamOffence/UI/Data` | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
 | [`DT_GameplayTagToText_Tooltips`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Tooltips.json) | 10 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
 | [`DT_GameplayTagToText_Tutorials`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Tutorials.json) | 5 | [`UI/Data/GameplayTagsToText`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/GameplayTagsToText) | [Wardogs_TagDisplayText_v1](../content/Wardogs_TagDisplayText_v1.md) |
 
 #### WDVariantRewardLookupRow
 
-16 table(s), 333 rows, 16 named in docs. Expanded on [Reward Lookup (Session Events)](../content/Wardogs_RewardLookup_SessionEvents_v1.md).
+16 table(s), 335 rows, 16 named in docs. Expanded on [Reward Lookup (Session Events)](../content/Wardogs_RewardLookup_SessionEvents_v1.md).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_RewardLookup_SessionEvent_BuildableDestroyed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_BuildableDestroyed.json) | 36 | `GF/Rewards/BuildableRewards/Rewards/LookupRegistries/Tables` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round42-econ-buildables](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) (+1) |
+| [`DT_RewardLookup_SessionEvent_BuildableDestroyed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_BuildableDestroyed.json) | 38 | `GF/Rewards/BuildableRewards/Rewards/LookupRegistries/Tables` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round42-econ-buildables](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md), [round93-ai-rewards](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round93-ai-rewards.md) (+3) |
 | [`DT_RewardLookup_SessionEvent_DestroySupplyCrate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroySupplyCrate.json) | 10 | `GF/Challenges_KOTH/LookupRegistries/Tables` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Challenges_KOTH_v2](../game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.md) |
 | [`DT_RewardLookup_SessionEvent_DestroyVehicle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicle.json) | 34 | `GF/Challenges_KOTH/LookupRegistries/Tables` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [round53-fixed-wing](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round53-fixed-wing.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) (+1) |
 | [`DT_RewardLookup_SessionEvent_DestroyVehicleFOBSuppliedAssist`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/LookupRegistries/Tables/DT_RewardLookup_SessionEvent_DestroyVehicleFOBSuppliedAssist.json) | 28 | `GF/Challenges_KOTH/LookupRegistries/Tables` | [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Challenges_KOTH_v2](../game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.md) |
@@ -328,7 +328,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 #### WDVendorData
 
-206 table(s), 328 rows, 206 named in docs. Index only (expanded on another page).
+206 table(s), 329 rows, 206 named in docs. Index only (expanded on another page).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
@@ -507,7 +507,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_VendorData_Weapon_WEPN_031`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_031/Content/Data/DT_VendorData_Weapon_WEPN_031.json) | 1 | `GF/Weapons/Platforms/WEPN_031/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
 | [`DT_VendorData_Weapon_WEPN_034`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_034/Content/Data/DT_VendorData_Weapon_WEPN_034.json) | 1 | `GF/Weapons/Platforms/WEPN_034/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
 | [`DT_VendorData_Weapon_WEPN_037`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_037/Content/Data/DT_VendorData_Weapon_WEPN_037.json) | 1 | `GF/Weapons/Platforms/WEPN_037/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
-| [`DT_WeaponMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment/DT_WeaponMarket.json) | 37 | [`GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment) | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round39-vehicles-explosives](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md), [Wardogs_AttachmentsPlatforms_v1](../game-features/Wardogs_AttachmentsPlatforms_v1.md) (+3) |
+| [`DT_WeaponMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment/DT_WeaponMarket.json) | 38 | [`GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/WorldInteractable/NPCs/Vendor/VendorEquipment) | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round39-vehicles-explosives](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md), [Wardogs_AttachmentsPlatforms_v1](../game-features/Wardogs_AttachmentsPlatforms_v1.md) (+3) |
 | [`DT_WeaponVendor_EXT_AR_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_003/Content/Data/DT_WeaponVendor_EXT_AR_03.json) | 1 | `GF/Weapons/Platforms/WEPN_003/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
 | [`DT_WeaponVendor_EXT_AR_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_004/Content/Data/DT_WeaponVendor_EXT_AR_04.json) | 1 | `GF/Weapons/Platforms/WEPN_004/Data` | [round61-open-questions](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round61-open-questions.md), [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
 | [`DT_WeaponVendor_EXT_LMG_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/Platforms/WEPN_009/Content/Data/DT_WeaponVendor_EXT_LMG_01.json) | 1 | `GF/Weapons/Platforms/WEPN_009/Data` | [Wardogs_ItemShop_v1](../game-features/Wardogs_ItemShop_v1.md), [Wardogs_WeaponShop_v1](../game-features/Wardogs_WeaponShop_v1.md) |
@@ -541,20 +541,20 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 #### WDRainSpotEntry
 
-1 table(s), 304 rows, 1 named in docs. Audio table, skipped.
+1 table(s), 314 rows, 1 named in docs. Audio table, skipped.
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_RainSpots`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Environment/DT_RainSpots.json) | 304 | [`Audio/Environment`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Environment) | [Wardogs_Audio_v2](../content/Wardogs_Audio_v2.md) |
+| [`DT_RainSpots`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Environment/DT_RainSpots.json) | 314 | [`Audio/Environment`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Environment) | [Wardogs_Audio_v2](../content/Wardogs_Audio_v2.md) |
 
 #### WDRewardFeedActionDataTableRow
 
-10 table(s), 159 rows, 9 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdrewardfeedactiondatatablerow).
+10 table(s), 164 rows, 9 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdrewardfeedactiondatatablerow).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json) | 68 | [`UI/Features/HUD/RewardFeed/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [round57-open-questions](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round57-open-questions.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) |
-| [`DT_ChallengesFeedActions_Building`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengesFeedActions_Building.json) | 12 | `GF/Rewards/BuildableRewards/Rewards` | [Wardogs_GameFeatures_Rewards_v2](../game-features/Wardogs_GameFeatures_Rewards_v2.md) |
+| [`DT_ChallengesFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data/DT_ChallengesFeedActions.json) | 72 | [`UI/Features/HUD/RewardFeed/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/HUD/RewardFeed/Data) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [round57-open-questions](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round57-open-questions.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) |
+| [`DT_ChallengesFeedActions_Building`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_ChallengesFeedActions_Building.json) | 13 | `GF/Rewards/BuildableRewards/Rewards` | [Wardogs_GameFeatures_Rewards_v2](../game-features/Wardogs_GameFeatures_Rewards_v2.md) |
 | [`DT_ChallengesFeedActions_Crowbar`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Rewards/DT_ChallengesFeedActions_Crowbar.json) | 1 | `GF/Items/Crowbar/Rewards` | [items-equipment](../season-2-changes/items-equipment.md) |
 | [`DT_ChallengesFeedActions_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/RewardFeed/DT_ChallengesFeedActions_Spotting.json) | 3 | `GF/Spotting/Data/UI/RewardFeed` | [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md) |
 | [`DT_ControlZoneRewardFeedActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/RewardFeed/Data/DT_ControlZoneRewardFeedActions.json) | 12 | `GF/ControlZone/UI/RewardFeed/Data` | [Wardogs_GameFeatures_ControlZone_v2](../game-features/Wardogs_GameFeatures_ControlZone_v2.md) |
@@ -571,6 +571,21 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | [`DT_CharacterSkillNodes_Data`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_CharacterSkillNodes_Data.json) | 131 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md), [round39-medical-movement](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-medical-movement.md) (+3) |
+
+#### WDUITaggedIconRow
+
+8 table(s), 129 rows, 4 named in docs. UI widget table, not expanded.
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_CaliberModifiers_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_CaliberModifiers_TaggedIcons.json) | 6 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
+| [`DT_Calibers_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_Calibers_TaggedIcons.json) | 35 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
+| [`DT_DamageTypes_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_DamageTypes_TaggedIcons.json) | 3 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
+| [`DT_EventLog_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/DeathRecap/Widgets/HealthReport/Data/DT_EventLog_TaggedIcons.json) | 2 | [`UI/Features/DeathRecap/Widgets/HealthReport/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/DeathRecap/Widgets/HealthReport/Data) | not named |
+| [`DT_Ext_Caliber_TaggedIcons_Arrow`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataTable/DT_Ext_Caliber_TaggedIcons_Arrow.json) | 2 | `GF/Items/CombatBow/Data/DataTable` | not named |
+| [`DT_Ext_FuelLocations_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/FuelCanister/Content/Data/DT_Ext_FuelLocations_TaggedIcons.json) | 1 | `GF/Items/FuelCanister/Data` | not named |
+| [`DT_Ext_RepairLocations_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/VehicleRepairTool/Content/Data/UI/SpatialTrackers/DT_Ext_RepairLocations_TaggedIcons.json) | 17 | `GF/Items/VehicleRepairTool/Data/UI/SpatialTrackers` | not named |
+| [`DT_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_TaggedIcons.json) | 63 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
 
 #### WDCustomRewardTableRow
 
@@ -595,20 +610,22 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_Reward_Cash_VehicleDestroyed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle/DT_Reward_Cash_VehicleDestroyed.json) | 11 | [`GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle) | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [game-modes-maps](../season-2-changes/game-modes-maps.md) |
 | [`DT_Reward_Cash_VehicleTransport`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle/DT_Reward_Cash_VehicleTransport.json) | 3 | [`GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/CashRewardsDataTable/Vehicle) | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md) |
 
-#### WDUITaggedIconRow
+#### WDChallengeDefinition
 
-8 table(s), 128 rows, 4 named in docs. UI widget table, not expanded.
+10 table(s), 122 rows, 10 named in docs. Expanded on [Challenges](../game-features/Wardogs_Challenges_v1.md).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_CaliberModifiers_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_CaliberModifiers_TaggedIcons.json) | 6 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
-| [`DT_Calibers_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_Calibers_TaggedIcons.json) | 34 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
-| [`DT_DamageTypes_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_DamageTypes_TaggedIcons.json) | 3 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
-| [`DT_EventLog_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/DeathRecap/Widgets/HealthReport/Data/DT_EventLog_TaggedIcons.json) | 2 | [`UI/Features/DeathRecap/Widgets/HealthReport/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/DeathRecap/Widgets/HealthReport/Data) | not named |
-| [`DT_Ext_Caliber_TaggedIcons_Arrow`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataTable/DT_Ext_Caliber_TaggedIcons_Arrow.json) | 2 | `GF/Items/CombatBow/Data/DataTable` | not named |
-| [`DT_Ext_FuelLocations_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/FuelCanister/Content/Data/DT_Ext_FuelLocations_TaggedIcons.json) | 1 | `GF/Items/FuelCanister/Data` | not named |
-| [`DT_Ext_RepairLocations_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/VehicleRepairTool/Content/Data/UI/SpatialTrackers/DT_Ext_RepairLocations_TaggedIcons.json) | 17 | `GF/Items/VehicleRepairTool/Data/UI/SpatialTrackers` | not named |
-| [`DT_TaggedIcons`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_TaggedIcons.json) | 63 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
+| [`DT_Challenges_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_Challenges_SessionEvents_Buildables.json) | 12 | `GF/Rewards/BuildableRewards/Rewards` | [buildable-challenges](../_wiki/progression-and-economy/buildable-challenges.md), [round42-econ-buildables](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md), [round93-ai-rewards](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round93-ai-rewards.md) (+2) |
+| [`DT_Challenges_SessionEvents_Crowbar`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Rewards/DT_Challenges_SessionEvents_Crowbar.json) | 1 | `GF/Items/Crowbar/Rewards` | [crowbar-challenges](../_wiki/progression-and-economy/crowbar-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [items-equipment](../season-2-changes/items-equipment.md) |
+| [`DT_Challenges_SessionEvents_KOTH`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/DT_Challenges_SessionEvents_KOTH.json) | 62 | `GF/Challenges_KOTH/Content` | [king-of-the-hill-challenges](../_wiki/progression-and-economy/king-of-the-hill-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Challenges_KOTH_v2](../game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.md) |
+| [`DT_Challenges_SessionEvents_KOTH_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_HotZoneMagnet.json) | 3 | `GF/WorldFeatures/HotZoneMagnet/Data/Challenges` | [hot-zone-magnet-challenges](../_wiki/progression-and-economy/hot-zone-magnet-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
+| [`DT_Challenges_SessionEvents_KOTH_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_Spotting.json) | 2 | `GF/Spotting/Data/Challenges` | [spotting-challenges](../_wiki/progression-and-economy/spotting-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md) (+1) |
+| [`DT_Challenges_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_Challenges_SessionEvents_Shared.json) | 13 | [`Meta/Challenges`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Challenges) | [achievements](../_wiki/progression-and-economy/achievements.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md) (+3) |
+| [`DT_Challenges_SessionEvents_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ShootingRange/Content/Data/Challenges/DT_Challenges_SessionEvents_ShootingRange.json) | 1 | `GF/ShootingRange/Data/Challenges` | [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) |
+| [`DT_Challenges_SessionEvents_TeamOffence`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/Challenges/DT_Challenges_SessionEvents_TeamOffence.json) | 2 | `GF/TeamOffence/Challenges` | [team-offence-challenges](../_wiki/progression-and-economy/team-offence-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [game-modes-maps](../season-2-changes/game-modes-maps.md) |
+| [`DT_PassiveMissionChallenges`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Missions/DT_PassiveMissionChallenges.json) | 15 | [`Meta/Missions`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Missions) | [passive-missions](../_wiki/progression-and-economy/passive-missions.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md) (+4) |
+| [`DT_WagerChallenges`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerChallenges.json) | 11 | [`Meta/Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Wagers) | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) (+1) |
 
 #### WDUIFlairBasicPaintType
 
@@ -618,6 +635,14 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 |---|---|---|---|
 | [`DT_Itemsmith_Flair_BasicPaint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Flair/Data/DT_Itemsmith_Flair_BasicPaint.json) | 60 | `GF/Itemsmith/UI/Flair/Data` | [Wardogs_GameFeatures_Itemsmith_v2](../game-features/Wardogs_GameFeatures_Itemsmith_v2.md) |
 | [`DT_Itemsmith_Flair_CamoBasicPaint`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Flair/Data/DT_Itemsmith_Flair_CamoBasicPaint.json) | 60 | `GF/Itemsmith/UI/Flair/Data` | [Wardogs_GameFeatures_Itemsmith_v2](../game-features/Wardogs_GameFeatures_Itemsmith_v2.md) |
+
+#### WDDamageBackendNameRow
+
+1 table(s), 116 rows, 0 named in docs. Not expanded.
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_DamageBackendNames`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DT_DamageBackendNames.json) | 116 | [`GameMechanics/DamageSystem`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/DamageSystem) | not named |
 
 #### WDImpulseResonanceEntry
 
@@ -635,21 +660,13 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 |---|---|---|---|
 | [`DT_LoadingScreenTips`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/LoadingScreen/Data/DT_LoadingScreenTips.json) | 110 | [`UI/Features/Frontend/LoadingScreen/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Frontend/LoadingScreen/Data) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
 
-#### WDChallengeDefinition
+#### WDVoxBase
 
-9 table(s), 108 rows, 9 named in docs. Expanded on [Challenges](../game-features/Wardogs_Challenges_v1.md).
+1 table(s), 99 rows, 1 named in docs. Audio table, skipped.
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_Challenges_SessionEvents_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Rewards/BuildableRewards/Content/Rewards/DT_Challenges_SessionEvents_Buildables.json) | 11 | `GF/Rewards/BuildableRewards/Rewards` | [buildable-challenges](../_wiki/progression-and-economy/buildable-challenges.md), [round42-econ-buildables](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round42-econ-buildables.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) (+1) |
-| [`DT_Challenges_SessionEvents_Crowbar`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Rewards/DT_Challenges_SessionEvents_Crowbar.json) | 1 | `GF/Items/Crowbar/Rewards` | [crowbar-challenges](../_wiki/progression-and-economy/crowbar-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [items-equipment](../season-2-changes/items-equipment.md) |
-| [`DT_Challenges_SessionEvents_KOTH`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Challenges_KOTH/Content/DT_Challenges_SessionEvents_KOTH.json) | 60 | `GF/Challenges_KOTH/Content` | [king-of-the-hill-challenges](../_wiki/progression-and-economy/king-of-the-hill-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Challenges_KOTH_v2](../game-features/Wardogs_GameFeatures_Challenges_KOTH_v2.md) |
-| [`DT_Challenges_SessionEvents_KOTH_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_HotZoneMagnet.json) | 3 | `GF/WorldFeatures/HotZoneMagnet/Data/Challenges` | [hot-zone-magnet-challenges](../_wiki/progression-and-economy/hot-zone-magnet-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
-| [`DT_Challenges_SessionEvents_KOTH_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Challenges/DT_Challenges_SessionEvents_KOTH_Spotting.json) | 2 | `GF/Spotting/Data/Challenges` | [spotting-challenges](../_wiki/progression-and-economy/spotting-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md) (+1) |
-| [`DT_Challenges_SessionEvents_Shared`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Challenges/DT_Challenges_SessionEvents_Shared.json) | 10 | [`Meta/Challenges`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Challenges) | [achievements](../_wiki/progression-and-economy/achievements.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [Wardogs_RewardLookup_SessionEvents_v1](../content/Wardogs_RewardLookup_SessionEvents_v1.md) (+3) |
-| [`DT_Challenges_SessionEvents_TeamOffence`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/TeamOffence/Content/Challenges/DT_Challenges_SessionEvents_TeamOffence.json) | 2 | `GF/TeamOffence/Challenges` | [team-offence-challenges](../_wiki/progression-and-economy/team-offence-challenges.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md), [game-modes-maps](../season-2-changes/game-modes-maps.md) |
-| [`DT_PassiveMissionChallenges`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Missions/DT_PassiveMissionChallenges.json) | 15 | [`Meta/Missions`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Missions) | [passive-missions](../_wiki/progression-and-economy/passive-missions.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md) (+4) |
-| [`DT_WagerChallenges`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerChallenges.json) | 4 | [`Meta/Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Wagers) | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) (+1) |
+| [`DT_VoxData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vox/General/DT_VoxData.json) | 99 | [`Audio/Vox/General`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vox/General) | [Wardogs_Audio_v2](../content/Wardogs_Audio_v2.md), [SDK](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/gap_resolution/SDK.md) |
 
 #### WDUIInteractionContextDataTableRow
 
@@ -657,13 +674,21 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_InteractionContextData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Interaction/DT_InteractionContextData.json) | 86 | [`UI/Data/Interaction`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/Interaction) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
-| [`DT_InteractionContextData_ForceOpenDoor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Data/Interaction/DT_InteractionContextData_ForceOpenDoor.json) | 1 | `GF/Items/Crowbar/Data/Interaction` | not named |
+| [`DT_InteractionContextData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Interaction/DT_InteractionContextData.json) | 85 | [`UI/Data/Interaction`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/Interaction) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
+| [`DT_InteractionContextData_ForceOpenDoor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Crowbar/Content/Data/Interaction/DT_InteractionContextData_ForceOpenDoor.json) | 2 | `GF/Items/Crowbar/Data/Interaction` | not named |
 | [`DT_InteractionContextData_ForwardOperatingBase`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/ForwardOperatingBase/DT_InteractionContextData_ForwardOperatingBase.json) | 4 | `GF/Items/Buildables/Data/ForwardOperatingBase` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | [`DT_InteractionContextData_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/DT_InteractionContextData_HotZoneMagnet.json) | 3 | `GF/WorldFeatures/HotZoneMagnet/Data` | [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
 | [`DT_InteractionContextData_Lockpicking`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/Lockpicking/Content/Data/Interaction/DT_InteractionContextData_Lockpicking.json) | 1 | `GF/Vehicles/Lockpicking/Data/Interaction` | not named |
 | [`DT_InteractionContextData_Lootable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_InteractionContextData_Lootable.json) | 2 | `GF/WorldFeatures/Lootable/Data` | [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
 | [`DT_InteractionContextData_StrikeDisarm_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/StrikeDisarm_01/Content/DT_InteractionContextData_StrikeDisarm_01.json) | 1 | `GF/PvE/Scenarios/StrikeDisarm_01/Content` | [Wardogs_GameFeatures_PvE_v2](../game-features/Wardogs_GameFeatures_PvE_v2.md) |
+
+#### WDWagerConditionDefinition
+
+1 table(s), 90 rows, 1 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdwagerconditiondefinition).
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_WagerConditions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerConditions.json) | 90 | [`Meta/Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Wagers) | [wagers](../_wiki/progression-and-economy/wagers.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md) (+2) |
 
 #### WDRewardTableRow
 
@@ -674,26 +699,19 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_Rewards`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_Rewards.json) | 78 | [`GameMechanics/Gamemode/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data) | [Wardogs_Rewards_and_Progression_v2](../Wardogs_Rewards_and_Progression_v2.md), [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round38-building-data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round38-building-data.md) (+1) |
 | [`DT_Rewards_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/DT_Rewards_Spotting.json) | 3 | `GF/Spotting/Data` | [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md) |
 
-#### WDVoxBase
-
-1 table(s), 81 rows, 1 named in docs. Audio table, skipped.
-
-| Table | Rows | Folder | Documented in |
-|---|---|---|---|
-| [`DT_VoxData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Vox/General/DT_VoxData.json) | 81 | [`Audio/Vox/General`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Vox/General) | [Wardogs_Audio_v2](../content/Wardogs_Audio_v2.md), [SDK](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/gap_resolution/SDK.md) |
-
 #### WDUITrackerDataTableRow
 
-20 table(s), 75 rows, 15 named in docs. UI widget table, not expanded.
+21 table(s), 75 rows, 16 named in docs. UI widget table, not expanded.
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | [`DT_Editor_TrackerData_ControlZoneRegions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZoneRegions/Content/Data/DT_Editor_TrackerData_ControlZoneRegions.json) | 1 | `GF/ControlZoneRegions/Data` | [Wardogs_GameFeatures_ControlZoneRegions_v2](../game-features/Wardogs_GameFeatures_ControlZoneRegions_v2.md) |
 | [`DT_Editor_TrackerData_WorldDisplay`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Tools/WorldDisplay/Data/DT_Editor_TrackerData_WorldDisplay.json) | 4 | [`UI/Tools/WorldDisplay/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Tools/WorldDisplay/Data) | not named |
-| [`DT_TrackerData_Map_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/DT_TrackerData_Map_Buildables.json) | 4 | `GF/Items/Buildables/Data/UI` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
+| [`DT_TrackerData_Map_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/DT_TrackerData_Map_Buildables.json) | 3 | `GF/Items/Buildables/Data/UI` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | [`DT_TrackerData_Map_ControlZone`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/UI/Trackers/MapTrackers/Data/DT_TrackerData_Map_ControlZone.json) | 1 | `GF/ControlZone/UI/Trackers/MapTrackers/Data` | [Wardogs_GameFeatures_ControlZone_v2](../game-features/Wardogs_GameFeatures_ControlZone_v2.md) |
 | [`DT_TrackerData_Map_HotPotato`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/HotPotato/Content/Data/UI/DT_TrackerData_Map_HotPotato.json) | 1 | `GF/HotPotato/Data/UI` | not named |
-| [`DT_TrackerData_Map_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/UI/MapTrackers/DT_TrackerData_Map_HotZoneMagnet.json) | 2 | `GF/WorldFeatures/HotZoneMagnet/Data/UI/MapTrackers` | [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
+| [`DT_TrackerData_Map_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables_HotZoneMagnet/Content/Data/DT_TrackerData_Map_HotZoneMagnet.json) | 1 | `GF/Items/Buildables_HotZoneMagnet/Data` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md), [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
+| [`DT_TrackerData_Map_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/UI/MapTrackers/DT_TrackerData_Map_HotZoneMagnet.json) | 2 | `GF/WorldFeatures/HotZoneMagnet/Data/UI/MapTrackers` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md), [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
 | [`DT_TrackerData_Map_Scenario`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/BaseScenario/Content/UI/Trackers/DT_TrackerData_Map_Scenario.json) | 2 | `GF/PvE/Scenarios/BaseScenario/UI/Trackers` | [Wardogs_GameFeatures_PvE_v2](../game-features/Wardogs_GameFeatures_PvE_v2.md) |
 | [`DT_TrackerData_Map_SmokeGrenade`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/SmokeGrenade/Content/UI/Trackers/MapTrackers/Data/DT_TrackerData_Map_SmokeGrenade.json) | 1 | `GF/Items/SmokeGrenade/UI/Trackers/MapTrackers/Data` | [round39-vehicles-explosives](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-vehicles-explosives.md), [round92-items-utility](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round92-items-utility.md), [Wardogs_FireAndUtility_v1](../game-features/Wardogs_FireAndUtility_v1.md) |
 | [`DT_TrackerData_Map_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_TrackerData_Map_SniperShowdown.json) | 3 | `GF/Experiences/SniperShowdown/UI` | [Wardogs_GameFeatures_Experiences_v2](../game-features/Wardogs_GameFeatures_Experiences_v2.md) |
@@ -711,7 +729,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 #### WDSceneDataTableRow
 
-14 table(s), 68 rows, 12 named in docs. Expanded in [Combat, Vehicles and Scene Data](Wardogs_DataTables_Combat_v1.md#wdscenedatatablerow).
+14 table(s), 66 rows, 12 named in docs. Expanded in [Combat, Vehicles and Scene Data](Wardogs_DataTables_Combat_v1.md#wdscenedatatablerow).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
@@ -721,7 +739,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_SceneData_Frontend_Gunsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Gunsmith/Content/UI/Data/Entities/DT_SceneData_Frontend_Gunsmith.json) | 1 | `GF/Gunsmith/UI/Data/Entities` | [Wardogs_GameFeatures_Gunsmith_v2](../game-features/Wardogs_GameFeatures_Gunsmith_v2.md) |
 | [`DT_SceneData_Frontend_Itemsmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Itemsmith/Content/UI/Data/DT_SceneData_Frontend_Itemsmith.json) | 1 | `GF/Itemsmith/UI/Data` | [Wardogs_GameFeatures_Itemsmith_v2](../game-features/Wardogs_GameFeatures_Itemsmith_v2.md) |
 | [`DT_SceneData_Frontend_Vehiclesmith`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehiclesmith/Content/Data/DT_SceneData_Frontend_Vehiclesmith.json) | 1 | `GF/Vehiclesmith/Data` | [Wardogs_GameFeatures_Vehiclesmith_v2](../game-features/Wardogs_GameFeatures_Vehiclesmith_v2.md) |
-| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | 25 | [`UI/Data/Scenes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/Scenes) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
+| [`DT_SceneData_Match`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match.json) | 23 | [`UI/Data/Scenes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/Scenes) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
 | [`DT_SceneData_Match_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/FobRefuelRepair/DT_SceneData_Match_Buildables.json) | 1 | `GF/Items/Buildables/Data/UI/FobRefuelRepair` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | [`DT_SceneData_Match_STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/Data/UI/DT_SceneData_Match_STN_05.json) | 1 | `GF/Vehicles/STN_05/Data/UI` | not named |
 | [`DT_SceneData_Match_ShootingRange`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Scenes/DT_SceneData_Match_ShootingRange.json) | 1 | [`UI/Data/Scenes`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/Scenes) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [Wardogs_GameFeatures_ShootingRangeTutorial_v2](../game-features/Wardogs_GameFeatures_ShootingRangeTutorial_v2.md), [Wardogs_GameFeatures_ShootingRange_v2](../game-features/Wardogs_GameFeatures_ShootingRange_v2.md) (+1) |
@@ -747,17 +765,27 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_Skills_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/Skills/DT_Skills_Spotting.json) | 2 | `GF/Spotting/Data/Skills` | [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | [`DT_SupportSkills`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_SupportSkills.json) | 11 | [`Meta/CharacterSkills`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/CharacterSkills) | [support](../_wiki/progression-and-economy/support.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 
+#### WDLootableDataTable
+
+2 table(s), 54 rows, 2 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdlootabledatatable).
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_LootableDataTable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_LootableDataTable.json) | 52 | `GF/WorldFeatures/Lootable/Data` | [round84-census-v4](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round84-census-v4.md), [round85-loot](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round85-loot.md), [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) (+1) |
+| [`DT_LootableDataTable_VIPEscort_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/VIPEscort_01/Content/DT_LootableDataTable_VIPEscort_01.json) | 2 | `GF/PvE/Scenarios/VIPEscort_01/Content` | [round36-ai](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md), [round59-open-questions](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round59-open-questions.md), [Wardogs_GameFeatures_PvE_v2](../game-features/Wardogs_GameFeatures_PvE_v2.md) (+2) |
+
 #### WDDamageableEntityTableRow
 
-26 table(s), 54 rows, 26 named in docs. Index only (expanded on another page).
+27 table(s), 53 rows, 27 named in docs. Index only (expanded on another page).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | [`DT_GlobalDamage_ArmorData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_ArmorData.json) | 4 | [`GameMechanics/DamageSystem/DamageDataTables`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables) | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round25-armor-coverage](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round25-armor-coverage.md), [round25-verification](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round25-verification.md) (+9) |
-| [`DT_GlobalDamage_BuildableData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/DT_GlobalDamage_BuildableData.json) | 20 | `GF/Items/Buildables/Data` | [round55-s2-infantry-damage](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round55-s2-infantry-damage.md), [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md), [Wardogs_GameFeatures_Items_v2](../game-features/Wardogs_GameFeatures_Items_v2.md) (+1) |
-| [`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json) | 1 | [`GameMechanics/DamageSystem/DamageDataTables`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables) | [README](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/README.md), [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [CROSS_REFERENCE](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md) (+14) |
+| [`DT_GlobalDamage_BuildableData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/DT_GlobalDamage_BuildableData.json) | 19 | `GF/Items/Buildables/Data` | [hotfix-cl533731](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/hotfix-cl533731.md), [round55-s2-infantry-damage](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round55-s2-infantry-damage.md), [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) (+2) |
+| [`DT_GlobalDamage_BuildableData_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables_HotZoneMagnet/Content/Data/DT_GlobalDamage_BuildableData_HotZoneMagnet.json) | 1 | `GF/Items/Buildables_HotZoneMagnet/Data` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
+| [`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json) | 1 | [`GameMechanics/DamageSystem/DamageDataTables`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables) | [README](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/README.md), [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [CROSS_REFERENCE](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/CROSS_REFERENCE.md) (+15) |
 | [`DT_GlobalDamage_SupplyCrate`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SupplyCrates/Content/DataTables/DT_GlobalDamage_SupplyCrate.json) | 5 | `GF/Vehicles/SupplyCrates/DataTables` | [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md) |
-| [`DT_GlobalDamage_VehicleData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json) | 1 | [`GameMechanics/DamageSystem/DamageDataTables`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables) | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [round52-explosives-vs-vehicles](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round52-explosives-vs-vehicles.md), [Wardogs_Explosives_v1](../game-features/Wardogs_Explosives_v1.md) (+5) |
+| [`DT_GlobalDamage_VehicleData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json) | 0 | [`GameMechanics/DamageSystem/DamageDataTables`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables) | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [round52-explosives-vs-vehicles](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round52-explosives-vs-vehicles.md), [Wardogs_Explosives_v1](../game-features/Wardogs_Explosives_v1.md) (+5) |
 | [`DT_GlobalDamage_VehicleData_ROT_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_02/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_02.json) | 1 | `GF/Vehicles/ROT_02/DataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md), [vehicles](../season-2-changes/vehicles.md) |
 | [`DT_GlobalDamage_VehicleData_ROT_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_03.json) | 1 | `GF/Vehicles/ROT_03/DataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [vehicles](../season-2-changes/vehicles.md) |
 | [`DT_GlobalDamage_VehicleData_ROT_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/DataTables/DT_GlobalDamage_VehicleData_ROT_04.json) | 1 | `GF/Vehicles/ROT_04/DataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [vehicles](../season-2-changes/vehicles.md) |
@@ -768,7 +796,7 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_GlobalDamage_VehicleData_STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/DataTables/DT_GlobalDamage_VehicleData_STN_04.json) | 1 | `GF/Vehicles/STN_04/DataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [vehicles](../season-2-changes/vehicles.md) |
 | [`DT_GlobalDamage_VehicleData_STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/DataTable/DT_GlobalDamage_VehicleData_STN_05.json) | 1 | `GF/Vehicles/STN_05/DataTable` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [vehicles](../season-2-changes/vehicles.md) |
 | [`DT_GlobalDamage_VehicleData_STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/DataTables/DT_GlobalDamage_VehicleData_STN_06.json) | 1 | `GF/Vehicles/STN_06/DataTables` | [Wardogs_VehicleDamagePipeline_v1](../pipelines/Wardogs_VehicleDamagePipeline_v1.md), [vehicles](../season-2-changes/vehicles.md) |
-| [`DT_GlobalDamage_VehicleData_TNK_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/DataTables/DT_GlobalDamage_VehicleData_TNK_01.json) | 3 | `GF/Vehicles/TNK_01/DataTables` | [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md), [vehicles](../season-2-changes/vehicles.md) |
+| [`DT_GlobalDamage_VehicleData_TNK_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/DataTables/DT_GlobalDamage_VehicleData_TNK_01.json) | 3 | `GF/Vehicles/TNK_01/DataTables` | [hotfix-cl533731](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/hotfix-cl533731.md), [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md), [vehicles](../season-2-changes/vehicles.md) |
 | [`DT_GlobalDamage_VehicleData_TNK_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/DataTables/DT_GlobalDamage_VehicleData_TNK_04.json) | 1 | `GF/Vehicles/TNK_04/DataTables` | [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md), [Wardogs_VehicleDamagePipeline_v1](../pipelines/Wardogs_VehicleDamagePipeline_v1.md), [vehicles](../season-2-changes/vehicles.md) |
 | [`DT_GlobalDamage_VehicleData_WHL_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_01/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_01.json) | 1 | `GF/Vehicles/WHL_01/DataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md), [vehicles](../season-2-changes/vehicles.md) |
 | [`DT_GlobalDamage_VehicleData_WHL_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_02/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_02.json) | 1 | `GF/Vehicles/WHL_02/DataTables` | [Wardogs_AllVehicles_Stats_Damage_v1](../content/Wardogs_AllVehicles_Stats_Damage_v1.md), [vehicles](../season-2-changes/vehicles.md) |
@@ -780,23 +808,6 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_GlobalDamage_VehicleData_WHL_08`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_08.json) | 1 | `GF/Vehicles/WHL_08/DataTables` | [Wardogs_GameFeatures_Vehicles_v2](../game-features/Wardogs_GameFeatures_Vehicles_v2.md), [vehicles](../season-2-changes/vehicles.md) |
 | [`DT_GlobalDamage_VehicleData_WHL_08_RingTurret`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_08_RingTurret/Content/DataTables/DT_GlobalDamage_VehicleData_WHL_08_RingTurret.json) | 1 | `GF/Vehicles/WHL_08_RingTurret/DataTables` | [Wardogs_VehicleDamagePipeline_v1](../pipelines/Wardogs_VehicleDamagePipeline_v1.md), [vehicles](../season-2-changes/vehicles.md) |
 
-#### WDLootableDataTable
-
-2 table(s), 54 rows, 2 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdlootabledatatable).
-
-| Table | Rows | Folder | Documented in |
-|---|---|---|---|
-| [`DT_LootableDataTable`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/Lootable/Content/Data/DT_LootableDataTable.json) | 52 | `GF/WorldFeatures/Lootable/Data` | [round84-census-v4](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round84-census-v4.md), [round85-loot](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round85-loot.md), [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) (+1) |
-| [`DT_LootableDataTable_VIPEscort_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/VIPEscort_01/Content/DT_LootableDataTable_VIPEscort_01.json) | 2 | `GF/PvE/Scenarios/VIPEscort_01/Content` | [round36-ai](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-ai.md), [round59-open-questions](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round59-open-questions.md), [Wardogs_GameFeatures_PvE_v2](../game-features/Wardogs_GameFeatures_PvE_v2.md) (+2) |
-
-#### WDWagerConditionDefinition
-
-1 table(s), 50 rows, 1 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdwagerconditiondefinition).
-
-| Table | Rows | Folder | Documented in |
-|---|---|---|---|
-| [`DT_WagerConditions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerConditions.json) | 50 | [`Meta/Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Wagers) | [wagers](../_wiki/progression-and-economy/wagers.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md) (+2) |
-
 #### WDResourceRewardTableRow
 
 1 table(s), 49 rows, 1 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdresourcerewardtablerow).
@@ -807,13 +818,14 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 #### WDUIRadialWheelSlotTypeTableRow
 
-10 table(s), 46 rows, 6 named in docs. UI widget table, not expanded.
+11 table(s), 46 rows, 7 named in docs. UI widget table, not expanded.
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_RadialWheelSlotType_BuildToolData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/BuildTool/DT_RadialWheelSlotType_BuildToolData.json) | 22 | `GF/Items/Buildables/Data/BuildTool` | [round90-census-v5](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round90-census-v5.md), [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md), [vehicles](../season-2-changes/vehicles.md) |
+| [`DT_RadialWheelSlotType_BuildToolData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/BuildTool/DT_RadialWheelSlotType_BuildToolData.json) | 21 | `GF/Items/Buildables/Data/BuildTool` | [round90-census-v5](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round90-census-v5.md), [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md), [vehicles](../season-2-changes/vehicles.md) |
 | [`DT_RadialWheelSlotType_BuildToolData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_01/Content/BuildableData/DT_RadialWheelSlotType_BuildToolData.json) | 1 | `GF/Vehicles/STN_01/BuildableData` | [round90-census-v5](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round90-census-v5.md), [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md), [vehicles](../season-2-changes/vehicles.md) |
 | [`DT_RadialWheelSlotType_BuildToolData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/BuildableData/DT_RadialWheelSlotType_BuildToolData.json) | 1 | `GF/Vehicles/STN_06/BuildableData` | [round90-census-v5](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round90-census-v5.md), [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md), [vehicles](../season-2-changes/vehicles.md) |
+| [`DT_RadialWheelSlotType_BuildToolData_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables_HotZoneMagnet/Content/Data/DT_RadialWheelSlotType_BuildToolData_HotZoneMagnet.json) | 1 | `GF/Items/Buildables_HotZoneMagnet/Data` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | [`DT_RadialWheelSlotType_BuildToolData_STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/BuildableData/DT_RadialWheelSlotType_BuildToolData_STN_04.json) | 1 | `GF/Vehicles/STN_04/BuildableData` | not named |
 | [`DT_RadialWheelSlotType_EquipmentData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/RadialWheel/Data/EquipmentWheel/DT_RadialWheelSlotType_EquipmentData.json) | 7 | [`UI/Features/RadialWheel/Data/EquipmentWheel`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/RadialWheel/Data/EquipmentWheel) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
 | [`DT_RadialWheelSlotType_Vehicles`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/RadialWheel/Data/Vehicles/DT_RadialWheelSlotType_Vehicles.json) | 9 | [`UI/Features/RadialWheel/Data/Vehicles`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/RadialWheel/Data/Vehicles) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
@@ -824,11 +836,12 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 #### WDBuildableDataTableRow
 
-9 table(s), 44 rows, 9 named in docs. Index only (expanded on another page).
+10 table(s), 44 rows, 10 named in docs. Index only (expanded on another page).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_Buildables_LargeHammer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/LargeHammer/DT_Buildables_LargeHammer.json) | 19 | `GF/Items/Buildables/Data/LargeHammer` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
+| [`DT_Buildables_LargeHammer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/LargeHammer/DT_Buildables_LargeHammer.json) | 18 | `GF/Items/Buildables/Data/LargeHammer` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
+| [`DT_Buildables_LargeHammer_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables_HotZoneMagnet/Content/Data/DT_Buildables_LargeHammer_HotZoneMagnet.json) | 1 | `GF/Items/Buildables_HotZoneMagnet/Data` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | [`DT_Buildables_MediumHammer`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/MediumHammer/DT_Buildables_MediumHammer.json) | 12 | `GF/Items/Buildables/Data/MediumHammer` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | [`DT_Buildables_STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/BuildableData/DT_Buildables_STN_04.json) | 1 | `GF/Vehicles/STN_04/BuildableData` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | [`DT_Buildables_STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/BuildableData/DT_Buildables_STN_06.json) | 1 | `GF/Vehicles/STN_06/BuildableData` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md), [vehicles](../season-2-changes/vehicles.md) |
@@ -838,29 +851,9 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_STN_03_Buildable_Data`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/BuildableData/DT_STN_03_Buildable_Data.json) | 1 | `GF/Vehicles/STN_03/BuildableData` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | [`DT_STN_05_Buildable_Data`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/BuildableData/DT_STN_05_Buildable_Data.json) | 1 | `GF/Vehicles/STN_05/BuildableData` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 
-#### WDUITooltipDataTableRow
-
-4 table(s), 39 rows, 4 named in docs. UI widget table, not expanded.
-
-| Table | Rows | Folder | Documented in |
-|---|---|---|---|
-| [`DT_TooltipData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Tooltips/Data/DT_TooltipData.json) | 34 | [`UI/Features/Tooltips/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Tooltips/Data) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
-| [`DT_TooltipData_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/Tooltips/DT_TooltipData_Buildables.json) | 1 | `GF/Items/Buildables/Data/UI/Tooltips` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
-| [`DT_TooltipData_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/UI/MapTrackers/DT_TooltipData_HotZoneMagnet.json) | 2 | `GF/WorldFeatures/HotZoneMagnet/Data/UI/MapTrackers` | [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
-| [`DT_TooltipData_Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_TooltipData_Wagers.json) | 2 | [`Meta/Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Wagers) | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md) |
-
-#### WDEventFeedActionDataTableRow
-
-2 table(s), 37 rows, 2 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdeventfeedactiondatatablerow).
-
-| Table | Rows | Folder | Documented in |
-|---|---|---|---|
-| [`DT_EventFeedTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/EventFeed/Data/DT_EventFeedTypes.json) | 34 | [`UI/Features/HUD/EventFeed/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/HUD/EventFeed/Data) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
-| [`DT_EventFeedTypes_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_EventFeedTypes_SniperShowdown.json) | 3 | `GF/Experiences/SniperShowdown/UI` | [Wardogs_GameFeatures_Experiences_v2](../game-features/Wardogs_GameFeatures_Experiences_v2.md) |
-
 #### WDCosmeticData
 
-10 table(s), 36 rows, 10 named in docs. Index only (expanded on another page).
+12 table(s), 42 rows, 12 named in docs. Index only (expanded on another page).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
@@ -873,7 +866,29 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_Cosmetics_Season01_Emotes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Emotes/Season01_EmotesData/Content/Data/DT_Cosmetics_Season01_Emotes.json) | 3 | `GF/Emotes/Season01_EmotesData/Data` | [emotes](../_wiki/progression-and-economy/emotes.md), [season-01-cosmetics](../_wiki/progression-and-economy/season-01-cosmetics.md), [Wardogs_Season01_CosmeticUnlocks_v1](../content/Wardogs_Season01_CosmeticUnlocks_v1.md) (+3) |
 | [`DT_Cosmetics_Season01_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/DT_Cosmetics_Season01_Skins.json) | 17 | `GF/Skins/Season01_SkinsData/Data` | [season-01-cosmetics](../_wiki/progression-and-economy/season-01-cosmetics.md), [vehicle-skins](../_wiki/progression-and-economy/vehicle-skins.md), [weapon-skins](../_wiki/progression-and-economy/weapon-skins.md) (+4) |
 | [`DT_Cosmetics_Season02_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season02_SkinsData/Content/Data/DT_Cosmetics_Season02_Skins.json) | 8 | `GF/Skins/Season02_SkinsData/Data` | [vehicle-skins](../_wiki/progression-and-economy/vehicle-skins.md), [weapon-skins](../_wiki/progression-and-economy/weapon-skins.md), [Wardogs_Season01_CosmeticUnlocks_v1](../content/Wardogs_Season01_CosmeticUnlocks_v1.md) (+4) |
+| [`DT_Cosmetics_Season03_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season03_SkinsData/Content/Data/DT_Cosmetics_Season03_Skins.json) | 5 | `GF/Skins/Season03_SkinsData/Data` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
 | [`DT_Cosmetics_Taxi`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Taxi_SkinsData/Content/Data/DT_Cosmetics_Taxi.json) | 1 | `GF/Taxi_SkinsData/Data` | [vehicle-skins](../_wiki/progression-and-economy/vehicle-skins.md), [Wardogs_GameFeatures_Taxi_SkinsData_v2](../game-features/Wardogs_GameFeatures_Taxi_SkinsData_v2.md), [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+| [`DT_Movember_2026_Cosmetics`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Movember_2026/Content/Data/DT_Movember_2026_Cosmetics.json) | 1 | `GF/Movember_2026/Data` | [Wardogs_Progression_v1](../game-features/Wardogs_Progression_v1.md) |
+
+#### WDUITooltipDataTableRow
+
+4 table(s), 41 rows, 4 named in docs. UI widget table, not expanded.
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_TooltipData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Tooltips/Data/DT_TooltipData.json) | 35 | [`UI/Features/Tooltips/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Tooltips/Data) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
+| [`DT_TooltipData_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/Tooltips/DT_TooltipData_Buildables.json) | 1 | `GF/Items/Buildables/Data/UI/Tooltips` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
+| [`DT_TooltipData_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/WorldFeatures/HotZoneMagnet/Content/Data/UI/MapTrackers/DT_TooltipData_HotZoneMagnet.json) | 2 | `GF/WorldFeatures/HotZoneMagnet/Data/UI/MapTrackers` | [Wardogs_GameFeatures_WorldFeatures_v2](../game-features/Wardogs_GameFeatures_WorldFeatures_v2.md) |
+| [`DT_TooltipData_Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_TooltipData_Wagers.json) | 3 | [`Meta/Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Wagers) | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md) |
+
+#### WDEventFeedActionDataTableRow
+
+2 table(s), 37 rows, 2 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdeventfeedactiondatatablerow).
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_EventFeedTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/EventFeed/Data/DT_EventFeedTypes.json) | 34 | [`UI/Features/HUD/EventFeed/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/HUD/EventFeed/Data) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
+| [`DT_EventFeedTypes_SniperShowdown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Experiences/SniperShowdown/Content/UI/DT_EventFeedTypes_SniperShowdown.json) | 3 | `GF/Experiences/SniperShowdown/UI` | [Wardogs_GameFeatures_Experiences_v2](../game-features/Wardogs_GameFeatures_Experiences_v2.md) |
 
 #### RichImageRow
 
@@ -899,6 +914,14 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_PingActions_Social`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/PingWheel/Data/Actions/Social/DT_PingActions_Social.json) | 5 | [`UI/Features/PingWheel/Data/Actions/Social`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/PingWheel/Data/Actions/Social) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
 | [`DT_PingActions_Squad`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/PingWheel/Data/Actions/Squad/DT_PingActions_Squad.json) | 5 | [`UI/Features/PingWheel/Data/Actions/Squad`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/PingWheel/Data/Actions/Squad) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
 
+#### WDGoldMarketItemTableRow
+
+1 table(s), 32 rows, 1 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdgoldmarketitemtablerow).
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_GoldMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Collection/DT_GoldMarket.json) | 32 | [`Meta/Collection`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Collection) | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md), [round53-fixed-wing](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round53-fixed-wing.md) (+2) |
+
 #### FVehiclePropEntry
 
 1 table(s), 29 rows, 1 named in docs. Expanded in [Combat, Vehicles and Scene Data](Wardogs_DataTables_Combat_v1.md#fvehiclepropentry).
@@ -909,19 +932,11 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 
 #### WDEmoteData
 
-1 table(s), 27 rows, 1 named in docs. Expanded in [Meta Progression and Cosmetics](Wardogs_DataTables_Meta_v1.md#wdemotedata).
+1 table(s), 28 rows, 1 named in docs. Expanded in [Meta Progression and Cosmetics](Wardogs_DataTables_Meta_v1.md#wdemotedata).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_EmoteData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Actions/Character/DT_EmoteData.json) | 27 | [`GameMechanics/Actions/Character`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Actions/Character) | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [Wardogs_ItemActions_v1](../content/Wardogs_ItemActions_v1.md), [round45-b](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md) (+1) |
-
-#### WDGoldMarketItemTableRow
-
-1 table(s), 27 rows, 1 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdgoldmarketitemtablerow).
-
-| Table | Rows | Folder | Documented in |
-|---|---|---|---|
-| [`DT_GoldMarket`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Collection/DT_GoldMarket.json) | 27 | [`Meta/Collection`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Collection) | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md), [round53-fixed-wing](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round53-fixed-wing.md) (+2) |
+| [`DT_EmoteData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Actions/Character/DT_EmoteData.json) | 28 | [`GameMechanics/Actions/Character`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Actions/Character) | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [Wardogs_ItemActions_v1](../content/Wardogs_ItemActions_v1.md), [round45-b](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round45-b.md) (+1) |
 
 #### WDBoneDamageModifierData
 
@@ -939,6 +954,14 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 |---|---|---|---|
 | [`DT_DeathmatchWeaponSelect`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/Data/DT_DeathmatchWeaponSelect.json) | 20 | `GF/Deathmatch/Data` | [ROUND8_STATUS](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/ROUND8_STATUS.md), [round8-loadout-deathmatch](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-loadout-deathmatch.md), [round8-loadout-initialization](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round8-loadout-initialization.md) (+1) |
 
+#### WDExperienceServerBrowserTagRow
+
+1 table(s), 20 rows, 1 named in docs. Expanded in [Frontend, Server and Test Data](Wardogs_DataTables_Frontend_v1.md#wdexperienceserverbrowsertagrow).
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_ExperienceServerBrowserTags`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/ServerBrowser/DT_ExperienceServerBrowserTags.json) | 20 | [`UI/Data/ServerBrowser`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/ServerBrowser) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [round61-open-questions](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round61-open-questions.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
+
 #### WDUIActionSoundTableRow
 
 1 table(s), 20 rows, 1 named in docs. Audio table, skipped.
@@ -947,23 +970,33 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 |---|---|---|---|
 | [`DT_UIAudioData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Audio/DT_UIAudioData.json) | 20 | [`UI/Data/Audio`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/Audio) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
 
-#### WDExperienceServerBrowserTagRow
-
-1 table(s), 19 rows, 1 named in docs. Expanded in [Frontend, Server and Test Data](Wardogs_DataTables_Frontend_v1.md#wdexperienceserverbrowsertagrow).
-
-| Table | Rows | Folder | Documented in |
-|---|---|---|---|
-| [`DT_ExperienceServerBrowserTags`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/ServerBrowser/DT_ExperienceServerBrowserTags.json) | 19 | [`UI/Data/ServerBrowser`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/ServerBrowser) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [round61-open-questions](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round61-open-questions.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
-
 #### WDUIMaterialTrackerDataTableRow
 
-3 table(s), 19 rows, 3 named in docs. UI widget table, not expanded.
+4 table(s), 19 rows, 4 named in docs. UI widget table, not expanded.
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | [`DT_MaterialTrackerSettingsData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/Trackers/DT_MaterialTrackerSettingsData.json) | 15 | [`UI/Data/Trackers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Data/Trackers) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
-| [`DT_MaterialTrackerSettingsData_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/DT_MaterialTrackerSettingsData_Buildables.json) | 3 | `GF/Items/Buildables/Data/UI` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
+| [`DT_MaterialTrackerSettingsData_Buildables`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/UI/DT_MaterialTrackerSettingsData_Buildables.json) | 2 | `GF/Items/Buildables/Data/UI` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
+| [`DT_MaterialTrackerSettingsData_HotZoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables_HotZoneMagnet/Content/Data/DT_MaterialTrackerSettingsData_HotZoneMagnet.json) | 1 | `GF/Items/Buildables_HotZoneMagnet/Data` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | [`DT_MaterialTrackerSettingsData_Spotting`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Spotting/Content/Data/UI/Tracker/Optimization/Data/DT_MaterialTrackerSettingsData_Spotting.json) | 1 | `GF/Spotting/Data/UI/Tracker/Optimization/Data` | [Wardogs_GameFeatures_Spotting_v2](../game-features/Wardogs_GameFeatures_Spotting_v2.md) |
+
+#### RichTextStyleRow
+
+10 table(s), 18 rows, 0 named in docs. UI widget table, not expanded.
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_MapTextStyle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Map/Widgets/TacticalMap/Data/DT_MapTextStyle.json) | 1 | [`UI/Features/Map/Widgets/TacticalMap/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Map/Widgets/TacticalMap/Data) | not named |
+| [`DT_RichText_StyleRows_CustomEmojis`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Chatbox/Data/DT_RichText_StyleRows_CustomEmojis.json) | 1 | [`UI/Features/HUD/Chatbox/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/HUD/Chatbox/Data) | not named |
+| [`DT_RichText_StyleRows_CustomEmojisInHighlighted`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Chatbox/Data/DT_RichText_StyleRows_CustomEmojisInHighlighted.json) | 1 | [`UI/Features/HUD/Chatbox/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/HUD/Chatbox/Data) | not named |
+| [`DT_RichText_StyleRows_TooltipEmojis`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Tooltips/Widgets/TooltipItems/Data/DT_RichText_StyleRows_TooltipEmojis.json) | 1 | [`UI/Features/Tooltips/Widgets/TooltipItems/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Tooltips/Widgets/TooltipItems/Data) | not named |
+| [`DT_RichText_StyleRows_TooltipEmojis_Small`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Tooltips/Widgets/TooltipItems/Data/DT_RichText_StyleRows_TooltipEmojis_Small.json) | 1 | [`UI/Features/Tooltips/Widgets/TooltipItems/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Tooltips/Widgets/TooltipItems/Data) | not named |
+| [`DT_RichText_Style_ActionLabel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Shared/Text/DT_RichText_Style_ActionLabel.json) | 2 | [`UI/Features/Frontend/Shared/Text`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Frontend/Shared/Text) | not named |
+| [`DT_RichText_Style_EventFeed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/EventFeed/Widgets/EventFeedEntry/Data/DT_RichText_Style_EventFeed.json) | 2 | [`UI/Features/HUD/EventFeed/Widgets/EventFeedEntry/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/HUD/EventFeed/Widgets/EventFeedEntry/Data) | not named |
+| [`DT_RichText_Style_EventLog`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/DeathRecap/Widgets/Log/Data/DT_RichText_Style_EventLog.json) | 3 | [`UI/Features/DeathRecap/Widgets/Log/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/DeathRecap/Widgets/Log/Data) | not named |
+| [`DT_RichText_Style_InfoPopup`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Popups/Widgets/Data/DT_RichText_Style_InfoPopup.json) | 4 | [`UI/Features/Popups/Widgets/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Popups/Widgets/Data) | not named |
+| [`DT_RichText_Style_Photosensitivity`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Photosensitivity/Data/DT_RichText_Style_Photosensitivity.json) | 2 | [`UI/Features/Frontend/Photosensitivity/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Frontend/Photosensitivity/Data) | not named |
 
 #### WDLiveCurveTableRow
 
@@ -1010,23 +1043,6 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 |---|---|---|---|
 | [`DT_ScopeReticleTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/ScopeReticle/Data/DT_ScopeReticleTypes.json) | 17 | [`UI/Features/HUD/ScopeReticle/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/HUD/ScopeReticle/Data) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [round84-procedural-reticles](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round84-procedural-reticles.md) |
 
-#### RichTextStyleRow
-
-10 table(s), 15 rows, 0 named in docs. UI widget table, not expanded.
-
-| Table | Rows | Folder | Documented in |
-|---|---|---|---|
-| [`DT_MapTextStyle`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Map/Widgets/TacticalMap/Data/DT_MapTextStyle.json) | 1 | [`UI/Features/Map/Widgets/TacticalMap/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Map/Widgets/TacticalMap/Data) | not named |
-| [`DT_RichText_StyleRows_CustomEmojis`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Chatbox/Data/DT_RichText_StyleRows_CustomEmojis.json) | 1 | [`UI/Features/HUD/Chatbox/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/HUD/Chatbox/Data) | not named |
-| [`DT_RichText_StyleRows_CustomEmojisInHighlighted`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Chatbox/Data/DT_RichText_StyleRows_CustomEmojisInHighlighted.json) | 1 | [`UI/Features/HUD/Chatbox/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/HUD/Chatbox/Data) | not named |
-| [`DT_RichText_StyleRows_TooltipEmojis`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Tooltips/Widgets/TooltipItems/Data/DT_RichText_StyleRows_TooltipEmojis.json) | 1 | [`UI/Features/Tooltips/Widgets/TooltipItems/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Tooltips/Widgets/TooltipItems/Data) | not named |
-| [`DT_RichText_StyleRows_TooltipEmojis_Small`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Tooltips/Widgets/TooltipItems/Data/DT_RichText_StyleRows_TooltipEmojis_Small.json) | 1 | [`UI/Features/Tooltips/Widgets/TooltipItems/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Tooltips/Widgets/TooltipItems/Data) | not named |
-| [`DT_RichText_Style_ActionLabel`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Shared/Text/DT_RichText_Style_ActionLabel.json) | 2 | [`UI/Features/Frontend/Shared/Text`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Frontend/Shared/Text) | not named |
-| [`DT_RichText_Style_EventFeed`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/EventFeed/Widgets/EventFeedEntry/Data/DT_RichText_Style_EventFeed.json) | 2 | [`UI/Features/HUD/EventFeed/Widgets/EventFeedEntry/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/HUD/EventFeed/Widgets/EventFeedEntry/Data) | not named |
-| [`DT_RichText_Style_EventLog`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/DeathRecap/Widgets/Log/Data/DT_RichText_Style_EventLog.json) | 3 | [`UI/Features/DeathRecap/Widgets/Log/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/DeathRecap/Widgets/Log/Data) | not named |
-| [`DT_RichText_Style_InfoPopup`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Popups/Widgets/Data/DT_RichText_Style_InfoPopup.json) | 1 | [`UI/Features/Popups/Widgets/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Popups/Widgets/Data) | not named |
-| [`DT_RichText_Style_Photosensitivity`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/Photosensitivity/Data/DT_RichText_Style_Photosensitivity.json) | 2 | [`UI/Features/Frontend/Photosensitivity/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Frontend/Photosensitivity/Data) | not named |
-
 #### WDPostProcessEffect
 
 5 table(s), 15 rows, 5 named in docs. UI widget table, not expanded.
@@ -1039,6 +1055,14 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_PostProcessEffects_Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/DT_PostProcessEffects_Molotov.json) | 1 | `GF/Items/Molotov/Data` | [Wardogs_FireAndUtility_v1](../game-features/Wardogs_FireAndUtility_v1.md), [weapons-ammo](../season-2-changes/weapons-ammo.md) |
 | [`DT_PostProcessEffects_StimPen`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/StimPen/Content/Data/DT_PostProcessEffects_StimPen.json) | 1 | `GF/Items/StimPen/Data` | [round84-census-v4](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round84-census-v4.md) |
 
+#### WDServerBrowserRegionData
+
+1 table(s), 15 rows, 1 named in docs. Expanded in [Frontend, Server and Test Data](Wardogs_DataTables_Frontend_v1.md#wdserverbrowserregiondata).
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_OnlineRegions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/FindMatch/Data/DT_OnlineRegions.json) | 15 | [`UI/Features/Frontend/FindMatch/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Frontend/FindMatch/Data) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
+
 #### WDUIUserSettingDisplayDataTableRow
 
 1 table(s), 15 rows, 1 named in docs. Expanded in [Frontend, Server and Test Data](Wardogs_DataTables_Frontend_v1.md#wduiusersettingdisplaydatatablerow).
@@ -1047,13 +1071,22 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 |---|---|---|---|
 | [`DT_Settings_DisplayData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Settings/Data/DT_Settings_DisplayData.json) | 15 | [`UI/Features/Settings/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Settings/Data) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
 
-#### WDServerBrowserRegionData
+#### WDAchievementDefinition
 
-1 table(s), 14 rows, 1 named in docs. Expanded in [Frontend, Server and Test Data](Wardogs_DataTables_Frontend_v1.md#wdserverbrowserregiondata).
+1 table(s), 14 rows, 1 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdachievementdefinition).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_OnlineRegions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/FindMatch/Data/DT_OnlineRegions.json) | 14 | [`UI/Features/Frontend/FindMatch/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/Frontend/FindMatch/Data) | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md), [data-tables-tags](../season-2-changes/data-tables-tags.md) |
+| [`DT_Achievements`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/DT_Achievements.json) | 14 | [`Meta/Achievements`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Achievements) | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) (+1) |
+
+#### WDCosmeticSetData
+
+2 table(s), 14 rows, 1 named in docs. Expanded in [Meta Progression and Cosmetics](Wardogs_DataTables_Meta_v1.md#wdcosmeticsetdata).
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | 13 | [`Meta/Cosmetics`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Cosmetics) | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
+| [`DT_Movember_2026_CosmeticSets`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Movember_2026/Content/Data/DT_Movember_2026_CosmeticSets.json) | 1 | `GF/Movember_2026/Data` | not named |
 
 #### WDArchetypeCaliberDamageModifierData
 
@@ -1070,14 +1103,6 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | [`DT_AssistanceRequests`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Communication/AssistanceRequests/DT_AssistanceRequests.json) | 12 | [`GameMechanics/Communication/AssistanceRequests`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Communication/AssistanceRequests) | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md) |
-
-#### WDCosmeticSetData
-
-1 table(s), 12 rows, 1 named in docs. Expanded in [Meta Progression and Cosmetics](Wardogs_DataTables_Meta_v1.md#wdcosmeticsetdata).
-
-| Table | Rows | Folder | Documented in |
-|---|---|---|---|
-| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | 12 | [`Meta/Cosmetics`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Cosmetics) | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [rewards-unlocks](../season-2-changes/rewards-unlocks.md) |
 
 #### WDMusicState
 
@@ -1151,21 +1176,13 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_VehicleCrosshair_TNK01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_01/Content/DataTables/DT_VehicleCrosshair_TNK01.json) | 4 | `GF/Vehicles/TNK_01/DataTables` | [Wardogs_VehicleTurretControls_v1](../game-features/Wardogs_VehicleTurretControls_v1.md) |
 | [`DT_VehicleCrosshair_TNK04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/TNK_04/Content/DataTables/DT_VehicleCrosshair_TNK04.json) | 2 | `GF/Vehicles/TNK_04/DataTables` | [Wardogs_VehicleTurretControls_v1](../game-features/Wardogs_VehicleTurretControls_v1.md), [vehicles](../season-2-changes/vehicles.md) |
 
-#### WDVehicleSeatDamageReductionData
+#### WDWagerActionDefinition
 
-1 table(s), 11 rows, 1 named in docs. Expanded in [Combat, Vehicles and Scene Data](Wardogs_DataTables_Combat_v1.md#wdvehicleseatdamagereductiondata).
-
-| Table | Rows | Folder | Documented in |
-|---|---|---|---|
-| [`DT_InfantryData_VehicleSeatDamageReduction`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json) | 11 | [`GameMechanics/DamageSystem/DamageDataTables/DT_Helpers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers) | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [damage](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/damage.md), [round53-fixed-wing](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round53-fixed-wing.md) (+3) |
-
-#### WDAchievementDefinition
-
-1 table(s), 10 rows, 1 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdachievementdefinition).
+1 table(s), 11 rows, 1 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdwageractiondefinition).
 
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
-| [`DT_Achievements`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Achievements/DT_Achievements.json) | 10 | [`Meta/Achievements`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Achievements) | [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md), [Wardogs_Challenges_v1](../game-features/Wardogs_Challenges_v1.md) (+1) |
+| [`DT_WagerActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerActions.json) | 11 | [`Meta/Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Wagers) | [wagers](../_wiki/progression-and-economy/wagers.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md) (+3) |
 
 #### WDReticleAssetInfo
 
@@ -1199,6 +1216,14 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | [`DT_CashRewardModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Gamemode/Data/DT_CashRewardModifiers.json) | 9 | [`GameMechanics/Gamemode/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Gamemode/Data) | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round48](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round48.md) |
+
+#### WDVehicleSeatDamageReductionData
+
+1 table(s), 9 rows, 1 named in docs. Expanded in [Combat, Vehicles and Scene Data](Wardogs_DataTables_Combat_v1.md#wdvehicleseatdamagereductiondata).
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_InfantryData_VehicleSeatDamageReduction`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers/DT_InfantryData_VehicleSeatDamageReduction.json) | 9 | [`GameMechanics/DamageSystem/DamageDataTables/DT_Helpers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_Helpers) | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [damage](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/damage.md), [round53-fixed-wing](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round53-fixed-wing.md) (+3) |
 
 #### WDMetaTreeTableRow
 
@@ -1258,6 +1283,15 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_ForwardOperatingBase_PlacementDisplayTexts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/ForwardOperatingBase/DT_ForwardOperatingBase_PlacementDisplayTexts.json) | 2 | `GF/Items/Buildables/Data/ForwardOperatingBase` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
 | [`DT_PlacementDisplayTexts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/HUD/Placement/Data/DT_PlacementDisplayTexts.json) | 3 | [`UI/Features/HUD/Placement/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/HUD/Placement/Data) | [round68-boundaries](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round68-boundaries.md) |
 
+#### WDPlayerIdentityRow
+
+2 table(s), 6 rows, 1 named in docs. Expanded in [Meta Progression and Cosmetics](Wardogs_DataTables_Meta_v1.md#wdplayeridentityrow).
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json) | 5 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
+| [`DT_PlayerIdentities_Movember_2026`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Movember_2026/Content/Data/DT_PlayerIdentities_Movember_2026.json) | 1 | `GF/Movember_2026/Data` | not named |
+
 #### FToolFont
 
 1 table(s), 5 rows, 1 named in docs. UI widget table, not expanded.
@@ -1281,14 +1315,6 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | [`DT_AmmoModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DT_AmmoModifiers.json) | 5 | [`GameMechanics/DamageSystem`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/DamageSystem) | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [round39-weapons](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round39-weapons.md), [round84-census-v4](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round84-census-v4.md) (+3) |
-
-#### WDPlayerIdentityRow
-
-1 table(s), 5 rows, 1 named in docs. Expanded in [Meta Progression and Cosmetics](Wardogs_DataTables_Meta_v1.md#wdplayeridentityrow).
-
-| Table | Rows | Folder | Documented in |
-|---|---|---|---|
-| [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json) | 5 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
 
 #### WDUIScoreboardStatTableRow
 
@@ -1332,6 +1358,14 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 |---|---|---|---|
 | [`DT_PingTypes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Communication/Pings/DT_PingTypes.json) | 4 | [`GameMechanics/Communication/Pings`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Communication/Pings) | [Wardogs_GameMechanics_v2](../content/Wardogs_GameMechanics_v2.md), [player-movement](../season-2-changes/player-movement.md) |
 
+#### WDTimelineMarkerDefinition
+
+1 table(s), 4 rows, 0 named in docs. Not expanded.
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_TimelineMarkers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/SteamTimeline/Content/Data/DT_TimelineMarkers.json) | 4 | `GF/SteamTimeline/Data` | not named |
+
 #### WDUIInteractionContextStateDataTableRow
 
 1 table(s), 4 rows, 0 named in docs. UI widget table, not expanded.
@@ -1359,14 +1393,6 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | [`DT_Bobblehead_HeavyHelmet_SlotParts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/BobbleHeads/Bobblehead_HeavyHelmet/Content/Data/DT_Bobblehead_HeavyHelmet_SlotParts.json) | 1 | `GF/Vehicles/BobbleHeads/Bobblehead_HeavyHelmet/Data` | [Wardogs_VehicleHandling_v1](../game-features/Wardogs_VehicleHandling_v1.md) |
 | [`DT_Bobblehead_Warpup_SlotParts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/BobbleHeads/Bobblehead_Warpup/Content/Data/DT_Bobblehead_Warpup_SlotParts.json) | 1 | `GF/Vehicles/BobbleHeads/Bobblehead_Warpup/Data` | [Wardogs_VehicleHandling_v1](../game-features/Wardogs_VehicleHandling_v1.md) |
 
-#### WDWagerActionDefinition
-
-1 table(s), 4 rows, 1 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdwageractiondefinition).
-
-| Table | Rows | Folder | Documented in |
-|---|---|---|---|
-| [`DT_WagerActions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerActions.json) | 4 | [`Meta/Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Wagers) | [wagers](../_wiki/progression-and-economy/wagers.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md) (+3) |
-
 #### WDClientHotConfigTableRow
 
 1 table(s), 3 rows, 1 named in docs. Expanded in [Frontend, Server and Test Data](Wardogs_DataTables_Frontend_v1.md#wdclienthotconfigtablerow).
@@ -1382,6 +1408,14 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | [`DT_ControlZoneContributionModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/ControlZone/Content/ControlZone/Data/DT_ControlZoneContributionModifiers.json) | 3 | `GF/ControlZone/ControlZone/Data` | [Wardogs_GameFeatures_ControlZone_v2](../game-features/Wardogs_GameFeatures_ControlZone_v2.md) |
+
+#### WDCurrencyDefinition
+
+1 table(s), 3 rows, 1 named in docs. Index only (expanded on another page).
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_CurrenciesDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CurrencyDefinitions/DT_CurrenciesDefinitions.json) | 3 | [`Meta/CurrencyDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/CurrencyDefinitions) | [currencies](../_wiki/progression-and-economy/currencies.md), [Wardogs_Maps_v2](../content/Wardogs_Maps_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md) (+5) |
 
 #### WDMissionDefinition
 
@@ -1399,14 +1433,6 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 |---|---|---|---|
 | [`DT_RadialWheelTypeDatas`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/RadialWheel/Data/DT_RadialWheelTypeDatas.json) | 2 | [`UI/Features/RadialWheel/Data`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/UI/Features/RadialWheel/Data) | not named |
 | [`DT_RadialWheelType_BuildToolData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/BuildTool/DT_RadialWheelType_BuildToolData.json) | 1 | `GF/Items/Buildables/Data/BuildTool` | [Wardogs_Buildables_v1](../game-features/Wardogs_Buildables_v1.md) |
-
-#### WDCurrencyDefinition
-
-1 table(s), 2 rows, 1 named in docs. Index only (expanded on another page).
-
-| Table | Rows | Folder | Documented in |
-|---|---|---|---|
-| [`DT_CurrenciesDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CurrencyDefinitions/DT_CurrenciesDefinitions.json) | 2 | [`Meta/CurrencyDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/CurrencyDefinitions) | [currencies](../_wiki/progression-and-economy/currencies.md), [Wardogs_Maps_v2](../content/Wardogs_Maps_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md) (+5) |
 
 #### WDUIIndicatorTableRow
 
@@ -1488,6 +1514,14 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 |---|---|---|---|
 | [`DT_UIInputActionData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_UIInputActionData.json) | 1 | `UI/Data` | [Wardogs_UI_v2](../content/Wardogs_UI_v2.md) |
 
+#### WDVendorDiscountsDefinition
+
+1 table(s), 1 rows, 0 named in docs. Not expanded.
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_VendorDiscounts`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/DT_VendorDiscounts.json) | 1 | `Meta` | not named |
+
 #### WDWagerObjectiveCatalogDefinition
 
 1 table(s), 1 rows, 1 named in docs. Expanded in [Economy and Rewards](Wardogs_DataTables_Economy_v1.md#wdwagerobjectivecatalogdefinition).
@@ -1503,4 +1537,12 @@ description: "Index of all 766 data tables, grouped by row struct, with row coun
 | Table | Rows | Folder | Documented in |
 |---|---|---|---|
 | [`DT_WagerPricing`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Wagers/DT_WagerPricing.json) | 1 | [`Meta/Wagers`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Wagers) | [wagers](../_wiki/progression-and-economy/wagers.md), [Wardogs_Meta_v2](../content/Wardogs_Meta_v2.md), [round36-econ](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md) (+1) |
+
+#### WDXPModifiersDefinition
+
+1 table(s), 1 rows, 0 named in docs. Not expanded.
+
+| Table | Rows | Folder | Documented in |
+|---|---|---|---|
+| [`DT_XPModifiers`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Levels/DT_XPModifiers.json) | 1 | [`Meta/Levels`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Meta/Levels) | not named |
 <!-- /datatable_catalog -->

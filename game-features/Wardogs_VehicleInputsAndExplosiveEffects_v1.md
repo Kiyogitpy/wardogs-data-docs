@@ -46,7 +46,7 @@ The curves each asset names, as (input: output) keys:
 | [`DA_Input_WHL_06_DuneBuggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_Input_WHL_06_DuneBuggy.json) | ThrottleEngagement | `CRV_ThrottleEngagement` | 0: 0; 1: 1 |
 | [`DA_Input_WHL_06_DuneBuggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_Input_WHL_06_DuneBuggy.json) | BrakeEngagement | `CRV_BrakeEngagement` | 0: 0; 1: 1 |
 | [`DA_Input_WHL_06_DuneBuggy`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_06/Content/Data/DA_Input_WHL_06_DuneBuggy.json) | ClutchEngagement | `CRV_ClutchEngagement` | 0: 0; 0.1: 0; 1: 1 |
-| [`DA_Input_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_Input_WHL_07.json) | SteerSpeedCurve | [`CRV_SteerSpeedVariant_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Curves/CRV_SteerSpeedVariant_WHL_07.json) | 0: 1.425; 21: 1; 42.1: 0.65; 80: 0.5 |
+| [`DA_Input_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_Input_WHL_07.json) | SteerSpeedCurve | [`CRV_SteerSpeedVariant_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Curves/CRV_SteerSpeedVariant_WHL_07.json) | 0: 1.425; 21: 1; 42.1: 0.65; 80: 0.5; 95: 0.5; 100: 3 |
 | [`DA_Input_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_Input_WHL_07.json) | SteerLimitCurve | [`CRV_SteerLimitVariant_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Curves/CRV_SteerLimitVariant_WHL_07.json) | 2.1: 97.5; 23.2: 90; 48.8: 67.5; 80: 51.25 |
 | [`DA_Input_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_Input_WHL_07.json) | ThrottleEngagement | [`CRV_ThrottleEngagement_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Curves/CRV_ThrottleEngagement_WHL_07.json) | 0: 0; 1: 1 |
 | [`DA_Input_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Data/DA_Input_WHL_07.json) | BrakeEngagement | [`CRV_BrakeEngagement_WHL_07`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/WHL_07/Content/Curves/CRV_BrakeEngagement_WHL_07.json) | 0: 0; 1: 1 |
@@ -82,11 +82,11 @@ Every entry in `DT_GlobalDamage_VehicleData*` whose source tag is the listed exp
 | `Air.Rotary.LittleBird` | +200 | +0 | -50 | +25 | +50 (+Inner) | -40 | +500 |
 | `Air.Rotary.ROT_04` | +200 | -35 | -75 | +30 | +0 (+Inner) | -20 | +450 |
 | `Land.Tracked.Leopard.Spawn` | +100 | +15 | -95 | +150 | -80 (+Inner) | +20 | +500 |
-| `Land.Tracked.TNK_01.AntiAir` | +145 | -25 | -95 | +30 | -60 (+Inner) | +20 | +450 |
-| `Land.Tracked.TNK_01.Artillery` | +145 | -25 | -95 | +10 | -60 (+Inner) | +20 | +500 |
-| `Land.Tracked.TNK_01.Heavy` | +145 | -25 | -95 | +30 | -60 (+Inner) | +20 | +450 |
-| `Land.Tracked.TNK_04.Default` | +145 | -25 | -95 | +30 | -60 (+Inner) | +20 / -95 | +450 |
-| `Land.Wheeled.Bobcat` | +200 | - | -50 | +150 | +0 (+Inner) | +250 (+Explosive.Rocket) | +500 |
+| `Land.Tracked.TNK_01.AntiAir` | +145 | -25 | -95 | +30 | -85 (+Inner) | -65 | +450 |
+| `Land.Tracked.TNK_01.Artillery` | +145 | -25 | -95 | +10 | -85 (+Inner) | -65 | +500 |
+| `Land.Tracked.TNK_01.Heavy` | +145 | -25 | -95 | +30 | -85 (+Inner) | -65 | +450 |
+| `Land.Tracked.TNK_04.Default` | +145 | -25 | -95 | +30 | -85 (+Inner) | -65 | +450 |
+| `Land.Wheeled.Bobcat` | +200 | - | -50 | +150 | +0 (+Inner) | +250 | +500 |
 | `Land.Wheeled.DuneBuggy` | +200 | +0 | -50 | +150 | +5 (+Inner) | +300 | +500 |
 | `Land.Wheeled.Humvee.Default` | +200 | -20 | -75 | +150 | -35 (+Inner) | +75 | +350 |
 | `Land.Wheeled.Humvee.MachineGun` | +200 | -35 | -75 | +150 | -40 (+Inner) | +75 | +350 |
@@ -95,11 +95,12 @@ Every entry in `DT_GlobalDamage_VehicleData*` whose source tag is the listed exp
 | `Land.Wheeled.Ural` | +250 | -55 | -65 | +50 | -15 (+Inner) | -30 (+Inner) | +500 |
 | `Land.Wheeled.WHL_08.Default` | +200 | -10 | -62.5 | +150 | -26 (+Inner) | +187.5 | +425 |
 | `Land.Wheeled.WHL_08.MachineGun` | +200 | -17.5 | -62.5 | +150 | -29 (+Inner) | +187.5 | +425 |
+| `Stationary.MGNest` | - | +300 | - | +400 | +0 | - | - |
 | `Stationary.Mistral` | - | +1500 | - | +150 | +0 | - | - |
 | `Stationary.Mortar` | - | +300 | - | +400 | +0 | - | - |
 | `Stationary.Phalanx` | - | +700 | - | +2000 | +0 | - | - |
 | `Stationary.RadioTower` | +200 | +0 | -50 | +150 | +100 (+Inner) | - | - |
-| `Stationary.STN_05` | - | +300 / +300 | - | +400 / +400 | +0 / +0 | - | - |
+| `Stationary.STN_05` | - | +300 | - | +400 | +0 | - | - |
 
 ## 5. Weapon spread curves ([`CT_Weapon_Spread`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Items/Weapons/Curves/CT_Weapon_Spread.json))
 

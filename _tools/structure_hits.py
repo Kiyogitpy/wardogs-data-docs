@@ -3,7 +3,7 @@
 Extends the four-source estimate of round 36 (docs/evidence/round36-combat.md section 2) to every
 projectile (bullets with FMJ / armor-piercing / hollow-point, cannons, rockets, the 12 gauge) and
 every explosive actor in assets/data/explosive-actors.json. For each buildable it takes the damage
-row named by the asset (DT_GlobalDamage_BuildableData), selects the entries whose SourceRequirements
+row named by the asset (including declared stored GameFeature registry contributions), selects the entries whose SourceRequirements
 are all in the lineage of the source tags (the matching rule of damage_tables.matches) and applies
 them as the game does (DamagePipeline v2 section 6): Percentage_Ongoing multiplies the running amount
 by 1 + Amount/100, Add adds Amount (only the tracked-vehicle entry), the result is clamped at 0.
@@ -13,13 +13,12 @@ by 1 + Amount/100, Add adds Amount (only the tracked-vehicle entry), the result 
 Derived: point blank, full base damage at the centre of an explosion, no falloff, no ricochet, no
 penetration, no instigator rule (the buildable rows have none), one hit, finished structure.
 The buildable rows have no instigator, target or hit-location requirements and no custom operation
-(checked here), so the combine is exact for the entries present.
+(checked here). Calculations use the earlier documented native model; current feature activation and native hotfix compatibility remain unverified.
 
     python -I _tools/structure_hits.py            print the table
     python -I _tools/structure_hits.py --json     write assets/data/structure-hits.json (idempotent)
     python -I _tools/structure_hits.py --check    assert key values (exit 1 on mismatch)
 """
-import glob
 import json
 import math
 import os
@@ -28,34 +27,24 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import damage_tables as dt  # noqa: E402
+import buildable_tables as bt  # noqa: E402
 
 ROOT = dt.ROOT
-BUILD = os.path.join(ROOT, "data", "Wardogs", "Plugins", "GameFeatures", "Items", "Buildables", "Content", "Data")
 OUT = os.path.join(ROOT, "assets", "data", "structure-hits.json")
 MODS = ["FMJ", "ArmorPiercing", "HollowPoint"]
 
 
 def load_rows():
-    path = os.path.join(BUILD, "DT_GlobalDamage_BuildableData.json")
-    text = open(path, encoding="utf-8").read()
-    return json.JSONDecoder().raw_decode(text[text.index("{"):])[0]["Rows"]
+    return bt.load()["damage"]
 
 
 def buildables():
     out = {}
-    for f in sorted(glob.glob(os.path.join(BUILD, "Buildables", "**", "DA_Buildable_*.json"), recursive=True)):
-        if f.endswith("_Stages.json"):
-            continue
-        for o in dt.exports(f):
-            p = o.get("Properties", {})
-            if o.get("Type") in ("WDBuildableDataAsset", "WDBuildableHotZoneMagnetDataAsset") and "MaxHealth" in p:
-                row = None
-                for v in dt.walk(p, "TagName"):
-                    if isinstance(v, str) and v.startswith("Meta.Damage.Buildable."):
-                        row = v
-                        break
-                if row:
-                    out[os.path.basename(f)[len("DA_Buildable_"):-5]] = (p["MaxHealth"], row)
+    for _, name, typ, p in bt.load()["assets"]:
+        if typ in ("WDBuildableDataAsset", "WDBuildableHotZoneMagnetDataAsset") and "MaxHealth" in p:
+            row = next((v for v in dt.walk(p, "TagName") if isinstance(v, str) and v.startswith("Meta.Damage.Buildable.")), None)
+            if row:
+                out[name[len("DA_Buildable_"):]] = (p["MaxHealth"], row)
     return out
 
 
@@ -110,7 +99,8 @@ def build():
     res = {"meta": {
         "generator": "python -I _tools/structure_hits.py --json",
         "unit": "hits to destroy a finished structure; damage per hit in health points",
-        "assumptions": ["point blank, full base damage at the centre of an explosion, no falloff, no ricochet or penetration",
+        "assumptions": ["Stored registry contributions are included under the earlier native model; current feature activation and native hotfix compatibility are unverified.",
+                        "point blank, full base damage at the centre of an explosion, no falloff, no ricochet or penetration",
                         "the buildable damage rows have only source requirements and no custom operation (asserted)",
                         "no pellet multiplication: 12 gauge values are per pellet",
                         "Derived (DamagePipeline v2 section 6 arithmetic over the matching entries)"]},

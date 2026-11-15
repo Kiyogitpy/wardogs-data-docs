@@ -16,7 +16,7 @@ The Deathmatch experience: a team-deathmatch game mode with a weapon-select scre
 
 | File | Type | Role |
 |---|---|---|
-| `Deathmatch.json` | GameFeatureData pack | Main pack: match states, components, registries, HUD widget |
+| [`Deathmatch.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/Deathmatch.json) | GameFeatureData pack | Main pack: match states, components, registries, HUD widget |
 | [`Data/DA_DeathmatchStatus.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/Data/DA_DeathmatchStatus.json) | `WDUIDeathmatchStatusData` | Status HUD entry view model |
 | [`Data/DT_DeathmatchWeaponSelect.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/Data/DT_DeathmatchWeaponSelect.json) | DataTable | 20 weapon-select rows |
 | [`UI/Scene/DA_WeaponSelectData.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/UI/Scene/DA_WeaponSelectData.json) | `WDUIWeaponSelectData` | Weapon-select item view model |

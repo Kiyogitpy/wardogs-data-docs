@@ -1,0 +1,129 @@
+--- export: UObject / AEB_PlayPerspectiveSound_HostilityAware_C_0 ---
+{
+  "Type": "AEB_PlayPerspectiveSound_HostilityAware_C",
+  "Name": "AEB_PlayPerspectiveSound_HostilityAware_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_PlayPerspectiveSound_HostilityAware.AEB_PlayPerspectiveSound_HostilityAware_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Environment_Burn'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Environment_Burn.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_PlayPerspectiveSound_HostilityAware_C'Default__AEB_PlayPerspectiveSound_HostilityAware_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_PlayPerspectiveSound_HostilityAware.0"
+  },
+  "Properties": {
+    "FirstPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.State.Burning.1p"
+    },
+    "AlliedThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.State.Burning.Ally"
+    },
+    "HostileThirdPersonSoundTag": {
+      "TagName": "Audio.Asset.Player.State.Burning.Enemy"
+    },
+    "SoundAssetData": {
+      "ObjectName": "WDAudioData'DA_Player_Damage_Burn'",
+      "ObjectPath": "/Game/Audio/Player/Damage/FromFire/DAs/DA_Player_Damage_Burn.0"
+    },
+    "RestartBehaviour": "ESoundRestartBehavior::Always",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Damage.Burn"
+    }
+  }
+}
+--- export: UObject / AEB_RequestDamagedVox_C_0 ---
+{
+  "Type": "AEB_RequestDamagedVox_C",
+  "Name": "AEB_RequestDamagedVox_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_RequestDamagedVox.AEB_RequestDamagedVox_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Environment_Burn'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Environment_Burn.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_RequestDamagedVox_C'Default__AEB_RequestDamagedVox_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_RequestDamagedVox.0"
+  },
+  "Properties": {
+    "Under Threshold": {
+      "TagName": "Audio.Vox.Exertion.TakingDamage.Burn"
+    },
+    "Over Threshold": {
+      "TagName": "Audio.Vox.Exertion.TakingDamage.Heavy"
+    },
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Vocalisations"
+    }
+  }
+}
+--- export: UObject / AEB_SendRawMagnitudeToMSS_C_0 ---
+{
+  "Type": "AEB_SendRawMagnitudeToMSS_C",
+  "Name": "AEB_SendRawMagnitudeToMSS_C_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "BlueprintGeneratedClass'/Game/Audio/Behaviours/AEB_SendRawMagnitudeToMSS.AEB_SendRawMagnitudeToMSS_C'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Environment_Burn'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Environment_Burn.3"
+  },
+  "Template": {
+    "ObjectName": "AEB_SendRawMagnitudeToMSS_C'Default__AEB_SendRawMagnitudeToMSS_C'",
+    "ObjectPath": "/Game/Audio/Behaviours/AEB_SendRawMagnitudeToMSS.0"
+  },
+  "Properties": {
+    "Float": "Damage",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Damage.Burn"
+    }
+  }
+}
+--- export: UPrimaryDataAsset / AE_Player_Damaged_Environment_Burn ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Damaged_Environment_Burn",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Environment_Burn",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Damaged.Environment.Burn"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorAttachSoundToActor'AE_Player_Damaged_Environment_Burn:CrosstalkAudioEventBehaviorAttachSoundToActor_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Environment_Burn.4"
+      },
+      {
+        "ObjectName": "AEB_PlayPerspectiveSound_HostilityAware_C'AE_Player_Damaged_Environment_Burn:AEB_PlayPerspectiveSound_HostilityAware_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Environment_Burn.0"
+      },
+      {
+        "ObjectName": "AEB_SendRawMagnitudeToMSS_C'AE_Player_Damaged_Environment_Burn:AEB_SendRawMagnitudeToMSS_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Environment_Burn.2"
+      },
+      {
+        "ObjectName": "AEB_RequestDamagedVox_C'AE_Player_Damaged_Environment_Burn:AEB_RequestDamagedVox_C_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Environment_Burn.1"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 50.5
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorAttachSoundToActor_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorAttachSoundToActor",
+  "Name": "CrosstalkAudioEventBehaviorAttachSoundToActor_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorAttachSoundToActor'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Damaged_Environment_Burn'",
+    "ObjectPath": "/Game/Audio/Events/Player/Damaged/AE_Player_Damaged_Environment_Burn.3"
+  },
+  "Properties": {
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Damage.Burn"
+    }
+  }
+}

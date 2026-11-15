@@ -15,6 +15,8 @@
     "Meta.Damage.Vehicle.Land.Tracked.Leopard.Spawn": {
       "DamageModificationEntries": [
         {
+          "EntryId": "None",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [],
@@ -38,6 +40,8 @@
           }
         },
         {
+          "EntryId": "Bullet",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -68,6 +72,8 @@
           }
         },
         {
+          "EntryId": "BulletRadar",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -95,6 +101,63 @@
           }
         },
         {
+          "EntryId": "Fists",
+          "bEnabled": true,
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Utility.Fists"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -92.7,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Armor"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "EntryId": "WeaponBash",
+          "bEnabled": true,
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Weapon",
+            "Meta.Damage.DamageType.Melee"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -92.7,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Armor"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "EntryId": "Cannon",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -120,6 +183,8 @@
           }
         },
         {
+          "EntryId": "Ricochet",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -145,6 +210,8 @@
           }
         },
         {
+          "EntryId": "RocketInnerExplosive",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -171,31 +238,8 @@
           }
         },
         {
-          "InstigatorRequirements": [],
-          "TargetRequirements": [],
-          "SourceRequirements": [
-            "Meta.Damage.Explosive.Rocket.155mm"
-          ],
-          "AlignmentRequired": "EWDDamageAlignment::None",
-          "PossibleHitLocations": [],
-          "OutModification": {
-            "bUseCustomOperation": false,
-            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
-            "Amount": 0.0,
-            "CustomOperationClass": null,
-            "PriorityCategory": {
-              "TagName": "Meta.Damage.Category.Calibre"
-            },
-            "PriorityIndex": -1,
-            "DebugTargetTag": {
-              "TagName": "None"
-            }
-          },
-          "DebugTargetTag": {
-            "TagName": "None"
-          }
-        },
-        {
+          "EntryId": "GrenadeInnerExplosive",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -222,6 +266,8 @@
           }
         },
         {
+          "EntryId": "ATLandmine",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -247,6 +293,8 @@
           }
         },
         {
+          "EntryId": "C4",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -272,6 +320,8 @@
           }
         },
         {
+          "EntryId": "IED",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -297,6 +347,8 @@
           }
         },
         {
+          "EntryId": "Claymore",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -322,6 +374,35 @@
           }
         },
         {
+          "EntryId": "Molotov",
+          "bEnabled": true,
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Molotov"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -100.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Armor"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "EntryId": "None",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [],
@@ -345,6 +426,8 @@
           }
         },
         {
+          "EntryId": "None",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [],
@@ -368,6 +451,8 @@
           }
         },
         {
+          "EntryId": "Rocket",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -395,6 +480,8 @@
           }
         },
         {
+          "EntryId": "None",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [],
@@ -418,6 +505,8 @@
           }
         },
         {
+          "EntryId": "BulletFuelTank",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -445,6 +534,8 @@
           }
         },
         {
+          "EntryId": "FuelTankDestroyed",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -472,6 +563,8 @@
           }
         },
         {
+          "EntryId": "None",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [],
@@ -495,6 +588,8 @@
           }
         },
         {
+          "EntryId": "72mm",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -520,6 +615,8 @@
           }
         },
         {
+          "EntryId": "35x228mm",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -545,6 +642,8 @@
           }
         },
         {
+          "EntryId": "40mm",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -570,6 +669,8 @@
           }
         },
         {
+          "EntryId": "120x800mm",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -595,6 +696,8 @@
           }
         },
         {
+          "EntryId": "84mm",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -620,6 +723,8 @@
           }
         },
         {
+          "EntryId": "30mm",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -645,6 +750,8 @@
           }
         },
         {
+          "EntryId": "20x102mm",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -670,6 +777,8 @@
           }
         },
         {
+          "EntryId": "93mm",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -695,6 +804,8 @@
           }
         },
         {
+          "EntryId": "120mm",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -720,6 +831,8 @@
           }
         },
         {
+          "EntryId": "122mm",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -745,6 +858,35 @@
           }
         },
         {
+          "EntryId": "70x1060mm",
+          "bEnabled": true,
+          "InstigatorRequirements": [],
+          "TargetRequirements": [],
+          "SourceRequirements": [
+            "Meta.Damage.Explosive.Rocket.70x1060mm"
+          ],
+          "AlignmentRequired": "EWDDamageAlignment::None",
+          "PossibleHitLocations": [],
+          "OutModification": {
+            "bUseCustomOperation": false,
+            "Operation": "EWDDamageModificationOperation::Percentage_Ongoing",
+            "Amount": -55.0,
+            "CustomOperationClass": null,
+            "PriorityCategory": {
+              "TagName": "Meta.Damage.Category.Calibre"
+            },
+            "PriorityIndex": -1,
+            "DebugTargetTag": {
+              "TagName": "None"
+            }
+          },
+          "DebugTargetTag": {
+            "TagName": "None"
+          }
+        },
+        {
+          "EntryId": "155mm",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -770,6 +912,8 @@
           }
         },
         {
+          "EntryId": "Drone",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [
@@ -795,6 +939,8 @@
           }
         },
         {
+          "EntryId": "125mm",
+          "bEnabled": true,
           "InstigatorRequirements": [],
           "TargetRequirements": [],
           "SourceRequirements": [

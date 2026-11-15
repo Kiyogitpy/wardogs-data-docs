@@ -31,16 +31,13 @@
           "bUpdateSteeringValues": false,
           "bUpdateGearChangeValues": false,
           "SeatIdlePose": {
-            "ObjectName": "AnimSequence'A_TP_Kodiak_Turret_M249_Idle_Pose'",
-            "ObjectPath": "/Game/Animation/Characters/StateMachine/Idles/Vehicle/Turrets/A_TP_Kodiak_Turret_M249_Idle_Pose.0"
+            "ObjectName": "AnimSequence'A_TP_TNK_04_Turret_MWSY_001_Idle'",
+            "ObjectPath": "/MWSY_001/Animation/Anims/WHL_08_AO/A_TP_TNK_04_Turret_MWSY_001_Idle.0"
           },
-          "SeatIdleAnimation": {
-            "ObjectName": "AnimSequence'A_TP_MountedM249_Idle'",
-            "ObjectPath": "/Game/Animation/Characters/StateMachine/AimOffset/Vehicle/Mounted/MountedM249/A_TP_MountedM249_Idle.0"
-          },
+          "SeatIdleAnimation": null,
           "SeatDeathAnimation": {
-            "ObjectName": "AnimSequence'A_TP_Humvee_Transport_Dead'",
-            "ObjectPath": "/Game/Animation/Characters/Vehicle/Humvee/TP/A_TP_Humvee_Transport_Dead.0"
+            "ObjectName": "AnimSequence'A_TP_TNK_04_Gunner_Death_Pose'",
+            "ObjectPath": "/TNK_04/Animations/Character/A_TP_TNK_04_Gunner_Death_Pose.0"
           },
           "SeatBlendSpaces": [
             {
@@ -48,8 +45,8 @@
                 "TagName": "Animation.Player.BlendSpace.TP.Seat.Passive"
               },
               "Value": {
-                "ObjectName": "BlendSpace'BS_TP_Kodiak_Turret_M249_AO'",
-                "ObjectPath": "/Game/Animation/Characters/StateMachine/AimOffset/Vehicle/Mounted/Kodiak/BS_TP_Kodiak_Turret_M249_AO.0"
+                "ObjectName": "BlendSpace'BS_WHL_08_MWSY_001_AO'",
+                "ObjectPath": "/MWSY_001/Animation/Anims/WHL_08_AO/BS_WHL_08_MWSY_001_AO.0"
               }
             }
           ]
@@ -82,6 +79,7 @@
           "Z": 0.0
         },
         "bBlockTest": true,
+        "_aaabhkmfcbekfggbkoiah": true,
         "SeatCharacterCapsuleRadius": 32.0,
         "SeatCharacterCapsuleHalfHeight": 70.0,
         "SeatCharacterCapsuleOffset": {
@@ -98,11 +96,11 @@
           "Roll": 0.0
         },
         "bAutoEjectOnDowned": false,
-        "bUseCameraLimits": false,
+        "_aaabakbifcmofhbenpbic": false,
         "CameraLockYaw": 90.0,
         "CameraLockPitch": 40.0,
         "OccupancyHistoryExpiration": 10.0,
-        "SeatSwitchFilter": {
+        "_aaabanolfapkmdeipofhf": {
           "RoleRequirements": {
             "RequireTags": [],
             "IgnoreTags": [],
@@ -128,7 +126,7 @@
           "AllowList": [],
           "DenyList": []
         },
-        "SeatSwitchTimers": [],
+        "_aaabachfkpdfhkedmlndp": [],
         "SeatExitEffects": {
           "Effects": []
         },

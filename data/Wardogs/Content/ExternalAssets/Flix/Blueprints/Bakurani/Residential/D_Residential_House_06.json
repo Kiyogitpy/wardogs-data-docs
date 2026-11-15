@@ -6,7 +6,7 @@
   "Class": "UScriptClass'BHDestructionBuildingDefinitionDataAsset'",
   "Package": "/Game/ExternalAssets/Flix/Blueprints/Bakurani/Residential/D_Residential_House_06",
   "Properties": {
-    "SaveID": "B6D01231-400763FE-9FFD1395-66E3C77A",
+    "SaveID": "C51C360D-4251E94A-687EEAA7-E1F66DCC",
     "RequiredMeshes": [
       {
         "StaticMesh": {
@@ -672,7 +672,7 @@
           "Y": -298.282,
           "Z": 191.0895
         },
-        "RefCount": 2,
+        "RefCount": 1,
         "StringISMOverrides": "",
         "_aaaandifhiadlmpkkgbib": "EBHDestructionCPDInputStyle::Building"
       },
@@ -872,7 +872,7 @@
         "MeshCenter": {
           "X": 200.0,
           "Y": 201.0,
-          "Z": 45.00004
+          "Z": 44.305702
         },
         "RefCount": 3,
         "StringISMOverrides": "",
@@ -918,9 +918,9 @@
         "MaterialOverrideArray": [],
         "PhysicalMaterialOverride": null,
         "MeshCenter": {
-          "X": 200.00006,
-          "Y": 200.99998,
-          "Z": 45.00004
+          "X": 200.0281,
+          "Y": 194.50131,
+          "Z": 44.305645
         },
         "RefCount": 1,
         "StringISMOverrides": "",
@@ -1205,15 +1205,21 @@
       },
       {
         "StaticMesh": {
-          "ObjectName": "StaticMesh'SM_ModKit04_ApartmentPillar_A'",
-          "ObjectPath": "/Game/Environment/Architecture/Residential/ModularKit_04/Walls/SM_ModKit04_ApartmentPillar_A.1"
+          "ObjectName": "StaticMesh'SM_ModKitHouse_Stairs_Interior_A'",
+          "ObjectPath": "/Game/Environment/Architecture/Residential/ModularKit_04/Stairs/SM_ModKitHouse_Stairs_Interior_A.1"
         },
-        "MaterialOverrideArray": [],
+        "MaterialOverrideArray": [
+          null,
+          {
+            "ObjectName": "MaterialInstanceConstant'MI_ApartmentWalls_01a'",
+            "ObjectPath": "/Game/Environment/Architecture/Residential/ModularKit_04/Walls/0_Materials/MI_ApartmentWalls_01a.0"
+          }
+        ],
         "PhysicalMaterialOverride": null,
         "MeshCenter": {
-          "X": -24.999996,
-          "Y": -16.479969,
-          "Z": 200.0
+          "X": 143.74982,
+          "Y": -298.282,
+          "Z": 191.0895
         },
         "RefCount": 1,
         "StringISMOverrides": "",
@@ -3160,8 +3166,7 @@
             10,
             55,
             206,
-            16,
-            217
+            16
           ]
         },
         "AssetRefIndex": 8,
@@ -3355,8 +3360,7 @@
             213,
             56,
             22,
-            16,
-            217
+            16
           ]
         },
         "AssetRefIndex": 8,
@@ -9101,7 +9105,9 @@
         },
         "StructuralSupports": {
           "VitalConnections": [],
-          "ProportionalConnections": [],
+          "ProportionalConnections": [
+            186
+          ],
           "ToNotifys": [
             186,
             173,
@@ -21379,7 +21385,7 @@
           "ProportionalConnections": [],
           "ToNotifys": []
         },
-        "AssetRefIndex": 36,
+        "AssetRefIndex": 69,
         "NiagaraAssetRefIndex": -1,
         "AudioPhysMaterialArray": [],
         "EdgePieces": [],
@@ -23758,8 +23764,12 @@
             5,
             136
           ],
-          "ProportionalConnections": [],
-          "ToNotifys": []
+          "ProportionalConnections": [
+            46
+          ],
+          "ToNotifys": [
+            46
+          ]
         },
         "AssetRefIndex": 52,
         "NiagaraAssetRefIndex": -1,
@@ -23833,7 +23843,9 @@
             10,
             5
           ],
-          "ProportionalConnections": [],
+          "ProportionalConnections": [
+            10
+          ],
           "ToNotifys": []
         },
         "AssetRefIndex": 52,
@@ -25748,59 +25760,6 @@
         },
         "ChunkTraits": [],
         "ChunkId": "38F9B303-490BBCCD-BEF4BBA2-CFA249E6",
-        "PrefabHash": 0,
-        "Prefab": {
-          "AssetPathName": "",
-          "SubPathString": ""
-        }
-      },
-      {
-        "Transform": {
-          "Rotation": {
-            "X": 0.0,
-            "Y": 0.0,
-            "Z": -2.4335929E-08,
-            "W": 1.0,
-            "IsNormalized": true,
-            "Size": 1.0,
-            "SizeSquared": 1.0
-          },
-          "Translation": {
-            "X": 1200.0,
-            "Y": -805.0,
-            "Z": 0.0
-          },
-          "Scale3D": {
-            "X": 1.0,
-            "Y": 1.0,
-            "Z": 1.0
-          }
-        },
-        "StructuralSupports": {
-          "VitalConnections": [],
-          "ProportionalConnections": [],
-          "ToNotifys": []
-        },
-        "AssetRefIndex": 69,
-        "NiagaraAssetRefIndex": -1,
-        "AudioPhysMaterialArray": [],
-        "EdgePieces": [],
-        "ChunkCustomPrimitiveData": [],
-        "Properties": 0,
-        "NiagaraBespokeEffectFormat": "EBHDestructionBespokeEffectFormat::NoBespokeFormat",
-        "NiagaraDataChannelParameters": {
-          "DebrisMeshType": {
-            "TagName": "None"
-          },
-          "DebrisShape": {
-            "TagName": "None"
-          },
-          "DebrisMaterial": {
-            "TagName": "None"
-          }
-        },
-        "ChunkTraits": [],
-        "ChunkId": "6ACB76EE-4291375B-45413686-11DCE8D6",
         "PrefabHash": 0,
         "Prefab": {
           "AssetPathName": "",
@@ -38504,12 +38463,8 @@
         "Value": 216
       },
       {
-        "Key": "6ACB76EE-4291375B-45413686-11DCE8D6",
-        "Value": 217
-      },
-      {
         "Key": "17188690-4B0FB60F-9C03E9B3-8DA5036B",
-        "Value": 218
+        "Value": 217
       }
     ]
   }

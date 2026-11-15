@@ -162,7 +162,7 @@ Tables: [`DT_MetaTree_Roles`](https://github.com/Kiyogitpy/wardogs-data-docs/blo
 
 | Row | `Nodes` | `Tag` |
 |---|---|---|
-| `Meta.Role.Driver` | {ID=Vehicle.Variant.Land.Wheeled.Ural.Default; LevelsData={Prerequisites.QueryDefinition.StaticStruct.SchemaC… | Meta.Role.Driver |
+| `Meta.Role.Driver` | {ID=ID.Item.VehicleSupplyCrate.Small.Armoured; LevelsData={Prerequisites.QueryDefinition.StaticStruct.SchemaC… | Meta.Role.Driver |
 | `Meta.Role.Infantry` | {ID=Id.Item.MUZL_039; LevelsData={Prerequisites.QueryDefinition.StaticStruct.SchemaClass=WDMetaPrerequisiteSc… | Meta.Role.Infantry |
 | `Meta.Role.Medic` | {ID=Id.Item.MUZL_037; LevelsData={Prerequisites.QueryDefinition.StaticStruct.SchemaClass=WDMetaPrerequisiteSc… | Meta.Role.Medic |
 | `Meta.Role.Pilot` | {ID=ID.Item.VehicleSupplyCrate.Small.Armoured; LevelsData={Prerequisites.QueryDefinition.StaticStruct.SchemaC… | Meta.Role.Pilot |
@@ -205,22 +205,24 @@ Tables: [`DT_SeasonDefinitions`](https://github.com/Kiyogitpy/wardogs-data-docs/
 Tables: [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDCosmeticSetData -->
-*1 table(s), 12 rows, 5 non-empty columns. Source: the `Rows` of each table export (**Data**).*
+*2 table(s), 14 rows, 6 non-empty columns. Source: the `Rows` of each table export (**Data**).*
 
-| Row | `Name` | `UITextures.FallbackIcon` | `bHideInCollection` | `SortIndex` | `Tag` |
-|---|---|---|---|---|---|
-| `Meta.Cosmetic.Featured` | Featured | T_UI_Generic_BG | false | 0 | Meta.Cosmetic.Featured |
-| `Meta.Cosmetic.BlackAndGold` | Black & Gold | T_UI_BlackAndGold_BG | false | 1 | Meta.Cosmetic.BlackAndGold |
-| `Meta.Cosmetic.Frogman` | Frogman | T_UI_Generic_BG | false | 2 | Meta.Cosmetic.Frogman |
-| `Meta.Cosmetic.DigitalWood` | Digital Wood | T_UI_DigitalWood_BG | false | 3 | Meta.Cosmetic.DigitalWood |
-| `Meta.Cosmetic.TripleDesert` | Triple Desert | T_UI_Quality | false | 4 | Meta.Cosmetic.TripleDesert |
-| `Meta.Cosmetic.DigitalFlora` | Digital Flora | T_UI_Generic_BG | false | 5 | Meta.Cosmetic.DigitalFlora |
-| `Meta.Cosmetic.TwoToneDesert` | Two Tone Desert | T_UI_TwoToneDesert_BG | false | 6 | Meta.Cosmetic.TwoToneDesert |
-| `Meta.Cosmetic.Emote` | Emotes | T_UI_Generic_BG | true | 8 | Meta.Cosmetic.Emote |
-| `Meta.Cosmetic.Bobblehead` | Bobbleheads | T_UI_Generic_BG | false | 9 | Meta.Cosmetic.Bobblehead |
-| `Meta.Cosmetic.Taxi` | Taxi | T_UI_Generic_BG | false | 10 | Meta.Cosmetic.Taxi |
-| `Meta.Cosmetic.FactionLogo` | Faction Logo | T_UI_Generic_BG | false | 11 | Meta.Cosmetic.FactionLogo |
-| `Meta.Cosmetic.ChocolateChip` | Chocolate Chip | T_UI_Generic_BG | false | 7 | Meta.Cosmetic.ChocolateChip |
+| Table | Row | `Name` | `UITextures.FallbackIcon` | `bHideInCollection` | `SortIndex` | `_aaaaohimfdmicclfkchdm` | `Tag` |
+|---|---|---|---|---|---|---|---|
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | `Meta.Cosmetic.Featured` | Featured | T_UI_Generic_BG | false | 0 |  | Meta.Cosmetic.Featured |
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | `Meta.Cosmetic.BlackAndGold` | Black & Gold | T_UI_BlackAndGold_BG | false | 1 |  | Meta.Cosmetic.BlackAndGold |
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | `Meta.Cosmetic.Frogman` | Frogman | T_UI_Generic_BG | false | 2 |  | Meta.Cosmetic.Frogman |
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | `Meta.Cosmetic.DigitalWood` | Digital Wood | T_UI_DigitalWood_BG | false | 3 |  | Meta.Cosmetic.DigitalWood |
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | `Meta.Cosmetic.TripleDesert` | Triple Desert | T_UI_Quality | false | 4 |  | Meta.Cosmetic.TripleDesert |
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | `Meta.Cosmetic.DigitalFlora` | Digital Flora | T_UI_Generic_BG | false | 5 |  | Meta.Cosmetic.DigitalFlora |
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | `Meta.Cosmetic.TwoToneDesert` | Two Tone Desert | T_UI_TwoToneDesert_BG | false | 6 |  | Meta.Cosmetic.TwoToneDesert |
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | `Meta.Cosmetic.Emote` | Emotes | T_UI_Generic_BG | false | 8 |  | Meta.Cosmetic.Emote |
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | `Meta.Cosmetic.Bobblehead` | Bobbleheads | T_UI_Generic_BG | false | 9 |  | Meta.Cosmetic.Bobblehead |
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | `Meta.Cosmetic.Taxi` | Taxi | T_UI_Generic_BG | false | 10 |  | Meta.Cosmetic.Taxi |
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | `Meta.Cosmetic.FactionLogo` | Faction Logo | T_UI_Generic_BG | false | 11 |  | Meta.Cosmetic.FactionLogo |
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | `Meta.Cosmetic.ChocolateChip` | Chocolate Chip | T_UI_Generic_BG | false | 7 |  | Meta.Cosmetic.ChocolateChip |
+| [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Cosmetics/DT_CosmeticSets_Debug.json) | `Meta.Cosmetic.Badge` | Badges | T_UI_Generic_BG | false | 2 |  | Meta.Cosmetic.Badge |
+| [`DT_Movember_2026_CosmeticSets`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Movember_2026/Content/Data/DT_Movember_2026_CosmeticSets.json) | `Meta.Cosmetic.Movember` |  | T_UI_Movember_Banner | false | 12 | Player.Identity.Movember | Meta.Cosmetic.Movember |
 <!-- /datatable_catalog -->
 
 ## WDEmoteData
@@ -228,7 +230,7 @@ Tables: [`DT_CosmeticSets_Debug`](https://github.com/Kiyogitpy/wardogs-data-docs
 Tables: [`DT_EmoteData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Actions/Character/DT_EmoteData.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDEmoteData -->
-*1 table(s), 27 rows, 8 non-empty columns. Source: the `Rows` of each table export (**Data**).*
+*1 table(s), 28 rows, 8 non-empty columns. Source: the `Rows` of each table export (**Data**).*
 
 Columns 1-7 of 8:
 
@@ -261,6 +263,7 @@ Columns 1-7 of 8:
 | `Action.Player.Emote.Stop` | false | false | 1 | false | false | true | Id.Item.Fists, Id.Item.TAR21, Id.Item.M4, Id.Item.WEPN_033, Id.Item.KH2002, Id.Item.WEPN_030 (+56 more) |
 | `Action.Player.Emote.Throat_Slit` | false | false | 1 | false | false | true | Id.Item.Fists, Id.Item.TAR21, Id.Item.M4, Id.Item.WEPN_033, Id.Item.KH2002, Id.Item.WEPN_030 (+56 more) |
 | `Action.Player.Emote.ThumbsDown` | false | false | 1 | false | false | true | Id.Item.Fists, Id.Item.TAR21, Id.Item.M4, Id.Item.WEPN_033, Id.Item.KH2002, Id.Item.WEPN_030 (+56 more) |
+| `Action.Player.Emote.Burning` | true | false | 1 | false | false | false |  |
 
 Columns 8-8 of 8:
 
@@ -293,6 +296,7 @@ Columns 8-8 of 8:
 | `Action.Player.Emote.Stop` | Action.Player.Emote.Stop |
 | `Action.Player.Emote.Throat_Slit` | Action.Player.Emote.Throat_Slit |
 | `Action.Player.Emote.ThumbsDown` | Action.Player.Emote.ThumbsDown |
+| `Action.Player.Emote.Burning` | Action.Player.Emote.Burning |
 <!-- /datatable_catalog -->
 
 ## WDPlayerIdentityRow
@@ -300,27 +304,29 @@ Columns 8-8 of 8:
 Tables: [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDPlayerIdentityRow -->
-*1 table(s), 5 rows, 9 non-empty columns. Source: the `Rows` of each table export (**Data**).*
+*2 table(s), 6 rows, 9 non-empty columns. Source: the `Rows` of each table export (**Data**).*
 
 Columns 1-7 of 9:
 
-| Row | `DisplayName` | `Priority` | `_aaaancbloodmkealjoiop` | `_aaaamkihpmjajnpfjbpfh` | `_aaaaoddiblkfcomabbebl` | `_aaaapjfdfpekdnohlpcal` | `TaggedIcons.FallbackIcon` |
-|---|---|---|---|---|---|---|---|
-| `Player.Identity.CommunityDev` | Community Developer | 0 | true | Dev Impersonator | None |  | T_UI_BHlogo_128 |
-| `Player.Identity.VIP` | VIP | 1 | true | VIP Impersonator | None |  | T_UI_ServerBrowser_Checkmark |
-| `Player.Identity.ETP` | ETP | 2 | false |  | None |  | T_UI_EPTIcon |
-| `Player.Identity.EASupporter` | Early Access Supporter | 3 | false |  | Entitlement | Player.Identity.EASupporter | T_UI_Icon_SupporterBadge |
-| `Player.Identity.EarlyAdopter` | Early Adopter | 4 | false |  | Entitlement | Player.Identity.EarlyAdopter | T_UI_Icon_TwitchBadgeViewer |
+| Table | Row | `DisplayName` | `Priority` | `_aaaancbloodmkealjoiop` | `_aaaamkihpmjajnpfjbpfh` | `_aaaaoddiblkfcomabbebl` | `_aaaapjfdfpekdnohlpcal` | `TaggedIcons.FallbackIcon` |
+|---|---|---|---|---|---|---|---|---|
+| [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json) | `Player.Identity.CommunityDev` | Community Developer | 0 | true | Dev Impersonator | None |  | T_UI_BHlogo_128 |
+| [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json) | `Player.Identity.VIP` | VIP | 1 | true | VIP Impersonator | None |  | T_UI_ServerBrowser_Checkmark |
+| [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json) | `Player.Identity.ETP` | ETP | 2 | false |  | None |  | T_UI_Icon_ETP_Frontend |
+| [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json) | `Player.Identity.EASupporter` | Early Access Supporter | 4 | false |  | Entitlement | Player.Identity.EASupporter | T_UI_Icon_SupportersBadge_Scoreboard |
+| [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json) | `Player.Identity.BTP` | Bulkhead Testing Partner | 3 | false |  | None | Player.Identity.BTP | T_UI_Icon_BTP |
+| [`DT_PlayerIdentities_Movember_2026`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Movember_2026/Content/Data/DT_PlayerIdentities_Movember_2026.json) | `Player.Identity.Movember` |  | 6 | false |  | Entitlement | Player.Identity.Movember | T_UI_Collections_Badge_Movemeber |
 
 Columns 8-9 of 9:
 
-| Row | `TaggedIcons.TaggedIcons` | `Tag` |
-|---|---|---|
-| `Player.Identity.CommunityDev` | {Key=/Game/UI/Features/Scoreboard/Textures/T_UI_BHlogo_128.T_UI_BHlogo_128; Value=UI.Icon.Scoreboard} | Player.Identity.CommunityDev |
-| `Player.Identity.VIP` | {Key=/Game/UI/Shared/Icons/Frontend/T_UI_ServerBrowser_Checkmark.T_UI_ServerBrowser_Checkmark; Value=UI.Icon.… | Player.Identity.VIP |
-| `Player.Identity.ETP` | {Key=/Game/UI/Features/Scoreboard/Textures/T_UI_EPTIcon.T_UI_EPTIcon; Value=UI.Icon.Scoreboard} | Player.Identity.ETP |
-| `Player.Identity.EASupporter` | {Key=/Game/UI/Shared/Icons/Frontend/T_UI_Icon_SupporterBadge.T_UI_Icon_SupporterBadge; Value=UI.Icon.Scoreboa… | Player.Identity.EASupporter |
-| `Player.Identity.EarlyAdopter` | {Key=/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_TwitchBadgeViewer.T_UI_Icon_TwitchBadgeViewer; Value=UI.… | Player.Identity.EarlyAdopter |
+| Table | Row | `TaggedIcons.TaggedIcons` | `Tag` |
+|---|---|---|---|
+| [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json) | `Player.Identity.CommunityDev` | {Key=/Game/UI/Features/Scoreboard/Textures/T_UI_BHlogo_128.T_UI_BHlogo_128; Value=UI.Icon.Scoreboard, UI.Icon… | Player.Identity.CommunityDev |
+| [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json) | `Player.Identity.VIP` | {Key=/Game/UI/Shared/Icons/Frontend/T_UI_ServerBrowser_Checkmark.T_UI_ServerBrowser_Checkmark; Value=UI.Icon.… | Player.Identity.VIP |
+| [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json) | `Player.Identity.ETP` | {Key=/Game/UI/Features/Scoreboard/Textures/T_UI_EPTIcon.T_UI_EPTIcon; Value=UI.Icon.Scoreboard}, {Key=/Game/U… | Player.Identity.ETP |
+| [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json) | `Player.Identity.EASupporter` | {Key=/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_SupportersBadge_Scoreboard.T_UI_Icon_SupportersBadge_Sco… | Player.Identity.EASupporter |
+| [`DT_PlayerIdentities`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/DT_PlayerIdentities.json) | `Player.Identity.BTP` | {Key=/Game/UI/Features/Scoreboard/Textures/T_UI_Icon_BTP.T_UI_Icon_BTP; Value=UI.Icon.Collection}, {Key=/Game… | Player.Identity.BTP |
+| [`DT_PlayerIdentities_Movember_2026`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Movember_2026/Content/Data/DT_PlayerIdentities_Movember_2026.json) | `Player.Identity.Movember` | {Key=/Movember_2026/Data/Textures/T_UI_Icon_Movember_Badge.T_UI_Icon_Movember_Badge; Value=UI.Icon.Scoreboard… | Player.Identity.Movember |
 <!-- /datatable_catalog -->
 
 ## WDFactionDataTableRow

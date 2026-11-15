@@ -61,7 +61,7 @@ Vehicles: 1 Kodiak pickup at the player spawn (47 m), 4 Kodiak pickups tagged Al
 
 16 hidden text labels and 9 auto-instanced mesh actors; nothing else. Labels: Deploy Location 1 (-10709, -11254), HVT Location 1 (-10103, -10397), Lieutenant Location 2 (-10566, -10492 and -9761, -10783), Guards 4, Patrol 7, Exfil Location 1 (-9999, -10236). Deploy to HVT 1,050 m, HVT to exfil 192 m, deploy to exfil 1,242 m. The layout sits in the same compound as Strike and Disarm: the HVT label is 78 m from that laptop, the exfil label 79 m from that helicopter point, a Guards label 49 m from the laptop, a Lieutenant label 88 m from that wave trigger (inferred reuse of the blockout; not stated in the data). Status: placed layer FOUND (labels), gameplay actors ABSENT, AI ABSENT, player spawn ABSENT.
 
-### Example scenario (`ScenarioExample`, 1 cell)
+### Example scenario ([`ScenarioExample`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/PvE/Scenarios/ScenarioExample/Content/ScenarioExample.json), 1 cell)
 
 Spawn manager 1, equipment vendor 1, quest overlap area 1, quest progress test actor 1, quest position point 1, all within 17 m of each other at (-8890, -11355): 609 m from the zone area centre, inside the play box, 26 m from the West Hill Woods region edge. A test stub, no AI, no loot, no vehicle.
 

@@ -9,11 +9,11 @@ description: "Season comparisons and coverage notes for newer builds."
 
 # Patch Notes
 
-The Season 2 notes compare Season 1 and Season 2 data. The S3 / 0.3 page records the current coverage limit; a reliable gameplay comparison is not yet available.
+The Season 3 notes compare saved Season 2 and S3 / 0.3 exports and describe the current coverage gaps. The historical Season 2 notes compare Season 1 and Season 2. Stored values and calculated models are distinguished from verified in-match behavior.
 
 ## Articles
 
 | Article | What it covers |
 |---|---|
 | [Season 2 Patch Notes](patch-notes/season-2.md) | Weapons, damage and armor, vehicles, items, modes, movement and progression changes from Season 1 to Season 2 |
-| [S3 / 0.3 Coverage](patch-notes/season-3.md) | Build identification and limits of the available data |
+| [Season 3 / 0.3 Changes](patch-notes/season-3.md) | S2→S3 stored changes, current build and remaining coverage gaps |

@@ -1,0 +1,48 @@
+--- export: UDataTable / DT_TrackerData_Map_HotZoneMagnet ---
+{
+  "Type": "DataTable",
+  "Name": "DT_TrackerData_Map_HotZoneMagnet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Buildables_HotZoneMagnet/Data/DT_TrackerData_Map_HotZoneMagnet",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUITrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.BuildableHotZoneMagnet": {
+      "Class": {
+        "AssetPathName": "/Script/WDGame.WDUIPersistentDataTracker",
+        "SubPathString": ""
+      },
+      "_aaabkhoamcombijogmdde": true,
+      "bShouldRecreateOnFactionChange": true,
+      "RequiredTags": [
+        "Meta.Alignment.Faction",
+        "Trackers.Type.BuildableHotZoneMagnet"
+      ],
+      "Params": {
+        "WidgetClass": {
+          "AssetPathName": "/Buildables_HotZoneMagnet/Data/UI/W_Tracker_Map_BuildableHotZoneMagnet.W_Tracker_Map_BuildableHotZoneMagnet_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/HotZoneMagnetRuntime.WDUIHotZoneMagnetHitPointMapTrackerViewModel",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Buildables_HotZoneMagnet/Data/UI/DA_Tracker_Map_BuildableHotZoneMagnet.DA_Tracker_Map_BuildableHotZoneMagnet",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.BuildableHotZoneMagnet"
+      }
+    }
+  }
+}

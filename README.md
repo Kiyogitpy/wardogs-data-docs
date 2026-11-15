@@ -17,7 +17,7 @@ generated data behind the site's tables and interactive tools.
 - Weapon stats, damage calculations, penetration, spread and recoil.
 - Vehicle stats, damage routing, hitboxes and collision viewers.
 - Equipment, attachments, building, progression and the economy.
-- Game modes, maps and Season 1 to Season 2 comparisons.
+- Game modes, maps and separate Season 1→2 and Season 2→3 comparisons.
 - Source asset paths and evidence notes for checking where a value came from.
 
 The wiki explains the mechanics. The reference pages go into the underlying
@@ -79,10 +79,18 @@ files, the matching keys and mappings, and the SDK dump used by some generators.
 
 The update pipeline restores source links after generation. For pages generated
 by hand, run `python _tools/link_sources.py --write`, then
-`python _tools/link_sources.py --check`. The linker only uses tracked JSON
-exports and leaves ambiguous names unchanged.
+`python _tools/link_sources.py --check`. New links use tracked JSON exports;
+historical citations can pin a full Git revision and are checked against its
+source objects. Ambiguous names remain unchanged.
 
 ## Documented build
+
+The stored exports and regenerated core tables use CL533731 / hotfix533689.
+The snapshot is partial: three UI packages fail parsing, and economy categories
+and water-field meanings remain unresolved. The strict full-extraction gate has
+not passed. The [S2→S3 comparison](season-3-changes/all-changes.md) shows the
+saved-export differences separately from the historical S1→S2 comparison.
+See the [hotfix evidence and remaining work](docs/evidence/hotfix-cl533731.md).
 
 | Attribute | Value |
 | --- | --- |
@@ -90,13 +98,15 @@ exports and leaves ambiguous names unchanged.
 | Developer / publisher | Bulkhead / Team17 |
 | Platform | PC, Steam AppID `1867240` |
 | Engine | Unreal Engine 5.7 |
-| Build | `++Wardogs+Live-CL-516586` |
-| Season | Season 02 |
+| Current asset snapshot | `++Wardogs+Live-CL-533731+hotfix533689` |
+| Earlier native analysis and baseline | `++Wardogs+Live-CL-516586` (unless a page identifies another build) |
+| Season | S3 / 0.3 asset snapshot; historical native findings retain their own build scope |
 
-The tables and tools have not been updated or validated for the S3 / 0.3 build.
-See the [S3 / 0.3 coverage note](_wiki/patch-notes/season-3.md). Values describe
-the build above, not necessarily a later patch or a server-side override. A stored
-asset value alone does not establish how it behaves in a match.
+Native formulas retain their individual evidence and build limits; this asset
+refresh does not establish their compatibility with CL533731. A stored asset
+value alone does not establish how it behaves in a match or a server-side override.
+See the [S3 / 0.3 coverage note](_wiki/patch-notes/season-3.md) for the comparison
+scope and remaining gaps.
 
 ## Corrections and contributions
 

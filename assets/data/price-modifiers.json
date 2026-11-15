@@ -1,7 +1,7 @@
 {
   "source": "data/Wardogs/Config/DefaultGame.excerpt.ini [UWDEconomyConfig] PriceModifiers",
   "divisor": 100,
-  "note": "ratio = Multiplier / 100; a price is multiplied by the product of all applicable ratios",
+  "note": "Stored ratios use Multiplier / 100 under the earlier native model. An omitted multiplier and ratio are null; current native defaults, dynamic modifiers and applicability remain unverified.",
   "modifiers": [
     {
       "kind": "Faction",
@@ -59,13 +59,10 @@
       "scoreDifference": 40
     },
     {
-      "kind": "Level",
+      "kind": "VendorDiscount",
       "target": "Global",
-      "multiplier": 50.0,
-      "ratio": 0.5,
-      "levelType": "Wardog",
-      "levelRequirement": "LowerOrEqual",
-      "level": 8
+      "multiplier": null,
+      "ratio": null
     },
     {
       "kind": "FirstPurchase",

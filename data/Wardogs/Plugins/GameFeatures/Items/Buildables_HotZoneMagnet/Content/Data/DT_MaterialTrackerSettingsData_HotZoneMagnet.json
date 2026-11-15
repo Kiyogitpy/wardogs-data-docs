@@ -1,0 +1,30 @@
+--- export: UDataTable / DT_MaterialTrackerSettingsData_HotZoneMagnet ---
+{
+  "Type": "DataTable",
+  "Name": "DT_MaterialTrackerSettingsData_HotZoneMagnet",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'DataTable'",
+  "Package": "/Buildables_HotZoneMagnet/Data/DT_MaterialTrackerSettingsData_HotZoneMagnet",
+  "Properties": {
+    "RowStruct": {
+      "ObjectName": "Class'WDUIMaterialTrackerDataTableRow'",
+      "ObjectPath": "/Script/WDGame"
+    }
+  },
+  "Rows": {
+    "Trackers.Type.BuildableHotZoneMagnet": {
+      "bDisableTracker": false,
+      "TrackerType": {
+        "AssetPathName": "/Script/BuildablesRuntime.WDUIMaterialTracker_Buildable",
+        "SubPathString": ""
+      },
+      "TrackerData": {
+        "ObjectName": "WDUIMaterialTrackerDataAsset'DA_MaterialTrackerData_HotZoneMagnet'",
+        "ObjectPath": "/Buildables_HotZoneMagnet/Data/UI/DA_MaterialTrackerData_HotZoneMagnet.0"
+      },
+      "Tag": {
+        "TagName": "Trackers.Type.BuildableHotZoneMagnet"
+      }
+    }
+  }
+}

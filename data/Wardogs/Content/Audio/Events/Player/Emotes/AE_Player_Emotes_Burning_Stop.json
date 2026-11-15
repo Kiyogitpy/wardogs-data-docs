@@ -1,0 +1,37 @@
+--- export: UPrimaryDataAsset / AE_Player_Emotes_Burning_Stop ---
+{
+  "Type": "CrosstalkAudioEvent",
+  "Name": "AE_Player_Emotes_Burning_Stop",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEvent'",
+  "Package": "/Game/Audio/Events/Player/Emotes/AE_Player_Emotes_Burning_Stop",
+  "Properties": {
+    "NameTag": {
+      "TagName": "Audio.Event.Player.Emote.Burn.Stop"
+    },
+    "Behaviors": [
+      {
+        "ObjectName": "CrosstalkAudioEventBehaviorExecuteTriggerParameter'AE_Player_Emotes_Burning_Stop:CrosstalkAudioEventBehaviorExecuteTriggerParameter_0'",
+        "ObjectPath": "/Game/Audio/Events/Player/Emotes/AE_Player_Emotes_Burning_Stop.1"
+      }
+    ],
+    "_aaabhgndclheajnnlnade": 40.0
+  }
+}
+--- export: UObject / CrosstalkAudioEventBehaviorExecuteTriggerParameter_0 ---
+{
+  "Type": "CrosstalkAudioEventBehaviorExecuteTriggerParameter",
+  "Name": "CrosstalkAudioEventBehaviorExecuteTriggerParameter_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'CrosstalkAudioEventBehaviorExecuteTriggerParameter'",
+  "Outer": {
+    "ObjectName": "CrosstalkAudioEvent'AE_Player_Emotes_Burning_Stop'",
+    "ObjectPath": "/Game/Audio/Events/Player/Emotes/AE_Player_Emotes_Burning_Stop.0"
+  },
+  "Properties": {
+    "ParameterName": "Stop",
+    "ContextTag": {
+      "TagName": "Audio.Context.Player.Emote.Burning"
+    }
+  }
+}

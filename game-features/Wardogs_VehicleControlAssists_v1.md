@@ -49,50 +49,50 @@ Control force: PitchControlForce Type RotorBladeAngle, MaxTorque 4.8e+09, MaxRot
 
 | Assist | Category | Enabled | Conditions | Body |
 |---|---|---|---|---|
-| Dampen pressed inputs | Core | yes | input CyclicY = 1 | damp via INTERP_TO InterpSpeed 7 |
-| Set to 0 on ground | Core | yes | on ground; input CyclicY = 0 | set to 0 |
-| Stabilize after input released | Stability | yes | stable (LocalAngularVelocity_DegPerS Y below 0.572958, for 0.06 s); input CyclicY = 0 | PID P 0.558505 I 0 D 0.139626 on LocalAngularVelocity_DegPerS Y |
-| Level at low speeds | Stability | yes | input CyclicY = 0; WorldVelocity_KmPerH Length < 36 (At low speeds) | PID P 0.00436332 I 0 D 0.00349066 on WorldRotation_Deg Y max out 0.035 |
-| Stabilize released pitch when collective up | Stability | yes | input CyclicY = 0; input Collective = 1; WorldRotation_Deg Y > 0 (Nose up) | PID P 0.0122173 I 0 D 0.0305433 on LocalAngularVelocity_DegPerS Y |
-| Stabilize released pitch when collective down | Stability | no | input CyclicY = 0; input Collective = -1; WorldRotation_Deg Y < 0 (Nose down) | PID P 0.00872665 I 0 D 0.0244346 on LocalAngularVelocity_DegPerS Y |
-| Snap to 0 skid pitch | TurnCoordination | yes | input CyclicY = 0; WorldVelocity_KmPerH Length > 18 (Speed must be above threshold to avoid faulty skid angles); SkidAngle_Deg Y < 0.572958 | PID P 0 I 0 D 0.00767945 on SkidAngle_Deg Y |
-| Dampen released inputs | Core | yes | input CyclicY = 0 | damp via INTERP_TO InterpSpeed 7 |
+| Dampen pressed inputs | Core | yes | input CyclicY  1 | damp via INTERP_TO InterpSpeed 7 |
+| Set to 0 on ground | Core | yes | on ground; input CyclicY  0 | set to 0 |
+| Stabilize after input released | Stability | yes | stable (LocalAngularVelocity_DegPerS Y below 0.572958, for 0.06 s); input CyclicY  0 | PID P 0.558505 I 0 D 0.139626 on LocalAngularVelocity_DegPerS Y |
+| Level at low speeds | Stability | yes | input CyclicY  0; WorldVelocity_KmPerH Length < 36 (At low speeds) | PID P 0.00436332 I 0 D 0.00349066 on WorldRotation_Deg Y max out 0.035 |
+| Stabilize released pitch when collective up | Stability | yes | input CyclicY  0; input Collective  1; WorldRotation_Deg Y > 0 (Nose up) | PID P 0.0122173 I 0 D 0.0305433 on LocalAngularVelocity_DegPerS Y |
+| Stabilize released pitch when collective down | Stability | no | input CyclicY  0; input Collective  -1; WorldRotation_Deg Y < 0 (Nose down) | PID P 0.00872665 I 0 D 0.0244346 on LocalAngularVelocity_DegPerS Y |
+| Snap to 0 skid pitch | TurnCoordination | yes | input CyclicY  0; WorldVelocity_KmPerH Length > 18 (Speed must be above threshold to avoid faulty skid angles); SkidAngle_Deg Y < 0.572958 | PID P 0 I 0 D 0.00767945 on SkidAngle_Deg Y |
+| Dampen released inputs | Core | yes | input CyclicY  0 | damp via INTERP_TO InterpSpeed 7 |
 
 **Roll**
 
 | Assist | Category | Enabled | Conditions | Body |
 |---|---|---|---|---|
-| Dampen pressed inputs | Core | yes | input CyclicX = 1 | damp via INTERP_TO InterpSpeed 7 |
-| Set to 0 on ground | Core | yes | on ground; input CyclicX = 0 | set to 0 |
-| Stabilize after input released | Stability | yes | stable (LocalAngularVelocity_DegPerS X below 2.86479); input CyclicX = 0 | PID P 0.20944 I 0.00174533 D 0.0872665 on LocalAngularVelocity_DegPerS X |
-| Level at low speeds | Stability | yes | input CyclicX = 0; WorldVelocity_KmPerH Length < 36 (At low speeds) | PID P 0.00436332 I 0 D 0.00349066 on WorldRotation_Deg X max out 0.035 |
-| Prevent drag torque overshoot | Core | no | LocalAngularVelocity_DegPerS X < 28.6479 (Roll speed close to zero); input CyclicX = 0 | PID P 0.0872665 I 0 D 0.0523599 on LocalAngularVelocity_DegPerS X |
-| Dampen inputs | Core | no | input CyclicX = 0 | damp via INTERP_TO InterpSpeed 4 |
+| Dampen pressed inputs | Core | yes | input CyclicX  1 | damp via INTERP_TO InterpSpeed 7 |
+| Set to 0 on ground | Core | yes | on ground; input CyclicX  0 | set to 0 |
+| Stabilize after input released | Stability | yes | stable (LocalAngularVelocity_DegPerS X below 2.86479); input CyclicX  0 | PID P 0.20944 I 0.00174533 D 0.0872665 on LocalAngularVelocity_DegPerS X |
+| Level at low speeds | Stability | yes | input CyclicX  0; WorldVelocity_KmPerH Length < 36 (At low speeds) | PID P 0.00436332 I 0 D 0.00349066 on WorldRotation_Deg X max out 0.035 |
+| Prevent drag torque overshoot | Core | no | LocalAngularVelocity_DegPerS X < 28.6479 (Roll speed close to zero); input CyclicX  0 | PID P 0.0872665 I 0 D 0.0523599 on LocalAngularVelocity_DegPerS X |
+| Dampen inputs | Core | no | input CyclicX  0 | damp via INTERP_TO InterpSpeed 4 |
 
 **Yaw**
 
 | Assist | Category | Enabled | Conditions | Body |
 |---|---|---|---|---|
-| Dampen pressed inputs | Core | yes | input Pedals = 1 | damp via INTERP_TO InterpSpeed 7 |
-| Set to 0 on ground | Core | no | on ground; input Pedals = 0 | set to 0 |
-| Stabilize after input released | Stability | yes | stable (LocalAngularVelocity_DegPerS Z below 0.286479); input Pedals = 0 | PID P 0.2 I 0.05 D 0.10472 on LocalAngularVelocity_DegPerS Z |
-| Prevent drag torque overshoot | Core | no | LocalAngularVelocity_DegPerS Z < 5.72958 (Yaw value close to zero); input Pedals = 0 | PID P 0.10472 I 0 D 0.10472 on LocalAngularVelocity_DegPerS Z |
-| Dampen angular velocity near 0 yaw | Core | yes | SkidAngle_Deg Z < 18.9076; input Pedals = 0; LocalAngularVelocity_DegPerS Z > 2.86479 (Don't dampen low yaw angular speed as it is drag trying to aling the heli with the flight direction) | PID P 0.0523599 I 0 D 0.0523599 on LocalAngularVelocity_DegPerS Z |
-| Dampen inputs | Core | yes | input Pedals = 0 | damp via INTERP_TO InterpSpeed 20 |
+| Dampen pressed inputs | Core | yes | input Pedals  1 | damp via INTERP_TO InterpSpeed 7 |
+| Set to 0 on ground | Core | no | on ground; input Pedals  0 | set to 0 |
+| Stabilize after input released | Stability | yes | stable (LocalAngularVelocity_DegPerS Z below 0.286479); input Pedals  0 | PID P 0.2 I 0.05 D 0.10472 on LocalAngularVelocity_DegPerS Z |
+| Prevent drag torque overshoot | Core | no | LocalAngularVelocity_DegPerS Z < 5.72958 (Yaw value close to zero); input Pedals  0 | PID P 0.10472 I 0 D 0.10472 on LocalAngularVelocity_DegPerS Z |
+| Dampen angular velocity near 0 yaw | Core | yes | SkidAngle_Deg Z < 18.9076; input Pedals  0; LocalAngularVelocity_DegPerS Z > 2.86479 (Don't dampen low yaw angular speed as it is drag trying to aling the heli with the flight direction) | PID P 0.0523599 I 0 D 0.0523599 on LocalAngularVelocity_DegPerS Z |
+| Dampen inputs | Core | yes | input Pedals  0 | damp via INTERP_TO InterpSpeed 20 |
 
 **Collective**
 
 | Assist | Category | Enabled | Conditions | Body |
 |---|---|---|---|---|
-| Limit climb rate | EnvelopeLimits | yes | WorldVelocity_KmPerH Z > 36; input Collective = 1 | PID P 0.111111 I 0 D 0.166667 on WorldVelocity_KmPerH Z target 36 |
-| Limit sink rate | EnvelopeLimits | no | WorldVelocity_KmPerH Z < -50; input Collective = 1 | PID P 0.166667 I 0 D 0.111111 on WorldVelocity_KmPerH Z target -31.32 |
-| Reset collective on ground when engaged | Core | no | was on ground at start; input Collective = 1 | damp via EASE_IN_EASE_OUT InterpTimeS 2.5 exp 3 |
-| Dampen pressed inputs - up | Core | yes | input Collective = 1 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.25 |
-| Dampen pressed inputs - down | Core | yes | input Collective = -1 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.25 |
-| Set to -1 on ground | Core | yes | input Collective = 0; on ground | set to -1 |
-| Stabilize after input released | AutoHover | yes | stable (WorldVelocity_KmPerH Z below 0.00036); input Collective = 0 | PID P 0.0555556 I 0 D 0.0555556 on WorldVelocity_KmPerH Z |
-| Hover assist | AutoHover | yes | input Collective = 0; has pilot | PID P 0.0555556 I 0 D 0.0555556 on WorldVelocity_KmPerH Z |
-| Dampen released inputs | Core | yes | input Collective = 0 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.5 |
+| Limit climb rate | EnvelopeLimits | yes | WorldVelocity_KmPerH Z > 36; input Collective  1 | PID P 0.111111 I 0 D 0.166667 on WorldVelocity_KmPerH Z target 36 |
+| Limit sink rate | EnvelopeLimits | no | WorldVelocity_KmPerH Z < -50; input Collective  1 | PID P 0.166667 I 0 D 0.111111 on WorldVelocity_KmPerH Z target -31.32 |
+| Reset collective on ground when engaged | Core | no | was on ground at start; input Collective  1 | damp via EASE_IN_EASE_OUT InterpTimeS 2.5 exp 3 |
+| Dampen pressed inputs - up | Core | yes | input Collective  1 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.25 |
+| Dampen pressed inputs - down | Core | yes | input Collective  -1 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.25 |
+| Set to -1 on ground | Core | yes | input Collective  0; on ground | set to -1 |
+| Stabilize after input released | AutoHover | yes | stable (WorldVelocity_KmPerH Z below 0.00036); input Collective  0 | PID P 0.0555556 I 0 D 0.0555556 on WorldVelocity_KmPerH Z |
+| Hover assist | AutoHover | yes | input Collective  0; has pilot | PID P 0.0555556 I 0 D 0.0555556 on WorldVelocity_KmPerH Z |
+| Dampen released inputs | Core | yes | input Collective  0 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.5 |
 
 ### ROT_03 ([`DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_03/Content/Data/DA_ROT_03_FlightCharacteristicsDataAsset2000KGLight.json))
 
@@ -103,40 +103,40 @@ Control force: PitchControlForce Type RotorBladeAngle, MaxTorque 4.8e+09, MaxRot
 
 | Assist | Category | Enabled | Conditions | Body |
 |---|---|---|---|---|
-| Stabilize after input released | Stability | yes | input CyclicY = 0; stable (LocalAngularVelocity_DegPerS Y below 0.572958, for 0.06 s) | PID P 0.02 I 0 D 0 on LocalAngularVelocity_DegPerS Y |
-| Pitch input pressed | Core | yes | input CyclicY GreaterThan 0 | RotaryMovementControlMultiAssist |
-| Pitch input released | Core | yes | input CyclicY = 0 | RotaryMovementControlMultiAssist |
+| Stabilize after input released | Stability | yes | input CyclicY  0; stable (LocalAngularVelocity_DegPerS Y below 0.572958, for 0.06 s) | PID P 0.02 I 0 D 0 on LocalAngularVelocity_DegPerS Y |
+| Pitch input pressed | Core | yes | input CyclicY  0 | RotaryMovementControlMultiAssist |
+| Pitch input released | Core | yes | input CyclicY  0 | RotaryMovementControlMultiAssist |
 
 **Roll**
 
 | Assist | Category | Enabled | Conditions | Body |
 |---|---|---|---|---|
-| Stabilize after input released | Stability | yes | input CyclicX = 0; stable (LocalAngularVelocity_DegPerS X below 0.6, for 0.3 s) | PID P 0.1 I 0.002 D 0.05 on LocalAngularVelocity_DegPerS X |
-| Roll input pressed | Core | yes | input CyclicX GreaterThan 0 | RotaryMovementControlMultiAssist |
-| Roll input released | Core | yes | input CyclicX = 0 | RotaryMovementControlMultiAssist |
+| Stabilize after input released | Stability | yes | input CyclicX  0; stable (LocalAngularVelocity_DegPerS X below 0.6, for 0.3 s) | PID P 0.1 I 0.002 D 0.05 on LocalAngularVelocity_DegPerS X |
+| Roll input pressed | Core | yes | input CyclicX  0 | RotaryMovementControlMultiAssist |
+| Roll input released | Core | yes | input CyclicX  0 | RotaryMovementControlMultiAssist |
 
 **Yaw**
 
 | Assist | Category | Enabled | Conditions | Body |
 |---|---|---|---|---|
-| Yaw Damping | Core | yes | input Pedals = 0 | damp via EASE_IN InterpTimeS 0.35 exp 2.5 |
-| Stabilize after input released | Stability | yes | input Pedals = 0; stable (LocalAngularVelocity_DegPerS Z below 1, for 0.5 s); YawLimitedAtSpeed | PID P 0.45 I 0.05 D 0.0872665 on LocalAngularVelocity_DegPerS Z |
-| Pedals input pressed | Core | yes | input Pedals GreaterThan 0.05 | RotaryMovementControlMultiAssist |
-| Pedals input released | Core | yes | input Pedals = 0 | RotaryMovementControlMultiAssist |
+| Yaw Damping | Core | yes | input Pedals  0 | damp via EASE_IN InterpTimeS 0.35 exp 2.5 |
+| Stabilize after input released | Stability | yes | input Pedals  0; stable (LocalAngularVelocity_DegPerS Z below 1, for 0.5 s); YawLimitedAtSpeed | PID P 0.45 I 0.05 D 0.0872665 on LocalAngularVelocity_DegPerS Z |
+| Pedals input pressed | Core | yes | input Pedals  0.05 | RotaryMovementControlMultiAssist |
+| Pedals input released | Core | yes | input Pedals  0 | RotaryMovementControlMultiAssist |
 
 **Collective**
 
 | Assist | Category | Enabled | Conditions | Body |
 |---|---|---|---|---|
-| Limit climb rate | EnvelopeLimits | yes | WorldVelocity_KmPerH Z > 36; input Collective = 1 | PID P 0.0555556 I 0 D 0.0555556 on WorldVelocity_KmPerH Z target 36 |
-| Limit sink rate | EnvelopeLimits | no | WorldVelocity_KmPerH Z < -36; input Collective = 1 | PID P 0 I 0 D 0 on WorldVelocity_KmPerH Z target -36 |
-| Reset collective on ground when engaged | Core | no | was on ground at start; input Collective = 1 | damp via EASE_IN_EASE_OUT InterpTimeS 2.5 exp 3 |
-| Dampen pressed inputs - up | Core | yes | input Collective = 1 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.25 |
-| Dampen pressed inputs - down | Core | yes | input Collective = -1 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.25 |
-| Set to -1 on ground | Core | yes | input Collective = 0; on ground | set to -1 |
-| Stabilize after input released | AutoHover | yes | stable (WorldVelocity_KmPerH Z below 0.00036); input Collective = 0 | PID P 0.02 I 0 D 0.02 on WorldVelocity_KmPerH Z |
-| Hover assist | AutoHover | yes | input Collective = 0; has pilot | PID P 0.555556 I 0 D 0.555556 on WorldVelocity_KmPerH Z |
-| Dampen released inputs | Core | yes | input Collective = 0 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.5 |
+| Limit climb rate | EnvelopeLimits | yes | WorldVelocity_KmPerH Z > 36; input Collective  1 | PID P 0.0555556 I 0 D 0.0555556 on WorldVelocity_KmPerH Z target 36 |
+| Limit sink rate | EnvelopeLimits | no | WorldVelocity_KmPerH Z < -36; input Collective  1 | PID P 0 I 0 D 0 on WorldVelocity_KmPerH Z target -36 |
+| Reset collective on ground when engaged | Core | no | was on ground at start; input Collective  1 | damp via EASE_IN_EASE_OUT InterpTimeS 2.5 exp 3 |
+| Dampen pressed inputs - up | Core | yes | input Collective  1 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.25 |
+| Dampen pressed inputs - down | Core | yes | input Collective  -1 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.25 |
+| Set to -1 on ground | Core | yes | input Collective  0; on ground | set to -1 |
+| Stabilize after input released | AutoHover | yes | stable (WorldVelocity_KmPerH Z below 0.00036); input Collective  0 | PID P 0.02 I 0 D 0.02 on WorldVelocity_KmPerH Z |
+| Hover assist | AutoHover | yes | input Collective  0; has pilot | PID P 0.555556 I 0 D 0.555556 on WorldVelocity_KmPerH Z |
+| Dampen released inputs | Core | yes | input Collective  0 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.5 |
 
 ### ROT_04 ([`DA_ROT_04_FlightCharacteristicsDataAsset`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/ROT_04/Content/Data/DA_ROT_04_FlightCharacteristicsDataAsset.json))
 
@@ -147,37 +147,37 @@ Control force: PitchControlForce Type RotorBladeAngle, MaxTorque 4.8e+09, MaxRot
 
 | Assist | Category | Enabled | Conditions | Body |
 |---|---|---|---|---|
-| Stabilize after input released | Stability | yes | stable (LocalAngularVelocity_DegPerS Y below 0.572958, for 0.06 s); input CyclicY = 0 | PID P 0.296706 I 0 D 0.10472 on LocalAngularVelocity_DegPerS Y |
-| Pitch input pressed | Core | yes | input CyclicY GreaterThan 0 | RotaryMovementControlMultiAssist |
-| Pitch input released | Core | yes | input CyclicY = 0 | RotaryMovementControlMultiAssist |
+| Stabilize after input released | Stability | yes | stable (LocalAngularVelocity_DegPerS Y below 0.572958, for 0.06 s); input CyclicY  0 | PID P 0.296706 I 0 D 0.10472 on LocalAngularVelocity_DegPerS Y |
+| Pitch input pressed | Core | yes | input CyclicY  0 | RotaryMovementControlMultiAssist |
+| Pitch input released | Core | yes | input CyclicY  0 | RotaryMovementControlMultiAssist |
 
 **Roll**
 
 | Assist | Category | Enabled | Conditions | Body |
 |---|---|---|---|---|
-| Stabilize after input released | Stability | yes | stable (LocalAngularVelocity_DegPerS X below 0.6, for 0.5 s); input CyclicX = 0 | PID P 0.335103 I 0 D 0.125664 on LocalAngularVelocity_DegPerS X max out 10 |
-| Roll input pressed | Core | yes | input CyclicX GreaterThan 0 | RotaryMovementControlMultiAssist |
-| Roll input released | Core | yes | input CyclicX = 0 | RotaryMovementControlMultiAssist |
+| Stabilize after input released | Stability | yes | stable (LocalAngularVelocity_DegPerS X below 0.6, for 0.5 s); input CyclicX  0 | PID P 0.335103 I 0 D 0.125664 on LocalAngularVelocity_DegPerS X max out 10 |
+| Roll input pressed | Core | yes | input CyclicX  0 | RotaryMovementControlMultiAssist |
+| Roll input released | Core | yes | input CyclicX  0 | RotaryMovementControlMultiAssist |
 
 **Yaw**
 
 | Assist | Category | Enabled | Conditions | Body |
 |---|---|---|---|---|
-| Stabilize after input released | Stability | yes | input Pedals = 0; stable (LocalAngularVelocity_DegPerS Z below 0.286479, for 0.06 s); YawLimitedAtSpeed | PID P 0.279253 I 0 D 0.139626 on LocalAngularVelocity_DegPerS Z |
-| Pedals input pressed | Core | yes | input Pedals GreaterThan 0 | RotaryMovementControlMultiAssist |
-| Pedals input released | Core | yes | input Pedals = 0 | RotaryMovementControlMultiAssist |
+| Stabilize after input released | Stability | yes | input Pedals  0; stable (LocalAngularVelocity_DegPerS Z below 0.286479, for 0.06 s); YawLimitedAtSpeed | PID P 0.279253 I 0 D 0.139626 on LocalAngularVelocity_DegPerS Z |
+| Pedals input pressed | Core | yes | input Pedals  0 | RotaryMovementControlMultiAssist |
+| Pedals input released | Core | yes | input Pedals  0 | RotaryMovementControlMultiAssist |
 
 **Collective**
 
 | Assist | Category | Enabled | Conditions | Body |
 |---|---|---|---|---|
 | Reset when airfoil stalling | Core | no | SmoothedInfluenceConditions | set to -1 |
-| Limit climb rate | EnvelopeLimits | yes | WorldVelocity_KmPerH Z > 36; input Collective = 1 | PID P 0.35 I 0 D 0.25 on WorldVelocity_KmPerH Z target 36 |
-| Limit sink rate | EnvelopeLimits | yes | WorldVelocity_KmPerH Z < -36; input Collective = 1 | PID P 0.1 I 0 D 0.1 on WorldVelocity_KmPerH Z target -36 |
-| Reset collective on ground when engaged | Core | no | was on ground at start; input Collective = 1 | damp via EASE_IN_EASE_OUT InterpTimeS 2.5 exp 3 |
-| Dampen pressed inputs - up | Core | yes | input Collective GreaterThan 0 | damp via EASE_IN_EASE_OUT InterpTimeS 1 exp 1.25 |
-| Dampen pressed inputs - down | Core | yes | input Collective LessThan 0 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.25 |
-| Set to -1 on ground | Core | yes | input Collective = 0; on ground | set to -1 |
-| Stabilize after input released | AutoHover | yes | stable (WorldVelocity_KmPerH Z below 0.00036); input Collective = 0 | PID P 0.0555556 I 0 D 0.0555556 on WorldVelocity_KmPerH Z |
-| Hover assist | AutoHover | yes | input Collective = 0; has pilot | PID P 0.0555556 I 0 D 0.0555556 on WorldVelocity_KmPerH Z |
-| Dampen released inputs | Core | yes | input Collective = 0 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.5 |
+| Limit climb rate | EnvelopeLimits | yes | WorldVelocity_KmPerH Z > 36; input Collective  1 | PID P 0.35 I 0 D 0.25 on WorldVelocity_KmPerH Z target 36 |
+| Limit sink rate | EnvelopeLimits | yes | WorldVelocity_KmPerH Z < -36; input Collective  1 | PID P 0.1 I 0 D 0.1 on WorldVelocity_KmPerH Z target -36 |
+| Reset collective on ground when engaged | Core | no | was on ground at start; input Collective  1 | damp via EASE_IN_EASE_OUT InterpTimeS 2.5 exp 3 |
+| Dampen pressed inputs - up | Core | yes | input Collective  0 | damp via EASE_IN_EASE_OUT InterpTimeS 1 exp 1.25 |
+| Dampen pressed inputs - down | Core | yes | input Collective  0 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.25 |
+| Set to -1 on ground | Core | yes | input Collective  0; on ground | set to -1 |
+| Stabilize after input released | AutoHover | yes | stable (WorldVelocity_KmPerH Z below 0.00036); input Collective  0 | PID P 0.0555556 I 0 D 0.0555556 on WorldVelocity_KmPerH Z |
+| Hover assist | AutoHover | yes | input Collective  0; has pilot | PID P 0.0555556 I 0 D 0.0555556 on WorldVelocity_KmPerH Z |
+| Dampen released inputs | Core | yes | input Collective  0 | damp via EASE_IN_EASE_OUT InterpTimeS 1.5 exp 1.5 |

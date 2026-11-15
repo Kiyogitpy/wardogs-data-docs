@@ -47,7 +47,7 @@
                     "TagName": "Challenges.SessionEvents.PlayerKill"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -83,9 +83,45 @@
               "MetaClass": null,
               "KeyType": "EPropertyBagPropertyType::None",
               "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDMultiKillTracker'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "135212C1-4BC248F5-A3C8ABA8-F5ED2131",
+              "Name": "RoundKillTracker",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDMultiKillTracker'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "8DA3F9D0-4C6881BE-85D8D497-BE6C2CC0",
+              "Name": "ExplosionKillTracker",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
             }
           ],
-          "SerialSize": 12
+          "SerialSize": 18
         },
         "PropertyOverrides": []
       },
@@ -131,7 +167,7 @@
                     "TagName": "Challenges.SessionEvents.PlayerKill.CrewAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -193,7 +229,7 @@
                     "TagName": "Challenges.SessionEvents.PlayerKill.LogisticAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -304,7 +340,7 @@
                     "TagName": "Challenges.SessionEvents.PlayerKill.ReviveAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -415,7 +451,7 @@
                     "TagName": "Challenges.SessionEvents.PlayerKill.FOBSuppliedAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -436,42 +472,12 @@
           "PropertyDescs": [
             {
               "ValueTypeObject": {
-                "ObjectName": "Class'Actor'",
-                "ObjectPath": "/Script/Engine"
+                "ObjectName": "Class'WDRepeatActionTargetTracker'",
+                "ObjectPath": "/Script/WDGame"
               },
-              "ID": "39FC248F-4D949D91-9590EC81-8594F81A",
-              "Name": "LastVictimPlayerState",
-              "ValueType": "EPropertyBagPropertyType::Object",
-              "ContainerType": "EPropertyBagContainerType::None",
-              "PropertyFlags": "EPropertyFlags::None",
-              "ContainerTypes": {
-                "Types": []
-              },
-              "MetaData": null,
-              "MetaClass": null,
-              "KeyType": "EPropertyBagPropertyType::None",
-              "KeyTypeObject": null
-            },
-            {
-              "ValueTypeObject": null,
-              "ID": "81187D0F-46A807A6-B9F8899D-0A64FC33",
-              "Name": "LastVictimCount",
-              "ValueType": "EPropertyBagPropertyType::Int32",
-              "ContainerType": "EPropertyBagContainerType::None",
-              "PropertyFlags": "EPropertyFlags::None",
-              "ContainerTypes": {
-                "Types": []
-              },
-              "MetaData": null,
-              "MetaClass": null,
-              "KeyType": "EPropertyBagPropertyType::None",
-              "KeyTypeObject": null
-            },
-            {
-              "ValueTypeObject": null,
-              "ID": "FF08D02D-45DA1523-64F178AF-06FF97D8",
-              "Name": "CachedServerWorldTime",
-              "ValueType": "EPropertyBagPropertyType::Double",
+              "ID": "58A66742-4D9D36C8-AF3CF0A8-96981C2E",
+              "Name": "Target_Tracker",
+              "ValueType": "EPropertyBagPropertyType::Struct",
               "ContainerType": "EPropertyBagContainerType::None",
               "PropertyFlags": "EPropertyFlags::None",
               "ContainerTypes": {
@@ -483,7 +489,7 @@
               "KeyTypeObject": null
             }
           ],
-          "SerialSize": 3
+          "SerialSize": 12
         },
         "PropertyOverrides": []
       },
@@ -529,7 +535,7 @@
                     "TagName": "Challenges.SessionEvents.PlayerKill.SupplyCrateAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -594,7 +600,7 @@
                     "TagName": "Challenges.SessionEvents.PlayerKill.Assist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -708,7 +714,7 @@
                     "TagName": "Challenges.SessionEvents.PlayerKill.Assist.CrewAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -770,7 +776,7 @@
                     "TagName": "Challenges.SessionEvents.PlayerKill.Assist.LogisticAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -881,7 +887,7 @@
                     "TagName": "Challenges.SessionEvents.PlayerKill.Assist.ReviveAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -992,7 +998,7 @@
                     "TagName": "Challenges.SessionEvents.PlayerKill.Assist.FOBSuppliedAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -1106,7 +1112,7 @@
                     "TagName": "Challenges.SessionEvents.PlayerKill.Assist.SupplyCrateAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -1171,7 +1177,7 @@
                     "TagName": "Challenges.SessionEvents.RevivePlayer"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -1282,7 +1288,7 @@
                     "TagName": "Challenges.SessionEvents.RevivePlayer.LogisticAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -1393,7 +1399,7 @@
                     "TagName": "Challenges.SessionEvents.RevivePlayer.ReviveAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -1507,7 +1513,7 @@
                     "TagName": "Challenges.SessionEvents.RevivePlayer.SupplyCrateAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -1572,7 +1578,7 @@
                     "TagName": "Challenges.SessionEvents.RevivePlayer.Contributor"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -1686,7 +1692,7 @@
                     "TagName": "Challenges.SessionEvents.HealPlayer"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -1797,7 +1803,7 @@
                     "TagName": "Challenges.SessionEvents.HealPlayer.LogisticAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -1908,7 +1914,7 @@
                     "TagName": "Challenges.SessionEvents.HealPlayer.ReviveAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2022,7 +2028,7 @@
                     "TagName": "Challenges.SessionEvents.HealPlayer.SupplyCrateAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2087,7 +2093,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicle"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2152,7 +2158,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicle.CrewAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2214,7 +2220,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicle.LogisticAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2276,7 +2282,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicle.ReviveAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2338,7 +2344,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicle.FOBSuppliedAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2403,7 +2409,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicle.SupplyCrateAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2468,7 +2474,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2533,7 +2539,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.CrewAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2595,7 +2601,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.LogisticAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2657,7 +2663,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.ReviveAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2719,7 +2725,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.FOBSuppliedAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2784,7 +2790,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicle.Assist.SupplyCrateAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2849,7 +2855,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicleSection"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -2963,7 +2969,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicleSection.CrewAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3025,7 +3031,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicleSection.LogisticAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3087,7 +3093,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicleSection.ReviveAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3152,7 +3158,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicleSection.SupplyCrateAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3217,7 +3223,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3331,7 +3337,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist.CrewAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3393,7 +3399,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist.LogisticAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3455,7 +3461,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist.ReviveAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3520,7 +3526,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyVehicleSection.Assist.SupplyCrateAssist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3585,7 +3591,7 @@
                     "TagName": "Challenges.SessionEvents.ZoneEntry"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3650,7 +3656,7 @@
                     "TagName": "Challenges.SessionEvents.DestroyThrowable"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3715,7 +3721,7 @@
                     "TagName": "Challenges.SessionEvents.RefuelVehicle"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3829,7 +3835,7 @@
                     "TagName": "Challenges.SessionEvents.DeployOnVehicle"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3910,7 +3916,7 @@
                     "TagName": "Challenges.SessionEvents.DeploySupplyCrate"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -3975,7 +3981,7 @@
                     "TagName": "Challenges.SessionEvents.SupplyPalletDropped"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -4040,7 +4046,7 @@
                     "TagName": "Challenges.SessionEvents.RepairVehicle"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -4154,7 +4160,7 @@
                     "TagName": "Challenges.SessionEvents.PurchaseFromSupplyCrate"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -4219,7 +4225,7 @@
                     "TagName": "Challenges.SessionEvents.DestroySupplyCrate"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -4281,7 +4287,7 @@
                     "TagName": "Challenges.SessionEvents.PlayerDelivered"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -4359,7 +4365,7 @@
                     "TagName": "Challenges.SessionEvents.PassengerSurvived"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -4421,7 +4427,7 @@
                     "TagName": "Challenges.SessionEvents.SafeZoneEntered"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -4502,7 +4508,7 @@
                     "TagName": "Challenges.SessionEvents.Tip"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -4567,7 +4573,7 @@
                     "TagName": "Challenges.SessionEvents.PreTip"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -4632,7 +4638,7 @@
                     "TagName": "Challenges.SessionEvents.VehicleAirborne"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -4697,7 +4703,7 @@
                     "TagName": "Challenges.SessionEvents.VehicleFlyThrough"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -4715,8 +4721,39 @@
           "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_VehicleFlyThrough.0"
         },
         "Parameters": {
-          "PropertyDescs": [],
-          "SerialSize": 2
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": null,
+              "ID": "5CEF65B3-45C41E6C-3D470EA0-580DE6CC",
+              "Name": "RepeatActionCount",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "16080242-4BE29CAF-00F1C29D-C17E6B6D",
+              "Name": "LastActionServerTime",
+              "ValueType": "EPropertyBagPropertyType::Double",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 3
         },
         "PropertyOverrides": []
       },
@@ -4725,6 +4762,149 @@
       },
       "Tag": {
         "TagName": "Challenges.SessionEvents.VehicleFlyThrough"
+      }
+    },
+    "Challenges.SessionEvents.HotZoneMagnet.FOBSuppliedAssist": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "59E1C6DF4D7F4F1569206FBDF4D74B6D",
+        "SourceString": "Hot Zone Magnet Activated FOB Supplied Assist",
+        "LocalizedString": "Hot Zone Magnet Activated FOB Supplied Assist"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.HotZoneMagnet.FOBSuppliedAssist"
+                  },
+                  "bInvert": true,
+                  "OPERATOR": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_MagnetActivated_FobSuppliedAssist'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_HotZoneMagnet_MagnetActivated_FobSuppliedAssist.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDRepeatActionTargetTracker'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "58A66742-4D9D36C8-AF3CF0A8-96981C2E",
+              "Name": "Target_Tracker",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 12
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.HotZoneMagnet.FOBSuppliedAssist"
+      }
+    },
+    "Challenges.SessionEvents.Freefall": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "C64015434ED72EE495EDFE9E5A840E00",
+        "SourceString": "Freefall",
+        "LocalizedString": "Freefall"
+      },
+      "Description": {
+        "CultureInvariantString": null
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Freefall"
+                  },
+                  "bInvert": true,
+                  "OPERATOR": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_KOTH_Freefall'",
+          "ObjectPath": "/Challenges_KOTH/ST_Challenges_SessionEvents_KOTH_Freefall.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [],
+          "SerialSize": 0
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Freefall"
       }
     },
     "Challenges.SessionEvents.Test": {
@@ -4759,7 +4939,7 @@
                     "TagName": "Challenges.SessionEvents.Test"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]

@@ -2,75 +2,45 @@
 title: "Achievements"
 parent: "Progression & Economy"
 group: "Challenges"
-description: "The ten one-time achievements, the thresholds they use (100,000 cash, one hour in a control zone, 950 m) and what each one asks for. Each is a Steam achievement, and the game lists no other reward."
+description: "The 14 achievement entries in the S3 / 0.3 snapshot, their saved conditions and the four decoded thresholds."
 ---
 
 # Achievements
 
-| Achievements | |
-|---|---|
-| **General** | |
-| Kind | One-time goals |
-| Number | 10 |
-| Rewards | None in the data. The Steam achievement is the reward |
-| Steam | Each achievement is also a Steam achievement |
-| **Thresholds** | |
-| Cash | 100,000 (Loadout Spender and Single Life Profit) |
-| Time | 3,600 seconds, or 1 hour (Control Zone Survivor) |
-| Distance | 950 m (Long Shot) |
-| Internal name | DT_Challenges_SessionEvents_Shared |
-{: .wiki-infobox }
+The CL-533731 / hotfix 533689 snapshot lists **14 achievement entries**, compared with ten in the saved Season 2 table. Each has a Steam achievement ID and is marked to auto-activate. No cash, XP or item rewards are serialized in these entries; this does not establish backend rewards or when an achievement is available.
 
-Achievements are one-time goals. A player can earn each one once, and each is also a Steam achievement. The game gives a name and a goal for all ten. Four of them have a number to reach: 100,000 cash twice, one hour in a control zone, and a 950 m kill. The game lists no cash, XP or item reward for any of them, so the Steam achievement is the only reward.
+The goals below summarize the reviewed current StateTree configuration. Event production, native task behavior and backend award behavior are not independently verified. The four numeric blocks were decoded from current saved package bytes: **100,000 cash twice, 3,600 seconds and 95,000 cm (950 m)**.
 
-## Overview
+## Current saved goals
 
-There are ten achievements. They are active from the start, and each one stops counting once it is done.
+| Achievement | Saved goal | Threshold |
+|---|---|---|
+| Complete The Tutorial | Tutorial completion event. | No numeric threshold |
+| Punch Kristopher | Punch Kristopher with fists. | No numeric threshold |
+| Top Cash Earner | Finish first in the cash-earned placement, with cash earned above zero. | No numeric threshold |
+| Single Life Profit | Current-life cash profit reaches the stored threshold. | 100000 cash |
+| Loadout Spender | A loadout purchase event passes the stored cash threshold; the event amount sign remains unverified. | 100000 cash |
+| Control Zone Survivor | A control-zone/alive timer is configured for one hour; effective event filtering remains unverified. | 3600 seconds |
+| Long Shot | A hostile kill reaches the distance threshold; the saved cause filter excludes vehicle, AT-mine and claymore tags. | 950 m (95,000 stored cm) |
+| Clean Sweep | Your final faction score is above zero and the highest opposing score is zero. | No numeric threshold |
+| Ricochet Kill | A hostile kill carries the ricochet context. | No numeric threshold |
+| Defibrillator Kill | A hostile kill has the defibrillator cause tag. | No numeric threshold |
+| He's behind you | A hostile backblast kill while the pawn has the control-zone tag. | No numeric threshold |
+| Car Jacker | A supply-crate reward event carries the stolen-pallet context. The name alone does not establish a vehicle-theft requirement. | No numeric threshold |
+| Slot Machine | Hot-zone activation with at least three guessed digits and a code containing at least four digits. | No numeric threshold |
+| Sound The Horn | Interact with the shooting-range horn lever; the unlock follows the configured sound-wait task. | No numeric threshold |
 
-## How it works
+Control Zone Survivor's configured timer returns to waiting on the recorded tag/respawn/vitality transitions; the effective event filtering is not proved. Loadout Spender compares the purchase event's cash amount against 100,000, with native sign interpretation still open. The complete criteria, Steam IDs, source fingerprints and threshold evidence are retained in [economy data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json).
 
-- **Always active.** The game sets all ten achievements to start automatically.
-- **Earned once.** Each achievement stops counting after it is earned.
-- **Steam.** Each achievement is linked to a Steam achievement with its own ID.
-- **Thresholds.** Loadout Spender and Single Life Profit need 100,000 cash. Control Zone Survivor needs 3,600 seconds (one hour) alive in a control zone. Long Shot needs a kill from 950 m. The game stores that distance as 95,000 Unreal units, the same unit the kill-distance rewards use, so 950 m is a derived figure.
+## Season comparison
 
-## Achievements
+The saved Season 2 shared achievement table has ten entries; the current reviewed list has fourteen. The additional names in this list are He's behind you, Car Jacker, Slot Machine and Sound The Horn. This table comparison alone does not establish when an achievement became available on Steam or whether another historical feature supplied it.
 
-| Achievement | Goal | Threshold | Reward |
-|---|---|---|---|
-| Loadout Spender | Make one loadout purchase of at least 100,000 cash. The check is on a single purchase event. | 100,000 cash | Steam achievement |
-| Complete The Tutorial | Finish the tutorial. | None | Steam achievement |
-| Punch Kristopher | Hit the tutorial character Kristopher with a melee attack. | None | Steam achievement |
-| Top Cash Earner | Finish first for cash earned in a match, with more than 0 cash earned. It is checked from the match stats, not from an event. | None | Steam achievement |
-| Control Zone Survivor | Stay alive in a control zone for 3,600 seconds. Entering the zone starts the timer, and a death resets it. | 3,600 s (1 hour) | Steam achievement |
-| Single Life Profit | Reach a profit of 100,000 cash. The check runs on each profit change. | 100,000 cash | Steam achievement |
-| Long Shot | Kill a hostile target from at least 950 m. | 950 m | Steam achievement |
-| Ricochet Kill | Kill a hostile target with a ricochet. | None | Steam achievement |
-| Defibrillator Kill | Kill a hostile target with the defibrillator. | None | Steam achievement |
-| Clean Sweep | At the end of the match, your faction has a score above 0 and the other faction has 0. It is checked from the final scores. | None | Steam achievement |
+The [historical Season 2 article](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/_wiki/progression-and-economy/achievements.md) is retained separately. See the [S2→S3 notes](../patch-notes/season-3.md) and [stored reward differences](../../season-3-changes/rewards-unlocks.md).
 
-Kill achievements count hostile targets only. Long Shot, Ricochet Kill and Defibrillator Kill all need the target to be an enemy.
-
-## Rewards
-
-The game lists no cash, role XP or item for any achievement. The reward is the Steam achievement that matches each one.
-
-## Season 2 changes
-
-- The achievement list went from none to 10 entries in the Season 02 update.
-
-## See also
-
-- [Challenges](challenges.md), the overview of every challenge category
-- [Passive Missions](passive-missions.md)
-- [Wagers](wagers.md)
-- [Cash and Rewards](cash-and-rewards.md)
-
-## Sources
+## Sources and related pages
 
 - [Challenges and session events](../../game-features/Wardogs_Challenges_v1.md)
-- [Season 2 changes: Rewards & Unlocks](../../season-2-changes/rewards-unlocks.md)
-- Achievement table (JSON)
-- Shared session-event challenges (JSON)
-- [Economy data: achievements](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json) (JSON)
-- [Round 36 economy evidence](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/docs/evidence/round36-econ.md)
+- [Wagers](wagers.md)
+- [Cash and rewards](cash-and-rewards.md)
+- [Current economy JSON](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json)

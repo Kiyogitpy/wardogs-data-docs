@@ -144,9 +144,9 @@ Each control is a `BHRotaryMovementControl` with a stack of assists (a category,
 | Throttle | Apply change | on | none | ChangeBody: RawIncreaseInterpSpeed 2; RawDecreaseInterpSpeed 2; IncreasePerSecond 0.5; DecreasePerSecond 0.5; ClampLowerBound 0 |
 | Pitch | Reduce pitch when exceeding GForce limit | on | SmoothedInfluenceConditions: InInterpSpeed 0.3; OutInterpSpeed 0.3; Conditions (1) | SetToValueBody |
 | Pitch | Auto-trim | on | none | AutoTrimCurveSamplingBody: CurveTable [`CurveTable_FWG_01_AutoTrimByAirspeedKmPH`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Vehicles/Pawns/Air/Airplane/FWG_01/Data/CurveTable_FWG_01_AutoTrimByAirspeedKmPH.json) |
-| Roll | Stabilize after input released | on | StabilizedAfterInputReleasedCondition: StabilityControlValueType LocalAngularVelocity_DegPerS; StabilityControlValueComponent X; StabilityThreshold 2.8648; InputStateCondition: ControlType CyclicX; Threshold 0.01; Operator Equal | PIDBody: OutputParams NegateCondition=Always; ControlValueParams Type=LocalAngularVelocity_DegPerS, Component=X; PID ProportionalGain=0.2094, IntegralGain=0.001745, DerivativeGain=0.0873 |
-| Yaw | Dampen pressed inputs | on | InputStateCondition: ControlType Pedals; Threshold 1; Operator Equal | DampingBody: Interpolation InterpolationMethod=INTERP_TO, InterpSpeed=1 |
-| Yaw | Dampen inputs | on | InputStateCondition: ControlType Pedals; Operator Equal | DampingBody: Interpolation InterpolationMethod=INTERP_TO, InterpSpeed=0.5 |
+| Roll | Stabilize after input released | on | StabilizedAfterInputReleasedCondition: StabilityControlValueType LocalAngularVelocity_DegPerS; StabilityControlValueComponent X; StabilityThreshold 2.8648; InputStateCondition: ControlType CyclicX; Threshold 0.01; OPERATOR Equal | PIDBody: OutputParams NegateCondition=Always; ControlValueParams Type=LocalAngularVelocity_DegPerS, Component=X; PID ProportionalGain=0.2094, IntegralGain=0.001745, DerivativeGain=0.0873 |
+| Yaw | Dampen pressed inputs | on | InputStateCondition: ControlType Pedals; Threshold 1; OPERATOR Equal | DampingBody: Interpolation InterpolationMethod=INTERP_TO, InterpSpeed=1 |
+| Yaw | Dampen inputs | on | InputStateCondition: ControlType Pedals; OPERATOR Equal | DampingBody: Interpolation InterpolationMethod=INTERP_TO, InterpSpeed=0.5 |
 | Wheel brake | Engage when fully stopped | on | IsFullyStoppedAircraftMovementCondition | SetToValueBody: Value 1 |
 | Wheel brake | Damping | on | none | DampingBody: Interpolation InterpolationMethod=INTERP_TO, InterpSpeed=3 |
 

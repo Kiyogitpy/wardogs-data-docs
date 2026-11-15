@@ -1,8 +1,8 @@
 ---
 title: "TCX-SPR"
 parent: "Weapons"
-group: "Marksman rifles"
-description: "The TCX-SPR marksman rifle: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
+group: "Assault rifles"
+description: "The TCX-SPR assault rifle: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
 ---
 
 # TCX-SPR
@@ -11,7 +11,7 @@ description: "The TCX-SPR marksman rifle: fire rate, damage by body part, range 
 |---|---|
 | ![TCX-SPR]({{ '/assets/img/icons/vendor-weapons/T_UI_Weapons_WEPN_037.png' | relative_url }}){: .wiki-infobox-img } | |
 | **General** |  |
-| Class | Marksman rifle |
+| Class | Assault rifle |
 | Caliber | [7.62x39mm](../ammunition/7-62x39mm.md) |
 | Fire modes | Fully automatic and semi-automatic |
 | **Performance** |  |
@@ -25,9 +25,9 @@ description: "The TCX-SPR marksman rifle: fire rate, damage by body part, range 
 | Internal name | WEPN_037 |
 {: .wiki-infobox }
 
-The TCX-SPR is a [marksman rifle](../weapons.md#marksman-rifles) in Wardogs, chambered in 7.62x39mm. It fires fully automatic and semi-automatic at 800 rounds/min. Its standard magazine is the TCX-SPR 28 RND Magazine.
+The TCX-SPR is an [assault rifle](../weapons.md#assault-rifles) in Wardogs, chambered in 7.62x39mm. It fires fully automatic and semi-automatic at 800 rounds/min. Its standard magazine is the TCX-SPR 28 RND Magazine.
 
-Most marksman rifles are semi-automatic. It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
+It takes the bullet types described on the [Ammunition](../ammunition.md) page: Standard (FMJ), Flesh Damage (HP), Armor Piercing (AP). Each has a tracer version.
 
 ## Damage
 
@@ -39,8 +39,8 @@ Figures are for Standard (FMJ) at point blank range, per hit, against a characte
 |---|---|
 | Head | 70.3 |
 | Neck | 52.7 |
-| Upper torso | 29.1 |
-| Middle torso | 29.0 |
+| Upper torso | 32.9 |
+| Middle torso | 29.9 |
 | Upper arm | 16.2 |
 | Thigh | 16.2 |
 
@@ -48,33 +48,33 @@ Figures are for Standard (FMJ) at point blank range, per hit, against a characte
 
 | Armor class | Torso | Head |
 |---|---|---|
-| No armor | 29.1 | 70.3 |
-| Light | 20.4 | 49.2 |
-| Medium | 17.5 | 42.2 |
-| Heavy | 14.6 | 35.2 |
-| Super heavy | 11.7 | 28.1 |
+| No armor | 32.9 | 70.3 |
+| Light | 23.0 | 49.2 |
+| Medium | 19.7 | 42.2 |
+| Heavy | 16.5 | 35.2 |
+| Super heavy | 13.2 | 28.1 |
 
 **Range falloff (upper torso, no armor)**
 
 | Distance | Damage |
 |---|---|
-| 0 m | 29.1 |
-| 50 m | 29.1 |
-| 100 m | 29.1 |
-| 200 m | 29.1 |
-| 300 m | 29.1 |
-| 400 m | 29.1 |
-| 600 m | 19.7 |
-| 800 m | 13.2 |
-| 1000 m | 7.9 |
+| 0 m | 32.9 |
+| 50 m | 32.9 |
+| 100 m | 32.9 |
+| 200 m | 32.9 |
+| 300 m | 32.9 |
+| 400 m | 32.9 |
+| 600 m | 22.3 |
+| 800 m | 14.9 |
+| 1000 m | 8.9 |
 
 **Upper torso, no armor, by ammo type**
 
 | Ammo | Damage per hit |
 |---|---|
-| Standard (FMJ) | 29.1 |
-| Flesh Damage (HP) | 58.3 |
-| Armor Piercing (AP) | 23.3 |
+| Standard (FMJ) | 32.9 |
+| Flesh Damage (HP) | 65.8 |
+| Armor Piercing (AP) | 26.3 |
 
 See [Ammunition](../ammunition.md) for how each type does against armor, and [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) for the full tables.
 
@@ -90,7 +90,7 @@ Shots and time to kill (TTK) against a character with 100 HP. TTK runs from the 
 | [Level 1 vest](../equipment/level-1-armor.md) | 5 shots, 0.30 s | 5 shots, 0.30 s | 5 shots, 0.30 s |
 | [Level 2 vest](../equipment/level-2-armor.md) | 6 shots, 0.38 s | 6 shots, 0.38 s | 6 shots, 0.38 s |
 | [Level 3 vest](../equipment/level-3-armor.md) | 7 shots, 0.45 s | 7 shots, 0.45 s | 7 shots, 0.45 s |
-| [Level 4 vest](../equipment/level-4-armor.md) | 9 shots, 0.60 s | 9 shots, 0.60 s | 9 shots, 0.60 s |
+| [Level 4 vest](../equipment/level-4-armor.md) | 8 shots, 0.53 s | 8 shots, 0.53 s | 8 shots, 0.53 s |
 
 **Head hits, Standard (FMJ)**
 
@@ -101,11 +101,11 @@ Shots and time to kill (TTK) against a character with 100 HP. TTK runs from the 
 
 | Vest | 10 m | 100 m | 300 m |
 |---|---|---|---|
-| No armor | 5 shots, 0.30 s | 5 shots, 0.30 s | 5 shots, 0.30 s |
-| [Level 1 vest](../equipment/level-1-armor.md) | 6 shots, 0.38 s | 6 shots, 0.38 s | 6 shots, 0.38 s |
-| [Level 2 vest](../equipment/level-2-armor.md) | 6 shots, 0.38 s | 6 shots, 0.38 s | 6 shots, 0.38 s |
+| No armor | 4 shots, 0.23 s | 4 shots, 0.23 s | 4 shots, 0.23 s |
+| [Level 1 vest](../equipment/level-1-armor.md) | 5 shots, 0.30 s | 5 shots, 0.30 s | 5 shots, 0.30 s |
+| [Level 2 vest](../equipment/level-2-armor.md) | 5 shots, 0.30 s | 5 shots, 0.30 s | 5 shots, 0.30 s |
 | [Level 3 vest](../equipment/level-3-armor.md) | 6 shots, 0.38 s | 6 shots, 0.38 s | 6 shots, 0.38 s |
-| [Level 4 vest](../equipment/level-4-armor.md) | 7 shots, 0.45 s | 7 shots, 0.45 s | 7 shots, 0.45 s |
+| [Level 4 vest](../equipment/level-4-armor.md) | 6 shots, 0.38 s | 6 shots, 0.38 s | 6 shots, 0.38 s |
 
 **Head hits, Armor Piercing (AP)**
 

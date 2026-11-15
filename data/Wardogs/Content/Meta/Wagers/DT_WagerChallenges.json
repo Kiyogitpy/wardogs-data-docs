@@ -14,14 +14,14 @@
   "Rows": {
     "Challenges.Challenge.Wager.Kills": {
       "DisplayName": {
-        "Namespace": "",
-        "Key": "3362E0DA4DDF9C30B391E181AB9DE641",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.Kills.Name",
         "SourceString": "Get Kills",
         "LocalizedString": "Get Kills"
       },
       "Description": {
-        "Namespace": "",
-        "Key": "30D4AFA047CED8C1B97871AA7E43ECDB",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.Kills.Name",
         "SourceString": "Get Kills",
         "LocalizedString": "Get Kills"
       },
@@ -78,14 +78,14 @@
     },
     "Challenges.Challenge.Wager.PlayerDelivery": {
       "DisplayName": {
-        "Namespace": "",
-        "Key": "7AEA7B234C4786561E183CBCEADF09B0",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.PlayerDelivery.Name",
         "SourceString": "Dropoff People",
         "LocalizedString": "Dropoff People"
       },
       "Description": {
-        "Namespace": "",
-        "Key": "02D13D05454CDF5576B1E8B6AF45D65E",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.PlayerDelivery.Name",
         "SourceString": "Dropoff People",
         "LocalizedString": "Dropoff People"
       },
@@ -142,14 +142,14 @@
     },
     "Challenges.Challenge.Wager.Revives": {
       "DisplayName": {
-        "Namespace": "",
-        "Key": "BBEE649949A6366E915A138AF1D3F19D",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.Revives.Name",
         "SourceString": "Revive Teammates",
         "LocalizedString": "Revive Teammates"
       },
       "Description": {
-        "Namespace": "",
-        "Key": "0B4A6C1E4821D083D7C78ABBED07FEF4",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.Revives.Name",
         "SourceString": "Revive Teammates",
         "LocalizedString": "Revive Teammates"
       },
@@ -242,14 +242,14 @@
     },
     "Challenges.Challenge.Wager.VehiclesDestroyed": {
       "DisplayName": {
-        "Namespace": "",
-        "Key": "653319464CCB28A07B65C9A6714331AB",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.VehiclesDestroyed.Name",
         "SourceString": "Destroy Occupied Vehicles",
         "LocalizedString": "Destroy Occupied Vehicles"
       },
       "Description": {
-        "Namespace": "",
-        "Key": "384E6A5D47E934571558808E58E2D384",
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.VehiclesDestroyed.Name",
         "SourceString": "Destroy Occupied Vehicles",
         "LocalizedString": "Destroy Occupied Vehicles"
       },
@@ -338,6 +338,712 @@
       },
       "Tag": {
         "TagName": "Challenges.Challenge.Wager.VehiclesDestroyed"
+      }
+    },
+    "Challenges.Challenge.Wager.DrillTowersActivated": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.DrillTowersActivated.Name",
+        "SourceString": "Activate Drill Towers",
+        "LocalizedString": "Activate Drill Towers"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.DrillTowersActivated.Name",
+        "SourceString": "Activate Drill Towers",
+        "LocalizedString": "Activate Drill Towers"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_Challenge_RewardedDrillTowersActivated'",
+          "ObjectPath": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedDrillTowersActivated.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "4836E5B5-49A43BC2-2887A0AE-5558FE67",
+              "Name": "EligibleActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "9C7CC9DE-4E56A404-974B5192-E74E0C68",
+              "Name": "ExcludedActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "B4F00349-4A975EAE-857B3AB5-29CA7825",
+              "Name": "NumDrillTowersToActivate",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 22
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Wager.DrillTowersActivated"
+      }
+    },
+    "Challenges.Challenge.Wager.FOBsHacked": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.FOBsHacked.Name",
+        "SourceString": "Hack Enemy FOBs",
+        "LocalizedString": "Hack Enemy FOBs"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.FOBsHacked.Name",
+        "SourceString": "Hack Enemy FOBs",
+        "LocalizedString": "Hack Enemy FOBs"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_Challenge_RewardedFOBsHacked'",
+          "ObjectPath": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedFOBsHacked.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "4836E5B5-49A43BC2-2887A0AE-5558FE67",
+              "Name": "EligibleActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "9C7CC9DE-4E56A404-974B5192-E74E0C68",
+              "Name": "ExcludedActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "665C9D23-4CFDB860-972FAD90-19AEF78F",
+              "Name": "NumFOBsToHack",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 22
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Wager.FOBsHacked"
+      }
+    },
+    "Challenges.Challenge.Wager.FreefallKill": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.FreefallKill.Name",
+        "SourceString": "Freefall Kill",
+        "LocalizedString": "Freefall Kill"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.FreefallKill.Name",
+        "SourceString": "Freefall Kill",
+        "LocalizedString": "Freefall Kill"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_Challenge_RewardedFreefall'",
+          "ObjectPath": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedFreefall.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "4836E5B5-49A43BC2-2887A0AE-5558FE67",
+              "Name": "EligibleActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "9C7CC9DE-4E56A404-974B5192-E74E0C68",
+              "Name": "ExcludedActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "591B2C6E-4072988B-3971CDB9-024B3885",
+              "Name": "NumToComplete",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 22
+        },
+        "PropertyOverrides": [
+          "4836E5B5-49A43BC2-2887A0AE-5558FE67"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Wager.FreefallKill"
+      }
+    },
+    "Challenges.Challenge.Wager.FreefallHelicopterKill": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.FreefallHelicopterKill.Name",
+        "SourceString": "Freefall Helicopter Kill",
+        "LocalizedString": "Freefall Helicopter Kill"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.FreefallHelicopterKill.Name",
+        "SourceString": "Freefall Helicopter Kill",
+        "LocalizedString": "Freefall Helicopter Kill"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_Challenge_RewardedFreefall'",
+          "ObjectPath": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedFreefall.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "4836E5B5-49A43BC2-2887A0AE-5558FE67",
+              "Name": "EligibleActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "9C7CC9DE-4E56A404-974B5192-E74E0C68",
+              "Name": "ExcludedActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "591B2C6E-4072988B-3971CDB9-024B3885",
+              "Name": "NumToComplete",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 22
+        },
+        "PropertyOverrides": [
+          "4836E5B5-49A43BC2-2887A0AE-5558FE67"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Wager.FreefallHelicopterKill"
+      }
+    },
+    "Challenges.Challenge.Wager.FreefallHelicopterKillRecovered": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.FreefallHelicopterKillRecovered.Name",
+        "SourceString": "Freefall Helicopter Kill Recovered",
+        "LocalizedString": "Freefall Helicopter Kill Recovered"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.FreefallHelicopterKillRecovered.Name",
+        "SourceString": "Freefall Helicopter Kill Recovered",
+        "LocalizedString": "Freefall Helicopter Kill Recovered"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_Challenge_RewardedFreefall'",
+          "ObjectPath": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedFreefall.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "4836E5B5-49A43BC2-2887A0AE-5558FE67",
+              "Name": "EligibleActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "9C7CC9DE-4E56A404-974B5192-E74E0C68",
+              "Name": "ExcludedActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "591B2C6E-4072988B-3971CDB9-024B3885",
+              "Name": "NumToComplete",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 22
+        },
+        "PropertyOverrides": [
+          "4836E5B5-49A43BC2-2887A0AE-5558FE67"
+        ]
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Wager.FreefallHelicopterKillRecovered"
+      }
+    },
+    "Challenges.Challenge.Wager.SpawnRadarsDestroyed": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.SpawnRadarsDestroyed.Name",
+        "SourceString": "Destroy Enemy Spawn Radars",
+        "LocalizedString": "Destroy Enemy Spawn Radars"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.SpawnRadarsDestroyed.Name",
+        "SourceString": "Destroy Enemy Spawn Radars",
+        "LocalizedString": "Destroy Enemy Spawn Radars"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_Challenge_RewardedSpawnRadarsDestroyed'",
+          "ObjectPath": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedSpawnRadarsDestroyed.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "4836E5B5-49A43BC2-2887A0AE-5558FE67",
+              "Name": "EligibleActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "9C7CC9DE-4E56A404-974B5192-E74E0C68",
+              "Name": "ExcludedActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "0C89F047-4FBC0E7F-B58927B3-0B99861B",
+              "Name": "NumSpawnRadarsToDestroy",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 62
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Wager.SpawnRadarsDestroyed"
+      }
+    },
+    "Challenges.Challenge.Wager.SupplyPalletsDelivered": {
+      "DisplayName": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.SupplyPalletsDelivered.Name",
+        "SourceString": "Deliver Supply Pallets",
+        "LocalizedString": "Deliver Supply Pallets"
+      },
+      "Description": {
+        "TableId": "/Game/UI/StringTables/STRINGS_Wagers.STRINGS_Wagers",
+        "Key": "Challenge.SupplyPalletsDelivered.Name",
+        "SourceString": "Deliver Supply Pallets",
+        "LocalizedString": "Deliver Supply Pallets"
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": false,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": null
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_Challenge_RewardedSupplyPalletsDelivered'",
+          "ObjectPath": "/Game/Meta/Challenges/StateTrees/ST_Challenges_Challenge_RewardedSupplyPalletsDelivered.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "4836E5B5-49A43BC2-2887A0AE-5558FE67",
+              "Name": "EligibleActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'GameplayTagContainer'",
+                "ObjectPath": "/Script/GameplayTags"
+              },
+              "ID": "9C7CC9DE-4E56A404-974B5192-E74E0C68",
+              "Name": "ExcludedActionTags",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            },
+            {
+              "ValueTypeObject": null,
+              "ID": "123EBEAD-47ED6EE9-FD2C2396-F9D97A51",
+              "Name": "NumSupplyPalletsToDeliver",
+              "ValueType": "EPropertyBagPropertyType::Int32",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 22
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.Challenge.Wager.SupplyPalletsDelivered"
       }
     }
   }

@@ -26,7 +26,7 @@ The cooked reference chain supplies the previously missing actor initialization 
 
 1. [`DA_Buildable_HotzoneMagnet`](../../data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/Hotzone_Magnet/DA_Buildable_HotzoneMagnet.json) names `B_Buildable_HotzoneMagnet_C` as its spawner's `BaseBuildableClass`.
 2. That Blueprint's `WDBuildable_ActorSpawnLocation` component has `ActorToSpawn = B_HotzoneMagnet_functionality_C`.
-3. `Default__B_HotzoneMagnet_functionality_C` explicitly sets `BuildableDataAsset` to [`DA_Buildable_HotzoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/Hotzone_Magnet/DA_Buildable_HotzoneMagnet.json). Its native parent is `WDBuildableHotZoneMagnetActor`.
+3. `Default__B_HotzoneMagnet_functionality_C` explicitly sets `BuildableDataAsset` to [`DA_Buildable_HotzoneMagnet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/Hotzone_Magnet/DA_Buildable_HotzoneMagnet.json). Its native parent is `WDBuildableHotZoneMagnetActor`.
 4. The native actor constructor `0x85E6C90` initially clears `BuildableDataAsset` at `+0x2E8`; the cooked class default supplies the non-null reference. Native constructor state alone therefore was not the final initialized default.
 
 The two Blueprint CDOs were freshly decoded from the on-disk cooked containers using the existing corrected mapping. The re-extracted data asset is semantically identical, across both exports, to the published JSON linked above. Private provenance records pin the mapping, extracted files and container metadata. No new Blueprint source is published here.

@@ -23,6 +23,7 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 | ![KH-2002]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_003.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [KH-2002](weapons/kh-2002.md) | 5.56x45mm | 700 rounds/min | STANAG 20 RND Magazine | Free (Manticore faction, one per life) |
 | ![M4]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_002.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [M4](weapons/m4.md) | 5.56x45mm | 800 rounds/min | STANAG 30 RND Magazine | 2800 |
 | ![T-21]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_005.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [T-21](weapons/t-21.md) | 5.56x45mm | 750 rounds/min | STANAG 20 RND Magazine | 1200 |
+| ![TCX-SPR]({{ '/assets/img/icons/vendor-weapons/T_UI_Weapons_WEPN_037.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [TCX-SPR](weapons/tcx-spr.md) | 7.62x39mm | 800 rounds/min | TCX-SPR 28 RND Magazine | 3200 |
 
 ## Marksman rifles
 
@@ -32,7 +33,6 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 | ![M14]({{ '/assets/img/icons/vendor-weapons/T_UI_Weapons_WEPN_034.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [M14](weapons/m14.md) | .308 Win | 700 rounds/min | M14 10 RND Magazine | 7400 |
 | ![SKS]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_007.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [SKS](weapons/sks.md) | 7.62x39mm | 420 rounds/min | SKS Internal Mag (10 rounds) | 2400 |
 | ![SVD]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_015.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [SVD](weapons/svd.md) | 7.62x54mm | 480 rounds/min | SVD 10 RND Magazine | 4800 |
-| ![TCX-SPR]({{ '/assets/img/icons/vendor-weapons/T_UI_Weapons_WEPN_037.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [TCX-SPR](weapons/tcx-spr.md) | 7.62x39mm | 800 rounds/min | TCX-SPR 28 RND Magazine | 3200 |
 
 ## Light machine guns
 

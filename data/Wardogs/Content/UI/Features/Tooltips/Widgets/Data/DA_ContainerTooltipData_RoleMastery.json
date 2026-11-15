@@ -1,0 +1,39 @@
+--- export: UDataAsset / DA_ContainerTooltipData_RoleMastery ---
+{
+  "Type": "WDUITooltipContainerData",
+  "Name": "DA_ContainerTooltipData_RoleMastery",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDUITooltipContainerData'",
+  "Package": "/Game/UI/Features/Tooltips/Widgets/Data/DA_ContainerTooltipData_RoleMastery",
+  "Properties": {
+    "ItemWidgetsParams": [
+      {
+        "WidgetClass": {
+          "AssetPathName": "/Game/UI/Features/Frontend/Progression/Widgets/Widgets/RoleMastery/W_Progression_RoleXPBoost_Tooltip.W_Progression_RoleXPBoost_Tooltip_C",
+          "SubPathString": ""
+        },
+        "ViewModelParams": {
+          "ViewModelClass": {
+            "AssetPathName": "/Script/WDGame.WDUITooltipItemViewModel_XPBoost",
+            "SubPathString": ""
+          },
+          "Data": {
+            "AssetPathName": "/Game/UI/Features/Frontend/Progression/Widgets/Widgets/RoleMastery/Data/DA_RoleXPBoostTooltip.DA_RoleXPBoostTooltip",
+            "SubPathString": ""
+          }
+        },
+        "_aaabkejhohfkdpglkgkep": false
+      }
+    ],
+    "ButtonPromptsBarViewModelParams": {
+      "ViewModelClass": {
+        "AssetPathName": "/Script/WDGame.WDUIButtonPromptsBarViewModel",
+        "SubPathString": ""
+      },
+      "Data": {
+        "AssetPathName": "/Game/UI/Features/Tooltips/Widgets/Data/ButtonPromptData/DA_Default_PromptBarData.DA_Default_PromptBarData",
+        "SubPathString": ""
+      }
+    }
+  }
+}

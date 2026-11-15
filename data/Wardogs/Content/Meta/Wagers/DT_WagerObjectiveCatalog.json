@@ -15,48 +15,443 @@
     "Wager.ObjectiveCatalog": {
       "Objectives": [
         {
-          "ID": "Kills3",
-          "_aaaakgfoodihlgbfboeka": false,
+          "ID": "Hammertime",
+          "_aaaakgfoodihlgbfboeka": true,
           "ActionId": {
             "TagName": "Wager.Action.Kills"
           },
-          "Count": 3,
-          "Conditions": [],
-          "Odds": 1.001,
+          "Count": 10,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithSmallHammer"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.37,
           "CooldownSeconds": 0.0,
           "UnlockNode": {
             "TagName": "None"
           }
         },
         {
-          "ID": "Kills2WithHeadshot",
-          "_aaaakgfoodihlgbfboeka": false,
+          "ID": "Thor",
+          "_aaaakgfoodihlgbfboeka": true,
           "ActionId": {
             "TagName": "Wager.Action.Kills"
           },
-          "Count": 2,
+          "Count": 18,
           "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithLargeHammer"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.61,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Juggernaut",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 25,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithLargeHammer"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotZone"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.HeavyOrSuperHeavyArmor"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.97,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Spinmerightround",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 15,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithLightDrill"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.43,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Naturalborndrillers",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 20,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithLightDrill"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.64,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Twobirds",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.OneBullet"
+              },
+              "ChosenValue": 2
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.5,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Railgun",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.OneBullet"
+              },
+              "ChosenValue": 3
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 2.0,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Boomer",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.OneExplosion"
+              },
+              "ChosenValue": 5
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithGrenade"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 2.9,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Boring",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 5,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithGun"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.02,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Headhunter",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 10,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithGun"
+              },
+              "ChosenValue": 0
+            },
             {
               "ConditionId": {
                 "TagName": "Wager.Condition.Kills.WithHeadshot"
               },
-              "_aaaalheeonlpfokfcbcmh": 0
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
             }
           ],
-          "Odds": 1.2012,
+          "Odds": 1.27,
           "CooldownSeconds": 0.0,
           "UnlockNode": {
             "TagName": "None"
           }
         },
         {
-          "ID": "Revives2",
-          "_aaaakgfoodihlgbfboeka": false,
+          "ID": "Executioner",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 25,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithGun"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithHeadshot"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.45,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Hotstuff",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 10,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.15,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Hothead",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 10,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotZone"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithHeadshot"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.39,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Voyeur",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 10,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.TargetInHotZoneFromOutside"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithHeadshot"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.57,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Roadrage",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 10,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithVehicleImpact"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.13,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Nurse",
+          "_aaaakgfoodihlgbfboeka": true,
           "ActionId": {
             "TagName": "Wager.Action.Revives"
           },
-          "Count": 2,
-          "Conditions": [],
+          "Count": 5,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
           "Odds": 1.001,
           "CooldownSeconds": 0.0,
           "UnlockNode": {
@@ -64,8 +459,56 @@
           }
         },
         {
-          "ID": "PlayerDelivery3",
-          "_aaaakgfoodihlgbfboeka": false,
+          "ID": "Doctorgood",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Revives"
+          },
+          "Count": 30,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.13,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Prayer",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Revives"
+          },
+          "Count": 50,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Revives.MagicHands"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.51,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Schoolrun",
+          "_aaaakgfoodihlgbfboeka": true,
           "ActionId": {
             "TagName": "Wager.Action.PlayerDelivery"
           },
@@ -78,188 +521,388 @@
           }
         },
         {
-          "ID": "VehiclesDestroyed1",
-          "_aaaakgfoodihlgbfboeka": false,
+          "ID": "Hotdrop",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.PlayerDelivery"
+          },
+          "Count": 8,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.PlayerDelivery.ToHotZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.27,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Thewholeteam",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Revives"
+          },
+          "Count": 33,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Revives.MagicHands"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.26,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Backwardsman",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithBackblast"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.45,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Hesbehindyou",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithBackblast"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.6,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Dontstandthere",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.OneExplosion"
+              },
+              "ChosenValue": 2
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithBackblast"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 3.19,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Matingcall",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.DrillTowersActivated"
+          },
+          "Count": 1,
+          "Conditions": [],
+          "Odds": 1.5,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Hacker",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.FOBsHacked"
+          },
+          "Count": 1,
+          "Conditions": [],
+          "Odds": 1.5,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Slotmachine",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.DrillTowersActivated"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.DrillTowersActivated.CodeDigitsGuessed"
+              },
+              "ChosenValue": 3
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.DrillTowersActivated.DrillTowersOnMap"
+              },
+              "ChosenValue": 4
+            }
+          ],
+          "Odds": 2.25,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Minuteman",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 6,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.WithinSeconds"
+              },
+              "ChosenValue": 30
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotZone"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithSMGAssaultRifleOrShotgun"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.7,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Rush",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 12,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.WithinSeconds"
+              },
+              "ChosenValue": 60
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InHotZone"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithSMGAssaultRifleOrShotgun"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.78,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Deathfromabove",
+          "_aaaakgfoodihlgbfboeka": true,
           "ActionId": {
             "TagName": "Wager.Action.VehiclesDestroyed"
           },
           "Count": 1,
-          "Conditions": [],
-          "Odds": 1.001,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.VehiclesDestroyed.OneExplosion"
+              },
+              "ChosenValue": 2
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.VehiclesDestroyed.WithStingray"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 2.3,
           "CooldownSeconds": 0.0,
           "UnlockNode": {
             "TagName": "None"
           }
         },
         {
-          "ID": "TestParked",
-          "_aaaakgfoodihlgbfboeka": false,
-          "ActionId": {
-            "TagName": "Wager.Action.Kills"
-          },
-          "Count": 1,
-          "Conditions": [],
-          "Odds": 1.5,
-          "CooldownSeconds": 300.0,
-          "UnlockNode": {
-            "TagName": "None"
-          }
-        },
-        {
-          "ID": "TestLockedWagerNode",
-          "_aaaakgfoodihlgbfboeka": false,
-          "ActionId": {
-            "TagName": "Wager.Action.Kills"
-          },
-          "Count": 1,
-          "Conditions": [],
-          "Odds": 1.5,
-          "CooldownSeconds": 0.0,
-          "UnlockNode": {
-            "TagName": "Meta.Unlocks.Wager"
-          }
-        },
-        {
-          "ID": "TestLockedNodeInNoTree",
-          "_aaaakgfoodihlgbfboeka": false,
-          "ActionId": {
-            "TagName": "Wager.Action.Kills"
-          },
-          "Count": 1,
-          "Conditions": [],
-          "Odds": 1.5,
-          "CooldownSeconds": 0.0,
-          "UnlockNode": {
-            "TagName": "Wager.Pricing"
-          }
-        },
-        {
-          "ID": "Hammertime1",
+          "ID": "Droningon",
           "_aaaakgfoodihlgbfboeka": true,
           "ActionId": {
-            "TagName": "Wager.Action.Kills"
+            "TagName": "Wager.Action.VehiclesDestroyed"
+          },
+          "Count": 3,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.VehiclesDestroyed.WithStingray"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.WithoutAMiss.Drone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.73,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Specialdelivery",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.VehiclesDestroyed"
+          },
+          "Count": 2,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.VehiclesDestroyed.WithStingray"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.PerShot.Drone"
+              },
+              "ChosenValue": 2
+            }
+          ],
+          "Odds": 3.45,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Resusthefob",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Revives"
           },
           "Count": 10,
           "Conditions": [
             {
               "ConditionId": {
-                "TagName": "Wager.Condition.Kills.WithSmallHammer"
+                "TagName": "Wager.Condition.Revives.WithResus"
               },
-              "_aaaalheeonlpfokfcbcmh": 0
+              "ChosenValue": 0
             },
             {
               "ConditionId": {
-                "TagName": "Wager.Condition.InHotzone"
+                "TagName": "Wager.Condition.InFOB"
               },
-              "_aaaalheeonlpfokfcbcmh": 0
+              "ChosenValue": 0
             }
           ],
-          "Odds": 1.5,
+          "Odds": 1.24,
           "CooldownSeconds": 0.0,
           "UnlockNode": {
             "TagName": "None"
           }
         },
         {
-          "ID": "Hammertime2",
-          "_aaaakgfoodihlgbfboeka": true,
-          "ActionId": {
-            "TagName": "Wager.Action.Kills"
-          },
-          "Count": 20,
-          "Conditions": [
-            {
-              "ConditionId": {
-                "TagName": "Wager.Condition.Kills.WithSmallHammer"
-              },
-              "_aaaalheeonlpfokfcbcmh": 0
-            },
-            {
-              "ConditionId": {
-                "TagName": "Wager.Condition.InHotzone"
-              },
-              "_aaaalheeonlpfokfcbcmh": 0
-            }
-          ],
-          "Odds": 1.64,
-          "CooldownSeconds": 0.0,
-          "UnlockNode": {
-            "TagName": "None"
-          }
-        },
-        {
-          "ID": "Hammertime3",
-          "_aaaakgfoodihlgbfboeka": true,
-          "ActionId": {
-            "TagName": "Wager.Action.Kills"
-          },
-          "Count": 25,
-          "Conditions": [
-            {
-              "ConditionId": {
-                "TagName": "Wager.Condition.Kills.WithLargeHammer"
-              },
-              "_aaaalheeonlpfokfcbcmh": 0
-            },
-            {
-              "ConditionId": {
-                "TagName": "Wager.Condition.InHotzone"
-              },
-              "_aaaalheeonlpfokfcbcmh": 0
-            }
-          ],
-          "Odds": 1.72,
-          "CooldownSeconds": 0.0,
-          "UnlockNode": {
-            "TagName": "None"
-          }
-        },
-        {
-          "ID": "MedicMarathon1",
+          "ID": "Getup",
           "_aaaakgfoodihlgbfboeka": true,
           "ActionId": {
             "TagName": "Wager.Action.Revives"
           },
-          "Count": 30,
+          "Count": 15,
           "Conditions": [
             {
               "ConditionId": {
-                "TagName": "Wager.Condition.Revives.MagicHands"
+                "TagName": "Wager.Condition.Revives.WithResus"
               },
-              "_aaaalheeonlpfokfcbcmh": 0
+              "ChosenValue": 0
             },
             {
               "ConditionId": {
-                "TagName": "Wager.Condition.InHotzone"
+                "TagName": "Wager.Condition.InEnemyFOB"
               },
-              "_aaaalheeonlpfokfcbcmh": 0
-            }
-          ],
-          "Odds": 1.37,
-          "CooldownSeconds": 0.0,
-          "UnlockNode": {
-            "TagName": "None"
-          }
-        },
-        {
-          "ID": "MedicMarathon2",
-          "_aaaakgfoodihlgbfboeka": true,
-          "ActionId": {
-            "TagName": "Wager.Action.Revives"
-          },
-          "Count": 40,
-          "Conditions": [
-            {
-              "ConditionId": {
-                "TagName": "Wager.Condition.Revives.MagicHands"
-              },
-              "_aaaalheeonlpfokfcbcmh": 0
-            },
-            {
-              "ConditionId": {
-                "TagName": "Wager.Condition.InHotzone"
-              },
-              "_aaaalheeonlpfokfcbcmh": 0
+              "ChosenValue": 0
             }
           ],
           "Odds": 1.44,
@@ -269,7 +912,258 @@
           }
         },
         {
-          "ID": "MedicMarathon3",
+          "ID": "Allyourbasearebelongtous",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Revives"
+          },
+          "Count": 20,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Revives.WithResus"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InEnemyFOBWithSupplies"
+              },
+              "ChosenValue": 10000
+            }
+          ],
+          "Odds": 2.22,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Overkill",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.VehiclesDestroyed"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.VehiclesDestroyed.Helicopter"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.VehiclesDestroyed.WithArtilleryShell"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.95,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Sneaky",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.FOBsHacked"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.FOBsHacked.Alone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.88,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Swarm",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.FOBsHacked"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.FOBsHacked.TeammatesInRange"
+              },
+              "ChosenValue": 20
+            }
+          ],
+          "Odds": 2.25,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Theyjustletusin",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.FOBsHacked"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.FOBsHacked.TeammatesInRange"
+              },
+              "ChosenValue": 20
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.NoEnemyBuildablesDestroyed"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 2.7,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Quake",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.FreefallKill"
+          },
+          "Count": 1,
+          "Conditions": [],
+          "Odds": 2.0,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "SlamDunk",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.FreefallHelicopterKill"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Freefall.WithRPGOrCGM4"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 4.0,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Rendezook",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.FreefallHelicopterKillRecovered"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Freefall.WithRPGOrCGM4"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 8.0,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Stealthrun",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.PlayerDelivery"
+          },
+          "Count": 4,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.PlayerDelivery.ToHotZone"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.NoVehicleDamage"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.NoVehicleSpotted"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.NoVehicleLockOn"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 2.16,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Hitandrun",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 25,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithVehicleImpact"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.NoVehicleRepairs"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.InControlZone"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 1.55,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Desmonddoss",
           "_aaaakgfoodihlgbfboeka": true,
           "ActionId": {
             "TagName": "Wager.Action.Revives"
@@ -280,97 +1174,253 @@
               "ConditionId": {
                 "TagName": "Wager.Condition.Revives.MagicHands"
               },
-              "_aaaalheeonlpfokfcbcmh": 0
+              "ChosenValue": 0
             },
             {
               "ConditionId": {
-                "TagName": "Wager.Condition.InHotzone"
+                "TagName": "Wager.Condition.InHotZone"
               },
-              "_aaaalheeonlpfokfcbcmh": 0
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Revives.NoWeapons"
+              },
+              "ChosenValue": 0
             }
           ],
-          "Odds": 1.51,
+          "Odds": 1.74,
           "CooldownSeconds": 0.0,
           "UnlockNode": {
             "TagName": "None"
           }
         },
         {
-          "ID": "AllDrillerNoFiller1",
+          "ID": "Itsonlyafleshwound",
           "_aaaakgfoodihlgbfboeka": true,
           "ActionId": {
-            "TagName": "Wager.Action.Kills"
+            "TagName": "Wager.Action.Revives"
           },
-          "Count": 15,
+          "Count": 75,
           "Conditions": [
             {
               "ConditionId": {
-                "TagName": "Wager.Condition.Kills.WithLightDrill"
+                "TagName": "Wager.Condition.Revives.MagicHands"
               },
-              "_aaaalheeonlpfokfcbcmh": 0
+              "ChosenValue": 0
             },
             {
               "ConditionId": {
-                "TagName": "Wager.Condition.InHotzone"
+                "TagName": "Wager.Condition.InHotZone"
               },
-              "_aaaalheeonlpfokfcbcmh": 0
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Revives.NoWeapons"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.NoSelfHeal"
+              },
+              "ChosenValue": 0
             }
           ],
-          "Odds": 1.57,
+          "Odds": 2.36,
           "CooldownSeconds": 0.0,
           "UnlockNode": {
             "TagName": "None"
           }
         },
         {
-          "ID": "AllDrillerNoFiller2",
+          "ID": "Battlebus",
           "_aaaakgfoodihlgbfboeka": true,
           "ActionId": {
-            "TagName": "Wager.Action.Kills"
+            "TagName": "Wager.Action.PlayerDelivery"
           },
-          "Count": 20,
+          "Count": 1,
           "Conditions": [
             {
               "ConditionId": {
-                "TagName": "Wager.Condition.Kills.WithLightDrill"
+                "TagName": "Wager.Condition.PlayerDelivery.OneTrip"
               },
-              "_aaaalheeonlpfokfcbcmh": 0
+              "ChosenValue": 30
             },
             {
               "ConditionId": {
-                "TagName": "Wager.Condition.InHotzone"
+                "TagName": "Wager.Condition.PlayerDelivery.ToHotZone"
               },
-              "_aaaalheeonlpfokfcbcmh": 0
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.PlayerDelivery.InBattleUral"
+              },
+              "ChosenValue": 0
             }
           ],
-          "Odds": 1.64,
+          "Odds": 2.53,
           "CooldownSeconds": 0.0,
           "UnlockNode": {
             "TagName": "None"
           }
         },
         {
-          "ID": "AllDrillerNoFiller3",
+          "ID": "Alldrillernofiller",
           "_aaaakgfoodihlgbfboeka": true,
           "ActionId": {
             "TagName": "Wager.Action.Kills"
           },
-          "Count": 25,
+          "Count": 10,
           "Conditions": [
             {
               "ConditionId": {
                 "TagName": "Wager.Condition.Kills.WithLightDrill"
               },
-              "_aaaalheeonlpfokfcbcmh": 0
+              "ChosenValue": 0
             },
             {
               "ConditionId": {
-                "TagName": "Wager.Condition.InHotzone"
+                "TagName": "Wager.Condition.InHotZone"
               },
-              "_aaaalheeonlpfokfcbcmh": 0
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.NoReloading"
+              },
+              "ChosenValue": 0
             }
           ],
-          "Odds": 1.72,
+          "Odds": 2.25,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Brucelee",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.SpawnRadarsDestroyed"
+          },
+          "Count": 2,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithPunch"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 2.8,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Heavyrain",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 50,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.TargetInControlZone"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithArtilleryShell"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.WithoutAMiss.Artillery"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.PerfectQuickReloads"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.WithoutReturningToSpawn"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 4.85,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Cannonball",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.Kills"
+          },
+          "Count": 1,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.OneExplosion"
+              },
+              "ChosenValue": 5
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.WithArtilleryShell"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.Kills.TargetInHotZone"
+              },
+              "ChosenValue": 0
+            },
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.NoFriendlyDamage"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 3.75,
+          "CooldownSeconds": 0.0,
+          "UnlockNode": {
+            "TagName": "None"
+          }
+        },
+        {
+          "ID": "Carjacker",
+          "_aaaakgfoodihlgbfboeka": true,
+          "ActionId": {
+            "TagName": "Wager.Action.SupplyPalletsDelivered"
+          },
+          "Count": 2,
+          "Conditions": [
+            {
+              "ConditionId": {
+                "TagName": "Wager.Condition.SupplyPalletsDelivered.Stolen"
+              },
+              "ChosenValue": 0
+            }
+          ],
+          "Odds": 2.8,
           "CooldownSeconds": 0.0,
           "UnlockNode": {
             "TagName": "None"

@@ -1,0 +1,39 @@
+--- export: UPrimaryDataAsset / DA_Player_Damage_Burn ---
+{
+  "Type": "WDAudioData",
+  "Name": "DA_Player_Damage_Burn",
+  "Flags": "RF_Public | RF_Standalone | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDAudioData'",
+  "Package": "/Game/Audio/Player/Damage/FromFire/DAs/DA_Player_Damage_Burn",
+  "Properties": {
+    "SoundAssets": [
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Player.State.Burning.1p"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Player_Damage_FromFire_1p'",
+          "ObjectPath": "/Game/Audio/Player/Damage/FromFire/MSS_Player_Damage_FromFire_1p.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Player.State.Burning.Ally"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Player_Damage_FromFire_Ally'",
+          "ObjectPath": "/Game/Audio/Player/Damage/FromFire/MSS_Player_Damage_FromFire_Ally.0"
+        }
+      },
+      {
+        "Key": {
+          "TagName": "Audio.Asset.Player.State.Burning.Enemy"
+        },
+        "Value": {
+          "ObjectName": "MetaSoundSource'MSS_Player_Damage_FromFire_Enemy'",
+          "ObjectPath": "/Game/Audio/Player/Damage/FromFire/MSS_Player_Damage_FromFire_Enemy.0"
+        }
+      }
+    ]
+  }
+}

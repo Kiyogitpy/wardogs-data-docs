@@ -13,7 +13,7 @@ description: "Speed per stance with native defaults, fall damage and gun-bob cur
 **Where this page sits.** [MoverTesting](Wardogs_MoverTesting_v2.md) already documents the exported movement settings, state modifiers and curves, so this page does not repeat them. It adds what that page leaves out: the values the export omits because they equal the class default (most importantly the base `MaxSpeed`), the resulting speed per stance, the curves and audio configuration stored in the `Player` folder, and an index of all 137 files. It is a separate page because the numbers come from a different data folder and from the constructor, and because these tables are generated while MoverTesting is hand-written.
 
 <!-- movement_tables counts -->
-137 files under [`GameMechanics/Player`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Player): Audio 1, Curves 9, root file 1, Inputs 123, MovementFeatures 3.
+138 files under [`GameMechanics/Player`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/GameMechanics/Player): Audio 1, Curves 10, root file 1, Inputs 123, MovementFeatures 3.
 <!-- /movement_tables -->
 
 ---
@@ -185,7 +185,8 @@ These come from the ground table in §1a; the notes explain what the rows are.
 | [`CRV_LookAcceleration`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_LookAcceleration.json) | CurveFloat | 0 → 0; 0.6 → 1 | Gamepad look ramp (default); input is seconds of stick deflection past the controller's delay |
 | [`CRV_LookAcceleration_Aggressive`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_LookAcceleration_Aggressive.json) | CurveFloat | 0 → 0; 0.1 → 0.625; 0.35 → 1 | Gamepad look ramp, faster; input is seconds of stick deflection past the controller's delay |
 | [`CRV_LookAcceleration_Linear`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_LookAcceleration_Linear.json) | CurveFloat | 0 → 0; 1 → 1 | Gamepad look ramp, linear; input is seconds of stick deflection past the controller's delay |
-| [`CRV_ParachutePunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage.json) | CurveFloat | 695 → 0; 1,700 → 100 | Landing damage under parachute by impact speed (unit as above); referenced by the parachute settings |
+| [`CRV_ParachutePunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage.json) | CurveFloat | 700 → 0; 900 → 20; 1,200 → 100 | Landing damage under parachute by impact speed (unit as above); referenced by the parachute settings |
+| [`CRV_ParachutePunishment_Damage_Sport`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage_Sport.json) | CurveFloat | 800 → 0; 1,000 → 25; 1,900 → 100 |  |
 | [`CRV_SlopeGroundSpeedContribution`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_SlopeGroundSpeedContribution.json) | CurveFloat | -4.9 → 1; 0 → 1; 119.8 → 1.1 | Ground speed scale by slope; used by `DA_GroundMovement.SlopeMovementContributionCurve` |
 
 Interpolation: damage and slope curves are linear between keys; look-acceleration and gun-bob curves use cubic tangents (the file `InterpMode` per key). Landing damage: 0 at impact speed 670, 100 at 875, 200 at 1080; the parachute curve reaches 100 at 1700.
@@ -301,7 +302,7 @@ Every file in the folder, grouped by sub-folder. Input action rows give the tag,
 |---|---|---|
 | [`DA_DefaultPlayerMovementAudioConfiguration`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Audio/DA_DefaultPlayerMovementAudioConfiguration.json) | WDCharacterMovementEffectsComponentConfigurationDataAsset | footstep, jump, landing and stance cues (see audio section) |
 
-**Curves** (9 files)
+**Curves** (10 files)
 
 | File | Type | Content |
 |---|---|---|
@@ -312,7 +313,8 @@ Every file in the folder, grouped by sub-folder. Input action rows give the tag,
 | [`CRV_LookAcceleration`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_LookAcceleration.json) | CurveFloat | keys 2 |
 | [`CRV_LookAcceleration_Aggressive`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_LookAcceleration_Aggressive.json) | CurveFloat | keys 3 |
 | [`CRV_LookAcceleration_Linear`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_LookAcceleration_Linear.json) | CurveFloat | keys 2 |
-| [`CRV_ParachutePunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage.json) | CurveFloat | keys 2 |
+| [`CRV_ParachutePunishment_Damage`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage.json) | CurveFloat | keys 3 |
+| [`CRV_ParachutePunishment_Damage_Sport`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_ParachutePunishment_Damage_Sport.json) | CurveFloat | keys 3 |
 | [`CRV_SlopeGroundSpeedContribution`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/Player/PlayerCharacter/Curves/CRV_SlopeGroundSpeedContribution.json) | CurveFloat | keys 3 |
 
 **Inputs** (77 files)

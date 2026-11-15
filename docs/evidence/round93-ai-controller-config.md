@@ -9,9 +9,9 @@ This closes the missing cooked class-default assignment named at the end of the 
 
 ## Recovered source and identity
 
-A fresh offline package listing located `/WDAIPvEAICore/BP_CoreAIController` at [`Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/BP_CoreAIController`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/BP_CoreAIController.json). WdExtract decoded that exact package from the mounted game files with the existing corrected mappings; it reported `dump: ok=1 fail=0`. No game process, live memory or network replay was used.
+A fresh offline package listing located `/WDAIPvEAICore/BP_CoreAIController` at [`Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/BP_CoreAIController`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/BP_CoreAIController.json). WdExtract decoded that exact package from the mounted game files with the existing corrected mappings; it reported `dump: ok=1 fail=0`. No game process, live memory or network replay was used.
 
-The [published raw controller export](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/BP_CoreAIController.json) preserves the extractor's bytes: 40,586 bytes, 37 exports, SHA-256 `529fabbb38fe30e52a676cf3c149845497828fab800e82cd792e71ab072d3b37`.
+The [published raw controller export](https://github.com/Kiyogitpy/wardogs-data-docs/blob/8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b/data/Wardogs/Plugins/GameFeatures/AI/WDAIPvEAICore/Content/BP_CoreAIController.json) preserves the extractor's bytes: 40,586 bytes, 37 exports, SHA-256 `529fabbb38fe30e52a676cf3c149845497828fab800e82cd792e71ab072d3b37`.
 
 The native emitter/consumer evidence remains bound to the restored executable SHA-256 `a5c3db107c29bfd92c3b5f317033f698a0c3a84dad712f32990ae302b4f0cc37`; see [corpus conventions](../DECOMPILATION_CORPUS.md). Export identity is separate from proof of a native caller or an observed server instance.
 

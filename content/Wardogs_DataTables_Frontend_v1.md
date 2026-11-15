@@ -137,7 +137,7 @@ Tables: [`DT_LoadingScreenTips`](https://github.com/Kiyogitpy/wardogs-data-docs/
 Tables: [`DT_ExperienceServerBrowserTags`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/ServerBrowser/DT_ExperienceServerBrowserTags.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDExperienceServerBrowserTagRow -->
-*1 table(s), 19 rows, 3 non-empty columns. Source: the `Rows` of each table export (**Data**).*
+*1 table(s), 20 rows, 3 non-empty columns. Source: the `Rows` of each table export (**Data**).*
 
 | Row | `DescriptorTags` | `_aaabmndfbjeemaenllmhj` | `Tag` |
 |---|---|---|---|
@@ -160,6 +160,7 @@ Tables: [`DT_ExperienceServerBrowserTags`](https://github.com/Kiyogitpy/wardogs-
 | `Experience.Rules.NoQuickSlots` | Server.Descriptor.ReducedHUD.QuickSlots |  | Experience.Rules.NoQuickSlots |
 | `Experience.Rules.RebuyDisabled` | Server.Descriptor.RebuyDisabled |  | Experience.Rules.RebuyDisabled |
 | `Experience.Rules.SkipPlayerDeathItemDrop` |  | Server.Descriptor.PlayerLootingDisabled | Experience.Rules.SkipPlayerDeathItemDrop |
+| `Experience.Rules.LimitedGear` | Server.Descriptor.LimitedGear |  | Experience.Rules.LimitedGear |
 <!-- /datatable_catalog -->
 
 ## WDServerBrowserRegionData
@@ -167,7 +168,7 @@ Tables: [`DT_ExperienceServerBrowserTags`](https://github.com/Kiyogitpy/wardogs-
 Tables: [`DT_OnlineRegions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/FindMatch/Data/DT_OnlineRegions.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDServerBrowserRegionData -->
-*1 table(s), 14 rows, 3 non-empty columns. Source: the `Rows` of each table export (**Data**).*
+*1 table(s), 15 rows, 3 non-empty columns. Source: the `Rows` of each table export (**Data**).*
 
 | Row | `Endpoint` | `DisplayName` | `bIsFallback` |
 |---|---|---|---|
@@ -180,6 +181,7 @@ Tables: [`DT_OnlineRegions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob
 | `na-east` | dynamodb.us-east-1.amazonaws.com | North America (East) | false |
 | `na-west` | dynamodb.us-west-2.amazonaws.com | North America (West) | false |
 | `south-america` | dynamodb.sa-east-1.amazonaws.com | South America | false |
+| `asia-central` | dynamodb.ap-east-1.amazonaws.com | Asia (Central) | false |
 | `asia-east` | dynamodb.ap-northeast-2.amazonaws.com | Asia (East) | false |
 | `asia-west` | dynamodb.ap-south-1.amazonaws.com | Asia (West) | false |
 | `asia-se` | dynamodb.ap-southeast-1.amazonaws.com | Asia (South East) | false |
@@ -192,22 +194,22 @@ Tables: [`DT_OnlineRegions`](https://github.com/Kiyogitpy/wardogs-data-docs/blob
 Tables: [`DT_ServerBrowserMapTexture`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Features/Frontend/FindMatch/Data/DT_ServerBrowserMapTexture.json). Each name is linked in the [index](Wardogs_DataTables_v1.md).
 
 <!-- datatable_catalog struct WDUIServerBrowserMapTextureTableRow -->
-*1 table(s), 12 rows, 3 non-empty columns. Source: the `Rows` of each table export (**Data**).*
+*1 table(s), 12 rows, 4 non-empty columns. Source: the `Rows` of each table export (**Data**).*
 
-| Row | `DisplayName` | `DefaultMapTexture` | `GameMode` |
-|---|---|---|---|
-| [`Bakurani_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/Kavkazi/Bakurani_KOTH_01.json) | Bakurani | T_UI_LoadingScreen_Bakurani | KOTH |
-| [`Madrid_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/Europe/Madrid_KOTH_01.json) | Ozeti | T_UI_LoadingScreen_Ozeti | KOTH |
-| [`Detroit_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/NorthAmerica/Detroit_KOTH_01.json) | Zestafona | T_UI_LoadingScreen_Zestafona | KOTH |
-| [`Moscow_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/Russia/Moscow_KOTH_01.json) | Saburtulo | T_UI_LoadingScreenMoscow | KOTH |
-| [`Bakurani_SniperShowdown_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/Kavkazi/Bakurani_SniperShowdown_01.json) | Bakurani Outskirts - Jutari | T_UI_LoadingScreen_Bakurani | Sniper Showdown |
-| [`Tanktown`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/Tanktown.json) | Tank Town |  | Tank Town |
-| [`Mindori_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/Kavkazi/Mindori_KOTH_01.json) |  |  | KOTH |
-| [`Tevza_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/Kavkazi/Tevza_KOTH_01.json) |  |  | KOTH |
-| [`Berlin_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/Europe/Berlin_KOTH_01.json) |  |  | KOTH |
-| `Deathmatch` | Deathmatch |  | Deathmatch |
-| [`Paris_KOTH_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/Europe/Paris_KOTH_01.json) |  |  | KOTH |
-| [`Bakurani_KOTH_02`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/Kavkazi/Bakurani_KOTH_02.json) | Bakurani | T_UI_LoadingScreen_Bakurani | KOTH |
+| Row | `DisplayName` | `LightPresetToTexture` | `DefaultMapTexture` | `GameMode` |
+|---|---|---|---|---|
+| `Bakurani_KOTH_01` | Bakurani | {Key=DayClear; Value=T_UI_Bakurani_DayClear}, {Key=DayLateClear; Value=T_UI_Bakurani_DayLateClear}, {Key=DayL… | T_UI_LoadingScreen_Bakurani | KOTH |
+| `Madrid_KOTH_01` | Ozeti | {Key=DayClear; Value=T_UI_Ozeti_DayClear}, {Key=DayLateClear; Value=T_UI_Ozeti_DayLateClear}, {Key=DayLateGra… | T_UI_LoadingScreen_Ozeti | KOTH |
+| `Detroit_KOTH_01` | Zestafona | {Key=DayClear; Value=T_UI_Zestafona_DayClear}, {Key=DayLateClear; Value=T_UI_Zestafona_DayLateClear}, {Key=Da… | T_UI_LoadingScreen_Zestafona | KOTH |
+| `Moscow_KOTH_01` | Sabatulo | {Key=DayClear; Value=T_UI_Sabatulo_DayClear}, {Key=DayLateClear; Value=T_UI_Sabatulo_DayLateClear}, {Key=DayL… | T_UI_LoadingScreen_Sabatulo | KOTH |
+| `Bakurani_SniperShowdown_01` | Bakurani Outskirts - Jutari | {Key=DayClear; Value=T_UI_Bakurani_DayClear}, {Key=DayLateClear; Value=T_UI_Bakurani_DayLateClear}, {Key=DayL… | T_UI_LoadingScreen_Bakurani | Sniper Showdown |
+| `Tanktown` | Tank Town |  |  | Tank Town |
+| `Mindori_KOTH_01` |  |  |  | KOTH |
+| `Tevza_KOTH_01` |  |  |  | KOTH |
+| `Berlin_KOTH_01` |  |  |  | KOTH |
+| [`Deathmatch`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Deathmatch/Content/Deathmatch.json) | Deathmatch |  |  | Deathmatch |
+| `Paris_KOTH_01` |  |  |  | KOTH |
+| `Bakurani_KOTH_02` | Bakurani | {Key=DayClear; Value=T_UI_Bakurani_DayClear}, {Key=DayLateClear; Value=T_UI_Bakurani_DayLateClear}, {Key=DayL… | T_UI_LoadingScreen_Bakurani | KOTH |
 <!-- /datatable_catalog -->
 
 ## WDUIUserSettingDisplayDataTableRow

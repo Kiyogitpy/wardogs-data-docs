@@ -36,7 +36,7 @@ Not in these tables: the two vehicle cannons `20x102mm` and `35x228mm` (they car
 | `40mm` | MGL-40, GrenadeLauncher | projectile | `Explosive.Grenade.40mm` | 100 | 2.5 | 10 | 1 | - | not upwards-preferred |
 | `120x570mm` | TNK 01 Heavy (vehicle weapon) | projectile | `Explosive.Rocket.120mm` | 150 | 4.2 | 7.5 | 0.3 | 30 | not upwards-preferred |
 | `120x800mm.Standard` | STN 03 Heavy MainBarrel (vehicle weapon) | projectile | `Explosive.Rocket.120x800mm` | 120 | 5 | 10 | 0.45 | 15 | not upwards-preferred |
-| `122mm` | ROT 02 Weapon 122mm (vehicle weapon), ROT 03 Weapon 122mm (vehicle weapon) | projectile | `Explosive.Rocket.122mm` | 100 | 2 | 6 | 1 | 10 | not upwards-preferred |
+| `122mm` | ROT 02 Weapon 122mm (vehicle weapon) | projectile | `Explosive.Rocket.122mm` | 100 | 2 | 6 | 1 | 10 | not upwards-preferred |
 | `122mm.Havoc` | no weapon item lists it (Havoc rocket asset) | projectile | `Explosive.Rocket.122mm` | 300 | 6 (E > R, see note) | 3 | 0.6 | - | not upwards-preferred |
 | `125x570mm` | TNK 04 (vehicle weapon) | projectile | `Explosive.Rocket.125mm` | 150 | 4.2 | 7.5 | 0.3 | 30 | not upwards-preferred |
 | `155mm.Expensive` | TNK 01 Artillery (vehicle weapon) | projectile | `Explosive.Rocket.155mm` | 450 | 10 | 20 | 0.93 | - | not upwards-preferred |
@@ -45,6 +45,7 @@ Not in these tables: the two vehicle cannons `20x102mm` and `35x228mm` (they car
 | `155mm.Standard.Sandbox` | no weapon item (sandbox copy) | projectile | `Explosive.Rocket.155mm` | 450 | 7.5 | 20 | 0.5 | - | not upwards-preferred |
 | `70mm` | no weapon item lists it (the vehicle rocket pods use the 122mm asset) | projectile | `Explosive.Rocket.60mm` | 100 | 4 | 10 | 0.5 | - | not upwards-preferred |
 | `84mm.TVGuided` | no weapon item lists it (TV-guided missile asset) | projectile | `Explosive.Rocket.60mm` | 100 | 4 | 10 | 0.5 | - | not upwards-preferred |
+| `70x1060mm` | ROT 03 Weapon 122mm (vehicle weapon) | projectile | `Explosive.Rocket.70x1060mm` | 100 | 2 | 6 | 1 | 10 | not upwards-preferred |
 | `72mm` | 9K333 Verba, STN 01 Heavy MountedMachineGun (vehicle weapon) | projectile | `Explosive.Rocket.72mm` | 200 | 2 | 10.8 | 0.8 | - | not upwards-preferred |
 | `84mm` | MAAWS | projectile | `Explosive.Rocket.84mm` | 100 | 4 | 10 | 1 | - | not upwards-preferred |
 | `93mm` | RPG-7 | projectile | `Explosive.Rocket.93mm` | 110 | 2.5 | 12 | 0.9 | - | not upwards-preferred |
@@ -80,6 +81,7 @@ Not in these tables: the two vehicle cannons `20x102mm` and `35x228mm` (they car
 | `155mm.Standard.Sandbox` | - | - | - | projectile impact |
 | `70mm` | - | - | - | projectile impact |
 | `84mm.TVGuided` | - | - | - | projectile impact |
+| `70x1060mm` | - | 50 | - | projectile impact |
 | `72mm` | 0.13 | 120 | - | projectile impact |
 | `84mm` | 0.03 | 120 | - | projectile impact |
 | `93mm` | 0.099 | 120 | - | projectile impact |
@@ -113,6 +115,7 @@ Not in these tables: the two vehicle cannons `20x102mm` and `35x228mm` (they car
 | `155mm.Standard.Sandbox` | 450 | 450 | 450 | 450 | 405 | 369 | 315 | 0 |
 | `70mm` | 100 | 100 | 91.7 | 70.8 | 0 | 0 | 0 | 0 |
 | `84mm.TVGuided` | 100 | 100 | 91.7 | 70.8 | 0 | 0 | 0 | 0 |
+| `70x1060mm` | 100 | 87.5 | 25 | 0 | 0 | 0 | 0 | 0 |
 | `72mm` | 200 | 190.9 | 145.5 | 100 | 54.5 | 0 | 0 | 0 |
 | `84mm` | 100 | 100 | 83.3 | 41.7 | 0 | 0 | 0 | 0 |
 | `93mm` | 110 | 110 | 83.9 | 57.9 | 31.8 | 0 | 0 | 0 |
@@ -146,6 +149,7 @@ Not in these tables: the two vehicle cannons `20x102mm` and `35x228mm` (they car
 | `155mm.Standard.Sandbox` | x1 | x0.45 | 450 | 10 | Outer | 405 | 182.2 |
 | `70mm` | x1 | x1 | 100 | 5 | Outer | 91.7 | 91.7 |
 | `84mm.TVGuided` | x1 | x1 | 100 | 5 | Outer | 91.7 | 91.7 |
+| `70x1060mm` | x0.55 | x0.55 | 55 | 3 | Outer | 75 | 41.2 |
 | `72mm` | x1 | x1 | 200 | 5.4 | Outer | 138.2 | 138.2 |
 | `84mm` | x1.01 | x0.5 | 101 | 5 | Outer | 83.3 | 41.7 |
 | `93mm` | x1 | x0.5 | 110 | 6 | Outer | 73.5 | 36.8 |
@@ -169,7 +173,7 @@ Assumption, stated plainly: one radial application resolving to the main health 
 | `Arrow.Explosive` | 150 | 36 (x0.075) | 134 (x0.025) | - (x0) | - (x0) |
 | `30mm` | 100 | 7 (x0.595) | 17 (x0.3) | 38 (x0.21) | 51 (x0.21) |
 | `DroneProjectile` | 120 | 1 (x6) | 1 (x4.5) | 2 (x5.5) | 2 (x6) |
-| `40mm` | 100 | 5 (x0.9) | 8 (x0.65) | 17 (x0.48) | 44 (x0.24) |
+| `40mm` | 100 | 5 (x0.9) | 8 (x0.65) | 151 (x0.0525) | 44 (x0.24) |
 | `120x570mm` | 150 | 1 (x10) | 1 (x10.5) | 4 (x1.73) | 4 (x1.8) |
 | `120x800mm.Standard` | 120 | 1 (x6.25) | 3 (x1.95) | 7 (x1.06) | 4 (x2.4) |
 | `122mm` | 100 | 5 (x1) | 4 (x1.35) | 9 (x0.881) | 12 (x0.9) |
@@ -181,6 +185,7 @@ Assumption, stated plainly: one radial application resolving to the main health 
 | `155mm.Standard.Sandbox` | 450 | 1 (x5) | 1 (x10.5) | 1 (x2.12) | 2 (x2.2) |
 | `70mm` | 100 | 1 (x5) | 2 (x3) | 7 (x1.18) | 6 (x2) |
 | `84mm.TVGuided` | 100 | 1 (x5) | 2 (x3) | 7 (x1.18) | 6 (x2) |
+| `70x1060mm` | 100 | 5 (x1) | 4 (x1.35) | 9 (x0.881) | 12 (x0.9) |
 | `72mm` | 200 | 1 (x5) | 1 (x3) | 4 (x1.18) | 4 (x1.4) |
 | `84mm` | 100 | 1 (x6.5) | 2 (x3.9) | 3 (x3.35) | 3 (x3.8) |
 | `93mm` | 110 | 1 (x4.62) | 6 (x0.9) | 5 (x1.71) | 5 (x2) |
@@ -189,7 +194,7 @@ Assumption, stated plainly: one radial application resolving to the main health 
 | `AT mine` | 300 | 1 (x3) | 1 (x3) | 2 (x2.45) | 2 (x2) |
 | [`Claymore`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Claymore/Content/Claymore.json) | 150 | 6 (x0.5) | 14 (x0.25) | 106 (x0.05) | 141 (x0.05) |
 | [`IED`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/IED/Content/IED.json) | 300 | 2 (x1.25) | 1 (x2.5) | 3 (x1.3) | 2 (x2.5) |
-| [`Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json) | 40 | 10 (x1) | 13 (x1) | 20 (x1) | 27 (x1) |
+| [`Molotov`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Molotov.json) | 40 | 20 (x0.5) | 42 (x0.3) | - (x0) | - (x0) |
 <!-- /explosive_tables -->
 
 ### Fuse and arming values per item

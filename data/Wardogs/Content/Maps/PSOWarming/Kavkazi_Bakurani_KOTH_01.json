@@ -21,13 +21,27 @@
         {
           "MatObjectPath": "/BHMaterials/Layers/Decal_Sheets/MI_Electric_Decal_Sheet_01a.MI_Electric_Decal_Sheet_01a",
           "VertexFactories": [
-            "FInstancedStaticMeshVertexFactory"
+            "FInstancedStaticMeshVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/BHMaterials/Layers/Decal_Sheets/MI_Electric_Decal_Sheet_01a_Emissive.MI_Electric_Decal_Sheet_01a_Emissive",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
           ]
         },
         {
           "MatObjectPath": "/BHMaterials/Layers/Decal_Sheets/MI_Electric_Icon_Sheet_01a.MI_Electric_Icon_Sheet_01a",
           "VertexFactories": [
-            "FInstancedStaticMeshVertexFactory"
+            "FInstancedStaticMeshVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/BHMaterials/Layers/Decal_Sheets/MI_Electric_Icon_Sheet_01c.MI_Electric_Icon_Sheet_01c",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
           ]
         },
         {
@@ -55,7 +69,8 @@
           "VertexFactories": [
             "FInstancedStaticMeshVertexFactory",
             "FLocalVertexFactory",
-            "FNaniteVertexFactory"
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
           ]
         },
         {
@@ -396,50 +411,6 @@
         {
           "MatObjectPath": "/Game/Characters/Player/_Presets/Lonestar/02/MAT/MI_V_Shoes_002_LS02.MI_V_Shoes_002_LS02",
           "VertexFactories": [
-            "TGPUSkinVertexFactoryDefault"
-          ]
-        },
-        {
-          "MatObjectPath": "/Game/Characters/Player/_Presets/Lonestar/03/MAT/MI_Facewear_004_LS03.MI_Facewear_004_LS03",
-          "VertexFactories": [
-            "TGPUSkinVertexFactoryDefault"
-          ]
-        },
-        {
-          "MatObjectPath": "/Game/Characters/Player/_Presets/Lonestar/03/MAT/MI_Legs_001_LS03.MI_Legs_001_LS03",
-          "VertexFactories": [
-            "TGPUSkinVertexFactoryDefault"
-          ]
-        },
-        {
-          "MatObjectPath": "/Game/Characters/Player/_Presets/Lonestar/03/MAT/MI_Legs_002_LS03.MI_Legs_002_LS03",
-          "VertexFactories": [
-            "TGPUSkinVertexFactoryDefault"
-          ]
-        },
-        {
-          "MatObjectPath": "/Game/Characters/Player/_Presets/Lonestar/03/MAT/MI_Torso_000_LS03.MI_Torso_000_LS03",
-          "VertexFactories": [
-            "FLocalVertexFactory",
-            "TGPUSkinVertexFactoryDefault"
-          ]
-        },
-        {
-          "MatObjectPath": "/Game/Characters/Player/_Presets/Lonestar/03/MAT/MI_V_Gear_002_LS03.MI_V_Gear_002_LS03",
-          "VertexFactories": [
-            "TGPUSkinVertexFactoryDefault"
-          ]
-        },
-        {
-          "MatObjectPath": "/Game/Characters/Player/_Presets/Lonestar/03/MAT/MI_V_Hat_002_LS03.MI_V_Hat_002_LS03",
-          "VertexFactories": [
-            "TGPUSkinVertexFactoryDefault"
-          ]
-        },
-        {
-          "MatObjectPath": "/Game/Characters/Player/_Presets/Lonestar/03/MAT/MI_V_Torso_001_LS03.MI_V_Torso_001_LS03",
-          "VertexFactories": [
-            "FLocalVertexFactory",
             "TGPUSkinVertexFactoryDefault"
           ]
         },
@@ -2130,7 +2101,7 @@
           ]
         },
         {
-          "MatObjectPath": "/Game/Environment/Materials/Tilling/Roof/MI_BitumenRoof_01a.MI_BitumenRoof_01a",
+          "MatObjectPath": "/Game/Environment/Materials/Tilling/Roof/MI_BitumenRoof_01b.MI_BitumenRoof_01b",
           "VertexFactories": [
             "FNaniteVertexFactory"
           ]
@@ -2299,6 +2270,12 @@
         },
         {
           "MatObjectPath": "/Game/Environment/Materials/Trim/Industrial/MI_Trim_Panels_01a.MI_Trim_Panels_01a",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/Game/Environment/Materials/Trim/Industrial/MI_Trim_Panels_01a_HLOD.MI_Trim_Panels_01a_HLOD",
           "VertexFactories": [
             "FNaniteVertexFactory"
           ]
@@ -3223,12 +3200,6 @@
         },
         {
           "MatObjectPath": "/Game/Environment/Props/Military/Weapons_And_Ammunition/AmmoCrate_01/Materials/MI_AmmoCrate_01_Clean.MI_AmmoCrate_01_Clean",
-          "VertexFactories": [
-            "FNaniteVertexFactory"
-          ]
-        },
-        {
-          "MatObjectPath": "/Game/Environment/Props/Posters/Propaganda_Posters/Materials/MI_Propaganda_Posters_01a.MI_Propaganda_Posters_01a",
           "VertexFactories": [
             "FNaniteVertexFactory"
           ]
@@ -5125,9 +5096,9 @@
           ]
         },
         {
-          "MatObjectPath": "/Game/VFX/Environmental/Ambient/Water/Rain/MI_GlassRain_Wet_Static.MI_GlassRain_Wet_Static",
+          "MatObjectPath": "/Game/VFX/Environmental/Ambient/Water/Materials/M_WaterSplash.M_WaterSplash",
           "VertexFactories": [
-            "FLocalVertexFactory"
+            "FNiagaraSpriteVertexFactory"
           ]
         },
         {
@@ -5191,7 +5162,13 @@
           ]
         },
         {
-          "MatObjectPath": "/Game/VFX/Vehicles/FuelLeak/Mi_RainSplash.Mi_RainSplash",
+          "MatObjectPath": "/Game/VFX/Vehicles/Helicopter/FadingRotors/Mi_ConingRotors_ROT03.Mi_ConingRotors_ROT03",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/Game/VFX/Vehicles/Kickup/Materials/M_DirtKickup.M_DirtKickup",
           "VertexFactories": [
             "FNiagaraSpriteVertexFactory"
           ]
@@ -5203,10 +5180,53 @@
           ]
         },
         {
+          "MatObjectPath": "/Game/Vehicles/Pawns/Air/Helicopter/ROT_03/M_RotorCircleBlur_Inst.M_RotorCircleBlur_Inst",
+          "VertexFactories": [
+            "FLocalVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/Game/Vehicles/Shared/Materials/MI_GlassHelicopter.MI_GlassHelicopter",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/Game/Vehicles/Shared/Materials/MI_WHL_02_Glass.MI_WHL_02_Glass",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
           "MatObjectPath": "/Game/Vehicles/Shared/Materials/MI_WHL_02_Glass_Dirty.MI_WHL_02_Glass_Dirty",
           "VertexFactories": [
             "FInstancedStaticMeshVertexFactory",
             "FLocalVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/Game/Vehicles/Shared/Materials/MI_WHL_02_Metal.MI_WHL_02_Metal",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/Game/Vehicles/Shared/Materials/MI_WHL_Interior_Decals.MI_WHL_Interior_Decals",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/Game/Vehicles/Shared/Materials/MI_WHL_Landslider_Dash.MI_WHL_Landslider_Dash",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/Game/Vehicles/Shared/Materials/MLI_Screens_Opaque.MLI_Screens_Opaque",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
           ]
         },
         {
@@ -5252,9 +5272,244 @@
           ]
         },
         {
+          "MatObjectPath": "/Mustache/Materials/MI_FacialHair_Movember.MI_FacialHair_Movember",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
           "MatObjectPath": "/PocketWorlds/M_Black.M_Black",
           "VertexFactories": [
             "FLocalVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/ROT_03/Materials/MI_LittleBird_Internals.MI_LittleBird_Internals",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/ROT_03/Materials/MLI_LittleBird_Fabric.MLI_LittleBird_Fabric",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/ROT_03/Materials/MLI_LittleBird_Metals.MLI_LittleBird_Metals",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/ROT_03/Materials/MLI_LittleBird_OpaqueGlass.MLI_LittleBird_OpaqueGlass",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/ROT_03/Materials/MLI_LittleBird_Plastics.MLI_LittleBird_Plastics",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/ROT_03/Materials/MLI_LittleBird_Rubber.MLI_LittleBird_Rubber",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/ROT_03/Materials/M_Littlebird_Decals_Interior_TEMP.M_Littlebird_Decals_Interior_TEMP",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/ROT_03/Materials/M_Littlebird_Decals_TEMP.M_Littlebird_Decals_TEMP",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_01/Materials/MI_WHL_01_Glass.MI_WHL_01_Glass",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_01/Materials/MI_WHL_01_Main.MI_WHL_01_Main",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_01/Materials/MI_WHL_01_Secondary.MI_WHL_01_Secondary",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_01/Materials/MI_WHL_01_Tires.MI_WHL_01_Tires",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_02/Assets/Materials/MI_WHL_02_BodyPlastic.MI_WHL_02_BodyPlastic",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_02/Assets/Materials/MI_WHL_02_Interior01.MI_WHL_02_Interior01",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_02/Assets/Materials/MI_WHL_02_Interior02.MI_WHL_02_Interior02",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_02/Assets/Materials/MI_WHL_02_Interior_Decals.MI_WHL_02_Interior_Decals",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_02/Assets/Materials/MI_WHL_02_LightDecals.MI_WHL_02_LightDecals",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_02/Assets/Materials/MI_WHL_02_Paint.MI_WHL_02_Paint",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_02/Assets/Materials/MI_WHL_02_Tires.MI_WHL_02_Tires",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_05/Materials/MI_WHL_05_Base_01.MI_WHL_05_Base_01",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_05/Materials/MI_WHL_05_Base_02.MI_WHL_05_Base_02",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_05/Materials/MI_WHL_05_Fastback_Body.MI_WHL_05_Fastback_Body",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_05/Materials/MI_WHL_05_Glass.MI_WHL_05_Glass",
+          "VertexFactories": [
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_05/Materials/MI_WHL_05_Interior_01.MI_WHL_05_Interior_01",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_05/Materials/MI_WHL_05_Interior_02.MI_WHL_05_Interior_02",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_05/Materials/MI_WHL_05_Tires.MI_WHL_05_Tires",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_06/Materials/MI_WHL_06_Body.MI_WHL_06_Body",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_06/Materials/MI_WHL_06_Internals.MI_WHL_06_Internals",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_06/Materials/MI_WHL_06_Internals_Rubber.MI_WHL_06_Internals_Rubber",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_06/Materials/MI_WHL_06_Tires.MI_WHL_06_Tires",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_08/Materials/MI_WHL_08_Base_01.MI_WHL_08_Base_01",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_08/Materials/MI_WHL_08_Base_02.MI_WHL_08_Base_02",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_08/Materials/MI_WHL_08_Interior_01.MI_WHL_08_Interior_01",
+          "VertexFactories": [
+            "FNaniteVertexFactory",
+            "TGPUSkinVertexFactoryDefault"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_08/Materials/MI_WHL_08_Interior_02.MI_WHL_08_Interior_02",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_08/Materials/MI_WHL_08_Interior_03.MI_WHL_08_Interior_03",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
+          ]
+        },
+        {
+          "MatObjectPath": "/WHL_08/Materials/MI_WHL_08_Tires.MI_WHL_08_Tires",
+          "VertexFactories": [
+            "FNaniteVertexFactory"
           ]
         }
       ],
@@ -5262,14 +5517,10 @@
         "FAllocateCommandInstanceOutputSpaceCs",
         "FAllocatePagesCS",
         "FAllocateUsedProbesCS",
-        "FBuildFeedbackHashTableCS",
         "FBuildGridTilesCS",
         "FBuildHeightfieldComposeTilesCS",
         "FBuildHeightfieldComposeTilesIndirectArgBufferCS",
-        "FBuildInstanceIdBufferAndCommandsFromPrimitiveIdsCs",
-        "FBuildLightTilesCS",
-        "FBuildRadiosityTilesCS",
-        "FCalculateCardTileDepthRangesCS",
+        "FBuildIndirectDispatchArgsBufferCS",
         "FClearIndirectArgBufferCS",
         "FClearProbeFreeList",
         "FClearReplacementCS_Buffer_Uint4_Bounds",
@@ -5277,43 +5528,30 @@
         "FClearReplacementCS_Texture3D_Uint4_Bounds",
         "FClearUAVBuildIndirectDispatchBufferCS",
         "FClearUAVCS",
-        "FCompactFeedbackHashTableCS",
-        "FCompactLightTilesCS",
         "FComposeHeightfieldsIntoPagesCS",
         "FCompositeHeightfieldsIntoObjectGridPagesCS",
-        "FCompositeObjectsIntoObjectGridPagesCS",
         "FCompositeObjectsIntoPagesCS",
         "FComputeKernelShader",
-        "FComputeLightTileOffsetsPerLightCS",
         "FCopyDistanceFieldAtlasCS",
         "FCullObjectsToClipmapCS",
         "FCullObjectsToGridCS",
         "FCullPerPageDrawCommandsCs",
+        "FFillMipsConditionBufferCS",
         "FGPUSceneSetInstancePrimitiveIdCS",
         "FGenerateConservativeDepthBufferCS",
+        "FGenerateMipsIndirectCS",
         "FGeneratePageFlagsFromPixelsCS",
         "FHZBBuildCS",
         "FInitArgs_CS",
         "FInitIndirectArgs1DCS",
         "FInitInstanceHierarchyArgs_CS",
-        "FInitializeCardTileIndirectArgsCS",
-        "FInitializeLightTileIndirectArgsCS",
         "FInstanceCull_CS",
         "FInstanceHierarchyChunkCull_CS",
         "FLUTBlenderCS",
-        "FLumenCardBatchDirectLightingCS",
         "FLumenCardCS",
-        "FLumenCardCombineLightingCS",
-        "FLumenDirectLightingShadowMaskFromLightAttenuationCS",
         "FLumenDirectLightingShadowMaskFromLightAttenuationWithLightFunctionCS",
-        "FLumenRadiosityConvertToSH",
-        "FLumenRadiosityDistanceFieldTracingCS",
-        "FLumenRadiosityIndirectArgsCS",
-        "FLumenRadiosityIntegrateCS",
-        "FLumenRadiositySpatialFilterProbeRadiance",
         "FLumenReflectionDenoiserTemporalCS",
         "FLumenReflectionResolveCS",
-        "FLumenSceneDirectLightingTraceDistanceFieldShadowsCS",
         "FMarkHeightfieldPagesCS",
         "FMicropolyRasterizeCS",
         "FNiagaraInstanceCountsInitCS",
@@ -5343,22 +5581,19 @@
         "FSSSTileClassificationBuildListsCS",
         "FScatterUpdates_CS",
         "FScatterUploadDistanceFieldAtlasCS",
-        "FScreenProbeComputeLightingProbabilityDensityFunctionCS",
         "FScreenProbeTemporalReprojectionCS",
-        "FSetCardPageIndexIndirectArgsCS",
         "FShader_VirtualTextureCompress_CS< ERuntimeVirtualTextureMaterialType::BaseColor_Normal_Specular_Mask_YCoCg >",
         "FSimulationShaderDefaultCS",
         "FSparseVolumeTextureUpdateFromSparseBufferCS",
         "FSparseVolumeTextureUpdatePageTableCS",
-        "FSpliceCardPagesIntoTilesCS",
         "FSplineMeshTextureFillCS",
         "FStochasticLightingTileClassificationMarkCS",
+        "FSubsurfaceBuildIndirectDispatchArgsCS",
         "FSubsurfaceIndirectDispatchCS",
         "FSubsurfaceIndirectDispatchSetupCS",
         "FSubsurfaceTileBuildIndirectDispatchArgsCS",
         "FTemporalAACS",
         "FTranscodePageToGPU_CS",
-        "FTranslucencyVolumeIntegrateCS",
         "FTranslucentLightingInjectBatchCS",
         "FUpdatePhysicalPageAddresses",
         "FVSMResetInstanceStateCS",

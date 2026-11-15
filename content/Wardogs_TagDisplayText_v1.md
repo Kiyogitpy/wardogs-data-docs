@@ -43,12 +43,11 @@ Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_A
 
 ### DT_GameplayTagToText_Archetypes
 
-Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Archetypes.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Archetypes.json) (16 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Archetypes.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Archetypes.json) (18 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
 | `Item.Archetype.AR` | Assault Rifle | — |
-| `Item.Archetype.Bobblehead` | Bobblehead | — |
 | `Item.Archetype.Bow` | Bow | — |
 | `Item.Archetype.DMR` | DMR | — |
 | `Item.Archetype.Grenade` | Grenade | — |
@@ -57,6 +56,9 @@ Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_A
 | `Item.Archetype.Melee` | Melee | — |
 | `Item.Archetype.Parachute` | Parachute | — |
 | `Item.Archetype.Pistol` | Pistol | — |
+| `Item.Archetype.Player.Badge` | Badges | — |
+| `Item.Archetype.Player.Bobblehead` | Bobblehead | — |
+| `Item.Archetype.Player.Emote` | Emotes | — |
 | `Item.Archetype.SMG` | SMG | — |
 | `Item.Archetype.Shotgun` | Shotgun | — |
 | `Item.Archetype.Sniper` | Sniper Rifle | — |
@@ -66,7 +68,7 @@ Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_A
 
 ### DT_GameplayTagToText_Calibers
 
-Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Calibers.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Calibers.json) (31 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Calibers.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_Calibers.json) (32 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -94,6 +96,7 @@ Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_C
 | `Item.Caliber.545mm` | 5.45x39mm | — |
 | `Item.Caliber.556mm` | 5.56x45mm | — |
 | `Item.Caliber.70mm` | 70mm | — |
+| `Item.Caliber.70x1060mm` (tag None) | Hydra 70mm | — |
 | `Item.Caliber.762mm` | 7.62x39mm | — |
 | `Item.Caliber.762x51mm` | 7.62x51mm | — |
 | `Item.Caliber.762x54mm` | 7.62x54mm | — |
@@ -404,7 +407,7 @@ Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_S
 | `UI.Scene.Frontend.Blackmarket.Investments` | Investments | — |
 | `UI.Scene.Frontend.Blackmarket.Missions` | Missions | — |
 | `UI.Scene.Frontend.Blackmarket.Unlocks` | Unlocks | — |
-| `UI.Scene.Frontend.Career` | Unlock | — |
+| `UI.Scene.Frontend.Career` | Progression | — |
 | `UI.Scene.Frontend.Collection` | Collection | — |
 | `UI.Scene.Frontend.Customize` | Customize | — |
 | `UI.Scene.Frontend.DeploymentSelect` | Deploy | — |
@@ -441,7 +444,7 @@ Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_S
 
 ### DT_GameplayTagToText_ServerTags
 
-Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_ServerTags.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_ServerTags.json) (24 rows)
+Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_ServerTags.json`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_ServerTags.json) (25 rows)
 
 | Gameplay tag | Display text | Other text |
 |---|---|---|
@@ -451,6 +454,7 @@ Source: [`data/Wardogs/Content/UI/Data/GameplayTagsToText/DT_GameplayTagToText_S
 | `Server.Descriptor.GiveUpDisabled` | No Give Up | — |
 | `Server.Descriptor.Hardcore` | Hardcore | — |
 | `Server.Descriptor.InfantryOnly` | Infantry Only | — |
+| `Server.Descriptor.LimitedGear` | Limited Gear | — |
 | `Server.Descriptor.MaxAllowedPing` | Max Allowed Ping {Value} ms | — |
 | `Server.Descriptor.MaxPlayerCash` | Max {Value} | — |
 | `Server.Descriptor.MaxPlayerLevel` | Max Lvl {Value} | — |

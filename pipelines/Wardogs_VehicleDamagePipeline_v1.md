@@ -7,6 +7,8 @@ description: "How damage resolves against vehicle targets and their health secti
 
 # Wardogs — Vehicle Damage Pipeline
 
+**Hotfix scope:** current asset rows and the earlier native consumer reconstruction are separate evidence. The CL533731 TNK_01 stored amounts changed, but the model below has not been independently established for the hotfix. Treat calculated damage as conditional on that model; see [hotfix evidence](../docs/evidence/hotfix-cl533731.md).
+
 > **Project:** [`Kiyogitpy/wardogs-data-docs`](https://github.com/Kiyogitpy/wardogs-data-docs) · [Live site](https://kiyogitpy.github.io/wardogs-data-docs/)
 
 How damage resolves against vehicles. Vehicles use **the same rule
@@ -338,8 +340,8 @@ Interactive: the [Vehicle Hitbox Viewer](vehicle-viewer.md) shows these slots on
 |  | `(default)` | Health (1000) | is the main health | ×0.05 | ×0.05 | ×0.85 |
 | `Stationary.STN_05` (STN_05) | `CC_Main` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
 |  | `(default)` | Health (3000) | is the main health | ×0.15 | ×0.15 | ×0.5 |
-| `Stationary.MGNest` (STN_06, no row of its own) | `CC_Main` | Health (1800) | is the main health | ×1 | ×1 | ×1 |
-|  | `(default)` | Health (1800) | is the main health | ×1 | ×1 | ×1 |
+| `Stationary.MGNest` (STN_06) | `CC_Main` | Health (1800) | is the main health | ×0.15 | ×0.15 | ×0.5 |
+|  | `(default)` | Health (1800) | is the main health | ×0.15 | ×0.15 | ×0.5 |
 | `Land.Tracked.TNK_01.AntiAir` (TNK_01_AntiAir) | `CC_Engine` | Health.Engine (150) | post 1 when depleted, simultaneous 1 | ×0 | ×0 | ×0.18 |
 |  | `CC_FuelTank` | Health.FuelTank (150) | none | ×0 | ×0 | ×0.18 |
 |  | `CC_MainBody` | Health (800) | is the main health | ×0 | ×0 | ×0.18 |
@@ -858,16 +860,16 @@ Section routing (§4) then decides where the amount lands. The second
 <!-- damage_tables --vehicles -->
 | Vehicle row (`Meta.Damage.Vehicle.` omitted) | `556mm` | `762mm` | `762x54mm` | `308Win` | `50Cal` | `20x102mm` | `30mm` | `35x228mm` |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| `Air.Rotary.Havoc` | ×0.05 | ×0.05 | ×0.05 | ×0.015 | ×0.05 | ×0.0735 | ×0.195 | ×0.162 |
-| `Air.Rotary.LittleBird` | ×0.075 | ×0.075 | ×0.075 | ×0.0337 | ×0.075 | ×0.0945 | ×0.595 | ×0.214 |
-| `Air.Rotary.ROT_04` | ×0.05 | ×0.05 | ×0.05 | ×0.02 | ×0.05 | ×0.06 | ×0.255 | ×0.128 |
+| `Air.Rotary.Havoc` | ×0.05 | ×0.05 | ×0.05 | ×0.015 | ×0.05 | ×0.147 | ×0.195 | ×0.162 |
+| `Air.Rotary.LittleBird` | ×0.075 | ×0.075 | ×0.075 | ×0.0337 | ×0.075 | ×0.123 | ×0.595 | ×0.214 |
+| `Air.Rotary.ROT_04` | ×0.05 | ×0.05 | ×0.05 | ×0.02 | ×0.05 | ×0.12 | ×0.255 | ×0.128 |
 | `Land.Tracked.Leopard.Spawn` | ×1 | ×1 | ×1 | ×1 | ×1 | ×0.048 | ×0.21 | ×0.048 |
 | `Stationary.Mistral` | ×0.15 | ×0.15 | ×0.15 | ×0.15 | ×0.15 | ×0.3 | ×0.5 | ×0.3 |
 | `Stationary.Phalanx` | ×0.15 | ×0.15 | ×0.15 | ×0.15 | ×0.15 | ×0.3 | ×0.5 | ×0.3 |
 | `Stationary.Mortar` | ×0.15 | ×0.15 | ×0.15 | ×0.15 | ×0.15 | ×0.3 | ×0.5 | ×0.3 |
 | `Stationary.RadioTower` | ×0.05 | ×0.05 | ×0.05 | ×0.05 | ×0.05 | ×0.3 | ×0.85 | ×0.3 |
 | `Stationary.STN_05` | ×0.15 | ×0.15 | ×0.15 | ×0.15 | ×0.15 | ×0.3 | ×0.5 | ×0.3 |
-| `Stationary.STN_05` | ×0.15 | ×0.15 | ×0.15 | ×0.15 | ×0.15 | ×0.3 | ×0.5 | ×0.3 |
+| `Stationary.MGNest` | ×0.15 | ×0.15 | ×0.15 | ×0.15 | ×0.15 | ×0.3 | ×0.5 | ×0.3 |
 | `Land.Tracked.TNK_01.AntiAir` | ×0 | ×0 | ×0 | ×0 | ×0 | ×0.045 | ×0.18 | ×0.036 |
 | `Land.Tracked.TNK_01.Artillery` | ×0 | ×0 | ×0 | ×0 | ×0 | ×0.045 | ×0.18 | ×0.027 |
 | `Land.Tracked.TNK_01.Heavy` | ×0 | ×0 | ×0 | ×0 | ×0 | ×0.045 | ×0.18 | ×0.036 |
@@ -939,12 +941,12 @@ section-requirement filter, repair and regeneration are ignored.
 <!-- damage_tables --survive -->
 | Variant | Damage row (`Meta.Damage.Vehicle.` omitted) | Main health | `556mm` | `762x54mm` | `308Win` | `50Cal` | `20x102mm` | `30mm` |
 |---|---|---:|---|---|---|---|---|---|
-| `Attack_ROT_02` | `Air.Rotary.Havoc` | 800 | 1143 / 643 (Wheel.Left.Front) | 728 / 410 (Wheel.Left.Front) | 2371 / 1334 (Wheel.Left.Front) | 356 / 200 (Wheel.Left.Front) | 182 | 42 |
-| `ROT_03_Default` | `Air.Rotary.LittleBird` | 400 | 191 | 122 | 264 | 60 | 71 | 7 |
-| `ROT_03_MachineGuns` | `Air.Rotary.LittleBird` | 400 | 191 | 122 | 264 | 60 | 71 | 7 |
-| `ROT_03_RocketPods` | `Air.Rotary.LittleBird` | 400 | 191 | 122 | 264 | 60 | 71 | 7 |
-| `ROT_04_Default` | `Air.Rotary.ROT_04` | 600 | 858 / 429 (Rotor.Tail) | 546 / 273 (Rotor.Tail) | 1334 / 667 (Rotor.Tail) | 267 / 134 (Rotor.Tail) | 167 | 24 |
-| `ROT_04_MountedMachineGuns` | `Air.Rotary.ROT_04` | 600 | 858 / 429 (Rotor.Tail) | 546 / 273 (Rotor.Tail) | 1334 / 667 (Rotor.Tail) | 267 / 134 (Rotor.Tail) | 167 | 24 |
+| `Attack_ROT_02` | `Air.Rotary.Havoc` | 800 | 1143 / 643 (Wheel.Left.Front) | 728 / 410 (Wheel.Left.Front) | 2371 / 1334 (Wheel.Left.Front) | 356 / 200 (Wheel.Left.Front) | 91 | 42 |
+| `ROT_03_Default` | `Air.Rotary.LittleBird` | 400 | 191 | 122 | 264 | 60 | 55 | 7 |
+| `ROT_03_MachineGuns` | `Air.Rotary.LittleBird` | 400 | 191 | 122 | 264 | 60 | 55 | 7 |
+| `ROT_03_RocketPods` | `Air.Rotary.LittleBird` | 400 | 191 | 122 | 264 | 60 | 55 | 7 |
+| `ROT_04_Default` | `Air.Rotary.ROT_04` | 600 | 858 / 429 (Rotor.Tail) | 546 / 273 (Rotor.Tail) | 1334 / 667 (Rotor.Tail) | 267 / 134 (Rotor.Tail) | 84 | 24 |
+| `ROT_04_MountedMachineGuns` | `Air.Rotary.ROT_04` | 600 | 858 / 429 (Rotor.Tail) | 546 / 273 (Rotor.Tail) | 1334 / 667 (Rotor.Tail) | 267 / 134 (Rotor.Tail) | 84 | 24 |
 | [`SPW_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/SPW_01/Content/SPW_01.json) | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | — | — | 366 | 51 |
 | `SPW_02` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | — | — | 366 | 51 |
 | `SPW_03` | `Land.Tracked.Leopard.Spawn` | 1000 | — | — | — | — | 366 | 51 |
@@ -953,7 +955,7 @@ section-requirement filter, repair and regeneration are ignored.
 | [`STN_03`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_03/Content/STN_03.json) | `Stationary.Mortar` | 3000 | 715 | 455 | 445 | 223 | 167 | 60 |
 | [`STN_04`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_04/Content/STN_04.json) | `Stationary.RadioTower` | 1000 | 715 | 455 | 445 | 223 | 56 | 12 |
 | [`STN_05`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_05/Content/STN_05.json) | `Stationary.STN_05` | 3000 | 715 | 455 | 445 | 223 | 167 | 60 |
-| [`STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/STN_06.json) | `Stationary.MGNest` | 1800 | 65 | 41 | 40 | 20 | 30 | 18 |
+| [`STN_06`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Vehicles/STN_06/Content/STN_06.json) | `Stationary.MGNest` | 1800 | 429 | 273 | 267 | 134 | 100 | 36 |
 | `TNK_01_AntiAir` | `Land.Tracked.TNK_01.AntiAir` | 800 | — | — | — | — | 312 | 47 |
 | `TNK_01_Artillery` | `Land.Tracked.TNK_01.Artillery` | 650 | — | — | — | — | 254 | 39 |
 | `TNK_01_Heavy` | `Land.Tracked.TNK_01.Heavy` | 800 | — | — | — | — | 312 | 47 |

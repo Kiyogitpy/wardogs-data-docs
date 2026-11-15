@@ -47,7 +47,7 @@
                     "TagName": "Challenges.SessionEvents.Buildables.BuildableDamaged"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -112,7 +112,7 @@
                     "TagName": "Challenges.SessionEvents.Buildables.BuildableDestroyed"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -177,7 +177,7 @@
                     "TagName": "Challenges.SessionEvents.Buildables.BuildableDestroyed.Assist"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -242,7 +242,7 @@
                     "TagName": "Challenges.SessionEvents.Buildables.BuildableFinished"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -307,7 +307,7 @@
                     "TagName": "Challenges.SessionEvents.Buildables.Building"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -372,7 +372,7 @@
                     "TagName": "Challenges.SessionEvents.Buildables.SchematicPlaced"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -437,7 +437,7 @@
                     "TagName": "Challenges.SessionEvents.Buildables.BuildSuppliesDeposited"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -502,7 +502,7 @@
                     "TagName": "Challenges.SessionEvents.Buildables.BuildSuppliesConsumed"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -567,7 +567,7 @@
                     "TagName": "Challenges.SessionEvents.Buildables.FOBOwnerPayed"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -632,7 +632,7 @@
                     "TagName": "Challenges.SessionEvents.Buildables.FOBHacked"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -716,7 +716,7 @@
                     "TagName": "Challenges.SessionEvents.Buildables.FOBDoorClosed"
                   },
                   "bInvert": true,
-                  "Operator": "EWorldConditionOperator::Copy",
+                  "OPERATOR": "EWorldConditionOperator::Copy",
                   "NextExpressionDepth": 0
                 }
               ]
@@ -763,6 +763,90 @@
       },
       "Tag": {
         "TagName": "Challenges.SessionEvents.Buildables.FOBDoorClosed"
+      }
+    },
+    "Challenges.SessionEvents.Buildables.ParachuteIntoEnemyFOB": {
+      "DisplayName": {
+        "Namespace": "",
+        "Key": "F9C06630459E5951A758ADA319ACBCD9",
+        "SourceString": "Parachute Into Enemy FOB",
+        "LocalizedString": "Parachute Into Enemy FOB"
+      },
+      "Description": {
+        "Namespace": "",
+        "Key": "4042B53F4B5AD986E37B34A1B917F51F",
+        "SourceString": "Reward for successfully parachuting into an enemy FOB.",
+        "LocalizedString": "Reward for successfully parachuting into an enemy FOB."
+      },
+      "Rewards": [],
+      "Objectives": [],
+      "bAutoActivate": true,
+      "_aaabgikgfhflcpoeckhbm": false,
+      "bSendChatMessages": false,
+      "Prerequisites": {
+        "QueryDefinition": {
+          "StaticStruct": {
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            },
+            "EditableConditions": []
+          },
+          "SharedDefinition": {
+            "Conditions": {
+              "Structs": [
+                {
+                  "ChallengeId": {
+                    "TagName": "Challenges.SessionEvents.Buildables.ParachuteIntoEnemyFOB"
+                  },
+                  "bInvert": true,
+                  "OPERATOR": "EWorldConditionOperator::Copy",
+                  "NextExpressionDepth": 0
+                }
+              ]
+            },
+            "SchemaClass": {
+              "ObjectName": "Class'WDMetaPrerequisiteSchema'",
+              "ObjectPath": "/Script/WDGame"
+            }
+          }
+        }
+      },
+      "StateTreeReference": {
+        "StateTree": {
+          "ObjectName": "StateTree'ST_Challenges_SessionEvents_Buildable_ParachuteIntoEnemyFOB'",
+          "ObjectPath": "/BuildableRewards/Rewards/ST_Challenges_SessionEvents_Buildable_ParachuteIntoEnemyFOB.0"
+        },
+        "Parameters": {
+          "PropertyDescs": [
+            {
+              "ValueTypeObject": {
+                "ObjectName": "Class'WDRepeatActionTargetTracker'",
+                "ObjectPath": "/Script/WDGame"
+              },
+              "ID": "FD92F4F5-401862EC-2BD5C2A2-883E2D9F",
+              "Name": "VictimTracker",
+              "ValueType": "EPropertyBagPropertyType::Struct",
+              "ContainerType": "EPropertyBagContainerType::None",
+              "PropertyFlags": "EPropertyFlags::None",
+              "ContainerTypes": {
+                "Types": []
+              },
+              "MetaData": null,
+              "MetaClass": null,
+              "KeyType": "EPropertyBagPropertyType::None",
+              "KeyTypeObject": null
+            }
+          ],
+          "SerialSize": 12
+        },
+        "PropertyOverrides": []
+      },
+      "LinkedStateTreeOverrides": {
+        "OverrideItems": []
+      },
+      "Tag": {
+        "TagName": "Challenges.SessionEvents.Buildables.ParachuteIntoEnemyFOB"
       }
     }
   }

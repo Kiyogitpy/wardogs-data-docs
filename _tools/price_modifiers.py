@@ -27,10 +27,10 @@ def build():
             continue
         kind, body = m.groups()
         rec = {"kind": kind, "target": (re.search(r"EntityTarget=(\w+)", body) or [None, None])[1]}
-        # top-level Multiplier is the last one in the line (Data=(...) holds nested Multiplier values)
-        top = re.findall(r"Multiplier=([-0-9.]+)", body)
-        rec["multiplier"] = float(top[-1])
-        rec["ratio"] = round(rec["multiplier"] / 100.0, 6)
+        # Nested entity values are not the optional top-level value.
+        top = re.search(r"(?:^|,)Multiplier=([-0-9.]+)$", body)
+        rec["multiplier"] = float(top[1]) if top else None
+        rec["ratio"] = round(rec["multiplier"] / 100.0, 6) if top else None
         data = re.search(r"Data=\(\((.*)\)\),Multiplier=", body)
         if data:
             rec["entities"] = re.findall(r'TagName="([^"]+)"', data.group(1))
@@ -51,7 +51,7 @@ def build():
                 rec[key[0].lower() + key[1:]] = int(f.group(1))
         rows.append(rec)
     return {"source": "data/Wardogs/Config/DefaultGame.excerpt.ini [UWDEconomyConfig] PriceModifiers",
-            "divisor": 100, "note": "ratio = Multiplier / 100; a price is multiplied by the product of all applicable ratios",
+            "divisor": 100, "note": "Stored ratios use Multiplier / 100 under the earlier native model. An omitted multiplier and ratio are null; current native defaults, dynamic modifiers and applicability remain unverified.",
             "modifiers": rows}
 
 

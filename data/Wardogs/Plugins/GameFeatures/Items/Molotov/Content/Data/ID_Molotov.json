@@ -176,7 +176,7 @@
       },
       {
         "ObjectName": "WDItemExtensionData_Throwable'ID_Molotov:WDInventoryFragment_ItemActor_0.WDItemFragment_Throwable_0'",
-        "ObjectPath": "/Molotov/Data/ID_Molotov.13"
+        "ObjectPath": "/Molotov/Data/ID_Molotov.14"
       },
       {
         "ObjectName": "WDItemExtensionData_Inventory'ID_Molotov:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Inventory_0'",
@@ -189,6 +189,10 @@
       {
         "ObjectName": "WDItemExtensionData_Animation'ID_Molotov:WDInventoryFragment_ItemActor_0.WDItemExtensionData_Animation_0'",
         "ObjectPath": "/Molotov/Data/ID_Molotov.8"
+      },
+      {
+        "ObjectName": "WDItemExtensionData_LiquidSlosh'ID_Molotov:WDInventoryFragment_ItemActor_0.WDItemExtensionData_LiquidSlosh_0'",
+        "ObjectPath": "/Molotov/Data/ID_Molotov.13"
       }
     ]
   }
@@ -271,7 +275,7 @@
         "ObjectPath": "/Game/Animation/Characters/StateMachine/Generalized/EquipmentRH/Actions/AM_TP_Gen_EquipmentRH_Equip.0"
       }
     },
-    "HolsterAnimation": {
+    "_aaabadmmcdmepjioholhi": {
       "FirstPersonPlayerAnimation": {
         "ObjectName": "AnimMontage'AM_FP_Molotov_Holster'",
         "ObjectPath": "/Molotov/Animation/FP/AM_FP_Molotov_Holster.0"
@@ -315,7 +319,7 @@
         },
         "Value": {
           "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Molotov:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_0'",
-          "ObjectPath": "/Molotov/Data/ID_Molotov.14"
+          "ObjectPath": "/Molotov/Data/ID_Molotov.15"
         }
       },
       {
@@ -324,7 +328,7 @@
         },
         "Value": {
           "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Molotov:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_2'",
-          "ObjectPath": "/Molotov/Data/ID_Molotov.15"
+          "ObjectPath": "/Molotov/Data/ID_Molotov.16"
         }
       },
       {
@@ -333,7 +337,7 @@
         },
         "Value": {
           "ObjectName": "WDItemInputBehavior_ActivateAction'ID_Molotov:WDInventoryFragment_ItemActor_0.WDItemExtensionData_InputActionExtension_0.WDItemInputBehavior_ActivateAction_4'",
-          "ObjectPath": "/Molotov/Data/ID_Molotov.16"
+          "ObjectPath": "/Molotov/Data/ID_Molotov.17"
         }
       }
     ]
@@ -353,7 +357,7 @@
     "ActionResourceRequirements": [
       {
         "Key": {
-          "TagName": "Action.Throw.Primary"
+          "TagName": "Action.Throw.Primary.Molotov"
         },
         "Value": {
           "RequiredResource": {
@@ -408,6 +412,22 @@
     ]
   }
 }
+--- export: UObject / WDItemExtensionData_LiquidSlosh_0 ---
+{
+  "Type": "WDItemExtensionData_LiquidSlosh",
+  "Name": "WDItemExtensionData_LiquidSlosh_0",
+  "Flags": "RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDItemExtensionData_LiquidSlosh'",
+  "Outer": {
+    "ObjectName": "WDInventoryFragment_ItemActor'ID_Molotov:WDInventoryFragment_ItemActor_0'",
+    "ObjectPath": "/Molotov/Data/ID_Molotov.7"
+  },
+  "Properties": {
+    "Settings": {
+      "_aaaajknbndglaiegfkgnf": 0.6
+    }
+  }
+}
 --- export: UObject / WDItemFragment_Throwable_0 ---
 {
   "Type": "WDItemExtensionData_Throwable",
@@ -426,7 +446,7 @@
     "ThrowActions": [
       {
         "Key": {
-          "TagName": "Action.Throw.Primary"
+          "TagName": "Action.Throw.Primary.Molotov"
         },
         "Value": {
           "bUseConsistentVelocity": false,
@@ -458,7 +478,7 @@
           },
           "BlockEquipAfterDestroyTime": 0.5,
           "ThrowTypeTag": {
-            "TagName": "Action.Throw.Primary"
+            "TagName": "Action.Throw.Primary.Molotov"
           },
           "ThrowAnimationTag": {
             "TagName": "Animation.Asset.Throwable.Overarm"
@@ -514,7 +534,7 @@
             "TagName": "Input.NamedActions.Throwable.Throw.Primary.Release"
           },
           "SwapThrowTypeTag": {
-            "TagName": "Action.Throw.Primary"
+            "TagName": "Action.Throw.Primary.Molotov"
           }
         }
       }
@@ -539,7 +559,7 @@
   },
   "Properties": {
     "ActionToActivate": {
-      "TagName": "Action.Throw.Primary"
+      "TagName": "Action.Throw.Primary.Molotov"
     }
   }
 }

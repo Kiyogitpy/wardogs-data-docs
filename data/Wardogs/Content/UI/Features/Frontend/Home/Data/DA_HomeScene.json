@@ -115,8 +115,8 @@
           "Description": {
             "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
             "Key": "Description.PatchNotes",
-            "SourceString": "// Welcome to WARDOGS\r\nThank you for purchasing our game.\r\n\r\nWelcome to Early Access Season 02. This update brings a new weather variant 'rain' as well as new weapons, vehicles, attachments and buildables, alongside a brand new vendor and balance changes to shake up the metagame. Season 01 XP & Cash progression has been reset. Any cash you had remaining at the end of the season 01 has been automatically converted into gold bars, which you can use to unlock permanent cosmetics for your account in the gold market. All XP and tracked stats have been banked into our backend for use with future in game systems once implemented.\r\n\r\nAs a reminder - WARDOGS is an early access game. If you haven't watched our '10 Reasons NOT to buy WARDOGS' video, we highly recommend you do to understand that this is a long road to 1.0 release. This is a sandbox that rewards teamplay, creativity and freedom, so make sure to use proximity chat for the best experience.\r\n\r\nIf you see any bugs or cheaters, please report them ingame via the scoreboard or use the appropriate bots in our Official Discord.\r\n\r\nThanks,\r\nBULKHEAD",
-            "LocalizedString": "// Welcome to WARDOGS\r\nThank you for purchasing our game.\r\n\r\nWelcome to Early Access Season 02. This update brings a new weather variant 'rain' as well as new weapons, vehicles, attachments and buildables, alongside a brand new vendor and balance changes to shake up the metagame. Season 01 XP & Cash progression has been reset. Any cash you had remaining at the end of the season 01 has been automatically converted into gold bars, which you can use to unlock permanent cosmetics for your account in the gold market. All XP and tracked stats have been banked into our backend for use with future in game systems once implemented.\r\n\r\nAs a reminder - WARDOGS is an early access game. If you haven't watched our '10 Reasons NOT to buy WARDOGS' video, we highly recommend you do to understand that this is a long road to 1.0 release. This is a sandbox that rewards teamplay, creativity and freedom, so make sure to use proximity chat for the best experience.\r\n\r\nIf you see any bugs or cheaters, please report them ingame via the scoreboard or use the appropriate bots in our Official Discord.\r\n\r\nThanks,\r\nBULKHEAD"
+            "SourceString": "// Welcome to WARDOGS\r\n\r\nWelcome to Early Access Season 03. This update brings a new map 'Sabatulo' with a mix of urban firefights, close quarters combat and verticality. This comes in tandem with an optional \"Limited Mode\" that simulates early-mid game progression and is available throughout the entire season.\r\n\r\nWe are also introducing a catchup mechanic specifically for low level players that applies a small catchup XP bonus (per role) that increases throughout the season, so more players have the opportunity to obtain midgame items & endgame counters. Other balance changes, bug fixes and updates can be read in the latest patch notes.\r\n\r\nSeasonal XP & Cash earnings have been reset. Any cash you had remaining at the end of the last season has been automatically converted into gold bars, which you can use to unlock permanent cosmetics for your account in the gold market. All XP and tracked stats have been banked into our backend for use with future in game systems once implemented.\r\n\r\nAs a reminder - WARDOGS is an early access game. If you haven't watched our '10 Reasons NOT to buy WARDOGS' video, we highly recommend you do to understand that this is a long road to 1.0 release. This is a sandbox that rewards teamplay, creativity and freedom, so make sure to use proximity chat for the best experience.\r\n\r\nThanks,\r\nBULKHEAD",
+            "LocalizedString": "// Welcome to WARDOGS\r\n\r\nWelcome to Early Access Season 03. This update brings a new map 'Sabatulo' with a mix of urban firefights, close quarters combat and verticality. This comes in tandem with an optional \"Limited Mode\" that simulates early-mid game progression and is available throughout the entire season.\r\n\r\nWe are also introducing a catchup mechanic specifically for low level players that applies a small catchup XP bonus (per role) that increases throughout the season, so more players have the opportunity to obtain midgame items & endgame counters. Other balance changes, bug fixes and updates can be read in the latest patch notes.\r\n\r\nSeasonal XP & Cash earnings have been reset. Any cash you had remaining at the end of the last season has been automatically converted into gold bars, which you can use to unlock permanent cosmetics for your account in the gold market. All XP and tracked stats have been banked into our backend for use with future in game systems once implemented.\r\n\r\nAs a reminder - WARDOGS is an early access game. If you haven't watched our '10 Reasons NOT to buy WARDOGS' video, we highly recommend you do to understand that this is a long road to 1.0 release. This is a sandbox that rewards teamplay, creativity and freedom, so make sure to use proximity chat for the best experience.\r\n\r\nThanks,\r\nBULKHEAD"
           },
           "bShouldBlockBack": false,
           "AdditionalData": {
@@ -413,6 +413,58 @@
           },
           "Options": []
         }
+      },
+      {
+        "Key": {
+          "TagName": "UI.Popup.Home.Subsystem.ReportedPlayerBanned"
+        },
+        "Value": {
+          "Tag": {
+            "TagName": "UI.Popup.Home.Subsystem.ReportedPlayerBanned"
+          },
+          "Type": {
+            "TagName": "UI.Popup.Type.Info"
+          },
+          "Title": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Title.ReportedPlayerBanned",
+            "SourceString": "REPORT ACTIONED",
+            "LocalizedString": "REPORT ACTIONED"
+          },
+          "Subtitle": {
+            "CultureInvariantString": null
+          },
+          "Description": {
+            "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+            "Key": "Description.ReportedPlayerBanned",
+            "SourceString": "One or more players you've recently reported have been banned.\r\n\r\nThank you for helping keep WARDOGS fair for everyone.",
+            "LocalizedString": "One or more players you've recently reported have been banned.\r\n\r\nThank you for helping keep WARDOGS fair for everyone."
+          },
+          "bShouldBlockBack": false,
+          "AdditionalData": {
+            "DataArray": []
+          },
+          "Options": [
+            {
+              "Key": "EWDPopupOption::Middle",
+              "Value": {
+                "ButtonText": {
+                  "TableId": "/Game/UI/StringTables/STRINGS_Popups.STRINGS_Popups",
+                  "Key": "Button.Close",
+                  "SourceString": "Close",
+                  "LocalizedString": "Close"
+                },
+                "bAutoCloseOnSelected": true,
+                "bAutoFocusOnOpen": true,
+                "ButtonTypeOverride": {
+                  "TagName": "UI.Popup.Button.Main"
+                },
+                "ButtonConfig": null,
+                "bCallOnSceneEscape": false
+              }
+            }
+          ]
+        }
       }
     ],
     "_aaaanekinnmkiggeiekap": [
@@ -428,18 +480,25 @@
           "TagName": "UI.Popup.DailyMessage"
         },
         "Version": 2,
-        "bEnabled": true
+        "bEnabled": false
       },
       {
         "PopupTag": {
           "TagName": "UI.Popup.PatchNotes"
         },
-        "Version": 8,
+        "Version": 9,
         "bEnabled": true
       },
       {
         "PopupTag": {
           "TagName": "UI.Popup.Home.Subsystem.GPUCheck"
+        },
+        "Version": 1,
+        "bEnabled": true
+      },
+      {
+        "PopupTag": {
+          "TagName": "UI.Popup.Home.Subsystem.ReportedPlayerBanned"
         },
         "Version": 1,
         "bEnabled": true

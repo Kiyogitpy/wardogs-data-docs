@@ -1,10 +1,10 @@
 {
  "meta": {
   "source": "Static CUE4Parse export of cooked GE_* BlueprintGeneratedClass CDOs (Default__GE_X_C), Wardogs UE 5.7 IoStore paks.",
-  "count": 341,
-  "null_means": "Property not serialized in the CDO = equals the native UBHGameplayEffect default (cooked unversioned delta vs. archetype). Native default values are not in the paks; tracked fields are null rather than guessed.",
+  "count": 342,
+  "null_means": "Property absent from this serialized CDO. Resolving its effective value requires its archetype and build-matched native defaults; null does not establish a zero value or a particular native default.",
   "modifier_kind_note": "kind inferred from FInstancedStruct property set: Scalar=FBHAttributeMod_Scalar, Attribute=FBHAttributeMod_Attribute, SetByCaller=FBHAttributeMod_SetByCaller.",
-  "name_mapping_note": "Obfuscated usmap names mapped by property index to sdk/raw BHGameplayEffects/BHGameplayTag/BHFramework SDK layouts; see ge_raw/_usmap_patches.txt."
+  "name_mapping_note": "Property labels come from the mapping supplied to the extractor. Labels alone do not establish native field identity or build compatibility."
  },
  "effects": [
   {
@@ -9393,6 +9393,20 @@
      "fallback_value": 0.0,
      "scale_by_duration": false,
      "scale_duration_end": 1.0
+    },
+    {
+     "attribute": "Attribute.Meta.Currency.Movember",
+     "op": "Add",
+     "channel": "Default",
+     "kind": "SetByCaller",
+     "set_by_caller_tag": "Attribute.Meta.Currency.Movember",
+     "coefficient": {
+      "value": 1.0
+     },
+     "allow_fallback": false,
+     "fallback_value": 0.0,
+     "scale_by_duration": false,
+     "scale_duration_end": 1.0
     }
    ],
    "granted_tags": [],
@@ -9484,15 +9498,43 @@
    "pak_path": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/GameplayEffects/GE_MolotovBurning",
    "parent_class": "Class'BHGameplayEffect'",
    "serialized_properties": [
+    "Duration",
     "GrantedTags"
    ],
-   "duration": null,
+   "duration": 0.75,
    "max_stacks": null,
    "stack_duration_refresh_policy": null,
    "stack_expiration_policy": null,
    "modifiers": [],
    "granted_tags": [
     "State.Player.Molotov.Burning"
+   ],
+   "tags": [],
+   "application_requirements": null,
+   "ongoing_requirements": null,
+   "removal_requirements": null,
+   "allow_client_predicted_application": null,
+   "allow_client_predicted_modification": null,
+   "client_instigated_application_policy": null,
+   "client_instigated_modify_policy": null
+  },
+  {
+   "name": "GE_MolotovDamageCooldown",
+   "class": "GE_MolotovDamageCooldown_C",
+   "package": "/Molotov/Data/GameplayEffects/GE_MolotovDamageCooldown",
+   "pak_path": "Wardogs/Plugins/GameFeatures/Items/Molotov/Content/Data/GameplayEffects/GE_MolotovDamageCooldown",
+   "parent_class": "Class'BHGameplayEffect'",
+   "serialized_properties": [
+    "Duration",
+    "GrantedTags"
+   ],
+   "duration": 0.45,
+   "max_stacks": null,
+   "stack_duration_refresh_policy": null,
+   "stack_expiration_policy": null,
+   "modifiers": [],
+   "granted_tags": [
+    "State.Player.Molotov.DamageCooldown"
    ],
    "tags": [],
    "application_requirements": null,

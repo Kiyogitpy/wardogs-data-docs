@@ -248,7 +248,7 @@
     "Actions": [
       {
         "ObjectName": "WDGameFeatureAction_AddWidgetElements'Spotting:WDGameFeatureAction_AddWidgetElements_0'",
-        "ObjectPath": "/Spotting/Spotting.5"
+        "ObjectPath": "/Spotting/Spotting.6"
       },
       {
         "ObjectName": "GameFeatureAction_AddComponents'Spotting:GameFeatureAction_AddComponents_0'",
@@ -265,30 +265,13 @@
       {
         "ObjectName": "BHGameFeatureAction_AddGameplayCuePath'Spotting:BHGameFeatureAction_AddGameplayCuePath_0'",
         "ObjectPath": "/Spotting/Spotting.0"
+      },
+      {
+        "ObjectName": "WDGameFeatureAction_AddWagerSignalAdapters'Spotting:WDGameFeatureAction_AddWagerSignalAdapters_0'",
+        "ObjectPath": "/Spotting/Spotting.5"
       }
     ],
     "PrimaryAssetTypesToScan": [
-      {
-        "PrimaryAssetType": "WD.RewardRule",
-        "AssetBaseClass": {
-          "AssetPathName": "/Script/WDGame.WDRewardRule",
-          "SubPathString": ""
-        },
-        "bHasBlueprintClasses": true,
-        "bIsEditorOnly": false,
-        "Directories": [
-          {
-            "Path": "/Spotting/Data/Rewards"
-          }
-        ],
-        "SpecificAssets": [],
-        "Rules": {
-          "Priority": -1,
-          "ChunkId": -1,
-          "bApplyRecursively": true,
-          "CookRule": "EPrimaryAssetCookRule::AlwaysCook"
-        }
-      },
       {
         "PrimaryAssetType": "CrosstalkAudioEvent",
         "AssetBaseClass": {
@@ -310,6 +293,22 @@
           "CookRule": "EPrimaryAssetCookRule::Unknown"
         }
       }
+    ]
+  }
+}
+--- export: UObject / WDGameFeatureAction_AddWagerSignalAdapters_0 ---
+{
+  "Type": "WDGameFeatureAction_AddWagerSignalAdapters",
+  "Name": "WDGameFeatureAction_AddWagerSignalAdapters_0",
+  "Flags": "RF_Public | RF_Transactional | RF_WasLoaded | RF_LoadCompleted",
+  "Class": "UScriptClass'WDGameFeatureAction_AddWagerSignalAdapters'",
+  "Outer": {
+    "ObjectName": "GameFeatureData'Spotting'",
+    "ObjectPath": "/Spotting/Spotting.4"
+  },
+  "Properties": {
+    "adapters": [
+      {}
     ]
   }
 }
@@ -351,7 +350,7 @@
     "AddWidgetElementsInstances": [
       {
         "ObjectName": "WDGameFeatureAction_AddWidgetElements_Instance'Spotting:WDGameFeatureAction_AddWidgetElements_0.WDGameFeatureAction_AddWidgetElements_Instance_208'",
-        "ObjectPath": "/Spotting/Spotting.6"
+        "ObjectPath": "/Spotting/Spotting.7"
       }
     ]
   }
@@ -364,6 +363,6 @@
   "Class": "UScriptClass'WDGameFeatureAction_AddWidgetElements_Instance'",
   "Outer": {
     "ObjectName": "WDGameFeatureAction_AddWidgetElements'Spotting:WDGameFeatureAction_AddWidgetElements_0'",
-    "ObjectPath": "/Spotting/Spotting.5"
+    "ObjectPath": "/Spotting/Spotting.6"
   }
 }

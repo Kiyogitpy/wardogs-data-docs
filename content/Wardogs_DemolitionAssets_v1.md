@@ -30,10 +30,10 @@ Where a "what it means" statement appears below, it is **inference** from names 
 | Item | Count |
 |---|---|
 | Demolition assets (`BHDemolitionDataAsset`) | 39 |
-| Source-mesh entries across those assets | 138 |
-| Component settings (`BHDemolitionComponentSettings`) | 9 |
-| Remnant-mesh assets (`BHDemolitionRemnantMeshesAsset`) | 19 |
-| Remnant mesh entries | 21 |
+| Source-mesh entries across those assets | 141 |
+| Component settings (`BHDemolitionComponentSettings`) | 10 |
+| Remnant-mesh assets (`BHDemolitionRemnantMeshesAsset`) | 22 |
+| Remnant mesh entries | 24 |
 | Rulesets (`BHDemolitionRuleset`) | 19 |
 <!-- /demolition_tables -->
 
@@ -46,6 +46,7 @@ Where a "what it means" statement appears below, it is **inference** from names 
 |---|---|---|---|---|---|---|---|---|---|---|
 | [`DA_Demolition_BarbedWire_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_BarbedWire_01.json) | 2 | `Default` | `Everything` | Important, Distant | `NS_MetalGeneralSmash` | `FenceMetalChainlink` | 0.17, - | - | - | - |
 | [`DA_Demolition_Bollard_Metal_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_Bollard_Metal_01.json) | 2 | `Default` | `Everything` | Important, Distant | `NS_MetalGeneralSmash` | `Sign` | 0.3 | - | - | - |
+| [`DA_Demolition_BoxHedges_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_BoxHedges_01.json) | 2 | `Default_BoxHedges` | `LargeAndMediumVehiclesAndExplosions` | Important | `NS_BushSmash_01` | `Bush` | 0.05 | [`DA_RM_Fence_BoxHedge_01_A`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_RM_Fence_BoxHedge_01_A.json) | - | false |
 | [`DA_Demolition_BrickWall_01_A`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_BrickWall_01_A.json) | 2 | `ConcreteWalls_01` | `TanksAndLargeExplosions` | Important, Distant | `NS_BrickSmash` | `FenceConcrete` | 0.4 | `RM_BrickWall_01_A` | - | - |
 | [`DA_Demolition_BrickWall_01_B`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_BrickWall_01_B.json) | 8 | `ConcreteWalls_01` | `TanksAndLargeExplosions` | Important, Distant | `NS_BrickSmash` | `FenceConcrete` | 0.4 | `RM_BrickWall_01_B` | - | - |
 | [`DA_Demolition_BrickWall_01_C`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_BrickWall_01_C.json) | 5 | `ConcreteWalls_01` | `TanksAndLargeExplosions` | Important, Distant | `NS_BrickPillarSmash` | `FenceConcrete` | 0.4 | - | - | - |
@@ -56,7 +57,7 @@ Where a "what it means" statement appears below, it is **inference** from names 
 | [`DA_Demolition_Fences_ChainlinkTarp_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_Fences_ChainlinkTarp_01.json) | 2 | `Default` | `Everything` | Important, Distant | `NS_MetalGeneralSmash` | `FenceMetalChainlink` | 0.2 | - | - | - |
 | [`DA_Demolition_Fences_ChainlinkWire_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_Fences_ChainlinkWire_01.json) | 3 | `Default` | `Everything` | Important, Distant | `NS_MetalGeneralSmash` | `FenceMetalChainlink` | 0.2 | - | - | - |
 | [`DA_Demolition_Fences_Chainlink_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_Fences_Chainlink_01.json) | 6 | `Default_ChainLink` | `Everything` | Important, Distant | `NS_MetalGeneralSmash` | `FenceMetalChainlink` | 0.2 | - | - | - |
-| [`DA_Demolition_Fences_Concrete_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_Fences_Concrete_01.json) | 6 | `ConcreteWalls_01` | `TanksAndMedLargeExplosions` | Important, Distant | `NS_ConcreteSmash` | `FenceConcrete` | 0.4 | `RM_Fence_Concrete_01_A`, `RM_Fence_FlowerBed_Concrete_WallSection_01`, `RM_Fences_Plaster_Residential_01_A`, `RM_Fences_Plaster_Residential_Pillar_01_A` | - | - |
+| [`DA_Demolition_Fences_Concrete_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_Fences_Concrete_01.json) | 8 | `ConcreteWalls_01` | `TanksAndMedLargeExplosions` | Important, Distant | `NS_ConcreteSmash` | `FenceConcrete` | 0.4 | `RM_Fence_Concrete_01_A`, `RM_Fence_FlowerBed_Concrete_WallSection_01`, `RM_Fences_Plaster_Residential_01_A`, `RM_Fences_Plaster_Residential_Pillar_01_A`, `RM_Fences_StoneGeneric_01_A`, `RM_Fences_StoneGeneric_Pillar_01_A` | - | - |
 | [`DA_Demolition_Fences_Concrete_01_B`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_Fences_Concrete_01_B.json) | 3 | `ConcreteWalls_01` | `TanksAndMedLargeExplosions` | Important, Distant | `NS_ConcretePillarSmash` | `FenceConcrete` | 0.4 | `RM_Fence_Concrete_01_B` | - | - |
 | [`DA_Demolition_Fences_Concrete_01_C`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_Fences_Concrete_01_C.json) | 4 | `ConcreteWalls_01` | `TanksAndMedLargeExplosions` | Important, Distant | `NS_ConcreteSmash` | `FenceConcrete` | 0.4 | - | - | - |
 | [`DA_Demolition_Fences_Concrete_03_A`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_Fences_Concrete_03_A.json) | 4 | `Default_Tank` | `TanksAndLargeExplosions` | Distant, Important | `NS_ConcreteSmash` | `FenceConcrete` | 0.4 | `RM_Fence_Concrete_03_A` | - | - |
@@ -81,7 +82,6 @@ Where a "what it means" statement appears below, it is **inference** from names 
 | [`DA_Demolition_SmallMetalFence_1m_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_SmallMetalFence_1m_01.json) | 2 | `Default` | `Everything` | Important, Distant | `NS_MetalGeneralSmash` | `FenceMetalSheet` | 0.3 | - | - | - |
 | [`DA_Demolition_SmallMetalFence_2m_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_SmallMetalFence_2m_01.json) | 5 | `Default` | `Everything` | Important, Distant | `NS_MetalGeneralSmash` | `FenceMetalSheet` | 0.3 | - | - | - |
 | [`DA_Demolition_Structures_Metal_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_Structures_Metal_01.json) | 3 | `Default` | `Everything` | Important, Distant | `NS_MetalGeneralSmash` | `FenceMetalSheet` | 0.4 | - | - | - |
-| [`DA_Demolition_TelephonePole_Concrete_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_TelephonePole_Concrete_01.json) | 1 | `Default` | `LargeAndMediumVehiclesAndExplosions` | Important, Distant | `NS_LampPostSmash` | `FenceConcrete` | 0.3 | - | - | - |
 | [`DA_Demolition_TelephoneWireCable_40M_01_A`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/DA_Demolition_TelephoneWireCable_40M_01_A.json) | 1 | `ShadowCacheStatic` | `LargeAndMediumVehiclesAndExplosions` | Important, Distant | `NS_MetalGeneralSmash` | `Sign` | 0.3 | - | - | - |
 <!-- /demolition_tables -->
 
@@ -96,6 +96,8 @@ Each demolition asset maps its source static meshes (the intact props placed in 
 | `BarbedWire_01` | `SM_Barbed_Wire_01b` | `SM_FarRep_Barbed_Wire_01b` | - | `#444444` | identity |
 | `Bollard_Metal_01` | `S_Metal_Bollard_uioiajafa_high_Var1` | `S_FarRep_Metal_Bollard_uioiajafa` | - | `#A18B33` / 0, 1 | identity |
 | `Bollard_Metal_01` | `SM_RoadBollard_White` | `SM_FarRep_RoadBollard_White` | - | `#E6E5D4` / 0, 1 | identity |
+| `BoxHedges_01` | `SM_Boxhedge_Large_01a` | `SM_FarRep_Boxhedge_Large_01a` | [`DA_RM_Fence_BoxHedge_01_A`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_RM_Fence_BoxHedge_01_A.json) | `#343624` / 0, 1 | identity |
+| `BoxHedges_01` | `SM_Boxhedge_Med_01a` | `SM_FarRep_Boxhedge_Med_01a` | [`DA_RM_Fence_BoxHedge_01_A`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_RM_Fence_BoxHedge_01_A.json) | `#343624` / 0, 1 | identity |
 | `BrickWall_01_A` | `SM_Wall_Brick_Industrial_01_EndCap_01a` | `SM_FarRep_Wall_Brick_Industrial_01_EndCap_01a` | `RM_BrickWall_01_A` | `#817D74` / 0, 1 | identity |
 | `BrickWall_01_A` | `SM_Wall_Brick_Industrial_02_EndCap_01a` | `SM_FarRep_Wall_Brick_Industrial_02_EndCap_01a` | `RM_BrickWall_01_A` | `#817D74` / 0, 1 | identity |
 | `BrickWall_01_B` | `SM_Wall_Brick_Industrial_01a` | `SM_FarRep_Wall_Brick_Industrial_01a` | `RM_BrickWall_01_B` | `#817D74` / 0, 1 | identity |
@@ -133,6 +135,8 @@ Each demolition asset maps its source static meshes (the intact props placed in 
 | `Fences_Concrete_01` | `SM_FlowerBed_Concrete_WallSection_01a` | `SM_FarRep_FlowerBed_Concrete_WallSection_01a` | `RM_Fence_FlowerBed_Concrete_WallSection_01` | `#BEB5A5` | identity |
 | `Fences_Concrete_01` | `SM_Wall_Plaster_Residential_01a` | `SM_FarRep_Wall_Plaster_Residential_01a` | `RM_Fences_Plaster_Residential_01_A` | `#9D978C` | identity |
 | `Fences_Concrete_01` | `SM_Wall_Plaster_Residential_01_Pillar_01a` | `SM_FarRep_Wall_Plaster_Residential_Pillar_01a` | `RM_Fences_Plaster_Residential_Pillar_01_A` | `#9D978C` | identity |
+| `Fences_Concrete_01` | `SM_Wall_Stone_Generic_01a` | `SM_FarRep_Wall_Stone_Generic_01a` | `RM_Fences_StoneGeneric_01_A` | `#363530` / 0, 1 | identity |
+| `Fences_Concrete_01` | `SM_Wall_Stone_Generic_01_Pillar_01a` | `SM_FarRep_Wall_Stone_Generic_01_Pillar_01a` | `RM_Fences_StoneGeneric_Pillar_01_A` | `#363530` / 0, 1 | identity |
 | `Fences_Concrete_01_B` | `SM_Fence_Concrete_Generic_01_Pillar_01c` | `SM_FarRep_Fence_Concrete_Generic_01_Pillar_01c` | `RM_Fence_Concrete_01_B` | `#5F5E57` / 0, 1 | identity |
 | `Fences_Concrete_01_B` | `SM_Fence_Concrete_Generic_01_Pillar_01b` | `SM_FarRep_Fence_Concrete_Generic_01_Pillar_01b` | `RM_Fence_Concrete_01_B` | `#5F5E57` / 0, 1 | identity |
 | `Fences_Concrete_01_B` | `SM_Fence_Concrete_Generic_01_Pillar_01a` | `SM_FarRep_Fence_Concrete_Generic_01_Pillar_01b` | `RM_Fence_Concrete_01_B` | `#5F5E57` / 0, 1 | identity |
@@ -192,7 +196,7 @@ Each demolition asset maps its source static meshes (the intact props placed in 
 | `Fences_Wood_02` | `SM_Fence_Wood_02c` | `SM_FarRep_Fence_Wood_02c` | - | `#564E49` / 0, 1 | identity |
 | `LampPost_01` | `SM_LampPost_01a` | `SM_FarRep_LampPost_01a` | - | `#5B5653` / 0, 1 | identity |
 | `LampPost_01` | `SM_LampPost_01b` | `SM_FarRep_LampPost_01a` | - | `#5B5653` / 0, 1 | identity |
-| `MetalFence_01` | `SM_MetalFence_01a` | `SM_FarRep_MetalFence_01a` | - | `#868686` / 0, 1 | identity |
+| `MetalFence_01` | `SM_MetalFence_01a` | `SM_FarRep_MetalFence_01a` | - | `#232B3A` / 0, 1 | identity |
 | `Saplings` | `SM_Tree_Ash_Sapling_01a` | `SM_Tree_Ash_Sapling_01a_Proxy` | - | - | - |
 | `Saplings` | `SM_Tree_Ash_Sapling_02a` | `SM_Tree_Ash_Sapling_02a_Proxy` | - | - | - |
 | `Saplings` | `SM_Tree_Beech_Sapling_01a` | `SM_Tree_Beech_Sapling_01a_Proxy` | - | - | - |
@@ -228,7 +232,6 @@ Each demolition asset maps its source static meshes (the intact props placed in 
 | `Structures_Metal_01` | `SM_Climbing_Frame_01` | `CubeHLOD` | - | `#594A44` / 0, 1 | Scale3D (0.01, 0.01, 0.01) |
 | `Structures_Metal_01` | `SM_Climbing_Frame_02` | `CubeHLOD` | - | `#594A44` / 0, 1 | Scale3D (0.01, 0.01, 0.01) |
 | `Structures_Metal_01` | `SM_Swing_01` | `CubeHLOD` | - | `#594A44` / 0, 1 | Scale3D (0.01, 0.01, 0.01) |
-| `TelephonePole_Concrete_01` | `SM_TelephonePole_02a` | `SM_FarRep_LampPost_01a` | - | `#5B5653` / 0, 1 | identity |
 | `TelephoneWireCable_40M_01_A` | `SM_TelephonePole_Cable_40M_01a` | `SM_TelephonePole_Cable_40M_01a` | - | - | identity |
 <!-- /demolition_tables -->
 
@@ -243,7 +246,8 @@ Reading notes (**inference**): `CubeHLOD` is a generic cube far-representation u
 |---|---|---|---|---|---|
 | [`DA_CS_Saplings`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_CS_Saplings.json) | 201,000 / 201,100 | WorldPositionOffsetDisableDistance=2000, NanitePixelProgrammableDistance=2000.0, NanitePixelProgrammableScreenSize=1.0, ShadowCacheInvalidationBehavior=EShadowCacheInvalidationBehavior::Static | `BHDemolitionFlora` | 1 | `Saplings` |
 | [`DA_Demolition_CS_ConcreteWalls_01`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_ConcreteWalls_01.json) | 201,000 / 201,100 | bVisibleInRayTracing=True, bGenerateHitEvents=True | `BHDemolition` | 8 | `BrickWall_01_A`, `BrickWall_01_B`, `BrickWall_01_C`, `ConcreteBarrier_01`, `ConcreteBarrier_02`, `Fences_Concrete_01`, `Fences_Concrete_01_B`, `Fences_Concrete_01_C` |
-| [`DA_Demolition_CS_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_Default.json) | 201,000 / 201,100 | bVisibleInRayTracing=True | `BHDemolition` | 10 | `BarbedWire_01`, `Bollard_Metal_01`, `Fences_ChainlinkTarp_01`, `Fences_ChainlinkWire_01`, `LampPost_01`, `MetalFence_Support_01`, `SmallMetalFence_1m_01`, `SmallMetalFence_2m_01`, `Structures_Metal_01`, `TelephonePole_Concrete_01` |
+| [`DA_Demolition_CS_Default`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_Default.json) | 201,000 / 201,100 | bVisibleInRayTracing=True | `BHDemolition` | 9 | `BarbedWire_01`, `Bollard_Metal_01`, `Fences_ChainlinkTarp_01`, `Fences_ChainlinkWire_01`, `LampPost_01`, `MetalFence_Support_01`, `SmallMetalFence_1m_01`, `SmallMetalFence_2m_01`, `Structures_Metal_01` |
+| [`DA_Demolition_CS_Default_BoxHedges`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_Default_BoxHedges.json) | 201,000 / 201,100 | bReceivesDecals=False, WorldPositionOffsetDisableDistance=2000, NanitePixelProgrammableDistance=2000.0, NanitePixelProgrammableScreenSize=1.0, ShadowCacheInvalidationBehavior=EShadowCacheInvalidationBehavior::Static, bGenerateHitEvents=True | `BHDemolition` | 1 | `BoxHedges_01` |
 | [`DA_Demolition_CS_Default_Bushes`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_Default_Bushes.json) | 201,000 / 201,100 | WorldPositionOffsetDisableDistance=2000, NanitePixelProgrammableDistance=2000.0, NanitePixelProgrammableScreenSize=1.0, ShadowCacheInvalidationBehavior=EShadowCacheInvalidationBehavior::Static | `BHDemolitionBushes` | 1 | `Bushes_Flora` |
 | [`DA_Demolition_CS_Default_ChainLink`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_Default_ChainLink.json) | 201,000 / 201,100 | bVisibleInRayTracing=True | `BHDemolitionChainlinkFence` | 1 | `Fences_Chainlink_01` |
 | [`DA_Demolition_CS_Default_Tank`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/ComponentSettings/DA_Demolition_CS_Default_Tank.json) | 201,000 / 201,100 | bVisibleInRayTracing=True, bGenerateHitEvents=True | `BHDemolition` | 11 | `Fences_Concrete_03_A`, `Fences_Concrete_03_B`, `Fences_Concrete_03_C`, `Fences_Metal_01`, `Fences_Metal_02`, `Fences_Metal_03`, `Fences_Ornamental_01`, `Fences_SmallConcrete_01_A`, `Fences_SmallConcrete_01_B`, `Fences_SmallConcrete_01_C`, `Signage_Large_Metal_01` |
@@ -277,6 +281,9 @@ Reading notes (**inference**): `CubeHLOD` is a generic cube far-representation u
 | [`DA_Demolition_RM_Fences_SmallConcrete_01_A`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_Demolition_RM_Fences_SmallConcrete_01_A.json) | 1 | `SM_RemnantNear_Low_Wall_Left_01` | same | null | `Fences_SmallConcrete_01_A` |
 | [`DA_Demolition_RM_Fences_SmallConcrete_01_B`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_Demolition_RM_Fences_SmallConcrete_01_B.json) | 1 | `SM_RemnantNear_Low_Wall_Middle_0` | same | null | `Fences_SmallConcrete_01_B` |
 | [`DA_Demolition_RM_Fences_SmallConcrete_01_C`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_Demolition_RM_Fences_SmallConcrete_01_C.json) | 1 | `SM_RemnantNear_Low_Wall_Right_01` | same | null | `Fences_SmallConcrete_01_C` |
+| [`DA_Demolition_RM_Fences_StoneGeneric_01_A`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_Demolition_RM_Fences_StoneGeneric_01_A.json) | 1 | `SM_Wall_Stone_Generic_dst_01a` | same | null | `Fences_Concrete_01` |
+| [`DA_Demolition_RM_Fences_StoneGeneric_Pillar_01_A`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_Demolition_RM_Fences_StoneGeneric_Pillar_01_A.json) | 1 | `SM_Wall_Stone_Generic_01_Pillar_dst_01a` | same | null | `Fences_Concrete_01` |
+| [`DA_RM_Fence_BoxHedge_01_A`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_RM_Fence_BoxHedge_01_A.json) | 1 | `SM_RemnantNear_BoxHedge_01a` | same | null | `BoxHedges_01` |
 | [`DA_RM_Fences_Wood_01_A`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Demolition/Remnants/DA/DA_RM_Fences_Wood_01_A.json) | 3 | `SM_RemnantNear_Fence_Wood_Wall_01a`, `SM_RemnantNear_Fence_Wood_Wall_01b`, `SM_RemnantNear_Fence_Wood_Wall_01c` | same | null | `Fences_Wood_01_A`, `Fences_Wood_01_B` |
 <!-- /demolition_tables -->
 
@@ -316,7 +323,7 @@ Which ruleset each asset points at:
 | `Everything` | 11 | `BarbedWire_01`, `Bollard_Metal_01`, `Corrugated_Metal_01a`, `Fences_ChainlinkTarp_01`, `Fences_ChainlinkWire_01`, `Fences_Chainlink_01`, `Fences_Wood_02`, `Signage_Metal_01`, `SmallMetalFence_1m_01`, `SmallMetalFence_2m_01`, `Structures_Metal_01` |
 | `TanksAndLargeExplosions` | 10 | `BrickWall_01_A`, `BrickWall_01_B`, `BrickWall_01_C`, `Fences_Concrete_03_A`, `Fences_Concrete_03_B`, `Fences_Concrete_03_C`, `Fences_SmallConcrete_01_A`, `Fences_SmallConcrete_01_B`, `Fences_SmallConcrete_01_C`, `Signage_Large_Metal_01` |
 | `TanksAndMedLargeExplosions` | 10 | `ConcreteBarrier_01`, `ConcreteBarrier_02`, `Fences_Concrete_01`, `Fences_Concrete_01_B`, `Fences_Concrete_01_C`, `Fences_Metal_01`, `Fences_Metal_02`, `Fences_Ornamental_01`, `MetalFence_01`, `MetalFence_Support_01` |
-| `LargeAndMediumVehiclesAndExplosions` | 3 | `Fences_Metal_03`, `TelephonePole_Concrete_01`, `TelephoneWireCable_40M_01_A` |
+| `LargeAndMediumVehiclesAndExplosions` | 3 | `BoxHedges_01`, `Fences_Metal_03`, `TelephoneWireCable_40M_01_A` |
 | `EverythingAndMolotov` | 2 | `Bushes_Flora`, `Saplings` |
 | `LargeAndMediumVehiclesExplosionsAndBuildables` | 2 | `Fences_Wood_01_A`, `Fences_Wood_01_B` |
 | `LargeVehiclesAndExplosions` | 1 | `LampPost_01` |
@@ -334,14 +341,14 @@ The tank-only tiers (`TanksAndLargeExplosions`, `TanksAndMedLargeExplosions`) li
 | Niagara system | `Metal/NS_MetalConcreteSmash` | 4: `Fences_Metal_02`, `Fences_Metal_03`, `Fences_Ornamental_01`, `MetalFence_Support_01` |
 | Niagara system | `Concrete_Brick/NS_BrickSmash` | 2: `BrickWall_01_A`, `BrickWall_01_B` |
 | Niagara system | `Concrete_Brick/NS_ConcretePillarSmash` | 2: `Fences_Concrete_01_B`, `Fences_Concrete_03_C` |
-| Niagara system | `Metal/NS_LampPostSmash` | 2: `LampPost_01`, `TelephonePole_Concrete_01` |
+| Niagara system | `Foliage/NS_BushSmash_01` | 2: `BoxHedges_01`, `Bushes_Flora` |
 | Niagara system | `Wood/NS_WoodSmash_Fence` | 2: `Fences_Wood_01_A`, `Fences_Wood_01_B` |
 | Niagara system | `Concrete_Brick/NS_BrickPillarSmash` | 1: `BrickWall_01_C` |
-| Niagara system | `Foliage/NS_BushSmash_01` | 1: `Bushes_Flora` |
 | Niagara system | `Foliage/NS_SaplingSmash_01` | 1: `Saplings` |
+| Niagara system | `Metal/NS_LampPostSmash` | 1: `LampPost_01` |
 | Niagara system | `Wood/NS_WoodSmash_Fence_NoPlanks` | 1: `Fences_Wood_02` |
-| Zones | `Distant, Important` | 37: `BarbedWire_01`, `Bollard_Metal_01`, `BrickWall_01_A`, `BrickWall_01_B`, `BrickWall_01_C`, `ConcreteBarrier_01`, `ConcreteBarrier_02`, `Corrugated_Metal_01a`, `Fences_ChainlinkTarp_01`, `Fences_ChainlinkWire_01`, `Fences_Chainlink_01`, `Fences_Concrete_01`, `Fences_Concrete_01_B`, `Fences_Concrete_01_C`, `Fences_Concrete_03_A`, `Fences_Concrete_03_B`, `Fences_Concrete_03_C`, `Fences_Metal_01`, `Fences_Metal_02`, `Fences_Metal_03`, `Fences_Ornamental_01`, `Fences_SmallConcrete_01_A`, `Fences_SmallConcrete_01_B`, `Fences_SmallConcrete_01_C`, `Fences_Wood_01_A`, `Fences_Wood_01_B`, `Fences_Wood_02`, `LampPost_01`, `MetalFence_01`, `MetalFence_Support_01`, `Signage_Large_Metal_01`, `Signage_Metal_01`, `SmallMetalFence_1m_01`, `SmallMetalFence_2m_01`, `Structures_Metal_01`, `TelephonePole_Concrete_01`, `TelephoneWireCable_40M_01_A` |
-| Zones | `Important` | 2: `Bushes_Flora`, `Saplings` |
+| Zones | `Distant, Important` | 36: `BarbedWire_01`, `Bollard_Metal_01`, `BrickWall_01_A`, `BrickWall_01_B`, `BrickWall_01_C`, `ConcreteBarrier_01`, `ConcreteBarrier_02`, `Corrugated_Metal_01a`, `Fences_ChainlinkTarp_01`, `Fences_ChainlinkWire_01`, `Fences_Chainlink_01`, `Fences_Concrete_01`, `Fences_Concrete_01_B`, `Fences_Concrete_01_C`, `Fences_Concrete_03_A`, `Fences_Concrete_03_B`, `Fences_Concrete_03_C`, `Fences_Metal_01`, `Fences_Metal_02`, `Fences_Metal_03`, `Fences_Ornamental_01`, `Fences_SmallConcrete_01_A`, `Fences_SmallConcrete_01_B`, `Fences_SmallConcrete_01_C`, `Fences_Wood_01_A`, `Fences_Wood_01_B`, `Fences_Wood_02`, `LampPost_01`, `MetalFence_01`, `MetalFence_Support_01`, `Signage_Large_Metal_01`, `Signage_Metal_01`, `SmallMetalFence_1m_01`, `SmallMetalFence_2m_01`, `Structures_Metal_01`, `TelephoneWireCable_40M_01_A` |
+| Zones | `Important` | 3: `BoxHedges_01`, `Bushes_Flora`, `Saplings` |
 <!-- /demolition_tables -->
 
 The crosstalk tag is the audio event raised for the break. Seven audio events in [`Content/Audio/Events/Prop/PropDemolition`](https://github.com/Kiyogitpy/wardogs-data-docs/tree/main/data/Wardogs/Content/Audio/Events/Prop/PropDemolition) carry the seven tags in use; the audio events themselves are not documented here.
@@ -349,12 +356,12 @@ The crosstalk tag is the audio event raised for the break. Seven audio events in
 <!-- demolition_tables crosstalk -->
 | Crosstalk tag | Audio event asset(s) carrying the tag | Demolition assets |
 |---|---|---|
-| `Audio.Event.Prop.Demolition.FenceConcrete` | [`AE_PropDemolition_Fence_Concrete`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Prop/PropDemolition/AE_PropDemolition_Fence_Concrete.json) | 16 |
+| `Audio.Event.Prop.Demolition.FenceConcrete` | [`AE_PropDemolition_Fence_Concrete`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Prop/PropDemolition/AE_PropDemolition_Fence_Concrete.json) | 15 |
 | `Audio.Event.Prop.Demolition.FenceMetalSheet` | [`AE_PropDemolition_Fence_Metal_Sheet`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Prop/PropDemolition/AE_PropDemolition_Fence_Metal_Sheet.json) | 10 |
 | `Audio.Event.Prop.Demolition.FenceMetalChainlink` | [`AE_PropDemolition_Fence_Metal_Chainlink`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Prop/PropDemolition/AE_PropDemolition_Fence_Metal_Chainlink.json) | 4 |
 | `Audio.Event.Prop.Demolition.Sign` | [`AE_PropDemolition_Sign`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Prop/PropDemolition/AE_PropDemolition_Sign.json) | 4 |
 | `Audio.Event.Prop.Demolition.FenceWood` | [`AE_PropDemolition_Fence_Wood`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Prop/PropDemolition/AE_PropDemolition_Fence_Wood.json) | 3 |
-| `Audio.Event.Prop.Demolition.Bush` | [`AE_PropDemolition_Bush`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Prop/PropDemolition/AE_PropDemolition_Bush.json) | 1 |
+| `Audio.Event.Prop.Demolition.Bush` | [`AE_PropDemolition_Bush`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Prop/PropDemolition/AE_PropDemolition_Bush.json) | 2 |
 | `Audio.Event.Prop.Demolition.Tree` | [`AE_PropDemolition_Tree`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Audio/Events/Prop/PropDemolition/AE_PropDemolition_Tree.json) | 1 |
 <!-- /demolition_tables -->
 
