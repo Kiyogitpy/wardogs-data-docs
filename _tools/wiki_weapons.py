@@ -15,9 +15,11 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import wiki_icons  # noqa: E402
 import wiki_ttk  # noqa: E402
+import spray_patterns  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 GH = "https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/"
+S3_NOTES = "https://store.steampowered.com/news/app/1867240/view/688648135317127221"
 WIKI = os.path.join(ROOT, "_wiki")
 OUT = os.path.join(WIKI, "weapons")
 
@@ -34,6 +36,7 @@ def jload(rel):
 loadouts = jload("assets/data/weapon-loadouts.json")
 EFFECTS = loadouts["effects"]  # GE name -> list of modifiers
 wdamage = {w["id"]: w for w in jload("assets/data/weapon-damage.json")["weapons"]}
+ROLE_UNLOCK_NODES = jload("assets/data/economy.json")["roleUnlocks"]["nodes"]
 falloff_doc = jload("assets/data/weapon-damage-falloff.json")
 # Faction signature rifles: the economy settings price them at 0 for one faction (assets/data/price-modifiers.json),
 # and the weapon vendor lists them as faction-specific with a buy limit of one.
@@ -60,9 +63,16 @@ ROSTER = read("content/Wardogs_InfantryWeapons_Stats_v1.md")
 S2 = read("season-2-changes/weapons-ammo.md")
 
 # Compound Bow: not a firearm (no caliber, spray pattern or damage table). Its article is
-# hand-written (_wiki/weapons/compound-bow.md); the hub gets its row from BOW_ROWS below.
+# hand-written (_wiki/weapons/compound-bow.md); the hub reads its saved speed settings below.
 SKIP = {"CombatBow"}
-BOW_ROWS = ["| [Compound Bow](weapons/compound-bow.md) | Broadhead Arrow, Rambo Explosive Arrow | 160 m/s | 1.4 s | 1350 |"]
+def bow_row():
+    path = "data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/DA_CombatBow_Stats.json"
+    st = json.loads(read(path).split("\n", 1)[1])["Properties"]["WeaponStats"]
+    speed = f"{st['InitialBulletSpeed'] / 100:g} m/s initial setting"
+    if st["bOverrideTypicalSpeed"]:
+        speed += f"; {st['TypicalSpeed'] / 100:g} m/s typical override"
+    return ("| [Compound Bow](weapons/compound-bow.md) | Broadhead Arrow, Rambo Explosive Arrow | "
+            + speed + " (cm/s assumption; release unverified) | 1.4 s setting | 1350 |")
 
 CLASS_NAME = {
     "AR": "Assault rifle", "DMR": "Marksman rifle", "LMG": "Light machine gun",
@@ -260,6 +270,18 @@ def code_for(wid):
     return wid[3:] if wid.startswith("ID_") else wid
 
 
+def unlock_levels(code):
+    tags = {"Id.Item." + code, "ID.Item." + code}
+    levels = []
+    for node in ROLE_UNLOCK_NODES:
+        if node["node"] in tags:
+            role = node["tree"].rsplit(".", 1)[-1]
+            role = "Wardog" if role == "Infantry" else role
+            level = node["minLevel"] if node["minLevel"] is not None else "unknown"
+            levels.append(f"{role} {level}")
+    return "; ".join(levels) or "Not resolved from the current role nodes"
+
+
 def page_title(wid):
     if code_for(wid) == "AK74M":
         return "AK74"  # the shop and in-game display name
@@ -309,6 +331,8 @@ def stats(wid):
 
     if dmg and dmg.get("rpm") is not None:
         rpm = f"{fmt_int(dmg['rpm'])} rounds/min"
+        if dmg.get("rpm_source") == "class_default_native":
+            rpm += " (historical default assumption)"
     else:
         m = re.match(r"([0-9.]+)", ro["rpm"] or "")
         if m:
@@ -334,7 +358,7 @@ def stats(wid):
     if cap and cap.get("effective_range_m") is not None:
         rng = f"{cap['effective_range_m']:.0f} m"
         if cap.get("effective_range_source") == "class_default_native":
-            rng += " (game default)"
+            rng += " (historical default assumption)"
     else:
         rng = f"{fo['effective_range_m']:.0f} m" if fo and fo.get("effective_range_m") is not None else "not yet known"
     mag = magazine_text(shop["defaults"])
@@ -368,6 +392,9 @@ for _w in SPREAD_DOC["weapons"]:
     if _iid:
         SPREAD_BY_ITEM.setdefault(_iid, _w)
 SPRAY_BY_ITEM = {w["itemAsset"]: w for w in SPRAY_DOC["weapons"] if w.get("itemAsset")}
+# build(None) reads current data/; s2 is the builder's legacy slot name, not its build attribution.
+CURRENT_RECOIL_BY_ITEM = {w["itemAsset"]: w["seasons"]["s2"]
+                          for w in spray_patterns.build(None)["weapons"] if w.get("itemAsset")}
 # row -> [[x, degrees], ...]; x is the speed ratio, 0 = still, 1 = full speed (linear)
 SPREAD_CURVES = SPREAD_DOC["spreadCurveTable"]
 # radians per unit of WeaponAccuracy.AccuracyValue (pipeline doc, accuracy getter)
@@ -451,9 +478,9 @@ def recoil_section(wid, title, multi_pellet=False):
     spray = SPRAY_BY_ITEM.get(wid)
     if spread is None or spray is None:
         raise SystemExit(f"no spread or spray data for {wid}")
-    season = spray["seasons"].get("s2")
+    season = CURRENT_RECOIL_BY_ITEM.get(wid)
     if not season or not season.get("present"):
-        raise SystemExit(f"no Season 2 spray data for {wid}")
+        raise SystemExit(f"no current source-derived recoil model for {wid}")
 
     # Aimed spread: the accuracy value is a full cone angle; the half-angle is half of it.
     acc = spread["fields"]["WeaponAccuracy.AccuracyValue"]
@@ -461,6 +488,8 @@ def recoil_section(wid, title, multi_pellet=False):
     aimed = 0.5 * acc["value"] * RAD_PER_UNIT[unit] * 180 / math.pi
 
     out = ["## Recoil and spread", "",
+           "The recoil figures below use current S3 source settings with the historical calculation and omitted-field defaults; current native equivalence is unverified. "
+           "Spread figures use the exported settings and historical calculation/default assumptions; current native spread behavior remains unverified.", "",
            "Each bullet leaves the barrel in a random direction inside a cone around the point you aim at. "
            "Hip fire uses a wide cone that grows when you move. Aiming down the sights uses a very narrow one. "
            "Every shot also pushes the view up and to the side, following the weapon's recoil pattern.", "",
@@ -484,7 +513,7 @@ def recoil_section(wid, title, multi_pellet=False):
                     "Half of the shots land within half that radius.")
     out.append("")
     if acc.get("source") == "native default":
-        out.append(f"The data leaves the accuracy value out for this weapon, so the game default of {acc['value']:g} {UNIT_NAME[unit]} is used "
+        out.append(f"The data leaves the accuracy value out for this weapon. The model assumes the historical default of {acc['value']:g} {UNIT_NAME[unit]} "
                    "(a full cone angle; the aimed row is half of it, in degrees).")
     else:
         out.append(f"Accuracy is {acc['value']:g} {UNIT_NAME[unit]}, a full cone angle; the aimed row is half of it, in degrees.")
@@ -493,18 +522,17 @@ def recoil_section(wid, title, multi_pellet=False):
         out += ["Buckshot fires several pellets per shot. For a multi-pellet round the hip spread rows above are not used; "
                 "the pellet pattern comes from the weapon's shotgun data instead (see [Weapon Spread pipeline](../../pipelines/Wardogs_WeaponSpread_v1.md)). "
                 "The hip rows apply to single-projectile ammunition such as the rifled slug.", ""]
-    out += ["- There is no per-shot bloom and no recovery timer: nothing found in the spread settings makes firing widen the spread, "
-            "and spread changes only with speed, stance, being in the air and aiming. This comes from reading the game files, not from testing in game.",
-            "- Hip spread eases toward its new value with a time constant of about 0.04 s (a native default found by static reading).",
-            "- The 10° in-air figure is a native default found by static reading; only the grenade launcher's data sets it, to the same 10°.",
-            "- At full aim (aim blend exactly 1.0) hip spread is set to zero, so only the aimed row applies. A partly aimed weapon counts as hip fire.",
-            "- \"Full speed\" means 4 m/s standing, 2.5 m/s crouching and 0.5 m/s prone; between still and that speed the hip spread is a straight line.",
+    out += ["- The historical spread model has no per-shot bloom or recovery timer. The earlier reader search does not establish their absence from S3.",
+            "- The model assumes the historical hip-spread easing time constant of about 0.04 s; the S3 default and consumer are unverified.",
+            "- The 10° in-air row uses the historical native default. An omitted S3 field does not verify that default.",
+            "- The historical model uses only aimed spread at full aim (blend exactly 1.0) and hip spread while partly aimed. The current branch has not been verified.",
+            "- In that model, \"full speed\" means 4 m/s standing, 2.5 m/s crouching and 0.5 m/s prone; interpolation is linear. These are historical model assumptions.",
             "- The figures are before attachments, which can change spread (see [Attachments](../attachments.md)).", ""]
 
     # Recoil
     pat = season["pattern"]
     post = season["postPattern"]
-    out += ["**Recoil**", "", "| Measure | Value |", "|---|---|"]
+    out += ["**S3-input recoil model**", "", "| Measure | Value |", "|---|---|"]
     if pat:
         out.append(f"| Shots in the recoil pattern | {len(pat)} |")
         out.append(f"| Kick on the first shot | {pat[0]['y']:.2f}° up |")
@@ -526,19 +554,20 @@ def recoil_section(wid, title, multi_pellet=False):
     out.append("")
     note = "Climb and drift figures are computed from the pattern points, before the recoil multiplier. "
     if pat:
-        note += (f"The game turns each authored kick by up to {season['randomDeviationDeg']:g}° per shot, so the real sideways drift "
+        note += (f"The model turns each authored kick by up to {season['randomDeviationDeg']:g}° per shot, so its sideways drift "
                  f"varies from burst to burst. After shot {len(pat)} each kick is random inside the post-pattern range.")
     else:
         note += "This weapon has no authored pattern, so the climb figures use the middle of its random range."
-    out += [note, "", _season_sentence(spray), "",
-            f"To see the whole pattern as a picture, open the [Weapon Spray Viewer]({RECOIL_VIEWER}) and pick the {title} in the viewer.", ""]
+    source = season["sourceNote"].split(";", 1)[0]
+    out += [note, "", f"[Current recoil settings]({GH}{source}).", "", _season_sentence(spray), "",
+            f"The [historical Weapon Spray Viewer]({RECOIL_VIEWER}) retains Season 1/2 data; it does not show this S3 snapshot.", ""]
     return "\n".join(out)
 
 
 def price_display(code, price):
-    """Vendor price as players read it: faction weapons cost 0 once per life for their faction."""
+    """Show the saved faction setting without asserting an effective free purchase."""
     if code in FACTION_WEAPONS:
-        return f"Free ({FACTION_WEAPONS[code]} faction, one per life)"
+        return f"Listed 0 ({FACTION_WEAPONS[code]} faction setting; activation unverified)"
     return price or "not yet known"
 
 
@@ -567,7 +596,8 @@ def build_weapon(wid):
         ("Standard magazine", s["mag_row"]),
         ("**Availability**", ""),
         ("Vendor price", price_display(code, s["price"])),
-        ("Unlock level", s["unlock"] or "not yet known"),
+        ("Vendor level field", s["unlock"] or "not yet known"),
+        ("Stored role levels", unlock_levels(code)),
         ("Internal name", code),
     ]
     infobox = [f"| {title} | |", "|---|---|"] + [f"| {a} | {b} |" for a, b in infobox_rows] + ["{: .wiki-infobox }"]
@@ -598,6 +628,7 @@ def build_weapon(wid):
     # Damage
     out += ["## Damage", ""]
     if dmg and dmg["ammo"]:
+        out += ["These are S3-input model results using the earlier damage formula. Current native damage behavior has not been verified.", ""]
         base = next((a for a in dmg["ammo"] if a["id"] in ("FMJ", "Buckshot")), dmg["ammo"][0])
         pell = base.get("pellets")
         if pell:
@@ -640,6 +671,8 @@ def build_weapon(wid):
     out += wiki_ttk.section_lines(code)
     # Recoil and spread (after Time to kill, before Ammunition)
     out += recoil_section(wid, title, bool(dmg) and any(a.get("pellets") for a in dmg["ammo"])).rstrip("\n").split("\n") + [""]
+    if code == "WEPN_037":
+        out += [f"The [official S3 notes]({S3_NOTES}) announce reduced TCX-SPR climb and drift, plus a fix for standing recoil being used while prone. These are developer-reported changes, distinct from the source-derived model above.", ""]
     # Ammunition
     out += ["## Ammunition", ""]
     if dmg:
@@ -664,8 +697,9 @@ def build_weapon(wid):
     # Cost and unlocking
     out += ["## Cost and unlocking", "",
             f"- Vendor price: {s['price'] or 'not yet known'}. The data pages do not decode the currency, so the price is shown as a plain number.",
-            *([f"- Faction weapon: the weapon vendor lists it only for the {FACTION_WEAPONS[code]} faction, at price 0 with a buy limit of one per life (the same limit field the Emergency Resuscitator uses for its one per life), and the economy settings also price it at 0 for that faction. A {FACTION_WEAPONS[code]} player can therefore take it from the vendor for free at level 1 (inferred from the vendor and economy settings; the game was not run)."] if code in FACTION_WEAPONS else []),
-            f"- Unlock level: {s['unlock'] or 'not yet known'}.", ""]
+            *([f"- Faction setting: the vendor and economy records associate this weapon with {FACTION_WEAPONS[code]} and store price/modifier 0 and a limit of 1. The earlier one-per-life interpretation and free-purchase inference are not verified current server or consumer behavior."] if code in FACTION_WEAPONS else []),
+            f"- Vendor level field: {s['unlock'] or 'not yet known'}; this is distinct from role unlocking.",
+            f"- Stored role levels: {unlock_levels(code)}. These listed prerequisites do not establish every active mode/vendor gate.", ""]
 
     # Season 2 changes
     s2 = s2_for(code)
@@ -692,6 +726,7 @@ def build_weapon(wid):
             f"- [weapon-damage.json]({GH}assets/data/weapon-damage.json): body-part and armor damage",
             f"- [weapon-damage-falloff.json]({GH}assets/data/weapon-damage-falloff.json): falloff curves, also used for the time to kill table",
             f"- [weapon-capacity.json]({GH}assets/data/weapon-capacity.json): muzzle speed, effective range, chamber and magazine",
+             f"- [Current role unlock nodes]({GH}assets/data/economy.json): stored tree levels, separate from vendor level fields",
             f"- [Round 39 weapon evidence]({GH}docs/evidence/round39-weapons.md): launcher speeds and ranges, magazines, default rate",
             ""]
     desc = f"The {title} {cls_l}: fire rate, damage by body part, range falloff, ammunition, attachments and Season 2 changes."
@@ -704,14 +739,15 @@ def front_matter(title, desc, group):
 
 def ammo_page():
     body = ["# Ammunition", "",
-            "Bullet weapons use one of four bullet types, and each has a tracer version that does the same damage with a visible trail. "
-            "The shotgun fires two shell types. The type changes how much damage a hit does, most of all against armor.", "",
+            "The bullet tables distinguish standard (FMJ), flesh damage (HP) and armor piercing (AP), with tracer variants. "
+            "Shotguns list buckshot and rifled slugs. Damage figures below use S3 inputs with the historical damage formula; current native equivalence is unverified.", "",
+            f"[Limited Mode excludes HP and AP ammunition]({S3_NOTES}); this is a full-roster model, not an allowlist for that mode.", "",
             "| Type | What it does | Against no armor | Against armor |",
             "|---|---|---|---|",
             "| Standard (FMJ) | The baseline round. | Baseline. | Baseline. |",
             "| Flesh Damage (HP) | Does more damage to unarmored targets. | About double the standard damage. | Much weaker than standard against every armor class. |",
-            "| Armor Piercing (AP) | Built to get through armor. | About 0.8 times the standard damage. | Overtakes standard from Medium armor for rifle calibers, and from Heavy armor for pistol and SMG calibers. |",
-            "", "Tracer versions of each type do the same damage as their base type. They load into the normal magazines for their caliber, since loading checks the magazine and its caliber, not an ammo tag.", ""]
+            "| Armor Piercing (AP) | Model applies an armor scalar. | About 0.8 times the standard damage. | Overtakes standard from Medium for rifle calibers and the Deagle, and from Heavy for 9mm, .45 ACP and .45 Colt. The .50 Cal AMR 50 is an exception: AP never beats FMJ in this model. |",
+            "", "Tracer variants have the same damage as their base type in the model. The historical loading rule checks the magazine and caliber rather than an ammo tag; current native loading behavior has not been verified.", ""]
     rifle = wdamage["A91"]
     body += ["## Torso damage by type: 5.56mm rifle example", "",
              "A-91 chambered in 5.56mm, upper torso hits:", "",
@@ -761,8 +797,8 @@ ATTACH_ARTICLE = {"Magazine": "magazines.md", "Muzzle": "muzzle-devices.md",
 def attachments_page():
     cats = sorted(ATTACH, key=lambda c: -ATTACH[c]["count"])
     body = ["# Attachments", "",
-            "Attachments are parts that fit onto a weapon. While a part is fitted, it changes some of the weapon's numbers. "
-            "The table lists each slot type, how many parts it has and what it is for. "
+            "The exported loadout model associates attachment parts with slots and effects. These associations do not establish that every effect is active in S3. "
+            "The table counts parts in that model by slot type. "
             "The list after it shows which numbers the parts in each category change, and how many parts change each one. Each category name links to its own article.", "",
             "| Category | Parts | What it is |", "|---|---|---|"]
     for cat in cats:
@@ -793,10 +829,10 @@ def attachments_page():
 
 def hub_page(sections):
     head = ("---\ntitle: Weapons\nnav_order: 1\nwiki_hub: true\nhas_children: true\nhas_toc: false\n"
-            "description: \"Every player weapon, the ammunition they use and the attachments that change them.\"\n---\n\n")
+            "description: \"The exported weapon roster, its ammunition and associated attachments.\"\n---\n\n")
     body = ["# Weapons", "",
-            "Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle, launcher and bow "
-            "that a player can get, grouped by class. Each name links to its article; click a column heading to sort. "
+            "Weapons in the exported item roster, grouped by class. Presence here does not establish availability in every mode. "
+            "Each name links to its article; click a column heading to sort. "
             "[Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections. "
             "To compare weapons side by side, see the [Weapon Comparison](weapons/weapon-comparison.md) table of damage, shots to kill and recoil.", ""]
     for arch in CLASS_ORDER:
@@ -808,7 +844,7 @@ def hub_page(sections):
                 head_rows = ["| Weapon | Caliber | Fire rate | Standard magazine | Vendor price |",
                              "|---|---|---:|---|---:|"]
             body += [f"## {class_group(arch)}", ""] + head_rows + sections[arch] + [""]
-    body += ["## Bows", "", "| Weapon | Ammunition | Arrow speed | Full draw | Item shop price |", "|---|---|---:|---:|---:|"] + BOW_ROWS + [""]
+    body += ["## Bows", "", "| Weapon | Ammunition | Saved speed settings | Full draw setting | Item shop price |", "|---|---|---:|---:|---:|", bow_row(), ""]
     return head + "\n".join(body)
 
 
@@ -826,16 +862,16 @@ def comparison_page():
             title = page_title(wid)
             cap = CAP.get(code) or {}
             mag = (cap.get("magazine") or {}).get("capacity") or cap.get("rounds_held")
-            sp = SPRAY_BY_ITEM.get(wid)
-            season = sp["seasons"].get("s2") if sp else None
+            season = CURRENT_RECOIL_BY_ITEM.get(wid)
             climb = f"{_path(season, 10)[1]:.1f}" if season and season.get("present") else "not yet known"
             star = "*" if c["beyond100"] else ""
+            rate_mark = "†" if wdamage[code].get("rpm_source") == "class_default_native" else ""
 
             def kc(k):
-                return (f"{k[0]}{star}", f"{k[1]:.2f}{star}") if k else ("not reached", "not reached")
+                return (f"{k[0]}{star}", f"{k[1]:.2f}{star}{rate_mark}") if k else ("not reached", "not reached")
             n0, t0 = kc(c["none"])
             n3, t3 = kc(c["l3"])
-            cells = [f"[{title}]({slugify(title)}.md)", CLASS_NAME[arch], s["cal"], fmt_int(wdamage[code]["rpm"]),
+            cells = [f"[{title}]({slugify(title)}.md)", CLASS_NAME[arch], s["cal"], fmt_int(wdamage[code]["rpm"]) + rate_mark,
                      str(mag) if mag is not None else "not yet known", s["price"] or "not yet known",
                      f"{c['dmg10']:.1f}", n0, t0, n3, t3, climb]
             rows.append("| " + " | ".join(cells) + " |")
@@ -850,10 +886,11 @@ def comparison_page():
     body += ["", "**How to read it**", "",
              "- Damage and kill figures use the standard bullet (FMJ), or buckshot for shotguns, on upper-torso hits. Shotgun damage is the sum of all 8 pellets and assumes every pellet hits.",
              "- Shots to kill are for a character with 100 HP: 100 divided by the damage per hit, rounded up. Time to kill (TTK) is (shots - 1) x 60 / fire rate, because the first shot fires at 0 s.",
-             "- A * marks a 100 m figure that is beyond the weapon's effective range, where damage falls with distance. Damage at 100 m uses the range falloff curve.",
+             "- A * marks a 100 m figure beyond the effective-range model setting. Damage at 100 m uses the separate falloff curve; the marker is not a damage cutoff.",
+             "- A † marks a model fire rate supplied by the historical 600 RPM default and its dependent TTK values. Those current native defaults are unverified.",
              "- A Level 3 vest cuts upper-torso damage by 50%. See [Body Armor](../equipment/body-armor.md) for all four levels.",
-             "- Recoil climb is how far the view rises over the first 10 shots of the Season 2 pattern, before attachments. See [Spread and Recoil](../game-mechanics/spread-and-recoil.md).",
-             "- Everything is derived from game data. It assumes every shot hits and armor stays intact, and it ignores reload, spread and recoil. Real fights take longer.", "",
+             "- Recoil climb is the S3-input model over 10 authored shots, before attachments. The historical calculation and omitted-field defaults are not verified S3 native behavior. See [Spread and Recoil](../game-mechanics/spread-and-recoil.md).",
+             "- Damage uses S3 inputs with the earlier damage and flight formulas; current native equivalence is unverified. The model assumes every shot hits and armor stays intact, and ignores reload, spread and recoil.", "",
              "## See also", "", "- [Weapons](../weapons.md)", "- [Ammunition](../ammunition.md)", "- [Choosing Ammo](../guides/choosing-ammo.md)", "- [Health and Damage](../game-mechanics/health-and-damage.md)", "",
              "## Sources", "",
              "- [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md): body-part, armor and falloff numbers",
