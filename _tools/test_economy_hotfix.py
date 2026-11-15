@@ -11,6 +11,7 @@ from unittest.mock import patch
 SPEC = importlib.util.spec_from_file_location("economy_tables", Path(__file__).with_name("economy_tables.py"))
 econ = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(econ)
+S2_REVISION = "8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b"
 
 
 class EconomyHotfixTests(unittest.TestCase):
@@ -28,7 +29,7 @@ class EconomyHotfixTests(unittest.TestCase):
     def test_historical_achievements(self):
         def old_exports(path):
             rel = Path(path).resolve().relative_to(Path(econ.ROOT)).as_posix()
-            raw = subprocess.check_output(["git", "show", "HEAD:" + rel], cwd=econ.ROOT).decode()
+            raw = subprocess.check_output(["git", "show", S2_REVISION + ":" + rel], cwd=econ.ROOT).decode()
             return [json.loads(x) for x in econ.EXPORT.split(raw)[1:]]
         with patch.object(econ, "exports", side_effect=old_exports), patch.object(econ.os.path, "exists", return_value=False):
             errors = []
@@ -40,7 +41,7 @@ class EconomyHotfixTests(unittest.TestCase):
 
     def test_historical_wagers(self):
         def old_table(rel):
-            raw = subprocess.check_output(["git", "show", "HEAD:data/Wardogs/Content/" + rel], cwd=econ.ROOT).decode()
+            raw = subprocess.check_output(["git", "show", S2_REVISION + ":data/Wardogs/Content/" + rel], cwd=econ.ROOT).decode()
             return json.loads(econ.EXPORT.split(raw)[1])["Rows"]
         with patch.object(econ, "table", side_effect=old_table):
             errors = []

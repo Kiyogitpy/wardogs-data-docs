@@ -1,6 +1,6 @@
 {
  "meta": {
-  "source_data_tree": "d9523b6a5ffa9476ee82f82e17c008ba89d550be+dirty",
+  "source_data_tree": "592912092880ffb3e02a5a8e9f5e4b6e79bc8116",
   "source_data_tree_note": "SHA is the HEAD:data baseline; +dirty means data/ has staged, unstaged, or untracked changes and is not an identity of the current preview inputs.",
   "generator": "python _tools/infantry_tables.py --json",
   "encoding": "Zone lists follow hit_locations order. zone_multiplier {row: R}: B[z] = bone_rows.Universal[z] × bone_rows[R][z] (R null: Universal alone); zone_multiplier null: B[z] = 1. A factor {k} gives factor[z] = k × B[z]; {zones} lists the 12 factors. Damage = S × factor[z] (× the falloff curve at the distance, keys in metres). Armor {k} multiplies the unarmored factor on covered direct-hit locations, or every radial location with a retained tag; {zones} gives those factors. entries are the entries with a factor other than 1 on every hit location, zone_entries the extra ones per hit location. A file reference is [index into meta.files, field] or an index. A source's doc is a key of meta.docs and a direct case's case a key of meta.cases. A direct hit's source context is source_context, weapon_tag, caliber, Meta.Damage.DamageType.Projectile and, when has_arming_delay, Kinetic.Impact.ExplosiveBlunt (§7.6); a blast hit's context is radial.source_context plus the ring's radius tag. Blast armor tags are evaluated individually; combined equipment needs joint evaluation. Numbers are rounded to 6 significant digits.",

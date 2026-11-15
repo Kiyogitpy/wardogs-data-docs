@@ -64,22 +64,24 @@ The three passive missions (Earn Cash, Earn Role XP and Time Played) have five t
 
 A wager is a goal a player takes on with a stake of cash. The stake is between 2,500 and 100,000 cash, and a single payout is capped at 5,000,000 cash ([Wagers](../progression-and-economy/wagers.md)).
 
+These are four examples from the current 11 stored actions. The full list and saved restrictions are in [current wager actions](../progression-and-economy/wagers.md#current-actions); offering and settlement behavior remain unverified.
+
 | Wager | Count range (default) | Odds at the lowest count | Odds at the highest count |
 |---|---|---:|---:|
-| Get Kills | 1 to 25 (1) | 1.001 | 1.2004 |
+| Get Kills | 1 to 50 (1) | 1.001 | 1.5018 |
 | Dropoff People | 1 to 20 (1) | 1.001 | 1.0771 |
-| Revive Teammates | 1 to 50 (5) | 1.001 | 1.2498 |
+| Revive Teammates | 1 to 75 (5) | 1.001 | 1.4147 |
 | Destroy Occupied Vehicles | 1 to 20 (1) | 1.001 | 1.1479 |
 
-Each action has a 24-hour (86,400 s) cooldown, but it is not known whether the cooldown is per player, per wager or per match ([Wagers](../progression-and-economy/wagers.md#how-it-works)).
+Each action stores a 24-hour (86,400 s) cooldown, but its runtime scope is not established ([current actions](../progression-and-economy/wagers.md#current-actions)).
 
-The slip labels its return as the stake times the total odds, with a cap of 5,000,000 cash, but the exact settlement formula is not read from the game, and settlement runs on the server. So this guide gives no expected return ([Wagers](../progression-and-economy/wagers.md#payout-and-settlement)).
+The stored payout cap is 5,000,000 cash, but the effective settlement formula is not established. This guide therefore gives no expected return ([payout limits and unknowns](../progression-and-economy/wagers.md#payout-limits-and-unknowns)).
 
 ### Tips that follow from the numbers
 
-- Count is a weak lever for odds. Kills go from 1.001 at one to three kills to 1.2004 at 25 kills, so going from 3 kills to 25 raises the odds by about 0.2 ([Wagers](../progression-and-economy/wagers.md#odds)).
-- Conditions raise odds, and each one is an extra rule on the wager. "Deathwish" multiplies odds by 10.0, "Time limit" by 4.0 and "No vehicles" by 3.0, while "With a $20k loadout" gives 1.05 ([Wagers](../progression-and-economy/wagers.md#conditions)).
-- The server settles the payout, so it is not known whether two conditions on one wager multiply together, so do not stack them expecting the product ([Wagers](../progression-and-economy/wagers.md#conditions)).
+- The stored kill table rises from 1.001 at one to three kills to 1.5018 at 50 kills. That is about 0.501 more in the stored odds figure; it is not an expected-return calculation ([current actions](../progression-and-economy/wagers.md#current-actions)).
+- Stored condition odds include Deathwish 10.0, Time limit 4.0 and No vehicles 3.0. Current categories are unknown, and absent action restrictions do not establish universal applicability ([current conditions](../progression-and-economy/wagers.md#current-conditions)).
+- The payout formula and how multiple conditions combine remain unverified. Do not treat their product as a promised payout ([payout limits and unknowns](../progression-and-economy/wagers.md#payout-limits-and-unknowns)).
 
 ## The Gold Exchange
 

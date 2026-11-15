@@ -17,7 +17,7 @@ generated data behind the site's tables and interactive tools.
 - Weapon stats, damage calculations, penetration, spread and recoil.
 - Vehicle stats, damage routing, hitboxes and collision viewers.
 - Equipment, attachments, building, progression and the economy.
-- Game modes, maps and Season 1 to Season 2 comparisons.
+- Game modes, maps and separate Season 1→2 and Season 2→3 comparisons.
 - Source asset paths and evidence notes for checking where a value came from.
 
 The wiki explains the mechanics. The reference pages go into the underlying
@@ -85,8 +85,11 @@ source objects. Ambiguous names remain unchanged.
 
 ## Documented build
 
-This branch is updating the stored exports to CL533731 / hotfix533689. The
-refresh is a local preview: extraction and generator checks have not all passed.
+The stored exports and regenerated core tables use CL533731 / hotfix533689.
+The snapshot is partial: three UI packages fail parsing, and economy categories
+and water-field meanings remain unresolved. The strict full-extraction gate has
+not passed. The [S2→S3 comparison](season-3-changes/all-changes.md) shows the
+saved-export differences separately from the historical S1→S2 comparison.
 See the [hotfix evidence and remaining work](docs/evidence/hotfix-cl533731.md).
 
 | Attribute | Value |
@@ -95,9 +98,9 @@ See the [hotfix evidence and remaining work](docs/evidence/hotfix-cl533731.md).
 | Developer / publisher | Bulkhead / Team17 |
 | Platform | PC, Steam AppID `1867240` |
 | Engine | Unreal Engine 5.7 |
-| Asset export candidate | `++Wardogs+Live-CL-533731+hotfix533689` |
+| Current asset snapshot | `++Wardogs+Live-CL-533731+hotfix533689` |
 | Earlier native analysis and baseline | `++Wardogs+Live-CL-516586` (unless a page identifies another build) |
-| Season | Season 02 |
+| Season | S3 / 0.3 asset snapshot; historical native findings retain their own build scope |
 
 Native formulas retain their individual evidence and build limits; this asset
 refresh does not establish their compatibility with CL533731. A stored asset

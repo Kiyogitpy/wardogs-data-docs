@@ -417,7 +417,7 @@ Four SMGs have cubic curves: the MP5 (WEPN_028), the AMP-9 (MP9), the PP-19 Vity
 
 ## 6. Armor on every hit location
 
-Sections 1 to 4 evaluate armor at Torso.Upper (vests) and Head (helmets). The armor rule keys on the hit location. An armor item applies only where its `CoveredHitLocations` lists that location, and any other armor is removed from the calculation. For FMJ the damage factor is 1 minus R/100, where R is the item's reduction. The M4 shows the effect: a Torso.Middle hit into a Heavy vest takes 13.6, not the 27.2 unarmored, and a Neck hit into a Heavy helmet takes 24.7, not 49.4.
+Sections 1 to 4 evaluate armor at Torso.Upper (vests) and Head (helmets). The armor rule keys on the hit location. An armor item applies only where its `CoveredHitLocations` lists that location, and any other armor is removed from the calculation. For FMJ the damage factor is 1 minus R/100, where R is the item's reduction. With the current stored inputs, the documented model gives M4 Torso.Middle damage of 14.0 into a Heavy vest versus 28.0 unarmored, and Neck damage of 24.7 into a Heavy helmet versus 49.4 unarmored. These are calculations under the documented model, whose native build applicability remains qualified above.
 
 ### Coverage
 

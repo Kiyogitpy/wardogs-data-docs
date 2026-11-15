@@ -13,6 +13,7 @@ class Node {
   appendChild(child) { this.children.push(child); return child; }
   setAttribute(name, value) { this.attrs[name] = value; if (name === "href") this.href = value; }
   addEventListener() {}
+  remove() {}
 }
 const document = {
   readyState: "loading", addEventListener() {},
@@ -50,14 +51,23 @@ for (const file of paths) {
 }
 for (const file of ["sdk/raw/WDGame_classes.hpp", "data/Wardogs/Config/DefaultGame.ini"])
   assert.equal(infantry.pathNode(file).children[0].tagName, "CODE");
-const season = load("season-diff", "globalThis.assetPathNode = assetPathNode;");
+const season = load("season-diff", "globalThis.assetPathNode = assetPathNode; globalThis.changesTable = changesTable; globalThis.valueCell = valueCell; globalThis.changeCell = changeCell;");
+const s2Revision = "8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b";
+const s2Paths = new Set(execFileSync("git", ["ls-tree", "-r", "--name-only", "-z", s2Revision, "data"],
+  { cwd: root, encoding: "utf8", maxBuffer: 8 * 1024 * 1024 }).split("\0"));
 let linked = 0, removed = 0;
 for (const file of fs.readdirSync(path.join(root, "assets/data/season-diff"))) {
   const data = JSON.parse(fs.readFileSync(path.join(root, "assets/data/season-diff", file), "utf8"));
   for (const asset of data.assets || []) {
-    const node = season.assetPathNode(asset);
+    const node = season.assetPathNode(asset, s2Revision);
     if (asset.status === "removed") { assert.equal(node.tagName, "CODE"); removed++; }
-    else { checkLink(node, "data/" + asset.path); linked++; }
+    else {
+      const target = "data/" + asset.path;
+      assert.equal(node.tagName, "A");
+      assert.equal(node.href, BLOB.replace("/main/", "/" + s2Revision + "/") + target.split("/").map(encodeURIComponent).join("/"));
+      assert.ok(s2Paths.has(target), "Missing historical S2 target: " + target);
+      linked++;
+    }
     assert.equal(node.textContent, asset.path);
   }
 }
@@ -66,4 +76,30 @@ for (const asset of [
   { status: "modified", path: "sdk/raw/WDGame_classes.hpp" }
 ]) assert.equal(season.assetPathNode(asset).tagName, "CODE");
 assert.ok(paths.size > 0 && linked > 0 && removed > 0);
-console.log(`source links: ${paths.size} infantry JSON paths, ${linked} current season paths; ${removed} removed paths kept unlinked`);
+for (const labels of [["Season 1", "Season 2"], ["Season 2", "Season 3"]]) {
+  const table = season.changesTable([{path: "Amount", op: "changed", before: 13.6, after: 14}], ...labels);
+  const headers = table.children[0].children[0].children[0].children[0].children.map(n => n.textContent);
+  assert.deepEqual(headers, ["Property", ...labels, "Change"]);
+}
+let currentLinked = 0;
+for (const file of fs.readdirSync(path.join(root, "assets/data/season3-diff"))) {
+  if (!file.endsWith(".json")) continue;
+  const data = JSON.parse(fs.readFileSync(path.join(root, "assets/data/season3-diff", file), "utf8"));
+  for (const asset of data.assets || []) {
+    const node = season.assetPathNode(asset);
+    if (asset.status === "removed") assert.equal(node.tagName, "CODE");
+    else { checkLink(node, "data/" + asset.path); currentLinked++; }
+  }
+}
+assert.ok(currentLinked > 0);
+const exact = season.valueCell(9007199254740992, false, "9007199254740993");
+assert.equal(exact.children[0].textContent, "9007199254740993");
+const nested = season.changesTable([{path: "Container", op: "added", after: {n: 9007199254740992, zero: 0},
+  after_literal: '{"n":9007199254740993,"zero":-0.0}'}], "Season 2", "Season 3");
+const nestedValue = nested.children[0].children[0].children[1].children[0].children[0].children[2].children[0];
+assert.equal(nestedValue.textContent, '{"n":9007199254740993,"zero":-0.0}');
+const change = season.changeCell({before: 1, after: 1, before_type: "integer", after_type: "decimal"});
+assert.equal(change.children[0].textContent, "integer → decimal");
+const source = season.valueCell({$saved_export: {side: "s2", file: "Wardogs/Example.json", type: "array", count: 2000, export: ["Example", 1], pointer: "/Rows"}}, false);
+assert.ok(source.children[1].href.includes("/" + s2Revision + "/data/Wardogs/Example.json"));
+console.log(`source links: ${paths.size} current infantry, ${linked} pinned S2, ${currentLinked} current S3; both season headers, exact literals and source references pass`);

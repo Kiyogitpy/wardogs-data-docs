@@ -1,4 +1,4 @@
-// Season 1 -> Season 2 change browser and landing-page totals.
+// Season comparison browser and landing-page totals.
 // Data: <base>index.json and one or more per-area files (see _tools/season_diff.py).
 // Hooks: [data-sd-totals] renders the totals; [data-sd-browser] renders the full browser.
 (function () {
@@ -42,6 +42,7 @@
   // ---------- landing totals ----------
   function renderTotals(root) {
     var base = root.getAttribute('data-sd-base');
+    var snapshot = root.hasAttribute('data-sd-snapshot');
     getJSON(base + 'index.json').then(function (idx) {
       var t = idx.totals || {};
       var tiles = [
@@ -53,6 +54,12 @@
         ['removed_values', 'Values in removed assets'],
         ['noise_only_assets', 'Noise-only assets']
       ];
+      if (snapshot) tiles = [
+        ['assets_modified', 'Changed exports'],
+        ['assets_added', 'Only in S3 snapshot'],
+        ['assets_removed', 'Only in S2 snapshot'],
+        ['property_changes', 'Stored-field differences']
+      ];
       var grid = h('dl', { class: 'sd-tiles' });
       tiles.forEach(function (x) {
         grid.appendChild(h('div', { class: 'sd-tile' }, [
@@ -63,7 +70,8 @@
       var from = idx.from || {}, to = idx.to || {};
       var meta = (from.label || 'Season 1') + ' → ' + (to.label || 'Season 2') +
         (to.build ? ', build ' + to.build : '') + (to.date ? ', ' + to.date : '');
-      root.replaceChildren(h('p', { class: 'sd-meta', text: meta }), grid, h('p', { class: 'sd-note', text:
+      root.replaceChildren(h('p', { class: 'sd-meta', text: meta }), grid, h('p', { class: 'sd-note', text: snapshot ?
+        'These are stored-export differences. A file present in only one snapshot is not proof of an in-game addition or removal. Internal field-label differences are included.' :
         'Property changes counts the differences inside assets that exist in both seasons. ' +
         'Values in removed assets are the properties of assets deleted in Season 2, counted separately.' }));
     }).catch(function (e) {
@@ -109,10 +117,21 @@
     return td;
   }
 
-  function valueCell(v, missing) {
+  function valueCell(v, missing, literal) {
     var td = h('td', { class: 'sd-val' });
     if (missing) { td.appendChild(h('span', { class: 'sd-none', text: '—', 'aria-label': 'none' })); return td; }
-    var s = strVal(v);
+    if (v && v.$saved_export) {
+      var ref = v.$saved_export;
+      var revision = ref.side === 's2' ? '8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b' : 'ffa9ab68af7366650c23a77ea5574f7a742ee495';
+      td.appendChild(h('span', { text: ref.type + ', ' + fmtNum(ref.count) + ' entries. ' }));
+      td.appendChild(h('a', {
+        text: 'View pinned ' + (ref.side === 's2' ? 'S2' : 'S3') + ' source',
+        href: 'https://github.com/Kiyogitpy/wardogs-data-docs/blob/' + revision + '/data/' + ref.file.split('/').map(encodeURIComponent).join('/'),
+        title: ref.export[0] + ' #' + ref.export[1] + ': ' + ref.pointer
+      }));
+      return td;
+    }
+    var s = literal != null ? literal : strVal(v);
     var code = h('code', { class: typeof v === 'string' ? 'sd-str' : null });
     if (s.length > CLIP) {
       var short = s.slice(0, CLIP);
@@ -141,6 +160,12 @@
       td.appendChild(h('span', { class: 'sd-tag', text: 'reordered' }));
       td.appendChild(h('div', { class: 'sd-seq-note', text: fmtNum(seqMoved(c)) + ' of ' + fmtNum((c.after || []).length) + ' moved' }));
     }
+    else if (c.before_type && c.after_type && c.before_type !== c.after_type) {
+      td.appendChild(h('span', { class: 'sd-tag', text: c.before_type + ' → ' + c.after_type }));
+    }
+    else if (c.before_literal != null || c.after_literal != null) {
+      td.appendChild(h('span', { class: 'sd-tag', text: 'exact stored values shown' }));
+    }
     else if (isNum(c.before) && isNum(c.after)) {
       var d = c.after - c.before;
       var tone = d > 0 ? 'is-up' : d < 0 ? 'is-down' : '';
@@ -159,13 +184,13 @@
     return td;
   }
 
-  function changesTable(changes) {
+  function changesTable(changes, fromLabel, toLabel) {
     var tbody = h('tbody');
     var table = h('table', { class: 'sd-table' }, [
       h('thead', null, [h('tr', null, [
         h('th', { scope: 'col', text: 'Property' }),
-        h('th', { scope: 'col', text: 'Season 1' }),
-        h('th', { scope: 'col', text: 'Season 2' }),
+        h('th', { scope: 'col', text: fromLabel }),
+        h('th', { scope: 'col', text: toLabel }),
         h('th', { scope: 'col', text: 'Change' })
       ])]),
       tbody
@@ -190,8 +215,8 @@
         var seq = c.op === 'resequenced';
         frag.appendChild(h('tr', null, [
           h('th', { scope: 'row', class: 'sd-prop' }, [h('code', { text: path })]),
-          seq ? seqCell(c.before || []) : valueCell(c.before, c.op === 'added'),
-          seq ? seqCell(c.after || []) : valueCell(c.after, c.op === 'removed'),
+          seq ? seqCell(c.before || []) : valueCell(c.before, c.op === 'added', c.before_literal),
+          seq ? seqCell(c.after || []) : valueCell(c.after, c.op === 'removed', c.after_literal),
           changeCell(c)
         ]));
       }
@@ -207,11 +232,11 @@
 
   // Current season JSON targets are checked against Git by generator_source_links_check.js.
   // Removed assets and local-only/non-JSON exports must not get source links.
-  function assetPathNode(a) {
+  function assetPathNode(a, revision) {
     var published = a.status !== 'removed' && /^(?:Wardogs|Engine)\/.+\.json$/.test(a.path);
     return h(published ? 'a' : 'code', {
       class: 'sd-path', text: a.path,
-      href: published ? 'https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/' +
+      href: published ? 'https://github.com/Kiyogitpy/wardogs-data-docs/blob/' + (revision || 'main') + '/data/' +
         a.path.split('/').map(encodeURIComponent).join('/') : null
     });
   }
@@ -219,6 +244,7 @@
   // ---------- browser ----------
   function renderBrowser(root) {
     var base = root.getAttribute('data-sd-base');
+    var snapshot = root.hasAttribute('data-sd-snapshot');
     var idx = null;
     var state = { area: '', q: '', st: STATUSES.slice(), noise: true };
     var areaAssets = {};   // id -> assets array
@@ -227,6 +253,11 @@
     var filtered = [], rendered = 0, token = 0;
 
     var els = {};
+    function statusLabel(status) {
+      if (snapshot && status === 'added') return 'only in S3 snapshot';
+      if (snapshot && status === 'removed') return 'only in S2 snapshot';
+      return status;
+    }
     function build() {
       els.area = h('select', { id: 'sd-area' });
       idx.areas.forEach(function (a) {
@@ -238,7 +269,7 @@
       els.chips = h('div', { class: 'sd-chips', role: 'group', 'aria-label': 'Status' });
       els.chipBtn = {};
       STATUSES.forEach(function (s) {
-        var b = h('button', { type: 'button', class: 'sd-chip sd-s-' + s, 'aria-pressed': 'true', text: s });
+        var b = h('button', { type: 'button', class: 'sd-chip sd-s-' + s, 'aria-pressed': 'true', text: statusLabel(s) });
         b.addEventListener('click', function () {
           var i = state.st.indexOf(s);
           if (i >= 0) state.st.splice(i, 1); else state.st.push(s);
@@ -247,6 +278,7 @@
         els.chipBtn[s] = b; els.chips.appendChild(b);
       });
       els.noise = h('button', { type: 'button', class: 'sd-toggle', 'aria-pressed': 'true' }, ['Hide noise-only assets']);
+      els.noise.hidden = snapshot;
       els.noise.addEventListener('click', function () { state.noise = !state.noise; refresh(true); });
       els.summary = h('p', { class: 'sd-summary', role: 'status', 'aria-live': 'polite' });
       els.list = h('div', { class: 'sd-list' });
@@ -278,7 +310,7 @@
 
     function parseHash() {
       var p = new URLSearchParams(location.hash.replace(/^#/, ''));
-      var a = p.get('area');
+      var a = p.get('area') || root.getAttribute('data-sd-area');
       var ids = idx.areas.map(function (x) { return x.id; });
       state.area = ids.indexOf(a) >= 0 ? a : (ids.indexOf(state.area) >= 0 ? state.area : ids[0]);
       state.q = p.get('q') || '';
@@ -308,7 +340,16 @@
       var files = Array.isArray(a.file) ? a.file : [a.file];
       return Promise.all(files.map(function (f) { return getJSON(base + f); })).then(function (parts) {
         var all = [];
-        parts.forEach(function (p) { (p.assets || []).forEach(function (x) { all.push(x); }); });
+        parts.forEach(function (p) { (p.assets || []).forEach(function (x) {
+          if (x.change_exports) (x.changes || []).forEach(function (c) {
+            var match = /^(\d+)::/.exec(c.path);
+            if (match) {
+              var identity = x.change_exports[Number(match[1])];
+              c.path = identity[0] + ' #' + identity[1] + '::' + c.path.slice(match[0].length);
+            }
+          });
+          all.push(x);
+        }); });
         areaAssets[id] = all;
         return all;
       });
@@ -326,7 +367,7 @@
       var r = rowHay.get(a);
       if (!r) {
         r = (a.changes || []).map(function (c) {
-          var v = c.op === 'resequenced' ? (c.before || []).join(' ') + ' ' + (c.after || []).join(' ') : strVal(c.before) + '\n' + strVal(c.after);
+          var v = c.op === 'resequenced' ? (c.before || []).join(' ') + ' ' + (c.after || []).join(' ') : strVal(c.before) + '\n' + strVal(c.after) + '\n' + (c.before_literal || '') + '\n' + (c.after_literal || '');
           return (c.path + '\n' + v).toLowerCase();
         });
         rowHay.set(a, r);
@@ -401,15 +442,15 @@
       var det = h('details', { class: 'sd-asset sd-s-' + a.status });
       var sum = h('summary', null, [
         h('span', { class: 'sd-name', text: a.name }),
-        h('span', { class: 'sd-badge sd-s-' + a.status, text: a.status }),
+        h('span', { class: 'sd-badge sd-s-' + a.status, text: statusLabel(a.status) }),
         a.paired_by === 'inferred' ? h('span', { class: 'sd-badge sd-inferred', title: 'Matched to its Season 1 copy by content, not by a clear identifier', text: 'inferred pairing' }) : null,
         a.type ? h('span', { class: 'sd-type', text: a.type }) : null,
-        h('span', { class: 'sd-count', text: a.status === 'added' ? (a.exports != null ? fmtNum(a.exports) + ' exports' : '') : a.status === 'removed' ? 'removed in Season 2' : n ? fmtNum(n) + (n === 1 ? ' change' : ' changes') + (rows ? ' match' : '') : 'no property changes' })
+        h('span', { class: 'sd-count', text: a.status === 'added' ? (a.exports != null ? fmtNum(a.exports) + ' exports' : '') : a.status === 'removed' ? (snapshot ? 'not in S3 snapshot' : 'removed in Season 2') : n ? fmtNum(n) + (n === 1 ? ' change' : ' changes') + (rows ? ' match' : '') : 'no property changes' })
       ]);
       var meta = h('div', { class: 'sd-meta-row' });
-      meta.appendChild(assetPathNode(a));
+      meta.appendChild(assetPathNode(a, snapshot ? 'main' : '8d0d6a9a0a3a0a0170e7ff3929202a92a5b9c12b'));
       if (a.status === 'removed') {
-        meta.appendChild(h('span', { class: 'sd-removed-note', text: 'removed in Season 2' }));
+        meta.appendChild(h('span', { class: 'sd-removed-note', text: snapshot ? 'Snapshot absence does not establish game removal.' : 'removed in Season 2' }));
       }
       if (a.old_path) {
         var how = { 'same-name': 'matched by file name', 'git-rename': 'detected as a rename', inferred: 'matched by content' }[a.paired_by];
@@ -428,9 +469,10 @@
         if (!det.open || done) return;
         done = true;
         if (a.status === 'added') {
-          body.appendChild(h('p', { class: 'sd-note', text: 'New in Season 2' + (a.exports != null ? ' with ' + fmtNum(a.exports) + ' exports.' : '.') }));
+          body.appendChild(h('p', { class: 'sd-note', text: snapshot ? 'Present only in the S3 snapshot; activation and in-game availability are not established.' : 'New in Season 2' + (a.exports != null ? ' with ' + fmtNum(a.exports) + ' exports.' : '.') }));
+          if (snapshot && n) body.appendChild(changesTable(changes, idx.from.label, idx.to.label));
         } else if (n) {
-          body.appendChild(changesTable(changes));
+          body.appendChild(changesTable(changes, idx.from.label, idx.to.label));
         } else {
           body.appendChild(h('p', { class: 'sd-note', text: a.note ? 'No comparison available (see note above).' : a.status === 'moved' ? 'Content unchanged; the file only moved.' : 'No property changes beyond noise.' }));
         }

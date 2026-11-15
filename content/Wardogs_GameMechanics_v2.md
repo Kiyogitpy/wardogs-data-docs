@@ -154,7 +154,7 @@ The index asset [`DT_AmmoModifiers`](https://github.com/Kiyogitpy/wardogs-data-d
 
 ### 2f. Infantry Damage Modification Rules ([`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json), row `Meta.Damage.Infantry`)
 
-The current CL533731 row has 168 entries, including 68 serialized `None` entries with empty requirements and amount 0. These are data counts; current `EntryId`/`bEnabled` consumer semantics remain unproven. The table below lists the non-trivial unique rules. Values are percentage changes. Negative is a reduction.
+The current CL533731 row has 168 entries, including 68 serialized `None` entries with empty requirements and amount 0. These are data counts; current `EntryId`/`bEnabled` consumer semantics remain unproven. The grouped rule interpretation below is retained from CL516586; its “new” labels refer to Season 2. For current stored-field differences, use the [S2→S3 damage comparison](../season-3-changes/damage-combat-systems.md). Values are percentage changes under that historical interpretation. Negative is a reduction.
 
 | Category | Source | Target / hit | Change | Notes |
 |---|---|---|---|---|
@@ -191,7 +191,7 @@ The current CL533731 row has 168 entries, including 68 serialized `None` entries
 | PenetrationEffectiveness | 50Cal | Heavy / SuperHeavy | −10% / −12.5% and −10% / −20% | New in this update |
 | PenetrationEffectiveness | Bullet, Cannon, ExplosiveBlunt (hits Infantry) | Armor / Helmet | 0% | Custom operation |
 
-Two entries (8 and 9) use the `Friendly` alignment; the melee armor entry (144) has none. Entries run in category order, then by index ([DamagePipeline §5](../pipelines/Wardogs_DamagePipeline_v2.md#5-ordering)). Each delta is added to a running amount: `Percentage_Starting` deltas are taken from the starting amount, so they add; `Percentage_Ongoing` deltas from the running amount, so they multiply ([DamagePipeline §6](../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic)). The −75% and −50% shown for custom-operation rows are literals the evaluator ignores; the custom operation computes the change ([DamagePipeline §6](../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic), §7).
+In the historical CL516586 ordering, entries 8 and 9 use the `Friendly` alignment and the melee armor entry144 has none; those indices are not transferred to the 168-entry current source. The documented model orders by category and index ([DamagePipeline §5](../pipelines/Wardogs_DamagePipeline_v2.md#5-ordering)). Each delta is added to a running amount: `Percentage_Starting` deltas use the starting amount, while `Percentage_Ongoing` uses the running amount ([DamagePipeline §6](../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic)). Custom operations supply their computed change instead of the displayed literal. Current native operation/enable-field applicability remains unresolved.
 
 ### 2g. Armour and Helmet Rules ([`DT_GlobalDamage_ArmorData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_ArmorData.json))
 
@@ -201,7 +201,7 @@ Two entries (8 and 9) use the `Friendly` alignment; the melee armor entry (144) 
 | `Meta.Damage.Helmet.Ghillie` | 6 | Same pattern as the Ghillie armour row |
 | `Meta.Damage.Armor` | 9 | Bullet −60%, Explosive −85%, Melee −50% (Armor); Bullet from Sniper vs High arm class +28% (Armor, new); Bullet+Penetrate 0% (Penetration); Bullet+HollowPoint −30% (AmmoModifier); 7mmBuckshot −80% (AmmoModifier); target Ghillie −10000% (Armor) |
 | `Meta.Damage.Helmet` | 8 | Bullet −60%, Explosive −85% (Armor); Bullet from Sniper vs High arm class +28% (Armor, new); Bullet+HollowPoint −30%; Bullet+ArmorPiercing +30% (AmmoModifier); Bullet+Penetrate 0%; 7mmBuckshot −80% (AmmoModifier); target Ghillie −1000% (Armor) |
-| `Meta.Damage.Vehicle` (in [`DT_GlobalDamage_InfantryData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_InfantryData.json) family) | 10 | Mostly 0% or no-op; HollowPoint ±40%; Ricochet 0% |
+| Generic vehicle source ([`DT_GlobalDamage_VehicleData`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/GameMechanics/DamageSystem/DamageDataTables/DT_GlobalDamage_VehicleData.json)) | 0 rows | The current stored table is empty; the saved CL516586 source had one ten-entry `Meta.Damage.Vehicle` row. Per-vehicle tables remain separate. An empty generic table does not establish zero damage or its native selection behavior. |
 
 **Unclear:** the Ghillie rows set −100% on most sources, and the `Meta.Damage.Armor` row sets −10000% against the Ghillie tag. Whether this is intended as full immunity or a placeholder should be checked in game.
 

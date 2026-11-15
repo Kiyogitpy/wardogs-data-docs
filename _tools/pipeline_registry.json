@@ -1892,6 +1892,24 @@
    "notes": "Historical/current field selection, collision/missing rejection and source relocation controls."
   },
   {
+   "script": "season3_diff.py",
+   "class": "generator",
+   "tier": "manual",
+   "write": ["--write"],
+   "check": ["--check"],
+   "inputs": ["frozen public S2/S3 Git data trees", "both complete input manifests"],
+   "notes": "Literal source-bound S2 to S3 comparison; explicit paths/manifests required. See docs/SEASON3_UPDATE.md. Historical S1 to S2 output stays separate."
+  },
+  {
+   "script": "test_season3_diff.py",
+   "class": "checker",
+   "tier": "core",
+   "write": null,
+   "check": [],
+   "inputs": ["synthetic fixtures"],
+   "notes": "Exact typed values, ordered arrays, export identity, complete source manifests, compact source references and rejected malformed/missing/duplicated evidence."
+  },
+  {
    "script": "test_isolated_imports.py",
    "class": "checker",
    "tier": "core",
