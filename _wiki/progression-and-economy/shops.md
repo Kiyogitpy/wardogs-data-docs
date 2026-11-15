@@ -7,11 +7,13 @@ description: "Where to buy gear, weapons, vehicles and supply crates, what each 
 
 # Shops
 
+S3 changes the losing-faction comparison to the **first-place faction**, rather than the faction immediately ahead. Low-level catch-up discounts increase week by week per role; no fixed percentage is announced. These are announced gameplay rules, while the saved settings below and historical arithmetic remain separately scoped. See [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221).
+
 | Shops | |
 |---|---|
 | Shop kinds | Gear and utility shop, weapon shop, vehicle and garage shop, Gold Market |
 | Currency | Cash for most listings; Gold Bars for cosmetics |
-| Gates | Wardog or role level, and required items. Shop unlock levels are 0 or 1 and gate nothing |
+| Gates | Wardog or role level, and required items. Stored vendor unlock levels are 0 or 1; effective gating remains unverified |
 | Internal name | Vendor data tables (one per shop) |
 {: .wiki-infobox }
 
@@ -32,21 +34,19 @@ The weapon listings are on the weapon shop data page. Gear, medical items and ve
 ## How it works
 
 - **Price.** Each listing has one price. The vendor rows do not name a currency. The Season 2 unlock tree lists its costs in cash, so vendor prices are most likely cash, but the game does not state it outright.
-- **Price modifiers.** Each price is multiplied by every discount that applies. A discount is a percentage: 50% halves the price and 90% takes 10% off. The discounts in the game's economy settings are:
-  - Wardog level 8 or below: 50%.
-  - The losing faction, when it trails by 40 points: 80%. This condition is inferred from the setting's field names.
-  - A first purchase: 90%.
-  - The signature rifle of a faction is free (0%) for that faction: the setting pairs each rifle with a faction tag, and the faction setup names them Lonestar, Valkyra and Manticore. The game applies the 0% only when the buyer's own faction is the faction named in the setting; a buyer of another faction pays the normal price. See [Factions](../game-modes-and-maps/factions.md).
+- **Price modifiers.** The S3 settings store 90 for a tagged first purchase, 80 for a losing-faction modifier with a score difference of 40, and 0 for each faction's signature rifle. Under the earlier pricing model these correspond to 90%, 80% and 0% of the price. Current applicability and stacking still require a current pricing-consumer check.
+- **Vendor discount.** The current entry stores no multiplier. It does not establish either a 50% discount for players at level 8 or below or a 100% fallback. A first-purchase price of 45% cannot be derived from this snapshot.
 
-  Derived example: an AK74 (800 cash) bought as a first purchase by a Wardog level 8 player costs 360 (800 x 0.5 x 0.9), before any other discount.
-- **Refunds.** A refund pays 90% of the smaller of what was spent on the refunded items and the eligible purchase amount. It must be claimed within 20 score ticks, a window set in the economy settings.
-- **Gating.** Shops gate listings by Wardog level or role level and by required items. The unlock level field in the vendor table is 0 or 1 on every listing and gates nothing.
+- **Refunds.** The settings store a refund modifier of 0.9 and an eligibility window of 20 score ticks. Ammunition and magazine contexts are blocked. The effective refund calculation and duration of a score tick need current consumer evidence.
+- **Gating.** Shops gate listings by Wardog level or role level and by required items. The current vendor-variation output lists unlock levels of 0 or 1; those values alone do not prove that a listing has no gate.
 - **Required items.** Some listings need other items first. The game records these; the sample listings below show none.
-- **Buy limit.** Some listings have a lifetime buy limit. Where the game shows none, the listing has no limit.
+- **Buy limit.** Some listings have a lifetime buy limit. An omitted limit does not establish unlimited purchases; its effective default is unverified.
 - **Amount.** Each purchase is one stack of the listing's amount. Most listings buy one item.
-- **Hidden variations.** 343 of the 670 vendor variations are hidden from the shop panels, mostly ammunition and magazine variants. They are filtered out of the vendor lists, so the tables here show only the visible listings.
+- **Hidden variations.** 344 of the 671 vendor variations are hidden from the shop panels, mostly ammunition and magazine variants. They are filtered out of the vendor lists, so the tables here show only the visible listings.
 
 ## Numbers
+
+Prices changed in the [official S3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221): Basic parachute 500→1,250; Sport parachute 700→2,250; Wolf-110 [M2 Browning] 7,800→6,800; Kodiak [M249] 6,750→6,250; AH-6M [Miniguns] 12,000→10,480; Havoc 28,000→26,000 cash. These are announced purchase prices before applicable discounts, separate from role unlock costs.
 
 ### Gear
 
@@ -60,7 +60,8 @@ The weapon listings are on the weapon shop data page. Gear, medical items and ve
 | Field Backpack | 650 |
 | Operator Backpack | 800 |
 | Ruck Backpack | 1,600 |
-| Sport parachute | 700 |
+| Basic parachute | 1,250 |
+| Sport parachute | 2,250 |
 
 ### Utility and medical
 
@@ -85,18 +86,20 @@ The weapon listings are on the weapon shop data page. Gear, medical items and ve
 | FAL | 6,000 |
 | A-91, KH-2002 and Bushmaster M17S | 0 |
 
-Attachments, magazines and the rest of the weapon catalogue are on the weapon shop data page. The shop lists 0 for the three signature rifles. The economy settings pair them with factions, so each is free for its own faction (the game compares the buyer's faction with the faction named in the setting): Bushmaster M17S for Lonestar, A-91 for Valkyra and KH-2002 for Manticore.
+Attachments, magazines and the rest of the weapon catalogue are on the weapon shop data page. The shop lists 0 for the three signature rifles. The economy settings pair their zero modifiers with factions: Bushmaster M17S for Lonestar, A-91 for Valkyra and KH-2002 for Manticore. The effective faction restriction and final price need current consumer evidence.
 
 ### Vehicles and supply crates
 
 | Item | Price |
 |---|---|
 | MH-6 (helicopter) | 6,250 |
-| AH-6M [Miniguns] | 12,000 |
+| AH-6M [Miniguns] | 10,480 |
 | AH-6R [Rockets] | 18,800 |
 | Z20 Lakota (transport helicopter) | 7,400 |
 | Z20 Lakota, miniguns | 15,000 |
-| Havoc (attack helicopter) | 28,000 |
+| Havoc (attack helicopter) | 26,000 |
+| Wolf-110 [M2 Browning] | 6,800 |
+| Kodiak [M249] | 6,250 |
 | Small crate | 150 |
 | Large crate | 300 |
 | Small armored crate | 500 |
@@ -114,7 +117,7 @@ Some items are unlocked through a role's unlock tree rather than bought from a v
 - Some Medic items went up: a Medic magazine from 10,000 to 50,000 cash, and a Defibrillator from 50,000 to 110,000 cash.
 - Some items went down: a Medic magazine went from 50,000 to 15,000 cash, and a Medic weapon from 75,000 to 25,000 cash.
 
-The full tree is not in the sources, so this page does not list every unlock.
+The current economy output lists 411 unlock nodes across the seven trees. The examples above describe Season 2 changes; current requirements are in the [economy data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json).
 
 ## Tips that follow from the numbers
 

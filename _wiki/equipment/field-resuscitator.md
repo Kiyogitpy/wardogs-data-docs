@@ -16,7 +16,7 @@ description: "A single-use revive item that revives a downed teammate faster tha
 | Uses | Single use |
 | **Effect** | |
 | Revives | A downed teammate, to 10 HP |
-| Use time | 2.2 s animation; the revive is applied once, about 4 s in total (derived) |
+| Use time | Historical 2.2 s montage; separate 4 s interaction model (S3 consumer unresolved) |
 | Effects while using | Maximum movement speed halved |
 | **Availability** | |
 | Price | 425 cash (500 in Season 1) |
@@ -34,9 +34,9 @@ The shop describes the Field Resuscitator as a field revive item that revives te
 ## Effects
 
 - **Revive:** brings a downed teammate back to 10 HP. One revive is applied and the item is used up. On a player from the other faction, the revived player also gets a 60 s effect (see [Status Effects](../game-mechanics/status-effects.md)).
-- **Container:** the item holds 10 units, emptied at 1 unit every 4 s. The revive is applied once when the use finishes, so the use takes about 4 s (derived). The container formula would give 44 s if all 10 units were stepped through, but the game does not do that.
+- **Container:** the item holds 10 units, emptied at 1 unit every 4 s. The historical round 39 action trace applies one revive after a derived 4 s interaction, rather than stepping through all 10 units (which would give 44 s in that formula). This is a historical consumer model using the unchanged S3 container values.
 - **Movement:** maximum movement speed is halved while the item is in use.
-- **Bleeding:** the item does not stop bleeding. The game has no damage-over-time bleeding to cure.
+- **Bleeding:** No bleeding-cure effect is listed on this item. The cited CL516586-era search found the downed bleed-out timer, not a damage-over-time bleeding system; that negative search does not establish absence in S3.
 
 ### Medic skills
 
@@ -44,7 +44,7 @@ The Medic skill for base revive speed covers only the bare-hands revive, not thi
 
 ## Use and timing
 
-The use animation is 2.2 s, and the revive is applied at the end of it, so the total time is about 4 s (derived). The item can be used only on a teammate who is downed.
+The historical montage is about 2.2 s long. The four-second estimate instead comes from the round 39 container-action trace: `(0 / 1 + 1) × 4 s`, followed by one revive and consumption. It is not the montage length, and the current S3 action consumer has not been reverified. The historical action targets a downed player; its other-faction branch means this should not be read as a universal teammate-only restriction.
 
 ## Cost
 

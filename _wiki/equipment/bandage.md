@@ -34,12 +34,12 @@ The Bandage is the cheap, everyday heal. The shop describes it as healing a smal
 ## Effects
 
 - **Healing:** +35 HP per use, added to current health. The heal is applied once, when the use animation ends: about 5.2 s on yourself and 4.8 s on a teammate.
-- **Movement:** while a bandage is in use, maximum movement speed is halved. The same applies to the other medical items except the Enox.
-- **Bleeding:** the Bandage does not stop bleeding. The game has no damage-over-time bleeding to cure. The "bleed" in the game is the downed timer, described in [Downed and Revive](../game-mechanics/downed-and-revive.md).
+- **Movement:** while a bandage is in use, maximum movement speed is halved. The same stored movement effect is referenced by the First Aid Kit, Medical Bag, Adrenaline Pen and resuscitators; this does not include the Defibrillator.
+- **Bleeding:** No bleeding-cure effect is listed on this item. The cited CL516586-era search found the downed bleed-out timer, not a damage-over-time bleeding system; that negative search does not establish absence in S3.
 
 ### Medic skills
 
-The Medic skill "Self-healing speed" and "Teammate healing speed" are described as applying to all medical items. No number for them is known, and no game code reads them, so how much faster the Bandage heals is not known.
+The Medic skill "Self-healing speed" and "Teammate healing speed" are described as applying to all medical items. The historical round 39 search found no magnitude or consumer for these skills; their S3 effect on Bandage timing is unresolved.
 
 The "Item-switch speed (Medical Archetype)" skill makes switching to a medical item faster. Its equip speed multiplier is 1.2 at skill level 2 and 1.4 at level 4.
 
@@ -50,7 +50,7 @@ The "Item-switch speed (Medical Archetype)" skill makes switching to a medical i
 | On yourself | 5.2 s |
 | On a teammate | 4.8 s |
 
-The times are the length of each use animation. You must be alive. On yourself you must also be Injured, and a teammate must be Injured too. Starting a bandage use cancels sprint and tactical sprint. A bandage use and a First Aid Kit use block each other, so only one can run at a time.
+These times are the historical montage lengths reported in round 39, not measured S3 completion times. You must be alive. On yourself you must also be Injured, and a teammate must be Injured too. Starting a bandage use cancels sprint and tactical sprint. A bandage use and a First Aid Kit use block each other, so only one can run at a time.
 
 ## Cost
 

@@ -2,15 +2,17 @@
 title: "Weapon Skins"
 parent: "Progression & Economy"
 group: "Cosmetics"
-description: "Every weapon skin in Seasons 1 and 2, grouped by weapon, with its Gold Bar price and how it is unlocked, plus the faction logos."
+description: "Weapon skins listed in the current snapshot, including Seasons 1, 2 and 3, grouped by weapon, with its Gold Bar price and how it is unlocked, plus the faction logos."
 ---
 
 # Weapon Skins
 
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) announce S3 Gold Market availability for MAAWS Two-Tone Desert, Compound Bow Digital Wood, M1911 Chocolate Chip and FAL Chocolate Chip. The Defibrillator Black & Gold camo is limited-time. These announced offerings are distinct from the saved prices and rows below; the notes give no precise end date for the Defibrillator offer.
+
 | Weapon Skins | |
 |---|---|
 | Skin sets | Black and Gold, Digital Wood, Two-Tone Desert, Chocolate Chip |
-| Weapon skins | 18 rows across Seasons 1 and 2 (17 priced) |
+| Weapon skins | 22 rows across Seasons 1, 2 and 3 (21 priced) |
 | Faction logos | 3 weapon logos, not priced in the data |
 | Currency | Gold Bars, sold on the Gold Market |
 | Internal name | Skin tables for Season 1, Season 2 and faction logos ([`DT_Cosmetics_Season01_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season01_SkinsData/Content/Data/DT_Cosmetics_Season01_Skins.json), [`DT_Cosmetics_Season02_Skins`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season02_SkinsData/Content/Data/DT_Cosmetics_Season02_Skins.json), [`DT_Cosmetics_FactionLogo`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/FactionLogo_SkinsData/Content/Data/DT_Cosmetics_FactionLogo.json)) |
@@ -26,8 +28,12 @@ The table below lists each weapon skin once per set, sorted by weapon. A weapon 
 
 | Weapon | Skin set | Season | Price (Gold Bars) | How it unlocks |
 |---|---|---|---|---|
+| Compound Bow | Digital Wood | Season 3 | 10 | Gold Market |
+| FAL | Chocolate Chip | Season 3 | 10 | Gold Market |
+| M1911 | Chocolate Chip | Season 3 | 5 | Gold Market |
+| MAAWS | Two-Tone Desert | Season 3 | 15 | Gold Market |
 | A-91 | Two-Tone Desert | Season 1 | 5 | Gold Market |
-| AK74 | Black and Gold | Season 1 | Not sold | No Gold Market row. It can only come from a server grant, and which grants are made is not known |
+| AK74 | Black and Gold | Season 1 | Not sold | No Gold Market row. Its acquisition route is not established by this table |
 | AMP-9 | Two-Tone Desert | Season 1 | 10 | Gold Market |
 | AMR 50 | Two-Tone Desert | Season 1 | 15 | Gold Market |
 | Bushmaster M17S | Two-Tone Desert | Season 1 | 5 | Gold Market |
@@ -45,7 +51,7 @@ The table below lists each weapon skin once per set, sorted by weapon. A weapon 
 | SV98 | Digital Wood | Season 1 | 10 | Gold Market |
 | TCX-SPR | Chocolate Chip | Season 2 | 10 | Gold Market |
 
-The Gold Market prices are 17 weapon skins worth 160 Gold Bars in total.
+The Gold Market prices are 21 weapon skins worth 200 Gold Bars in total. Current listings do not establish live server availability.
 
 ## Faction logos
 
@@ -60,7 +66,7 @@ Each faction logo is a skin for one weapon, and each faction has one logo. The g
 ## Cost and unlocking
 
 - **Gold Market.** Every priced weapon skin is a Gold Market entry. A player spends Gold Bars to buy it. Gold Bars are covered in [Currencies](currencies.md).
-- **No level gate.** The game ties no weapon skin to a level. There is no season reward track, so skins are sold on the Gold Market, and server grants are the only other route. See [Season 1 Cosmetics](season-01-cosmetics.md).
+- **No level gate.** The game ties no weapon skin to a level. These cosmetic and market rows do not establish a level gate or exclude other acquisition routes. See [Season 1 Cosmetics](season-01-cosmetics.md).
 - **Look on other items.** The skin settings also set how each set looks on items that are not sold with it. Digital Wood has settings for 46 items and Chocolate Chip for 56. The game does not say whether a player can apply those looks to the other items.
 
 ## Season 2 changes
@@ -79,6 +85,9 @@ Each faction logo is a skin for one weapon, and each faction has one logo. The g
 - [AK74](../weapons/ak74.md), [A-91](../weapons/a-91.md), [GGX 17](../weapons/ggx-17.md), [M4](../weapons/m4.md), [M500](../weapons/m500.md), [SV98](../weapons/sv98.md)
 
 ## Sources
+
+- [Current Season 3 cosmetic rows](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Skins/Season03_SkinsData/Content/Data/DT_Cosmetics_Season03_Skins.json)
+- [Current Gold Market listings and prices](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/Collection/DT_GoldMarket.json)
 
 - [Skins](../../game-features/Wardogs_GameFeatures_Skins_v2.md)
 - [Season 1 cosmetic unlocks](../../content/Wardogs_Season01_CosmeticUnlocks_v1.md)

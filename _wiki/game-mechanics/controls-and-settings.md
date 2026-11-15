@@ -6,6 +6,25 @@ description: "Default keyboard and mouse controls grouped by movement, combat, v
 
 # Controls and Settings
 
+## Announced S3 controller and interface changes
+
+The [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) specify these controller bindings:
+
+| Context | Button | Action |
+|---|---|---|
+| Vehicle | A | Change seat |
+| Vehicle | Hold A | Move to driver seat |
+| Vehicle | B | Handbrake / pilot fire (moved from A) |
+| Reload | Hold X | Discard magazine and reload |
+| Downed | A | Call for help |
+| Downed | B | Damage log |
+| Downed | X | Give up |
+| Downed | Y | Bribe |
+
+World interactions use a single press; vehicle interactions still use Hold X. Squad invites and join requests queue separately, with **up to 5 each**. Helicopter passengers see height above ground above the minimap. The server browser separates Official and Community sections, supports community favorites and filters Limited servers.
+
+Global Illumination is available only on the Overkill preset, starts enabled there and can be toggled; it is hidden and off on other presets. A required preset restart delays application until restart. These are announced interface rules, separate from saved input/default records below.
+
 | Controls and Settings | |
 |---|---|
 | **Controls** | |
@@ -187,7 +206,7 @@ Evidence and exact remaining edges: [Round 93 sensitivity/ammo](https://github.c
 
 ### Field of view and view model
 
-The character's first-person camera is built with a field of view of 106, while the Field of view setting below defaults to 90. The game copies the setting onto the camera when it applies the player's field of view, so the 90 (or whatever the slider says) is the normal view you see and the 106 is only the asset's starting value (derived from the camera code, not checked on screen). The Third-person field of view setting is used the same way in vehicles.
+The character's first-person camera is built with a field of view of 106, while the Field of view setting below defaults to 90. The historical camera analysis copied the setting onto the camera. The current setting still stores default 90, minimum 60 and maximum 120, but S3 application order and the effective view have not been re-established. The Third-person field of view setting is used the same way in vehicles.
 
 | Setting | Default | Range or options |
 |---|---|---|

@@ -6,9 +6,11 @@ description: "Compares the six roles side by side: what each one does, its signa
 
 # Choosing a Role
 
+S3 shared unlocks reduce the need to switch roles just to raise Wardog levels: armor, backpacks, tactical vests and parachutes can be earned on every role track. Assault gets armor earlier, Medic tactical vests, Support backpacks and Recon AP ammunition. XP catch-up and vendor discounts grow week by week per role for low-level players; no fixed percentage is specified. See the [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) and the current unlock tables on each role page.
+
 Wardogs has six roles: Assault, Medic, Recon, Support, Driver and Pilot. A role decides three things. It decides which gear, vehicles and attachments you can unlock, because each role has its own unlock tree. It decides which skills you can raise, because each role has its own skill set. And it decides which events earn that role's XP. The role pages list the events that fit each role's work.
 
-All six roles share one mastery XP curve. The XP needed to reach level 10 is 25,000 in every role. So the choice of role changes what you unlock and which events count, not the XP each level costs.
+All six roles share one mastery XP curve. The current definitions store 36,750 XP at level 10 for every role; the consumer interpretation as a cumulative threshold remains unverified. So the choice of role changes what you unlock and which events count, not the XP each level costs.
 
 ## Side by side
 
@@ -18,10 +20,10 @@ The first unlock is the lowest role level in the role's unlock tree. The most ex
 |---|---|---|---|---|---|
 | [Assault](../progression-and-economy/assault.md) | Assault rifles, SMGs and movement (17 skills) | Galil, M4, FAL | Level 2, 5,000 cash (Birdcage Flash Hider) | FAL, 250,000 cash at level 35 | Kills, zones and artillery. A default kill pays 250 cash and 250 Role XP. |
 | [Medic](../progression-and-economy/medic.md) | Medical items and reviving teammates (4 skills with numbers) | Defibrillator, Medkit, Resuscitator | Level 1, 7,500 cash (Eclipse Flash Hider) | Super-45, 200,000 cash at level 35 | Reviving and healing. A bare-hands revive pays 1,500 cash. |
-| [Recon](../progression-and-economy/recon.md) | Sniper rifles, marksman rifles and spotting (17 skills) | SVD, SV98, AMR 50, Claymore | Level 2, 7,500 cash (Monocular) | AMR 50, 200,000 cash at level 35 | Spotting a target pays 15 to 275. Destroying a spotted target pays 50 to 500. |
+| [Recon](../progression-and-economy/recon.md) | Sniper rifles, marksman rifles and spotting (17 skills) | SVD, SV98, AMR 50, Claymore | Level 2, 7,500 cash (Monocular) | AMR 50, 200,000 cash at level 41 | Spotting a target pays 15 to 275. Destroying a spotted target pays 50 to 500. |
 | [Support](../progression-and-economy/support.md) | LMGs, shotguns and building (12 skills) | M249 SAW, MAAWS, MGL-40 | Level 1, 10,000 cash (Light repair drill) | MGL-40, 250,000 cash at level 35 | Supply crates, forward operating bases and buildables. Destroying a Drill Rig pays 2,750 cash and 700 Role XP. |
-| [Driver](../progression-and-economy/driver.md) | Ground vehicles and their mounted machine guns (6 skills) | Humvee, T-72B3, L2A6 | Level 3, 35,000 cash (Ural) | L2A6, 500,000 cash at level 35 | Ground vehicles destroyed. A heavy tank pays 5,000, an artillery tank 6,000, and a Humvee or Kodiak 500. |
-| [Pilot](../progression-and-economy/pilot.md) | Air vehicles and their mounted machine guns (6 skills) | Z20 Lakota, AH-6R [Rockets], Havoc | Level 2, 10,000 cash (Armored small supply crate) | Havoc, 650,000 cash at level 35 | Air vehicles destroyed. An MH-6 pays 800 and a Havoc 6,000. |
+| [Driver](../progression-and-economy/driver.md) | Ground vehicles and their mounted machine guns (6 skills) | Humvee, T-72B3, L2A6 | Level 2, 10,000 cash (Armored small supply crate) | L2A6, 750,000 cash at level 50 | Ground vehicles destroyed. A heavy tank pays 5,000, an artillery tank 6,000, and a Humvee or Kodiak 500. |
+| [Pilot](../progression-and-economy/pilot.md) | Air vehicles and their mounted machine guns (6 skills) | Z20 Lakota, AH-6R [Rockets], Havoc | Level 2, 10,000 cash (Armored small supply crate) | Havoc, 750,000 cash at level 35 | Air vehicles destroyed. An MH-6 pays 800 and a Havoc 6,000. |
 
 ## Assault
 
@@ -43,8 +45,8 @@ The first unlock is the lowest role level in the role's unlock tree. The most ex
 
 - Good at long-range fights with sniper and marksman rifles. Its 17 skills tune aiming, recoil and switching for those rifles.
 - Spotting skills make enemies take longer to spot the player, and keep enemies the player spots marked for longer.
-- Key unlocks: SVD at level 12 for 50,000 cash, SV98 at level 18 for 100,000 cash, and AMR 50 at level 35 for 200,000 cash.
-- Recon has the largest unlock tree: 58 items and vehicles, with 2,445,000 cash in total.
+- Key unlocks: SVD at level 12 for 50,000 cash, SV98 at level 18 for 100,000 cash, and AMR 50 at level 41 for 200,000 cash.
+- Recon has the largest role unlock tree: 81 saved nodes, with 3,940,000 cash in listed costs.
 - Spotting a target pays 15 to 275, scaled by the spot's contribution. A default kill pays 250.
 
 ## Support
@@ -57,23 +59,23 @@ The first unlock is the lowest role level in the role's unlock tree. The most ex
 ## Driver
 
 - Good at driving ground vehicles and using their mounted machine guns. Its six skills tune the mounted gun, fuel use and impact damage. They also make the supply crates it drops tougher.
-- Key unlocks: Ural at level 3 for 35,000 cash, Humvee at level 14 for 75,000 cash, T-72B3 at level 20 for 250,000 cash, and L2A6 at level 35 for 500,000 cash.
+- Key unlocks: Ural at level 3 for 35,000 cash, Humvee at level 15 for 75,000 cash, T-72B3 at level 35 for 250,000 cash, and L2A6 at level 50 for 750,000 cash.
 - A heavy tank pays 5,000 when destroyed, an artillery tank 6,000, and a Humvee or Kodiak 500 each.
 - A passenger delivered pays 250.
 
 ## Pilot
 
 - Good at flying air vehicles and using their mounted machine guns. Its six skills are the air-vehicle version of the Driver skills.
-- Key unlocks: Z20 Lakota at level 10 for 35,000 cash, AH-6R [Rockets] at level 20 for 250,000 cash, and Havoc at level 35 for 650,000 cash.
+- Key unlocks: Z20 Lakota at level 10 for 35,000 cash, AH-6R [Rockets] at level 20 for 250,000 cash, and Havoc at level 35 for 750,000 cash.
 - An MH-6 pays 800 when destroyed, and a Havoc pays 6,000.
-- The Pilot tree is the smallest of the six: 11 items and vehicles, with 1,218,250 cash in total.
+- The Pilot tree is the smallest of the six: 34 saved nodes, with 2,723,250 cash in listed costs.
 
 ## Which role to start with
 
-- **Start with Medic or Support if you want an unlock early.** Their first unlocks are at level 1: Eclipse Flash Hider for 7,500 cash in Medic, and Light repair drill for 10,000 cash in Support. Assault, Recon and Pilot start at level 2, and Driver at level 3.
+- **Start with Medic or Support if you want an unlock early.** Their first unlocks are at level 1: Eclipse Flash Hider for 7,500 cash in Medic, and Light repair drill for 10,000 cash in Support. Assault, Recon, Pilot and Driver start at level 2.
 - **Start with Medic if you want cash from reviving.** A bare-hands revive pays 1,500 cash, more than a revive with a defibrillator (1,000).
-- **Start with Recon or Assault if you want the most to unlock.** Recon has 58 unlocks and 2,445,000 cash in total. Assault has 40 unlocks and 1,270,000 cash in total.
-- **Start with Pilot or Driver only if you plan to save for vehicles.** Havoc (650,000 cash) and L2A6 (500,000 cash) are the two most expensive unlocks on the role pages.
+- **Start with Recon or Assault if you want the most to unlock.** Recon has 81 saved nodes and 3,940,000 cash in listed costs. Assault has 65 nodes and 2,802,500 cash.
+- **Start with Pilot or Driver only if you plan to save for vehicles.** Havoc and L2A6 (750,000 cash each) are the two most expensive unlocks on the role pages.
 
 ## See also
 

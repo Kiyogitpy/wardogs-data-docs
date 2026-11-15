@@ -55,7 +55,7 @@ For the blast numbers of every other explosive, see [Grenades and Explosives](gr
 
 ### To players
 
-The blast does its full 100 HP from the centre out to 5 m. Beyond 5 m the damage falls in a straight line to zero at 10 m. Examples:
+The historical CL516586 actor-input model starts at 100 damage through 5 m, then falls linearly with a 10-damage floor inside 10 m; it cuts to zero at 10 m. These are starting amounts before hit filtering and damage rules, not guaranteed HP loss. Examples:
 
 - At 5 m: 100 HP
 - At 7.5 m: 50 HP

@@ -20,7 +20,7 @@ Body armor is worn in two separate slots. A vest protects the torso, and on the 
 
 ## Overview
 
-The armor levels are named by tier in the game. The vests are the "Level 1" to "Level 4" armors, and the helmets are the "Level 1" to "Level 4" helmets, with the Pilot and Tank helmets as separate pieces. The Ghillie suit and Ghillie headwear are camouflage. They give no damage reduction.
+The armor levels are named by tier in the game. The vests are the "Level 1" to "Level 4" armors, and the helmets are the "Level 1" to "Level 4" helmets, with the Pilot and Tank helmets as separate pieces. The Ghillie suit and Ghillie headwear are camouflage. Their actual S3 damage reduction is unresolved; the damage model assumes no armor because coverage and stages are omitted.
 
 Tactical vests are a different item. They add quick slots and do not protect against damage. See [Utility Items](utility-items.md).
 
@@ -64,9 +64,9 @@ The reduction is applied to each hit at a covered body part. Taking the M4 with 
 |---|---:|---:|---:|---:|---:|
 | Head | 65.8 | 46.1 (helmet) | 39.5 (helmet) | 32.9 (helmet) | 26.3 (helmet) |
 | Neck | 49.4 | no cover | no cover | 24.7 (helmet) | 19.7 (helmet) |
-| Torso, upper | 27.3 | 19.1 (vest) | 16.4 (vest) | 13.6 (vest) | 10.9 (vest) |
-| Torso, middle | 27.2 | 19.0 (vest) | 16.3 (vest) | 13.6 (vest) | 10.9 (vest) |
-| Torso, lower | 25.8 | 18.1 (vest) | 15.5 (vest) | 12.9 (vest) | 10.3 (vest) |
+| Torso, upper | 30.8 | 21.6 (vest) | 18.5 (vest) | 15.4 (vest) | 12.3 (vest) |
+| Torso, middle | 28.0 | 19.6 (vest) | 16.8 (vest) | 14.0 (vest) | 11.2 (vest) |
+| Torso, lower | 26.6 | 18.6 (vest) | 16.0 (vest) | 13.3 (vest) | 10.6 (vest) |
 | Pelvis | 25.2 | no cover | no cover | no cover | 10.1 (vest) |
 | Upper arm | 15.1 | no cover | no cover | no cover | 6.0 (vest) |
 | Lower arm | 12.6 | no cover | no cover | no cover | no cover |
@@ -75,13 +75,13 @@ The reduction is applied to each hit at a covered body part. Taking the M4 with 
 | Calf | 12.6 | no cover | no cover | no cover | no cover |
 | Foot | 7.6 | no cover | no cover | no cover | no cover |
 
-Read the table as: a Level 3 vest turns a 27.3 HP upper-torso hit into 13.6 HP. Each weapon and ammunition type has its own numbers, so the M4 values are an example, not a rule. The full per-weapon tables are on the [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) data page.
+In this point-blank model, a Level 3 vest turns a 30.8 HP upper-torso hit into 15.4 HP. It applies the historical damage formula to S3 inputs for a hostile target outside a vehicle, with no penetration. Each weapon and ammunition type has its own numbers, so the M4 values are an example, not a rule. The full per-weapon tables are on the [Weapon Damage](../../game-features/Wardogs_WeaponDamage_v1.md) data page.
 
 **Lower arms, hands and legs have no armor.** No vest or helmet covers them. A hit there takes the full damage listed in the no-armor column.
 
 ### Durability
 
-Each hit on a covered body part takes durability from the piece. For an ordinary bullet the game code removes 0.4 times the incoming damage, and the piece breaks when durability reaches 0 (from the game code; the game itself was not run to confirm it). Wear does not weaken protection: all four durability stages give the same reduction, so a worn piece protects as well as a new one until it breaks.
+The S3 item lists the same reduction at all four durability stages. Earlier CL516586 code removed 0.4 times incoming bullet damage from durability and broke the piece at zero. That wear and break behavior has not been traced in the current S3 build; equal stored stages alone do not establish protection until breakage.
 
 ## Use and timing
 
@@ -89,7 +89,7 @@ Armor vests go in the Armor slot and helmets in the Helmet slot. Tactical vests 
 
 ## Cost
 
-Prices are in the tables above. The Level 1 and Level 2 pieces cost 200 to 1,000 cash. The Level 4 vest costs 5,000 cash, and the Level 4 helmet 4,500 cash. The Ghillie Body Suit costs 3,000 cash, and neither it nor the Ghillie headwear has durability or gives any protection.
+Prices are in the tables above. The Level 1 and Level 2 pieces cost 200 to 1,000 cash. The Level 4 vest costs 5,000 cash, and the Level 4 helmet 4,500 cash. The Ghillie Body Suit costs 3,000 cash, and protection and effective durability for it and the Ghillie headwear remain unresolved.
 
 ## Season 2 changes
 

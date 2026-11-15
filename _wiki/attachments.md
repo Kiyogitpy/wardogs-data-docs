@@ -10,7 +10,7 @@ description: "The parts that fit on weapons, the slots they go into and what eac
 
 # Attachments
 
-Attachments are parts that fit onto a weapon. While a part is fitted, it changes some of the weapon's numbers. The table lists each slot type, how many parts it has and what it is for. The list after it shows which numbers the parts in each category change, and how many parts change each one. Each category name links to its own article.
+The exported loadout model associates attachment parts with slots and effects. These associations do not establish that every effect is active in S3. The table counts parts in that model by slot type. The list after it shows which numbers the parts in each category change, and how many parts change each one. Each category name links to its own article.
 
 | Category | Parts | What it is |
 |---|---|---|

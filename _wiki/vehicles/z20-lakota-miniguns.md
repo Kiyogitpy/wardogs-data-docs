@@ -17,7 +17,7 @@ description: "Armed version of the Z20 Lakota helicopter with two M134D miniguns
 | Main health | 600 HP |
 | Top speed | 445 (as stored) |
 | Mass | 9,500 kg |
-| Rifle damage taken (derived) | 5% |
+| 5.56 mm hull damage (derived) | 2.5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#air-rotary-rot-04/ROT_04_MountedMachineGuns) |
 | Internal name | ROT_04 (miniguns variant) |
 {: .wiki-infobox }
@@ -72,6 +72,14 @@ The Z20 Lakota [Miniguns] is covered by the air vehicle yards (inferred). Each s
 - [Z20 Lakota](z20-lakota.md), the transport model
 - [AH-6M [Miniguns]](ah-6m-miniguns.md), the smaller miniguns helicopter
 - [Vehicle damage](vehicle-damage.md)
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) increase vehicle-mounted minigun infantry damage multipliers relative to Season 2: head +50%, neck +78%, upper torso +64%, middle torso +55%, lower torso +50%, and pelvis, arms and legs +56%. These are relative increases, not percentage-point additions or fresh hit-count measurements.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) lower the spotted-target kill reward for this vehicle from 1,400 to 1,200 cash. This is a spotting reward, not the purchase price or a direct destruction reward.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) also retune 20×102 mm damage: each round hits a vehicle section once, and this helicopter takes roughly the same damage as in Season 2. Retained hit-count tables are conditional calculations, not a new verification of that section-contact behavior.
 
 ## Sources
 

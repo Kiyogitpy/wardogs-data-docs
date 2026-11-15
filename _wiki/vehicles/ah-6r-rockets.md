@@ -2,7 +2,7 @@
 title: "AH-6R [Rockets]"
 parent: "Vehicles"
 group: "Helicopters"
-description: "Small attack helicopter of the Little Bird family with two B-13 rocket pods."
+description: "Small attack helicopter of the Little Bird family with two 70 mm rocket pods."
 ---
 
 # AH-6R [Rockets]
@@ -22,7 +22,7 @@ description: "Small attack helicopter of the Little Bird family with two B-13 ro
 | Internal name | ROT_03 (rocket pods variant) |
 {: .wiki-infobox }
 
-The AH-6R [Rockets] is the rocket pod version of the small MH-6 helicopter. It carries two B-13 rocket pods for attacks on ground targets.
+The AH-6R [Rockets] is the rocket pod version of the small MH-6 helicopter. It carries two 70 mm rocket pods for attacks on ground targets.
 
 ## Overview
 
@@ -43,7 +43,7 @@ The AH-6R [Rockets] is sold in the vehicle vendor under air combat, for 18,800 c
 
 Main health is 400 HP. The engine has 200 HP, the fuel tank 200 HP, the main rotor 400 HP and the tail rotor 300 HP.
 
-Rifle rounds do 7.5% of their damage against the hull. Bullets that hit the fuel tank take an extra 200%. Rockets that hit the tail or tail rotor take an extra 200%.
+Rifle rounds do 7.5% of their damage against the hull. The saved +200% fuel-tank bullet rule names Attribute.Gameplay.Health.FuelTank, whereas the current hitbox model uses Meta.Damage.HitLocation.Vehicle.FuelTank. That model does not apply this bonus (5.56 mm remains at 7.5%); whether S3 native code bridges those tags is unresolved. Rockets that hit the tail or tail rotor take an extra 200%.
 
 Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
@@ -60,7 +60,7 @@ Hits needed to destroy the main health. These counts are derived by simulating t
 
 | Weapon | Type | Rate | Effective range | Reload | Starting ammunition |
 |---|---|---:|---:|---:|---:|
-| B-13 Rocket Pods (two, 122 mm) | Rockets | 350 rounds/min | 1,000 m | 6.0 s | 0 |
+| Rocket Pods (two, 70 mm; S3 announced) | Rockets | 350 rounds/min | 1,000 m | 6.0 s | 0 |
 
 The pod reloads in 6.0 s and starts with no rockets loaded, according to the weapon's own settings. The seats are a driver and one active passenger, as listed for the attack variants.
 
@@ -87,6 +87,16 @@ The AH-6R [Rockets] is covered by the air vehicle yards (inferred). Each side no
 - [MH-6](mh-6.md), the base transport model
 - [AH-6M [Miniguns]](ah-6m-miniguns.md), the miniguns version
 - [Vehicle damage](vehicle-damage.md)
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) replace the AH-6R's shared 122 mm rocket with a dedicated 70 mm rocket. Announced damage to infantry and vehicles is unchanged, but thrust instability makes its flight wobble and reduces its practical effectiveness against infantry. The other pod settings below remain saved settings, not a newly measured firing test.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) announce stronger ballistic protection for Littlebird pilots and co-pilots. This concerns occupants, not the hull percentages above. They also fix body repair on the armed Littlebird variants and make their repair points reachable.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) lower the spotted-target kill reward for this vehicle from 1,000 to 850 cash. This is a spotting reward, not the purchase price or a direct destruction reward.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) also retune 20×102 mm damage: each round hits a vehicle section once, and this helicopter takes slightly less damage than in Season 2. Retained hit-count tables are conditional calculations, not a new verification of that section-contact behavior.
 
 ## Sources
 

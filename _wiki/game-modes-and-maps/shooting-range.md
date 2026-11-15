@@ -32,7 +32,7 @@ The range is a single playing state. It has no pre-match or post-match stages, w
 
 ## Rewards
 
-The range has no cash or XP table. Practice on the range does not appear in the reward tables in the sources.
+The current snapshot includes a Shooting Range challenge table with one auto-activated Sound the Horn definition, linked to ST_Achievement_SoundTheHorn. This establishes a configured challenge, not a cash or XP payout; no such payout is established here.
 
 ## See also
 

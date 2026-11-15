@@ -24,7 +24,7 @@ Music Tapes are small items that play a song on a vehicle's stereo. The shop tex
 
 ## Overview
 
-Each tape is a separate item named after its song, in the form "Song - Artist". A tape is bought from the item shop like any other item, with a price of 100 cash and an unlock level of 0. The shop sells one tape per purchase.
+Each tape is a separate item named after its song, in the form "Song - Artist". A tape is bought from the item shop like any other item, with a price of 100 cash and an unlock level of 0. The vendor rows specify one tape per purchase. Tape 11 is faction-specific to `Meta.Alignment.Faction.Alpha`; the other nine rows are not faction-specific.
 
 It is not known how a player loads a tape into a vehicle or whether every vehicle has a stereo. The tape is listed as an item for vehicle use only. Each tape has a track assigned to a vehicle hi-fi, which is what plays. The sound files themselves are audio and are not described here.
 
@@ -47,7 +47,7 @@ Nine of the ten tapes appear as unlocks in the Driver or Pilot role trees. Tape 
 
 ## Cost and unlocking
 
-- **Item shop:** 100 cash per tape, unlock level 0.
+- **Item shop:** listed price 100 cash per tape, unlock level 0; Tape 11 has an Alpha-only vendor row.
 - **Role trees:** the Driver tree has five tapes and the Pilot tree has four, at role levels 5 to 33. The role-level cash costs (750 to 25,000) are the cost of the unlock, not of the item.
 
 ## Season 2 changes

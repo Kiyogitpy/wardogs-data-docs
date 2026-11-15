@@ -6,13 +6,13 @@ description: "The basics every new player needs: health, where hits count most, 
 
 # Beginner's Guide
 
-This guide covers the basics of combat in Wardogs, with every number taken from the game. It is a starting point. Each section links to the article that explains the rule in full.
+This guide covers the basics of combat in Wardogs, using stored data, conditional damage calculations and historical behavior described below. It is a starting point. Each section links to the article that explains the rule in full.
 
 ## 1. Health
 
-Every player starts with 100 HP. The health you lose depends on the part of the body you are hit in, the weapon, the ammo and the armor. Hits to kill an unarmored player with the M4 rifle:
+Every player starts with 100 HP. The health you lose depends on the part of the body you are hit in, the weapon, the ammo and the armor. Hits to reach 100 damage against an unarmored target in the current M4 FMJ point-blank model (hostile, outside vehicles, no penetration or ricochet). Whether that causes a downed state or immediate death depends on the active mode; the model retains the historical damage formula.
 
-| Body part | Hits to kill |
+| Body part | Modeled hits to reach 100 damage |
 |---|---:|
 | Head | 2 |
 | Neck | 3 |
@@ -25,8 +25,8 @@ A headshot is the fastest kill, and limb hits are the slowest. Full details are 
 
 ## 2. Where damage counts
 
-- **The head is the most dangerous place to be hit.** The M4 does 65.8 to the head and 27.3 to the upper torso.
-- **Sniper rifles can kill in one shot.** The MK22 does 118.8 to the upper torso and 192.0 to the head, which is enough to kill an unarmored player in either place.
+- **The head is the most dangerous place to be hit.** The M4 does 65.8 to the head and 30.8 to the upper torso.
+- **Sniper rifles can kill in one shot.** The MK22 does 118.8 to the upper torso and 192.0 to the head, which exceeds 100 HP in the conditional point-blank model; immediate death versus downing remains mode-dependent.
 - **Arms and legs count the least.** An M4 hit to a hand does 7.6.
 
 ## 3. Armor and which ammo to load
@@ -44,7 +44,7 @@ Choose ammo to match what the enemy wears:
 
 - **No armor:** hollow point. It does about twice the damage of full metal jacket.
 - **Light armor:** full metal jacket. Hollow point loses most of its damage.
-- **Heavy or Super heavy armor:** armor-piercing does clearly more damage than full metal jacket with rifles. Against Medium armor the gap is small (16.6 against 16.4 on a Medium vest).
+- **Heavy or Super heavy armor:** armor-piercing does more modeled damage than full metal jacket with the listed rifles except the AMR 50. Against Medium armor the gap is small (18.7 against 18.5 on a Medium vest).
 
 The full comparison is in [Choosing Ammo](choosing-ammo.md) and [Armor](../game-mechanics/armor.md).
 
@@ -54,7 +54,7 @@ The full comparison is in [Choosing Ammo](choosing-ammo.md) and [Armor](../game-
 - **Individual First Aid Kit:** +100 HP, about 5 seconds to use.
 - **Medical Bag:** heals 35 HP over 5 seconds on yourself, or 15 HP over 1.5 seconds on a teammate.
 - **Health does not regenerate on its own.** No natural healing for infantry was found in the game code outside the Deathmatch mode.
-- **At 0 HP you are downed.** You have 360 seconds on the bleed-out timer, which drains at half speed, so about 12 minutes in total (derived from the player defaults). A teammate can revive you by holding for 20 seconds with no equipment, and you come back at 10 HP.
+- **Downed state.** The current sanitized game-mode settings store bSkipDownedState=true; its native scope and overrides remain unresolved, so a downed state at 0 HP is not guaranteed. The older 360-second/half-drain calculation gives 12 minutes only if that historical downed path is active. A teammate can revive you by holding for 20 seconds with no equipment, and you come back at 10 HP.
 - **Defibrillator:** revives a teammate to 35 HP after a 4 second charge, once it has a battery. You cannot use it while you are downed yourself.
 - **Giving up** ends the wait in 1.5 seconds. Use it only when no help is coming.
 

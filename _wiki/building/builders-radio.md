@@ -16,15 +16,15 @@ description: "A music radio built with any hammer from 20 Build Supplies, with 1
 | Hammer | Small, Medium, Large |
 | **Building** | |
 | Build cost | 20 Build Supplies |
-| Build time | 40 hits Small (22.7 s), 20 hits Medium (11.3 s), 14 hits Large (12.4 s). Derived from the hammer swing timing, not timed in play. |
+| Build time (CL516586 formula, S3 inputs, scale 1) | 40 hits Small (22.7 s), 20 hits Medium (11.3 s), 14 hits Large (12.4 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 1,000 HP |
 | **Damage** | |
 | Bullets | -85% |
 | Melee | +70% |
 | Grenades | +500% |
 | Rockets | +1,000% |
-| C4 | +400% |
-| IEDs | +800% |
+| C4 | +1,900% |
+| IEDs | +3,500% |
 | Internal name | [`DA_Buildable_Radio`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/Radio/DA_Buildable_Radio.json) |
 {: .wiki-infobox }
 
@@ -38,7 +38,7 @@ Destroying an enemy Builder's Radio pays 20 cash and 10 Role XP.
 
 ## Building it
 
-- **Cost:** 20 Build Supplies, whichever hammer builds it. Nothing is charged at placement.
+- **Cost:** 20 Build Supplies, whichever hammer builds it. The S3 export omits `PlacementCost`; the earlier zero-placement-cost model is not a verified current default.
 - **Hammers:** Small, Medium or Large.
 - **Limit:** Up to 4 Builder's Radios per Forward Operating Base. Each radio counts toward the base's limit.
 - **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 1 m of a ladder, nor within 3 m of a safe zone or while standing in one.
@@ -46,13 +46,13 @@ Destroying an enemy Builder's Radio pays 20 cash and 10 Role XP.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 8, 9, 9 and 9 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](../building.md#weak-spots)).
 - **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
-| Building it | Small hammer | Medium hammer | Large hammer |
+| Conditional counts (CL516586 formula, scale 1) | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
 | Hits to build | 40 (about 22.7 s) | 20 (about 11.3 s) | 14 (about 12.4 s) |
 | Hits to repair from zero health | 31 | 16 | 11 |
 | Hits to dismantle (your own) | 7 | 5 | 4 |
 
-Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
+The build, repair and dismantle counts apply the CL516586 formulas to S3 saved inputs, at cost scale 1 with the earlier omitted-field defaults; current native equivalence is unverified. Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The hits assume normal hits, not weak-spot hits. See [Buildables](../building.md#building) for how the hit amounts work.
 
@@ -60,11 +60,11 @@ The hits assume normal hits, not weak-spot hits. See [Buildables](../building.md
 
 The Builder's Radio plays music. Its power switch turns the radio on and off, and each of the seven station buttons picks a station. Changing the station changes the music that plays. It has no other effect beyond its health and how it takes damage.
 
-Its registration with the base only affects the limit of four radios per base. Nothing else is tied to it, such as supply drops or spawns.
+The inspected FOB ruleset sets a four-radio limit. The earlier CL516586 search found no supply-drop or spawn association; it does not exclude an S3 client or server path.
 
 ## Durability
 
-The radio is weak to explosives. Rockets do 11 times their normal damage, and grenades do 6 times.
+The generic rocket entry gives ×11 and the grenade entry gives ×6. C4 and IED totals also include the parent utility-explosive entry: 4 × 5 = 20 for C4 and 4 × 9 = 36 for IEDs, under the documented damage model. The M67 uses the rocket lineage in the hit-count model below.
 
 | Source | Change | Share of damage that gets through |
 |---|---:|---:|
@@ -72,8 +72,8 @@ The radio is weak to explosives. Rockets do 11 times their normal damage, and gr
 | Melee | +70% | 1.7 times |
 | Grenades | +500% | 6 times |
 | Rockets | +1,000% | 11 times |
-| C4 | +400% | 5 times |
-| IEDs | +800% | 9 times |
+| C4 | +1,900% | 20 times |
+| IEDs | +3,500% | 36 times |
 
 The table below gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 

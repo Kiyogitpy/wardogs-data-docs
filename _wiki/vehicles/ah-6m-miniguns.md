@@ -12,7 +12,7 @@ description: "Small attack helicopter of the Little Bird family with two M134D m
 | ![AH-6M Miniguns]({{ '/assets/img/icons/vehicles-3d/T_UI_Vehicle_LittleBird_GUNS_BC.png' | relative_url }}){: .wiki-infobox-img } | |
 | Type | Combat helicopter (miniguns) |
 | Seats | 2 |
-| Price | 12,000 cash |
+| Price | 10,480 cash |
 | Unlock level | 1 |
 | Main health | 400 HP |
 | Top speed | 350 (as stored) |
@@ -26,7 +26,7 @@ The AH-6M [Miniguns] is the miniguns version of the small MH-6 helicopter. It ca
 
 ## Overview
 
-The AH-6M [Miniguns] is sold in the vehicle vendor under air combat, for 12,000 cash, and unlocks at level 1. It has the same airframe and health as the [MH-6](mh-6.md), with two seats instead of six and a gun fit in place of the passenger seats.
+The AH-6M [Miniguns] is sold in the vehicle vendor under air combat, for 10,480 cash, and unlocks at level 1. It has the same airframe and health as the [MH-6](mh-6.md), with two seats instead of six and a gun fit in place of the passenger seats.
 
 ## Stats
 
@@ -43,7 +43,7 @@ The AH-6M [Miniguns] is sold in the vehicle vendor under air combat, for 12,000 
 
 Main health is 400 HP. The engine has 200 HP, the fuel tank 200 HP, the main rotor 400 HP and the tail rotor 300 HP.
 
-Rifle rounds do 7.5% of their damage against the hull. Bullets that hit the fuel tank take an extra 200%. Rockets that hit the tail or tail rotor take an extra 200%.
+Rifle rounds do 7.5% of their damage against the hull. The saved +200% fuel-tank bullet rule names Attribute.Gameplay.Health.FuelTank, whereas the current hitbox model uses Meta.Damage.HitLocation.Vehicle.FuelTank. That model does not apply this bonus (5.56 mm remains at 7.5%); whether S3 native code bridges those tags is unresolved. Rockets that hit the tail or tail rotor take an extra 200%.
 
 Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
@@ -87,6 +87,18 @@ The AH-6M [Miniguns] is covered by the air vehicle yards (inferred). Each side n
 - [MH-6](mh-6.md), the base transport model
 - [AH-6R [Rockets]](ah-6r-rockets.md), the rocket version
 - [Vehicle damage](vehicle-damage.md)
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) reduce this variant from 12,000 to 10,480 cash. The saved vehicle market export agrees. This is the undiscounted price; mode restrictions and progression still affect availability.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) increase vehicle-mounted minigun infantry damage multipliers relative to Season 2: head +50%, neck +78%, upper torso +64%, middle torso +55%, lower torso +50%, and pelvis, arms and legs +56%. These are relative increases, not percentage-point additions or fresh hit-count measurements.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) announce stronger ballistic protection for Littlebird pilots and co-pilots. This concerns occupants, not the hull percentages above. They also fix body repair on the armed Littlebird variants and make their repair points reachable.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) lower the spotted-target kill reward for this vehicle from 1,000 to 850 cash. This is a spotting reward, not the purchase price or a direct destruction reward.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) also retune 20×102 mm damage: each round hits a vehicle section once, and this helicopter takes slightly less damage than in Season 2. Retained hit-count tables are conditional calculations, not a new verification of that section-contact behavior.
 
 ## Sources
 

@@ -14,7 +14,7 @@ The four recon optics are the [Binoculars](binoculars.md), [Monocular](monocular
 | [Binoculars](binoculars.md) | 180 cash | Low | None in the shop text | Not known | Recon. Shop unlock level 0. Not in the Recon unlock tree. |
 | [Monocular](monocular.md) | 350 cash | Medium, variable | None in the shop text | Not known | Recon. Shop unlock level 0. Recon unlock tree: level 2 for 7,500 cash. |
 | [Range Finder](range-finder.md) | 1,450 cash | High, variable | Accurate | Not known | Recon. Shop unlock level 0. Recon unlock tree: level 8 for 25,000 cash. |
-| [Infrared Range Finder](infrared-range-finder.md) | 3,200 cash | Infrared, variable | Accurate | Yes. The scope uses 3 charges when raised, then 1 charge every 0.8 s: about 78 s on a Battery, 198 s on a High Capacity Battery | Recon. Shop unlock level 0. Recon unlock tree: level 32 for 50,000 cash. Ghillie Body Suit and Ghillie Headwear hide the player from it, per the shop text. Has a reload action. |
+| [Infrared Range Finder](infrared-range-finder.md) | 3,200 cash (hidden vendor row) | Infrared, variable | Accurate | Yes. Historical round 58 model: 3 charges when raised, then 1 per 0.8 s, about 78/198 s on the two batteries; S3 consumer unverified | Recon. Shop unlock level 0. Recon unlock tree: level 32 for 50,000 cash. Ghillie Body Suit and Ghillie Headwear hide the player from it, per the shop text. Has a reload action. |
 
 The Recon unlock tree lists its own role level and cash cost for the Monocular, Range Finder and Infrared Range Finder. Those costs are separate from the shop prices in the table.
 
@@ -23,7 +23,7 @@ The Recon unlock tree lists its own role level and cash cost for the Monocular, 
 - **Lowest cost:** the Binoculars, at 180 cash. They have low magnification and show no distance.
 - **Medium zoom:** the Monocular, at 350 cash. Its zoom can be varied, but its shop text gives no distance readout.
 - **Accurate distance:** the Range Finder, at 1,450 cash. It is the cheapest of the two optics that show a distance.
-- **Infrared view:** the Infrared Range Finder, at 3,200 cash. It is the most expensive optic and the only one with infrared magnification.
+- **Infrared view:** the Infrared Range Finder has a listed price of 3,200 cash and infrared magnification, but the S3 vendor row is hidden; the price is not proof that it is available to buy.
 
 No spotting range is given for any of the four, so this page cannot say which one reveals targets farther away.
 
@@ -47,6 +47,12 @@ A spot on infantry takes 0.5 s to register and fades over 30 s, and it is kept f
 - [Utility Items](utility-items.md)
 - [Spotting](../game-mechanics/spotting.md)
 - [Recon](../progression-and-economy/recon.md)
+
+## Season 3 announcement
+
+The Infrared Range Finder is removed from the vendor pending redesign. Any retained price or unlock row is reference data, not current purchase availability. See [Infrared Range Finder](infrared-range-finder.md).
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
 
 ## Sources
 

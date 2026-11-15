@@ -37,7 +37,7 @@ It goes in the Armor slot and covers nothing below the torso. With a weight of 1
 
 Level 3 Armor reduces damage at the upper, middle and lower torso by 50%. It does nothing for other body parts. It has 250 durability.
 
-With M4 full-metal-jacket rounds, an upper torso hit does 27.3 HP with no armor and 13.6 HP with Level 3 Armor.
+In the point-blank damage model, M4 full-metal-jacket rounds deal 30.8 HP to an unarmored upper torso and 15.4 HP with Level 3 Armor. This assumes a hostile target outside a vehicle, no penetration and the historical damage formula applied to S3 inputs.
 
 | Vest | Damage reduction | Body parts covered | Durability |
 |---|---:|---|---:|
@@ -46,7 +46,7 @@ With M4 full-metal-jacket rounds, an upper torso hit does 27.3 HP with no armor 
 | **Level 3 Armor** | 50% | Torso (upper, middle, lower) | 250 |
 | [Level 4 Armor](level-4-armor.md) | 60% | Torso, pelvis, upper arms | 300 |
 
-Each hit on a covered body part takes durability from the piece. For an ordinary bullet the game code removes 0.4 times the incoming damage, and the piece breaks when durability reaches 0 (from the game code; the game itself was not run to confirm it). Wear does not weaken protection: all four durability stages give the same reduction, so a worn piece protects as well as a new one until it breaks.
+The S3 item lists the same reduction at all four durability stages. Earlier CL516586 code removed 0.4 times incoming bullet damage from durability and broke the piece at zero. That wear and break behavior has not been traced in the current S3 build; equal stored stages alone do not establish protection until breakage.
 
 ## Season 2 changes
 

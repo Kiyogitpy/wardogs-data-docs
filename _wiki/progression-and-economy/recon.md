@@ -7,29 +7,31 @@ description: "The Recon role: 17 skills for sniper and marksman rifles, longer e
 
 # Recon
 
+S3 announcement: AMR 50 moves from level 35 to 41. The Infrared Range Finder was removed from vendors pending redesign; the saved Range Finder node below does not establish an available offering. See the [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221); the current saved table below gives individual costs and prerequisites.
+
 | Recon | |
 |---|---|
 | **General** | |
 | Skills | 17 |
 | Focus | Sniper rifles, marksman rifles and spotting |
 | **Mastery** | |
-| XP to level 10 | 25,000 |
-| XP to level 50 | 1,150,000 |
-| XP to level 100 | 5,132,500 |
+| Stored XP at level 10 | 36,750 |
+| Stored XP at level 50 | 1,950,000 |
+| Stored XP at level 100 | 6,600,000 |
 | Internal name | Meta.Role.Recon, DT_ReconSkills |
 {: .wiki-infobox }
 
-Recon is one of the six roles. Its 17 skills mostly tune long-range play: how fast a player aims and recovers with sniper rifles and marksman rifles, how much these rifles kick, and how fast they switch. Recon also has spotting skills: enemies take longer to spot a Recon player, and enemies a Recon player spots stay marked for longer. Lockpicking is the role's other ability, granted by the game rather than tuned by a number.
+Recon has 17 saved skill-effect rows across the role and plugin tables: rifle handling, spotting, infrared visibility and ability-grant effects. These are configured effects and target tags; current activation and effective arithmetic remain unverified.
 
 ## Overview
 
-Most Recon skills apply to one weapon archetype. A skill for marksman rifles helps only marksman rifles, and a skill for sniper rifles helps only sniper rifles. The spotting skills apply to the player and to spotted targets, not to a weapon.
+The skill table below summarizes the configured effect targets and intended changes. Application requirements are saved filters, not evidence that the S3 consumer applies an effect. Historical application details are identified separately.
 
-Each skill's value comes from its curve at the skill's level. The unlock cost of each skill level is not in the game, so it is not yet known (see [Skills](skills.md)).
+The reviewed skill-effect and curve exports do not supply per-level unlock costs. Earning, spending and upgrade consumers remain unresolved; this is not proof that costs or skill points are absent from the game (see [Skills](skills.md)).
 
 ## Skills
 
-| Skill | What it does | Curve values | Notes |
+| Skill | Configured effect / historical interpretation | Stored curve values | Notes |
 |---|---|---|---|
 | Aim down sights time (marksman rifles) | Less time to raise the sights. | 1, 0.8, 0.7, 0.6 | Marksman rifles only |
 | Aim down sights time (sniper rifles) | Less time to raise the sights. | 1, 0.8, 0.7, 0.6 | Sniper rifles only |
@@ -49,91 +51,116 @@ Each skill's value comes from its curve at the skill's level. The unlock cost of
 | Pistol switch speed | Faster switching to sidearms. | 1, 1.2, 1.4 | Sidearms only |
 | Sniper and marksman switch speed | Faster switching to sniper and marksman rifles. | 1, 1.2, 1.4 | Sniper and marksman rifles |
 
-Curve values are listed in order for skill levels 0, 2, 3 and 4. Level 0 is always 1, which means no effect. Curves with three values store levels 0, 2 and 4 only, and levels in between are blended from the stored values.
+The stored curve keys are at Time 0, 2, 3 and 4, or 0, 2 and 4 for three-value curves; their interpolation mode is Linear and the Time-0 value is 1. The CL516586 round 45 trace used the node upgrade level as Time. Applying that interpretation and interpolation to S3 remains conditional: the current activation, input level and native arithmetic have not been established.
 
 ## Mastery and rewards
 
-All six roles share one mastery XP curve. The milestones for Recon are the total XP needed to reach each level, not the step from the level before:
+The six current role definitions store the same XP values. These are the S3 values at selected levels; interpreting them as cumulative thresholds requires the level consumer:
 
 | Level | XP needed |
 |---|---|
 | 1 | 200 |
 | 5 | 6,250 |
-| 10 | 25,000 |
-| 20 | 111,500 |
-| 50 | 1,150,000 |
-| 75 | 2,218,000 |
-| 100 | 5,132,500 |
+| 10 | 36,750 |
+| 20 | 275,000 |
+| 50 | 1,950,000 |
+| 75 | 3,320,500 |
+| 100 | 6,600,000 |
 
 The full curve is in [Cash and Rewards](cash-and-rewards.md#role-mastery-xp). Whether each value is a running total or a step from the level before is not stated.
 
-- **Rewards per level.** None. The level table has an empty reward list for every level, so a level gives no reward of its own. What a level gives is access to the unlock tree (see Unlocks below).
-- **Unlock tree.** 58 items and vehicles, from level 2 to level 50, with 2,445,000 cash in total. Each one needs a role level and a cash price (see Unlocks below).
+- **Rewards per level.** The current level definitions have empty reward lists. This does not rule out server grants; the separate unlock tree stores level prerequisites and cash costs.
+- **Current unlock tree.** 81 saved nodes, with level requirements from 2 to 50 and 3,940,000 cash in listed costs. These are stored requirements, not a test of server unlock behavior. The full current list is in the [economy data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json).
 
-## Unlocks
+## Current S3 unlock list
 
-Each row is one item, vehicle or attachment in the Recon unlock tree, with the role level it needs and its cash cost. The game gives no other cost for any unlock. Rows at 0 cash are magazines, ammunition and explosives. Where the game gives no display name for an item, the row describes it in plain words.
+These 81 rows reproduce the CL533731 saved role tree: level prerequisites and cash **unlock costs**, not vendor purchase prices. Shared items can be unlocked through multiple roles in S3, as announced in the [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). Mode restrictions and removed vendors still govern availability; a retained node alone is not an active shop offer.
 
-| Role level | Item | Cash |
-|---|---:|---:|
+| Role level | Item | Unlock cash |
+|---:|---|---:|
 | 2 | Monocular | 7,500 |
 | 3 | STRELIX Suppressor | 5,000 |
+| 4 | Field Backpack | 20,000 |
 | 5 | SKS | 25,000 |
-| 6 | Deadeye Flash Hider | 12,500 |
+| 6 | Level 1 Helmet | 7,500 |
+| 6 | Level 1 Armor | 10,000 |
 | 7 | SKS Bipod | 10,000 |
-| 8 | Range finder | 25,000 |
+| 7 | 5.56mm Flesh Damage (HP) | 15,000 |
+| 8 | Deadeye Flash Hider | 12,500 |
+| 8 | Range Finder | 25,000 |
 | 9 | DTK-1 Brake | 7,500 |
-| 10 | PU 91/30 Scope | 12,500 |
+| 9 | Medium Tac Vest | 10,000 |
 | 10 | Mosin Nagant | 50,000 |
-| 11 | 1x-6x LPVO Short Dot | 15,000 |
-| 12 | SVD 5 RND Magazine | 0 |
+| 10 | PU 91/30 Scope | 12,500 |
+| 11 | 3x-6x LPVO Short Dot | 15,000 |
+| 11 | Operator Backpack | 25,000 |
 | 12 | SVD | 50,000 |
+| 12 | SVD 5 RND Magazine | 0 |
 | 13 | SVD 7.62x54R Brake | 10,000 |
+| 13 | 7.62mm Flesh Damage (HP) | 15,000 |
+| 14 | Hexagon 762 Suppressor | 15,000 |
 | 14 | SVD Bipod | 10,000 |
-| 15 | Hexagon 762 Suppressor | 15,000 |
-| 16 | Arrow | 0 |
-| 16 | Compound Bow | 150,000 |
-| 17 | SVD magazine | 25,000 |
-| 18 | SV98 magazine | 0 |
+| 15 | Compound Bow | 150,000 |
+| 15 | Assault Backpack | 50,000 |
+| 16 | Level 2 Helmet | 37,500 |
+| 16 | Level 2 Armor | 50,000 |
+| 17 | SVD 10 RND Magazine | 25,000 |
+| 17 | 7.62x54mm Flesh Damage (HP) | 15,000 |
 | 18 | SV98 | 100,000 |
+| 18 | SV98 10 RND Magazine | 0 |
 | 19 | 6-10x Scope MOA | 45,000 |
-| 20 | FAL 10 RND Magazine | 0 |
+| 19 | Large Tac Vest | 25,000 |
 | 20 | BMR-308 | 125,000 |
+| 20 | FAL 10 RND Magazine | 0 |
 | 21 | SV98 Bipod | 17,500 |
 | 22 | SRVV Brake | 17,500 |
+| 22 | Sport Parachute | 25,000 |
 | 23 | Claymore | 90,000 |
+| 23 | Ruck Backpack | 100,000 |
 | 24 | BMR-308 Flash Hider | 50,000 |
-| 25 | M14 10 RND Magazine | 0 |
 | 25 | M14 | 100,000 |
+| 25 | M14 10 RND Magazine | 0 |
 | 26 | Ghillie Headwear | 60,000 |
-| 26 | Ghillie Suit | 80,000 |
+| 26 | Ghillie Body Suit | 80,000 |
 | 27 | Leatherwood ART II | 35,000 |
+| 27 | 5.56mm Armor Piercing (AP) | 75,000 |
 | 28 | 6-10x Scope MRAD | 40,000 |
+| 28 | 7.62mm Armor Piercing (AP) | 75,000 |
 | 29 | M14 Bipod | 25,000 |
-| 30 | MK22 5 RND Magazine | 0 |
 | 30 | MK22 | 150,000 |
+| 30 | MK22 5 RND Magazine | 0 |
 | 31 | M14 20 RND Magazine | 27,500 |
-| 32 | Infrared range finder | 50,000 |
+| 31 | .308 Win Flesh Damage (HP) | 15,000 |
+| 32 | M14 30 RND Magazine | 50,000 |
 | 33 | BMR-308 Suppressor | 25,000 |
-| 34 | Constrictor Brake | 20,000 |
-| 35 | AMR 50 magazine | 0 |
-| 35 | AMR 50 | 200,000 |
-| 36 | M14 30 RND Magazine | 50,000 |
+| 33 | Constrictor Brake | 20,000 |
+| 34 | Gunner Backpack + Sling | 125,000 |
+| 34 | 7.62x54mm Armor Piercing (AP) | 75,000 |
+| 35 | .308 Win Armor Piercing (AP) | 75,000 |
+| 36 | Level 3 Helmet | 75,000 |
+| 36 | Level 3 Armor | 100,000 |
 | 37 | .30 Cal SS Phosphate Muzzle Brake | 22,500 |
-| 38 | AMR 50 Cal Muzzle Brake | 35,000 |
-| 39 | MK22 magazine | 35,000 |
+| 39 | MK22 10 RND Magazine | 35,000 |
 | 40 | Flow-Through .308 Suppressor | 30,000 |
-| 41 | Ghillie headwear (dead variant) | 80,000 |
-| 41 | Ghillie suit (dead variant) | 100,000 |
+| 41 | AMR 50 | 200,000 |
+| 41 | AMR 50 5 RND Magazine | 0 |
 | 42 | .30 Cal Steel Black Flash Hider | 27,500 |
+| 42 | AMR 50 Cal Muzzle Brake | 35,000 |
 | 43 | 6x Marksman Scope + Reflex | 75,000 |
-| 44 | Slicktap Brake | 22,500 |
-| 45 | GOL Multi-Caliber Suppressor | 32,500 |
+| 43 | Slicktap Brake | 22,500 |
+| 44 | GOL Multi-Caliber Suppressor | 32,500 |
+| 45 | Level 4 Helmet | 150,000 |
+| 45 | Level 4 Armor | 200,000 |
 | 46 | Pro Tilt Bipod | 50,000 |
 | 47 | Frontier 2.5x-10x Precision Scope | 95,000 |
 | 48 | .50 Cal Heavy Suppressor | 27,500 |
+| 48 | Arsenal Backpack + 2 Slings | 175,000 |
 | 49 | Three Port Brake | 25,000 |
-| 50 | AMR 50 10 RND Magazine | 50,000 |
+| 49 | AMR 50 10 RND Magazine | 50,000 |
+| 50 | Ghillie Headwear (Dead) | 80,000 |
+| 50 | Ghillie Body Suit (Dead) | 100,000 |
+
+Source: [current role tree](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Meta/CharacterSkills/DT_MetaTree_Roles.json), `Meta.Role.Recon`; [economy output](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json). The [pinned earlier role article](https://github.com/Kiyogitpy/wardogs-data-docs/blob/d3cf6f2bf54541b8389b9327aab933e1e8488b9b/_wiki/progression-and-economy/recon.md) retains the earlier table for historical comparison.
 
 ## How the role earns cash and XP
 

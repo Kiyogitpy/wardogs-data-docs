@@ -39,7 +39,7 @@ Entries with `Includes` inherit the included definition and add to it. "N entrie
 | [`UI/Frontend`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Config/Experiences/UI/Frontend.json) | `ED_Frontend` | `DefaultSet` |  |  |  | `Experience.Rules.EnablePresenceJoinOnExperienceLoad` |  | presence status set |
 <!-- /experience_config_tables -->
 
-## 3. Hardcore and Infantry Only
+## 3. Historical Season 2 Hardcore and Infantry Only
 
 These two are the KOTH variants that the server browser tags as **Hardcore** and **Infantry Only** (see the tag rows in [Frontend data tables](../content/Wardogs_DataTables_Frontend_v1.md) and [Tag Display Text](../content/Wardogs_TagDisplayText_v1.md)).
 
@@ -56,7 +56,7 @@ These two are the KOTH variants that the server browser tags as **Hardcore** and
 `KOTH_InfantryOnly` is absent from this config export. No current disabled-feature list can be derived from it; this does not establish removal of the mode.
 <!-- /experience_config_tables -->
 
-The packs that are not on this list (for example the base Humvee, Kodiak, Ural, Wolf-110, Z20 Lakota and MH-6 packs) stay enabled by this file. What the `InfantryOnly` flag itself does to those is native code and not read from data, so whether unarmed vehicles can still be spawned in this mode is not known from the files.
+The historical disabled-feature list is not a current S3 configuration. Absence from that list does not prove vehicle availability: the current include chain, feature activation, eligibility consumer and server overrides remain unverified.
 
 ## 4. Other small definitions
 
@@ -88,7 +88,7 @@ In words: the waiting state lasts 5 s and blocks purchases, vehicle spawns, stat
 
 ## 6. Example standalone server config
 
-Whitelisted keys only. `MinimumRequiredPlayers` 20 and `ScorePeriod` 24 here override the project defaults (60 and 22 s). Zero for the cash, level and ping limits means no limit.
+Whitelisted keys only. `MinimumRequiredPlayers` 20 and `ScorePeriod` 24 here override the project defaults (60 and 22 s). Zero is the stored example value for the cash, level and ping limits; its effective interpretation requires the corresponding current consumer.
 
 <!-- experience_config_tables server -->
 | Section | Key | Example value |

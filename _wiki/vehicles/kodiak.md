@@ -16,7 +16,7 @@ description: "Four-seat SUV with a driver and three passengers and no weapons, t
 | Unlock level | 0 |
 | Main health | 400 HP |
 | Top speed | 154 (as stored) |
-| Rifle damage taken (derived) | 5% |
+| 5.56 mm hull damage (derived) | 2.5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-patriot-kodiak) |
 | Internal name | WHL_02 (default variant) |
 {: .wiki-infobox }
@@ -42,7 +42,7 @@ The Kodiak is sold in the vehicle vendor under land transport, for 2,500 cash, a
 
 Main health is 400 HP. The Kodiak has separate health for its engine (400 HP), fuel tank (400 HP) and each wheel (75 HP).
 
-Rifle rounds do 5% of their damage against the hull. Bullets that hit a wheel can destroy the vehicle faster than hits to the body.
+Under the documented model, 5.56 mm FMJ does 2.5% of base damage to the hull: the 5% vehicle factor also receives the main-body ×0.5 modifier. These percentages are conditional on the earlier damage model, not a measurement of S3 native behavior; other calibers can have additional rules. Bullets that hit a wheel can destroy the vehicle faster than hits to the body.
 
 Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
@@ -61,6 +61,8 @@ The Kodiak has no weapons. It has four seats: a driver and three active passenge
 
 ## Handling
 
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) put Kodiak reverse speed at ~57 km/h (previously 33 km/h). This is the announced family value, not a simulation measurement; ~ marks an approximation.
+
 - Driving assists: a drift assist with 5 at the front and 60 at the rear, and a full-recovery speed of 200. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
 
 - Mass 2,750, hand brake 50, and front steering of 30 degrees.
@@ -69,7 +71,7 @@ The Kodiak has no weapons. It has four seats: a driver and three active passenge
 
 **Steering and pedal tuning.** Its settings are steer input gravity 2 and no other sensitivity values for this input set. The game does not label the units. (see [Vehicle handling](vehicle-handling.md#driving-input-tuning) for how these settings work).
 
-- No idle RPM is set; the game default of 1,000 applies. No steering sensitivity is set either; the game default of 5.0 applies.
+- The S3 assets omit idle RPM and steering sensitivity. The earlier CL516586 defaults were 1,000 RPM and 5.0 respectively; their current initializers have not been verified.
 - **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. Each state sets a wheel radius, friction and brake value. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
 
 ## Season 2 changes

@@ -16,7 +16,7 @@ description: "Armored Ural Defender with a mounted M249 machine gun, sold for 9,
 | Unlock level | 0 |
 | Main health | 700 HP |
 | Top speed | 79 (as stored) |
-| Rifle damage taken (derived) | 5% |
+| 5.56 mm hull damage (derived) | 2.5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-ural/WHL_07_ArmouredBattle) |
 | Internal name | WHL_07 (armored battle variant) |
 {: .wiki-infobox }
@@ -62,6 +62,8 @@ Main health is 700 HP. Its engine, fuel tank and wheels match the [Ural](ural.md
 The gun fires 850 rounds/min out to 700 m. The reload time and the starting ammunition are listed too (none loaded at the start, tracer rounds).
 
 ## Handling
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) put Ural reverse speed at 27 km/h (previously 15 km/h). This is the announced family value, not a simulation measurement.
 
 Handling matches the Ural: mass 10,000, hand brake 50, and front steering of 30 degrees.
 

@@ -16,7 +16,7 @@ description: "A small camouflage tent built with any hammer from 7 Build Supplie
 | Hammer | Small, Medium, Large |
 | **Building** | |
 | Build cost | 7 Build Supplies |
-| Build time | 4 hits Small (2.3 s), 2 hits Medium (1.1 s), 2 hits Large (1.8 s). Derived from the hammer swing timing, not timed in play. |
+| Build time (CL516586 formula, S3 inputs, scale 1) | 4 hits Small (2.3 s), 2 hits Medium (1.1 s), 2 hits Large (1.8 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 300 HP |
 | **Damage** | |
 | Bullets | -85% |
@@ -38,7 +38,7 @@ Destroying an enemy Recon Tent pays 5 cash and 5 Role XP.
 
 ## Building it
 
-- **Cost:** 7 Build Supplies, whichever hammer builds it. Nothing is charged at placement.
+- **Cost:** 7 Build Supplies, whichever hammer builds it. The S3 export omits `PlacementCost`; the earlier zero-placement-cost model is not a verified current default.
 - **Hammers:** Small, Medium or Large.
 - **Placement:** The Recon Tent is one of the four small structures. It does not need a friendly base radius, but it cannot be placed inside an enemy base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 100.
@@ -46,13 +46,13 @@ Destroying an enemy Recon Tent pays 5 cash and 5 Role XP.
 - **Weak spots:** switched off. Its build stages do not use the hammer bonus, so each hit adds the normal amount, multiplied by its build factor of 3.5 (see [Buildables](../building.md#building)).
 - **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
-| Building it | Small hammer | Medium hammer | Large hammer |
+| Conditional counts (CL516586 formula, scale 1) | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
 | Hits to build | 4 (about 2.3 s) | 2 (about 1.1 s) | 2 (about 1.8 s) |
 | Hits to repair from zero health | 9 | 5 | 3 |
 | Hits to dismantle (your own) | 2 | 2 | 2 |
 
-Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
+The build, repair and dismantle counts apply the CL516586 formulas to S3 saved inputs, at cost scale 1 with the earlier omitted-field defaults; current native equivalence is unverified. Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 ## What it does
 

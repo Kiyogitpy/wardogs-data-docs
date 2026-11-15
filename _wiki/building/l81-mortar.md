@@ -3,7 +3,7 @@ redirect_from: ["/wiki/equipment/l81-mortar/"]
 title: "L81 Mortar"
 parent: "Building"
 group: "Emplacements"
-description: "A buildable mortar emplacement with one firing arc and a range of 132 to 684 m, built with a Large Hammer from 600 Build Supplies."
+description: "A buildable mortar emplacement with a historical reported range of 132 to 684 m, built with a Large Hammer from 600 Build Supplies."
 ---
 
 # L81 Mortar
@@ -15,8 +15,8 @@ description: "A buildable mortar emplacement with one firing arc and a range of 
 | Type | Stationary mortar emplacement |
 | Arcs | One |
 | **Range** | |
-| Minimum range | 132 m (measured); about 103 m allowed by the data (derived) |
-| Maximum range | 684 m |
+| Minimum range | 132 m (historical reported measurement); about 103 m in the earlier pitch-limit model |
+| Maximum range | 684 m in the saved range table; current flight unverified |
 | Travel time | 15.9 to 22.4 s (game table) |
 | **Building** | |
 | Build cost | 600 Build Supplies |
@@ -30,15 +30,15 @@ The L81 Mortar is a stationary emplacement that fires mortar rounds over short d
 
 ## Overview
 
-Destroying an enemy L81 Mortar pays 650 cash and 175 Role XP.
+Destroying an enemy L81 Mortar pays 1,300 cash and 175 Role XP.
 
-The mortar can hit targets from 132 m to 684 m away. It has one firing arc only, so each range has a single elevation setting. The setting to dial for each range, and the game's own range table with travel times, are in the table below.
+The historical measurements report 132 m to 684 m, and the earlier elevation model has one firing arc. These are not new S3 flight measurements; the saved range table remains available below. The setting to dial for each range, and the game's own range table with travel times, are in the table below.
 
 ## Effects
 
 ### Weapon
 
-The gun fires 120x800 mm shells in semi-automatic mode at 50 rounds/min. It reloads in 4.5 s and starts with 3 shells. A restock takes 150 Ammo Supplies, and the number of shells one restock gives is not stored, so the engine default of one is used (derived). A windup time of 2.5 s comes before each shot.
+The gun fires 120x800 mm shells in semi-automatic mode at 50 rounds/min. It reloads in 4.5 s and starts with 3 shells. A restock takes 150 Ammo Supplies, and `ResultingAmmoAmount` is omitted in the S3 export, so the number of shells supplied by one restock remains unverified for this build. A windup time of 2.5 s comes before each shot.
 
 ### Range and elevation
 
@@ -104,6 +104,10 @@ The Build Supplies cost is taken from the [Building](../building.md) article, wh
 - [Talon 9K-SAM](talon-9k-sam.md), [Vanguard CIWS](vanguard-ciws.md), [Stingray](stingray.md), [MG Nest](mg-nest.md) and [Loudspeaker](loudspeaker.md): the other stationary emplacements
 - [SPH-2](../vehicles/sph-2.md)
 - [Aiming the SPH-2](../guides/aiming-the-sph-2.md)
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) raise the reward for destroying this enemy emplacement from 650 to 1,300 cash. This reward is separate from construction supplies.
 
 ## Sources
 

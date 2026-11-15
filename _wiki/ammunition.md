@@ -10,15 +10,17 @@ description: "Bullet and shell types, what each does to armor and flesh, and whi
 
 # Ammunition
 
-Bullet weapons use one of four bullet types, and each has a tracer version that does the same damage with a visible trail. The shotgun fires two shell types. The type changes how much damage a hit does, most of all against armor.
+The bullet tables distinguish standard (FMJ), flesh damage (HP) and armor piercing (AP), with tracer variants. Shotguns list buckshot and rifled slugs. Damage figures below use S3 inputs with the historical damage formula; current native equivalence is unverified.
+
+[Limited Mode excludes HP and AP ammunition](https://store.steampowered.com/news/app/1867240/view/688648135317127221); this is a full-roster model, not an allowlist for that mode.
 
 | Type | What it does | Against no armor | Against armor |
 |---|---|---|---|
 | Standard (FMJ) | The baseline round. | Baseline. | Baseline. |
 | Flesh Damage (HP) | Does more damage to unarmored targets. | About double the standard damage. | Much weaker than standard against every armor class. |
-| Armor Piercing (AP) | Built to get through armor. | About 0.8 times the standard damage. | Overtakes standard from Medium armor for rifle calibers, and from Heavy armor for pistol and SMG calibers. |
+| Armor Piercing (AP) | Model applies an armor scalar. | About 0.8 times the standard damage. | Overtakes standard from Medium for rifle calibers and the Deagle, and from Heavy for 9mm, .45 ACP and .45 Colt. The .50 Cal AMR 50 is an exception: AP never beats FMJ in this model. |
 
-Tracer versions of each type do the same damage as their base type. They load into the normal magazines for their caliber, since loading checks the magazine and its caliber, not an ammo tag.
+Tracer variants have the same damage as their base type in the model. The historical loading rule checks the magazine and caliber rather than an ammo tag; current native loading behavior has not been verified.
 
 ## Torso damage by type: 5.56mm rifle example
 

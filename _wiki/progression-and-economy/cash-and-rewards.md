@@ -7,6 +7,19 @@ description: "What each action pays in cash and role XP: kills, revives, heals, 
 
 # Cash and Rewards
 
+## Announced S3 rewards
+
+The [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) establish the following gameplay changes. These are developer-announced rewards, separate from the conditional historical evaluator and the distinct match-score/challenge tables below.
+
+| Enemy emplacement destroyed | Earlier cash | S3 cash |
+|---|---:|---:|
+| L81 Mortar, Talon 9K-SAM, MG Nest, Stingray | 650 | 1,300 |
+| Vanguard CIWS | 1,200 | 2,400 |
+
+Air-vehicle kill-streak rewards for killing enemy players return. Destroying a vehicle with your own vehicle within **1,000 m** of a control zone earns the full control-zone reward. Pallets delivered outside a friendly FOB pay less, and lower-value crates pay less according to their contents' prices. Depositing fuel into a FOB that activates a drill gains a kickback; parachuting into an enemy FOB gains a reward. The announcement supplies no amount for those new rewards. Community servers also gain a small cash bonus, with no amount specified.
+
+See [Spotting Challenges](spotting-challenges.md#announced-s3-spotted-target-rewards) for the changed target-specific cash and XP.
+
 | Cash and Rewards | |
 |---|---|
 | Currencies | Cash (table start 10,000; 3,000 in Strike and Disarm, 2,000 in VIP Escort; kept between matches on live servers), Gold Bars (see [Cosmetics](cosmetics.md)) |
@@ -15,11 +28,11 @@ description: "What each action pays in cash and role XP: kills, revives, heals, 
 | Internal name | Reward cash tables and the per-kill calculator |
 {: .wiki-infobox }
 
-Every action in a match pays cash, and most also pay role XP. The base amount for an action depends on what was done: a kill with a default weapon pays 250, a kill from artillery in the open pays 5,000, and a Havoc attack helicopter destroyed pays 6,000. Zones and nearby kills are then multiplied, and the winning faction gets a bonus at the end.
+The reward tables define cash and role-XP amounts for selected events; they do not establish that every action pays. The base amount for an action depends on what was done: a kill with a default weapon pays 250, a kill from artillery in the open pays 5,000, and a Havoc attack helicopter destroyed pays 6,000. Zones and nearby kills are then multiplied, and the winning faction gets a bonus at the end.
 
 ## Overview
 
-Cash pays for gear, weapons, vehicles and skills. Role XP raises a role's mastery level. Both are earned during the match, and the end-of-match bonus adds more on top. This article lists the base values; the per-kill formula is in [How it works](#how-it-works).
+Cash pays for gear, weapons, vehicles and skills. Role XP raises a role's mastery level. Both are earned during the match, and the end-of-match bonus adds more on top. The flat cash examples below use the current reward-table evaluator with no zone tags, no repeat victim and a crew of one. Its zone comparisons set both the attacker and target inside the same zone. Those historical evaluation rules have not been independently matched to the S3 native consumer; the results are conditional model values. Challenge rewards and the separate per-kill calculator can use different bases, so their values must not be added together without proving the event route.
 
 ## How it works
 
@@ -111,7 +124,7 @@ See [Control Zone](../game-modes-and-maps/control-zone.md) for the zone rules.
 | Destroying an enemy FOB | 2,500, plus up to 7,500 by the FOB's supplies |
 | Destroying a Hot Zone Magnet structure | 3,000 in the flat buildable cash table; the challenge reward row for the Drill Rig gives 2,750 and 700 Role XP (see [Buildable Challenges](buildable-challenges.md)) |
 
-Destroying a Bunker, Recon Tower, Indirect Fire Shelter, Gate, Loudspeaker, Refuel Station or Repair Station pays 200 cash and 50 Role XP. A Vanguard CIWS pays 1,200 and 300, and an L81 Mortar or Talon 9K-SAM 650 and 175. Walls and other small buildables pay 5 to 85 cash. Placing a schematic pays 10 cash in a control zone and 20 in a hot zone, and nothing outside a zone. Building pays 5 cash per point of build progress inside a zone and 1 outside.
+Destroying a Bunker, Recon Tower, Indirect Fire Shelter, Gate, Loudspeaker, Refuel Station or Repair Station pays 200 cash and 50 Role XP. The announced S3 cash rewards are 2,400 for Vanguard CIWS and 1,300 for L81 Mortar or Talon 9K-SAM; the saved challenge XP values remain 300 and 175 respectively. Walls and other small buildables pay 5 to 85 cash. Placing a schematic pays 10 cash in a control zone and 20 in a hot zone, and nothing outside a zone. Building pays 5 cash per point of build progress inside a zone and 1 outside.
 
 ### End-of-match bonus
 
@@ -133,30 +146,30 @@ All six roles use the same XP curve. Milestones:
 |---|---|
 | 1 | 200 |
 | 5 | 6,250 |
-| 10 | 25,000 |
-| 20 | 111,500 |
-| 30 | 318,200 |
-| 50 | 1,150,000 |
-| 75 | 2,218,000 |
-| 100 | 5,132,500 |
+| 10 | 36,750 |
+| 20 | 275,000 |
+| 30 | 625,000 |
+| 50 | 1,950,000 |
+| 75 | 3,320,500 |
+| 100 | 6,600,000 |
 
-The game gives one XP value per level. Each value is the total Role XP needed to reach that level, not the step from the level before.
+The current definitions store these XP values at each level. Whether the consumer treats them as cumulative thresholds or per-level increments is not established here.
 
 ### Mastery rewards per level
 
-Each role's mastery runs from level 0 to level 100 and gives no reward of its own: the level table has an empty reward list for every level. What a level opens is the role's unlock tree, where each item or vehicle needs a role level and a cash price. The table counts those unlocks for each tree. The Wardog tree is the overall level, and it runs to level 150. The game has no rule for how the six role levels add up to the overall level.
+Each current role definition covers levels 0 to 100 and has empty reward lists. The separate unlock tree contains 411 nodes; empty level rewards do not rule out backend grants. The Wardog tree's stored level requirements extend to 200. How role levels contribute to the overall level remains unverified.
 
 | Tree | Unlocks | Level range | Cash in the tree |
 |---|---:|---:|---:|
-| Assault | 40 | 2 to 50 | 1,270,000 |
-| Recon | 58 | 2 to 50 | 2,445,000 |
-| Support | 33 | 1 to 50 | 1,630,000 |
-| Medic | 38 | 1 to 50 | 1,220,000 |
-| Pilot | 11 | 2 to 35 | 1,218,250 |
-| Driver | 21 | 3 to 35 | 2,308,250 |
-| Wardog (overall level) | 63 | 1 to 150 | 2,645,000 |
+| Assault | 65 | 2 to 50 | 2,802,500 |
+| Recon | 81 | 2 to 50 | 3,940,000 |
+| Support | 56 | 1 to 50 | 3,100,000 |
+| Medic | 59 | 1 to 50 | 2,585,000 |
+| Pilot | 34 | 2 to 50 | 2,723,250 |
+| Driver | 49 | 2 to 50 | 4,363,250 |
+| Wardog (overall level) | 67 | 1 to 200 | 4,570,000 |
 
-The unlock rows for each role are on its page, under Unlocks.
+The complete current unlock rows are in the [economy data](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/assets/data/economy.json). Role pages retain their Season 2 item tables as history alongside current totals.
 
 ## Tips that follow from the numbers
 

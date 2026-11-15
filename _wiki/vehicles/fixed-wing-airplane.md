@@ -13,10 +13,10 @@ description: "An unfinished two-seat airplane: it has a flight model but no dama
 | Seats | 2 (driver and one passenger seat) |
 | Price | Not sold (no shop listing) |
 | Unlock level | Not applicable |
-| Main health | 150 HP listed, but hits cannot damage it |
+| Main health | 150 HP listed; section-based damage unresolved for S3 |
 | Top speed | Not stored (see Handling) |
 | Mass | 10,000 kg |
-| Rifle damage taken (derived) | 7.5% |
+| Rifle damage taken | Unresolved; no S3 section-based model |
 | Internal name | FWG_01 |
 {: .wiki-infobox }
 
@@ -41,7 +41,7 @@ The airplane has two seats, a driver and one passenger. Its model still uses pla
 
 The airplane lists 150 HP at start. Threshold triggers sit on its main health at 90% and on its fuel tank at 90%, 50% and 0%. The fuel tank has three fuel-leak effects of 0.1, 0.4 and 0.5 per second. The leaks pair with the tank thresholds in order: 0.1 per second below 90%, 0.4 below 50% and 0.5 at 0%.
 
-Every other armed or armored vehicle splits its body into damage zones, such as the hull, engine and fuel tank. The airplane has none: no zones and no hit boxes on its model. A bullet, rocket or explosion that hits it finds no zone to damage, so nothing gives it a way to lose health from enemy fire. The 150 HP and the thresholds therefore have nothing feeding them, and no hit counts are listed. Its damage rules are copied from the Little Bird family (rifle rounds would do 7.5% of their damage), but with no zones they never apply.
+Every other armed or armored vehicle splits its body into damage zones, such as the hull, engine and fuel tank. No damage-section fragment is present in the inspected S3 platform export. The S3 platform export still lists only Config and Seats fragments, with no health-section fragment. In the historical CL516586 path, a hit without a section returned zero. That supports omitting section-based hit counts from the model; it does not prove S3 immunity or exclude scripted health changes. Its stored damage tag refers to the Little Bird family, but current damage activation remains unresolved.
 
 Several weapons still list it as a valid lock-on target: the 9K333 Verba launcher and five emplaced weapons.
 

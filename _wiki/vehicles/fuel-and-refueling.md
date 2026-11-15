@@ -15,7 +15,7 @@ description: "How much fuel each vehicle carries, how its fuel economy is listed
 | Refuel options | Fuel Canister, Refuel Station |
 | **Data** | |
 | Fuel unit | Not labelled in the data (shown as stored) |
-| Refuel rate | Refuel Station: Fast 5% in 3 s, Max up to 100% in 9 s. Canister: 2.0 units per 0.75 s |
+| Refuel settings | Station: Fast 5% / 3 s, Max up to 100% / 9 s. Canister stores amount 2.0 and interval 0.75 s; current transfer rules unverified |
 {: .wiki-infobox }
 
 Every driven vehicle has a fuel tank with a capacity and a fuel economy number. The vendor labels the economy number "L/KM", litres per kilometre, so a higher number means the vehicle burns more fuel for each kilometre. The capacity is labelled "L", litres. This article shows both numbers as the vendor lists them. The fuel tank also has its own health, which is covered in [Repair and vehicle parts](repair-and-vehicle-parts.md).
@@ -42,12 +42,14 @@ Most vehicles set their first leak step at 90 or 80 percent of fuel tank health,
 
 ### Refueling
 
-- **Fuel Canister.** A 40L Fuel Canister costs 150 cash and has 40 durability. The shop's 25 fuel per use is not what the refuel action uses. The action adds 2.0 fuel every 0.75 s. It is used until the can is empty or the vehicle is full. Canisters are filled for cash at world refuel points, see [Fuel Canister](../equipment/fuel-canister.md).
+The [official S3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) add a reward for depositing fuel into a FOB when that deposit activates a drill. They do not specify its amount; the announcement does not supply a replacement for the historical charging model below.
+
+- **Fuel Canister.** A 40L Fuel Canister costs 150 cash and has 40 durability. The shop's 25 fuel per use is not what the refuel action uses. The S3 canister container stores UpdateAmount 2.0 and UpdateTime 0.75 s; the earlier action reading interprets these as fuel per tick. It is used until the can is empty or the vehicle is full. Canisters are filled for cash at world refuel points, see [Fuel Canister](../equipment/fuel-canister.md).
 - **Refuel Station.** Built with the Large Hammer for 200 Build Supplies, with 1,600 HP. Only one can stand in each Forward Operating Base. It takes Fuel Supplies and must be inside the FOB radius to be used.
 - **Fuel Supplies.** Sold for 10 cash per lot of 50. A Fuel Supply Pallet costs 400 cash. The Refuel Station needs them to work.
 - **Refuel at base.** The in-game tip says vehicles can be refuelled by returning to your faction's safe zone or a FOB, and that this is not free.
 
-The Refuel Station has a Fast and a Max restock. Fast restocks 5% of the tank in 3 s for 75 cash. Max restocks up to a full tank in 9 s. A Max restock charges only for what the tank receives: the listed cash cost is scaled by the share of the tank restored and rounded up to a multiple of 50 (1,500 cash for a full tank), and the Fuel Supplies used are the item's cost times the amount restored. A nearly full tank costs little, though the restock most likely still takes its full 9 s (inferred), and a restock cannot give more fuel than the FOB has in stock. The [Refuel and Repair Stations](../building/refuel-and-repair-stations.md) page has the full figures. A vehicle with an empty tank has its engine stopped, as described above.
+In the historical CL516586 restock consumer, the Refuel Station has a Fast and a Max restock. Fast restocks 5% of the tank in 3 s for 75 cash. Max restocks up to a full tank in 9 s. A Max restock charges only for what the tank receives: the listed cash cost is scaled by the share of the tank restored and rounded up to a multiple of 50 (1,500 cash for a full tank), and the Fuel Supplies used are the item's cost times the amount restored. A nearly full tank costs little, though the restock most likely still takes its full 9 s (inferred), and a restock cannot give more fuel than the FOB has in stock. The [Refuel and Repair Stations](../building/refuel-and-repair-stations.md) page has the full figures. Those transfer, charging and engine-stop rules have not been independently traced in S3.
 
 ## Numbers
 
@@ -87,7 +89,7 @@ Season 2 changed no fuel capacity or fuel economy value.
 
 ## Tips that follow from the numbers
 
-- The Bobcat has the smallest capacity, 18. One Fuel Canister use adds 25, so one use is more than its whole tank, if the two use the same unit.
+- The Bobcat lists capacity 18. Using the canister container’s stored 2.0 per tick would require nine ticks from empty, if the capacity and transfer use the same unit; the shop’s 25 is not the container transfer amount.
 - The Flakpanzer Gepard has the highest fuel economy number, 10.0, which means the thirstiest listed use of fuel per kilometre. Plan fuel from the vehicle's own article, not from this column alone.
 - The fuel tank is also a weak point for attackers. On the Humvee, bullets to the fuel tank take an extra 400%, so it is the fastest route to destroy that vehicle. See [Vehicle damage](vehicle-damage.md).
 

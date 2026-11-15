@@ -60,6 +60,12 @@ Some rules are large. On the Havoc, a rocket that bursts within the inner radius
 - [Grenades and Explosives](../equipment/grenades-and-explosives.md)
 - [Weapons](../weapons.md)
 
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) say a 20×102 mm round now damages each vehicle section only once while passing through. Damage was retuned: Havoc and Z20 Lakota take roughly their Season 2 damage, while Littlebirds take slightly less. Existing calculated hit counts remain conditional and do not independently verify the changed section-contact behavior.
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) increase tank resistance to grenades and fix grenade-launcher damage: tracks take 3 hits instead of 1, and the rear engine takes 5–6 instead of 3, matching grenades. These developer-announced part-disable counts are distinct from the conditional whole-vehicle destruction models. Tanks and artillery can also break stone walls in Season 3.
+
 ## Sources
 
 - [Vehicle Damage Pipeline](../../pipelines/Wardogs_VehicleDamagePipeline_v1.md)

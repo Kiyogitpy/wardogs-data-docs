@@ -13,7 +13,7 @@ description: "Vehicle-use helmet: 30% head damage reduction, halves vehicle soun
 | **General** | |
 | Type | Helmet |
 | Slot | Helmet |
-| Weight | 1 kg |
+| Weight | Not serialized; current default unverified |
 | **Protection** | |
 | Damage reduction | 30% |
 | Body parts covered | Head |
@@ -31,7 +31,7 @@ The Pilot Helmet protects the head with a 30% reduction, the same as the [Level 
 
 The Item Shop describes the Pilot Helmet as "Low Damage Reduction" and lists the two vehicle effects. The shop files it under "Vehicle Use" rather than "Armor". It is still an armor item, and it goes in the Helmet slot.
 
-The weight is not listed, so the game's default of 1 applies. For all the vests and helmets, see [Body Armor](body-armor.md).
+The weight is not serialized. Earlier code supplied a default of 1; the current S3 default has not been verified. For all the vests and helmets, see [Body Armor](body-armor.md).
 
 ## Protection
 
@@ -48,7 +48,7 @@ With M4 full-metal-jacket rounds, a head hit does 65.8 HP with no helmet and 46.
 | **Pilot Helmet** | 30% | Head | 180 |
 | [Tank Helmet](tank-helmet.md) | 55% | Head and neck | 180 |
 
-Each hit on a covered body part takes durability from the piece. For an ordinary bullet the game code removes 0.4 times the incoming damage, and the piece breaks when durability reaches 0 (from the game code; the game itself was not run to confirm it). Wear does not weaken protection: all four durability stages give the same reduction, so a worn piece protects as well as a new one until it breaks.
+The S3 item lists the same reduction at all four durability stages. Earlier CL516586 code removed 0.4 times incoming bullet damage from durability and broke the piece at zero. That wear and break behavior has not been traced in the current S3 build; equal stored stages alone do not establish protection until breakage.
 
 ## Vehicle effects
 

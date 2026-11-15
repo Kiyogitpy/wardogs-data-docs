@@ -82,7 +82,7 @@ The Weapon Shop data has no barrel rows, so the price column reads Not in shop d
 
 ## Parts that fit no weapon
 
-5 parts can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
+The table reports 5 parts with no fitting weapon in its loadout association. That is a bounded catalog result, not proof that their modifiers never apply in S3. They are still listed in the table above with "No weapon" in the Fits column.
 
 RPK74 Barrel + Gas Block, Unnamed barrel, Unnamed barrel, Unnamed barrel, Unnamed barrel.
 

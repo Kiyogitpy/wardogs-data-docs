@@ -3,7 +3,7 @@ redirect_from: ["/wiki/equipment/forward-operating-base/"]
 title: "Forward Operating Base"
 parent: "Building"
 group: "Structures"
-description: "The base that players place to anchor building, costing 7,500 cash and 30 Build Supplies to place, with 15,000 HP."
+description: "The base that players place to anchor building, costing 7,500 cash, with stored build cost 30, placement cost 0 and health 15,000 HP."
 ---
 
 # Forward Operating Base
@@ -18,7 +18,7 @@ description: "The base that players place to anchor building, costing 7,500 cash
 | Build cost | 30 Build Supplies |
 | Shop price | 7,500 cash |
 | Build time | Instant |
-| Health | 15,000 HP |
+| Stored health | 15,000 HP; S3 initialization unverified |
 | **Damage** | |
 | Bullets | -80% |
 | Melee | -80% |
@@ -29,7 +29,7 @@ description: "The base that players place to anchor building, costing 7,500 cash
 | Internal name | [`DA_Buildable_FOB`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/ForwardOperatingBase/DA_Buildable_FOB.json), item [`ID_ForwardOperatingBase`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/ForwardOperatingBase/ID_ForwardOperatingBase.json) |
 {: .wiki-infobox }
 
-The Forward Operating Base, or FOB, is the anchor for most other structures. Most structures must be placed inside its radius. It has 15,000 HP, the most of any structure, and it is placed from its own item rather than a hammer. It also holds items and resources for players to use.
+The Forward Operating Base, or FOB, is the anchor for most other structures. Most structures must be placed inside its radius. Its asset stores 15,000 HP, the most of any structure, and it is placed from its own item rather than a hammer. It also holds items and resources for players to use.
 
 ## Overview
 
@@ -41,9 +41,9 @@ Destroying an enemy FOB pays 2,500 cash and 500 Role XP, plus up to 7,500 more c
 
 ## Building it
 
-- **Cost:** 7,500 cash from the shop. Its Build Supplies cost is 30, and nothing is charged at placement.
+- **Cost:** 7,500 cash from the shop. Its Build Supplies cost is 30, and its stored PlacementCost is 0; the S3 charging path has not been verified.
 - **Hammer:** None. The FOB is placed from its own item.
-- **Placement:** It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder. A new FOB also cannot be placed within about 42 m of another FOB. The check is a square box rather than a circle: a new FOB is refused when it is under 42 m from an existing one along both horizontal directions of that FOB (so up to about 59 m on a diagonal) and within 42 m in height, and the same test is run with the roles swapped. This is a static reading of the game code.
+- **Placement (historical CL516586 checks):** It could not be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder. The historical check also rejected a new FOB placed within about 42 m of another FOB. The check is a square box rather than a circle: a new FOB is refused when it is under 42 m from an existing one along both horizontal directions of that FOB (so up to about 59 m on a diagonal) and within 42 m in height, and the same test is run with the roles swapped. This is a historical static reading of CL516586 code, not a verified S3 placement boundary.
 - **Build time:** Instant. The FOB has no build stages.
 - **Repair and dismantle:** Hammer figures for the FOB are: 30 hits (Small), 15 (Medium) or 10 (Large) to repair from zero health, and 100, 75 or 60 hits to dismantle your own. Whether a hammer can work on a FOB is not confirmed, so these are shown for reference only. Dismantling gives no supplies back, as far as is known.
 - **Stack limit:** 1.
@@ -54,7 +54,7 @@ Destroying an enemy FOB pays 2,500 cash and 500 Role XP, plus up to 7,500 more c
 
 The FOB anchors the building radius. Most structures must be inside a friendly FOB radius to be placed, and the FOB limits the number of Refuel Stations, Repair Stations and Builder's Radios. The FOB also holds supplies for players, and there are sounds for depositing Ammo, Build, Fuel and Mechanical Supplies.
 
-Nothing in the game shows that the FOB is a spawn point. The server side is not ruled out, so whether players can spawn at a FOB is not known.
+The earlier CL516586 client-data search found no FOB respawn association. That historical negative search does not establish S3 client or server spawning behavior; whether players can spawn at a FOB remains unresolved.
 
 ## Durability
 
@@ -69,7 +69,7 @@ The FOB has the most exposure to explosives of any structure. Its IED entry mult
 | C4 | +1,250% | 13.5 times |
 | IEDs | +5,000% | 51 times |
 
-The FOB has a setting named "do not take damage". No code in the game files reads it, so it appears to be unused. The table below assumes the FOB takes damage like any other structure. Its health is 15,000, the value in its data asset, which is applied when the FOB is spawned. The table gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+The S3 asset retains the name `Buildable.Damage.DoNotTakeDamage`. The earlier CL516586 investigation found no reader in its searched paths; it did not exclude every indirect read and does not establish that the field is unused in S3. The table below assumes the FOB takes damage like any other structure. Its data asset stores 15,000 HP. Applying that value at spawn was traced in CL516586 (round 45 C); the equivalent S3 initialization has not been traced. The table gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 
@@ -89,6 +89,10 @@ Derived from each source's base damage and the damage table. It is not a count f
 - [Building](../building.md): costs, hammers and placement for every structure
 - [Drill Rig](drill-rig.md): a structure that must be placed inside a base radius
 - [Grenades and Explosives](../equipment/grenades-and-explosives.md): the explosives that damage structures
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) reduce the spotted-FOB kill reward from 250 to 200 XP. This is a spotting reward, distinct from the destruction reward above. Pallets outside a friendly FOB pay less, and lower-value crates pay rewards scaled to their contents. Fuel deposited into a FOB that activates a drill earns a new kickback; no amount is specified.
 
 ## Sources
 

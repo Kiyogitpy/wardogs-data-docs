@@ -9,7 +9,7 @@ description: "The conditions a player can feel in Wardogs: downed and bleed-out,
 | Status effects | |
 |---|---|
 | Covers | Downed, bleed-out, burning, suppression, spotting, medical buffs, falls, weight and movement penalties |
-| Damage over time | None. Bleeding is the downed timer, not health loss |
+| Repeated damage | Molotov fire ticks; the historical bleeding search concerned the downed timer |
 | Health regeneration | None outside Deathmatch (none found in the game code) |
 {: .wiki-infobox }
 
@@ -26,14 +26,14 @@ A status effect is a temporary condition that changes how a player fights or mov
 | Spotted | You spot an enemy | Enemy shows to your team on the mini and tactical maps | Infantry 30 s, kept up to 180 s; vehicles 60 to 90 s; bases up to 3,600 s | Spot on infantry takes 0.5 s; spot marker fades over 3.0 s |
 | Adrenaline | Using an Adrenaline Pen | Unlimited tactical sprint, lighter equipment class | 60 s | Camera field of view x1.05 |
 | Medical use | Using a medical item | Move at half speed while using it | While using | Speed x0.5 |
-| Enox boost | Using Enox | Extra health that drains over time | Until the pool is empty (40 s for a full pool) | Pool of 40 health, loses 5 health every 5 s |
+| Enox boost | Using Enox | Historical vitality model: decaying extra health | Historical model: 40 s for a full pool | Historical pool 40, up to 5 HP per 5 s; S3 consumer unresolved |
 | Revive sprint boost | Reviving, or being revived by, a teammate | Faster sprint | 5 s | Speed x1.2 at skill level 2, x1.4 at level 4 |
 | Revived by an enemy | A resuscitator used on a player of the other faction | No effect on the player; killing them pays almost nothing | 60 s | Kill cash x0.01, no Role XP |
 | Fall landing | Landing hard | Damage | Once per landing | 0 at input 670, 100 at 875, 200 at 1,080 |
 | Landing and action sway | Jump, landing, vault, mantle, stance change, end of tactical sprint | Weapon sway changes briefly | 2 s to 15 s | Jump 2 s, landing 10 s, mantle 10 s, vault 5 s, stance 5 s, tactical sprint end 15 s |
 | Heavy load | Equipment weight class | Slower, slower to aim and jump | While equipped | Heavy speed x0.8, super heavy jump x0.65 |
 | Aiming | Aiming down sights | Move at half speed | While aiming | Speed x0.5 |
-| Ghillie suit | Body suit and headwear both worn | Slower, quicker to aim, more sway | While worn | Aim time x0.8, aim sway x1.15 |
+| Ghillie suit | Historical body/headwear set model; S3 activation unresolved | Historical model: slower, quicker to aim, more sway | S3 unresolved | Historical aim time x0.8, sway x1.15; current effect definitions absent |
 | Barbed wire slow | Standing inside a barbed wire | Movement cut to 7.5% of normal speed | Not yet known | Speed x0.075 |
 | Door breach | Breaching a door | Movement ramps down and back up | 0.8 s | Ramp curve, not a fixed number |
 | Tinnitus | Nearby explosions and backblast | Audio only: a low-pass mix | About 1.2 s (1 s hold, 0.1 s fades; derived) | Tank Helmet removes it, per the shop text |
@@ -44,7 +44,7 @@ When health reaches 0 the player is downed. They cannot fight, and their health 
 
 ## Bleeding and bleed-out
 
-In Wardogs, "bleeding" means the bleed-out timer. There is no damage over time: the game shows that a downed player loses no health while bleeding out, and no item cures a bleed. The timer starts at 360 s and drains at 0.5 per second in the normal state, so a player lasts about 720 s unless helped. Giving up switches the drain to 240 per second, which ends the wait in about 1.5 s. A player who was revived and goes down again starts with at least 30 s, which lasts about 60 s at the normal drain. When the timer reaches zero the player bleeds out and respawns at Headquarters.
+In Wardogs, "bleeding" means the bleed-out timer. The historical bleeding search identified the downed timer and no bleeding-cure item; that does not rule out every S3 damage-over-time system. Molotov fire already supplies repeated damage in the documented model. The timer starts at 360 s and drains at 0.5 per second in the normal state, so a player lasts about 720 s unless helped. Giving up switches the drain to 240 per second, which ends the wait in about 1.5 s. A player who was revived and goes down again starts with at least 30 s, which lasts about 60 s at the normal drain. When the timer reaches zero the player bleeds out and respawns at Headquarters.
 
 ## Burning
 
@@ -67,7 +67,7 @@ Spotting an enemy with binoculars shows that enemy to your teammates on the mini
 
 ## Adrenaline
 
-The Adrenaline Pen heals nothing. It gives unlimited tactical sprint for 60 s and lowers the equipment weight class by one step while active. The camera view widens slightly (x1.05) and that is ignored while the player is downed. A second pen used during the 60 s keeps one stack and restarts the 60 s (derived from the effect's default settings). Each player can carry up to three.
+The Adrenaline Pen heals nothing. It gives unlimited tactical sprint for 60 s and lowers the equipment weight class by one step while active. The camera view widens slightly (x1.05) and that is ignored while the player is downed. The historical constructor/default model predicts that a second pen keeps one stack and refreshes 60 s; current S3 stack policy and application have not been reverified. Each player can carry up to three.
 
 ## Medical use
 
@@ -75,7 +75,7 @@ Using any medical item (bandage, First Aid Kit, Medical Bag, Adrenaline Pen, res
 
 ## Enox boost
 
-Enox adds 40 health as a decaying pool. Every 5 s the pool loses 5 health, or what is left of it, so a full pool is gone after 40 s. The amount and period are read from the game code; the game was not run to time it.
+Enox stores a self-use amount of 40. In the historical vitality model it becomes a decaying pool losing up to 5 health every 5 s, so a full pool lasts 40 s. The amount and period come from the CL516586-era round 40 native/default reading, not a current S3 timing or consumer check.
 
 ## Revive sprint boost
 
@@ -83,7 +83,7 @@ After a Medic revives a teammate, the Medic gets a faster sprint and tactical sp
 
 ## Falling and landing
 
-A hard landing causes damage that rises with fall speed. The game's curve gives 0 damage at input 670, 100 at 875 and 200 at 1,080, which reads as fall speeds of 6.7, 8.8 and 10.8 m/s (the unit of this curve is presumed to be centimetres per second, as for the parachute curve). The output is presumed to be health, but this is not checked. Parachute landings use a separate curve that starts at 6.95 m/s and reaches 100 at 17 m/s. Landing also changes weapon sway (see Movement sway below). A separate curve with a roughly 0.6 s key range belongs to walk gun-bob rotation; that range does not establish a landing-dip duration. Its final use has not been traced; see [Player Movement](../../content/Wardogs_PlayerMovement_v1.md#3-fall-landing-and-vehicle-exit-damage).
+A hard landing causes damage that rises with fall speed. The game's curve gives 0 damage at input 670, 100 at 875 and 200 at 1,080, which reads as fall speeds of 6.7, 8.8 and 10.8 m/s (the unit of this curve is presumed to be centimetres per second, as for the parachute curve). The output is presumed to be health, but this is not checked. S3 parachutes use separate piecewise-linear curves: Basic stores 700/0, 900/20, 1,200/100, and Sport 800/0, 1,000/25, 1,900/100 (input/output). Interpreting input as cm/s remains conditional; see [Parachutes](../equipment/parachutes.md). Landing also changes weapon sway (see Movement sway below). A separate curve with a roughly 0.6 s key range belongs to walk gun-bob rotation; that range does not establish a landing-dip duration. Its final use has not been traced; see [Player Movement](../../content/Wardogs_PlayerMovement_v1.md#3-fall-landing-and-vehicle-exit-damage).
 
 ## Movement sway
 
@@ -95,7 +95,7 @@ Equipment weight class changes movement and aim. Light and medium loads lower sp
 
 ## Aiming and the Ghillie suit
 
-Aiming down sights halves movement speed. Wearing a Ghillie suit and Ghillie headwear together makes the player slightly slower (x0.95) but quicker to aim (aim time x0.8), and it adds more weapon sway (x1.15).
+Aiming down sights halves movement speed. The historical Ghillie set-effect model lists speed x0.95, aim time x0.8 and sway x1.15. Current item exports reference the Ghillie effects, but their definitions are absent from the current export corpus; S3 magnitudes and set activation remain unresolved.
 
 ## Barbed wire, door breach and tinnitus
 
@@ -114,6 +114,12 @@ Barbed wire has an effect that sets movement to 7.5% of normal speed. It is appl
 - [Movement](movement.md)
 - [Medical Items](../equipment/medical-items.md)
 - [Body Armor](../equipment/body-armor.md)
+
+## Season 3 announcement
+
+Molotov fire now ignites players and forces them to drop their held item. Damage against heavy armor and armored vehicles is reduced. The historical tick, lifetime and exit-status calculations on this page are not measured S3 damage or a verification of the new burning lifecycle.
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
 
 ## Sources
 

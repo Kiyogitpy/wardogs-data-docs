@@ -17,7 +17,7 @@ description: "A buildable stationary emplacement with a fast automatic 20x102 mm
 | Gun | 20x102 mm cannon |
 | Fire mode | Automatic |
 | Rate | 1,800 rounds/min |
-| Effective range | 1,000 m |
+| Stored EffectiveRange | 1,000; unit/consumer unresolved here |
 | Reload | 3.0 s |
 | Windup | 1.5 s |
 | Starting ammunition | 500 rounds |
@@ -34,7 +34,7 @@ The Vanguard CIWS is a stationary emplacement with an automatic 20x102 mm cannon
 
 ## Overview
 
-Destroying an enemy Vanguard CIWS pays 1,200 cash and 300 Role XP.
+Destroying an enemy Vanguard CIWS pays 2,400 cash and 300 Role XP.
 
 The Vanguard starts with 500 rounds and fires them in automatic bursts. A windup time of 1.5 s comes before the gun reaches full speed. It is listed on the [Building](../building.md) page with the other stationary weapons.
 
@@ -42,7 +42,7 @@ The Vanguard starts with 500 rounds and fires them in automatic bursts. A windup
 
 ### Weapon
 
-The cannon has a rate of 1,800 rounds/min and an effective range of 1,000 m. Its reload time is 3.0 s. The game also gives a bullet speed for the gun, but not its unit, so this article does not convert it.
+The stats export stores 1,800 rounds/min and EffectiveRange 1,000; the latter field alone does not establish a 1,000 m firing limit. Its reload time is 3.0 s. The game also gives a bullet speed for the gun, but not its unit, so this article does not convert it.
 
 The emplacement starts with 500 rounds. A restock takes 250 Ammo Supplies and gives 500 rounds.
 
@@ -77,6 +77,12 @@ The Build Supplies cost is not a cash price. Build Supplies are bought in the sh
 - [Building](../building.md): Build Supplies costs, health and hammers for every structure and stationary weapon
 - [Talon 9K-SAM](talon-9k-sam.md), [Stingray](stingray.md), [MG Nest](mg-nest.md), [Loudspeaker](loudspeaker.md) and [L81 Mortar](l81-mortar.md): the other stationary emplacements
 - [Vehicle weapons](../vehicles/vehicle-weapons.md): the guns mounted on vehicles
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) say a 20×102 mm round now damages each vehicle section only once while passing through. Damage was retuned: Havoc and Z20 Lakota take roughly their Season 2 damage, while Littlebirds take slightly less. Existing calculated hit counts remain conditional and do not independently verify the changed section-contact behavior.
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) lower maximum elevation from 65° to 60°, leaving a larger blind area overhead, and double the enemy-destruction cash reward from 1,200 to 2,400. Limited Mode does not offer the CIWS. The cash reward is separate from its 1,200 Build Supplies construction cost.
 
 ## Sources
 

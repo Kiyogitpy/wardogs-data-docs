@@ -19,21 +19,21 @@ One table for every weapon that fires bullets or shells. Click a column heading 
 | [KH-2002](kh-2002.md) | Assault rifle | 5.56x45mm | 700 | 20 | 0 | 30.8 | 4 | 0.26 | 7 | 0.51 | 11.9 |
 | [M4](m4.md) | Assault rifle | 5.56x45mm | 800 | 30 | 2800 | 30.8 | 4 | 0.23 | 7 | 0.45 | 10.4 |
 | [T-21](t-21.md) | Assault rifle | 5.56x45mm | 750 | 20 | 1200 | 30.8 | 4 | 0.24 | 7 | 0.48 | 11.2 |
-| [TCX-SPR](tcx-spr.md) | Assault rifle | 7.62x39mm | 800 | 28 | 3200 | 32.9 | 4 | 0.23 | 7 | 0.45 | 15.9 |
+| [TCX-SPR](tcx-spr.md) | Assault rifle | 7.62x39mm | 800 | 28 | 3200 | 32.9 | 4 | 0.23 | 7 | 0.45 | 12.6 |
 | [BMR-308](bmr-308.md) | Marksman rifle | .308 Win | 450 | 10 | 6250 | 61.7 | 2 | 0.13 | 4 | 0.40 | 27.9 |
 | [M14](m14.md) | Marksman rifle | .308 Win | 700 | 10 | 7400 | 61.7 | 2 | 0.09 | 4 | 0.26 | 31.3 |
 | [SKS](sks.md) | Marksman rifle | 7.62x39mm | 420 | 10 | 2400 | 51.2 | 2 | 0.14 | 5 | 0.57 | 33.6 |
 | [SVD](svd.md) | Marksman rifle | 7.62x54mm | 480 | 10 | 4800 | 59.7 | 2 | 0.12 | 4 | 0.38 | 25.5 |
 | [Evo-3 Ultra](evo-3-ultra.md) | Light machine gun | .308 Win | 700 | 50 | 7250 | 37.1 | 3 | 0.17 | 6 | 0.43 | 31.0 |
 | [M249 SAW](m249-saw.md) | Light machine gun | 5.56x45mm | 850 | 200 | 3200 | 30.8 | 4 | 0.21 | 7 | 0.42 | 16.1 |
-| [PKM](pkm.md) | Light machine gun | 7.62x54mm | 600 | 100 | 4100 | 36.3 | 3 | 0.20 | 6 | 0.50 | 24.0 |
+| [PKM](pkm.md) | Light machine gun | 7.62x54mm | 600† | 100 | 4100 | 36.3 | 3 | 0.20† | 6 | 0.50† | 24.0 |
 | [AMP-9](amp-9.md) | Submachine gun | 9x19mm | 900 | 30 | 1375 | 25.4 | 4 | 0.20 | 8 | 0.47 | 8.3 |
 | [MP5](mp5.md) | Submachine gun | 9x19mm | 800 | 30 | 1800 | 25.4 | 4 | 0.23 | 8 | 0.53 | 8.8 |
 | [PP-19 Bizon](pp-19-bizon.md) | Submachine gun | 9x19mm | 700 | 53 | 1000 | 25.4 | 4 | 0.26 | 8 | 0.60 | 12.9 |
 | [PP-19 Vityaz](pp-19-vityaz.md) | Submachine gun | 9x19mm | 800 | 30 | 1200 | 25.4 | 4 | 0.23 | 8 | 0.53 | 12.3 |
 | [Super-45](super-45.md) | Submachine gun | .45 ACP | 1,200 | 30 | 5600 | 34.7 | 8* | 0.35* | 16* | 0.75* | 0.4 |
 | [Deagle](deagle.md) | Pistol | .50 AE | 267 | 7 | 750 | 72.8 | 2 | 0.22 | 3 | 0.45 | 13.0 |
-| [GGX 17](ggx-17.md) | Pistol | 9x19mm | 600 | 17 | 200 | 25.4 | 5* | 0.40* | 9* | 0.80* | 7.5 |
+| [GGX 17](ggx-17.md) | Pistol | 9x19mm | 600† | 17 | 200 | 25.4 | 5* | 0.40*† | 9* | 0.80*† | 7.5 |
 | [GGX 18](ggx-18.md) | Pistol | 9x19mm | 1,200 | 17 | 1000 | 25.4 | 5* | 0.20* | 9* | 0.40* | 15.9 |
 | [Judge](judge.md) | Pistol | .45 Colt | 200 | 6 | 250 | 52.0 | 3* | 0.60* | 5* | 1.20* | 9.0 |
 | [M1911](m1911.md) | Pistol | .45 ACP | 430 | 7 | 300 | 45.0 | 3* | 0.28* | 5* | 0.56* | 7.5 |
@@ -49,10 +49,11 @@ One table for every weapon that fires bullets or shells. Click a column heading 
 
 - Damage and kill figures use the standard bullet (FMJ), or buckshot for shotguns, on upper-torso hits. Shotgun damage is the sum of all 8 pellets and assumes every pellet hits.
 - Shots to kill are for a character with 100 HP: 100 divided by the damage per hit, rounded up. Time to kill (TTK) is (shots - 1) x 60 / fire rate, because the first shot fires at 0 s.
-- A * marks a 100 m figure that is beyond the weapon's effective range, where damage falls with distance. Damage at 100 m uses the range falloff curve.
+- A * marks a 100 m figure beyond the effective-range model setting. Damage at 100 m uses the separate falloff curve; the marker is not a damage cutoff.
+- A † marks a model fire rate supplied by the historical 600 RPM default and its dependent TTK values. Those current native defaults are unverified.
 - A Level 3 vest cuts upper-torso damage by 50%. See [Body Armor](../equipment/body-armor.md) for all four levels.
-- Recoil climb is how far the view rises over the first 10 shots of the Season 2 pattern, before attachments. See [Spread and Recoil](../game-mechanics/spread-and-recoil.md).
-- Everything is derived from game data. It assumes every shot hits and armor stays intact, and it ignores reload, spread and recoil. Real fights take longer.
+- Recoil climb is the S3-input model over 10 authored shots, before attachments. The historical calculation and omitted-field defaults are not verified S3 native behavior. See [Spread and Recoil](../game-mechanics/spread-and-recoil.md).
+- Damage uses S3 inputs with the earlier damage and flight formulas; current native equivalence is unverified. The model assumes every shot hits and armor stays intact, and ignores reload, spread and recoil.
 
 ## See also
 

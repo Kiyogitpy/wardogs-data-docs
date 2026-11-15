@@ -2,7 +2,7 @@
 title: "Keycards"
 parent: "Equipment"
 group: "Utility"
-description: "The six faction Keycards (Alpha, Bravo and Charlie, two of each): quick-slot items with a use action, no shop price, and no reader or door in the shipped maps that takes them."
+description: "The six faction Keycards (Alpha, Bravo and Charlie, two of each): quick-slot items with a use action, no shop price, and a historical search that found no placed reader; S3 placement is unresolved."
 ---
 
 # Keycards
@@ -20,7 +20,7 @@ description: "The six faction Keycards (Alpha, Bravo and Charlie, two of each): 
 | Internal name | `Id.Item.KeyCard.Alpha.1` to `Id.Item.KeyCard.Charlie.2` |
 {: .wiki-infobox }
 
-Keycards are six quick-slot items, two for each of the three factions. Each has a use action, but no door, reader or mission accepts one. The game's code does contain a keycard reader (see Effects), but no map or mission places it, so the cards open nothing today.
+Keycards are six quick-slot items, two for each of the three factions. Each has a use action. The historical round 75 search found a native keycard reader but no placed map or mission consumer. That search does not establish whether S3 cards open anything.
 
 ## Overview
 
@@ -32,7 +32,7 @@ All six use the same held model, a generic universal tool, and the same one-hand
 
 The item records only the faction and the card number. It does not record what a card opens or what the use action changes.
 
-The game's code has a reader object made for these cards: a wall reader with a scanner mesh and a trigger box, which can be linked to a door and to other readers it depends on. Using a card casts a short line 1 m ahead of you; if it hits a reader, the card is sent to the server, which compares the card's faction and its number with the ones the reader wants. The three possible results are success, wrong faction and wrong number. What a success does to the door was not read. No reader is placed in any map, mission layer or Blueprint, no door or quest names a card, and nothing derives from the reader, so none of this can happen in the current game files.
+The historical round 75 native analysis describes a reader object made for these cards: a wall reader with a scanner mesh and a trigger box, which can be linked to a door and to other readers it depends on. Using a card casts a short line 1 m ahead of you; if it hits a reader, the card is sent to the server, which compares the card's faction and its number with the ones the reader wants. The three possible results are success, wrong faction and wrong number. What a success does to the door was not read. Round 75 found no reader placement, derived Blueprint or door/quest reference in its searched historical package corpus. Current S3 placement and successful door behavior remain unresolved.
 
 ## Use and timing
 

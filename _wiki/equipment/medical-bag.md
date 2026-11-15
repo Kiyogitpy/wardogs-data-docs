@@ -40,7 +40,7 @@ The bag is the item for teammate support. A teammate heal costs only 2 durabilit
 | Heal a teammate | 15 HP | 1.5 s | 10 HP/s | 2 |
 | Revive a teammate | 50 HP after the revive | not stated | not applicable | 10 |
 
-The rate column is the amount divided by the time. Healing works in steps: a teammate heal is a step of 15 HP every 1.5 s, and healing yourself is a step of 35 HP every 5 s. The bag charges its durability once for each step that heals, as a fixed amount (read from the game code). A step that heals nothing, because the target is already full, costs nothing.
+The rate column is the amount divided by the time. Healing works in steps: a teammate heal is a step of 15 HP every 1.5 s, and healing yourself is a step of 35 HP every 5 s. Earlier CL516586 code charged the stored cost once per healing step, and charged nothing for a step that healed nothing. The current S3 action consumer has not been traced, so these stored amounts and durations do not establish the actual tick or charging behavior.
 
 - **Healing over time:** the tutorial text says the bag heals over time, and that healing stops if you move away.
 - **Movement:** maximum movement speed is halved while the bag is in use.
@@ -57,7 +57,7 @@ The "Medkits have more uses" skill has a usage multiplier, which falls from 1 to
 | 3 | 0.7 |
 | 4 | 0.6 |
 
-The game code never reads this multiplier, and it charges the same durability cost at every level. So the bag holds 6 self heals, 75 teammate heals or 15 revives at every level (derived from the fixed costs, 150 durability in total). Whether the server applies the skill is not known. The "Medic bag" skill, which the skill tree describes as adding slots for medical items, has no number in the game files and no code reads it, so its effect is not known.
+Earlier CL516586 analysis found no reader for the usage multiplier. Assuming that historical fixed-cost behavior with the S3 stored values gives 6 self heals, 75 teammate heals or 15 revives from 150 durability. This does not establish equal counts at every skill level in S3; the current action and server consumers remain unresolved. The "Medic bag" skill, which the skill tree describes as adding slots for medical items, has no number in the game files and no code reads it, so its effect is not known.
 
 ## Use and timing
 

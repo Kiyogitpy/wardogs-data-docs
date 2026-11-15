@@ -7,6 +7,8 @@ description: "The 14 achievement entries in the S3 / 0.3 snapshot, their saved c
 
 # Achievements
 
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) announce **three added Steam achievements**: He's Behind You, Car Jacker and Slot Machine. The saved table below contains 14 entries versus 10 in S2, including Sound The Horn as a fourth data addition; the announcement does not claim all four were newly released Steam achievements. Configuration presence and Steam release availability remain distinct.
+
 The CL-533731 / hotfix 533689 snapshot lists **14 achievement entries**, compared with ten in the saved Season 2 table. Each has a Steam achievement ID and is marked to auto-activate. No cash, XP or item rewards are serialized in these entries; this does not establish backend rewards or when an achievement is available.
 
 The goals below summarize the reviewed current StateTree configuration. Event production, native task behavior and backend award behavior are not independently verified. The four numeric blocks were decoded from current saved package bytes: **100,000 cash twice, 3,600 seconds and 95,000 cm (950 m)**.

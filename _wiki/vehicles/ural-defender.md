@@ -16,7 +16,7 @@ description: "Three-seat protected version of the Ural heavy truck with no weapo
 | Unlock level | 0 |
 | Main health | 700 HP |
 | Top speed | 79 (as stored) |
-| Rifle damage taken (derived) | 5% |
+| 5.56 mm hull damage (derived) | 2.5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-ural/WHL_07_Battle) |
 | Internal name | WHL_07 (battle variant) |
 {: .wiki-infobox }
@@ -56,6 +56,8 @@ Main health is 700 HP, with the same engine, fuel tank and wheel health as the [
 The Ural Defender has no weapons. Its three seats are a driver and two passengers.
 
 ## Handling
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) put Ural reverse speed at 27 km/h (previously 15 km/h). This is the announced family value, not a simulation measurement.
 
 Handling matches the base Ural: mass 10,000, hand brake 50, front steering of 30 degrees, and the same gearbox: five forward gears and a reverse ratio.
 

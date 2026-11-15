@@ -102,10 +102,10 @@ def build():
 def main():
     rows = build()
     if "--json" in sys.argv:
-        doc = {"meta": {"generator": "_tools/weapon_capacity_tables.py", "source": "data/ cooked export (CL516586)",
+        doc = {"meta": {"generator": "_tools/weapon_capacity_tables.py", "source": "current data/ cooked export; historical native defaults are model assumptions",
                         "units": "muzzle speed cm/s (also m/s), effective range metres, rpm rounds per minute",
-                        "notes": ["rpm is the asset value, or 600 (native struct default) where the asset omits it",
-                                  "muzzle speed and effective range likewise fall back to the struct ctor defaults 100000 cm/s and 100 m (RVA 0x699E6C0) where the asset omits them",
+                        "notes": ["rpm is the asset value, or the historical CL516586 native default assumption 600 where the asset omits it; the S3 default is unverified",
+                                  "muzzle speed and effective range likewise assume the historical ctor defaults 100000 cm/s and 100 m where omitted; omission does not verify the current native value",
                                   "capacity = MaxSlotAmountStackSize of the container (inferred meaning, Items v2 section 2a)"]},
                "weapons": rows}
         with open(OUT, "w", encoding="utf-8", newline="\n") as f:

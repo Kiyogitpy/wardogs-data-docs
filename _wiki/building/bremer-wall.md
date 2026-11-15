@@ -16,7 +16,7 @@ description: "A large wall built only with the Large Hammer, from 32 Build Suppl
 | Hammer | Large |
 | **Building** | |
 | Build cost | 32 Build Supplies (15 in Season 1) |
-| Build time | 22 hits Large (about 19.4 s). Derived from the hammer swing timing, not timed in play. |
+| Build time (CL516586 formula, S3 inputs, scale 1) | 22 hits Large (about 19.4 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 6,500 HP |
 | **Damage** | |
 | Bullets | -80% |
@@ -38,20 +38,20 @@ Destroying an enemy Bremer Wall pays 30 cash and 10 Role XP.
 
 ## Building it
 
-- **Cost:** 32 Build Supplies, whichever hammer builds it. In Season 1 it cost 15. Nothing is charged at placement.
+- **Cost:** 32 Build Supplies, whichever hammer builds it. In Season 1 it cost 15. The S3 export omits `PlacementCost`; the earlier zero-placement-cost model is not a verified current default.
 - **Hammers:** Large only.
 - **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 1.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. The earlier stages have 15, 20, 15 and 19 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](../building.md#weak-spots)).
 - **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
-| Building it | Small hammer | Medium hammer | Large hammer |
+| Conditional counts (CL516586 formula, scale 1) | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
 | Hits to build | cannot place | cannot place | 22 (about 19.4 s) |
 | Hits to repair from zero health | 44 | 22 | 15 |
 | Hits to dismantle (your own) | 44 | 33 | 26 |
 
-Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
+The build, repair and dismantle counts apply the CL516586 formulas to S3 saved inputs, at cost scale 1 with the earlier omitted-field defaults; current native equivalence is unverified. Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The Large Hammer is the only one that can place the Bremer Wall. The repair and dismantle hits for the other hammers are what their hits do; they have not been verified for this structure. The build count assumes normal hits.
 

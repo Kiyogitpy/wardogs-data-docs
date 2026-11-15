@@ -47,7 +47,7 @@ Repairs use Build Supplies too, and any not needed are returned. No Build Suppli
 
 ### Supply pallets
 
-Pallets for the same four resources are sold by the vehicle Garage vendor, not the Item Shop. Each costs 400 cash. The shop text advises delivering them to the FOB, and says they are destroyed by high-speed impacts (about 90 m of free fall at most).
+Pallets for the same four resources are sold by the vehicle Garage vendor, not the Item Shop. Each costs 400 cash. The [official S3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) reduce approximate pallet drop guidance from 90 m to 40 m. Standard and armored supply crates both move to about 35 m, from about 60 m and 80 m respectively. Speed and impact still matter: about 80 km/h at those heights is guidance, not guaranteed survival. Crates can no longer be deployed inside safe zones; armored crates retain ballistic/explosive resistance rather than a higher permitted drop.
 
 | Pallet | Price (cash) |
 |---|---:|

@@ -24,7 +24,7 @@ description: "A self-only item that gives 40 HP as decaying health, above your n
 | Internal name | `ID.Item.Enox.Standard` |
 {: .wiki-infobox }
 
-The Enox is a self-only item that gives 40 HP of decaying health. Decaying health is health above your normal 100 max that fades back over time, so the Enox does not give a permanent heal. The shop lists it as a consumable that grants decaying health.
+The Enox stores a self-use amount of 40. In the historical vitality model this becomes decaying health above a normal 100 HP maximum, rather than a permanent heal; the S3 vitality consumer has not been reverified. The shop lists it as a consumable that grants decaying health.
 
 ## Overview
 
@@ -32,18 +32,18 @@ The Enox is in the Medical category but is listed under Equipment in the shop. T
 
 ## Effects
 
-- **Healing:** +40 HP as decaying health. The decay pool holds up to 40 HP above the normal maximum. Healing is capped at the maximum plus the decay pool.
-- **Fading:** the decaying health fades over time, and damage taken also lowers it (a static reading of the game code). Every 5 s the fade removes 5 HP, or what is left of the pool, until the pool is empty. A full 40 HP pool is therefore gone after 40 s (read from the game code).
-- **Movement:** the Enox has no movement slow.
-- **Bleeding:** the Enox does not stop bleeding. The game has no damage-over-time bleeding to cure.
+- **Healing:** +40 HP as decaying health. The historical vitality model caps the extra pool at 40 HP and healing at maximum health plus that pool; current S3 vitality limits are unverified.
+- **Fading:** the decaying health fades over time, and damage taken also lowers it (a static reading of the game code). The CL516586-era round 40 trace removes up to 5 HP every 5 s, giving 40 s for a full 40 HP pool. That decay rate and pool limit are historical defaults, not reverified S3 native behavior.
+- **Movement:** The current Enox appliable export lists no movement effect; that absence does not prove every S3 consumer leaves movement unchanged.
+- **Bleeding:** No bleeding-cure effect is listed on this item. The cited CL516586-era search found the downed bleed-out timer, not a damage-over-time bleeding system; that negative search does not establish absence in S3.
 
 ### Medic skills
 
-The "Self-healing speed" skill is described as applying to all medical items. No number for them is known, and no game code reads them, so its effect on the Enox is not known. The item-switch skill does not cover the Enox.
+The "Self-healing speed" skill is described as applying to all medical items. The historical round 39 search found no magnitude or consumer for this skill; its S3 effect on Enox is unresolved. The item-switch skill does not cover the Enox.
 
 ## Use and timing
 
-The use animation lasts 2.2 s on yourself. You must be Injured and alive to use it. There is no teammate use.
+The historical use montage lasts about 2.2 s on yourself; current completion timing is unverified. You must be Injured and alive to use it. There is no teammate use.
 
 ## Cost
 

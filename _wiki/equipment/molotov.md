@@ -2,7 +2,7 @@
 title: Molotov
 parent: "Equipment"
 group: "Explosives and throwables"
-description: "The Molotov: a thrown incendiary that bursts for 40 HP and leaves a fire area for 45 s that burns players and vehicles."
+description: "The Molotov: Season 3 fire forces held-item drops, with a cheaper unlock and reduced damage against heavy armor and armored vehicles."
 ---
 
 # Molotov
@@ -27,7 +27,7 @@ description: "The Molotov: a thrown incendiary that bursts for 40 HP and leaves 
 | Fire damage to vehicles | 2 HP every 0.4 s (5 HP per second) |
 | **Availability** | |
 | Price | 340 cash |
-| Shop unlock level | 1 |
+| Assault unlock | Level 8; $12,500 unlock cost |
 | Required items | None |
 | Internal name | `Id.Item.Molotov` |
 {: .wiki-infobox }
@@ -36,7 +36,7 @@ The Molotov is a thrown incendiary. It does a small burst when it goes off, then
 
 ## Overview
 
-The Molotov is sold as a Lethal, Quick Slot item for 340 cash, and its shop listing has unlock level 1, a value that gates nothing. Its burst is small, so most of its value is the fire. The Season 2 item changes add the Molotov to the item list of each of the 24 emotes, but they do not say what that does in play.
+The Molotov is sold as a Lethal, Quick Slot item for 340 cash, and its saved shop listing has level 1; the announced Assault unlock is level 8 with a $12,500 unlock cost. Its burst is small, so most of its value is the fire. The Season 2 item changes add the Molotov to the item list of each of the 24 emotes, but they do not say what that does in play.
 
 For the other explosives, see [Grenades and Explosives](grenades-and-explosives.md). For the smoke and signal throwables, see [Fire, Smoke and Flash](fire-smoke-and-flash.md).
 
@@ -52,33 +52,41 @@ For the other explosives, see [Grenades and Explosives](grenades-and-explosives.
 
 **Fire area.** The fire is laid as patches: each throw makes 15, and each patch is a box 2 m by 2 m and 0.5 m tall. The patches last 45 s. Anyone or any vehicle inside a patch takes damage every 0.4 s. The 15 patches lie on a spiral out to about 2.5 m from the impact point. The spiral's centre is pushed up to 3.75 m further along the throw, so the fire spreads forward from where it lands. The fire does not appear all at once: it spreads out from the first patch at 2000 cm per second, so the farthest patch of the 15 lights about an eighth of a second after the first (read from the game code, not timed in play).
 
-**Burning status.** A player in the fire gets a "burning" status. It darkens and blurs the screen, with a vignette effect. No timer for the status is given. It ends when the player leaves the patch: a static reading of the game code finds the status removed on leaving the fire volume (not checked in play).
+**Burning status.** Season 3 fire ignites the player and forces a held-item drop. In the historical model, a player in the fire gets a "burning" status. It darkens and blurs the screen, with a vignette effect. No timer for the status is given. It ends when the player leaves the patch: a static reading of the game code finds the status removed on leaving the fire volume (not checked in play).
 
 Burning damage from the fire counts as the thrower's damage, so kills and score from the fire go to the player who threw the Molotov (a static reading of the game code, not checked in play).
 
-Armor reduces the burst but not the fire: no armor rule applies to fire damage (derived). The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so fire from a teammate's Molotov has no reduction in the tables. The fire has no check for who threw it either, so standing in your own fire hurts you as much as an enemy. Whether the game mode turns off friendly damage elsewhere is not in these tables.
+The old claim that armor never reduces fire damage is superseded: Season 3 announces reduced damage against heavy armor and armored vehicles. The saved damage rules include a x0.70 fire factor against a Super heavy vest. The damage tables reduce friendly fire only for infantry bullets (-50 %) and large hammers (-70 %), so fire from a teammate's Molotov has no reduction in the tables. The fire has no check for who threw it either, so standing in your own fire hurts you as much as an enemy. Whether the game mode turns off friendly damage elsewhere is not in these tables.
 
 ## Damage
 
 ### To players
 
-The burst does 40 HP at its centre, out to 2.5 m. Beyond 2.5 m it falls to zero at 5 m. Standing in the fire is the main threat:
+The following tick and duration calculations are historical actor inputs, not measured S3 health loss after armor rules.
+
+The historical CL516586 actor-input model starts at 40 damage through 2.5 m, then falls linearly with a 10-damage floor inside 5 m; it cuts to zero at 5 m. These are starting amounts before hit filtering and damage rules, not guaranteed HP loss. Standing in the fire is the main threat:
 
 - 15 HP every 0.4 s, which is 37.5 HP per second while in the fire
 - The status applies only while the player is in the fire
 
 ### To vehicles
 
-The burst does 40 HP at the centre, which is small against vehicles. The table gives the number of burst hits a vehicle needs to lose its main health. This assumes one burst on the main section, and it does not count the fire.
+The burst does 40 HP at the centre, which is small against vehicles. The current saved vehicle model, using historical Molotov actor inputs, gives the following main-health hit counts; it does not establish current native equivalence. This assumes one burst on the main section, and it does not count the fire.
 
 | Vehicle | Main health | Burst hits to destroy |
 |---|---:|---:|
-| [MH-6](../vehicles/mh-6.md) | 400 HP | 10 |
-| [Humvee](../vehicles/humvee.md) | 500 HP | 13 |
-| [T-72B3](../vehicles/t-72b3.md) | 750 HP | 20 |
-| [M113 APC SV](../vehicles/m113-apc-sv.md) | 1000 HP | 27 |
+| [MH-6](../vehicles/mh-6.md) | 400 HP | 20 |
+| [Humvee](../vehicles/humvee.md) | 500 HP | 42 |
+| [T-72B3](../vehicles/t-72b3.md) | 750 HP | No finite main-health kill in this model |
+| [M113 APC SV](../vehicles/m113-apc-sv.md) | 1000 HP | No finite main-health kill in this model |
 
 The fire adds 2 HP every 0.4 s, which is 5 HP per second while a vehicle stays in the area. See [Vehicle damage](../vehicles/vehicle-damage.md) for how vehicles take damage in general.
+
+## Season 3 announcement
+
+The unlock cost fell from $25,000 to $12,500, and the Assault unlock moved from level 13 to level 8. This unlock payment is separate from the 340-cash item purchase price. Fire now ignites players and makes them drop the item they are holding. Damage against armored vehicles and heavy armor was reduced; the announcement gives no percentage.
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
 
 ## Season 2 changes
 

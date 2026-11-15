@@ -16,7 +16,7 @@ description: "A closeable door built with a Medium or Large Hammer from 80 Build
 | Hammer | Medium, Large |
 | **Building** | |
 | Build cost | 80 Build Supplies (22 in Season 1) |
-| Build time | 80 hits Medium (45.4 s), 54 hits Large (47.7 s). Derived from the hammer swing timing, not timed in play. |
+| Build time (CL516586 formula, S3 inputs, scale 1) | 80 hits Medium (45.4 s), 54 hits Large (47.7 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 2,200 HP |
 | **Damage** | |
 | Bullets | -85% |
@@ -38,21 +38,21 @@ Destroying an enemy Door pays 100 cash and 25 Role XP. They give no cash for bui
 
 ## Building it
 
-- **Cost:** 80 Build Supplies for the Door, whichever hammer builds it. Each part costs 22 Build Supplies, but the parts are not added on top: the 80 is the whole price of the Door, and a part's own price most likely applies only when that part is repaired by itself (inferred). Nothing is charged at placement.
+- **Cost:** 80 Build Supplies for the Door, whichever hammer builds it. Each part costs 22 Build Supplies, but the parts are not added on top: the 80 is the whole price of the Door, and a part's own price most likely applies only when that part is repaired by itself (inferred). The S3 export omits `PlacementCost`; the earlier zero-placement-cost model is not a verified current default.
 - **Hammers:** Medium or Large.
 - **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
-- **Stack limit:** 2.
+- **Stack limit:** The earlier model used 2. The S3 asset omits `MaxStack`, so that current default is unverified.
 - **Build stages:** Five, at 0, 30, 60, 80 and 100% of progress. The earlier stages have 12, 11, 15 and 11 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](../building.md#weak-spots)).
 - **Parts:** When the Door is finished, it turns into separate parts: a door section that closes, and a top section. Each is its own buildable with 500 HP and uses the same damage numbers as the Door. This is Derived from the stage data (see [Buildables](../building.md#building)).
 - **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
-| Building it | Small hammer | Medium hammer | Large hammer |
+| Conditional counts (CL516586 formula, scale 1) | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
 | Hits to build | cannot place | 80 (about 45.4 s) | 54 (about 47.7 s) |
 | Hits to repair from zero health | 80 | 40 | 27 |
 | Hits to dismantle (your own) | 15 | 11 | 9 |
 
-Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
+The build, repair and dismantle counts apply the CL516586 formulas to S3 saved inputs, at cost scale 1 with the earlier omitted-field defaults; current native equivalence is unverified. Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 Each part on its own takes 15 repair hits from zero with the Medium Hammer or 10 with the Large Hammer, and 3 dismantle hits with the Medium Hammer or 2 with the Large Hammer (Derived). The build count assumes normal hits, and hitting weak spots brings it down.
 

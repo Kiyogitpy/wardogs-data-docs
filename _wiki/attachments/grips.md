@@ -82,7 +82,7 @@ Grips with a data name use that name. Season 2 price changes are in the Season 2
 
 ## Parts that fit no weapon
 
-6 parts can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
+The table reports 6 parts with no fitting weapon in its loadout association. That is a bounded catalog result, not proof that their modifiers never apply in S3. They are still listed in the table above with "No weapon" in the Fits column.
 
 AK-12 Pistol Grip, AK74 AGS-74 PRO Sniper Pistol Grip, AK74 Archangel OPFOR Pistol Grip, AK74 KGB MG47 Grip, Unnamed grip, Unnamed grip.
 

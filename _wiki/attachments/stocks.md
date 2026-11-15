@@ -78,7 +78,7 @@ The Weapon Shop data has no stock rows, so the price column reads Not in shop da
 
 ## Parts that fit no weapon
 
-9 parts can't be fitted: no weapon's slot accepts them, so their modifiers never apply in game. They are still listed in the table above with "No weapon" in the Fits column.
+The table reports 9 parts with no fitting weapon in its loadout association. That is a bounded catalog result, not proof that their modifiers never apply in S3. They are still listed in the table above with "No weapon" in the Fits column.
 
 AK-47 HERA CQR Stock, AK74 Alpha Folding Stock, AK74 Archangel OPFOR Stock, AK74 Buffertube Stock, AK74 Polymer Stock, AK74u Steel Folding Stock, RPK74 Wooden Stock, RS2 Slim, Unnamed stock.
 

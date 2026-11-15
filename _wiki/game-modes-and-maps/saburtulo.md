@@ -7,6 +7,10 @@ description: "The Saburtulo King of the Hill map, added with its Season 2 zone a
 
 # Saburtulo
 
+The [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) remove the Wager Vendor. Any wager-vendor actor mentioned in the saved spawn inventory below is retained data, not an active service.
+
+The [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) announce the city map as **[Sabatulo](sabatulo.md)**. This page retains the saved **Saburtulo** asset spelling and measurements. Earlier asset presence is not a release date, and the exact identity between this saved map entry and the announced map remains unresolved.
+
 | Saburtulo | |
 |---|---|
 | **General** | |
@@ -44,14 +48,14 @@ Saburtulo is played in [King of the Hill](king-of-the-hill.md) under one server 
 The Control Zone is 550 m across and 150 m tall, with an 85 m Hot Zone in its centre. For how capture works, see [Control Zone](control-zone.md).
 
 - **Hot Zone movement.** The Hot Zone is placed at the start and then moves about every 25 seconds, with a default speed of 1.0 and a speed table from 0.75 to 2.0.
-- **Placements.** The zone has four placements. Hospital has weight 1, so it is the only placement drawn at random. Bazaar, River and Hillside have weight 0, so they are used only when the server rotation names them.
+- **Placements.** The zone has four placements. Hospital stores weight 2; Bazaar, River and Hillside each store weight 1. Under the historical weighted-selection model all four are eligible, with Hospital twice the weight of each other placement. Current selection and server overrides remain unverified.
 
 | Placement | Weight |
 |---|---|
-| Hospital | 1 |
-| Bazaar | 0 |
-| River | 0 |
-| Hillside | 0 |
+| Hospital | 2 |
+| Bazaar | 1 |
+| River | 1 |
+| Hillside | 1 |
 
 - **Zone regions.** The game does not include a region list for this map. The zone object placed in the Saburtulo map files has an empty region slot, the Sniper Showdown zone placed there has none either, and the minimap has none, so where the zone can sit beyond these four placements is not known. Bakurani, Ozeti and Zestafona each have a list; this is the one King of the Hill map with a zone but no list.
 
@@ -133,7 +137,7 @@ Saburtulo has no list of zone regions, so the towers cannot be placed in a named
 
 ### In each team spawn area
 
-The file places 3 team spawn areas for this map (the ones with a wager vendor; the other spawn areas in the file belong to other maps, inferred from that). Every area has a deployment board, an equipment vendor, a vehicle vendor, a garage vendor and a [wager vendor](../progression-and-economy/wagers.md), and also a small soccer pitch, 3 moving practice targets and a safe zone. The invisible safe zone boxes are about 480 m tall; each safe zone is 800 m by 800 m. They protect their own team from damage, and the play-area edge, the out-of-bounds countdown and the other safe zone rules are on [Boundaries and Safe Zones](boundaries-and-safe-zones.md). The map's play rectangle is 13.2 km by 13.2 km.
+The file places 3 team spawn areas for this map (identified in the historical inventory by a retained wager-vendor actor; the other spawn areas in the file belong to other maps, inferred from that). Every area has a deployment board, an equipment vendor, a vehicle vendor, a garage vendor and a retained wager-vendor actor (the vendor was removed in S3), and also a small soccer pitch, 3 moving practice targets and a safe zone. The invisible safe zone boxes are about 480 m tall; each safe zone is 800 m by 800 m. They protect their own team from damage, and the play-area edge, the out-of-bounds countdown and the other safe zone rules are on [Boundaries and Safe Zones](boundaries-and-safe-zones.md). The map's play rectangle is 13.2 km by 13.2 km.
 
 Saburtulo is the one map here whose spawn areas have no free fuel point.
 
@@ -141,7 +145,7 @@ Vehicle yards and spawn spots are on the Vehicle spawns section above.
 
 ### Not in the map files
 
-The map file holds no capture points other than the Hot Zone Magnet towers, no pre-placed guns or emplacements, no ammo or supply pickups, no loot or crates and no zip lines. The free fuel point above is the only resupply object the file places.
+The map file holds no capture points other than the Hot Zone Magnet towers, no pre-placed guns or emplacements, no ammo or supply pickups, no loot or crates and no zip lines. The historical placed-actor inventory identifies no free fuel point for Saburtulo; it does not establish all current resupply routes.
 
 ## Layouts
 

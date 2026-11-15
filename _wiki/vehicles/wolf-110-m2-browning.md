@@ -2,7 +2,7 @@
 title: "Wolf-110 [M2 Browning]"
 parent: "Vehicles"
 group: "Cars and trucks"
-description: "Five-seat Wolf-110 SUV with a ring-mounted M2 Browning machine gun, added in Season 2 and sold for 7,800 cash."
+description: "Five-seat Wolf-110 SUV with a ring-mounted M2 Browning machine gun, added in Season 2 and sold for 6,800 cash."
 ---
 
 # Wolf-110 [M2 Browning]
@@ -12,11 +12,11 @@ description: "Five-seat Wolf-110 SUV with a ring-mounted M2 Browning machine gun
 | ![Wolf-110 M2 Browning]({{ '/assets/img/icons/vehicles-3d/T_UI_Vendor_WHL_08_Gun.png' | relative_url }}){: .wiki-infobox-img } | |
 | Type | SUV with machine gun |
 | Seats | 5 |
-| Price | 7,800 cash |
+| Price | 6,800 cash |
 | Unlock level | 0 |
 | Main health | 500 HP |
 | Top speed | 129 (as stored) |
-| Rifle damage taken (derived) | 4.5% |
+| 5.56 mm hull damage (derived) | 2.5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-whl-08-default/WHL_08_RingTurret) |
 | Internal name | WHL_08 (ring turret variant) |
 {: .wiki-infobox }
@@ -25,7 +25,7 @@ The Wolf-110 [M2 Browning] is the [Wolf-110](wolf-110.md) with an M2 Browning ma
 
 ## Overview
 
-The Wolf-110 [M2 Browning] is sold in the vehicle vendor under land transport, for 7,800 cash, and unlocks at level 0. It was added in Season 2.
+The Wolf-110 [M2 Browning] is sold in the vehicle vendor under land transport, for 6,800 cash, and unlocks at level 0. It was added in Season 2.
 
 ## Stats
 
@@ -40,7 +40,7 @@ The Wolf-110 [M2 Browning] is sold in the vehicle vendor under land transport, f
 
 ## Armor and damage
 
-Main health is 500 HP, with the same engine and fuel tank health as the [Wolf-110](wolf-110.md). Rifle rounds do 4.5% of their damage against the hull.
+Main health is 500 HP, with the same engine and fuel tank health as the [Wolf-110](wolf-110.md). The documented model gives 5.56 mm FMJ hull damage at 2.5% of base damage, including the main-body ×0.5 modifier. This is a conditional calculation, not S3 native verification.
 
 This variant uses the same destruction numbers as the base Wolf-110, so the hits to destroy are the same:
 
@@ -63,6 +63,8 @@ The gun fires 600 rounds/min out to 1,000 m. The weapon's own settings do not se
 
 ## Handling
 
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) put Wolf-110 reverse speed at ~40 km/h (previously 27 km/h). This is the announced family value, not a simulation measurement; ~ marks an approximation.
+
 Handling matches the base Wolf-110: mass 3,200, hand brake 80, front steering of 35 degrees, and the same torque split.
 
 - **Tyre states.** Each tyre has three states: intact; damaged (deflated), at or below 55% of the wheel's health; and destroyed, at 0. Each state sets a wheel radius, friction and brake value. [Repair and vehicle parts](repair-and-vehicle-parts.md) covers what each state does.
@@ -81,6 +83,10 @@ The Wolf 110 [M2 Browning] is placed by the ground vehicle yards of all four mai
 - [Wolf-110](wolf-110.md), the base SUV
 - [Humvee [M249]](humvee-m249.md) and [Kodiak [M249]](kodiak-m249.md), similar machine gun SUVs
 - [Vehicle damage](vehicle-damage.md)
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) reduce this variant from 7,800 to 6,800 cash. The saved vehicle market export agrees. This is the undiscounted price; mode restrictions and progression still affect availability.
 
 ## Sources
 

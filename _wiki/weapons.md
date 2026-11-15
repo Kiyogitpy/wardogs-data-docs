@@ -4,23 +4,23 @@ nav_order: 1
 wiki_hub: true
 has_children: true
 has_toc: false
-description: "Every player weapon, the ammunition they use and the attachments that change them."
+description: "The exported weapon roster, its ammunition and associated attachments."
 ---
 
 # Weapons
 
-Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun, sniper rifle, launcher and bow that a player can get, grouped by class. Each name links to its article; click a column heading to sort. [Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections. To compare weapons side by side, see the [Weapon Comparison](weapons/weapon-comparison.md) table of damage, shots to kill and recoil.
+Weapons in the exported item roster, grouped by class. Presence here does not establish availability in every mode. Each name links to its article; click a column heading to sort. [Ammunition](ammunition.md) and [Attachments](attachments.md) have their own sections. To compare weapons side by side, see the [Weapon Comparison](weapons/weapon-comparison.md) table of damage, shots to kill and recoil.
 
 ## Assault rifles
 
 | | Weapon | Caliber | Fire rate | Standard magazine | Vendor price |
 |---|---|---|---:|---|---:|
-| ![A-91]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_004.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [A-91](weapons/a-91.md) | 5.56x45mm | 700 rounds/min | STANAG 20 RND Magazine | Free (Valkyra faction, one per life) |
+| ![A-91]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_004.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [A-91](weapons/a-91.md) | 5.56x45mm | 700 rounds/min | STANAG 20 RND Magazine | Listed 0 (Valkyra faction setting; activation unverified) |
 | ![AK74]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_001v2.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [AK74](weapons/ak74.md) | 5.45x39mm | 650 rounds/min | AK74 30 RND Magazine | 800 |
-| ![Bushmaster M17S]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_033.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [Bushmaster M17S](weapons/bushmaster-m17s.md) | 5.56x45mm | 700 rounds/min | STANAG 20 RND Magazine | Free (Lonestar faction, one per life) |
+| ![Bushmaster M17S]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_033.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [Bushmaster M17S](weapons/bushmaster-m17s.md) | 5.56x45mm | 700 rounds/min | STANAG 20 RND Magazine | Listed 0 (Lonestar faction setting; activation unverified) |
 | ![FAL]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_030.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [FAL](weapons/fal.md) | .308 Win | 650 rounds/min | FAL 20 RND Magazine | 6000 |
 | ![Galil]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_029.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [Galil](weapons/galil.md) | 5.56x45mm | 650 rounds/min | Galil 35 RND Magazine | 2000 |
-| ![KH-2002]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_003.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [KH-2002](weapons/kh-2002.md) | 5.56x45mm | 700 rounds/min | STANAG 20 RND Magazine | Free (Manticore faction, one per life) |
+| ![KH-2002]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_003.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [KH-2002](weapons/kh-2002.md) | 5.56x45mm | 700 rounds/min | STANAG 20 RND Magazine | Listed 0 (Manticore faction setting; activation unverified) |
 | ![M4]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_002.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [M4](weapons/m4.md) | 5.56x45mm | 800 rounds/min | STANAG 30 RND Magazine | 2800 |
 | ![T-21]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_005.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [T-21](weapons/t-21.md) | 5.56x45mm | 750 rounds/min | STANAG 20 RND Magazine | 1200 |
 | ![TCX-SPR]({{ '/assets/img/icons/vendor-weapons/T_UI_Weapons_WEPN_037.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [TCX-SPR](weapons/tcx-spr.md) | 7.62x39mm | 800 rounds/min | TCX-SPR 28 RND Magazine | 3200 |
@@ -40,7 +40,7 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 |---|---|---|---:|---|---:|
 | ![Evo-3 Ultra]({{ '/assets/img/icons/vendor-weapons/T_UI_Weapons_WEPN_036.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [Evo-3 Ultra](weapons/evo-3-ultra.md) | .308 Win | 700 rounds/min | Evo-3 Ultra 50 RND Box | 7250 |
 | ![M249 SAW]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_009.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [M249 SAW](weapons/m249-saw.md) | 5.56x45mm | 850 rounds/min | M249 200 RND Box | 3200 |
-| ![PKM]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_019.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [PKM](weapons/pkm.md) | 7.62x54mm | 600 rounds/min | PKM 100 RND Box | 4100 |
+| ![PKM]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_019.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [PKM](weapons/pkm.md) | 7.62x54mm | 600 rounds/min (historical default assumption) | PKM 100 RND Box | 4100 |
 
 ## Submachine guns
 
@@ -57,7 +57,7 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 | | Weapon | Caliber | Fire rate | Standard magazine | Vendor price |
 |---|---|---|---:|---|---:|
 | ![Deagle]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_027.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [Deagle](weapons/deagle.md) | .50 AE | 267 rounds/min | Deagle 7 RND Magazine | 750 |
-| ![GGX 17]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_010.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [GGX 17](weapons/ggx-17.md) | 9x19mm | 600 rounds/min | GGX 17 RND Magazine | 200 |
+| ![GGX 17]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_010.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [GGX 17](weapons/ggx-17.md) | 9x19mm | 600 rounds/min (historical default assumption) | GGX 17 RND Magazine | 200 |
 | ![GGX 18]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_032.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [GGX 18](weapons/ggx-18.md) | 9x19mm | 1,200 rounds/min | GGX 17 RND Magazine | 1000 |
 | ![Judge]({{ '/assets/img/icons/weapons-3d-inventory/T_UI_Icon_Weapon_judge_Textured_512x256_inv.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [Judge](weapons/judge.md) | .45 Colt | 200 rounds/min | Judge Bullet Cylinder (6 rounds) | 250 |
 | ![M1911]({{ '/assets/img/icons/vendor-weapons/T_UI_Vendor_WEPN_026.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [M1911](weapons/m1911.md) | .45 ACP | 430 rounds/min | M1911 7 RND Magazine | 300 |
@@ -90,6 +90,6 @@ Every rifle, marksman rifle, light machine gun, pistol, submachine gun, shotgun,
 
 ## Bows
 
-| | Weapon | Ammunition | Arrow speed | Full draw | Item shop price |
+| | Weapon | Ammunition | Saved speed settings | Full draw setting | Item shop price |
 |---|---|---|---:|---:|---:|
-| ![Compound Bow]({{ '/assets/img/icons/weapons-3d-session/T_UI_Weapon_Bow_BC.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [Compound Bow](weapons/compound-bow.md) | Broadhead Arrow, Rambo Explosive Arrow | 160 m/s | 1.4 s | 1350 |
+| ![Compound Bow]({{ '/assets/img/icons/weapons-3d-session/T_UI_Weapon_Bow_BC.png' | relative_url }}){: .wiki-icon .wiki-icon-wide } | [Compound Bow](weapons/compound-bow.md) | Broadhead Arrow, Rambo Explosive Arrow | 240 m/s initial setting; 204 m/s typical override (cm/s assumption; release unverified) | 1.4 s setting | 1350 |

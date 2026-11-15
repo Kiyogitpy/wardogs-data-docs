@@ -132,7 +132,7 @@ Sources: [Fuel and refueling](../vehicles/fuel-and-refueling.md) and [Repair and
 
 ## Earning as a pilot
 
-**Unlocks.** The Pilot role has its own unlock tree. These are the helicopter rows:
+**Unlocks.** The Pilot role has its own unlock tree. The following selected helicopter rows show stored prerequisites and costs; current unlocking and server availability remain unverified:
 
 | Pilot level | Item | Cash |
 |---|---|---:|
@@ -140,7 +140,7 @@ Sources: [Fuel and refueling](../vehicles/fuel-and-refueling.md) and [Repair and
 | 10 | Z20 Lakota | 35,000 |
 | 20 | AH-6R [Rockets] | 250,000 |
 | 25 | Z20 Lakota [Miniguns] | 85,000 |
-| 35 | Havoc | 650,000 |
+| 35 | Havoc | 750,000 |
 
 The MH-6 has no row in the Pilot tree. The vehicle vendor lists different unlock levels, for example level 0 for the Havoc and level 1 for the MH-6. The source pages do not say how the two combine. Sources: [Pilot](../progression-and-economy/pilot.md) and [Vehicle Comparison](../vehicles/vehicle-comparison.md).
 
@@ -154,7 +154,7 @@ The MH-6 has no row in the Pilot tree. The vehicle vendor lists different unlock
 
 The reward table lists no destroy payout for the Z20 Lakota. Source: [Cash and Rewards](../progression-and-economy/cash-and-rewards.md). The Pilot page says most events give role XP equal to their base value.
 
-**Pilot skills.** Six skills apply to air vehicles. Fuel use and impact damage apply to the air vehicle you fly. The mounted machine gun skills cover aim time and recoil on air vehicles, but the page does not name which guns those are. The supply crate skill applies to crates you drop. Fuel use, impact damage and the gun skills fall to 0.6 at the top level. The supply crate skill rises to 1.4.
+**Pilot skills.** Six saved effect rows configure fuel use, impact reduction, mounted-gun handling and supply-crate health. The gun rows require Id.Item.ROT_01.MountedMachineGun. Fuel/impact/gun curves end at 0.6 at Time 4; the crate curve ends at 1.4. These mappings and keys do not prove activation or effective S3 arithmetic; the node-level interpretation and crate-creation application come from CL516586 traces. See [Pilot](../progression-and-economy/pilot.md).
 
 **Vehicle upkeep.** Repairs pay 20 cash with a Wrench or light drill, and 25 with a heavy drill. Refuelling pays 10 cash.
 

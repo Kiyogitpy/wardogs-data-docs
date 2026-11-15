@@ -2,7 +2,7 @@
 title: "Bipods"
 redirect_from: ["/wiki/weapons/attachments-bipods/"]
 parent: "Attachments"
-description: "Bipods and the Grip Pod: the bipods that limit how far a weapon turns while mounted, and the one part in the group that changes recoil and sway."
+description: "Bipods and the Grip Pod: the bipods that limit how far a weapon turns while mounted, and their state-specific recoil and sway effects."
 ---
 
 # Bipods
@@ -14,7 +14,7 @@ description: "Bipods and the Grip Pod: the bipods that limit how far a weapon tu
 | Parts in data | 9 |
 | Fits on | Underbarrel slot of the weapons listed in the table |
 | **Performance** | |
-| Stats changed | Grip Pod only: recoil, spread, aim time, sway; all bipods: turning limits while mounted |
+| Stats changed | Depend on stowed, unfolded or mounted state: recoil, spread, aim time and sway; mounted turning limits |
 | **Availability** | |
 | Shop prices | 8 of 9 parts |
 | Shop price range | 810 to 1,480 |
@@ -22,21 +22,25 @@ description: "Bipods and the Grip Pod: the bipods that limit how far a weapon tu
 | Internal name | `Item.Attachment.Bipod` |
 {: .wiki-infobox }
 
-Bipods are folding legs that mount under the weapon. There are 9 parts: eight bipods and the Grip Pod, which the data files with them. Only the Grip Pod changes weapon or character numbers. The eight bipods change none; what they do in the data is limit how far the weapon can turn while mounted.
+Bipods are folding legs that mount under the weapon. There are 9 parts: eight bipods and the Grip Pod, which the data files with them. Only the Grip Pod changes the stowed weapon numbers. The other eight have neutral stowed modifiers, but their separate unfolded and mounted effects change recoil, aim time and character sway.
 
 ## What they change
+
+The values below are stored/model modifiers. Applying or replacing them when a bipod changes state depends on the runtime consumer, which has not been reverified for S3.
 
 Grip Pod, weapon side: vertical recoil x0.88; horizontal recoil x0.9; spread x0.94; aim time x1.1; equip speed x0.98.
 
 Grip Pod, character side: aim sway speed x0.95; aim sway horizontal x0.9; aim sway vertical x0.88; sway translation stabilise x0.78; sway rotation stabilise x0.6.
 
-The eight bipods list only multipliers of 1, so their weapon numbers stay as they are.
+The eight ordinary bipods list multipliers of 1 in the stowed effect only. Their mounted weapon effects differ: for example PKM stores vertical/horizontal recoil ×0.20/×0.22 and aim time ×0.88, while Evo-3 Ultra stores ×0.40/×0.30 and ×0.88. Both retain spread ×1; Grip Pod, SV98, SKS, SVD and Pro Tilt store mounted spread ×0.45.
 
 Mounted bipods: there is a separate effect list for the weapon and the character while a bipod is mounted, and that list replaces the unfolded one.
 
 Stance limits: while mounted, each bipod sets how far the weapon can turn in each stance. Pitch lock runs from 15 to 50, yaw lock from 35 to 55, and the maximum change is 45 in yaw and 45 in pitch. These are given as angles, and the degree unit is inferred from the field names.
 
 ## Parts
+
+The Main effect column below describes the stowed effect only; “No stat change in data” in that column does not describe unfolded or mounted effects.
 
 Bipods are sold in the Weapon Shop, so most rows have a price. The Grip Pod has no shop price.
 

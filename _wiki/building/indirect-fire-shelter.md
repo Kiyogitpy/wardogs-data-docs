@@ -16,15 +16,15 @@ description: "A large multi-part shelter built only with the Large Hammer from 2
 | Hammer | Large |
 | **Building** | |
 | Build cost | 200 Build Supplies (100 in Season 1) |
-| Build time | 134 hits Large (about 118.3 s). Derived from the hammer swing timing, not timed in play. |
+| Build time (CL516586 formula, S3 inputs, scale 1) | 134 hits Large (about 118.3 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 5,000 HP |
 | **Damage** | |
 | Bullets | -80% |
 | Melee | -10% |
 | Grenades | -50% |
 | Rockets | +45% |
-| C4 | +50% |
-| IEDs | +200% |
+| C4 | -25% |
+| IEDs | +50% |
 | Internal name | [`DA_Buildable_AirRaidShelter`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter.json), with parts [`DA_Buildable_AirRaidShelter_Floor`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter_Floor.json) and [`DA_Buildable_AirRaidShelter_Ceiling`](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Items/Buildables/Content/Data/Buildables/AirRaidShelter/DA_Buildable_AirRaidShelter_Ceiling.json) |
 {: .wiki-infobox }
 
@@ -38,7 +38,7 @@ Destroying an enemy Indirect Fire Shelter pays 200 cash and 50 Role XP.
 
 ## Building it
 
-- **Cost:** 200 Build Supplies for the shelter, whichever hammer builds it. Each part costs 10 Build Supplies, but the parts are not added on top: the 200 is the whole price of the shelter, and a part's own price most likely applies only when that part is repaired by itself (inferred). Nothing is charged at placement.
+- **Cost:** 200 Build Supplies for the shelter, whichever hammer builds it. Each part costs 10 Build Supplies, but the parts are not added on top: the 200 is the whole price of the shelter, and a part's own price most likely applies only when that part is repaired by itself (inferred). The S3 export omits `PlacementCost`; the earlier zero-placement-cost model is not a verified current default.
 - **Hammers:** Large only.
 - **Placement:** The shelter must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 1.
@@ -46,13 +46,13 @@ Destroying an enemy Indirect Fire Shelter pays 200 cash and 50 Role XP.
 - **Parts:** When the shelter is finished, it turns into separate parts: a floor, a ceiling, and Hesco Blocks around them. Each part is its own buildable with its own health. The floor and ceiling each have 2,250 HP. This is derived from the build stages (see [Buildables](../building.md#building)).
 - **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
-| Building it | Small hammer | Medium hammer | Large hammer |
+| Conditional counts (CL516586 formula, scale 1) | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
 | Hits to build | cannot place | cannot place | 134 (about 118.3 s) |
 | Hits to repair from zero health | 60 | 30 | 20 |
 | Hits to dismantle (your own) | 34 | 25 | 20 |
 
-Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
+The build, repair and dismantle counts apply the CL516586 formulas to S3 saved inputs, at cost scale 1 with the earlier omitted-field defaults; current native equivalence is unverified. Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The Large Hammer is the only one that can place the shelter. The repair and dismantle hits for the other hammers are what their hits do; they are not checked for this structure. The build count assumes normal hits, and hitting weak spots brings it down.
 
@@ -68,10 +68,10 @@ The shelter is a large structure with a floor and a ceiling. What a player can d
 | Melee | -10% | 90% |
 | Grenades | -50% | 50% |
 | Rockets | +45% | 1.45 times |
-| C4 | +50% | 1.5 times |
-| IEDs | +200% | 3 times |
+| C4 | -25% | 0.75 times |
+| IEDs | +50% | 1.5 times |
 
-The table below gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
+C4 and IED totals include the parent utility-explosive modifier: 0.5 × 1.5 = 0.75 for C4 and 0.5 × 3 = 1.5 for IEDs, under the documented damage model. The table below gives the hits it takes to destroy, for each source. For how the percentages combine, see the [Damage Pipeline](../../pipelines/Wardogs_DamagePipeline_v2.md#6-arithmetic).
 
 ## Hits to destroy (point blank, derived)
 

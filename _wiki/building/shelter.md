@@ -15,7 +15,7 @@ description: "A shelter built with a Medium or Large Hammer from 250 Build Suppl
 | Hammer | Medium, Large |
 | **Building** | |
 | Build cost | 250 Build Supplies |
-| Build time | 250 hits Medium (141.8 s), 167 hits Large (147.5 s). Derived from the hammer swing timing, not timed in play. |
+| Build time (CL516586 formula, S3 inputs, scale 1) | 250 hits Medium (141.8 s), 167 hits Large (147.5 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 2,250 HP |
 | **Damage** | |
 | Bullets | -80% |
@@ -37,20 +37,20 @@ Destroying an enemy Shelter pays 250 cash and 65 Role XP. The placement rewards 
 
 ## Building it
 
-- **Cost:** 250 Build Supplies, whichever hammer builds it. Nothing is charged at placement.
+- **Cost:** 250 Build Supplies, whichever hammer builds it. The S3 export omits `PlacementCost`; the earlier zero-placement-cost model is not a verified current default.
 - **Hammers:** Medium or Large.
 - **Placement:** It must be inside a friendly Forward Operating Base radius. It cannot be placed within 3 m of a safe zone or while standing in one, and not within 1 m of a ladder.
 - **Stack limit:** 1.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress. Each of the first four stages has 24 weak spots. A hammer hit on a weak spot adds more progress (see [Buildables](../building.md#weak-spots)).
 - **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
 
-| Building it | Small hammer | Medium hammer | Large hammer |
+| Conditional counts (CL516586 formula, scale 1) | Small hammer | Medium hammer | Large hammer |
 |---|---:|---:|---:|
 | Hits to build | cannot place | 250 (about 141.8 s) | 167 (about 147.5 s) |
 | Hits to repair from zero health | 500 | 250 | 167 |
 | Hits to dismantle (your own) | 15 | 12 | 9 |
 
-Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
+The build, repair and dismantle counts apply the CL516586 formulas to S3 saved inputs, at cost scale 1 with the earlier omitted-field defaults; current native equivalence is unverified. Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The hits assume normal hits, not weak-spot hits. The Small Hammer cannot place the Shelter, so its build column says so, but the repair and dismantle figures are what its hit does and are not checked in play. See [Buildables](../building.md#building) for how the hit amounts work.
 

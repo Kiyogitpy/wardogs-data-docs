@@ -16,7 +16,7 @@ description: "Three Hesco barriers, the Small and Large Hesco Blocks and the Hes
 | Hammer | Small, Medium or Large, by variant |
 | **Building** | |
 | Build cost | 15 to 75 Build Supplies, by variant |
-| Build time | Small Block: 30 hits Small (17.0 s), 15 hits Medium (8.5 s), 10 hits Large (8.8 s). Large Block: 22 hits Medium (12.5 s), 15 hits Large (13.2 s). Hesco Wall: 75 hits Medium (42.5 s), 50 hits Large (44.1 s). Derived from the hammer swing timing, not timed in play. |
+| Build time (CL516586 formula, S3 inputs, scale 1) | Small Block: 30 hits Small (17.0 s), 15 hits Medium (8.5 s), 10 hits Large (8.8 s). Large Block: 22 hits Medium (12.5 s), 15 hits Large (13.2 s). Hesco Wall: 75 hits Medium (42.5 s), 50 hits Large (44.1 s). Derived from the hammer swing timing, not timed in play. |
 | Health | 1,600 to 4,600 HP, by variant |
 | **Damage** | |
 | Bullets | -80% (all three) |
@@ -40,10 +40,10 @@ The Hesco Walls are three barriers: the Small Hesco Block, the Large Hesco Block
 
 ## Building it
 
-- **Cost:** See the table above. The cost is the same whichever hammer builds it, and nothing is charged at placement.
+- **Cost:** See the table above. The cost is the same whichever hammer builds it, while the S3 exports omit `PlacementCost`; the earlier zero-placement-cost model is not a verified current default.
 - **Hammers:** The Small Hesco Block can be built with any hammer. The Large Block and the Hesco Wall need a Medium or Large Hammer.
 - **Placement:** All three must be inside a friendly Forward Operating Base radius. None can be placed within 3 m of a safe zone or while standing in one, or within 1 m of a ladder.
-- **Stack limit:** 5 for the Small Block, 2 for the Large Block and the Hesco Wall.
+- **Stack limit:** The Small Block stores 5. The Large Block and Hesco Wall omit `MaxStack` in S3; their earlier default of 2 is not verified for this build.
 - **Build stages:** Five, at 0, 25, 50, 75 and 100% of progress, for each variant. The Small Block has 5, 16, 16 and 16 weak spots at the first four stages. The Large Block has 6, 24, 24 and 32. The Hesco Wall has 8, 31, 34 and 69. A hammer hit on a weak spot adds more progress (see [Buildables](../building.md#weak-spots)).
 - **Parts:** The Hesco Wall is made of several blocks. When it is finished, it turns into separate Large Hesco Blocks, each with its own health. This is derived from the build stages (see [Buildables](../building.md#building)).
 - **Build time:** Estimated from the hits to build in the table below, one hit per swing (derived, not timed in play).
@@ -54,7 +54,7 @@ The Hesco Walls are three barriers: the Small Hesco Block, the Large Hesco Block
 | Hits to repair from zero health | 30 / 15 / 10 | 15 (Medium), 10 (Large) | 15 (Medium), 10 (Large) |
 | Hits to dismantle (your own) | 11 / 8 / 7 | 12 (Medium), 9 (Large) | 23 (Medium), 19 (Large) |
 
-Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
+The build, repair and dismantle counts apply the CL516586 formulas to S3 saved inputs, at cost scale 1 with the earlier omitted-field defaults; current native equivalence is unverified. Seconds are an estimate: one hammer hit per swing, 0.567 s per hit for the Small and Medium hammers and 0.883 s for the Large (derived from the use animation, not measured).
 
 The columns for the Small Block read Small / Medium / Large hammer. The other two are Medium and Large only. The build counts assume normal hits, and hitting weak spots brings them down.
 

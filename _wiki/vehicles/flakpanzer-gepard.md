@@ -13,7 +13,7 @@ description: "Two-seat tracked anti-air tank with twin 35 mm Oerlikon cannons, s
 | Type | Anti-air armored vehicle |
 | Seats | 2 |
 | Price | 14,000 cash |
-| Unlock level | 1 |
+| Stored vendor level | 1 (not the role-track unlock; see S3 note) |
 | Main health | 800 HP |
 | Top speed | 65 (as stored) |
 | Rifle damage taken (derived) | 0% |
@@ -25,7 +25,7 @@ The Flakpanzer Gepard is a two-seat tracked anti-air tank. Its twin Duel 35 mm O
 
 ## Overview
 
-The Gepard is sold in the vehicle vendor under land tank, for 14,000 cash, and unlocks at level 1. Its Season 2 price went up from 10,000. It has the same tracks and rifle protection as the other tanks in the family.
+The Gepard is sold in the vehicle vendor under land tank, for 14,000 cash, and has a stored vendor level of 1 (not its role-track unlock). Its Season 2 price went up from 10,000. It has the same tracks and rifle protection as the other tanks in the family.
 
 ## Stats
 
@@ -82,6 +82,10 @@ The Flakpanzer Gepard is placed by the ground vehicle yards of all four main map
 - [SPH-2](sph-2.md) and [L2A6](l2a6.md), the other tanks of this family
 - [T-72B3](t-72b3.md), a separate tank
 - [Vehicle damage](vehicle-damage.md)
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) move tank unlocks from Driver levels 20–35 to 35–50 and from WARDOG level 145 to 200. The announcement gives a class range, not a per-variant Driver level; the saved vendor level 1 above does not resolve that progression requirement.
 
 ## Sources
 

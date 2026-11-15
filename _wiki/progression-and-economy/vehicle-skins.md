@@ -7,6 +7,8 @@ description: "Every vehicle skin, the MH-6 taxi skin and the bobbleheads, with G
 
 # Vehicle Skins
 
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) announce a **2-week carryover** of Littlebird Black & Gold from S2. The retained December 31 date below is not the announced expiry and must not be used to promise availability through that date.
+
 | Vehicle Skins | |
 |---|---|
 | Skin sets | Two-Tone Desert, Black and Gold, Taxi |
@@ -58,7 +60,7 @@ The game gives the bobbleheads no vehicle filter, so they are not limited to par
 
 - **Gold Market.** Every priced vehicle skin is a Gold Market entry, bought with Gold Bars. Gold Bars are covered in [Currencies](currencies.md).
 - **Look on other vehicles.** Digital Wood and Chocolate Chip also set how their looks appear on other vehicles, such as the Kodiak, Ural and Humvee variants. The game does not list those as sold skins, and it does not say whether a player can apply them.
-- **No level gate.** The game does not tie any vehicle skin to a level, and there is no season reward track. Server grants are the only route outside the Gold Market. See [Season 1 Cosmetics](season-01-cosmetics.md).
+- **Saved gates.** The reviewed skin rows do not establish a level gate or a complete acquisition system. Empty season-definition lists do not prove there is no season reward track; routes outside the Gold Market remain unverified here. See [Season 1 Cosmetics](season-01-cosmetics.md).
 
 ## Season 2 changes
 

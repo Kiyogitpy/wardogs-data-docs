@@ -16,7 +16,7 @@ description: "Heavy three-seat truck with no weapons and the heaviest mass of th
 | Unlock level | 0 |
 | Main health | 700 HP |
 | Top speed | 79 (as stored) |
-| Rifle damage taken (derived) | 5% |
+| 5.56 mm hull damage (derived) | 2.5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#land-wheeled-ural/WHL_07_Default) |
 | Internal name | WHL_07 (default variant) |
 {: .wiki-infobox }
@@ -42,7 +42,7 @@ The Ural is sold in the vehicle vendor under land transport, for 5,000 cash, and
 
 Main health is 700 HP. The Ural has separate health for its engine (400 HP), fuel tank (400 HP) and each of its six wheels (75 HP).
 
-Rifle rounds do 5% of their damage against the hull. The fuel tank takes an extra 350% from bullets.
+The documented model gives 5.56 mm FMJ hull damage at 2.5% of base damage, including the main-body ×0.5 modifier. This is a conditional calculation, not S3 native verification. The fuel tank takes an extra 350% from bullets.
 
 Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
@@ -60,6 +60,8 @@ Hits needed to destroy the main health. These counts are derived by simulating t
 The Ural has no weapons. Its three seats are a driver and two passengers.
 
 ## Handling
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) put Ural reverse speed at 27 km/h (previously 15 km/h). This is the announced family value, not a simulation measurement.
 
 - Driving assists: drift values of 2.5 at the front and 30 at the rear. See [Vehicle handling](vehicle-handling.md#driving-and-flight-assists).
 

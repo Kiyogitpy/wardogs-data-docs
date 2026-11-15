@@ -17,7 +17,7 @@ description: "Large 13-seat transport helicopter with no weapons, the helicopter
 | Main health | 600 HP |
 | Top speed | 445 (as stored) |
 | Mass | 9,500 kg |
-| Rifle damage taken (derived) | 5% |
+| 5.56 mm hull damage (derived) | 2.5% |
 | 3D hitboxes | [Open in the viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/vehicle-viewer.html#air-rotary-rot-04) |
 | Internal name | ROT_04 (default variant) |
 {: .wiki-infobox }
@@ -43,7 +43,7 @@ The Z20 Lakota is sold in the vehicle vendor under air transport, for 7,400 cash
 
 Main health is 600 HP. The helicopter has separate health for its engine (200 HP), fuel tank (200 HP), main rotor (400 HP) and tail rotor (300 HP).
 
-Rifle rounds do 5% of their damage against the hull. The tail rotor is the weak point. Rifle fire destroys the helicopter after 858 hits to the body, or after 429 hits through the tail rotor.
+The documented model gives 5.56 mm FMJ hull damage at 2.5% of base damage, including the main-body ×0.5 modifier. This is a conditional calculation, not S3 native verification. The tail rotor is the weak point. Rifle fire destroys the helicopter after 858 hits to the body, or after 429 hits through the tail rotor.
 
 Hits needed to destroy the main health. These counts are derived by simulating the damage rules with full-power, point-blank, standard (FMJ) hits; they are estimates worked out from the damage rules, not measured in game:
 
@@ -86,6 +86,10 @@ The Z20 Lakota is covered by the air vehicle yards (inferred). Each side normall
 - [Z20 Lakota [Miniguns]](z20-lakota-miniguns.md), the armed version
 - [Havoc](havoc.md) and [MH-6](mh-6.md), the other helicopters
 - [Vehicle damage](vehicle-damage.md)
+
+## Season 3 update
+
+The [official Season 3 notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) also retune 20×102 mm damage: each round hits a vehicle section once, and this helicopter takes roughly the same damage as in Season 2. Retained hit-count tables are conditional calculations, not a new verification of that section-contact behavior.
 
 ## Sources
 

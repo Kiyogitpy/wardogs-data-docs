@@ -25,7 +25,7 @@ A bullet leaves the muzzle at the weapon's muzzle speed. From then on, gravity p
 - **Muzzle speed.** Every weapon fires its bullet at a fixed speed. Heavier sniper rounds and rifle rounds are fast; pistol and the Judge shotgun are slower.
 - **Gravity.** Bullets fall at 9.8 m/s², the game's world gravity.
 - **Lifetime.** A bullet is removed 10 s after it is fired. Artillery shells last longer, up to 40 s (see [Artillery](artillery.md)).
-- **Flight steps.** The game moves a bullet in steps of 33 ms (about 30 a second) and checks its path at each step.
+- **Flight steps.** Earlier CL516586 native analysis found 33 ms flight steps (about 30 a second). The current S3 flight-step consumer has not been verified.
 - **Drag.** Air slows bullets. How much depends on the bullet's shape, weight and size, so the same muzzle speed does not mean the same range for every round.
 - **Damage falloff.** Each weapon has a distance curve. Damage stays at full up to a set distance and then drops; on many rifles the curve reaches 20% of full damage at 1,200 m. Separately, once a bullet has slowed below a reference speed, its damage is also scaled down (see Speed scale below). Both effects multiply together, which is why the table drops further than the curve alone.
 - **Effective range.** Each weapon has a listed effective range (see the table below). The game multiplies it by 100 when it sets up each shot, then scales it by 1.2 for armor-piercing ammo and 0.8 for hollow point. It sets only one thing: when wind starts to act on the bullet. Wind begins once the bullet has flown the effective range and is at full strength from about 1.41 times that distance (a static reading of the game's code). Nothing else reads it: not damage, spread or how long the bullet lives. It is not a damage cutoff, since damage falloff comes from the weapon's own curve. Armor-piercing and hollow-point rounds only move the point where the wind starts.
@@ -45,17 +45,17 @@ Muzzle speed and listed effective range, by weapon:
 | MP5 | 400 m/s | 200 m |
 | GGX 17 | 375 m/s | 50 m |
 | Super-45 | 375 m/s | 50 m |
-| Deagle | 470 m/s | 100 m (game default) |
+| Deagle | 470 m/s | 100 m (historical default; S3 default unverified) |
 | Judge | 335 m/s | 50 m |
 
-Upper-torso damage per hit with full metal jacket ammo and no armor, at set distances. These include the distance curve and the slowing:
+Modeled upper-torso damage per hit with full metal jacket ammunition, without armor. These use S3 inputs and historical damage/drag formulas: hostile target outside a vehicle, no penetration, wind or thrust, drag-only flight with 1 ms steps. Current native formula bindings remain unverified:
 
 | Weapon | 0 m | 50 m | 100 m | 200 m | 400 m | 600 m | 800 m | 1,200 m |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| M4 | 27.3 | 27.3 | 27.3 | 27.3 | 27.3 | 20.6 | 12.6 | 3.1 |
-| AK74 | 25.3 | 25.3 | 25.3 | 25.3 | 25.3 | 21.3 | 13.6 | 3.1 |
-| FAL | 32.9 | 32.9 | 32.9 | 32.9 | 32.9 | 32.9 | 31.5 | 4.5 |
-| SVD | 41.4 | 41.4 | 41.4 | 41.4 | 41.4 | 41.4 | 41.4 | 7.5 |
+| M4 | 30.8 | 30.8 | 30.8 | 30.8 | 30.8 | 23.3 | 14.3 | 3.5 |
+| AK74 | 28.6 | 28.6 | 28.6 | 28.6 | 28.6 | 24.1 | 15.4 | 3.5 |
+| FAL | 37.1 | 37.1 | 37.1 | 37.1 | 37.1 | 37.1 | 35.6 | 5.1 |
+| SVD | 59.7 | 59.7 | 59.7 | 59.7 | 59.7 | 59.7 | 59.7 | 10.7 |
 | MK22 | 118.8 | 118.8 | 118.8 | 118.8 | 118.8 | 118.8 | 118.8 | 82.3 |
 | AMR 50 | 207.9 | 207.9 | 207.9 | 207.9 | 207.9 | 207.9 | 207.9 | 207.9 |
 | Deagle | 72.8 | 72.8 | 70.7 | 56.2 | 39.8 | 29.3 | 20.5 | 6.9 |
@@ -87,7 +87,7 @@ The M4 keeps full speed to 400 m. The GGX 17 is already at 0.80 by 200 m and 0.4
 
 ## Tips that follow from the numbers
 
-- **Range is different for every weapon.** The MP5 does 25.4 at 100 m and 7.4 at 400 m, so it is a close-range weapon. The FAL still does 32.9 at 600 m.
+- **Range is different for every weapon.** The MP5 does 25.4 at 100 m and 7.4 at 400 m, so it is a close-range weapon. The FAL model gives 37.1 HP at 600 m.
 - **Sniper rifles hit hard at any distance.** The MK22 does 118.8 to the upper torso at 800 m. The AMR 50 does 207.9 at any distance in the table.
 - **Drop grows quickly at long range.** Even without drag, a bullet from an M4-class rifle falls about 1.6 m by 500 m. A weapon starts zeroed at the shortest zeroing range its sight allows, and the reset key returns it there. The zeroing controls then step the setting up or down inside the sight's own range (see [Sights and Optics](../attachments/sights-and-optics.md)), so a red dot with one fixed range stays put and a 6-10x scope can be raised up to 1,000. The game works out the matching sight angle itself while it runs (see [Spread and Recoil](spread-and-recoil.md)). The shortest zeroing range is the minimum the sight sets, 10 to 100 metres (the game code multiplies the range by 100 to get centimetres, derived; the game was not run).
 - **Pistols lose damage quickly.** The GGX 17 falls from 25.4 at 50 m to 12.0 at 400 m.

@@ -17,7 +17,7 @@ description: "The Compound Bow: a draw-and-release weapon with Broadhead and Ram
 | Weight | 1.3 kg |
 | Inventory size | 6x2 |
 | **Performance** | |
-| Arrow speed | 160 m/s (Season 2) |
+| Saved weapon speed fields | Initial 240 m/s; typical override 204 m/s (assuming cm/s) |
 | Arrow damage | 77 (Broadhead), 150 blast (Rambo Explosive) |
 | Full draw | 1.4 s |
 | **Availability** | |
@@ -40,7 +40,7 @@ It appears on the weapon shop list without any statistics. The stats are in the 
 |---|---|
 | Fire modes | Semi-automatic |
 | Fire rate | 90 rounds/min as stored (the draw sets the real pace) |
-| Arrow speed | 160 m/s in Season 2 (65,000 in Season 1, assuming the stored unit is cm/s: 650 m/s) |
+| Saved weapon speed fields | `InitialBulletSpeed` 24,000; `TypicalSpeed` 20,400 with override enabled (240 / 204 m/s assuming cm/s). These are different fields, not measured release speed. |
 | Full draw | 1.4 s |
 | Release speed | Starts at 5% of full speed and reaches 100% as the draw builds (the draw unit is not stated; the curve ends at 0.4) |
 | Weight | 1.3 kg |
@@ -55,9 +55,9 @@ Both arrows use their own damage type, listed here as the data states.
 | Broadhead Arrow | 77 | 152 m/s | 14 s | 0.029 |
 | Rambo Explosive Arrow | 150 (blast) | 180 m/s | 20 s | 0.045 |
 
-The speeds assume the stored unit is cm/s, as the weapon's speed does. The Broadhead Arrow's shop text says it is effective against unarmored targets.
+The projectile-row speeds are their stored `TypicalSpeed`, assuming cm/s; they are not the weapon's `InitialBulletSpeed` or its typical-speed override. The current draw/release consumer has not been traced to resolve the resulting flight speed. The Broadhead Arrow's shop text says it is effective against unarmored targets.
 
-**Range falloff.** The bow keeps full damage out to 100 m (assuming the stored unit is cm), then loses damage in a straight line until it does none at 500 m. The far end of the stored curve (1,200 m) kept 20% damage in Season 1 and keeps none in Season 2.
+**Range falloff.** The bow keeps full damage out to 100 m (assuming the stored unit is cm), then reaches a stored zero at 500 m. The 100 m key uses cubic interpolation with nonzero tangents, so this segment must not be described as a straight line. The far end of the stored curve (1,200 m) kept 20% damage in Season 1 and keeps none in Season 2.
 
 **Armor.** Arrows do x0.90 against Heavy vests and Heavy helmets and x0.66 against Super heavy ones. Light and Medium gear does not reduce arrow damage. See [Armor](../game-mechanics/armor.md). The Broadhead Arrow has a penetration multiplier of 0.5 in Season 2 (0.03 in Season 1) and a ricochet angle of 30 degrees.
 
@@ -65,7 +65,7 @@ The speeds assume the stored unit is cm/s, as the weapon's speed does. The Broad
 
 ## Recoil and spread
 
-Standing, the bow's hip spread runs from 1 to 2 (degrees, as the spread page gives them), crouched from 0.5 to 1 and prone it is 0.5. Fully aimed, spread is 0. See [Spread and recoil](../game-mechanics/spread-and-recoil.md). The bow uses the sniper rifle aim-down-sights camera curve.
+The previously documented spread model gives standing 1–2 degrees, crouched 0.5–1 and prone 0.5, with zero hip spread when fully aimed. These historical curve/consumer results are not a verification of the current S3 shot-direction path. See [Spread and recoil](../game-mechanics/spread-and-recoil.md). The bow uses the sniper rifle aim-down-sights camera curve.
 
 ## Ammunition
 
@@ -84,6 +84,12 @@ No attachments are listed for the bow.
 
 - **Item shop:** 1,350 cash, unlock level 0.
 - **Recon role tree:** the Compound Bow unlocks at Recon level 16 for 150,000 cash, together with the Arrow at 0 cost. See [Recon](../progression-and-economy/recon.md).
+
+## Season 3 announcement
+
+Arrow speed was increased by 50%. The saved bow initial-speed setting of 240 m/s is consistent with 160 × 1.5; the separate typical-speed override is 204 m/s. Neither field is a measured release speed, and the arrow projectile fields and draw-dependent release remain distinct.
+
+Source: [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221). These are developer-announced changes; saved fields and historical models below do not independently verify the current binary consumer.
 
 ## Season 2 changes
 

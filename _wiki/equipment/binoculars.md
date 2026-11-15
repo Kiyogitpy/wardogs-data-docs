@@ -24,11 +24,11 @@ description: "The Binoculars: the cheapest recon optic, a low magnification view
 | Internal name | `ID.Item.Binoculars` |
 {: .wiki-infobox }
 
-The Binoculars are the simplest of the recon optics. They give a low magnification view to spot enemy infantry and vehicles at a distance. They are the cheapest of the four optics sold in the shop.
+The Binoculars are the simplest of the recon optics. They give a low magnification view to spot enemy infantry and vehicles at a distance. They have the lowest listed price among the four recon optics; the S3 vendor row for the Infrared Range Finder is hidden.
 
 ## Overview
 
-The shop describes the Binoculars as a way to spot enemy infantry and vehicles with low magnification. Unlike the [Range Finder](range-finder.md), they show no distance. There is no spotting range. Spotting works by timing instead of a range: a spot registers in 0.5 s on infantry and 0.75 s to 1.25 s on vehicles, and fades over 30 s on infantry (see [Spotting](../game-mechanics/spotting.md)).
+The shop describes the Binoculars as a way to spot enemy infantry and vehicles with low magnification. Unlike the [Range Finder](range-finder.md), they show no distance. A maximum spotting range has not been established. The saved spotting extension supplies timing values: a spot registers in 0.5 s on infantry and 0.75 s to 1.25 s on vehicles, and fades over 30 s on infantry (see [Spotting](../game-mechanics/spotting.md)).
 
 ## How it works
 

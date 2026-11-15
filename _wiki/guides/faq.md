@@ -6,6 +6,12 @@ description: "Short answers to the questions players ask most about combat, armo
 
 # Frequently Asked Questions
 
+**What is the official-server ping limit?** The S3 announcement raises it to **250** across all regions; community admins can choose their own limits. This is the announced policy, not a measurement of a particular server. A small community-server cash bonus is also announced, with no amount specified. Community admins can also customize a Server Rules popup shown on joining. [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221).
+
+**Is another purchase required for S3?** The November 11 announcement plans a **$5 increase on January 28**, at the end of S3, for new purchases. Existing owners pay nothing extra. It also targets a further increase around September 2027, the first Early Access anniversary; that remains a plan, not a current charge. [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221).
+
+**Can I earn cash from wagers in Season 3?** No: the Wager Vendor was removed. Saved wager tables are retained configuration, not an active offering. See the [official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221) and [Wagers](../progression-and-economy/wagers.md).
+
 Short answers to the questions players ask most often. Each answer gives the number from the game and links to the article that explains it. Where a figure is worked out from the game rather than timed in play, the answer says so, and where a question is not settled, the answer says that too.
 
 ## Combat and damage
@@ -46,11 +52,11 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 ## Weapons and ammo
 
-**Which ammo should I use on an unarmored player?** Hollow point. Against no armor it does about twice the damage of full metal jacket, so the M4 does 54.5 to the torso against 27.3 ([Choosing Ammo](choosing-ammo.md)).
+**Which ammo should I use on an unarmored player?** Hollow point. Against no armor it does about twice the damage of full metal jacket, so the M4 does 61.6 to the upper torso against 30.8 in the current point-blank model ([Choosing Ammo](choosing-ammo.md)).
 
-**When is AP better than FMJ?** On rifles, from Medium armor up. Against a Medium vest the M4 does 16.6 with armor-piercing and 16.4 with full metal jacket, and against a Heavy vest 15.3 against 13.6. Pistols need Heavy armor, and the Deagle passes full metal jacket at Medium ([Choosing Ammo](choosing-ammo.md)).
+**When is AP better than FMJ?** On rifles, from Medium armor up. Against a Medium vest the M4 does 18.7 with armor-piercing and 18.5 with full metal jacket, and against a Heavy vest 17.2 against 15.4 (current point-blank model). Pistols need Heavy armor, and the Deagle passes full metal jacket at Medium ([Choosing Ammo](choosing-ammo.md)).
 
-**Is hollow point any good against armor?** No. Against a Light vest the M4 does 8.1 with hollow point and 19.1 with full metal jacket ([Choosing Ammo](choosing-ammo.md)).
+**Is hollow point any good against armor?** No. Against a Light vest the M4 does 9.1 with hollow point and 21.6 with full metal jacket (current point-blank model) ([Choosing Ammo](choosing-ammo.md)).
 
 **Do tracer rounds do more damage?** No. A tracer does the same damage as the plain round of the same type ([Choosing Ammo](choosing-ammo.md)).
 
@@ -88,7 +94,7 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 ## Modes and maps
 
-**How do I win King of the Hill?** Be the first team to 100 points. A point is added every 22 s by default, and there is no time limit ([King of the Hill](../game-modes-and-maps/king-of-the-hill.md)).
+**How do I win King of the Hill?** Be the first team to 100 points. A point is added every 22 s by default, and the current config stores zero for MatchHardCapSeconds and InactivityTimeoutSeconds; zero's runtime meaning is unverified ([King of the Hill](../game-modes-and-maps/king-of-the-hill.md)).
 
 **How do I win Deathmatch?** Reach 75 kills or play for 30 minutes, whichever comes first ([Deathmatch](../game-modes-and-maps/deathmatch.md)).
 
@@ -104,19 +110,19 @@ Short answers to the questions players ask most often. Each answer gives the num
 
 ## Money and progression
 
-**How much cash do I start with?** The game's table sets 10,000 cash (3,000 in Strike and Disarm, 2,000 in VIP Escort). On live servers Cash is kept between matches, so your balance comes from your saved account online; 10,000 is the game's table value and most likely the first-time balance (inferred). In King of the Hill, points earned in the [pre-lobby](../game-modes-and-maps/pre-lobby.md) are added on top when the match starts, 1 cash per point up to 5,000.
+**How much cash do I start with?** The game's table sets 10,000 cash (3,000 in Strike and Disarm, 2,000 in VIP Escort). The current table value does not establish a first-login balance or live persistence. Profile-based Cash and [pre-lobby](../game-modes-and-maps/pre-lobby.md) conversion at 1 cash per point up to 5,000 were described by the CL516586 analysis; S3 consumers remain unresolved.
 
-**How do I get Gold Bars?** Exchange cash at the Gold Exchange, which unlocks at Wardog level 35 for 150,000 cash. The server sets the rate and it changes over time, so the rate is not in the game (the exchange table is empty). Gold Bars buy cosmetics only ([Currencies](../progression-and-economy/currencies.md), [Making Money](making-money.md)).
+**How do I get Gold Bars?** Exchange cash at the Gold Exchange, which unlocks at Wardog level 35 for a stored cost of 100,000 cash. The exchange text describes a variable rate; the current Gold Bars row has an empty rate list, so an active conversion rate is not established. Gold Bars buy cosmetics only ([Currencies](../progression-and-economy/currencies.md), [Making Money](making-money.md)).
 
-**Can I buy Gold Bars with real money?** The game has no Gold Bar pack, so it does not show whether they are sold for money ([Currencies](../progression-and-economy/currencies.md)).
+**Can I buy Gold Bars with real money?** The reviewed currency and exchange definitions do not establish a real-money pack or exclude other purchase routes ([Currencies](../progression-and-economy/currencies.md)).
 
-**Why is my shop price lower?** Each price is multiplied by every discount that applies. A player at Wardog level 8 or below pays 50% of the price, a first purchase pays 90% (10% off), and a losing faction that trails by 40 points pays 80% (this condition is inferred from the setting's field names). Your faction's signature rifle is free, as read from the setting's name ([Shops](../progression-and-economy/shops.md)).
+**Why is my shop price lower?** S3 compares the losing faction with the first-place faction and adds growing weekly, role-specific catch-up discounts for low-level players ([official Season 3 patch notes](https://store.steampowered.com/news/app/1867240/view/688648135317127221)). No fixed catch-up percentage is announced. The earlier price model multiplied applicable discount factors; S3 arithmetic remains unverified. The sanitized current config stores FirstPurchase=90 and LosingFaction=80 with a score difference of 40. Interpreting those as percentages follows the earlier model, not a verified S3 price calculation. VendorDiscount has no multiplier in this config; the old level-8/50% claim is unsupported. A zero-valued signature-rifle setting suggests a free price under that model; the name and field alone do not establish the current transaction ([Shops](../progression-and-economy/shops.md)).
 
 **Can I get a refund?** Yes. A refund pays 90% of the eligible amount, but it must be claimed within 20 score ticks ([Shops](../progression-and-economy/shops.md)).
 
 **What is the biggest role payout for one action?** Destroying an enemy Havoc pays 6,000 cash for the Pilot role, the top vehicle payout in the role table on Making Money. Destroying an artillery tank also pays a 6,000 base, and the SPH-2 has a separate per-kill session value of 8,000 in Season 2. Destroying an enemy Forward Operating Base pays 2,500 plus up to 7,500 more depending on the supplies it holds, so no single figure is the biggest. A kill from artillery while standing in the open pays 5,000 for the Assault role, and destroying a heavy tank pays 5,000 for the Driver role ([Making Money](making-money.md), [Cash and Rewards](../progression-and-economy/cash-and-rewards.md)).
 
-**What is Intel for?** Passive missions pay 100 to 500 Intel per tier. The game has no shop price, unlock or exchange that uses it ([Currencies](../progression-and-economy/currencies.md), [Passive Missions](../progression-and-economy/passive-missions.md)).
+**What is Intel for?** Passive mission rows store 100 to 500 Intel per tier, but all 15 use reward type INVALID and have auto-activation off; payment is not established. The reviewed currency and exchange rows supply no Intel spending route; other consumers remain unresolved. ([Currencies](../progression-and-economy/currencies.md), [Passive Missions](../progression-and-economy/passive-missions.md)).
 
 ## AI and PvE
 

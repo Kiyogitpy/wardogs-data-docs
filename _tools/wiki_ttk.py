@@ -140,7 +140,7 @@ def section_lines(code):
         notes.append(f"Shotgun figures add up all {n_pel} pellets of a shell and assume every pellet hits; at range the pellets spread out and some will miss.")
     er = effective_range(code)
     if er is not None:
-        notes.append(f"A * marks a distance beyond the weapon's effective range of {er:.0f} m, where damage falls with distance.")
+        notes.append(f"A * marks a distance beyond the effective-range model setting of {er:.0f} m, which may use a historical default when omitted. Damage falloff is calculated separately from its curve; the marker is not a damage cutoff.")
     out += [" ".join(notes), ""]
     return out
 
