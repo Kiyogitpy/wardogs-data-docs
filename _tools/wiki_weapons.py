@@ -66,8 +66,8 @@ S2 = read("season-2-changes/weapons-ammo.md")
 # Compound Bow: not a firearm (no caliber, spray pattern or damage table). Its article is
 # hand-written (_wiki/weapons/compound-bow.md); the hub reads its saved speed settings below.
 SKIP = {"CombatBow"}
-# Item shop price of the bow (assets/data/loadout-builder.json), read once like the other tables.
-BOW_PRICE = (jload("assets/data/loadout-builder.json")["items"].get("ID_CombatBow") or {}).get("price")
+# Shop entry of the bow (assets/data/loadout-builder.json), read once like the other tables.
+BOW_ITEM = jload("assets/data/loadout-builder.json")["items"].get("ID_CombatBow") or {}
 BOW_DIR = "data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/"
 _EXPORT_HEADER = re.compile(r"^--- export: .* ---$", re.M)
 
@@ -94,7 +94,8 @@ def bow_row():
     draw = next((p["FullDrawTime"] for p in _export_props(BOW_DIR + "ID_CombatBow.json")
                  if "FullDrawTime" in p), None)
     draw_text = f"{draw:g} s setting" if draw is not None else "omitted in export"
-    price = BOW_PRICE
+    # A price the shop hides is not shown, the same as a missing one.
+    price = None if BOW_ITEM.get("priceHidden") else BOW_ITEM.get("price")
     return ("| [Compound Bow](weapons/compound-bow.md) | Broadhead Arrow, Rambo Explosive Arrow | "
             + speed + " (cm/s assumption; release unverified) | " + draw_text + " | "
             + (str(price) if price is not None else "not yet known") + " |")
@@ -500,7 +501,7 @@ def _archive_change_text(spray):
     s1 = spray["seasons"].get("s1")
     s2 = spray["seasons"]["s2"]
     if not s1 or not s1.get("present"):
-        return "the Season 1 data has no entry for this weapon, so there is nothing to compare."
+        return "The Season 1 data has no entry for this weapon, so there is nothing to compare."
     changed = spray.get("changedS1toS2") or []
     if "pattern" not in changed and "viewKickMagnitudeMultiplier" not in changed:
         return "Season 2 did not change the recoil pattern."

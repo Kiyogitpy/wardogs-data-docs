@@ -7,12 +7,12 @@ seeded Monte Carlo spread band, the final default-attachment recoil multipliers 
     python -I _tools/spray_patterns.py --write --s2 DIR   # regenerate assets/data/spray-patterns.json
     python -I _tools/spray_patterns.py --check --s2 DIR   # recompute, exit 1 if the committed file differs
     python -I _tools/spray_patterns.py --s1 DIR           # other Season 1 data/ folder (default below)
+    python -I _tools/spray_patterns.py --print A91        # one weapon, human readable (current data/ without --s2)
 
 spray-patterns.json is a frozen Season 1/2 archive. This repo's data/ is now Season 3, so --write and --check
 need --s2 pointing at a Season 2 (CL-516586) data/ folder; without it both exit non-zero,
 so the archive is never rebuilt from S3 data under the Season 2 label. wiki_weapons.py calls build(None) to
 model the current data/ directly; it does not touch this file.
-    python -I _tools/spray_patterns.py --print A91        # one weapon, human readable
 
 Semantics: content/Wardogs_Weapons_v2.md section 5a (kick function 0x6B95C50). Shot n inside the pattern kicks
 RecoilPattern[n] turned by a uniform random angle in +-RandomDeviationDegree; past the pattern (and on every shot
@@ -454,23 +454,33 @@ def dumps(obj):
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     args = sys.argv[1:]
-    s1 = S1_DEFAULT
-    if "--s1" in args:
-        s1 = args[args.index("--s1") + 1]
-    s2 = args[args.index("--s2") + 1] if "--s2" in args else None
+    def value(flag):
+        """The argument after flag, or None when flag is absent. A flag with nothing usable after it is an error."""
+        if flag not in args:
+            return None
+        i = args.index(flag) + 1
+        if i >= len(args) or args[i].startswith("--"):
+            sys.exit(f"{flag} needs a value")
+        return args[i]
+
+    s1 = value("--s1") or S1_DEFAULT
+    s2 = value("--s2")
     if "--print" in args:
-        want = args[args.index("--print") + 1].lower()
+        want = value("--print").lower()
+        # Without --s2 the s2 slot holds the repo's current data/ (Season 3), so label it as such.
+        labels = {"s1": "s1", "s2": "s2" if s2 else "current"}
         for w in build(s1, s2)["weapons"]:
             if w["id"].lower() == want:
                 for s in ("s1", "s2"):
                     e = w["seasons"][s]
                     if e and e.get("present"):
-                        print(w["id"], w["name"], s, "pattern", len(e["pattern"]), "rpm", e["rpm"], "dev", e["randomDeviationDeg"])
+                        print(w["id"], w["name"], labels[s], "pattern", len(e["pattern"]), "rpm", e["rpm"], "dev", e["randomDeviationDeg"])
                         print("  path end", e["expectedPath"][-1], "mult", e["multipliers"])
         return
     if "--write" in args or "--check" in args:
         if not s2 or not os.path.isdir(s2):
-            msg = ("spray-patterns.json is a frozen Season 1/2 archive and data/ is now Season 3; "
+            msg = (f"Season 2 folder {s2} not found" if s2 else
+                   "spray-patterns.json is a frozen Season 1/2 archive and data/ is now Season 3; "
                    "pass --s2 DIR (a Season 2 data/ folder)")
             # Exit non-zero for --check too: a skipped check must not read as a pass.
             sys.exit(msg + (" (refusing to write)" if "--write" in args else " (check not run)"))
