@@ -235,7 +235,9 @@ class PinnedSeasonDiff(Base):
             self.assertEqual(e[mode][:2], ["--s2", "{season2_export}"])
         self.assertEqual(e["tier"], "core")
         sp = next(x for x in reg["scripts"] if x["script"] == "spray_patterns.py")
-        self.assertEqual(sp["tier"], "manual")           # hard-codes data/ as Season 2: cannot be pinned, so regen does not run it
+        self.assertEqual(sp["tier"], "manual")           # frozen S1/S2 archive: pinned to --s2, but regen does not run it
+        for mode in ("write", "check"):
+            self.assertEqual(sp[mode][1:], ["--s2", "{season2_export}"])
 
     def test_regen_hands_the_pinned_path_to_the_generator_not_data(self):
         reg = up.load_registry()

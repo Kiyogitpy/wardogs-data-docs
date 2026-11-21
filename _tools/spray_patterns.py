@@ -9,7 +9,7 @@ seeded Monte Carlo spread band, the final default-attachment recoil multipliers 
     python -I _tools/spray_patterns.py --s1 DIR           # other Season 1 data/ folder (default below)
 
 spray-patterns.json is a frozen Season 1/2 archive. This repo's data/ is now Season 3, so --write and --check
-need --s2 pointing at a Season 2 (CL-516586) data/ folder; without it --write refuses and --check is skipped,
+need --s2 pointing at a Season 2 (CL-516586) data/ folder; without it both exit non-zero,
 so the archive is never rebuilt from S3 data under the Season 2 label. wiki_weapons.py calls build(None) to
 model the current data/ directly; it does not touch this file.
     python -I _tools/spray_patterns.py --print A91        # one weapon, human readable
@@ -472,10 +472,8 @@ def main():
         if not s2 or not os.path.isdir(s2):
             msg = ("spray-patterns.json is a frozen Season 1/2 archive and data/ is now Season 3; "
                    "pass --s2 DIR (a Season 2 data/ folder)")
-            if "--write" in args:
-                sys.exit(msg + " (refusing to write)")
-            print(msg + "; check skipped")
-            return
+            # Exit non-zero for --check too: a skipped check must not read as a pass.
+            sys.exit(msg + (" (refusing to write)" if "--write" in args else " (check not run)"))
         have_s1 = os.path.isdir(s1)
         data = build(s1, s2)
         text = dumps(data)

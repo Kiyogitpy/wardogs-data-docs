@@ -521,8 +521,8 @@ def _archive_change_text(spray):
 def recoil_section(wid, title, multi_pellet=False):
     spread = SPREAD_BY_ITEM.get(wid)
     spray = SPRAY_BY_ITEM.get(wid)
-    if spread is None or spray is None:
-        raise SystemExit(f"no spread or spray data for {wid}")
+    if spread is None:
+        raise SystemExit(f"no spread data for {wid}")
     season = current_recoil_by_item().get(wid)
     if not season or not season.get("present"):
         raise SystemExit(f"no current source-derived recoil model for {wid}")
@@ -604,7 +604,12 @@ def recoil_section(wid, title, multi_pellet=False):
     else:
         note += "This weapon has no authored pattern, so the climb figures use the middle of its random range."
     source = season["sourceNote"].split(";", 1)[0]
-    out += [note, "", f"[Current recoil settings]({GH}{source}).", "", _season_sentence(spray), "",
+    out += [note, "", f"[Current recoil settings]({GH}{source}).", ""]
+    # spray-patterns.json is a frozen S1/S2 archive: a weapon added after Season 2 has no entry, and that is
+    # not an error. Its page just has no archived history paragraph.
+    if spray is None:
+        return "\n".join(out)
+    out += [_season_sentence(spray), "",
             f"The [historical Weapon Spray Viewer]({RECOIL_VIEWER}) retains Season 1/2 data; it does not show this S3 snapshot.", ""]
     return "\n".join(out)
 

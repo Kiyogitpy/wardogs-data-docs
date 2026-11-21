@@ -1120,16 +1120,20 @@
    "class": "generator",
    "tier": "manual",
    "write": [
-    "--write"
+    "--write",
+    "--s2",
+    "{season2_export}"
    ],
    "check": [
-    "--check"
+    "--check",
+    "--s2",
+    "{season2_export}"
    ],
    "inputs": [
     "Season 2 export (--s2 DIR)",
     "Season 1 export (E:/wardogs_builds/season1/data)"
    ],
-   "notes": "MANUAL: spray-patterns.json is a frozen Season 1/2 archive. --write and --check need --s2 DIR (a Season 2 data/ folder); without it --write refuses and --check is skipped, so the archive is never rebuilt from the repo's Season 3 data/. wiki_weapons.py models the current data/ itself via build(None)"
+   "notes": "MANUAL: spray-patterns.json is a frozen Season 1/2 archive. --write and --check need --s2 DIR (a Season 2 data/ folder); without it both exit non-zero, so the archive is never rebuilt from the repo's Season 3 data/. wiki_weapons.py models the current data/ itself via build(None)"
   },
   {
    "script": "ai_detection.py",
