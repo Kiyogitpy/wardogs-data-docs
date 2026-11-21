@@ -68,6 +68,34 @@ class S3WeaponClaims(unittest.TestCase):
         self.assertIn('210 m/s typical override', row)
         self.assertIn('release unverified', row)
 
+    def _bow_row(self, stats, item_exports, bow_item):
+        """bow_row() over fixture exports: the stats file and the item file each get their own text."""
+        def fake_read(rel):
+            if rel.endswith('DA_CombatBow_Stats.json'):
+                return '--- export: stats ---\n' + json.dumps(stats)
+            return ''.join(f'--- export: item {i} ---\n' + (x if isinstance(x, str) else json.dumps(x)) + '\n'
+                           for i, x in enumerate(item_exports))
+        with patch.object(weapons, 'read', side_effect=fake_read), patch.object(weapons, 'BOW_ITEM', bow_item):
+            return weapons.bow_row()
+
+    STATS = {'Properties': {'WeaponStats': {'InitialBulletSpeed': 24000}}}
+
+    def test_bow_hub_reads_draw_time_and_price(self):
+        row = self._bow_row(self.STATS, [{'Properties': {}}, {'Properties': {'FullDrawTime': 1.25}}],
+                            {'price': 900, 'priceHidden': False})
+        self.assertIn('| 1.25 s setting | 900 |', row)
+
+    def test_bow_hub_labels_omitted_draw_and_hidden_or_missing_price(self):
+        row = self._bow_row(self.STATS, [{'Properties': {}}], {'price': 900, 'priceHidden': True})
+        self.assertIn('| omitted in export | not yet known |', row)
+        row = self._bow_row(self.STATS, [{'Properties': {}}], {})
+        self.assertIn('| omitted in export | not yet known |', row)
+
+    def test_bow_hub_skips_an_unparseable_export(self):
+        row = self._bow_row(self.STATS, ['{"Properties": {"FullDraw', {'Properties': {'FullDrawTime': 1.4}}],
+                            {'price': 1350})
+        self.assertIn('| 1.4 s setting | 1350 |', row)
+
     def test_ammo_summary_preserves_deagle_and_50cal_exceptions(self):
         def damage(code, aid, armor):
             return next(a for a in weapons.wdamage[code]['ammo'] if a['id'] == aid)['damage_raw']['torso_armor'][armor]
@@ -78,7 +106,7 @@ class S3WeaponClaims(unittest.TestCase):
         self.assertIn('AP never beats FMJ', weapons.ammo_page())
 
     def test_tcx_recoil_reads_current_authored_pattern_not_the_archive(self):
-        current = weapons.CURRENT_RECOIL_BY_ITEM['ID_WEPN_037']
+        current = weapons.current_recoil_by_item()['ID_WEPN_037']
         path = Path(weapons.ROOT) / current['sourceNote'].split(';', 1)[0]
         raw = json.loads(path.read_text(encoding='utf-8').split('\n', 1)[1])['Properties']['WeaponStats']
         expected = [{'x': p['X'], 'y': p['Y']} for p in raw['RecoilPattern']]

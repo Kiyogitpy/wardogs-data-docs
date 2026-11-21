@@ -162,7 +162,7 @@ Climb and drift figures are computed from the pattern points, before the recoil 
 
 [Current recoil settings](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Plugins/GameFeatures/Weapons/SMG/SMG_03/Content/Data/DA_SMG_03_Stats.json).
 
-Season 2 did not change the recoil pattern.
+Archived Season 1 → 2 history (separate from the S3 model above): Season 2 did not change the recoil pattern.
 
 The [historical Weapon Spray Viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/spray-viewer.html) retains Season 1/2 data; it does not show this S3 snapshot.
 

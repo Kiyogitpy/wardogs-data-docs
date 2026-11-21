@@ -6,6 +6,7 @@ Short fixed prose (class blurbs, lead sentences) lives in this file.
 
 Run from the repo root:  python _tools/wiki_weapons.py
 """
+import functools
 import json
 import math
 import os
@@ -65,14 +66,45 @@ S2 = read("season-2-changes/weapons-ammo.md")
 # Compound Bow: not a firearm (no caliber, spray pattern or damage table). Its article is
 # hand-written (_wiki/weapons/compound-bow.md); the hub reads its saved speed settings below.
 SKIP = {"CombatBow"}
+# Shop entry of the bow (assets/data/loadout-builder.json), read once like the other tables.
+BOW_ITEM = jload("assets/data/loadout-builder.json")["items"].get("ID_CombatBow") or {}
+BOW_DIR = "data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/"
+_EXPORT_HEADER = re.compile(r"^--- export: .* ---$", re.M)
+
+
+def _export_props(rel):
+    """Properties of every export in a CueDump file (a file can hold several, each after a header line).
+    An export that is not valid JSON (e.g. a truncated dump) is skipped, as spray_patterns.exports() does, so
+    the fields it held read as omitted instead of stopping the whole run."""
+    out = []
+    for chunk in _EXPORT_HEADER.split(read(rel)):
+        if chunk.strip():
+            try:
+                out.append(json.loads(chunk).get("Properties", {}))
+            except ValueError:
+                continue
+    return out
+
+
 def bow_row():
-    path = "data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/DA_CombatBow_Stats.json"
-    st = json.loads(read(path).split("\n", 1)[1])["Properties"]["WeaponStats"]
-    speed = f"{st['InitialBulletSpeed'] / 100:g} m/s initial setting"
-    if st["bOverrideTypicalSpeed"]:
+    """Hub row for the Compound Bow, read from its stats and item exports. Omitted fields are labelled
+    as omitted rather than raising: UE exports leave out fields at their default (false, 0)."""
+    st = next((p["WeaponStats"] for p in _export_props(BOW_DIR + "DA_CombatBow_Stats.json")
+               if "WeaponStats" in p), {})
+    init = st.get("InitialBulletSpeed")
+    speed = (f"{init / 100:g} m/s initial setting" if init is not None
+             else "initial speed omitted in export")
+    if st.get("bOverrideTypicalSpeed") and st.get("TypicalSpeed") is not None:
         speed += f"; {st['TypicalSpeed'] / 100:g} m/s typical override"
+    draw = next((p["FullDrawTime"] for p in _export_props(BOW_DIR + "ID_CombatBow.json")
+                 if "FullDrawTime" in p), None)
+    draw_text = f"{draw:g} s setting" if draw is not None else "omitted in export"
+    # A price the shop hides is not shown, the same as a missing one.
+    price = None if BOW_ITEM.get("priceHidden") else BOW_ITEM.get("price")
     return ("| [Compound Bow](weapons/compound-bow.md) | Broadhead Arrow, Rambo Explosive Arrow | "
-            + speed + " (cm/s assumption; release unverified) | 1.4 s setting | 1350 |")
+            + speed + " (cm/s assumption; release unverified) | " + draw_text + " | "
+            + (str(price) if price is not None else "not yet known") + " |")
+
 
 CLASS_NAME = {
     "AR": "Assault rifle", "DMR": "Marksman rifle", "LMG": "Light machine gun",
@@ -392,9 +424,19 @@ for _w in SPREAD_DOC["weapons"]:
     if _iid:
         SPREAD_BY_ITEM.setdefault(_iid, _w)
 SPRAY_BY_ITEM = {w["itemAsset"]: w for w in SPRAY_DOC["weapons"] if w.get("itemAsset")}
-# build(None) reads current data/; s2 is the builder's legacy slot name, not its build attribution.
-CURRENT_RECOIL_BY_ITEM = {w["itemAsset"]: w["seasons"]["s2"]
-                          for w in spray_patterns.build(None)["weapons"] if w.get("itemAsset")}
+
+
+@functools.lru_cache(maxsize=None)
+def current_recoil_by_item():
+    """Current (S3) recoil entries per item asset, built from data/ on first use.
+
+    build(None) reads current data/; s2 is the builder's legacy slot name, not its build attribution.
+    Lazy because the build parses every stats export and runs the Monte Carlo band; doing it at import
+    would charge that cost to every module that imports this one (wiki_calibers, wiki_ttk, tests)."""
+    return {w["itemAsset"]: w["seasons"]["s2"]
+            for w in spray_patterns.build(None)["weapons"] if w.get("itemAsset")}
+
+
 # row -> [[x, degrees], ...]; x is the speed ratio, 0 = still, 1 = full speed (linear)
 SPREAD_CURVES = SPREAD_DOC["spreadCurveTable"]
 # radians per unit of WeaponAccuracy.AccuracyValue (pipeline doc, accuracy getter)
@@ -451,7 +493,16 @@ def _drift(x):
     return f"{abs(x):.1f}° {'right' if x > 0 else 'left'}"
 
 
+ARCHIVE_PREFIX = "Archived Season 1 → 2 history (separate from the S3 model above): "
+
+
 def _season_sentence(spray):
+    """Compare the archived S1 and S2 entries of spray-patterns.json. It never reads the current (S3) model,
+    so its figures can differ from the table above when S3 changed the pattern; the prefix says so."""
+    return ARCHIVE_PREFIX + _archive_change_text(spray)
+
+
+def _archive_change_text(spray):
     s1 = spray["seasons"].get("s1")
     s2 = spray["seasons"]["s2"]
     if not s1 or not s1.get("present"):
@@ -476,9 +527,9 @@ def _season_sentence(spray):
 def recoil_section(wid, title, multi_pellet=False):
     spread = SPREAD_BY_ITEM.get(wid)
     spray = SPRAY_BY_ITEM.get(wid)
-    if spread is None or spray is None:
-        raise SystemExit(f"no spread or spray data for {wid}")
-    season = CURRENT_RECOIL_BY_ITEM.get(wid)
+    if spread is None:
+        raise SystemExit(f"no spread data for {wid}")
+    season = current_recoil_by_item().get(wid)
     if not season or not season.get("present"):
         raise SystemExit(f"no current source-derived recoil model for {wid}")
 
@@ -559,7 +610,12 @@ def recoil_section(wid, title, multi_pellet=False):
     else:
         note += "This weapon has no authored pattern, so the climb figures use the middle of its random range."
     source = season["sourceNote"].split(";", 1)[0]
-    out += [note, "", f"[Current recoil settings]({GH}{source}).", "", _season_sentence(spray), "",
+    out += [note, "", f"[Current recoil settings]({GH}{source}).", ""]
+    # spray-patterns.json is a frozen S1/S2 archive: a weapon added after Season 2 has no entry, and that is
+    # not an error. Its page just has no archived history paragraph.
+    if spray is None:
+        return "\n".join(out)
+    out += [_season_sentence(spray), "",
             f"The [historical Weapon Spray Viewer]({RECOIL_VIEWER}) retains Season 1/2 data; it does not show this S3 snapshot.", ""]
     return "\n".join(out)
 
@@ -862,7 +918,7 @@ def comparison_page():
             title = page_title(wid)
             cap = CAP.get(code) or {}
             mag = (cap.get("magazine") or {}).get("capacity") or cap.get("rounds_held")
-            season = CURRENT_RECOIL_BY_ITEM.get(wid)
+            season = current_recoil_by_item().get(wid)
             climb = f"{_path(season, 10)[1]:.1f}" if season and season.get("present") else "not yet known"
             star = "*" if c["beyond100"] else ""
             rate_mark = "†" if wdamage[code].get("rpm_source") == "class_default_native" else ""

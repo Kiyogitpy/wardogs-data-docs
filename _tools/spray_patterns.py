@@ -4,10 +4,15 @@ Writes assets/data/spray-patterns.json, one entry per WDWeaponStatsData asset (t
 assets/data/weapon-spread-recoil.json), with the per-shot kick vectors, the expected cumulative path, a
 seeded Monte Carlo spread band, the final default-attachment recoil multipliers and the in-game name.
 
-    python -I _tools/spray_patterns.py --write            # regenerate assets/data/spray-patterns.json
-    python -I _tools/spray_patterns.py --check            # recompute, exit 1 if the committed file differs
+    python -I _tools/spray_patterns.py --write --s2 DIR   # regenerate assets/data/spray-patterns.json
+    python -I _tools/spray_patterns.py --check --s2 DIR   # recompute, exit 1 if the committed file differs
     python -I _tools/spray_patterns.py --s1 DIR           # other Season 1 data/ folder (default below)
-    python -I _tools/spray_patterns.py --print A91        # one weapon, human readable
+    python -I _tools/spray_patterns.py --print A91        # one weapon, human readable (current data/ without --s2)
+
+spray-patterns.json is a frozen Season 1/2 archive. This repo's data/ is now Season 3, so --write and --check
+need --s2 pointing at a Season 2 (CL-516586) data/ folder; without it both exit non-zero,
+so the archive is never rebuilt from S3 data under the Season 2 label. wiki_weapons.py calls build(None) to
+model the current data/ directly; it does not touch this file.
 
 Semantics: content/Wardogs_Weapons_v2.md section 5a (kick function 0x6B95C50). Shot n inside the pattern kicks
 RecoilPattern[n] turned by a uniform random angle in +-RandomDeviationDegree; past the pattern (and on every shot
@@ -17,7 +22,7 @@ expectedPath and band are the sums of the authored kicks only: the horizontal/ve
 multiplier, the focus cut and ViewKickMagnitudeMultiplier are listed beside them for the viewer to apply, and the
 ViewKickCurve time shape is not applied. Firearms have no self recovery (section 5a), so nothing is subtracted.
 
-Seasons. Season 2 is this repo's data/. Season 1 is the pre-update export (see season_diff.py; default
+Seasons. Season 2 is the --s2 folder (build(None) uses this repo's data/, now Season 3). Season 1 is the pre-update export (see season_diff.py; default
 S1_DEFAULT). Both are read by the same code. The multipliers use the effect formulas in assets/data/ge-values.json
 (Season 2 effect values) on each season's own item data, so a Season 1 multiplier difference comes from item
 changes only. The Season 1 weapon whose id changed (Mosin -> WEPN_017) is paired by its WeaponId tag.
@@ -73,14 +78,20 @@ def rel(path, base):
 
 # --------------------------------------------------------------------------- one season's data
 class Season:
-    def __init__(self, data_dir):
+    def __init__(self, data_dir, legacy_keys=False):
+        """data_dir: one season's data/ folder. legacy_keys: True for the Season 1 export, whose two hashed bipod
+        keys carry their pre-v2-usmap names. It is set by the caller, not guessed from the folder, because the
+        Season 2 export (--s2) is now an outside folder too and uses the v2 names."""
+        # normpath drops a trailing slash, so dirname() below is the folder's parent, not the folder itself
+        data_dir = os.path.normpath(os.path.abspath(data_dir))
         self.dir = data_dir
+        self.legacy_keys = legacy_keys
         self.stats = {}   # asset -> dict(path, props, tag)
         for p in sorted(glob.glob(os.path.join(data_dir, "**", "DA_*_Stats.json"), recursive=True)):
             for o in exports(p):
                 if o.get("Type") == "WDWeaponStatsData":
                     props = o.get("Properties", {})
-                    self.stats[o["Name"]] = {"path": rel(p, os.path.dirname(data_dir)), "props": props,
+                    self.stats[o["Name"]] = {"path": self.rel(p), "props": props,
                                              "tag": ((props.get("WeaponId") or {}).get("TagName") or "")}
         self.items_by_stats = collections.defaultdict(list)   # stats asset -> [ID_ item objects]
         self.items_by_tag = {}                                  # ItemId lower -> item
@@ -99,13 +110,13 @@ class Season:
                     disp = pr.get("DisplayName") or {}
                     name = disp.get("LocalizedString") or disp.get("SourceString") or ""
                     item = {"asset": o["Name"], "id": (pr.get("ItemId") or {}).get("TagName", ""), "name": name,
-                            "path": rel(p, os.path.dirname(data_dir)), "ctx": list(pr.get("ItemContext", [])), "obj": objs}
+                            "path": self.rel(p), "ctx": list(pr.get("ItemContext", [])), "obj": objs}
                     self.items_by_tag[item["id"].lower()] = item
                     for r in set(ref.findall(text)):
                         self.items_by_stats[r].append(item)
                 elif o.get("Type") == "WDVehicleWeaponExtensionDataAsset":
                     pr = o.get("Properties", {})
-                    folder = re.search(r"/Vehicles/([^/]+)/", rel(p, os.path.dirname(data_dir)))
+                    folder = re.search(r"/Vehicles/([^/]+)/", self.rel(p))
                     rec = ((pr.get("WeaponExtensionTag") or {}).get("TagName", ""), pr.get("WeaponExtensionName"),
                            folder.group(1) if folder else "")
                     for r in set(ref.findall(text)):
@@ -114,7 +125,7 @@ class Season:
         self.ui_name = {}        # tag lower -> FriendlyName (BHEntityData_UI rows)
         self.vehicle_name = {}   # Vehicles/<folder> -> default variant name
         for p in sorted(glob.glob(os.path.join(data_dir, "**", "DT_EntityData_UI*.json"), recursive=True)):
-            folder = re.search(r"/Vehicles/([^/]+)/", rel(p, os.path.dirname(data_dir)))
+            folder = re.search(r"/Vehicles/([^/]+)/", self.rel(p))
             for o in exports(p):
                 for key, row in (o.get("Rows") or {}).items():
                     fn = row.get("FriendlyName") or {}
@@ -135,6 +146,12 @@ class Season:
                                 self.vendor_type.setdefault(tag.lower(), m.group(0))
         self.attr = None
 
+    def rel(self, path):
+        """path as recorded in the JSON: data/..., so an outside --s2/--s1 export gives the same strings (and
+        GitHub links) as the repo's own data/. main() only accepts a folder named data with a Wardogs/Content
+        tree (season_dir_problem), so a wrong folder cannot turn into data/data/... links."""
+        return "data/" + rel(path, self.dir)
+
     def attributes(self):
         """weapon_attributes.Data over this season's items (effects: assets/data/ge-values.json)."""
         if self.attr is None:
@@ -142,11 +159,11 @@ class Season:
             with open(wa.SRC, encoding="utf-8") as f:
                 d.effects = {e["name"]: e for e in json.load(f)["effects"]}
             d.items = {}
-            # Item.path is made relative to wa.ROOT, which must share a drive with the folder
+            # Item.path is made relative to wa.ROOT, which must share a drive with the folder. The folder is named
+            # data (season_dir_problem), so Item.path reads data/..., the same as Season.rel().
             saved, wa.ROOT = wa.ROOT, os.path.dirname(self.dir)
-            legacy = os.path.abspath(self.dir) != os.path.join(ROOT, "data")
             keys = (wa.BIPOD_WEAPON, wa.BIPOD_CHARACTER)
-            if legacy:   # Season 1 export: the two hashed bipod keys carry their pre-v2-usmap names
+            if self.legacy_keys:   # Season 1 export: the two hashed bipod keys carry their pre-v2-usmap names
                 wa.BIPOD_WEAPON = "_aaabgocclgplfdmmfjefm_$E22B6FB53CC5945C$_$22$"
                 wa.BIPOD_CHARACTER = "_aaabpgfgnkcdbhhlgdhmb_$656DA23177B637C1$_$31$"
             for p in sorted(glob.glob(os.path.join(self.dir, "**", "ID_*.json"), recursive=True)):
@@ -383,9 +400,9 @@ def changes(a, b):
     return [k for k in COMPARE if a[k] != b[k]]
 
 
-def build(s1_dir):
-    s2 = Season(os.path.join(ROOT, "data"))
-    s1 = Season(s1_dir) if s1_dir and os.path.isdir(s1_dir) else None
+def build(s1_dir, s2_dir=None):
+    s2 = Season(s2_dir or os.path.join(ROOT, "data"))
+    s1 = Season(s1_dir, legacy_keys=True) if s1_dir and os.path.isdir(s1_dir) else None
     pairs = pair_assets(s1, s2) if s1 else {}
     s1_used = set(pairs.values())
     weapons = []
@@ -415,9 +432,9 @@ def build(s1_dir):
                             "class": inf["class"], "type": inf["type"], "statsAsset": a1, "itemAsset": inf["item"],
                             "seasons": {"s2": {"present": False}, "s1": e1}, "changedS1toS2": None})
     meta = {
-        "generator": "python -I _tools/spray_patterns.py --write",
+        "generator": "python -I _tools/spray_patterns.py --write --s2 DIR",
         "seasons": {"s1": "Season 1: pre-update export (see season_diff.py)",
-                    "s2": "Season 2: build ++Wardogs+Live-CL-516586, this repo's data/"},
+                    "s2": "Season 2: build ++Wardogs+Live-CL-516586 (archived; passed with --s2)"},
         "units": "degrees of view rotation; x = yaw (right +), y = pitch (up +)",
         "monteCarlo": {"runs": RUNS, "seed": "crc32(id|statsAsset)", "band": "per-shot 10th and 90th percentile of the "
                        "cumulative x and y independently (linear interpolation)"},
@@ -446,25 +463,69 @@ def dumps(obj):
     return json.dumps(obj, indent=1, ensure_ascii=False) + "\n"
 
 
+def season_dir_problem(path):
+    """Why path is not a usable season data/ folder, or None when it is.
+
+    The folder must be named data (as both pinned exports are), so every recorded path, Season.rel() and
+    weapon_attributes' Item.path alike, reads data/... and the GitHub links resolve. It must hold the
+    Wardogs/Content tree update_pipeline.py checks for, and at least one weapon stats export: an export root or
+    an empty mount would otherwise build an archive with every weapon missing."""
+    if not os.path.isdir(path):
+        return "not found"
+    if os.path.basename(os.path.normpath(os.path.abspath(path))) != "data":
+        return "must be the export's data/ folder (its name is not data)"
+    if not os.path.isdir(os.path.join(path, "Wardogs", "Content")):
+        return "has no Wardogs/Content folder; pass the export's data/ folder"
+    if not glob.glob(os.path.join(path, "**", "DA_*_Stats.json"), recursive=True):
+        return "has no DA_*_Stats.json weapon stats exports"
+    return None
+
+
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     args = sys.argv[1:]
-    s1 = S1_DEFAULT
-    if "--s1" in args:
-        s1 = args[args.index("--s1") + 1]
+    def value(flag):
+        """The argument after flag, or None when flag is absent. A flag with nothing usable after it is an error."""
+        if flag not in args:
+            return None
+        i = args.index(flag) + 1
+        if i >= len(args) or args[i].startswith("--"):
+            sys.exit(f"{flag} needs a value")
+        return args[i]
+
+    s1 = value("--s1") or S1_DEFAULT
+    s2 = value("--s2")
+    # Checked for every mode: Season() over a missing or wrong folder is just empty, so --print would print
+    # nothing and --write would archive every weapon as absent from that season.
+    if s2 is not None:
+        problem = season_dir_problem(s2)
+        if problem:
+            sys.exit(f"Season 2 folder {s2}: {problem}")
+    # A missing Season 1 export is tolerated (--check compares Season 2 only), a present but wrong one is not.
+    if os.path.isdir(s1):
+        problem = season_dir_problem(s1)
+        if problem:
+            sys.exit(f"Season 1 folder {s1}: {problem}")
     if "--print" in args:
-        want = args[args.index("--print") + 1].lower()
-        for w in build(s1)["weapons"]:
+        want = value("--print").lower()
+        # Without --s2 the s2 slot holds the repo's current data/ (Season 3), so label it as such.
+        labels = {"s1": "s1", "s2": "s2" if s2 else "current"}
+        for w in build(s1, s2)["weapons"]:
             if w["id"].lower() == want:
                 for s in ("s1", "s2"):
                     e = w["seasons"][s]
                     if e and e.get("present"):
-                        print(w["id"], w["name"], s, "pattern", len(e["pattern"]), "rpm", e["rpm"], "dev", e["randomDeviationDeg"])
+                        print(w["id"], w["name"], labels[s], "pattern", len(e["pattern"]), "rpm", e["rpm"], "dev", e["randomDeviationDeg"])
                         print("  path end", e["expectedPath"][-1], "mult", e["multipliers"])
         return
     if "--write" in args or "--check" in args:
+        if not s2:
+            msg = ("spray-patterns.json is a frozen Season 1/2 archive and data/ is now Season 3; "
+                   "pass --s2 DIR (a Season 2 data/ folder)")
+            # Exit non-zero for --check too: a skipped check must not read as a pass.
+            sys.exit(msg + (" (refusing to write)" if "--write" in args else " (check not run)"))
         have_s1 = os.path.isdir(s1)
-        data = build(s1)
+        data = build(s1, s2)
         text = dumps(data)
         if "--write" in args:
             if not have_s1:
