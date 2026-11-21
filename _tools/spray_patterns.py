@@ -147,8 +147,9 @@ class Season:
         self.attr = None
 
     def rel(self, path):
-        """path as recorded in the JSON: always data/..., whatever the season folder is called, so an outside
-        --s2/--s1 export gives the same strings (and GitHub links) as the repo's own data/."""
+        """path as recorded in the JSON: data/..., so an outside --s2/--s1 export gives the same strings (and
+        GitHub links) as the repo's own data/. main() only accepts a folder named data with a Wardogs/Content
+        tree (season_dir_problem), so a wrong folder cannot turn into data/data/... links."""
         return "data/" + rel(path, self.dir)
 
     def attributes(self):
@@ -158,7 +159,8 @@ class Season:
             with open(wa.SRC, encoding="utf-8") as f:
                 d.effects = {e["name"]: e for e in json.load(f)["effects"]}
             d.items = {}
-            # Item.path is made relative to wa.ROOT, which must share a drive with the folder
+            # Item.path is made relative to wa.ROOT, which must share a drive with the folder. The folder is named
+            # data (season_dir_problem), so Item.path reads data/..., the same as Season.rel().
             saved, wa.ROOT = wa.ROOT, os.path.dirname(self.dir)
             keys = (wa.BIPOD_WEAPON, wa.BIPOD_CHARACTER)
             if self.legacy_keys:   # Season 1 export: the two hashed bipod keys carry their pre-v2-usmap names
@@ -461,6 +463,24 @@ def dumps(obj):
     return json.dumps(obj, indent=1, ensure_ascii=False) + "\n"
 
 
+def season_dir_problem(path):
+    """Why path is not a usable season data/ folder, or None when it is.
+
+    The folder must be named data (as both pinned exports are), so every recorded path, Season.rel() and
+    weapon_attributes' Item.path alike, reads data/... and the GitHub links resolve. It must hold the
+    Wardogs/Content tree update_pipeline.py checks for, and at least one weapon stats export: an export root or
+    an empty mount would otherwise build an archive with every weapon missing."""
+    if not os.path.isdir(path):
+        return "not found"
+    if os.path.basename(os.path.normpath(os.path.abspath(path))) != "data":
+        return "must be the export's data/ folder (its name is not data)"
+    if not os.path.isdir(os.path.join(path, "Wardogs", "Content")):
+        return "has no Wardogs/Content folder; pass the export's data/ folder"
+    if not glob.glob(os.path.join(path, "**", "DA_*_Stats.json"), recursive=True):
+        return "has no DA_*_Stats.json weapon stats exports"
+    return None
+
+
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     args = sys.argv[1:]
@@ -475,9 +495,17 @@ def main():
 
     s1 = value("--s1") or S1_DEFAULT
     s2 = value("--s2")
-    if s2 is not None and not os.path.isdir(s2):
-        # Checked for every mode: Season() over a missing folder is just empty, so --print would print nothing.
-        sys.exit(f"Season 2 folder {s2} not found")
+    # Checked for every mode: Season() over a missing or wrong folder is just empty, so --print would print
+    # nothing and --write would archive every weapon as absent from that season.
+    if s2 is not None:
+        problem = season_dir_problem(s2)
+        if problem:
+            sys.exit(f"Season 2 folder {s2}: {problem}")
+    # A missing Season 1 export is tolerated (--check compares Season 2 only), a present but wrong one is not.
+    if os.path.isdir(s1):
+        problem = season_dir_problem(s1)
+        if problem:
+            sys.exit(f"Season 1 folder {s1}: {problem}")
     if "--print" in args:
         want = value("--print").lower()
         # Without --s2 the s2 slot holds the repo's current data/ (Season 3), so label it as such.

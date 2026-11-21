@@ -73,11 +73,16 @@ _EXPORT_HEADER = re.compile(r"^--- export: .* ---$", re.M)
 
 
 def _export_props(rel):
-    """Properties of every export in a CueDump file (a file can hold several, each after a header line)."""
+    """Properties of every export in a CueDump file (a file can hold several, each after a header line).
+    An export that is not valid JSON (e.g. a truncated dump) is skipped, as spray_patterns.exports() does, so
+    the fields it held read as omitted instead of stopping the whole run."""
     out = []
     for chunk in _EXPORT_HEADER.split(read(rel)):
         if chunk.strip():
-            out.append(json.loads(chunk).get("Properties", {}))
+            try:
+                out.append(json.loads(chunk).get("Properties", {}))
+            except ValueError:
+                continue
     return out
 
 
