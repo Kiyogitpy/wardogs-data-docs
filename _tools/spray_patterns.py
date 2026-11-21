@@ -430,7 +430,7 @@ def build(s1_dir, s2_dir=None):
                             "class": inf["class"], "type": inf["type"], "statsAsset": a1, "itemAsset": inf["item"],
                             "seasons": {"s2": {"present": False}, "s1": e1}, "changedS1toS2": None})
     meta = {
-        "generator": "python -I _tools/spray_patterns.py --write",
+        "generator": "python -I _tools/spray_patterns.py --write --s2 DIR",
         "seasons": {"s1": "Season 1: pre-update export (see season_diff.py)",
                     "s2": "Season 2: build ++Wardogs+Live-CL-516586 (archived; passed with --s2)"},
         "units": "degrees of view rotation; x = yaw (right +), y = pitch (up +)",
@@ -475,6 +475,9 @@ def main():
 
     s1 = value("--s1") or S1_DEFAULT
     s2 = value("--s2")
+    if s2 is not None and not os.path.isdir(s2):
+        # Checked for every mode: Season() over a missing folder is just empty, so --print would print nothing.
+        sys.exit(f"Season 2 folder {s2} not found")
     if "--print" in args:
         want = value("--print").lower()
         # Without --s2 the s2 slot holds the repo's current data/ (Season 3), so label it as such.
@@ -488,9 +491,8 @@ def main():
                         print("  path end", e["expectedPath"][-1], "mult", e["multipliers"])
         return
     if "--write" in args or "--check" in args:
-        if not s2 or not os.path.isdir(s2):
-            msg = (f"Season 2 folder {s2} not found" if s2 else
-                   "spray-patterns.json is a frozen Season 1/2 archive and data/ is now Season 3; "
+        if not s2:
+            msg = ("spray-patterns.json is a frozen Season 1/2 archive and data/ is now Season 3; "
                    "pass --s2 DIR (a Season 2 data/ folder)")
             # Exit non-zero for --check too: a skipped check must not read as a pass.
             sys.exit(msg + (" (refusing to write)" if "--write" in args else " (check not run)"))
