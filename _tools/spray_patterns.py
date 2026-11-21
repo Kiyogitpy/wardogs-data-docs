@@ -78,14 +78,20 @@ def rel(path, base):
 
 # --------------------------------------------------------------------------- one season's data
 class Season:
-    def __init__(self, data_dir):
+    def __init__(self, data_dir, legacy_keys=False):
+        """data_dir: one season's data/ folder. legacy_keys: True for the Season 1 export, whose two hashed bipod
+        keys carry their pre-v2-usmap names. It is set by the caller, not guessed from the folder, because the
+        Season 2 export (--s2) is now an outside folder too and uses the v2 names."""
+        # normpath drops a trailing slash, so dirname() below is the folder's parent, not the folder itself
+        data_dir = os.path.normpath(os.path.abspath(data_dir))
         self.dir = data_dir
+        self.legacy_keys = legacy_keys
         self.stats = {}   # asset -> dict(path, props, tag)
         for p in sorted(glob.glob(os.path.join(data_dir, "**", "DA_*_Stats.json"), recursive=True)):
             for o in exports(p):
                 if o.get("Type") == "WDWeaponStatsData":
                     props = o.get("Properties", {})
-                    self.stats[o["Name"]] = {"path": rel(p, os.path.dirname(data_dir)), "props": props,
+                    self.stats[o["Name"]] = {"path": self.rel(p), "props": props,
                                              "tag": ((props.get("WeaponId") or {}).get("TagName") or "")}
         self.items_by_stats = collections.defaultdict(list)   # stats asset -> [ID_ item objects]
         self.items_by_tag = {}                                  # ItemId lower -> item
@@ -104,13 +110,13 @@ class Season:
                     disp = pr.get("DisplayName") or {}
                     name = disp.get("LocalizedString") or disp.get("SourceString") or ""
                     item = {"asset": o["Name"], "id": (pr.get("ItemId") or {}).get("TagName", ""), "name": name,
-                            "path": rel(p, os.path.dirname(data_dir)), "ctx": list(pr.get("ItemContext", [])), "obj": objs}
+                            "path": self.rel(p), "ctx": list(pr.get("ItemContext", [])), "obj": objs}
                     self.items_by_tag[item["id"].lower()] = item
                     for r in set(ref.findall(text)):
                         self.items_by_stats[r].append(item)
                 elif o.get("Type") == "WDVehicleWeaponExtensionDataAsset":
                     pr = o.get("Properties", {})
-                    folder = re.search(r"/Vehicles/([^/]+)/", rel(p, os.path.dirname(data_dir)))
+                    folder = re.search(r"/Vehicles/([^/]+)/", self.rel(p))
                     rec = ((pr.get("WeaponExtensionTag") or {}).get("TagName", ""), pr.get("WeaponExtensionName"),
                            folder.group(1) if folder else "")
                     for r in set(ref.findall(text)):
@@ -119,7 +125,7 @@ class Season:
         self.ui_name = {}        # tag lower -> FriendlyName (BHEntityData_UI rows)
         self.vehicle_name = {}   # Vehicles/<folder> -> default variant name
         for p in sorted(glob.glob(os.path.join(data_dir, "**", "DT_EntityData_UI*.json"), recursive=True)):
-            folder = re.search(r"/Vehicles/([^/]+)/", rel(p, os.path.dirname(data_dir)))
+            folder = re.search(r"/Vehicles/([^/]+)/", self.rel(p))
             for o in exports(p):
                 for key, row in (o.get("Rows") or {}).items():
                     fn = row.get("FriendlyName") or {}
@@ -140,6 +146,11 @@ class Season:
                                 self.vendor_type.setdefault(tag.lower(), m.group(0))
         self.attr = None
 
+    def rel(self, path):
+        """path as recorded in the JSON: always data/..., whatever the season folder is called, so an outside
+        --s2/--s1 export gives the same strings (and GitHub links) as the repo's own data/."""
+        return "data/" + rel(path, self.dir)
+
     def attributes(self):
         """weapon_attributes.Data over this season's items (effects: assets/data/ge-values.json)."""
         if self.attr is None:
@@ -149,9 +160,8 @@ class Season:
             d.items = {}
             # Item.path is made relative to wa.ROOT, which must share a drive with the folder
             saved, wa.ROOT = wa.ROOT, os.path.dirname(self.dir)
-            legacy = os.path.abspath(self.dir) != os.path.join(ROOT, "data")
             keys = (wa.BIPOD_WEAPON, wa.BIPOD_CHARACTER)
-            if legacy:   # Season 1 export: the two hashed bipod keys carry their pre-v2-usmap names
+            if self.legacy_keys:   # Season 1 export: the two hashed bipod keys carry their pre-v2-usmap names
                 wa.BIPOD_WEAPON = "_aaabgocclgplfdmmfjefm_$E22B6FB53CC5945C$_$22$"
                 wa.BIPOD_CHARACTER = "_aaabpgfgnkcdbhhlgdhmb_$656DA23177B637C1$_$31$"
             for p in sorted(glob.glob(os.path.join(self.dir, "**", "ID_*.json"), recursive=True)):
@@ -390,7 +400,7 @@ def changes(a, b):
 
 def build(s1_dir, s2_dir=None):
     s2 = Season(s2_dir or os.path.join(ROOT, "data"))
-    s1 = Season(s1_dir) if s1_dir and os.path.isdir(s1_dir) else None
+    s1 = Season(s1_dir, legacy_keys=True) if s1_dir and os.path.isdir(s1_dir) else None
     pairs = pair_assets(s1, s2) if s1 else {}
     s1_used = set(pairs.values())
     weapons = []
