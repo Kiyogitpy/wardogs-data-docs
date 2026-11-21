@@ -27,7 +27,7 @@ comes from data already in this repo; the page computes nothing the Python tools
 | `assets/data/loadout-extras.json` (235 KB) | `python -I _tools/loadout_extras.py` | `unlocks` (class tree gates), `reticles`, `icons`, `ballistics` (per-ammo damage by body part and armor class, drop-off factors, rpm) |
 | `assets/data/loadout-builder.json` (95 KB) | `python -I _tools/loadout_builder_data.py` | `slots` (which items go in primary, sidearm, special, helmet, armor, vest, backpack) and `items` (name, price, weight, icon, armor class and coverage, backpack grid, vest quick slots, magazine capacity) |
 | `assets/data/scope-reticles.json` + `assets/img/icons/scope-reticles/*.png` | `python -I _tools/scope_reticles.py <dump-dir> <png-dir>` | Through-the-scope reticle images for 5 scopes (needs a WdExtract dump, see section 6) |
-| `assets/data/spray-patterns.json` (1.4 MB) | `python -I _tools/spray_patterns.py --write` | Recoil patterns, view kick, Monte Carlo band. Loaded lazily after first paint |
+| `assets/data/spray-patterns.json` (1.4 MB) | `python -I _tools/spray_patterns.py --write --s2 DIR` (DIR: the pinned Season 2 export's `data/` folder, `season2_export` in the pipeline registry) | Recoil patterns, view kick, Monte Carlo band. Loaded lazily after first paint. A frozen Season 1/2 archive: `data/` is now Season 3, so `--write` and `--check` exit non-zero without `--s2` and this file is not rebuilt after a data change |
 
 Both new generators take `--check` (exit 1 when the written file is stale). After any change to `data/` or to the
 shop or weapon tables, rerun in this order: `weapon_attributes.py --json`, `loadout_extras.py`, `loadout_builder_data.py`.

@@ -235,7 +235,9 @@ class PinnedSeasonDiff(Base):
             self.assertEqual(e[mode][:2], ["--s2", "{season2_export}"])
         self.assertEqual(e["tier"], "core")
         sp = next(x for x in reg["scripts"] if x["script"] == "spray_patterns.py")
-        self.assertEqual(sp["tier"], "manual")           # hard-codes data/ as Season 2: cannot be pinned, so regen does not run it
+        self.assertEqual(sp["tier"], "manual")           # frozen S1/S2 archive: pinned to --s2, but regen does not run it
+        for mode in ("write", "check"):
+            self.assertEqual(sp[mode][1:], ["--s2", "{season2_export}"])
 
     def test_regen_hands_the_pinned_path_to_the_generator_not_data(self):
         reg = up.load_registry()
@@ -643,9 +645,11 @@ sys.exit(1)
 
     def test_checker_is_passed_the_export_and_a_json_path(self):
         fx = Fixture(self.tmp)
-        put(fx.wt, "_tools/hashed_names_check.py", "import sys\nopen(sys.argv[-1] + '.args', 'w').write(' '.join(sys.argv[1:]))\n")
+        # JSON, not ' '.join: a path with a space in it (C:\Users\First Last\...) must come back as one argument.
+        put(fx.wt, "_tools/hashed_names_check.py",
+            "import json, sys\nwith open(sys.argv[-1] + '.args', 'w') as f:\n    json.dump(sys.argv[1:], f)\n")
         fx.regen(fx.old)
-        args = read(fx.report, "hashed-names.json.args").split()
+        args = json.loads(read(fx.report, "hashed-names.json.args"))
         self.assertEqual(args[0:2], ["--data", fx.old])
         self.assertEqual(args[2], "--json")
         self.assertIn("hard-coded hashed names missing from this export: 0", fx.report_md())

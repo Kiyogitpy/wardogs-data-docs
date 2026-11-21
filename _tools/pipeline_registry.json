@@ -1048,6 +1048,7 @@
    "check": null,
    "inputs": [
     "assets/data",
+    "data",
     "pages"
    ],
    "notes": "reads TagDisplayText, WeaponShop and InfantryWeapons_Stats pages: parser, must run after them",
@@ -1119,16 +1120,20 @@
    "class": "generator",
    "tier": "manual",
    "write": [
-    "--write"
+    "--write",
+    "--s2",
+    "{season2_export}"
    ],
    "check": [
-    "--check"
+    "--check",
+    "--s2",
+    "{season2_export}"
    ],
    "inputs": [
-    "data",
+    "Season 2 export (--s2 DIR)",
     "Season 1 export (E:/wardogs_builds/season1/data)"
    ],
-   "notes": "MANUAL: it hard-codes Season 2 = the repo's data/ (no --s2 option), so regen at a later build would overwrite assets/data/spray-patterns.json with a Season 1 vs new-build comparison. Run it by hand after deciding what the spray page should show"
+   "notes": "MANUAL: spray-patterns.json is a frozen Season 1/2 archive. --write and --check need --s2 DIR (a Season 2 data/ folder); without it both exit non-zero, so the archive is never rebuilt from the repo's Season 3 data/. wiki_weapons.py models the current data/ itself via build(None)"
   },
   {
    "script": "ai_detection.py",
