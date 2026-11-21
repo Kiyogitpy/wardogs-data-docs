@@ -645,9 +645,11 @@ sys.exit(1)
 
     def test_checker_is_passed_the_export_and_a_json_path(self):
         fx = Fixture(self.tmp)
-        put(fx.wt, "_tools/hashed_names_check.py", "import sys\nopen(sys.argv[-1] + '.args', 'w').write(' '.join(sys.argv[1:]))\n")
+        # JSON, not ' '.join: a path with a space in it (C:\Users\First Last\...) must come back as one argument.
+        put(fx.wt, "_tools/hashed_names_check.py",
+            "import json, sys\nwith open(sys.argv[-1] + '.args', 'w') as f:\n    json.dump(sys.argv[1:], f)\n")
         fx.regen(fx.old)
-        args = read(fx.report, "hashed-names.json.args").split()
+        args = json.loads(read(fx.report, "hashed-names.json.args"))
         self.assertEqual(args[0:2], ["--data", fx.old])
         self.assertEqual(args[2], "--json")
         self.assertIn("hard-coded hashed names missing from this export: 0", fx.report_md())
