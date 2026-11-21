@@ -78,7 +78,7 @@ class S3WeaponClaims(unittest.TestCase):
         self.assertIn('AP never beats FMJ', weapons.ammo_page())
 
     def test_tcx_recoil_reads_current_authored_pattern_not_the_archive(self):
-        current = weapons.CURRENT_RECOIL_BY_ITEM['ID_WEPN_037']
+        current = weapons.current_recoil_by_item()['ID_WEPN_037']
         path = Path(weapons.ROOT) / current['sourceNote'].split(';', 1)[0]
         raw = json.loads(path.read_text(encoding='utf-8').split('\n', 1)[1])['Properties']['WeaponStats']
         expected = [{'x': p['X'], 'y': p['Y']} for p in raw['RecoilPattern']]

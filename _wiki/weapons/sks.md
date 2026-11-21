@@ -162,7 +162,7 @@ Climb and drift figures are computed from the pattern points, before the recoil 
 
 [Current recoil settings](https://github.com/Kiyogitpy/wardogs-data-docs/blob/main/data/Wardogs/Content/Weapons/DMR/SKS/Data/DA_SKS_Stats.json).
 
-Season 2 changed the recoil pattern: the climb after 10 shots went from 13.4° to 33.6°, and after 30 shots from 32.9° to 71.8°; and the view kick multiplier went from 1.1 to 1.
+Archived Season 1 → 2 history (separate from the S3 model above): Season 2 changed the recoil pattern: the climb after 10 shots went from 13.4° to 33.6°, and after 30 shots from 32.9° to 71.8°; and the view kick multiplier went from 1.1 to 1.
 
 The [historical Weapon Spray Viewer](https://kiyogitpy.github.io/wardogs-data-docs/pipelines/spray-viewer.html) retains Season 1/2 data; it does not show this S3 snapshot.
 

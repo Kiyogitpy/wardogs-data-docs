@@ -4,9 +4,14 @@ Writes assets/data/spray-patterns.json, one entry per WDWeaponStatsData asset (t
 assets/data/weapon-spread-recoil.json), with the per-shot kick vectors, the expected cumulative path, a
 seeded Monte Carlo spread band, the final default-attachment recoil multipliers and the in-game name.
 
-    python -I _tools/spray_patterns.py --write            # regenerate assets/data/spray-patterns.json
-    python -I _tools/spray_patterns.py --check            # recompute, exit 1 if the committed file differs
+    python -I _tools/spray_patterns.py --write --s2 DIR   # regenerate assets/data/spray-patterns.json
+    python -I _tools/spray_patterns.py --check --s2 DIR   # recompute, exit 1 if the committed file differs
     python -I _tools/spray_patterns.py --s1 DIR           # other Season 1 data/ folder (default below)
+
+spray-patterns.json is a frozen Season 1/2 archive. This repo's data/ is now Season 3, so --write and --check
+need --s2 pointing at a Season 2 (CL-516586) data/ folder; without it --write refuses and --check is skipped,
+so the archive is never rebuilt from S3 data under the Season 2 label. wiki_weapons.py calls build(None) to
+model the current data/ directly; it does not touch this file.
     python -I _tools/spray_patterns.py --print A91        # one weapon, human readable
 
 Semantics: content/Wardogs_Weapons_v2.md section 5a (kick function 0x6B95C50). Shot n inside the pattern kicks
@@ -17,7 +22,7 @@ expectedPath and band are the sums of the authored kicks only: the horizontal/ve
 multiplier, the focus cut and ViewKickMagnitudeMultiplier are listed beside them for the viewer to apply, and the
 ViewKickCurve time shape is not applied. Firearms have no self recovery (section 5a), so nothing is subtracted.
 
-Seasons. Season 2 is this repo's data/. Season 1 is the pre-update export (see season_diff.py; default
+Seasons. Season 2 is the --s2 folder (build(None) uses this repo's data/, now Season 3). Season 1 is the pre-update export (see season_diff.py; default
 S1_DEFAULT). Both are read by the same code. The multipliers use the effect formulas in assets/data/ge-values.json
 (Season 2 effect values) on each season's own item data, so a Season 1 multiplier difference comes from item
 changes only. The Season 1 weapon whose id changed (Mosin -> WEPN_017) is paired by its WeaponId tag.
@@ -383,8 +388,8 @@ def changes(a, b):
     return [k for k in COMPARE if a[k] != b[k]]
 
 
-def build(s1_dir):
-    s2 = Season(os.path.join(ROOT, "data"))
+def build(s1_dir, s2_dir=None):
+    s2 = Season(s2_dir or os.path.join(ROOT, "data"))
     s1 = Season(s1_dir) if s1_dir and os.path.isdir(s1_dir) else None
     pairs = pair_assets(s1, s2) if s1 else {}
     s1_used = set(pairs.values())
@@ -417,7 +422,7 @@ def build(s1_dir):
     meta = {
         "generator": "python -I _tools/spray_patterns.py --write",
         "seasons": {"s1": "Season 1: pre-update export (see season_diff.py)",
-                    "s2": "Season 2: build ++Wardogs+Live-CL-516586, this repo's data/"},
+                    "s2": "Season 2: build ++Wardogs+Live-CL-516586 (archived; passed with --s2)"},
         "units": "degrees of view rotation; x = yaw (right +), y = pitch (up +)",
         "monteCarlo": {"runs": RUNS, "seed": "crc32(id|statsAsset)", "band": "per-shot 10th and 90th percentile of the "
                        "cumulative x and y independently (linear interpolation)"},
@@ -452,9 +457,10 @@ def main():
     s1 = S1_DEFAULT
     if "--s1" in args:
         s1 = args[args.index("--s1") + 1]
+    s2 = args[args.index("--s2") + 1] if "--s2" in args else None
     if "--print" in args:
         want = args[args.index("--print") + 1].lower()
-        for w in build(s1)["weapons"]:
+        for w in build(s1, s2)["weapons"]:
             if w["id"].lower() == want:
                 for s in ("s1", "s2"):
                     e = w["seasons"][s]
@@ -463,8 +469,15 @@ def main():
                         print("  path end", e["expectedPath"][-1], "mult", e["multipliers"])
         return
     if "--write" in args or "--check" in args:
+        if not s2 or not os.path.isdir(s2):
+            msg = ("spray-patterns.json is a frozen Season 1/2 archive and data/ is now Season 3; "
+                   "pass --s2 DIR (a Season 2 data/ folder)")
+            if "--write" in args:
+                sys.exit(msg + " (refusing to write)")
+            print(msg + "; check skipped")
+            return
         have_s1 = os.path.isdir(s1)
-        data = build(s1)
+        data = build(s1, s2)
         text = dumps(data)
         if "--write" in args:
             if not have_s1:

@@ -6,6 +6,7 @@ Short fixed prose (class blurbs, lead sentences) lives in this file.
 
 Run from the repo root:  python _tools/wiki_weapons.py
 """
+import functools
 import json
 import math
 import os
@@ -65,14 +66,39 @@ S2 = read("season-2-changes/weapons-ammo.md")
 # Compound Bow: not a firearm (no caliber, spray pattern or damage table). Its article is
 # hand-written (_wiki/weapons/compound-bow.md); the hub reads its saved speed settings below.
 SKIP = {"CombatBow"}
+# Item shop price of the bow (assets/data/loadout-builder.json), read once like the other tables.
+BOW_PRICE = (jload("assets/data/loadout-builder.json")["items"].get("ID_CombatBow") or {}).get("price")
+BOW_DIR = "data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/"
+_EXPORT_HEADER = re.compile(r"^--- export: .* ---$", re.M)
+
+
+def _export_props(rel):
+    """Properties of every export in a CueDump file (a file can hold several, each after a header line)."""
+    out = []
+    for chunk in _EXPORT_HEADER.split(read(rel)):
+        if chunk.strip():
+            out.append(json.loads(chunk).get("Properties", {}))
+    return out
+
+
 def bow_row():
-    path = "data/Wardogs/Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/DA_CombatBow_Stats.json"
-    st = json.loads(read(path).split("\n", 1)[1])["Properties"]["WeaponStats"]
-    speed = f"{st['InitialBulletSpeed'] / 100:g} m/s initial setting"
-    if st["bOverrideTypicalSpeed"]:
+    """Hub row for the Compound Bow, read from its stats and item exports. Omitted fields are labelled
+    as omitted rather than raising: UE exports leave out fields at their default (false, 0)."""
+    st = next((p["WeaponStats"] for p in _export_props(BOW_DIR + "DA_CombatBow_Stats.json")
+               if "WeaponStats" in p), {})
+    init = st.get("InitialBulletSpeed")
+    speed = (f"{init / 100:g} m/s initial setting" if init is not None
+             else "initial speed omitted in export")
+    if st.get("bOverrideTypicalSpeed") and st.get("TypicalSpeed") is not None:
         speed += f"; {st['TypicalSpeed'] / 100:g} m/s typical override"
+    draw = next((p["FullDrawTime"] for p in _export_props(BOW_DIR + "ID_CombatBow.json")
+                 if "FullDrawTime" in p), None)
+    draw_text = f"{draw:g} s setting" if draw is not None else "omitted in export"
+    price = BOW_PRICE
     return ("| [Compound Bow](weapons/compound-bow.md) | Broadhead Arrow, Rambo Explosive Arrow | "
-            + speed + " (cm/s assumption; release unverified) | 1.4 s setting | 1350 |")
+            + speed + " (cm/s assumption; release unverified) | " + draw_text + " | "
+            + (str(price) if price is not None else "not yet known") + " |")
+
 
 CLASS_NAME = {
     "AR": "Assault rifle", "DMR": "Marksman rifle", "LMG": "Light machine gun",
@@ -392,9 +418,19 @@ for _w in SPREAD_DOC["weapons"]:
     if _iid:
         SPREAD_BY_ITEM.setdefault(_iid, _w)
 SPRAY_BY_ITEM = {w["itemAsset"]: w for w in SPRAY_DOC["weapons"] if w.get("itemAsset")}
-# build(None) reads current data/; s2 is the builder's legacy slot name, not its build attribution.
-CURRENT_RECOIL_BY_ITEM = {w["itemAsset"]: w["seasons"]["s2"]
-                          for w in spray_patterns.build(None)["weapons"] if w.get("itemAsset")}
+
+
+@functools.lru_cache(maxsize=None)
+def current_recoil_by_item():
+    """Current (S3) recoil entries per item asset, built from data/ on first use.
+
+    build(None) reads current data/; s2 is the builder's legacy slot name, not its build attribution.
+    Lazy because the build parses every stats export and runs the Monte Carlo band; doing it at import
+    would charge that cost to every module that imports this one (wiki_calibers, wiki_ttk, tests)."""
+    return {w["itemAsset"]: w["seasons"]["s2"]
+            for w in spray_patterns.build(None)["weapons"] if w.get("itemAsset")}
+
+
 # row -> [[x, degrees], ...]; x is the speed ratio, 0 = still, 1 = full speed (linear)
 SPREAD_CURVES = SPREAD_DOC["spreadCurveTable"]
 # radians per unit of WeaponAccuracy.AccuracyValue (pipeline doc, accuracy getter)
@@ -451,11 +487,20 @@ def _drift(x):
     return f"{abs(x):.1f}° {'right' if x > 0 else 'left'}"
 
 
+ARCHIVE_PREFIX = "Archived Season 1 → 2 history (separate from the S3 model above): "
+
+
 def _season_sentence(spray):
+    """Compare the archived S1 and S2 entries of spray-patterns.json. It never reads the current (S3) model,
+    so its figures can differ from the table above when S3 changed the pattern; the prefix says so."""
+    return ARCHIVE_PREFIX + _archive_change_text(spray)
+
+
+def _archive_change_text(spray):
     s1 = spray["seasons"].get("s1")
     s2 = spray["seasons"]["s2"]
     if not s1 or not s1.get("present"):
-        return "The Season 1 data has no entry for this weapon, so there is nothing to compare."
+        return "the Season 1 data has no entry for this weapon, so there is nothing to compare."
     changed = spray.get("changedS1toS2") or []
     if "pattern" not in changed and "viewKickMagnitudeMultiplier" not in changed:
         return "Season 2 did not change the recoil pattern."
@@ -478,7 +523,7 @@ def recoil_section(wid, title, multi_pellet=False):
     spray = SPRAY_BY_ITEM.get(wid)
     if spread is None or spray is None:
         raise SystemExit(f"no spread or spray data for {wid}")
-    season = CURRENT_RECOIL_BY_ITEM.get(wid)
+    season = current_recoil_by_item().get(wid)
     if not season or not season.get("present"):
         raise SystemExit(f"no current source-derived recoil model for {wid}")
 
@@ -862,7 +907,7 @@ def comparison_page():
             title = page_title(wid)
             cap = CAP.get(code) or {}
             mag = (cap.get("magazine") or {}).get("capacity") or cap.get("rounds_held")
-            season = CURRENT_RECOIL_BY_ITEM.get(wid)
+            season = current_recoil_by_item().get(wid)
             climb = f"{_path(season, 10)[1]:.1f}" if season and season.get("present") else "not yet known"
             star = "*" if c["beyond100"] else ""
             rate_mark = "†" if wdamage[code].get("rpm_source") == "class_default_native" else ""
